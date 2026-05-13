@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Savi Saluwadana | Software Engineer</title>
+  <meta
+    name="description"
+    content="Savi Saluwadana is a Software Engineer focused on DevOps, Kubernetes, OpenChoreo, platform engineering, and cloud-native technologies."
+  />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #050505;
+      --card: rgba(255, 255, 255, 0.06);
+      --card-border: rgba(255, 255, 255, 0.12);
+      --text: #f5f5f5;
+      --muted: #a3a3a3;
+      --accent: #38bdf8;
+      --accent-2: #8b5cf6;
+      --white: #ffffff;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 32%),
+        radial-gradient(circle at top right, rgba(139, 92, 246, 0.16), transparent 28%),
+        var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: rgba(5, 5, 5, 0.74);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-inner {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      font-size: 1.1rem;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
+    .hero {
+      padding: 110px 0 80px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border: 1px solid var(--card-border);
+      background: var(--card);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+    }
+
+    .pulse {
+      width: 8px;
+      height: 8px;
+      background: #22c55e;
+      border-radius: 50%;
+      box-shadow: 0 0 18px #22c55e;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      line-height: 0.95;
+      letter-spacing: -0.08em;
+      max-width: 900px;
+      margin-bottom: 26px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #ffffff, #38bdf8 42%, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 1.15rem;
+      margin-bottom: 34px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 13px 20px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.25s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--white);
+      color: #050505;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 60px rgba(255, 255, 255, 0.18);
+    }
+
+    .btn-secondary {
+      border-color: var(--card-border);
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(255, 255, 255, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .profile-card {
+      position: relative;
+      padding: 28px;
+      border-radius: 32px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.1), rgba(255,255,255,0.04));
+      border: 1px solid var(--card-border);
+      box-shadow: 0 24px 100px rgba(0,0,0,0.35);
+      overflow: hidden;
+    }
+
+    .profile-card::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      background: linear-gradient(135deg, rgba(56,189,248,0.45), transparent, rgba(139,92,246,0.4));
+      opacity: 0.35;
+      z-index: -1;
+    }
+
+    .avatar {
+      width: 92px;
+      height: 92px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      display: grid;
+      place-items: center;
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 24px;
+    }
+
+    .profile-card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+
+    .profile-card p {
+      color: var(--muted);
+      margin-bottom: 22px;
+      font-size: 1rem;
+    }
+
+    .status-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .status-item {
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.055);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .status-item strong {
+      display: block;
+      font-size: 0.9rem;
+    }
+
+    .status-item span {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    .section-header {
+      max-width: 680px;
+      margin-bottom: 34px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      letter-spacing: -0.06em;
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+
+    .section-header p {
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      padding: 24px;
+      border-radius: 26px;
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      transition: 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(56, 189, 248, 0.45);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .card .icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: rgba(56, 189, 248, 0.14);
+      display: grid;
+      place-items: center;
+      color: var(--accent);
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 1.15rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .projects {
+      display: grid;
+      gap: 18px;
+    }
+
+    .project {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+      padding: 26px;
+      border-radius: 28px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.085), rgba(255,255,255,0.035));
+      border: 1px solid var(--card-border);
+    }
+
+    .project h3 {
+      font-size: 1.35rem;
+      margin-bottom: 8px;
+    }
+
+    .project p {
+      color: var(--muted);
+      max-width: 700px;
+    }
+
+    .tag-row {
+      margin-top: 16px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      font-size: 0.82rem;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      color: #d4d4d4;
+    }
+
+    .project-link {
+      color: var(--accent);
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .socials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .socials a {
+      padding: 12px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--card-border);
+      color: var(--muted);
+      background: rgba(255,255,255,0.04);
+      transition: 0.25s ease;
+    }
+
+    .socials a:hover {
+      color: var(--white);
+      border-color: rgba(255,255,255,0.28);
+      transform: translateY(-2px);
+    }
+
+    footer {
+      padding: 40px 0;
+      color: var(--muted);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      text-align: center;
+    }
+
+    @media (max-width: 840px) {
+      .hero-grid,
+      .grid-3,
+      .project {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 80px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#" class="logo">Savi<span>.</span></a>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#focus">Focus</a>
+        <a href="#work">Work</a>
+        <a href="#connect">Connect</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">
+            <span class="pulse"></span>
+            Software Engineer · Platform Engineering · Kubernetes
+          </div>
+
+          <h1>
+            Building for the
+            <span class="gradient-text">cloud-native future.</span>
+          </h1>
+
+          <p>
+            I’m Savi Saluwadana, a Software Engineer focused on DevOps,
+            Kubernetes, OpenChoreo, platform engineering, and AI-native developer
+            platforms. I write, build, and explore systems that help teams ship
+            software faster with better developer experience.
+          </p>
+
+          <div class="actions">
+            <a class="btn btn-primary" href="#work">View Work</a>
+            <a class="btn btn-secondary" href="https://github.com/savisaluwadana" target="_blank" rel="noreferrer">
+              GitHub
+            </a>
+            <a class="btn btn-secondary" href="https://www.linkedin.com/in/savi-saluwadana-3911331b2/" target="_blank" rel="noreferrer">
+              LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <aside class="profile-card">
+          <div class="avatar">SS</div>
+          <h2>Savi Saluwadana</h2>
+          <p>
+            Software Engineer exploring the intersection of cloud-native platforms,
+            developer experience, DevOps, and AI.
+          </p>
+
+          <div class="status-list">
+            <div class="status-item">
+              <strong>Current Focus</strong>
+              <span>OpenChoreo, Kubernetes, platform engineering</span>
+            </div>
+
+            <div class="status-item">
+              <strong>Writing About</strong>
+              <span>DevOps, SRE, internal developer platforms, AI agents</span>
+            </div>
+
+            <div class="status-item">
+              <strong>Based In</strong>
+              <span>Sri Lanka</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-header">
+          <h2>About me</h2>
+          <p>
+            I care about building software systems that are practical, scalable,
+            and useful for real engineering teams. My current interests are
+            platform engineering, Kubernetes, DevOps workflows, cloud-native
+            architecture, and AI-powered developer platforms.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="focus">
+      <div class="container">
+        <div class="section-header">
+          <h2>What I focus on</h2>
+          <p>
+            The core areas I am building my public technical brand around.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="icon">01</div>
+            <h3>Platform Engineering</h3>
+            <p>
+              Exploring how internal developer platforms help teams standardize,
+              automate, and improve software delivery.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="icon">02</div>
+            <h3>Kubernetes & DevOps</h3>
+            <p>
+              Working with cloud-native systems, CI/CD workflows, deployment
+              patterns, and operational best practices.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="icon">03</div>
+            <h3>AI-Native Tooling</h3>
+            <p>
+              Learning how AI agents, MCP, and modern developer tools can improve
+              engineering productivity.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="container">
+        <div class="section-header">
+          <h2>Featured work</h2>
+          <p>
+            A few areas I write about, build around, and continue to explore.
+          </p>
+        </div>
+
+        <div class="projects">
+          <article class="project">
+            <div>
+              <h3>OpenChoreo Learning & Content</h3>
+              <p>
+                Articles and technical content around OpenChoreo, Kubernetes,
+                platform engineering, internal developer platforms, and cloud-native
+                development workflows.
+              </p>
+              <div class="tag-row">
+                <span class="tag">OpenChoreo</span>
+                <span class="tag">Kubernetes</span>
+                <span class="tag">Platform Engineering</span>
+              </div>
+            </div>
+            <a class="project-link" href="https://medium.com/@savisaluwadana" target="_blank" rel="noreferrer">
+              Read Articles →
+            </a>
+          </article>
+
+          <article class="project">
+            <div>
+              <h3>DevOps & Cloud-Native Writing</h3>
+              <p>
+                Practical posts focused on DevOps concepts, software delivery,
+                cloud-native architecture, and engineering career growth.
+              </p>
+              <div class="tag-row">
+                <span class="tag">DevOps</span>
+                <span class="tag">Cloud Native</span>
+                <span class="tag">SRE</span>
+              </div>
+            </div>
+            <a class="project-link" href="https://dev.to/savi_saluwadana" target="_blank" rel="noreferrer">
+              View Posts →
+            </a>
+          </article>
+
+          <article class="project">
+            <div>
+              <h3>GitHub Projects</h3>
+              <p>
+                Experiments, repositories, and engineering work related to software
+                development, platform engineering, and modern web technologies.
+              </p>
+              <div class="tag-row">
+                <span class="tag">Software Engineering</span>
+                <span class="tag">Web</span>
+                <span class="tag">Open Source</span>
+              </div>
+            </div>
+            <a class="project-link" href="https://github.com/savisaluwadana" target="_blank" rel="noreferrer">
+              Visit GitHub →
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="connect">
+      <div class="container">
+        <div class="section-header">
+          <h2>Connect</h2>
+          <p>
+            Follow my work, articles, and engineering journey across these platforms.
+          </p>
+        </div>
+
+        <div class="socials">
+          <a href="https://github.com/savisaluwadana" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/savi-saluwadana-3911331b2/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://medium.com/@savisaluwadana" target="_blank" rel="noreferrer">Medium</a>
+          <a href="https://dev.to/savi_saluwadana" target="_blank" rel="noreferrer">DEV.to</a>
+          <a href="https://hackernoon.com/u/savisaluwadana" target="_blank" rel="noreferrer">HackerNoon</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Savi Saluwadana. Built for GitHub Pages.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
