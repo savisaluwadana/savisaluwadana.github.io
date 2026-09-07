@@ -1,627 +1,405 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#07090c">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="author" content="Savi Saluwadana">
+  <meta name="keywords" content="Savi Saluwadana, AI engineer, platform engineer, DevOps engineer, software engineer, Kubernetes, Go, Golang, cloud native, platform engineering, MCP, AI agents, developer experience, OpenChoreo, Sri Lanka">
 
-  <title>Savi Saluwadana | Software Engineer</title>
-  <meta
-    name="description"
-    content="Savi Saluwadana is a Software Engineer focused on DevOps, Kubernetes, OpenChoreo, platform engineering, and cloud-native technologies."
-  />
+  <title>Savi Saluwadana — AI, DevOps & Platform Engineer</title>
+  <meta name="description" content="Savi Saluwadana is an AI, DevOps and Platform Engineer building cloud-native platforms, AI systems, automation and developer infrastructure with Kubernetes, Go and modern agentic tooling.">
+  <link rel="canonical" href="https://savisaluwadana.github.io/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="Savi Saluwadana">
+  <meta property="og:title" content="Savi Saluwadana — AI, DevOps & Platform Engineer">
+  <meta property="og:description" content="Building AI-native systems, cloud-native platforms and developer infrastructure with Kubernetes, Go, DevOps and MCP.">
+  <meta property="og:url" content="https://savisaluwadana.github.io/">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/82082138?v=4">
+  <meta property="profile:first_name" content="Savi">
+  <meta property="profile:last_name" content="Saluwadana">
 
-    :root {
-      --bg: #050505;
-      --card: rgba(255, 255, 255, 0.06);
-      --card-border: rgba(255, 255, 255, 0.12);
-      --text: #f5f5f5;
-      --muted: #a3a3a3;
-      --accent: #38bdf8;
-      --accent-2: #8b5cf6;
-      --white: #ffffff;
-    }
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Savi Saluwadana — AI, DevOps & Platform Engineer">
+  <meta name="twitter:description" content="AI systems. Platform engineering. Kubernetes. Go. Developer infrastructure.">
+  <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/82082138?v=4">
 
-    html {
-      scroll-behavior: smooth;
-    }
+  <link rel="preconnect" href="https://avatars.githubusercontent.com">
+  <link rel="stylesheet" href="/styles.css">
 
-    body {
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 32%),
-        radial-gradient(circle at top right, rgba(139, 92, 246, 0.16), transparent 28%),
-        var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      width: min(1120px, 92%);
-      margin: 0 auto;
-    }
-
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(16px);
-      background: rgba(5, 5, 5, 0.74);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .nav-inner {
-      height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      font-size: 1.1rem;
-    }
-
-    .logo span {
-      color: var(--accent);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 24px;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .nav-links a:hover {
-      color: var(--white);
-    }
-
-    .hero {
-      padding: 110px 0 80px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 48px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 14px;
-      border: 1px solid var(--card-border);
-      background: var(--card);
-      border-radius: 999px;
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-bottom: 24px;
-    }
-
-    .pulse {
-      width: 8px;
-      height: 8px;
-      background: #22c55e;
-      border-radius: 50%;
-      box-shadow: 0 0 18px #22c55e;
-    }
-
-    h1 {
-      font-size: clamp(3rem, 7vw, 6.5rem);
-      line-height: 0.95;
-      letter-spacing: -0.08em;
-      max-width: 900px;
-      margin-bottom: 26px;
-    }
-
-    .gradient-text {
-      background: linear-gradient(135deg, #ffffff, #38bdf8 42%, #8b5cf6);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero p {
-      max-width: 680px;
-      color: var(--muted);
-      font-size: 1.15rem;
-      margin-bottom: 34px;
-    }
-
-    .actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 13px 20px;
-      border-radius: 999px;
-      font-weight: 700;
-      transition: 0.25s ease;
-      border: 1px solid transparent;
-    }
-
-    .btn-primary {
-      background: var(--white);
-      color: #050505;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 18px 60px rgba(255, 255, 255, 0.18);
-    }
-
-    .btn-secondary {
-      border-color: var(--card-border);
-      color: var(--white);
-      background: rgba(255, 255, 255, 0.04);
-    }
-
-    .btn-secondary:hover {
-      border-color: rgba(255, 255, 255, 0.3);
-      transform: translateY(-2px);
-    }
-
-    .profile-card {
-      position: relative;
-      padding: 28px;
-      border-radius: 32px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.1), rgba(255,255,255,0.04));
-      border: 1px solid var(--card-border);
-      box-shadow: 0 24px 100px rgba(0,0,0,0.35);
-      overflow: hidden;
-    }
-
-    .profile-card::before {
-      content: "";
-      position: absolute;
-      inset: -1px;
-      background: linear-gradient(135deg, rgba(56,189,248,0.45), transparent, rgba(139,92,246,0.4));
-      opacity: 0.35;
-      z-index: -1;
-    }
-
-    .avatar {
-      width: 92px;
-      height: 92px;
-      border-radius: 24px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      display: grid;
-      place-items: center;
-      font-size: 2rem;
-      font-weight: 900;
-      margin-bottom: 24px;
-    }
-
-    .profile-card h2 {
-      font-size: 1.5rem;
-      margin-bottom: 8px;
-    }
-
-    .profile-card p {
-      color: var(--muted);
-      margin-bottom: 22px;
-      font-size: 1rem;
-    }
-
-    .status-list {
-      display: grid;
-      gap: 12px;
-    }
-
-    .status-item {
-      padding: 14px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.055);
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .status-item strong {
-      display: block;
-      font-size: 0.9rem;
-    }
-
-    .status-item span {
-      color: var(--muted);
-      font-size: 0.88rem;
-    }
-
-    section {
-      padding: 80px 0;
-    }
-
-    .section-header {
-      max-width: 680px;
-      margin-bottom: 34px;
-    }
-
-    .section-header h2 {
-      font-size: clamp(2rem, 4vw, 3.4rem);
-      letter-spacing: -0.06em;
-      line-height: 1;
-      margin-bottom: 14px;
-    }
-
-    .section-header p {
-      color: var(--muted);
-      font-size: 1.05rem;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .card {
-      padding: 24px;
-      border-radius: 26px;
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      transition: 0.25s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(56, 189, 248, 0.45);
-      background: rgba(255,255,255,0.08);
-    }
-
-    .card .icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      background: rgba(56, 189, 248, 0.14);
-      display: grid;
-      place-items: center;
-      color: var(--accent);
-      font-weight: 900;
-      margin-bottom: 18px;
-    }
-
-    .card h3 {
-      margin-bottom: 10px;
-      font-size: 1.15rem;
-    }
-
-    .card p {
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .projects {
-      display: grid;
-      gap: 18px;
-    }
-
-    .project {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 24px;
-      align-items: center;
-      padding: 26px;
-      border-radius: 28px;
-      background: linear-gradient(135deg, rgba(255,255,255,0.085), rgba(255,255,255,0.035));
-      border: 1px solid var(--card-border);
-    }
-
-    .project h3 {
-      font-size: 1.35rem;
-      margin-bottom: 8px;
-    }
-
-    .project p {
-      color: var(--muted);
-      max-width: 700px;
-    }
-
-    .tag-row {
-      margin-top: 16px;
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .tag {
-      font-size: 0.82rem;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.08);
-      color: #d4d4d4;
-    }
-
-    .project-link {
-      color: var(--accent);
-      font-weight: 800;
-      white-space: nowrap;
-    }
-
-    .socials {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .socials a {
-      padding: 12px 16px;
-      border-radius: 999px;
-      border: 1px solid var(--card-border);
-      color: var(--muted);
-      background: rgba(255,255,255,0.04);
-      transition: 0.25s ease;
-    }
-
-    .socials a:hover {
-      color: var(--white);
-      border-color: rgba(255,255,255,0.28);
-      transform: translateY(-2px);
-    }
-
-    footer {
-      padding: 40px 0;
-      color: var(--muted);
-      border-top: 1px solid rgba(255,255,255,0.08);
-      text-align: center;
-    }
-
-    @media (max-width: 840px) {
-      .hero-grid,
-      .grid-3,
-      .project {
-        grid-template-columns: 1fr;
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://savisaluwadana.github.io/#person",
+        "name": "Savi Saluwadana",
+        "url": "https://savisaluwadana.github.io/",
+        "image": "https://avatars.githubusercontent.com/u/82082138?v=4",
+        "jobTitle": "Software Engineer",
+        "description": "AI, DevOps and Platform Engineer focused on cloud-native platforms, Kubernetes, Go, automation, developer experience and AI-native engineering.",
+        "homeLocation": {"@type": "Country", "name": "Sri Lanka"},
+        "sameAs": [
+          "https://github.com/savisaluwadana",
+          "https://www.linkedin.com/in/savi-saluwadana-3911331b2/"
+        ],
+        "knowsAbout": [
+          "Artificial Intelligence",
+          "AI Agents",
+          "Model Context Protocol",
+          "Platform Engineering",
+          "DevOps",
+          "Site Reliability Engineering",
+          "Kubernetes",
+          "Cloud Native Computing",
+          "Go programming language",
+          "Developer Experience",
+          "Internal Developer Platforms",
+          "CI/CD",
+          "Software Architecture",
+          "OpenChoreo"
+        ]
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": "https://savisaluwadana.github.io/#profile",
+        "url": "https://savisaluwadana.github.io/",
+        "name": "Savi Saluwadana — Engineering Portfolio",
+        "mainEntity": {"@id": "https://savisaluwadana.github.io/#person"},
+        "about": {"@id": "https://savisaluwadana.github.io/#person"},
+        "inLanguage": "en"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://savisaluwadana.github.io/#website",
+        "url": "https://savisaluwadana.github.io/",
+        "name": "Savi Saluwadana",
+        "publisher": {"@id": "https://savisaluwadana.github.io/#person"},
+        "inLanguage": "en"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What does Savi Saluwadana specialize in?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Savi focuses on AI engineering, platform engineering, DevOps, Kubernetes, cloud-native systems, Go, developer experience and AI-native automation."}
+          },
+          {
+            "@type": "Question",
+            "name": "What technologies does Savi Saluwadana work with?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Core areas include Kubernetes, Go, CI/CD, cloud-native architecture, internal developer platforms, observability, MCP, AI agents and automation workflows."}
+          },
+          {
+            "@type": "Question",
+            "name": "What kind of engineering problems does Savi work on?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Savi works on developer infrastructure, platform workflows, reliable software delivery, automation, cloud-native systems and practical AI-enabled engineering tools."}
+          }
+        ]
       }
-
-      .nav-links {
-        display: none;
-      }
-
-      .hero {
-        padding-top: 80px;
-      }
-    }
-  </style>
+    ]
+  }
+  </script>
 </head>
-
 <body>
-  <nav class="nav">
-    <div class="container nav-inner">
-      <a href="#" class="logo">Savi<span>.</span></a>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="ambient" aria-hidden="true">
+    <div class="ambient__grid"></div>
+    <div class="ambient__orb ambient__orb--one"></div>
+    <div class="ambient__orb ambient__orb--two"></div>
+  </div>
 
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#focus">Focus</a>
+  <header class="site-header" data-header>
+    <div class="shell nav-shell">
+      <a class="brand" href="#top" aria-label="Savi Saluwadana home">
+        <span class="brand-mark" aria-hidden="true">S</span>
+        <span class="brand-name">Savi Saluwadana</span>
+      </a>
+
+      <button class="menu-button" type="button" aria-label="Toggle navigation" aria-expanded="false" data-menu-button>
+        <span></span><span></span>
+      </button>
+
+      <nav class="nav-links" aria-label="Primary navigation" data-nav>
+        <a href="#expertise">Expertise</a>
         <a href="#work">Work</a>
-        <a href="#connect">Connect</a>
-      </div>
+        <a href="#approach">Approach</a>
+        <a href="#about">About</a>
+        <a class="nav-cta" href="#connect">Connect <span aria-hidden="true">↗</span></a>
+      </nav>
     </div>
-  </nav>
+  </header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">
-            <span class="pulse"></span>
-            Software Engineer · Platform Engineering · Kubernetes
+  <main id="main">
+    <section class="hero section" id="top" aria-labelledby="hero-title">
+      <div class="shell hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><span class="status-dot" aria-hidden="true"></span> AI systems · Kubernetes · Go · Platform engineering</div>
+          <h1 id="hero-title">I build systems that make <span>software teams faster.</span></h1>
+          <p class="hero-lede">I’m <strong>Savi Saluwadana</strong>, an AI, DevOps and Platform Engineer working across cloud-native infrastructure, developer platforms, automation and AI-native tooling.</p>
+          <p class="hero-support">My focus is the layer between code and production: the platforms, workflows and intelligent systems that help engineering teams ship with more speed, reliability and clarity.</p>
+
+          <div class="hero-actions">
+            <a class="button button--primary" href="#work">Explore my work <span aria-hidden="true">↓</span></a>
+            <a class="button button--ghost" href="https://github.com/savisaluwadana" target="_blank" rel="me noreferrer">GitHub <span aria-hidden="true">↗</span></a>
           </div>
 
-          <h1>
-            Building for the
-            <span class="gradient-text">cloud-native future.</span>
-          </h1>
-
-          <p>
-            I’m Savi Saluwadana, a Software Engineer focused on DevOps,
-            Kubernetes, OpenChoreo, platform engineering, and AI-native developer
-            platforms. I write, build, and explore systems that help teams ship
-            software faster with better developer experience.
-          </p>
-
-          <div class="actions">
-            <a class="btn btn-primary" href="#work">View Work</a>
-            <a class="btn btn-secondary" href="https://github.com/savisaluwadana" target="_blank" rel="noreferrer">
-              GitHub
-            </a>
-            <a class="btn btn-secondary" href="https://www.linkedin.com/in/savi-saluwadana-3911331b2/" target="_blank" rel="noreferrer">
-              LinkedIn
-            </a>
+          <div class="signal-row" aria-label="Engineering focus areas">
+            <span>AI Engineering</span><i></i><span>DevOps</span><i></i><span>Platform Engineering</span><i></i><span>Cloud Native</span>
           </div>
         </div>
 
-        <aside class="profile-card">
-          <div class="avatar">SS</div>
-          <h2>Savi Saluwadana</h2>
-          <p>
-            Software Engineer exploring the intersection of cloud-native platforms,
-            developer experience, DevOps, and AI.
-          </p>
-
-          <div class="status-list">
-            <div class="status-item">
-              <strong>Current Focus</strong>
-              <span>OpenChoreo, Kubernetes, platform engineering</span>
+        <div class="hero-system reveal reveal--delay" aria-label="Engineering system card">
+          <div class="system-window">
+            <div class="window-bar">
+              <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+              <span class="window-title">savi.systems</span>
+              <span class="window-live"><i></i> online</span>
             </div>
 
-            <div class="status-item">
-              <strong>Writing About</strong>
-              <span>DevOps, SRE, internal developer platforms, AI agents</span>
+            <div class="system-profile">
+              <img src="https://avatars.githubusercontent.com/u/82082138?v=4" alt="Savi Saluwadana" width="72" height="72">
+              <div>
+                <span class="system-kicker">ENGINEERING PROFILE</span>
+                <h2>Savi Saluwadana</h2>
+                <p>Building at the intersection of infrastructure + intelligence.</p>
+              </div>
             </div>
 
-            <div class="status-item">
-              <strong>Based In</strong>
-              <span>Sri Lanka</span>
+            <div class="system-stack">
+              <div class="stack-row"><span class="stack-index">01</span><div><strong>AI systems</strong><small>agents · MCP · automation</small></div><span class="stack-state">ACTIVE</span></div>
+              <div class="stack-row"><span class="stack-index">02</span><div><strong>Platform engineering</strong><small>IDPs · DX · orchestration</small></div><span class="stack-state">ACTIVE</span></div>
+              <div class="stack-row"><span class="stack-index">03</span><div><strong>Cloud native</strong><small>Kubernetes · Go · delivery</small></div><span class="stack-state">ACTIVE</span></div>
+            </div>
+
+            <div class="terminal" aria-label="Terminal style summary">
+              <div><span class="terminal-prompt">$</span> engineer --focus</div>
+              <div class="terminal-output">systems / platforms / automation / product</div>
+              <div><span class="terminal-prompt">$</span> <span class="terminal-cursor" aria-hidden="true"></span></div>
             </div>
           </div>
-        </aside>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="container">
-        <div class="section-header">
-          <h2>About me</h2>
-          <p>
-            I care about building software systems that are practical, scalable,
-            and useful for real engineering teams. My current interests are
-            platform engineering, Kubernetes, DevOps workflows, cloud-native
-            architecture, and AI-powered developer platforms.
-          </p>
         </div>
       </div>
     </section>
 
-    <section id="focus">
-      <div class="container">
-        <div class="section-header">
-          <h2>What I focus on</h2>
-          <p>
-            The core areas I am building my public technical brand around.
-          </p>
+    <section class="proof-strip" aria-label="Core technologies">
+      <div class="shell proof-track">
+        <span>Go</span><span>Kubernetes</span><span>Platform Engineering</span><span>DevOps</span><span>AI Agents</span><span>MCP</span><span>CI/CD</span><span>Developer Experience</span>
+      </div>
+    </section>
+
+    <section class="section" id="expertise" aria-labelledby="expertise-title">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <span class="section-label">01 / EXPERTISE</span>
+          <h2 id="expertise-title">Engineering at the <span>systems layer.</span></h2>
+          <p>I care less about isolated tools and more about how the whole engineering system behaves: how software is built, shipped, operated and increasingly augmented by AI.</p>
         </div>
 
-        <div class="grid-3">
-          <div class="card">
-            <div class="icon">01</div>
+        <div class="expertise-grid">
+          <article class="expertise-card reveal">
+            <div class="card-number">01</div>
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3 4.5 7.25v9.5L12 21l7.5-4.25v-9.5L12 3Z"/><path d="m4.5 7.25 7.5 4.3 7.5-4.3M12 11.55V21"/></svg>
+            </div>
             <h3>Platform Engineering</h3>
-            <p>
-              Exploring how internal developer platforms help teams standardize,
-              automate, and improve software delivery.
-            </p>
-          </div>
-
-          <div class="card">
-            <div class="icon">02</div>
-            <h3>Kubernetes & DevOps</h3>
-            <p>
-              Working with cloud-native systems, CI/CD workflows, deployment
-              patterns, and operational best practices.
-            </p>
-          </div>
-
-          <div class="card">
-            <div class="icon">03</div>
-            <h3>AI-Native Tooling</h3>
-            <p>
-              Learning how AI agents, MCP, and modern developer tools can improve
-              engineering productivity.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="work">
-      <div class="container">
-        <div class="section-header">
-          <h2>Featured work</h2>
-          <p>
-            A few areas I write about, build around, and continue to explore.
-          </p>
-        </div>
-
-        <div class="projects">
-          <article class="project">
-            <div>
-              <h3>OpenChoreo Learning & Content</h3>
-              <p>
-                Articles and technical content around OpenChoreo, Kubernetes,
-                platform engineering, internal developer platforms, and cloud-native
-                development workflows.
-              </p>
-              <div class="tag-row">
-                <span class="tag">OpenChoreo</span>
-                <span class="tag">Kubernetes</span>
-                <span class="tag">Platform Engineering</span>
-              </div>
-            </div>
-            <a class="project-link" href="https://medium.com/@savisaluwadana" target="_blank" rel="noreferrer">
-              Read Articles →
-            </a>
+            <p>Internal developer platforms, golden paths, self-service infrastructure and opinionated workflows that reduce cognitive load without hiding the underlying system.</p>
+            <ul><li>Developer portals & IDPs</li><li>Kubernetes platform workflows</li><li>Developer experience & automation</li></ul>
           </article>
 
-          <article class="project">
-            <div>
-              <h3>DevOps & Cloud-Native Writing</h3>
-              <p>
-                Practical posts focused on DevOps concepts, software delivery,
-                cloud-native architecture, and engineering career growth.
-              </p>
-              <div class="tag-row">
-                <span class="tag">DevOps</span>
-                <span class="tag">Cloud Native</span>
-                <span class="tag">SRE</span>
-              </div>
+          <article class="expertise-card reveal reveal--delay">
+            <div class="card-number">02</div>
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M9 3h6v4H9zM5 9h14v10H5z"/><path d="M9 13h.01M15 13h.01M9 17h6M3 12H1M23 12h-2"/></svg>
             </div>
-            <a class="project-link" href="https://dev.to/savi_saluwadana" target="_blank" rel="noreferrer">
-              View Posts →
-            </a>
+            <h3>AI Engineering</h3>
+            <p>Practical AI systems built around agents, tools and workflow automation — with the infrastructure, interfaces and guardrails required to make them useful in production.</p>
+            <ul><li>Agents, MCP & tool use</li><li>RAG and knowledge workflows</li><li>AI-enabled developer tooling</li></ul>
           </article>
 
-          <article class="project">
-            <div>
-              <h3>GitHub Projects</h3>
-              <p>
-                Experiments, repositories, and engineering work related to software
-                development, platform engineering, and modern web technologies.
-              </p>
-              <div class="tag-row">
-                <span class="tag">Software Engineering</span>
-                <span class="tag">Web</span>
-                <span class="tag">Open Source</span>
-              </div>
+          <article class="expertise-card reveal reveal--delay-2">
+            <div class="card-number">03</div>
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 7h16v10H4z"/><path d="M8 3v4M16 3v4M8 17v4M16 17v4M1 10h3M20 10h3M1 14h3M20 14h3"/></svg>
             </div>
-            <a class="project-link" href="https://github.com/savisaluwadana" target="_blank" rel="noreferrer">
-              Visit GitHub →
-            </a>
+            <h3>DevOps & Cloud Native</h3>
+            <p>Reliable delivery systems, containerized workloads and operational foundations with a preference for simple interfaces, observable behavior and automation-first operations.</p>
+            <ul><li>Go services & APIs</li><li>CI/CD and release systems</li><li>Observability & reliability</li></ul>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="connect">
-      <div class="container">
-        <div class="section-header">
-          <h2>Connect</h2>
-          <p>
-            Follow my work, articles, and engineering journey across these platforms.
-          </p>
+    <section class="section section--work" id="work" aria-labelledby="work-title">
+      <div class="shell">
+        <div class="section-heading section-heading--split reveal">
+          <div>
+            <span class="section-label">02 / SELECTED WORK</span>
+            <h2 id="work-title">Things I’m <span>building around.</span></h2>
+          </div>
+          <p>A portfolio should show direction, not just a wall of logos. These are the engineering themes I’m actively investing in.</p>
         </div>
 
-        <div class="socials">
-          <a href="https://github.com/savisaluwadana" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="https://www.linkedin.com/in/savi-saluwadana-3911331b2/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a href="https://medium.com/@savisaluwadana" target="_blank" rel="noreferrer">Medium</a>
-          <a href="https://dev.to/savi_saluwadana" target="_blank" rel="noreferrer">DEV.to</a>
-          <a href="https://hackernoon.com/u/savisaluwadana" target="_blank" rel="noreferrer">HackerNoon</a>
+        <div class="work-list">
+          <article class="work-card work-card--featured reveal">
+            <div class="work-meta"><span>OPEN SOURCE · PLATFORM</span><span>01</span></div>
+            <div class="work-content">
+              <div>
+                <div class="work-kicker">OpenChoreo</div>
+                <h3>Cloud-native platform engineering for modern software teams.</h3>
+                <p>Contributing around OpenChoreo and the platform engineering ecosystem: developer experience, Kubernetes-native workflows, internal developer platforms and emerging AI/MCP interfaces.</p>
+                <div class="tag-list"><span>Kubernetes</span><span>Platform Engineering</span><span>Developer Experience</span><span>MCP</span></div>
+              </div>
+              <div class="work-aside">
+                <div class="architecture-card" aria-hidden="true">
+                  <span>developer</span><i>↓</i><strong>platform API</strong><i>↓</i><span>delivery plane</span><i>↓</i><span>runtime</span>
+                </div>
+              </div>
+            </div>
+            <div class="work-links">
+              <a href="https://openchoreo.dev/" target="_blank" rel="noreferrer">Explore OpenChoreo <span>↗</span></a>
+              <a href="https://github.com/openchoreo/openchoreo" target="_blank" rel="noreferrer">Source <span>↗</span></a>
+            </div>
+          </article>
+
+          <article class="work-card reveal">
+            <div class="work-meta"><span>AI · AUTOMATION</span><span>02</span></div>
+            <div class="work-content work-content--compact">
+              <div>
+                <div class="work-kicker">AI-native engineering</div>
+                <h3>Agents that can actually interact with engineering systems.</h3>
+                <p>Exploring agentic workflows, MCP servers, tool interfaces, retrieval and automation patterns that connect AI models to real developer and operational systems.</p>
+                <div class="tag-list"><span>AI Agents</span><span>MCP</span><span>RAG</span><span>Automation</span></div>
+              </div>
+              <div class="mini-diagram" aria-hidden="true"><span>MODEL</span><i></i><span>TOOLS</span><i></i><span>SYSTEMS</span></div>
+            </div>
+            <div class="work-links"><a href="https://github.com/savisaluwadana" target="_blank" rel="me noreferrer">Browse experiments <span>↗</span></a></div>
+          </article>
+
+          <article class="work-card reveal">
+            <div class="work-meta"><span>SYSTEMS · CLOUD NATIVE</span><span>03</span></div>
+            <div class="work-content work-content--compact">
+              <div>
+                <div class="work-kicker">Go + Kubernetes</div>
+                <h3>Software that is simple to reason about and ready to operate.</h3>
+                <p>Building stronger systems fundamentals around Go, APIs, concurrency, distributed systems, Kubernetes and the delivery mechanisms that take software from source to production.</p>
+                <div class="tag-list"><span>Go</span><span>Kubernetes</span><span>APIs</span><span>Distributed Systems</span></div>
+              </div>
+              <div class="code-block" aria-hidden="true"><span>func</span> ship() {<br>&nbsp;&nbsp;build()<br>&nbsp;&nbsp;observe()<br>&nbsp;&nbsp;iterate()<br>}</div>
+            </div>
+            <div class="work-links"><a href="https://github.com/savisaluwadana" target="_blank" rel="me noreferrer">View GitHub <span>↗</span></a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="approach" aria-labelledby="approach-title">
+      <div class="shell approach-grid">
+        <div class="section-heading reveal">
+          <span class="section-label">03 / ENGINEERING PRINCIPLES</span>
+          <h2 id="approach-title">Optimize the <span>system, not the screenshot.</span></h2>
+          <p>The best engineering work is often invisible. It removes friction, makes failure understandable and gives teams safer ways to move faster.</p>
+        </div>
+
+        <div class="principles reveal reveal--delay">
+          <div class="principle"><span>01</span><div><h3>Reduce cognitive load</h3><p>Design interfaces and defaults that make the right path the easy path.</p></div></div>
+          <div class="principle"><span>02</span><div><h3>Automate repeatable work</h3><p>Turn manual engineering steps into reliable, observable workflows.</p></div></div>
+          <div class="principle"><span>03</span><div><h3>Keep systems inspectable</h3><p>Abstractions should improve leverage without making operations mysterious.</p></div></div>
+          <div class="principle"><span>04</span><div><h3>Build with product thinking</h3><p>Internal tools still have users. Developer experience is a product surface.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--now" aria-labelledby="now-title">
+      <div class="shell">
+        <div class="now-card reveal">
+          <div class="now-copy">
+            <span class="section-label">NOW</span>
+            <h2 id="now-title">Building a deeper stack.</h2>
+            <p>I’m combining software engineering, cloud-native infrastructure and AI systems into one operating skill set — with a bias toward building real products, contributing to open source and understanding how systems work beneath the abstraction.</p>
+          </div>
+          <div class="now-grid">
+            <div><span>BUILDING</span><strong>AI-native software & developer systems</strong></div>
+            <div><span>DEEPENING</span><strong>Go, distributed systems & Kubernetes</strong></div>
+            <div><span>CONTRIBUTING</span><strong>Cloud-native & platform engineering ecosystems</strong></div>
+            <div><span>OPTIMIZING</span><strong>Automation, DX & engineering leverage</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="shell about-grid">
+        <div class="about-visual reveal" aria-hidden="true">
+          <div class="portrait-frame"><img src="https://avatars.githubusercontent.com/u/82082138?v=4" alt="" width="280" height="280"><div class="portrait-badge"><i></i> Sri Lanka · Building globally</div></div>
+        </div>
+        <div class="section-heading about-copy reveal reveal--delay">
+          <span class="section-label">04 / ABOUT</span>
+          <h2 id="about-title">Engineer. Builder. <span>Systems thinker.</span></h2>
+          <p>I’m Savi Saluwadana, a software engineer based in Sri Lanka. My work and learning sit at the intersection of AI, platform engineering, DevOps and cloud-native systems.</p>
+          <p>I’m most interested in hard problems with compounding leverage: better developer platforms, more reliable automation, useful AI agents, scalable product infrastructure and the systems that let small teams operate like much larger ones.</p>
+          <div class="about-links">
+            <a href="https://github.com/savisaluwadana" target="_blank" rel="me noreferrer">GitHub ↗</a>
+            <a href="https://www.linkedin.com/in/savi-saluwadana-3911331b2/" target="_blank" rel="me noreferrer">LinkedIn ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--faq" aria-labelledby="faq-title">
+      <div class="shell faq-grid">
+        <div class="section-heading reveal">
+          <span class="section-label">05 / QUICK CONTEXT</span>
+          <h2 id="faq-title">For humans and <span>search engines.</span></h2>
+          <p>Concise answers to the questions people, recruiters and AI search systems are most likely to ask about my work.</p>
+        </div>
+        <div class="faq-list reveal reveal--delay">
+          <details>
+            <summary>What does Savi Saluwadana specialize in?<span>+</span></summary>
+            <p>AI engineering, platform engineering, DevOps, Kubernetes, cloud-native systems, Go, developer experience and AI-native automation.</p>
+          </details>
+          <details>
+            <summary>What technologies does Savi work with?<span>+</span></summary>
+            <p>Core areas include Kubernetes, Go, CI/CD, cloud-native architecture, internal developer platforms, observability, MCP, AI agents and automation workflows.</p>
+          </details>
+          <details>
+            <summary>What kinds of problems does Savi like working on?<span>+</span></summary>
+            <p>Developer infrastructure, platform workflows, reliable software delivery, automation, cloud-native systems and practical AI-enabled engineering tools.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section connect" id="connect" aria-labelledby="connect-title">
+      <div class="shell">
+        <div class="connect-card reveal">
+          <span class="section-label">06 / CONNECT</span>
+          <h2 id="connect-title">Build something <span>worth operating.</span></h2>
+          <p>If you’re working on AI infrastructure, developer platforms, cloud-native systems, open source or ambitious software products, I’m always interested in a good technical conversation.</p>
+          <div class="connect-actions">
+            <a class="button button--primary" href="https://www.linkedin.com/in/savi-saluwadana-3911331b2/" target="_blank" rel="me noreferrer">Connect on LinkedIn <span aria-hidden="true">↗</span></a>
+            <a class="button button--ghost" href="https://github.com/savisaluwadana" target="_blank" rel="me noreferrer">Follow on GitHub <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="connect-orbit" aria-hidden="true"><i></i><i></i><i></i></div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="container">
-      © <span id="year"></span> Savi Saluwadana. Built for GitHub Pages.
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div><a class="brand" href="#top"><span class="brand-mark">S</span><span class="brand-name">Savi Saluwadana</span></a><p>AI · DevOps · Platform Engineering</p></div>
+      <div class="footer-note"><span>Built as a fast, static engineering portfolio.</span><span>© <span data-year></span> Savi Saluwadana</span></div>
     </div>
   </footer>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <script src="/app.js" defer></script>
 </body>
 </html>
