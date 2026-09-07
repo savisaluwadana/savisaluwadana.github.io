@@ -1,0 +1,17 @@
+{
+  "name": "Savi Saluwadana — Engineering Portfolio",
+  "short_name": "Savi",
+  "description": "AI, DevOps and Platform Engineer building cloud-native systems, automation and developer infrastructure.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07090c",
+  "theme_color": "#07090c",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
