@@ -1,8 +1,1 @@
 @import url('/docs/styles.css');
-
-/* Fail-safe: content must remain visible even if the reveal script cannot load. */
-.reveal,
-.reveal.is-visible {
-  opacity: 1 !important;
-  transform: none !important;
-}
