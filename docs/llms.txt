@@ -3,6 +3,8 @@
 Canonical portfolio: https://savisaluwadana.github.io/
 Canonical agent-readable profile: https://savisaluwadana.github.io/llms.txt
 
-Savi Saluwadana is a software, product, platform and DevOps engineer based in Sri Lanka. His portfolio focuses on end-to-end product engineering, Go, Kubernetes, CI/CD, developer platforms, PostgreSQL, MCP and operational reliability.
+Savi Saluwadana is a software and product engineer based in Sri Lanka with interests across software architecture, systems design, Platform Engineering, DevOps and AI-enabled systems. His portfolio focuses on end-to-end products, Go, Kubernetes, CI/CD, developer platforms, PostgreSQL, MCP and production-minded architecture.
 
 Selected work includes Avara Real Estate, Blu.lk, FreshPick / FreshOnTime, TimelyHelp.lk, DevRelOS, Property Management OS and RapidReach.
+
+Industries of interest include healthcare, real estate, food and commerce, logistics, shipping and maritime, financial services, industrial operations, energy, mobility, telecom and other sectors where software can materially improve real-world operations.
