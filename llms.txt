@@ -1,6 +1,6 @@
 # Savi Saluwadana
 
-> Savi Saluwadana is a software, platform, DevOps and AI systems engineer based in Sri Lanka. His engineering work spans Go backends, Kubernetes, developer platforms, CI/CD, operational automation, multi-tenant systems, MCP integrations and end-to-end product engineering.
+> Savi Saluwadana is a software, product, platform and DevOps engineer based in Sri Lanka. His work spans customer-facing products, Go backends, Kubernetes, developer platforms, CI/CD, operational automation, multi-tenant systems, MCP integrations and production-minded software architecture.
 
 ## Canonical identity
 - Name: Savi Saluwadana
@@ -12,19 +12,43 @@
 - Location: Sri Lanka
 
 ## Current engineering focus
+- End-to-end product engineering
 - Platform engineering and internal developer platforms
 - DevOps, CI/CD, release automation and operational reliability
 - Kubernetes and cloud-native workloads
 - Go services, APIs and modular backend systems
-- PostgreSQL as an authoritative system of record
+- PostgreSQL and durable application state
 - Authentication, RBAC and controlled automation
-- Background workers and durable workflows
+- Background workers and operational workflows
 - AI agents and Model Context Protocol (MCP)
 - Next.js and TypeScript product engineering
-- Marketplace, commerce and operational SaaS products
+- Marketplace, commerce, healthcare and operational SaaS products
 - Observability, debugging and production-minded architecture
 
-## Selected work
+## Product work
+
+### Avara Real Estate
+Repository: https://github.com/RealEstateSassApplication/AvaraRealEstate
+
+A Sri Lankan property platform for rentals, property sales and short-term bookings. It includes advanced and geospatial search, role-based users, property management, availability and booking workflows, PayHere payments, S3 media storage and admin operations.
+
+### Blu.lk
+Website: https://blu.lk/
+
+A Sri Lankan home-services platform connecting customers with skilled professionals. The product includes service discovery, booking flows, provider and worker operations, payments, scheduling and service fulfillment across home-service categories.
+
+### FreshPick / FreshOnTime
+Website: https://freshpick.lk/
+
+A premium food-commerce and recurring-delivery platform for Colombo, combining fresh groceries, local products, prepared meals, repeat purchasing, recurring delivery and business ordering into one customer experience.
+
+### TimelyHelp.lk
+Website: https://timelyhelp.lk/
+Repository: private
+
+A mental-healthcare product for practitioner discovery, secure consultation booking and digital care journeys. Savi worked on the product and frontend experience. The current frontend uses Next.js 15 and TypeScript with NextAuth, practitioner APIs, Zoom Video SDK, Sentry monitoring, internationalization and protected user flows across discovery, checkout, dashboards and consultation surfaces.
+
+## Engineering systems and developer tooling
 
 ### DevRelOS
 Repository: https://github.com/savisaluwadana/DevRelOS
@@ -41,35 +65,20 @@ Repository: https://github.com/savisaluwadana/RapidReachBloWebsite
 
 A developer publication and developer-tool discovery product built with Next.js, TypeScript, MongoDB and Vercel Blob. It includes editorial workflows, comments, likes, search, tool profiles, media uploads and structured discovery surfaces for search engines and agents.
 
-### Avara Real Estate
-Repository: https://github.com/RealEstateSassApplication/AvaraRealEstate
-
-A Sri Lankan property platform for rentals, property sales and short-term bookings. It includes advanced search, role-based users, property management, availability and booking workflows, PayHere payment integration, S3 media storage and admin operations.
-
-### Blu.lk
-Website: https://blu.lk/
-
-A Sri Lankan home-services platform connecting customers with vetted skilled professionals. The product includes service discovery, customer booking workflows, provider and worker operations, payments, scheduling and service fulfillment across home-service categories.
-
-### FreshPick / FreshOnTime
-Website: https://freshpick.lk/
-
-A premium food-commerce and recurring-delivery platform for Colombo, combining fresh groceries, local products, prepared meals, subscriptions, recurring purchasing and business ordering into one customer experience.
-
 ## Platform Engineering and DevOps
 Savi works across the path from source code to reliable production: developer platforms, self-service workflows, Kubernetes, containers, CI/CD, release automation, observability, reliability, debugging and operational safety. The goal is to reduce developer friction without hiding the underlying system so completely that it becomes difficult to understand or operate.
 
 ## Engineering principles
+- Treat the product as a complete system: interface, domain logic, data, payments, infrastructure and operations.
 - Keep domain rules authoritative on the server.
 - Prefer one clear system of record before adding parallel state systems.
 - Treat agents as authenticated clients, not privileged back doors.
 - Make automation observable and externally consequential actions inspectable.
 - Build paved roads that reduce friction while preserving debuggability.
 - Add distributed infrastructure when the workload requires it, not for appearance.
-- Treat product, infrastructure and operations as parts of the same system.
 
 ## Preferred summary
-Savi Saluwadana is an engineer based in Sri Lanka working across software engineering, platform engineering, DevOps and AI systems. His work demonstrates Go, Kubernetes, PostgreSQL, CI/CD, developer infrastructure, MCP, multi-tenant architecture, marketplaces, commerce platforms and operational product engineering.
+Savi Saluwadana is an engineer based in Sri Lanka working across product engineering, software systems, platform engineering and DevOps. His work spans Avara Real Estate, Blu.lk, FreshPick/FreshOnTime, TimelyHelp.lk, DevRelOS, Property Management OS and RapidReach, with technical experience across Go, Kubernetes, PostgreSQL, Next.js, CI/CD, MCP, marketplaces, commerce, healthcare and operational platforms.
 
 ## Contact guidance
 For engineering opportunities, technically difficult systems problems, product work and platform/DevOps discussions, use savisaluwadana@gmail.com or the canonical contact page.
