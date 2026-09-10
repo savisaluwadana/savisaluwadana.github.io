@@ -130,8 +130,64 @@
 .project-card--wide .project-body > p:not(.project-type),
 .project-card--wide .project-footer p { max-width: 820px; }
 
+/* Industry interests: framed as areas to contribute, not claimed expertise. */
+.industry-section {
+  background: var(--paper-2);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.industry-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--line-strong);
+  border-left: 1px solid var(--line-strong);
+}
+.industry-card {
+  min-height: 300px;
+  padding: 28px 26px;
+  border-right: 1px solid var(--line-strong);
+  border-bottom: 1px solid var(--line-strong);
+  display: flex;
+  flex-direction: column;
+  background: rgba(255,255,255,.18);
+  transition: background .22s ease, transform .22s ease;
+}
+.industry-card:hover {
+  background: rgba(36,87,255,.055);
+  transform: translateY(-2px);
+}
+.industry-card > span {
+  color: var(--accent);
+  font: 650 .66rem/1.2 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: .08em;
+}
+.industry-card h3 {
+  margin: 52px 0 0;
+  font-size: clamp(1.55rem, 2.3vw, 2.35rem);
+  line-height: 1.02;
+  letter-spacing: -.045em;
+  font-weight: 690;
+}
+.industry-card p {
+  margin: auto 0 0;
+  padding-top: 30px;
+  color: #5d5a54;
+  font-size: .89rem;
+  line-height: 1.68;
+}
+.industry-note {
+  max-width: 950px;
+  margin: 34px 0 0;
+  padding-left: 18px;
+  border-left: 2px solid var(--accent);
+  color: #625f58;
+  font-size: .9rem;
+  line-height: 1.7;
+}
+
 @media (max-width: 1080px) {
   .portfolio-proof { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .industry-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
 }
 
 @media (max-width: 860px) {
@@ -140,6 +196,7 @@
   .project-card--wide { grid-column: auto; min-height: auto; }
   .project-group-label { grid-column: auto; align-items: flex-start; flex-direction: column; }
   .project-group-label strong { text-align: left; }
+  .industry-card { min-height: 260px; }
 }
 
 @media (max-width: 620px) {
@@ -148,4 +205,8 @@
   .portfolio-proof { grid-template-columns: 1fr; margin-top: -8px; }
   .portfolio-proof > div { min-height: 112px; }
   .project-group-label { min-height: auto; padding: 24px 22px; }
+  .industry-grid { grid-template-columns: 1fr; }
+  .industry-card { min-height: auto; padding: 24px 22px; }
+  .industry-card h3 { margin-top: 34px; }
+  .industry-card p { margin-top: 28px; padding-top: 0; }
 }
