@@ -204,6 +204,65 @@
   overflow: hidden !important;
 }
 
+/* Navbar interaction: subtle highlight on hover, persistent active-section cue. */
+@media (min-width: 861px) and (hover: hover) and (pointer: fine) {
+  .nav-links a:not(.nav-contact) {
+    position: relative;
+    padding: 9px 12px;
+    margin: -9px -12px;
+    border-radius: 999px;
+    background: transparent;
+    transition: color .22s ease, background .22s ease, transform .22s ease, box-shadow .22s ease;
+  }
+
+  .nav-links a:not(.nav-contact)::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 4px;
+    width: 0;
+    height: 2px;
+    border-radius: 999px;
+    background: var(--accent);
+    transform: translateX(-50%);
+    transition: width .24s cubic-bezier(.2,.8,.2,1), opacity .2s ease;
+    opacity: 0;
+  }
+
+  .nav-links a:not(.nav-contact):hover {
+    color: var(--ink);
+    background: rgba(36,87,255,.075);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 22px rgba(36,87,255,.08);
+  }
+
+  .nav-links a:not(.nav-contact):hover::after {
+    width: 22px;
+    opacity: 1;
+  }
+
+  .nav-links a:not(.nav-contact).is-active {
+    color: var(--ink);
+    background: rgba(36,87,255,.09);
+  }
+
+  .nav-links a:not(.nav-contact).is-active::after {
+    width: 26px;
+    opacity: 1;
+  }
+
+  .nav-links .nav-contact {
+    transition: color .22s ease, background .22s ease, transform .22s ease, box-shadow .22s ease;
+  }
+
+  .nav-links .nav-contact:hover {
+    color: #fff;
+    background: var(--accent);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 24px rgba(36,87,255,.2);
+  }
+}
+
 @media (max-width: 1080px) {
   .portfolio-proof { grid-template-columns: repeat(2, minmax(0,1fr)); }
   .industry-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
