@@ -1,0 +1,12 @@
+/* Rollback compatibility layer.
+   Older cached app.js versions may still attempt to load this stylesheet and inject
+   enhancement blocks. Keep those reverted elements out of the rendered UI. */
+.project-visual,
+.case-study-detail,
+.portfolio-evidence,
+.open-source-section,
+.experience-section,
+.currently-building,
+.currently-building-section {
+  display: none !important;
+}
