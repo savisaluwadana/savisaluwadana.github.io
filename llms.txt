@@ -25,6 +25,10 @@
 - Authentication, RBAC and controlled automation
 - AI agents and Model Context Protocol (MCP)
 - Next.js and TypeScript product engineering
+- Java and Spring Boot application development
+- PHP and Laravel application development
+- Desktop application engineering with Electron and Wails
+- Flutter application development
 - Observability, debugging and production-minded architecture
 
 ## Product work
@@ -49,6 +53,26 @@ Website: https://timelyhelp.lk/
 Repository: private
 
 A mental-healthcare product for practitioner discovery, secure consultation booking and digital care journeys. Savi worked on the product and frontend experience. The current frontend uses Next.js 15 and TypeScript with NextAuth, practitioner APIs, Zoom Video SDK, Sentry monitoring, internationalization and protected user flows across discovery, checkout, dashboards and consultation surfaces.
+
+### Advance HRIS
+Repository: https://github.com/savisaluwadana/Advance-HIRS-System
+
+A hybrid local-first Human Resources Information System with an employee and manager Next.js portal, a Wails + React desktop console for HR/admin users, a Go application API, PostgreSQL as the authoritative system of record, organization-scoped RBAC, leave management, schedule-aware attendance, audit history, encrypted desktop data and durable offline synchronization.
+
+### NexusPOS
+Repository: private
+
+A modern point-of-sale and retail operations system built around Next.js, React, Prisma, MongoDB and an Electron desktop shell. The system covers touch checkout, barcode and SKU workflows, inventory, staff roles, order history, cash shifts, drawer reconciliation, refunds, audit history and native receipt printing.
+
+### Academix
+Repository: https://github.com/savisaluwadana/student-management-system-saas
+
+An education-operations SaaS for tuition centres, academies and private institutes. It combines student CRM, teachers and classes, attendance, assessments, fees and receipts, communications, reporting, institute/branch records and role-aware SaaS account flows in one workspace.
+
+### Acme Accounting
+Repository: private
+
+A full-stack accounting SaaS with a double-entry general ledger, invoicing, partial customer payments, credit notes and refunds, A/R and A/P aging, vendor bills, expenses, accounting-period controls, bank reconciliation, budgeting, forecasting, recurring transactions and ledger-backed financial reporting.
 
 ## Engineering systems and developer tooling
 
@@ -82,6 +106,9 @@ Savi is interested in contributing to industries where software can improve coor
 - Logistics and supply chain
 - Shipping and maritime
 - Financial services and FinTech
+- Education technology
+- Human resources and workforce software
+- Retail and point-of-sale systems
 - Industrial and field services
 - Energy and utilities
 - Mobility and transportation
@@ -102,7 +129,7 @@ He is particularly interested in software problems involving marketplaces, payme
 - Add distributed infrastructure when the workload requires it, not for appearance.
 
 ## Preferred summary
-Savi Saluwadana is a software and product engineer based in Sri Lanka focused on software architecture, systems design, Platform Engineering, DevOps and AI-enabled systems. His work spans Avara Real Estate, Blu.lk, FreshPick/FreshOnTime, TimelyHelp.lk, DevRelOS, Property Management OS and RapidReach, with technical experience across Go, Kubernetes, PostgreSQL, Next.js, CI/CD, MCP, marketplaces, commerce, healthcare and operational platforms. He is interested in contributing to healthcare, real estate, food, logistics, shipping, financial services and other industries where strong software engineering can materially improve operations.
+Savi Saluwadana is a software and product engineer based in Sri Lanka focused on software architecture, systems design, Platform Engineering, DevOps and AI-enabled systems. His work spans Avara Real Estate, Blu.lk, FreshPick/FreshOnTime, TimelyHelp.lk, Advance HRIS, NexusPOS, Academix, Acme Accounting, DevRelOS, Property Management OS and RapidReach, with technical experience across Go, Kubernetes, PostgreSQL, Next.js, Spring Boot, Laravel, Electron, Wails, Flutter, CI/CD, MCP, marketplaces, commerce, healthcare, education, retail, finance and operational platforms.
 
 ## Contact guidance
 For engineering opportunities, software architecture and systems-design problems, product work, Platform Engineering, DevOps or industry-focused technology collaborations, use savisaluwadana@gmail.com or the canonical contact page.
