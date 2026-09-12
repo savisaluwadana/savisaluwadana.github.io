@@ -7,6 +7,86 @@
 
   root.classList.add('motion-ready');
 
+  // Add the portfolio tech stack only on the homepage. Keeping it injected here
+  // avoids changing the structure or styling of the existing secondary pages.
+  const focusSection = document.querySelector('#focus');
+  if (focusSection && !document.querySelector('#tech-stack')) {
+    const techStyles = document.createElement('link');
+    techStyles.rel = 'stylesheet';
+    techStyles.href = '/tech-stack.css';
+    document.head.appendChild(techStyles);
+
+    const techSection = document.createElement('section');
+    techSection.className = 'section tech-stack-section';
+    techSection.id = 'tech-stack';
+    techSection.setAttribute('aria-labelledby', 'tech-stack-title');
+    techSection.innerHTML = `
+      <div class="shell">
+        <div class="tech-stack-heading reveal">
+          <div>
+            <p class="section-index">Stack / Technologies I build with</p>
+            <h2 id="tech-stack-title">The tools behind the systems.</h2>
+          </div>
+          <p>A practical stack across product engineering, backend systems, cloud infrastructure, automation and data — chosen around the problem rather than a single framework.</p>
+        </div>
+
+        <div class="tech-primary reveal" aria-label="Primary technologies">
+          <div class="tech-primary-item"><span>Backend</span><strong>Go</strong></div>
+          <div class="tech-primary-item"><span>Application</span><strong>TypeScript</strong></div>
+          <div class="tech-primary-item"><span>Platform</span><strong>Kubernetes</strong></div>
+          <div class="tech-primary-item"><span>Data</span><strong>PostgreSQL</strong></div>
+        </div>
+
+        <div class="tech-stack-grid reveal">
+          <article class="tech-group">
+            <div class="tech-group-top"><span>01</span><span>Software engineering</span></div>
+            <h3>Languages & product development</h3>
+            <div class="tech-pills" aria-label="Languages and product technologies">
+              <span>Go</span><span>TypeScript</span><span>JavaScript</span><span>Python</span><span>Java</span><span>C# / .NET</span><span>C++</span><span>Kotlin</span><span>HTML</span><span>CSS</span><span>React</span><span>Angular</span><span>Node.js</span><span>Django</span><span>Flask</span>
+            </div>
+          </article>
+
+          <article class="tech-group">
+            <div class="tech-group-top"><span>02</span><span>Platform & operations</span></div>
+            <h3>Cloud-native & automation</h3>
+            <div class="tech-pills" aria-label="Platform and DevOps technologies">
+              <span>Kubernetes</span><span>Docker</span><span>Terraform</span><span>Ansible</span><span>Jenkins</span><span>Linux</span><span>Bash / Shell</span><span>CI/CD</span><span>Virtualization</span>
+            </div>
+          </article>
+
+          <article class="tech-group">
+            <div class="tech-group-top"><span>03</span><span>Data layer</span></div>
+            <h3>Databases & application data</h3>
+            <div class="tech-pills" aria-label="Database technologies">
+              <span>PostgreSQL</span><span>MongoDB</span><span>MySQL</span>
+            </div>
+          </article>
+
+          <article class="tech-group">
+            <div class="tech-group-top"><span>04</span><span>Cloud & workflow</span></div>
+            <h3>Cloud platforms & engineering tools</h3>
+            <div class="tech-pills" aria-label="Cloud platforms and engineering tools">
+              <span>AWS</span><span>Azure</span><span>Google Cloud</span><span>Git</span><span>Azure Repos</span><span>Postman</span><span>Jira</span>
+            </div>
+          </article>
+        </div>
+
+        <p class="tech-stack-note reveal">The emphasis is on end-to-end engineering: product code, APIs and data models through deployment, infrastructure automation and operating the software in production.</p>
+      </div>`;
+
+    focusSection.parentNode.insertBefore(techSection, focusSection);
+
+    if (nav) {
+      const focusLink = nav.querySelector('a[href="#focus"]');
+      if (focusLink && !nav.querySelector('a[href="#tech-stack"]')) {
+        const stackLink = document.createElement('a');
+        stackLink.href = '#tech-stack';
+        stackLink.textContent = 'Stack';
+        nav.insertBefore(stackLink, focusLink);
+      }
+    }
+  }
+
   const syncHeader = () => {
     if (!header) return;
     header.classList.toggle('is-scrolled', window.scrollY > 12);
