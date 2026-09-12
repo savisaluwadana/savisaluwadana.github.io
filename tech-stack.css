@@ -136,6 +136,18 @@
   line-height: 1.7;
 }
 
+/* Defensive rollback cleanup: if a stale cached JS bundle injects old enhancement blocks,
+   keep them out of the UI. */
+.project-visual,
+.case-study-detail,
+.portfolio-evidence,
+.open-source-section,
+.experience-section,
+.currently-building,
+.currently-building-section {
+  display: none !important;
+}
+
 @media (max-width: 1080px) {
   .tech-primary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
