@@ -30,19 +30,19 @@
           <p>A practical stack across product engineering, backend systems, cloud infrastructure, automation and data — chosen around the problem rather than a single framework.</p>
         </div>
 
-        <div class="tech-primary reveal" aria-label="Primary technologies">
-          <div class="tech-primary-item"><span>Backend</span><strong>Go</strong></div>
-          <div class="tech-primary-item"><span>Application</span><strong>TypeScript</strong></div>
-          <div class="tech-primary-item"><span>Platform</span><strong>Kubernetes</strong></div>
-          <div class="tech-primary-item"><span>Data</span><strong>PostgreSQL</strong></div>
+        <div class="tech-primary reveal" aria-label="Core technology stack">
+          <div class="tech-primary-item"><span>Backend</span><strong>Go · Spring Boot</strong></div>
+          <div class="tech-primary-item"><span>Frontend</span><strong>TypeScript · React</strong></div>
+          <div class="tech-primary-item"><span>Platform</span><strong>Kubernetes · Docker</strong></div>
+          <div class="tech-primary-item"><span>Data</span><strong>PostgreSQL · MongoDB</strong></div>
         </div>
 
         <div class="tech-stack-grid reveal">
           <article class="tech-group">
             <div class="tech-group-top"><span>01</span><span>Software engineering</span></div>
-            <h3>Languages & product development</h3>
-            <div class="tech-pills" aria-label="Languages and product technologies">
-              <span>Go</span><span>TypeScript</span><span>JavaScript</span><span>Python</span><span>Java</span><span>C# / .NET</span><span>C++</span><span>Kotlin</span><span>HTML</span><span>CSS</span><span>React</span><span>Angular</span><span>Node.js</span><span>Django</span><span>Flask</span>
+            <h3>Languages, frameworks & product development</h3>
+            <div class="tech-pills" aria-label="Languages, frameworks and product technologies">
+              <span>Go</span><span>Java</span><span>Spring Boot</span><span>TypeScript</span><span>JavaScript</span><span>Python</span><span>C# / .NET</span><span>C++</span><span>Kotlin</span><span>HTML</span><span>CSS</span><span>React</span><span>Angular</span><span>Node.js</span><span>Django</span><span>Flask</span>
             </div>
           </article>
 
