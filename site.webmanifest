@@ -1,0 +1,17 @@
+{
+  "name": "Savi Saluwadana — Software & Product Engineer",
+  "short_name": "Savi Saluwadana",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f4f1ea",
+  "theme_color": "#f4f1ea",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
