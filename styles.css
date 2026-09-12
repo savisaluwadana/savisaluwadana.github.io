@@ -185,6 +185,25 @@
   line-height: 1.7;
 }
 
+/* Reverted enhancement guard.
+   These classes only existed in the removed project-visual/case-study experiment.
+   Keeping the guard in the primary stylesheet prevents any stale JS from resurfacing them. */
+.project-visual,
+.case-study-detail,
+.portfolio-evidence,
+.open-source-section,
+.experience-section,
+.current-building {
+  display: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
 @media (max-width: 1080px) {
   .portfolio-proof { grid-template-columns: repeat(2, minmax(0,1fr)); }
   .industry-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
