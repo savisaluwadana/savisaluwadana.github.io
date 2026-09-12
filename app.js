@@ -35,7 +35,7 @@
             <div class="tech-group-top"><span>01</span><span>Software engineering</span></div>
             <h3>Languages, frameworks & product development</h3>
             <div class="tech-pills" aria-label="Languages, frameworks and product technologies">
-              <span>Go</span><span>Java</span><span>Spring Boot</span><span>TypeScript</span><span>JavaScript</span><span>Python</span><span>C# / .NET</span><span>C++</span><span>Kotlin</span><span>HTML</span><span>CSS</span><span>React</span><span>Angular</span><span>Node.js</span><span>Django</span><span>Flask</span>
+              <span>Go</span><span>Java</span><span>Spring Boot</span><span>Laravel</span><span>TypeScript</span><span>JavaScript</span><span>Python</span><span>C# / .NET</span><span>C++</span><span>Kotlin</span><span>HTML</span><span>CSS</span><span>React</span><span>Next.js</span><span>Angular</span><span>Node.js</span><span>Flutter</span><span>Electron</span><span>Wails</span><span>Django</span><span>Flask</span>
             </div>
           </article>
 
@@ -78,6 +78,102 @@
         nav.insertBefore(stackLink, focusLink);
       }
     }
+  }
+
+  // Keep the portfolio current with the latest product and systems work without
+  // disturbing the established case-study markup in index.html.
+  const projectGrid = document.querySelector('#work .project-grid');
+  const proofLinks = document.querySelector('.proof-links');
+  const recentProjects = [
+    {
+      id: 'advance-hris',
+      number: '08',
+      category: 'HR operations platform',
+      type: 'Local-first HRIS + desktop operations',
+      name: 'Advance HRIS',
+      description: 'A hybrid HR information system with an employee web portal, a native HR/admin desktop console, tenant-scoped access, policy-backed leave, schedule-aware attendance, audit history and durable offline synchronization.',
+      architecture: 'Next.js Web + Wails / React Desktop → Go API → PostgreSQL',
+      tags: ['Go', 'Next.js', 'Wails', 'PostgreSQL', 'Offline sync', 'RBAC'],
+      footer: 'The system combines cloud-authoritative HR data with a local-first desktop workflow, encrypted local payloads, conflict-aware sync and payroll-ready attendance boundaries.',
+      href: 'https://github.com/savisaluwadana/Advance-HIRS-System',
+      linkLabel: 'View repository ↗'
+    },
+    {
+      id: 'nexus-pos',
+      number: '09',
+      category: 'Retail operations system',
+      type: 'Point of sale + Electron desktop',
+      name: 'NexusPOS',
+      description: 'A retail POS and store-operations system covering touch checkout, barcode workflows, inventory, staff roles, cash shifts, refunds, reconciliation, audit history and native receipt printing.',
+      architecture: 'Next.js / React → Prisma → MongoDB + Electron',
+      tags: ['Electron', 'POS', 'Inventory', 'Prisma', 'MongoDB', 'RBAC'],
+      footer: 'Built as more than a checkout screen: the system handles stock-safe transactions, cash-drawer operations, refunds, reporting and multi-platform desktop packaging.',
+      href: '',
+      linkLabel: 'Private product build'
+    },
+    {
+      id: 'academix',
+      number: '10',
+      category: 'Education operations SaaS',
+      type: 'Student, fees & academic operations',
+      name: 'Academix',
+      description: 'A SaaS workspace for tuition centres and private institutes combining student CRM, classes, attendance, assessments, fee collection, communications, reporting and multi-site institute operations.',
+      architecture: 'Next.js → MongoDB / Mongoose → notification integrations',
+      tags: ['Next.js', 'TypeScript', 'MongoDB', 'Attendance', 'Fees', 'Multi-site'],
+      footer: 'The product consolidates academic and operational workflows into a role-aware workspace with SaaS plan surfaces, reporting and extensible notification integrations.',
+      href: 'https://github.com/savisaluwadana/student-management-system-saas',
+      linkLabel: 'View repository ↗'
+    },
+    {
+      id: 'acme-accounting',
+      number: '11',
+      category: 'Financial operations SaaS',
+      type: 'Double-entry accounting system',
+      name: 'Acme Accounting',
+      description: 'A full-stack accounting application with a double-entry general ledger, invoicing, A/R and A/P aging, vendor bills, credit notes, refunds, period locks, bank reconciliation, budgeting and financial reporting.',
+      architecture: 'Next.js → MongoDB / Mongoose → double-entry ledger',
+      tags: ['Accounting', 'General ledger', 'A/R + A/P', 'Reconciliation', 'Reporting', 'Controls'],
+      footer: 'Accounting integrity is enforced at the posting layer with balanced journals, reversible history, period controls and ledger-backed financial statements instead of dashboard-only bookkeeping.',
+      href: '',
+      linkLabel: 'Private product build'
+    }
+  ];
+
+  if (projectGrid) {
+    recentProjects.forEach((project) => {
+      if (document.getElementById(project.id)) return;
+
+      const tags = project.tags.map((tag) => `<span>${tag}</span>`).join('');
+      const action = project.href
+        ? `<a href="${project.href}" target="_blank" rel="noreferrer">${project.linkLabel}</a>`
+        : `<span class="project-private-label">${project.linkLabel}</span>`;
+
+      projectGrid.insertAdjacentHTML('beforeend', `
+        <article class="project-card project-card--product reveal" id="${project.id}">
+          <div class="project-topline"><span>${project.number}</span><span>${project.category}</span></div>
+          <div class="project-body">
+            <p class="project-type">${project.type}</p>
+            <h3>${project.name}</h3>
+            <p>${project.description}</p>
+            <div class="architecture-line" aria-label="${project.name} architecture">${project.architecture}</div>
+            <div class="project-tags">${tags}</div>
+          </div>
+          <div class="project-footer">
+            <p>${project.footer}</p>
+            ${action}
+          </div>
+        </article>`);
+    });
+  }
+
+  if (proofLinks) {
+    recentProjects.forEach((project) => {
+      if (proofLinks.querySelector(`a[href="#${project.id}"]`)) return;
+      const link = document.createElement('a');
+      link.href = `#${project.id}`;
+      link.textContent = project.name;
+      proofLinks.appendChild(link);
+    });
   }
 
   const syncHeader = () => {
