@@ -188,3 +188,5 @@
     });
   });
 })();
+
+// Deployment refresh after reverting project visuals.
