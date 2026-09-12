@@ -30,13 +30,6 @@
           <p>A practical stack across product engineering, backend systems, cloud infrastructure, automation and data — chosen around the problem rather than a single framework.</p>
         </div>
 
-        <div class="tech-primary reveal" aria-label="Core technology stack">
-          <div class="tech-primary-item"><span>Backend</span><strong>Go · Spring Boot</strong></div>
-          <div class="tech-primary-item"><span>Frontend</span><strong>TypeScript · React</strong></div>
-          <div class="tech-primary-item"><span>Platform</span><strong>Kubernetes · Docker</strong></div>
-          <div class="tech-primary-item"><span>Data</span><strong>PostgreSQL · MongoDB</strong></div>
-        </div>
-
         <div class="tech-stack-grid reveal">
           <article class="tech-group">
             <div class="tech-group-top"><span>01</span><span>Software engineering</span></div>
