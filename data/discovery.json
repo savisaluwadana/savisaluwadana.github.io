@@ -1,0 +1,133 @@
+{
+  "groups": [
+    {
+      "id": "marketplaces",
+      "title": "Marketplaces, commerce and service operations",
+      "description": "Products that connect discovery and customer journeys with bookings, fulfillment or procurement.",
+      "products": ["avara", "blu", "freshpick", "eventos"]
+    },
+    {
+      "id": "business-systems",
+      "title": "Business systems and operational software",
+      "description": "Work around property, people, retail, education, finance and restaurant operations.",
+      "products": ["property-os", "advance-hris", "nexus-pos", "academix", "acme-accounting", "restaurantos"]
+    },
+    {
+      "id": "healthcare",
+      "title": "Healthcare and patient-facing products",
+      "description": "Practitioner discovery, consultation journeys and clinic administration, with contribution boundaries documented on each page.",
+      "products": ["timelyhelp", "medicare"]
+    },
+    {
+      "id": "agents-and-tools",
+      "title": "AI agents, research and developer tools",
+      "description": "Evidence-led research, controlled automation, developer publishing and analytics prototypes.",
+      "products": ["devrelos", "rapidreach", "pain-intelligence", "ad-performance-agent"]
+    }
+  ],
+  "pages": [
+    {
+      "path": "/about/",
+      "title": "About Savi Saluwadana | Software & Product Engineer in Sri Lanka",
+      "heading": "Savi Saluwadana",
+      "label": "About / Software & product engineer",
+      "description": "Meet Savi Saluwadana, a software and product engineer based in Sri Lanka. Explore his engineering focus, product contributions, public repositories and contact details.",
+      "intro": "I’m a software and product engineer based in Sri Lanka. My work connects product workflows, software architecture, backend systems and the platforms that operate them.",
+      "sections": [
+        {
+          "id": "engineering-focus",
+          "title": "Engineering focus, with examples",
+          "blocks": [
+            {"type": "p", "text": "I’m interested in clear domain boundaries, strong data models, reliable APIs and systems that remain understandable as products grow. The [architecture reference](/engineering/) connects those concerns to specific projects."},
+            {"type": "table", "headers": ["Area", "Where to explore it"], "rows": [
+              ["Go backend and API design", "[Property Management OS](/products/property-os/), [DevRelOS](/products/devrelos/) and [Advance HRIS](/products/advance-hris/)."],
+              ["Product and full-stack engineering", "[Avara Real Estate](/products/avara/), [FreshPick](/products/freshpick/) and [RapidReach](/products/rapidreach/)."],
+              ["AI agents and Model Context Protocol", "[Pain Intelligence Lab](/products/pain-intelligence/), [Property Management OS](/products/property-os/) and [DevRelOS](/products/devrelos/)."],
+              ["Operational data and workflows", "[Acme Accounting](/products/acme-accounting/), [Advance HRIS](/products/advance-hris/) and [MediCare](/products/medicare/)."],
+              ["Platform engineering and DevOps", "My [platform and DevOps focus](/#platform-devops) covers Kubernetes, delivery pipelines, observability and developer platforms."]
+            ]}
+          ]
+        },
+        {
+          "id": "product-work",
+          "title": "Products I’ve built and worked on",
+          "blocks": [
+            {"type": "p", "text": "The [product directory](/products/) includes 16 projects across marketplaces, commerce, healthcare, business operations, developer tools and AI-assisted research. Each overview explains the users, workflow, architecture and current scope."},
+            {"type": "p", "text": "Contribution and maturity vary by project. For example, [TimelyHelp](/products/timelyhelp/) describes my product and frontend work; [DevRelOS](/products/devrelos/) is a self-hosted beta; and the [Ad Performance Analysis Agent](/products/ad-performance-agent/) is a prototype with mocked account connectors. The scope notes make those distinctions explicit."}
+          ]
+        },
+        {
+          "id": "profile-questions",
+          "title": "Profile questions",
+          "blocks": [
+            {"type": "qa", "question": "Who is Savi Saluwadana?", "answer": "Savi Saluwadana is a software and product engineer based in Sri Lanka, focused on software architecture, systems design, Go, Kubernetes, platform engineering, DevOps and AI-enabled systems."},
+            {"type": "qa", "question": "Where can I see the engineering behind the products?", "answer": "Start with the [product directory](/products/) for component diagrams and workflows, or the [architecture reference](/engineering/) for comparisons of agent access, local-first data, tenancy and transaction boundaries."},
+            {"type": "qa", "question": "Where are the public profiles and source repositories?", "answer": "My public profiles are [GitHub](https://github.com/savisaluwadana) and [LinkedIn](https://www.linkedin.com/in/savi-saluwadana-3911331b2/). Product pages link to public repository documentation when available; private projects have a public product summary."},
+            {"type": "qa", "question": "How can I contact Savi about engineering work?", "answer": "Use the [contact page](/contact.html) or email savisaluwadana@gmail.com. I’m interested in product, software architecture, platform, DevOps, AI infrastructure and open-source collaboration."}
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/engineering/",
+      "title": "Software Architecture, Go APIs & MCP Systems | Savi Saluwadana",
+      "heading": "Software architecture across product workflows.",
+      "label": "Engineering / Architecture reference",
+      "description": "Explore Savi Saluwadana’s product architecture: Go APIs, MCP access boundaries, local-first HR workflows, tenancy and transactional operations, with project references.",
+      "intro": "A reference to the boundaries behind my product work: where authority lives, how clients access it, and what a workflow actually guarantees. Each comparison links to the relevant product architecture and current scope.",
+      "sections": [
+        {
+          "id": "agent-access",
+          "title": "AI agents and MCP access boundaries",
+          "blocks": [
+            {"type": "p", "text": "Model Context Protocol gives an agent a tool interface. The useful architectural question is what happens behind that interface: which service authorizes the request, where reasoning runs, and whether an action needs approval."},
+            {"type": "table", "headers": ["Project", "Access and reasoning boundary"], "rows": [
+              ["[Property Management OS](/products/property-os/)", "MCP calls the same authenticated Go HTTP API used by other clients. Domain rules and tenant permissions remain server-side; the MCP server has no direct database connection."],
+              ["[DevRelOS](/products/devrelos/)", "A Next.js dashboard, Go API and workers share PostgreSQL as the system of record. Provider adapters and evidence provenance support the workflow; consequential outreach passes through approval gates."],
+              ["[Pain Intelligence Lab](/products/pain-intelligence/)", "A React interface and Express/MongoDB application expose research tools to an MCP host. Semantic reasoning runs in the connected host, rather than direct model-provider calls from the application."]
+            ]},
+            {"type": "p", "text": "These are different boundaries. An agent tool does not imply unrestricted writes or an autonomous production workflow. Product scope notes describe the implemented tools, provider configuration and evidence requirements."}
+          ]
+        },
+        {
+          "id": "local-first",
+          "title": "Local-first data and desktop packaging",
+          "blocks": [
+            {"type": "p", "text": "[Advance HRIS](/products/advance-hris/) combines a Next.js web application with a Wails/React desktop console, encrypted SQLite payloads and a sync queue. The Go API and cloud PostgreSQL database remain authoritative. The local-first boundary belongs to the desktop workflow."},
+            {"type": "p", "text": "[NexusPOS](/products/nexus-pos/) has an optional Electron desktop shell around the retail application. Desktop packaging alone does not establish an offline checkout engine. That distinction matters when evaluating a product for disconnected operations."},
+            {"type": "p", "text": "To assess a local-first system, identify the authoritative record, the queued work, and the conflict-resolution boundary. A local database or desktop executable answers only part of that question."}
+          ]
+        },
+        {
+          "id": "data-authority",
+          "title": "Tenant isolation and domain authority",
+          "blocks": [
+            {"type": "p", "text": "A SaaS interface and a tenant-isolated backend are separate architectural concerns. [Property Management OS](/products/property-os/) documents multi-tenant rental operations, role-based access and domain rules in its Go API. [Acme Accounting](/products/acme-accounting/) currently uses one company and one administrator identity per database."},
+            {"type": "p", "text": "[Academix](/products/academix/) has role-aware academic workflows and SaaS plan surfaces, while broader tenant-isolation and automated-billing work remain subject to its roadmap. The product labels should be read together with the current implementation boundaries."},
+            {"type": "p", "text": "The reference point is the server-side rule: who can read or change a record, which organization owns it, and which transaction maintains its integrity. A dashboard or plan selector does not establish those guarantees by itself."}
+          ]
+        },
+        {
+          "id": "transactions",
+          "title": "Bookings, recurring orders and payment workflows",
+          "blocks": [
+            {"type": "table", "headers": ["Project", "Documented transaction boundary"], "rows": [
+              ["[Avara Real Estate](/products/avara/)", "Property and booking workflows connect to PayHere payment callbacks and S3 media. Payment and storage integrations need deployment-specific configuration."],
+              ["[FreshPick](/products/freshpick/)", "Next.js and PostgreSQL support food commerce and scheduled recurring delivery. Checkout and subscription baskets currently use cash on delivery; automatic recurring card charging is not implemented."],
+              ["[EventOS](/products/eventos/)", "Matching and event procurement use a Next.js/PostgreSQL application. Payment evidence is submitted and reconciled manually in the current MVP."]
+            ]},
+            {"type": "p", "text": "A booking, a recurring order and a payment represent different state changes. Keeping those boundaries explicit makes the architecture easier to inspect and prevents a delivery schedule from being mistaken for automated billing."}
+          ]
+        },
+        {
+          "id": "references",
+          "title": "Read the source and current scope",
+          "blocks": [
+            {"type": "p", "text": "This reference summarizes the documented project boundaries. It does not report measured performance, deployment outcomes or customer results. Product pages carry the corresponding architecture diagrams, component responsibilities, review dates and source links."},
+            {"type": "list", "items": ["[Property Management OS repository documentation](https://github.com/RealEstateSassApplication/property-management-OS/blob/main/README.md)", "[DevRelOS repository documentation](https://github.com/savisaluwadana/DevRelOS/blob/main/README.md)", "[Pain Intelligence Lab repository documentation](https://github.com/savisaluwadana/Reddit-post-Analyzer/blob/main/README.md)", "[Advance HRIS repository documentation](https://github.com/savisaluwadana/Advance-HIRS-System/blob/main/README.md)", "[Avara repository documentation](https://github.com/RealEstateSassApplication/AvaraRealEstate/blob/main/README.md)", "[FreshPick repository documentation](https://github.com/FreshOnTime/newfreshontimewebsite/blob/main/README.md)", "[Academix repository documentation](https://github.com/savisaluwadana/student-management-system-saas/blob/main/README.md)"]}
+          ]
+        }
+      ]
+    }
+  ]
+}

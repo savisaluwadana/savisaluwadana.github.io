@@ -11,6 +11,15 @@ This is a public portfolio with product-level architecture summaries. It does no
 - [Profile JSON](https://savisaluwadana.github.io/profile.json): Structured identity and profile links.
 - [Contact](https://savisaluwadana.github.io/contact.html): Public email and professional contact options.
 
+## Profile and engineering references
+
+- [Product directory](https://savisaluwadana.github.io/products/): Explore 16 products built or contributed to by Savi Saluwadana: marketplaces, business systems, healthcare, AI agents and developer tools, with architecture diagrams.
+- [Product directory in Markdown](https://savisaluwadana.github.io/products/index.md): Text equivalent of the same reference.
+- [About Savi Saluwadana](https://savisaluwadana.github.io/about/): Meet Savi Saluwadana, a software and product engineer based in Sri Lanka. Explore his engineering focus, product contributions, public repositories and contact details.
+- [About Savi Saluwadana in Markdown](https://savisaluwadana.github.io/about/index.md): Text equivalent of the same reference.
+- [Architecture reference](https://savisaluwadana.github.io/engineering/): Explore Savi Saluwadana’s product architecture: Go APIs, MCP access boundaries, local-first HR workflows, tenancy and transactional operations, with project references.
+- [Architecture reference in Markdown](https://savisaluwadana.github.io/engineering/index.md): Text equivalent of the same reference.
+
 ## Product overview and architecture
 
 - [Avara Real Estate](https://savisaluwadana.github.io/products/avara/): Property discovery, transactions and host operations in Sri Lanka.

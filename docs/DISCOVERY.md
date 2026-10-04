@@ -7,6 +7,10 @@ This portfolio publishes the professional identity and product architecture as o
 | Path | Purpose |
 | --- | --- |
 | `/` | Professional profile, product cards and the technology stack |
+| `/about/` | Named professional profile, expertise examples, profile questions and source links |
+| `/products/` | Complete product directory grouped by domain |
+| `/engineering/` | Project-backed architecture reference: agents, local-first data, tenancy and transactions |
+| `/about/index.md`, `/products/index.md`, `/engineering/index.md` | Markdown equivalents of the three entry pages |
 | `/products/<id>/` | Unique product overview, workflow, SVG architecture, component table and current scope |
 | `/products/<id>/index.md` | Markdown representation of the same product |
 | `/about.md` | Professional profile and product index in Markdown |
@@ -32,7 +36,7 @@ Publishing files is not the same as submitting a sitemap or requesting indexing 
 
 ## Keep the content consistent
 
-The source data is `data/profile.json` and `data/products.json`. Update descriptions, scope notes and diagram nodes from the actual application before publishing. Link only public repositories. Private product summaries must not contain credentials, internal customer information or private repository links.
+The source data is `data/profile.json`, `data/products.json` and `data/discovery.json`. The last file contains the directory groups, About page and architecture reference. Update descriptions, scope notes and diagram nodes from the actual application before publishing. Link only public repositories. Private product summaries must not contain credentials, internal customer information or private repository links.
 
 Run with Node.js 20 or later:
 
@@ -47,9 +51,13 @@ When changing content, update the reviewed date on the affected product and the 
 
 Structured data describes Savi as a contributor to the products and does not fabricate ratings, revenue, users or deployment readiness. TimelyHelp explicitly describes product/frontend contribution; the accounting app is single-company; the ad analysis tool is a prototype with mocked account connectors.
 
+The discovery checker follows actual HTML links from the homepage and requires every canonical page to be reachable. It checks unique titles and descriptions, directory coverage, schema identity, Markdown references and agent-index coverage. The three entry pages answer different needs; they are not keyword variations of the same content. Profile questions remain ordinary visible HTML and do not claim FAQ rich-result eligibility.
+
 ## Sources
 
 - [Google: AI features and your website](https://developers.google.com/search/docs/appearance/ai-features)
 - [Google: ProfilePage structured data](https://developers.google.com/search/docs/appearance/structured-data/profile-page)
 - [Google: Crawling and indexing FAQ](https://developers.google.com/search/help/crawling-index-faq)
 - [Google: General structured data guidelines](https://developers.google.com/search/docs/appearance/structured-data/sd-policies)
+- [Google: Crawlable links and descriptive anchor text](https://developers.google.com/search/docs/crawling-indexing/links-crawlable)
+- [Google: Helpful, reliable, people-first content](https://developers.google.com/search/docs/fundamentals/creating-helpful-content)
