@@ -50,3 +50,9 @@ Email: savisaluwadana@gmail.com
 - [Pain Intelligence Lab](https://savisaluwadana.github.io/products/pain-intelligence/): A cross-source research platform for discovering repeated customer pain, costly workarounds and product opportunities using saved evidence, quality checks and an MCP-connected research host.
 - [Ad Performance Analysis Agent](https://savisaluwadana.github.io/products/ad-performance-agent/): A campaign-performance analysis prototype that parses ad-data CSVs, compares weekly metrics, highlights risks and wins, and uses Gemini to help produce actionable summaries.
 - [MediCare](https://savisaluwadana.github.io/products/medicare/): A patient and clinic-management system covering patient administration, appointments, clinical records, billing, staff permissions and an embeddable scheduling service.
+
+## Profile and architecture references
+
+- [Product directory](https://savisaluwadana.github.io/products/): Explore 16 products built or contributed to by Savi Saluwadana: marketplaces, business systems, healthcare, AI agents and developer tools, with architecture diagrams.
+- [About Savi Saluwadana](https://savisaluwadana.github.io/about/): Meet Savi Saluwadana, a software and product engineer based in Sri Lanka. Explore his engineering focus, product contributions, public repositories and contact details.
+- [Architecture reference](https://savisaluwadana.github.io/engineering/): Explore Savi Saluwadana’s product architecture: Go APIs, MCP access boundaries, local-first HR workflows, tenancy and transactional operations, with project references.

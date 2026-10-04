@@ -1,5 +1,8 @@
 https://savisaluwadana.github.io/
 https://savisaluwadana.github.io/contact.html
+https://savisaluwadana.github.io/about/
+https://savisaluwadana.github.io/products/
+https://savisaluwadana.github.io/engineering/
 https://savisaluwadana.github.io/products/avara/
 https://savisaluwadana.github.io/products/blu/
 https://savisaluwadana.github.io/products/freshpick/

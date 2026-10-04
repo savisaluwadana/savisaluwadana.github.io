@@ -52,6 +52,21 @@
   "hasPart": [
     {
       "@type": "WebPage",
+      "name": "Product directory",
+      "url": "https://savisaluwadana.github.io/products/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "About Savi Saluwadana",
+      "url": "https://savisaluwadana.github.io/about/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Architecture reference",
+      "url": "https://savisaluwadana.github.io/engineering/"
+    },
+    {
+      "@type": "WebPage",
       "name": "Avara Real Estate",
       "url": "https://savisaluwadana.github.io/products/avara/"
     },

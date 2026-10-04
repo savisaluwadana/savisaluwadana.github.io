@@ -14,12 +14,12 @@ node scripts/check-site.mjs
 python -m http.server 8000
 ```
 
-Open `http://localhost:8000/`. Edit product source data in `data/products.json` and canonical profile data in `data/profile.json`, then regenerate and check the static output before committing. GitHub Pages serves the committed files directly.
+Open `http://localhost:8000/`. Edit product source data in `data/products.json`, canonical profile data in `data/profile.json`, and directory/reference content in `data/discovery.json`, then regenerate and check the static output before committing. GitHub Pages serves the committed files directly.
 
 Existing colors, typography, hero layout, card treatment, contact forms, navigation and motion remain in the original CSS and JavaScript. `product-details.css` adds the requested larger wordmark, product links and matching detail-page styles. Product content and the technology stack are present in the initial HTML.
 
 ## Discovery
 
-Each HTML page includes its own canonical URL and metadata, structured identity, and product/breadcrumb data where appropriate. The sitemap covers the homepage, contact and all product pages. Markdown, JSON, `llms.txt` and `llms-full.txt` offer additional retrieval formats.
+Each HTML page includes its own canonical URL and metadata, structured identity, and product/breadcrumb data where appropriate. The sitemap covers 21 canonical pages: the homepage, contact, About, product directory, architecture reference and 16 products. The checker verifies that HTML links connect every page to the homepage. Markdown, JSON, `llms.txt` and `llms-full.txt` offer additional retrieval formats.
 
 Read [the discovery and maintenance guide](docs/DISCOVERY.md) for Search Console submission, verified scope notes and how to keep generated content consistent. Rankings, indexing speed and AI citations are controlled by the search/retrieval providers and cannot be guaranteed by site changes.

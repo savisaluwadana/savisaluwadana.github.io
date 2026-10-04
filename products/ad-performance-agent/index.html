@@ -27,7 +27,18 @@
       "inLanguage": "en",
       "publisher": {
         "@id": "https://savisaluwadana.github.io/#person"
-      }
+      },
+      "hasPart": [
+        {
+          "@id": "https://savisaluwadana.github.io/about/#page"
+        },
+        {
+          "@id": "https://savisaluwadana.github.io/products/#page"
+        },
+        {
+          "@id": "https://savisaluwadana.github.io/engineering/#page"
+        }
+      ]
     },
     {
       "@type": "Person",
@@ -96,6 +107,9 @@
       "about": {
         "@id": "https://savisaluwadana.github.io/products/ad-performance-agent/#software"
       },
+      "author": {
+        "@id": "https://savisaluwadana.github.io/#person"
+      },
       "isPartOf": {
         "@id": "https://savisaluwadana.github.io/#website"
       },
@@ -114,6 +128,12 @@
         {
           "@type": "ListItem",
           "position": 2,
+          "name": "Products",
+          "item": "https://savisaluwadana.github.io/products/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
           "name": "Ad Performance Analysis Agent",
           "item": "https://savisaluwadana.github.io/products/ad-performance-agent/"
         }
@@ -124,10 +144,10 @@
   </script>
 </head><body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header" data-header><div class="shell nav-shell"><a class="wordmark" href="/" aria-label="Savi Saluwadana home">Savi Saluwadana</a><button class="menu-button" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav" data-menu-button><span></span><span></span></button><nav class="nav-links" id="primary-nav" aria-label="Primary navigation" data-nav><a href="/#work">Products + Work</a><a href="#architecture">Architecture</a><a href="/#about">About</a><a class="nav-contact" href="/contact.html">Contact</a></nav></div></header>
+  <header class="site-header" data-header><div class="shell nav-shell"><a class="wordmark" href="/" aria-label="Savi Saluwadana home">Savi Saluwadana</a><button class="menu-button" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav" data-menu-button><span></span><span></span></button><nav class="nav-links" id="primary-nav" aria-label="Primary navigation" data-nav><a href="/products/">Products + Work</a><a href="/engineering/">Architecture</a><a href="/about/">About</a><a class="nav-contact" href="/contact.html">Contact</a></nav></div></header>
   <main class="product-page" id="main"><div class="shell">
-    <nav class="product-breadcrumb" aria-label="Breadcrumb"><a href="/">Savi Saluwadana</a><span aria-hidden="true">/</span><a href="/#work">Products</a><span aria-hidden="true">/</span><span aria-current="page">Ad Performance Analysis Agent</span></nav>
-    <div class="product-header"><p class="section-index">Marketing analytics prototype</p><h1>Ad Performance Analysis Agent</h1><p>A campaign-performance analysis prototype that parses ad-data CSVs, compares weekly metrics, highlights risks and wins, and uses Gemini to help produce actionable summaries.</p><div class="project-tags"><span>React</span><span>TypeScript</span><span>Express</span><span>CSV</span><span>Gemini</span><span>Reporting</span></div><div class="project-links"><a class="text-link" href="/contact.html">Discuss this product</a><a class="text-link" href="/#work">All products</a></div></div>
+    <nav class="product-breadcrumb" aria-label="Breadcrumb"><a href="/">Savi Saluwadana</a><span aria-hidden="true">/</span><a href="/products/">Products</a><span aria-hidden="true">/</span><span aria-current="page">Ad Performance Analysis Agent</span></nav>
+    <div class="product-header"><p class="section-index">Marketing analytics prototype</p><h1>Ad Performance Analysis Agent</h1><p>A campaign-performance analysis prototype that parses ad-data CSVs, compares weekly metrics, highlights risks and wins, and uses Gemini to help produce actionable summaries.</p><p class="product-source">Product work and architecture overview by <a href="/about/">Savi Saluwadana</a>.</p><div class="project-tags"><span>React</span><span>TypeScript</span><span>Express</span><span>CSV</span><span>Gemini</span><span>Reporting</span></div><div class="project-links"><a class="text-link" href="/contact.html">Discuss this product</a><a class="text-link" href="/products/">All products</a></div></div>
     <nav class="product-nav" aria-label="Product sections"><a href="#overview">Overview</a><a href="#workflow">Workflow</a><a href="#architecture">Architecture</a><a href="#scope">Current scope</a></nav>
     <div class="product-content">
       <section class="product-section" id="overview" aria-labelledby="overview-title"><h2 id="overview-title">What it does</h2><dl class="product-facts"><div><dt>Who it serves</dt><dd>Marketing operators and teams reviewing campaign performance.</dd></div><div><dt>Product purpose</dt><dd>An advertising analytics and reporting prototype.</dd></div></dl><ul><li>CSV parsing of campaign dates, spend, clicks, impressions and conversions.</li><li>Week-over-week metrics and threshold-based risk/win flags.</li><li>Gemini-assisted summaries and email reporting paths.</li></ul></section>
@@ -136,5 +156,5 @@
       <section class="product-section" id="scope" aria-labelledby="scope-title"><h2 id="scope-title">Current scope</h2><p class="product-boundary">Google Ads and Supermetrics connection endpoints are currently mocks. Scheduled demonstration runs use generated sample CSVs and in-memory configuration, rather than a durable live account-ingestion pipeline.</p><p class="product-source">Architecture summary reviewed <time datetime="2026-10-04">4 October 2026</time>. The repository is private; this page provides a public product summary.</p><div class="product-footer-links"><a href="index.md">Markdown overview</a><a href="/contact.html">Contact Savi</a></div></section>
       <section class="product-section" aria-labelledby="related-title"><h2 id="related-title">Related product work</h2><div class="product-related"><a href="/products/avara/">Avara Real Estate</a><a href="/products/timelyhelp/">TimelyHelp.lk</a><a href="/products/rapidreach/">RapidReach</a></div></section>
     </div></div></main>
-  <footer class="site-footer"><div class="shell footer-layout"><div><strong>Savi Saluwadana</strong><span>Software · Architecture · Product · Platform · DevOps</span></div><div><a href="/">Portfolio</a><span>© <span data-year>2026</span></span></div></div></footer><script src="/app.js" defer></script>
+  <footer class="site-footer"><div class="shell footer-layout"><div><strong>Savi Saluwadana</strong><span>Software · Architecture · Product · Platform · DevOps</span></div><div><span><a href="/">Portfolio</a> · <a href="/products/">Products</a> · <a href="/engineering/">Engineering</a> · <a href="/about/">About</a></span><span>© <span data-year>2026</span></span></div></div></footer><script src="/app.js" defer></script>
 </body></html>

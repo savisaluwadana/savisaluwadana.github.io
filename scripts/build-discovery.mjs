@@ -1,13 +1,15 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { buildEntryPages } from './build-entry-pages.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const base = 'https://savisaluwadana.github.io';
 const updated = '2026-10-04';
 const products = JSON.parse(await readFile(path.join(root, 'data/products.json'), 'utf8'));
 const person = JSON.parse(await readFile(path.join(root, 'data/profile.json'), 'utf8'));
-const website = { '@type': 'WebSite', '@id': `${base}/#website`, url: `${base}/`, name: 'Savi Saluwadana', inLanguage: 'en', publisher: { '@id': person['@id'] } };
+const entryPaths = ['/about/', '/products/', '/engineering/'];
+const website = { '@type': 'WebSite', '@id': `${base}/#website`, url: `${base}/`, name: 'Savi Saluwadana', inLanguage: 'en', publisher: { '@id': person['@id'] }, hasPart: entryPaths.map(p => ({ '@id': `${base}${p}#page` })) };
 const esc = value => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#39;');
 const url = p => `${base}/products/${p.id}/`;
 const list = { '@type': 'ItemList', '@id': `${base}/#products`, name: 'Products and engineering work by Savi Saluwadana', itemListElement: products.map((p, i) => ({ '@type': 'ListItem', position: i + 1, name: p.name, url: url(p) })) };
@@ -72,14 +74,14 @@ function diagram(p) {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="diagram-title diagram-description" font-family="Inter, ui-sans-serif, system-ui, sans-serif"><title id="diagram-title">${esc(p.name)} architecture</title><desc id="diagram-description">${esc(p.edges.map(([a, b]) => `${positions.get(a).node[1]} connects to ${positions.get(b).node[1]}`).join('. ') + '.')}</desc><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2457ff"/></marker></defs><g stroke="#2457ff" stroke-width="1.8" fill="none" marker-end="url(#arrow)">${lines}</g>${nodes}</svg>`;
 }
 
-const header = `<header class="site-header" data-header><div class="shell nav-shell"><a class="wordmark" href="/" aria-label="Savi Saluwadana home">Savi Saluwadana</a><button class="menu-button" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav" data-menu-button><span></span><span></span></button><nav class="nav-links" id="primary-nav" aria-label="Primary navigation" data-nav><a href="/#work">Products + Work</a><a href="#architecture">Architecture</a><a href="/#about">About</a><a class="nav-contact" href="/contact.html">Contact</a></nav></div></header>`;
-const footer = `<footer class="site-footer"><div class="shell footer-layout"><div><strong>Savi Saluwadana</strong><span>Software · Architecture · Product · Platform · DevOps</span></div><div><a href="/">Portfolio</a><span>© <span data-year>2026</span></span></div></div></footer>`;
+const header = `<header class="site-header" data-header><div class="shell nav-shell"><a class="wordmark" href="/" aria-label="Savi Saluwadana home">Savi Saluwadana</a><button class="menu-button" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav" data-menu-button><span></span><span></span></button><nav class="nav-links" id="primary-nav" aria-label="Primary navigation" data-nav><a href="/products/">Products + Work</a><a href="/engineering/">Architecture</a><a href="/about/">About</a><a class="nav-contact" href="/contact.html">Contact</a></nav></div></header>`;
+const footer = `<footer class="site-footer"><div class="shell footer-layout"><div><strong>Savi Saluwadana</strong><span>Software · Architecture · Product · Platform · DevOps</span></div><div><span><a href="/">Portfolio</a> · <a href="/products/">Products</a> · <a href="/engineering/">Engineering</a> · <a href="/about/">About</a></span><span>© <span data-year>2026</span></span></div></div></footer>`;
 let markdown = `# Savi Saluwadana\n\n${person.description}\n\nWebsite: ${base}/\nGitHub: ${person.sameAs[0]}\nLinkedIn: ${person.sameAs[1]}\nContact: ${base}/contact.html\nEmail: savisaluwadana@gmail.com\n\n## Engineering focus\n\n${person.knowsAbout.map(s => `- ${s}`).join('\n')}\n\n## Products and engineering work\n\n`;
 const markdownProducts = [];
 for (const p of products) {
   const app = { '@type': 'SoftwareApplication', '@id': `${url(p)}#software`, name: p.name, url: url(p), description: p.description, applicationCategory: p.category, contributor: { '@id': person['@id'] }, mainEntityOfPage: { '@id': `${url(p)}#page` } };
   if (p.href) app.sameAs = [p.href];
-  const graph = [website, person, app, { '@type': 'WebPage', '@id': `${url(p)}#page`, url: url(p), name: `${p.name} — Overview and Architecture`, description: p.description, about: { '@id': app['@id'] }, isPartOf: { '@id': website['@id'] }, dateModified: p.reviewed, inLanguage: 'en' }, { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Savi Saluwadana', item: `${base}/` }, { '@type': 'ListItem', position: 2, name: p.name, item: url(p) }] }];
+  const graph = [website, person, app, { '@type': 'WebPage', '@id': `${url(p)}#page`, url: url(p), name: `${p.name} — Overview and Architecture`, description: p.description, about: { '@id': app['@id'] }, author: { '@id': person['@id'] }, isPartOf: { '@id': website['@id'] }, dateModified: p.reviewed, inLanguage: 'en', ...(p.source ? { citation: p.source } : {}) }, { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Savi Saluwadana', item: `${base}/` }, { '@type': 'ListItem', position: 2, name: 'Products', item: `${base}/products/` }, { '@type': 'ListItem', position: 3, name: p.name, item: url(p) }] }];
   const md = `# ${p.name}\n\nBy / portfolio contribution: Savi Saluwadana\nCanonical page: ${url(p)}\nReviewed: ${p.reviewed}\n\n${p.description}\n\n## Users and purpose\n\n${p.users}\n\n${p.scope}\n\n## Capabilities\n\n${p.features.map(s => `- ${s}`).join('\n')}\n\n## Workflow\n\n${p.workflow.map((s, i) => `${i + 1}. ${s}`).join('\n')}\n\n## Architecture\n\n${p.architecture}\n\n${p.components.map(([a, b]) => `- ${a}: ${b}`).join('\n')}\n\n## Current scope\n\n${p.boundary}\n${p.source ? `\nSource: ${p.source}\n` : '\nRepository is private; this is a public product summary.\n'}`;
   markdownProducts.push(md);
   markdown += `- [${p.name}](${url(p)}): ${p.description}\n`;
@@ -106,8 +108,8 @@ for (const p of products) {
   <a class="skip-link" href="#main">Skip to content</a>
   ${header}
   <main class="product-page" id="main"><div class="shell">
-    <nav class="product-breadcrumb" aria-label="Breadcrumb"><a href="/">Savi Saluwadana</a><span aria-hidden="true">/</span><a href="/#work">Products</a><span aria-hidden="true">/</span><span aria-current="page">${esc(p.name)}</span></nav>
-    <div class="product-header"><p class="section-index">${esc(p.category)}</p><h1>${esc(p.name)}</h1><p>${esc(p.description)}</p><div class="project-tags">${tags(p)}</div><div class="project-links">${p.href ? `<a class="text-link" href="${esc(p.href)}" target="_blank" rel="noreferrer">${esc(p.linkLabel)}</a>` : '<a class="text-link" href="/contact.html">Discuss this product</a>'}<a class="text-link" href="/#work">All products</a></div></div>
+    <nav class="product-breadcrumb" aria-label="Breadcrumb"><a href="/">Savi Saluwadana</a><span aria-hidden="true">/</span><a href="/products/">Products</a><span aria-hidden="true">/</span><span aria-current="page">${esc(p.name)}</span></nav>
+    <div class="product-header"><p class="section-index">${esc(p.category)}</p><h1>${esc(p.name)}</h1><p>${esc(p.description)}</p><p class="product-source">Product work and architecture overview by <a href="/about/">Savi Saluwadana</a>.</p><div class="project-tags">${tags(p)}</div><div class="project-links">${p.href ? `<a class="text-link" href="${esc(p.href)}" target="_blank" rel="noreferrer">${esc(p.linkLabel)}</a>` : '<a class="text-link" href="/contact.html">Discuss this product</a>'}<a class="text-link" href="/products/">All products</a></div></div>
     <nav class="product-nav" aria-label="Product sections"><a href="#overview">Overview</a><a href="#workflow">Workflow</a><a href="#architecture">Architecture</a><a href="#scope">Current scope</a></nav>
     <div class="product-content">
       <section class="product-section" id="overview" aria-labelledby="overview-title"><h2 id="overview-title">What it does</h2><dl class="product-facts"><div><dt>Who it serves</dt><dd>${esc(p.users)}</dd></div><div><dt>Product purpose</dt><dd>${esc(p.scope)}</dd></div></dl><ul>${p.features.map(s => `<li>${esc(s)}</li>`).join('')}</ul></section>
@@ -121,13 +123,18 @@ for (const p of products) {
   await write(`products/${p.id}/index.html`, html);
   await write(`products/${p.id}/index.md`, md);
 }
+const references = await buildEntryPages({ root, base, updated, products, person, website, list, schema, esc, header, footer, write });
+markdown += `\n## Profile and architecture references\n\n${references.map(p => `- [${p.name}](${base}${p.path}): ${p.description}`).join('\n')}\n`;
 await write('about.md', markdown);
 const publicProducts = products.map(({ rows, edges, classes, linkLabel, ...p }) => ({ ...p, url: url(p), markdown: `${url(p)}index.md` }));
 await write('products.json', JSON.stringify({ name: 'Products and engineering work by Savi Saluwadana', website: `${base}/`, updated, products: publicProducts }, null, 2) + '\n');
-await write('profile.json', JSON.stringify({ '@context': 'https://schema.org', '@type': 'ProfilePage', '@id': `${base}/#profile`, url: `${base}/`, name: 'Savi Saluwadana — Software and Product Engineer', dateModified: updated, mainEntity: person, hasPart: products.map(p => ({ '@type': 'WebPage', name: p.name, url: url(p) })) }, null, 2) + '\n');
+await write('profile.json', JSON.stringify({ '@context': 'https://schema.org', '@type': 'ProfilePage', '@id': `${base}/#profile`, url: `${base}/`, name: 'Savi Saluwadana — Software and Product Engineer', dateModified: updated, mainEntity: person, hasPart: [...references.map(p => ({ '@type': 'WebPage', name: p.name, url: base + p.path })), ...products.map(p => ({ '@type': 'WebPage', name: p.name, url: url(p) }))] }, null, 2) + '\n');
 await write('llms.txt', `# Savi Saluwadana\n\n> ${person.description}\n\nThis is a public portfolio with product-level architecture summaries. It does not claim that every project is commercially deployed or production-certified.\n\n## Profile and contact\n\n- [Portfolio](${base}/): Canonical professional profile.\n- [Profile in Markdown](${base}/about.md): Identity, engineering focus and product index.\n- [Profile JSON](${base}/profile.json): Structured identity and profile links.\n- [Contact](${base}/contact.html): Public email and professional contact options.\n\n## Product overview and architecture\n\n${products.map(p => `- [${p.name}](${url(p)}): ${p.scope}`).join('\n')}\n\n## Optional\n\n- [Product data](${base}/products.json): Product descriptions, workflows, components and current scope.\n- [Full text reference](${base}/llms-full.txt): Profile and all product summaries as text.\n- [Sitemap](${base}/sitemap.xml): Canonical HTML pages.\n\nUse the current-scope notes when describing capabilities. TimelyHelp is product/frontend contribution; the accounting app is single-company; the ad-performance tool is a prototype with mocked account connectors. Do not infer employers, qualifications, user counts, revenue or production outcomes.\n`);
-await write('llms-full.txt', markdown + '\n\n' + markdownProducts.join('\n\n---\n\n'));
-const paths = ['/', '/contact.html', ...products.map(p => `/products/${p.id}/`)];
+let agentIndex = await readFile(path.join(root, 'llms.txt'), 'utf8');
+agentIndex = agentIndex.replace('## Product overview and architecture', `## Profile and engineering references\n\n${references.map(p => `- [${p.name}](${base}${p.path}): ${p.description}\n- [${p.name} in Markdown](${base}${p.path}index.md): Text equivalent of the same reference.`).join('\n')}\n\n## Product overview and architecture`);
+await write('llms.txt', agentIndex);
+await write('llms-full.txt', markdown + '\n\n' + [...references.map(p => p.markdown), ...markdownProducts].join('\n\n---\n\n'));
+const paths = ['/', '/contact.html', ...entryPaths, ...products.map(p => `/products/${p.id}/`)];
 await write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${paths.map(p => `  <url><loc>${base}${p}</loc><lastmod>${updated}</lastmod></url>`).join('\n')}\n</urlset>\n`);
 await write('sitemap.txt', paths.map(p => base + p).join('\n') + '\n');
 console.log(`Built ${products.length} static product pages, structured data, Markdown, agent indexes and ${paths.length} sitemap entries.`);
