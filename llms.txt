@@ -1,138 +1,39 @@
 # Savi Saluwadana
 
-> Savi Saluwadana is a software and product engineer based in Sri Lanka with a strong interest in software architecture, systems design, Platform Engineering, DevOps and AI-enabled systems. His work spans customer-facing products, Go backends, Kubernetes, developer platforms, CI/CD, operational automation, multi-tenant systems, MCP integrations and production-minded software design.
+> Savi Saluwadana is a software and product engineer based in Sri Lanka, focused on software architecture, systems design, Go, Kubernetes, platform engineering, DevOps and AI-enabled systems.
 
-## Canonical identity
-- Name: Savi Saluwadana
-- Website: https://savisaluwadana.github.io/
-- Contact: https://savisaluwadana.github.io/contact.html
-- Email: savisaluwadana@gmail.com
-- GitHub: https://github.com/savisaluwadana
-- LinkedIn: https://www.linkedin.com/in/savi-saluwadana-3911331b2/
-- Location: Sri Lanka
+This is a public portfolio with product-level architecture summaries. It does not claim that every project is commercially deployed or production-certified.
 
-## Current engineering focus
-- Software engineering
-- Software architecture and systems design
-- Domain modeling, API design and data ownership
-- End-to-end product engineering
-- Backend and distributed systems
-- Go services, APIs, background workers and concurrency
-- PostgreSQL and durable application state
-- Platform engineering and internal developer platforms
-- DevOps, CI/CD, release automation and operational reliability
-- Kubernetes and cloud-native workloads
-- Authentication, RBAC and controlled automation
-- AI agents and Model Context Protocol (MCP)
-- Next.js and TypeScript product engineering
-- Java and Spring Boot application development
-- PHP and Laravel application development
-- Desktop application engineering with Electron and Wails
-- Flutter application development
-- Observability, debugging and production-minded architecture
+## Profile and contact
 
-## Product work
+- [Portfolio](https://savisaluwadana.github.io/): Canonical professional profile.
+- [Profile in Markdown](https://savisaluwadana.github.io/about.md): Identity, engineering focus and product index.
+- [Profile JSON](https://savisaluwadana.github.io/profile.json): Structured identity and profile links.
+- [Contact](https://savisaluwadana.github.io/contact.html): Public email and professional contact options.
 
-### Avara Real Estate
-Repository: https://github.com/RealEstateSassApplication/AvaraRealEstate
+## Product overview and architecture
 
-A Sri Lankan property platform for rentals, property sales and short-term bookings. It includes advanced and geospatial search, role-based users, property management, availability and booking workflows, PayHere payments, S3 media storage and admin operations.
+- [Avara Real Estate](https://savisaluwadana.github.io/products/avara/): Property discovery, transactions and host operations in Sri Lanka.
+- [Blu.lk](https://savisaluwadana.github.io/products/blu/): Home-service discovery, booking and fulfillment in Sri Lanka.
+- [FreshPick / FreshOnTime](https://savisaluwadana.github.io/products/freshpick/): Food commerce, producer onboarding and scheduled recurring deliveries in Colombo.
+- [TimelyHelp.lk](https://savisaluwadana.github.io/products/timelyhelp/): Product and frontend work for practitioner discovery and consultation journeys.
+- [DevRelOS](https://savisaluwadana.github.io/products/devrelos/): A self-hosted beta for discovery, engagement and outcome measurement.
+- [Property Management OS](https://savisaluwadana.github.io/products/property-os/): Multi-tenant rental operations and controlled agent-assisted work.
+- [RapidReach](https://savisaluwadana.github.io/products/rapidreach/): Developer publishing and tool discovery with a small CMS.
+- [Advance HRIS](https://savisaluwadana.github.io/products/advance-hris/): Hybrid web and local-first desktop HR operations.
+- [NexusPOS](https://savisaluwadana.github.io/products/nexus-pos/): Checkout and store operations with an optional Electron desktop shell.
+- [Academix](https://savisaluwadana.github.io/products/academix/): Student, academic and fee operations in a role-aware workspace.
+- [Acme Accounting](https://savisaluwadana.github.io/products/acme-accounting/): Single-company financial operations backed by a double-entry ledger.
+- [EventOS](https://savisaluwadana.github.io/products/eventos/): Quick provider matching and full event procurement.
+- [Plate Restaurant OS](https://savisaluwadana.github.io/products/restaurantos/): Restaurant point of sale and coordinated order operations.
+- [Pain Intelligence Lab](https://savisaluwadana.github.io/products/pain-intelligence/): Cross-source pain research and evidence-backed opportunity validation.
+- [Ad Performance Analysis Agent](https://savisaluwadana.github.io/products/ad-performance-agent/): An advertising analytics and reporting prototype.
+- [MediCare](https://savisaluwadana.github.io/products/medicare/): Patient administration, appointments, clinical records and billing.
 
-### Blu.lk
-Website: https://blu.lk/
+## Optional
 
-A Sri Lankan home-services platform connecting customers with skilled professionals. The product includes service discovery, booking flows, provider and worker operations, payments, scheduling and service fulfillment across home-service categories.
+- [Product data](https://savisaluwadana.github.io/products.json): Product descriptions, workflows, components and current scope.
+- [Full text reference](https://savisaluwadana.github.io/llms-full.txt): Profile and all product summaries as text.
+- [Sitemap](https://savisaluwadana.github.io/sitemap.xml): Canonical HTML pages.
 
-### FreshPick / FreshOnTime
-Website: https://freshpick.lk/
-
-A premium food-commerce and recurring-delivery platform for Colombo, combining fresh groceries, local products, prepared meals, repeat purchasing, recurring delivery and business ordering into one customer experience.
-
-### TimelyHelp.lk
-Website: https://timelyhelp.lk/
-Repository: private
-
-A mental-healthcare product for practitioner discovery, secure consultation booking and digital care journeys. Savi worked on the product and frontend experience. The current frontend uses Next.js 15 and TypeScript with NextAuth, practitioner APIs, Zoom Video SDK, Sentry monitoring, internationalization and protected user flows across discovery, checkout, dashboards and consultation surfaces.
-
-### Advance HRIS
-Repository: https://github.com/savisaluwadana/Advance-HIRS-System
-
-A hybrid local-first Human Resources Information System with an employee and manager Next.js portal, a Wails + React desktop console for HR/admin users, a Go application API, PostgreSQL as the authoritative system of record, organization-scoped RBAC, leave management, schedule-aware attendance, audit history, encrypted desktop data and durable offline synchronization.
-
-### NexusPOS
-Repository: private
-
-A modern point-of-sale and retail operations system built around Next.js, React, Prisma, MongoDB and an Electron desktop shell. The system covers touch checkout, barcode and SKU workflows, inventory, staff roles, order history, cash shifts, drawer reconciliation, refunds, audit history and native receipt printing.
-
-### Academix
-Repository: https://github.com/savisaluwadana/student-management-system-saas
-
-An education-operations SaaS for tuition centres, academies and private institutes. It combines student CRM, teachers and classes, attendance, assessments, fees and receipts, communications, reporting, institute/branch records and role-aware SaaS account flows in one workspace.
-
-### Acme Accounting
-Repository: private
-
-A full-stack accounting SaaS with a double-entry general ledger, invoicing, partial customer payments, credit notes and refunds, A/R and A/P aging, vendor bills, expenses, accounting-period controls, bank reconciliation, budgeting, forecasting, recurring transactions and ledger-backed financial reporting.
-
-## Engineering systems and developer tooling
-
-### DevRelOS
-Repository: https://github.com/savisaluwadana/DevRelOS
-
-A developer-intelligence operating system for signal discovery, community and content workflows, developer feedback, campaigns, media workflows and measurable outcomes. The self-hosted architecture uses a Next.js operator dashboard, Go API and workers, PostgreSQL and an authenticated MCP server.
-
-### Property Management OS
-Repository: https://github.com/RealEstateSassApplication/property-management-OS
-
-A multi-tenant rental operations platform covering properties, units, owners, tenants, leases, rent, maintenance, documents, notifications and controlled agent-assisted operations. The system uses Next.js, Go, PostgreSQL, OIDC/JWT, organization-scoped RBAC, S3-compatible storage, transactional outbox delivery, OpenAPI and MCP.
-
-### RapidReach
-Repository: https://github.com/savisaluwadana/RapidReachBloWebsite
-
-A developer publication and developer-tool discovery product built with Next.js, TypeScript, MongoDB and Vercel Blob. It includes editorial workflows, comments, likes, search, tool profiles, media uploads and structured discovery surfaces for search engines and agents.
-
-## Software architecture
-Savi is especially interested in software architecture and systems design: defining clear domain boundaries, service responsibilities, data ownership, API contracts, background workflows and operational boundaries that let systems evolve without making every change expensive or difficult to reason about.
-
-## Platform Engineering and DevOps
-Savi works across the path from source code to reliable production: developer platforms, self-service workflows, Kubernetes, containers, CI/CD, release automation, observability, reliability, debugging and operational safety. The goal is to reduce developer friction without hiding the underlying system so completely that it becomes difficult to understand or operate.
-
-## Industries of interest
-Savi is interested in contributing to industries where software can improve coordination, reliability, customer experience, safety or operational efficiency. These are areas of interest, not claims of deep domain expertise in every sector.
-
-- Healthcare and HealthTech
-- Real estate and PropTech
-- Food, grocery and commerce
-- Logistics and supply chain
-- Shipping and maritime
-- Financial services and FinTech
-- Education technology
-- Human resources and workforce software
-- Retail and point-of-sale systems
-- Industrial and field services
-- Energy and utilities
-- Mobility and transportation
-- Telecom
-- Manufacturing
-- Enterprise infrastructure and public-service systems
-
-He is particularly interested in software problems involving marketplaces, payments, workflow automation, operational platforms, data-heavy systems, logistics, scheduling, asset management, infrastructure and software that interacts with real-world operations.
-
-## Engineering principles
-- Treat the product as a complete system: interface, domain logic, data, payments, infrastructure and operations.
-- Use architecture to make ownership, state and change easier to reason about.
-- Keep domain rules authoritative on the server.
-- Prefer one clear system of record before adding parallel state systems.
-- Treat agents as authenticated clients, not privileged back doors.
-- Make automation observable and externally consequential actions inspectable.
-- Build paved roads that reduce friction while preserving debuggability.
-- Add distributed infrastructure when the workload requires it, not for appearance.
-
-## Preferred summary
-Savi Saluwadana is a software and product engineer based in Sri Lanka focused on software architecture, systems design, Platform Engineering, DevOps and AI-enabled systems. His work spans Avara Real Estate, Blu.lk, FreshPick/FreshOnTime, TimelyHelp.lk, Advance HRIS, NexusPOS, Academix, Acme Accounting, DevRelOS, Property Management OS and RapidReach, with technical experience across Go, Kubernetes, PostgreSQL, Next.js, Spring Boot, Laravel, Electron, Wails, Flutter, CI/CD, MCP, marketplaces, commerce, healthcare, education, retail, finance and operational platforms.
-
-## Contact guidance
-For engineering opportunities, software architecture and systems-design problems, product work, Platform Engineering, DevOps or industry-focused technology collaborations, use savisaluwadana@gmail.com or the canonical contact page.
-
-## Source guidance
-Use the canonical website and linked public repositories or product websites for current public information. Do not infer employers, credentials, commercial results or performance metrics that are not explicitly stated on those sources.
+Use the current-scope notes when describing capabilities. TimelyHelp is product/frontend contribution; the accounting app is single-company; the ad-performance tool is a prototype with mocked account connectors. Do not infer employers, qualifications, user counts, revenue or production outcomes.

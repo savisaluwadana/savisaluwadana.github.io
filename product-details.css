@@ -1,0 +1,63 @@
+/* Extend the existing design only for product navigation and detail pages. */
+.wordmark { font-size: 1.25rem; white-space: nowrap; flex-shrink: 0; }
+.project-card { position: relative; }
+.project-title-link::after { content: ''; position: absolute; inset: 0; }
+.project-title-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+.project-links { position: relative; z-index: 1; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.project-footer .project-links a { font-size: .79rem; }
+.product-page { padding-top: 142px; }
+.product-breadcrumb { display: flex; flex-wrap: wrap; gap: 8px; color: var(--muted); font-size: .88rem; margin: 0 0 48px; }
+.product-breadcrumb a, .product-content a { text-decoration: underline; text-underline-offset: 4px; }
+.product-header { max-width: 930px; }
+.product-header h1 { margin: 0 0 28px; font-size: clamp(2.8rem, 6vw, 5.5rem); line-height: 1; letter-spacing: -.055em; }
+.product-header > p:not(.section-index) { max-width: 800px; color: var(--ink-soft); font-size: 1.15rem; line-height: 1.75; }
+.product-header .project-tags { margin-bottom: 32px; }
+.product-header .project-links { margin-bottom: 48px; }
+.product-nav { display: flex; flex-wrap: wrap; gap: 16px 28px; padding: 22px 0; border-block: 1px solid var(--line-strong); font-size: .9rem; font-weight: 640; }
+.product-content { max-width: 1000px; padding-bottom: 96px; }
+.product-section { padding-top: 64px; scroll-margin-top: 100px; }
+.product-section h2 { font-size: clamp(1.8rem, 4vw, 2.75rem); letter-spacing: -.04em; margin: 0 0 24px; }
+.product-section p, .product-section li { font-size: 1rem; line-height: 1.8; color: var(--ink-soft); }
+.product-section li { margin-bottom: 12px; }
+.product-section ol, .product-section ul { padding-left: 24px; }
+.product-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin: 0; }
+.product-facts dt { color: var(--muted); font-size: .82rem; font-weight: 680; margin-bottom: 10px; }
+.product-facts dd { margin: 0; font-size: 1rem; line-height: 1.75; }
+.product-diagram { margin: 28px 0; border: 1px solid var(--line-strong); background: rgba(255,255,255,.2); }
+.product-diagram-scroll { overflow-x: auto; }
+.product-diagram svg { display: block; width: 100%; min-width: 620px; height: auto; }
+.product-diagram figcaption { padding: 16px 22px; font-size: .88rem; line-height: 1.6; color: var(--muted); border-top: 1px solid var(--line); }
+.product-table-wrap { overflow-x: auto; }
+.product-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 1rem; line-height: 1.7; }
+.product-table th, .product-table td { padding: 18px 16px; vertical-align: top; border-bottom: 1px solid var(--line); }
+.product-table th { font-weight: 650; }
+.product-table thead { background: var(--paper-2); }
+.product-table tbody th { width: 28%; }
+.product-source { font-size: .88rem !important; color: var(--muted) !important; }
+.product-boundary { padding: 20px 24px; border-left: 2px solid var(--accent); background: var(--accent-soft); }
+.product-related { display: flex; flex-wrap: wrap; gap: 14px 28px; }
+.product-related a { font-size: 1rem; line-height: 1.6; }
+.product-footer-links { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 20px; font-size: .85rem; }
+@media (min-width: 861px) and (max-width: 1100px) {
+  .nav-shell { gap: 16px; }
+  .nav-links { gap: 10px; }
+  .wordmark { font-size: 1.15rem; }
+}
+@media (max-width: 860px) {
+  .wordmark { font-size: 1.2rem; }
+  .product-page { padding-top: 112px; }
+}
+@media (max-width: 620px) {
+  .product-breadcrumb { margin-bottom: 32px; }
+  .product-facts { grid-template-columns: 1fr; }
+  .product-section { padding-top: 48px; }
+  .product-table th, .product-table td { padding: 14px 10px; }
+  .product-table tbody th { width: 34%; }
+  .product-boundary { padding: 16px 18px; }
+}
+@media print {
+  .site-header, .product-nav, .skip-link { display: none; }
+  .product-page { padding-top: 24px; }
+  .product-diagram svg { min-width: 0; }
+}
