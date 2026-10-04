@@ -36,9 +36,17 @@ home = replaceRegion(home, 'PROOF', products.map(p => `          <a href="#${esc
 home = replaceRegion(home, 'SCHEMA', schema([website, person, { '@type': 'ProfilePage', '@id': `${base}/#profile`, url: `${base}/`, name: 'Savi Saluwadana — Software and Product Engineer', mainEntity: { '@id': person['@id'] }, isPartOf: { '@id': website['@id'] }, hasPart: { '@id': list['@id'] }, dateModified: updated, inLanguage: 'en' }, list]));
 if (!home.includes('rel="describedby"')) home = home.replace('<link rel="canonical"', '<link rel="describedby" type="text/plain" href="/llms.txt">\n  <link rel="alternate" type="application/json" href="/profile.json" title="Public profile data">\n  <link rel="alternate" type="text/markdown" href="/about.md" title="Profile in Markdown">\n  <link rel="canonical"');
 home = home.replace(/<title>.*?<\/title>/, '<title>Savi Saluwadana | Software Engineer in Sri Lanka — Products &amp; Architecture</title>');
-home = home.replace(/<meta name="description" content="[^"]*">/, '<meta name="description" content="Savi Saluwadana, software and product engineer in Sri Lanka. Explore Go, Kubernetes, platform engineering, AI systems and 16 product architecture overviews.">');
+home = home.replace(/<meta name="description" content="[^"]*">/, '<meta name="description" content="Savi Saluwadana, software engineer in Sri Lanka. Explore product architecture, agentic systems, open-source development, Go and Kubernetes.">');
 home = home.replace('          <p>I’m based in Sri Lanka and work across', '          <p>I’m Savi Saluwadana, a software and product engineer based in Sri Lanka. I work across');
 await write('index.html', home);
+
+// Contact shares the same canonical identity as the generated portfolio pages.
+let contact = await readFile(path.join(root, 'contact.html'), 'utf8');
+contact = contact.replace(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/, (_, json) => {
+  const graph = JSON.parse(json)['@graph'];
+  return schema(graph.map(node => node['@type'] === 'Person' ? person : node));
+});
+await write('contact.html', contact);
 
 // Render source-grounded diagrams as SVG at build time: no runtime diagram CDN.
 function diagram(p) {

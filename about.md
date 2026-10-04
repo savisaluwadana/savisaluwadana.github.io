@@ -1,6 +1,6 @@
 # Savi Saluwadana
 
-Savi Saluwadana is a software and product engineer based in Sri Lanka, focused on software architecture, systems design, Go, Kubernetes, platform engineering, DevOps and AI-enabled systems.
+Savi Saluwadana is a software and product engineer based in Sri Lanka, focused on software architecture, systems design, Go, Kubernetes and developer platforms, with interests in agentic systems and open-source development.
 
 Website: https://savisaluwadana.github.io/
 GitHub: https://github.com/savisaluwadana
@@ -27,7 +27,13 @@ Email: savisaluwadana@gmail.com
 - Site Reliability Engineering
 - Artificial Intelligence
 - AI Agents
+- Agentic Systems
+- Multi-Agent Systems
+- Workflow Orchestration
+- Retrieval-Augmented Generation
+- Agent Evaluation
 - Model Context Protocol
+- Open-Source Development
 - PostgreSQL
 - Next.js
 - Cloud Native Computing
@@ -54,5 +60,5 @@ Email: savisaluwadana@gmail.com
 ## Profile and architecture references
 
 - [Product directory](https://savisaluwadana.github.io/products/): Explore 16 products built or contributed to by Savi Saluwadana: marketplaces, business systems, healthcare, AI agents and developer tools, with architecture diagrams.
-- [About Savi Saluwadana](https://savisaluwadana.github.io/about/): Meet Savi Saluwadana, a software and product engineer based in Sri Lanka. Explore his engineering focus, product contributions, public repositories and contact details.
+- [About Savi Saluwadana](https://savisaluwadana.github.io/about/): Meet Savi Saluwadana, a software engineer in Sri Lanka interested in agentic systems and open-source development. Explore his focus and product architecture.
 - [Architecture reference](https://savisaluwadana.github.io/engineering/): Explore Savi Saluwadana’s product architecture: Go APIs, MCP access boundaries, local-first HR workflows, tenancy and transactional operations, with project references.
