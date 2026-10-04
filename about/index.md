@@ -28,13 +28,13 @@ I’m interested in agents that use tools, retrieval and workflow state to help 
 - Multi-agent collaboration with clear responsibilities, shared evidence and human review for consequential actions.
 - Retrieval-augmented generation, evidence provenance and agent evaluation that make results inspectable and useful.
 
-My current product work includes [Pain Intelligence Lab](https://savisaluwadana.github.io/products/pain-intelligence/), [Property Management OS](https://savisaluwadana.github.io/products/property-os/) and [DevRelOS](https://savisaluwadana.github.io/products/devrelos/). Their implemented boundaries are documented in the [agent and MCP architecture comparison](https://savisaluwadana.github.io/engineering/#agent-access). The broader topics above describe my development interests.
+My current product work includes [Pain Intelligence Lab](https://savisaluwadana.github.io/products/pain-intelligence/), [Property Management OS](https://savisaluwadana.github.io/products/property-os/) and [DevRelOS](https://savisaluwadana.github.io/products/devrelos/). Follow their requests and state changes in the [agentic systems architecture walkthroughs](https://savisaluwadana.github.io/engineering/agentic-systems/). The broader topics above describe my development interests.
 
 ## Open-source development and collaboration
 
 I’m interested in contributing code, fixing bugs, reviewing design decisions and improving documentation in open-source projects. Cloud-native infrastructure, Go, Kubernetes, developer platforms and agent tooling are areas I want to contribute to.
 
-I value clear APIs, reproducible setup instructions, architecture documentation and examples that help other developers understand and improve a system. My [GitHub profile](https://github.com/savisaluwadana) and the public repository links on [product pages](https://savisaluwadana.github.io/products/) provide places to inspect my work.
+I value clear APIs, reproducible setup instructions, architecture documentation and examples that help other developers understand and improve a system. My [GitHub profile](https://github.com/savisaluwadana) and [public source index](https://savisaluwadana.github.io/open-source/) provide places to inspect my work.
 
 For code, documentation or engineering collaboration, [get in touch](https://savisaluwadana.github.io/contact.html).
 

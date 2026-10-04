@@ -10,7 +10,8 @@ const person = JSON.parse(await readFile(path.join(root, 'data/profile.json'), '
 const sitemap = await readFile(path.join(root, 'sitemap.xml'), 'utf8');
 const sitemapUrls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(m => m[1]);
 assert.equal(new Set(sitemapUrls).size, sitemapUrls.length, 'Duplicate sitemap URLs');
-const entryPaths = ['/about/', '/products/', '/engineering/'];
+const discovery = JSON.parse(await readFile(path.join(root, 'data/discovery.json'), 'utf8'));
+const entryPaths = ['/products/', ...discovery.pages.map(p => p.path)];
 assert.equal(sitemapUrls.length, products.length + 2 + entryPaths.length, 'All canonical pages must appear in sitemap');
 const pages = ['index.html', 'contact.html', ...entryPaths.map(p => p.slice(1) + 'index.html'), ...products.map(p => `products/${p.id}/index.html`)];
 const cache = new Map(await Promise.all(pages.map(async f => [f, await readFile(path.join(root, f), 'utf8')])));
@@ -32,6 +33,7 @@ for (const [file, html] of cache) {
   const description = html.match(/<meta name="description" content="([^"]+)"/)?.[1];
   assert.ok(description && !descriptions.has(description), `${file}: missing/duplicate description`);
   descriptions.add(description);
+  assert.ok(html.includes('rel="alternate" type="application/atom+xml" href="/feed.xml"'), `${file}: missing feed discovery link`);
   const outgoing = new Set();
   adjacency.set(file, outgoing);
   const schemas = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
@@ -92,6 +94,29 @@ const aboutGraph = JSON.parse(cache.get('about/index.html').match(/<script type=
 assert.equal(aboutGraph.find(n => n['@type'] === 'ProfilePage').mainEntity['@id'], person['@id'], 'About page must identify the canonical Person');
 const engineeringGraph = JSON.parse(cache.get('engineering/index.html').match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'];
 assert.equal(engineeringGraph.find(n => n['@type'] === 'CreativeWork').author['@id'], person['@id'], 'Architecture reference must identify its author');
+const publicWork = JSON.parse(await readFile(path.join(root, 'data/public-work.json'), 'utf8'));
+const publicData = JSON.parse(await readFile(path.join(root, 'public-work.json'), 'utf8'));
+assert.deepEqual(publicData.repositories, publicWork.repositories, 'Public source data must match verified records');
+const sourceGraph = JSON.parse(cache.get('open-source/index.html').match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'];
+assert.equal(sourceGraph.filter(n => n['@type'] === 'SoftwareSourceCode').length, publicWork.repositories.length, 'Source schema must cover every public repository');
+for (const repo of publicWork.repositories) {
+  assert.equal(repo.visibility, 'public', `${repo.id}: private repository in public source index`);
+  assert.ok(repo.url.startsWith('https://github.com/'), `${repo.id}: invalid repository URL`);
+  assert.ok(cache.get('open-source/index.html').includes(`href="${repo.url}"`), `${repo.id}: missing visible repository reference`);
+  assert.ok(sourceGraph.some(n => n['@type'] === 'SoftwareSourceCode' && n.codeRepository === repo.url), `${repo.id}: missing source schema`);
+}
+const feed = await readFile(path.join(root, 'feed.xml'), 'utf8');
+assert.ok(feed.includes('xmlns="http://www.w3.org/2005/Atom"'), 'Feed must use the Atom namespace');
+assert.ok(feed.includes('<author><name>Savi Saluwadana</name>'), 'Feed must name its author');
+const entries = [...feed.matchAll(/<entry>([\s\S]*?)<\/entry>/g)].map(m => m[1]);
+const feedUrls = entries.map(entry => entry.match(/<id>(.*?)<\/id>/)?.[1]);
+assert.equal(new Set(feedUrls).size, feedUrls.length, 'Duplicate feed entries');
+assert.deepEqual([...feedUrls].sort(), sitemapUrls.filter(url => ![`${origin}/`, `${origin}/contact.html`].includes(url)).sort(), 'Feed must cover the reference and product pages');
+for (const entry of entries) {
+  assert.ok(/<title>[^<]+<\/title>/.test(entry), 'Feed entry requires a title');
+  assert.ok(/<updated>\d{4}-\d{2}-\d{2}T00:00:00Z<\/updated>/.test(entry), 'Feed entry requires a source review date');
+  assert.ok(/<summary type="text">[\s\S]+?<\/summary>/.test(entry), 'Feed entry requires a summary');
+}
 assert.ok(home.includes('id="tech-stack"'), 'Technology stack must be crawlable without JavaScript');
 assert.ok(!(await readFile(path.join(root, 'app.js'), 'utf8')).includes('insertAdjacentHTML'), 'Product content should not be injected at runtime');
 assert.equal(await readFile(path.join(root, 'google062719a40465c49b.html'), 'utf8'), 'google-site-verification: google062719a40465c49b.html\n', 'Search Console verification changed');
@@ -104,4 +129,4 @@ assert.deepEqual(profile.mainEntity, person, 'Agent profile must match HTML iden
 const data = JSON.parse(await readFile(path.join(root, 'products.json'), 'utf8'));
 assert.equal(data.products.length, products.length, 'Agent product data must match homepage');
 assert.deepEqual((await readFile(path.join(root, 'sitemap.txt'), 'utf8')).trim().split('\n'), sitemapUrls, 'XML and text sitemap disagree');
-console.log(`Passed: ${pages.length} crawl-reachable pages, ${products.length} static product cards, ${links} internal references, unique metadata, JSON-LD, accessible diagrams, agent data and sitemap consistency.`);
+console.log(`Passed: ${pages.length} crawl-reachable pages, ${products.length} static product cards, ${links} internal references, ${publicWork.repositories.length} public sources, ${entries.length} feed entries, unique metadata, JSON-LD, accessible diagrams, agent data and sitemap consistency.`);

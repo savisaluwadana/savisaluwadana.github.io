@@ -73,6 +73,16 @@
     },
     {
       "@type": "WebPage",
+      "name": "Agentic systems architecture",
+      "url": "https://savisaluwadana.github.io/engineering/agentic-systems/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Public source and open-source interests",
+      "url": "https://savisaluwadana.github.io/open-source/"
+    },
+    {
+      "@type": "WebPage",
       "name": "Avara Real Estate",
       "url": "https://savisaluwadana.github.io/products/avara/"
     },
