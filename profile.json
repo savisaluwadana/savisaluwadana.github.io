@@ -1,0 +1,134 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "@id": "https://savisaluwadana.github.io/#profile",
+  "url": "https://savisaluwadana.github.io/",
+  "name": "Savi Saluwadana — Software and Product Engineer",
+  "dateModified": "2026-10-04",
+  "mainEntity": {
+    "@type": "Person",
+    "@id": "https://savisaluwadana.github.io/#person",
+    "name": "Savi Saluwadana",
+    "url": "https://savisaluwadana.github.io/",
+    "image": "https://avatars.githubusercontent.com/u/82082138?v=4",
+    "email": "mailto:savisaluwadana@gmail.com",
+    "jobTitle": "Software and Product Engineer",
+    "description": "Savi Saluwadana is a software and product engineer based in Sri Lanka, focused on software architecture, systems design, Go, Kubernetes, platform engineering, DevOps and AI-enabled systems.",
+    "homeLocation": {
+      "@type": "Country",
+      "name": "Sri Lanka"
+    },
+    "sameAs": [
+      "https://github.com/savisaluwadana",
+      "https://www.linkedin.com/in/savi-saluwadana-3911331b2/"
+    ],
+    "knowsAbout": [
+      "Software Engineering",
+      "Software Architecture",
+      "Systems Design",
+      "Domain Modeling",
+      "API Design",
+      "Distributed Systems",
+      "Product Engineering",
+      "Go programming language",
+      "Kubernetes",
+      "Platform Engineering",
+      "DevOps",
+      "Developer Platforms",
+      "CI/CD",
+      "Observability",
+      "Site Reliability Engineering",
+      "Artificial Intelligence",
+      "AI Agents",
+      "Model Context Protocol",
+      "PostgreSQL",
+      "Next.js",
+      "Cloud Native Computing"
+    ],
+    "mainEntityOfPage": {
+      "@id": "https://savisaluwadana.github.io/#profile"
+    }
+  },
+  "hasPart": [
+    {
+      "@type": "WebPage",
+      "name": "Avara Real Estate",
+      "url": "https://savisaluwadana.github.io/products/avara/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Blu.lk",
+      "url": "https://savisaluwadana.github.io/products/blu/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "FreshPick / FreshOnTime",
+      "url": "https://savisaluwadana.github.io/products/freshpick/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "TimelyHelp.lk",
+      "url": "https://savisaluwadana.github.io/products/timelyhelp/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "DevRelOS",
+      "url": "https://savisaluwadana.github.io/products/devrelos/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Property Management OS",
+      "url": "https://savisaluwadana.github.io/products/property-os/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "RapidReach",
+      "url": "https://savisaluwadana.github.io/products/rapidreach/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Advance HRIS",
+      "url": "https://savisaluwadana.github.io/products/advance-hris/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "NexusPOS",
+      "url": "https://savisaluwadana.github.io/products/nexus-pos/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Academix",
+      "url": "https://savisaluwadana.github.io/products/academix/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Acme Accounting",
+      "url": "https://savisaluwadana.github.io/products/acme-accounting/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "EventOS",
+      "url": "https://savisaluwadana.github.io/products/eventos/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Plate Restaurant OS",
+      "url": "https://savisaluwadana.github.io/products/restaurantos/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Pain Intelligence Lab",
+      "url": "https://savisaluwadana.github.io/products/pain-intelligence/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Ad Performance Analysis Agent",
+      "url": "https://savisaluwadana.github.io/products/ad-performance-agent/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "MediCare",
+      "url": "https://savisaluwadana.github.io/products/medicare/"
+    }
+  ]
+}

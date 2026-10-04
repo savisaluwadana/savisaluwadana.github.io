@@ -1,0 +1,44 @@
+{
+  "@type": "Person",
+  "@id": "https://savisaluwadana.github.io/#person",
+  "name": "Savi Saluwadana",
+  "url": "https://savisaluwadana.github.io/",
+  "image": "https://avatars.githubusercontent.com/u/82082138?v=4",
+  "email": "mailto:savisaluwadana@gmail.com",
+  "jobTitle": "Software and Product Engineer",
+  "description": "Savi Saluwadana is a software and product engineer based in Sri Lanka, focused on software architecture, systems design, Go, Kubernetes, platform engineering, DevOps and AI-enabled systems.",
+  "homeLocation": {
+    "@type": "Country",
+    "name": "Sri Lanka"
+  },
+  "sameAs": [
+    "https://github.com/savisaluwadana",
+    "https://www.linkedin.com/in/savi-saluwadana-3911331b2/"
+  ],
+  "knowsAbout": [
+    "Software Engineering",
+    "Software Architecture",
+    "Systems Design",
+    "Domain Modeling",
+    "API Design",
+    "Distributed Systems",
+    "Product Engineering",
+    "Go programming language",
+    "Kubernetes",
+    "Platform Engineering",
+    "DevOps",
+    "Developer Platforms",
+    "CI/CD",
+    "Observability",
+    "Site Reliability Engineering",
+    "Artificial Intelligence",
+    "AI Agents",
+    "Model Context Protocol",
+    "PostgreSQL",
+    "Next.js",
+    "Cloud Native Computing"
+  ],
+  "mainEntityOfPage": {
+    "@id": "https://savisaluwadana.github.io/#profile"
+  }
+}

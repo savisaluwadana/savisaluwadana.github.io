@@ -1,0 +1,778 @@
+# Savi Saluwadana
+
+Savi Saluwadana is a software and product engineer based in Sri Lanka, focused on software architecture, systems design, Go, Kubernetes, platform engineering, DevOps and AI-enabled systems.
+
+Website: https://savisaluwadana.github.io/
+GitHub: https://github.com/savisaluwadana
+LinkedIn: https://www.linkedin.com/in/savi-saluwadana-3911331b2/
+Contact: https://savisaluwadana.github.io/contact.html
+Email: savisaluwadana@gmail.com
+
+## Engineering focus
+
+- Software Engineering
+- Software Architecture
+- Systems Design
+- Domain Modeling
+- API Design
+- Distributed Systems
+- Product Engineering
+- Go programming language
+- Kubernetes
+- Platform Engineering
+- DevOps
+- Developer Platforms
+- CI/CD
+- Observability
+- Site Reliability Engineering
+- Artificial Intelligence
+- AI Agents
+- Model Context Protocol
+- PostgreSQL
+- Next.js
+- Cloud Native Computing
+
+## Products and engineering work
+
+- [Avara Real Estate](https://savisaluwadana.github.io/products/avara/): A Sri Lankan property platform spanning rentals, property sales and short-term bookings with role-based users, geospatial search, availability, booking workflows, payments and property operations.
+- [Blu.lk](https://savisaluwadana.github.io/products/blu/): A Sri Lankan home-services platform connecting customers with skilled professionals across electrical, plumbing, cleaning, AC, carpentry and other services, with customer, provider and worker-facing workflows.
+- [FreshPick / FreshOnTime](https://savisaluwadana.github.io/products/freshpick/): A premium food-commerce platform for Colombo bringing together fresh groceries, local products, prepared meals, recurring delivery and business ordering in one customer experience.
+- [TimelyHelp.lk](https://savisaluwadana.github.io/products/timelyhelp/): A mental-healthcare platform for discovering licensed practitioners, booking secure consultations and managing digital care journeys. I worked on the product and frontend experience across practitioner discovery, account flows, checkout, dashboards and consultation surfaces.
+- [DevRelOS](https://savisaluwadana.github.io/products/devrelos/): An operating system for discovering developer signals, managing community and content workflows, connecting developer feedback to product work, and measuring outcomes from one operational surface.
+- [Property Management OS](https://savisaluwadana.github.io/products/property-os/): A rental operations platform covering properties, units, tenants, leases, rent, maintenance, documents, notifications and controlled agent-assisted operations.
+- [RapidReach](https://savisaluwadana.github.io/products/rapidreach/): A developer publication and tool-discovery product with editorial workflows, comments, likes, search, tool profiles, media uploads and a deliberately small CMS.
+- [Advance HRIS](https://savisaluwadana.github.io/products/advance-hris/): A hybrid HR information system with an employee web portal, a native HR/admin desktop console, tenant-scoped access, policy-backed leave, schedule-aware attendance, audit history and durable offline synchronization.
+- [NexusPOS](https://savisaluwadana.github.io/products/nexus-pos/): A retail POS and store-operations system covering touch checkout, barcode workflows, inventory, staff roles, cash shifts, refunds, reconciliation, audit history and native receipt printing.
+- [Academix](https://savisaluwadana.github.io/products/academix/): A SaaS workspace for tuition centres and private institutes combining student CRM, classes, attendance, assessments, fee collection, communications, reporting and multi-site institute operations.
+- [Acme Accounting](https://savisaluwadana.github.io/products/acme-accounting/): A single-company accounting application with a double-entry general ledger, invoicing, A/R and A/P aging, vendor bills, credit notes, refunds, period locks, bank reconciliation, budgeting and financial reporting.
+- [EventOS](https://savisaluwadana.github.io/products/eventos/): An event-services marketplace and operations platform for finding suppliers, comparing quotes, managing bookings and contracts, tracking payments and coordinating event delivery.
+- [Plate Restaurant OS](https://savisaluwadana.github.io/products/restaurantos/): A restaurant-management product bringing point of sale, table service, direct online ordering, kitchen workflows, menus and inventory into one operational workspace.
+- [Pain Intelligence Lab](https://savisaluwadana.github.io/products/pain-intelligence/): A cross-source research platform for discovering repeated customer pain, costly workarounds and product opportunities using saved evidence, quality checks and an MCP-connected research host.
+- [Ad Performance Analysis Agent](https://savisaluwadana.github.io/products/ad-performance-agent/): A campaign-performance analysis prototype that parses ad-data CSVs, compares weekly metrics, highlights risks and wins, and uses Gemini to help produce actionable summaries.
+- [MediCare](https://savisaluwadana.github.io/products/medicare/): A patient and clinic-management system covering patient administration, appointments, clinical records, billing, staff permissions and an embeddable scheduling service.
+
+
+# Avara Real Estate
+
+By / portfolio contribution: Savi Saluwadana
+Canonical page: https://savisaluwadana.github.io/products/avara/
+Reviewed: 2026-10-04
+
+A Sri Lankan property platform spanning rentals, property sales and short-term bookings with role-based users, geospatial search, availability, booking workflows, payments and property operations.
+
+## Users and purpose
+
+Property seekers, tenants, hosts and administrators.
+
+Property discovery, transactions and host operations in Sri Lanka.
+
+## Capabilities
+
+- Rental, sale and short-stay listings with location and geospatial search.
+- Role-aware property administration and media uploads.
+- Availability calendars, booking workflows and local payment integration.
+
+## Workflow
+
+1. A visitor searches listings and opens a property.
+2. An authenticated user submits a booking request; server-side rules evaluate availability.
+3. Booking and payment state are stored in MongoDB; media is stored separately.
+4. Hosts and administrators manage listings, calendars and transaction status.
+
+## Architecture
+
+Next.js → MongoDB → S3 → PayHere
+
+- Next.js web + API: Customer, host and admin interfaces plus authenticated domain routes.
+- MongoDB: Users, properties, bookings and availability data.
+- S3: Property images and uploaded media.
+- PayHere: Payment initiation and server-side notification handling.
+
+## Current scope
+
+This diagram summarizes the repository’s property, booking and payment boundaries. PayHere and S3 require deployment-specific configuration.
+
+Source: https://github.com/RealEstateSassApplication/AvaraRealEstate/blob/main/README.md
+
+
+---
+
+# Blu.lk
+
+By / portfolio contribution: Savi Saluwadana
+Canonical page: https://savisaluwadana.github.io/products/blu/
+Reviewed: 2026-10-04
+
+A Sri Lankan home-services platform connecting customers with skilled professionals across electrical, plumbing, cleaning, AC, carpentry and other services, with customer, provider and worker-facing workflows.
+
+## Users and purpose
+
+Customers, service providers, workers and operations teams.
+
+Home-service discovery, booking and fulfillment in Sri Lanka.
+
+## Capabilities
+
+- Service categories and customer booking journeys.
+- Provider and worker coordination around scheduled jobs.
+- Administrative management of services, users and operational status.
+
+## Workflow
+
+1. A customer discovers a service and supplies booking details.
+2. The Laravel platform records the request and its status in MySQL.
+3. Providers and workers coordinate assignment and fulfillment through their product experiences.
+4. Operations teams manage service records and follow the booking lifecycle.
+
+## Architecture
+
+Customer + provider experiences → Laravel API → MySQL
+
+- Customer interfaces: Service discovery and booking requests.
+- Laravel platform: Booking, provider, worker and administrative workflows.
+- MySQL: Persistent service and operational records.
+
+## Current scope
+
+This diagram covers the core service platform. Payment-provider availability depends on integration configuration; no specific online payment launch is claimed here.
+
+Source: https://blu.lk/
+
+
+---
+
+# FreshPick / FreshOnTime
+
+By / portfolio contribution: Savi Saluwadana
+Canonical page: https://savisaluwadana.github.io/products/freshpick/
+Reviewed: 2026-10-04
+
+A premium food-commerce platform for Colombo bringing together fresh groceries, local products, prepared meals, recurring delivery and business ordering in one customer experience.
+
+## Users and purpose
+
+Grocery shoppers, local producers, business buyers and administrators.
+
+Food commerce, producer onboarding and scheduled recurring deliveries in Colombo.
+
+## Capabilities
+
+- Catalog browsing, product discovery and customer shopping.
+- Producer onboarding, admin operations and business enquiries.
+- Subscription baskets and recurring-order delivery scheduling.
+- Public read-only catalog tools through MCP.
+
+## Workflow
+
+1. A shopper chooses catalog items or a recurring basket.
+2. Next.js validates the request and domain services persist orders through Prisma.
+3. PostgreSQL holds catalog, order and delivery state; scheduling advances due deliveries.
+4. Media and transactional messages use their configured storage and email integrations.
+
+## Architecture
+
+Next.js → Prisma / PostgreSQL → recurring delivery + media storage
+
+- Next.js: Storefront, producer and admin interfaces, API routes and public MCP catalog access.
+- Prisma + PostgreSQL: Catalog, order, subscription and delivery records.
+- Scheduled workflows: Recurring deliveries and transactional communications.
+- Storage adapter: Durable product and editorial images.
+
+## Current scope
+
+Customer checkout and subscription baskets currently use cash on delivery. Automatic recurring card charging is not implemented. Subscription baskets and recurring grocery orders are distinct workflows.
+
+Source: https://github.com/FreshOnTime/newfreshontimewebsite/blob/main/README.md
+
+
+---
+
+# TimelyHelp.lk
+
+By / portfolio contribution: Savi Saluwadana
+Canonical page: https://savisaluwadana.github.io/products/timelyhelp/
+Reviewed: 2026-10-04
+
+A mental-healthcare platform for discovering licensed practitioners, booking secure consultations and managing digital care journeys. I worked on the product and frontend experience across practitioner discovery, account flows, checkout, dashboards and consultation surfaces.
+
+## Users and purpose
+
+People seeking mental-health consultations, practitioners and administrators.
+
+Product and frontend work for practitioner discovery and consultation journeys.
+
+## Capabilities
+
+- Practitioner discovery, accounts and protected dashboard flows.
+- Booking and checkout interfaces around consultation services.
+- Video-consultation surfaces, internationalization and frontend monitoring.
+
+## Workflow
+
+1. A visitor explores practitioner information.
+2. NextAuth manages frontend authentication and protected account flows.
+3. The frontend exchanges practitioner and consultation data with application APIs.
+4. Video consultation uses Zoom Video SDK; Sentry supports frontend error visibility.
+
+## Architecture
+
+Next.js 15 → NextAuth → practitioner APIs → Zoom Video SDK
+
+- Next.js frontend: Discovery, account, checkout, dashboard and consultation experiences.
+- NextAuth: Frontend session and protected-page integration.
+- Application APIs: Practitioner and consultation data supplied to the frontend.
+- Zoom + Sentry: Live video surfaces and error monitoring.
+
+## Current scope
+
+Savi’s portfolio contribution is product and frontend work. This page summarizes that frontend boundary and does not claim ownership of the full clinical backend.
+
+Source: https://timelyhelp.lk/
+
+
+---
+
+# DevRelOS
+
+By / portfolio contribution: Savi Saluwadana
+Canonical page: https://savisaluwadana.github.io/products/devrelos/
+Reviewed: 2026-10-04
+
+An operating system for discovering developer signals, managing community and content workflows, connecting developer feedback to product work, and measuring outcomes from one operational surface.
+
+## Users and purpose
+
+Developer-relations teams and developer-community operators.
+
+A self-hosted beta for discovery, engagement and outcome measurement.
+
+## Capabilities
+
+- Signal Radar, pain-point intelligence and developer feedback.
+- Events, CFPs, reusable talks, contacts and relationships.
+- Content, campaigns, media workflows and approval-gated outreach.
+- Authenticated MCP tools and workspace-scoped access.
+
+## Workflow
+
+1. Connectors or an operator bring source-backed signals into a workspace.
+2. The Go API validates membership and stores domain state in PostgreSQL.
+3. Background workers run connector, media and approved outreach tasks.
+4. The dashboard and MCP clients inspect work and track its outcomes through the domain API.
+
+## Architecture
+
+Next.js → Go API → PostgreSQL → Workers → MCP
+
+- Next.js dashboard: Operator workspaces and same-origin API proxy.
+- Go domain API: Authenticated workflows, membership checks and business rules.
+- PostgreSQL: Workspace data, evidence, workflow state and audit history.
+- Go workers: Connector ingestion, media rendering and approved delivery.
+- MCP: Authenticated domain tools; no parallel database access path.
+
+## Current scope
+
+This project is a self-hosted beta. External providers require credentials and policy configuration; consequential outreach follows approval workflows.
+
+Source: https://github.com/savisaluwadana/DevRelOS/blob/main/README.md
+
+
+---
+
+# Property Management OS
+
+By / portfolio contribution: Savi Saluwadana
+Canonical page: https://savisaluwadana.github.io/products/property-os/
+Reviewed: 2026-10-04
+
+A rental operations platform covering properties, units, tenants, leases, rent, maintenance, documents, notifications and controlled agent-assisted operations.
+
+## Users and purpose
+
+Property managers, owners and authorized operational users.
+
+Multi-tenant rental operations and controlled agent-assisted work.
+
+## Capabilities
+
+- Properties, units, tenants, occupancies and leases.
+- Rent obligations, ledger views, maintenance and documents.
+- Organization membership, RBAC and audit-aware workflows.
+- Transactional notification outbox and authenticated MCP tools.
+
+## Workflow
+
+1. A manager or agent requests an operation through the authenticated API.
+2. The Go modular monolith applies organization scope and domain rules.
+3. PostgreSQL stores records and notification intents; documents use S3-compatible storage.
+4. A Go worker consumes the outbox and delivers notifications through configured providers.
+
+## Architecture
+
+Next.js → Go modular monolith → PostgreSQL → Outbox worker → MCP
+
+- Go API: Organization-scoped domain logic, OIDC identity and RBAC.
+- PostgreSQL: Portfolio, tenancy, rent, maintenance and outbox state.
+- Object storage: Document objects with database metadata.
+- Outbox worker: Durable notification processing through a delivery provider.
+- MCP: Agent access through authenticated domain APIs.
+
+## Current scope
+
+MCP calls the same authenticated HTTP API as other clients and has no direct database connection. Advanced financial writes and other domains remain subject to the project’s implemented tool scope.
+
+Source: https://github.com/RealEstateSassApplication/property-management-OS/blob/main/README.md
+
+
+---
+
+# RapidReach
+
+By / portfolio contribution: Savi Saluwadana
+Canonical page: https://savisaluwadana.github.io/products/rapidreach/
+Reviewed: 2026-10-04
+
+A developer publication and tool-discovery product with editorial workflows, comments, likes, search, tool profiles, media uploads and a deliberately small CMS.
+
+## Users and purpose
+
+Readers, developers exploring tools and editorial administrators.
+
+Developer publishing and tool discovery with a small CMS.
+
+## Capabilities
+
+- Articles, categories, search, comments, likes and sharing.
+- Tool profiles, category browsing and tool upvotes.
+- Editorial draft/publish workflows and media uploads.
+- Structured metadata, feeds and machine-readable discovery surfaces.
+
+## Workflow
+
+1. An editor creates a draft and attaches uploaded media.
+2. The CMS stores editorial and tool records in MongoDB.
+3. Published pages and tool profiles render from the same Next.js application.
+4. Readers discover content through the site, search and published feeds.
+
+## Architecture
+
+Next.js 16 → MongoDB → Vercel Blob
+
+- Next.js: Public pages, tool directory, CMS and API routes in one application.
+- MongoDB: Editorial records, tool records, comments and categories.
+- Vercel Blob: Public media objects referenced by content records.
+
+## Current scope
+
+RapidReach uses one Next.js application with MongoDB and Blob storage; there is no separate backend service. Publishing and media require a configured deployment.
+
+Source: https://github.com/savisaluwadana/RapidReachBloWebsite/blob/main/README.md
+
+
+---
+
+# Advance HRIS
+
+By / portfolio contribution: Savi Saluwadana
+Canonical page: https://savisaluwadana.github.io/products/advance-hris/
+Reviewed: 2026-10-04
+
+A hybrid HR information system with an employee web portal, a native HR/admin desktop console, tenant-scoped access, policy-backed leave, schedule-aware attendance, audit history and durable offline synchronization.
+
+## Users and purpose
+
+Employees, managers, HR teams and administrators.
+
+Hybrid web and local-first desktop HR operations.
+
+## Capabilities
+
+- Employee records, tenant scope and role-aware self-service.
+- Policy-backed leave and schedule-aware attendance.
+- Audit history and durable offline desktop synchronization.
+
+## Workflow
+
+1. Employees and managers use the Next.js portal for self-service.
+2. HR/admin users can work through the Wails desktop console and local SQLite storage.
+3. The durable sync queue sends authorized operations to the Go API.
+4. PostgreSQL remains the authoritative system of record; synchronization handles conflicts explicitly.
+
+## Architecture
+
+Next.js Web + Wails / React Desktop → Go API → PostgreSQL
+
+- Next.js portal: Employee and manager self-service through a web session/BFF boundary.
+- Wails desktop: Native HR/admin console with encrypted local payloads.
+- SQLite + sync queue: Local state and durable synchronization operations.
+- Go + PostgreSQL: Tenant-scoped business rules and authoritative HR records.
+
+## Current scope
+
+Local-first refers to the desktop console. The cloud database remains authoritative. Payroll-ready attendance boundaries do not mean a complete payroll-processing product is included.
+
+Source: https://github.com/savisaluwadana/Advance-HIRS-System/blob/main/README.md
+
+
+---
+
+# NexusPOS
+
+By / portfolio contribution: Savi Saluwadana
+Canonical page: https://savisaluwadana.github.io/products/nexus-pos/
+Reviewed: 2026-10-04
+
+A retail POS and store-operations system covering touch checkout, barcode workflows, inventory, staff roles, cash shifts, refunds, reconciliation, audit history and native receipt printing.
+
+## Users and purpose
+
+Cashiers, store managers and retail administrators.
+
+Checkout and store operations with an optional Electron desktop shell.
+
+## Capabilities
+
+- Touch checkout, barcode/SKU input, held orders and receipts.
+- Inventory, authenticated staff roles and store settings.
+- Cash shifts, refunds, reconciliation and audit history.
+
+## Workflow
+
+1. A cashier builds a basket and applies eligible discounts or loyalty.
+2. Authenticated server routes calculate checkout totals and validate stock.
+3. Prisma persists retail records to MongoDB.
+4. The optional Electron shell provides native receipt printing while the browser supports print fallback.
+
+## Architecture
+
+Next.js / React → Prisma → MongoDB + Electron
+
+- Next.js + React: Cashier and store-administration interfaces.
+- Server routes: Authenticated staff actions and server-authoritative checkout.
+- Prisma + MongoDB: Products, orders and retail operational records.
+- Electron: Optional native desktop packaging and receipt printing.
+
+## Current scope
+
+Electron is an optional desktop shell. The portfolio does not claim a complete offline checkout engine or a tenant-isolated hosted retail service.
+
+Repository is private; this is a public product summary.
+
+
+---
+
+# Academix
+
+By / portfolio contribution: Savi Saluwadana
+Canonical page: https://savisaluwadana.github.io/products/academix/
+Reviewed: 2026-10-04
+
+A SaaS workspace for tuition centres and private institutes combining student CRM, classes, attendance, assessments, fee collection, communications, reporting and multi-site institute operations.
+
+## Users and purpose
+
+Tuition centres, academies and private-institute staff.
+
+Student, academic and fee operations in a role-aware workspace.
+
+## Capabilities
+
+- Student CRM, enrollments, teacher and class records.
+- Manual, bulk and barcode attendance plus assessments.
+- Fees, LKR receipts, reporting and institute records.
+- Communication workflows with email/SMS integration points.
+
+## Workflow
+
+1. Staff register students and enroll them into classes.
+2. Authenticated application routes record attendance, grades and fee activity.
+3. Mongoose models store operational records in MongoDB.
+4. Dashboards and reports summarize the workspace; communication providers are configured separately.
+
+## Architecture
+
+Next.js → MongoDB / Mongoose → notification integrations
+
+- Next.js: Student, academic, fee, communication and reporting workspaces.
+- Auth + API routes: Cookie-based JWT sessions and role-aware domain requests.
+- MongoDB + Mongoose: Student, class, attendance, assessment and fee records.
+- Messaging integrations: Configured email/SMS providers; integration availability varies by deployment.
+
+## Current scope
+
+The account and plan surfaces support a SaaS direction. Automated billing and broader tenant-isolation work should be checked against the current project roadmap rather than assumed complete.
+
+Source: https://github.com/savisaluwadana/student-management-system-saas/blob/main/README.md
+
+
+---
+
+# Acme Accounting
+
+By / portfolio contribution: Savi Saluwadana
+Canonical page: https://savisaluwadana.github.io/products/acme-accounting/
+Reviewed: 2026-10-04
+
+A single-company accounting application with a double-entry general ledger, invoicing, A/R and A/P aging, vendor bills, credit notes, refunds, period locks, bank reconciliation, budgeting and financial reporting.
+
+## Users and purpose
+
+A company’s accounting administrator and finance operator.
+
+Single-company financial operations backed by a double-entry ledger.
+
+## Capabilities
+
+- Chart of accounts, journals, invoicing and receivables.
+- Vendor bills, payables, expenses, credit notes and refunds.
+- Bank reconciliation, period locks, recurring transactions and budgets.
+- Ledger-backed statements and accounting integrity diagnostics.
+
+## Workflow
+
+1. An operator creates a source document such as an invoice or vendor bill.
+2. Authenticated domain services validate the accounting transition.
+3. The posting layer records balanced journals in the general ledger.
+4. Reports read the ledger while period controls and audit history preserve traceability.
+
+## Architecture
+
+Next.js → MongoDB / Mongoose → double-entry ledger
+
+- Next.js + NextAuth: Finance interfaces and authenticated route handlers.
+- Accounting services: Source-document workflows, validation and period controls.
+- General ledger: Balanced journal posting, reversal and source-level idempotency.
+- MongoDB: Financial records, journal history and reporting source data.
+
+## Current scope
+
+The current application is designed for one company and one administrator identity per database. It is not a tenant-isolated accounting SaaS backend.
+
+Repository is private; this is a public product summary.
+
+
+---
+
+# EventOS
+
+By / portfolio contribution: Savi Saluwadana
+Canonical page: https://savisaluwadana.github.io/products/eventos/
+Reviewed: 2026-10-04
+
+An event-services marketplace and operations platform for finding suppliers, comparing quotes, managing bookings and contracts, tracking payments and coordinating event delivery.
+
+## Users and purpose
+
+Guests, event buyers, suppliers and administrators.
+
+Quick provider matching and full event procurement.
+
+## Capabilities
+
+- Service requests, supplier profiles and quote comparison.
+- Bookings, contracts and event execution workflows.
+- Manual payment submission and administrative reconciliation.
+- PostgreSQL sessions, row-level authorization and persistent uploads.
+
+## Workflow
+
+1. A guest requests a provider or a buyer defines an event and service requirements.
+2. Suppliers submit quotes; the buyer compares and accepts an offer.
+3. Database transactions coordinate booking, contract and commercial state.
+4. Authorized users share files and track execution; administrators reconcile submitted payment records.
+
+## Architecture
+
+Next.js → PostgreSQL → transactional workflows + file storage
+
+- Next.js: Public marketplace and buyer, supplier and admin workflows.
+- Database adapter: Authenticated requests and domain transactions.
+- PostgreSQL: Sessions, row-level authorization, functions and lifecycle state.
+- File adapter: Public supplier assets and access-controlled event documents.
+
+## Current scope
+
+Payments are submitted and reconciled manually in the current MVP. This is a Next.js and PostgreSQL application; a Supabase service is not required for the documented runtime.
+
+Repository is private; this is a public product summary.
+
+
+---
+
+# Plate Restaurant OS
+
+By / portfolio contribution: Savi Saluwadana
+Canonical page: https://savisaluwadana.github.io/products/restaurantos/
+Reviewed: 2026-10-04
+
+A restaurant-management product bringing point of sale, table service, direct online ordering, kitchen workflows, menus and inventory into one operational workspace.
+
+## Users and purpose
+
+Restaurant staff, kitchen teams, managers and direct-order customers.
+
+Restaurant point of sale and coordinated order operations.
+
+## Capabilities
+
+- POS, table management and menu administration.
+- Direct online ordering and kitchen display workflows.
+- Inventory and operational analytics.
+
+## Workflow
+
+1. A customer or staff member creates an order.
+2. Authenticated Next.js routes validate the request and persist the order.
+3. Kitchen and staff interfaces coordinate preparation and service.
+4. Managers maintain menus and inventory and inspect order reports.
+
+## Architecture
+
+Next.js → authenticated API routes → MongoDB
+
+- Next.js interfaces: Ordering, POS, kitchen, menu and manager surfaces.
+- Authenticated routes: Restaurant and order domain requests.
+- MongoDB + Mongoose: Restaurant, menu, order and inventory records.
+
+## Current scope
+
+The product is under development. POS, kitchen and online ordering share a Next.js application and MongoDB data layer; external integrations require deployment-specific configuration.
+
+Repository is private; this is a public product summary.
+
+
+---
+
+# Pain Intelligence Lab
+
+By / portfolio contribution: Savi Saluwadana
+Canonical page: https://savisaluwadana.github.io/products/pain-intelligence/
+Reviewed: 2026-10-04
+
+A cross-source research platform for discovering repeated customer pain, costly workarounds and product opportunities using saved evidence, quality checks and an MCP-connected research host.
+
+## Users and purpose
+
+Builders, product teams and market researchers.
+
+Cross-source pain research and evidence-backed opportunity validation.
+
+## Capabilities
+
+- Manual evidence ingestion and native Reddit deep research.
+- Autonomous research jobs executed by a connected MCP host.
+- Semantic clustering, jobs-to-be-done and opportunity synthesis.
+- Source diversity, duplicate checks and competitor/pricing validation.
+
+## Workflow
+
+1. A researcher creates a market question and research job.
+2. The MCP host gathers evidence and sends it through the platform’s tool boundary.
+3. Express stores evidence and workflow state in MongoDB and applies quality/scoring checks.
+4. Host reasoning annotates and clusters evidence before opportunities are validated or rejected.
+
+## Architecture
+
+React / Vite + MCP host → Express API → MongoDB
+
+- React workspace: Research questions, saved evidence and project inspection.
+- Express platform: Storage, evidence-quality scoring and workflow state.
+- MCP host: Browsing, annotation, semantic reasoning and synthesis.
+- MongoDB: Evidence, research projects, snapshots and job state.
+
+## Current scope
+
+The application does not call model-provider APIs directly; semantic reasoning runs in the connected MCP host. A research job may correctly produce no validated opportunity.
+
+Source: https://github.com/savisaluwadana/Reddit-post-Analyzer/blob/main/README.md
+
+
+---
+
+# Ad Performance Analysis Agent
+
+By / portfolio contribution: Savi Saluwadana
+Canonical page: https://savisaluwadana.github.io/products/ad-performance-agent/
+Reviewed: 2026-10-04
+
+A campaign-performance analysis prototype that parses ad-data CSVs, compares weekly metrics, highlights risks and wins, and uses Gemini to help produce actionable summaries.
+
+## Users and purpose
+
+Marketing operators and teams reviewing campaign performance.
+
+An advertising analytics and reporting prototype.
+
+## Capabilities
+
+- CSV parsing of campaign dates, spend, clicks, impressions and conversions.
+- Week-over-week metrics and threshold-based risk/win flags.
+- Gemini-assisted summaries and email reporting paths.
+
+## Workflow
+
+1. An operator supplies campaign data as CSV.
+2. The analysis module normalizes rows and compares current and previous periods.
+3. Threshold logic identifies risks and wins; Gemini helps summarize next steps.
+4. The reporting interface displays results and the email path can send a summary when configured.
+
+## Architecture
+
+React / Vite → Express → CSV analysis + Gemini → email
+
+- React interface: Campaign-data input and analysis views.
+- Express API: Prototype configuration, scheduling and reporting endpoints.
+- Analysis module: CSV normalization, weekly comparison and threshold flags.
+- Gemini + Resend: Configured AI summarization and email-report delivery.
+
+## Current scope
+
+Google Ads and Supermetrics connection endpoints are currently mocks. Scheduled demonstration runs use generated sample CSVs and in-memory configuration, rather than a durable live account-ingestion pipeline.
+
+Repository is private; this is a public product summary.
+
+
+---
+
+# MediCare
+
+By / portfolio contribution: Savi Saluwadana
+Canonical page: https://savisaluwadana.github.io/products/medicare/
+Reviewed: 2026-10-04
+
+A patient and clinic-management system covering patient administration, appointments, clinical records, billing, staff permissions and an embeddable scheduling service.
+
+## Users and purpose
+
+Clinic staff, doctors, billing operators, administrators and patients.
+
+Patient administration, appointments, clinical records and billing.
+
+## Capabilities
+
+- Patient profiles and conflict-aware appointment scheduling.
+- Clinical records with SOAP notes, vitals and prescriptions.
+- Billing records, payment tracking and operational dashboards.
+- Staff management and a separate embeddable scheduling API.
+
+## Workflow
+
+1. Clinic staff register a patient or arrange an appointment.
+2. The Go API validates identity, role permissions and domain requests.
+3. PostgreSQL stores patient, appointment, clinical and billing state.
+4. A separate scheduling service supports website embeds within its intended scheduling boundary.
+
+## Architecture
+
+Next.js → Go API + scheduling service → PostgreSQL
+
+- Next.js: Patient, appointment, clinical, billing and admin interfaces.
+- Go domain API: JWT sessions, role checks and clinic workflows.
+- Scheduling API: Separate service boundary for embeddable appointments.
+- PostgreSQL: Patient and operational records persisted by the backend.
+
+## Current scope
+
+The main clinic API and embeddable scheduling API use separate service boundaries. Server-enforced roles separate clinical, billing and administrative access.
+
+Repository is private; this is a public product summary.

@@ -1,0 +1,1696 @@
+[
+  {
+    "id": "avara",
+    "name": "Avara Real Estate",
+    "category": "Real-estate product",
+    "type": "Property marketplace + transactions",
+    "description": "A Sri Lankan property platform spanning rentals, property sales and short-term bookings with role-based users, geospatial search, availability, booking workflows, payments and property operations.",
+    "architecture": "Next.js → MongoDB → S3 → PayHere",
+    "tags": [
+      "Next.js",
+      "TypeScript",
+      "MongoDB",
+      "Geospatial search",
+      "Payments",
+      "PWA"
+    ],
+    "footer": "The product combines discovery, transactions and operations: hosts, tenants, property calendars, bookings, media, local payments and administrative control.",
+    "href": "https://github.com/RealEstateSassApplication/AvaraRealEstate",
+    "linkLabel": "View repository ↗",
+    "classes": "project-card project-card--product project-card--lead",
+    "users": "Property seekers, tenants, hosts and administrators.",
+    "scope": "Property discovery, transactions and host operations in Sri Lanka.",
+    "features": [
+      "Rental, sale and short-stay listings with location and geospatial search.",
+      "Role-aware property administration and media uploads.",
+      "Availability calendars, booking workflows and local payment integration."
+    ],
+    "workflow": [
+      "A visitor searches listings and opens a property.",
+      "An authenticated user submits a booking request; server-side rules evaluate availability.",
+      "Booking and payment state are stored in MongoDB; media is stored separately.",
+      "Hosts and administrators manage listings, calendars and transaction status."
+    ],
+    "boundary": "This diagram summarizes the repository’s property, booking and payment boundaries. PayHere and S3 require deployment-specific configuration.",
+    "rows": [
+      [
+        [
+          "web",
+          "Property experience",
+          "Next.js / TypeScript"
+        ]
+      ],
+      [
+        [
+          "api",
+          "Domain API",
+          "Auth, listings, bookings"
+        ]
+      ],
+      [
+        [
+          "db",
+          "Application data",
+          "MongoDB / geospatial"
+        ],
+        [
+          "media",
+          "Property media",
+          "AWS S3"
+        ],
+        [
+          "payment",
+          "Payments",
+          "PayHere"
+        ]
+      ]
+    ],
+    "edges": [
+      [
+        "web",
+        "api"
+      ],
+      [
+        "api",
+        "db"
+      ],
+      [
+        "api",
+        "media"
+      ],
+      [
+        "api",
+        "payment"
+      ],
+      [
+        "payment",
+        "api"
+      ]
+    ],
+    "components": [
+      [
+        "Next.js web + API",
+        "Customer, host and admin interfaces plus authenticated domain routes."
+      ],
+      [
+        "MongoDB",
+        "Users, properties, bookings and availability data."
+      ],
+      [
+        "S3",
+        "Property images and uploaded media."
+      ],
+      [
+        "PayHere",
+        "Payment initiation and server-side notification handling."
+      ]
+    ],
+    "reviewed": "2026-10-04",
+    "source": "https://github.com/RealEstateSassApplication/AvaraRealEstate/blob/main/README.md"
+  },
+  {
+    "id": "blu",
+    "name": "Blu.lk",
+    "category": "Service marketplace",
+    "type": "Home services platform",
+    "description": "A Sri Lankan home-services platform connecting customers with skilled professionals across electrical, plumbing, cleaning, AC, carpentry and other services, with customer, provider and worker-facing workflows.",
+    "architecture": "Customer + provider experiences → Laravel API → MySQL",
+    "tags": [
+      "Flutter",
+      "Laravel",
+      "MySQL",
+      "Bookings",
+      "Providers",
+      "Service operations"
+    ],
+    "footer": "The product problem is trust plus operations: service discovery, scheduling, pricing, status, worker assignment and fulfillment all need to remain visible and manageable.",
+    "href": "https://blu.lk/",
+    "linkLabel": "Visit Blu.lk ↗",
+    "classes": "project-card project-card--product",
+    "users": "Customers, service providers, workers and operations teams.",
+    "scope": "Home-service discovery, booking and fulfillment in Sri Lanka.",
+    "features": [
+      "Service categories and customer booking journeys.",
+      "Provider and worker coordination around scheduled jobs.",
+      "Administrative management of services, users and operational status."
+    ],
+    "workflow": [
+      "A customer discovers a service and supplies booking details.",
+      "The Laravel platform records the request and its status in MySQL.",
+      "Providers and workers coordinate assignment and fulfillment through their product experiences.",
+      "Operations teams manage service records and follow the booking lifecycle."
+    ],
+    "boundary": "This diagram covers the core service platform. Payment-provider availability depends on integration configuration; no specific online payment launch is claimed here.",
+    "rows": [
+      [
+        [
+          "customer",
+          "Customer experience",
+          "Web / mobile"
+        ],
+        [
+          "provider",
+          "Provider operations",
+          "Provider / worker apps"
+        ]
+      ],
+      [
+        [
+          "api",
+          "Service platform",
+          "Laravel / authenticated APIs"
+        ]
+      ],
+      [
+        [
+          "db",
+          "Service data",
+          "MySQL"
+        ]
+      ]
+    ],
+    "edges": [
+      [
+        "customer",
+        "api"
+      ],
+      [
+        "provider",
+        "api"
+      ],
+      [
+        "api",
+        "db"
+      ]
+    ],
+    "components": [
+      [
+        "Customer interfaces",
+        "Service discovery and booking requests."
+      ],
+      [
+        "Laravel platform",
+        "Booking, provider, worker and administrative workflows."
+      ],
+      [
+        "MySQL",
+        "Persistent service and operational records."
+      ]
+    ],
+    "reviewed": "2026-10-04",
+    "source": "https://blu.lk/"
+  },
+  {
+    "id": "freshpick",
+    "name": "FreshPick / FreshOnTime",
+    "category": "Food commerce platform",
+    "type": "Commerce + recurring delivery",
+    "description": "A premium food-commerce platform for Colombo bringing together fresh groceries, local products, prepared meals, recurring delivery and business ordering in one customer experience.",
+    "architecture": "Next.js → Prisma / PostgreSQL → recurring delivery + media storage",
+    "tags": [
+      "Next.js",
+      "PostgreSQL",
+      "Prisma",
+      "Recurring delivery",
+      "B2B",
+      "MCP"
+    ],
+    "footer": "The direction goes beyond a grocery catalog: curation, repeat purchasing, convenience, recommendations and long-term customer relationships are part of the product system.",
+    "href": "https://freshpick.lk/",
+    "linkLabel": "Visit FreshPick ↗",
+    "classes": "project-card project-card--product",
+    "users": "Grocery shoppers, local producers, business buyers and administrators.",
+    "scope": "Food commerce, producer onboarding and scheduled recurring deliveries in Colombo.",
+    "features": [
+      "Catalog browsing, product discovery and customer shopping.",
+      "Producer onboarding, admin operations and business enquiries.",
+      "Subscription baskets and recurring-order delivery scheduling.",
+      "Public read-only catalog tools through MCP."
+    ],
+    "workflow": [
+      "A shopper chooses catalog items or a recurring basket.",
+      "Next.js validates the request and domain services persist orders through Prisma.",
+      "PostgreSQL holds catalog, order and delivery state; scheduling advances due deliveries.",
+      "Media and transactional messages use their configured storage and email integrations."
+    ],
+    "boundary": "Customer checkout and subscription baskets currently use cash on delivery. Automatic recurring card charging is not implemented. Subscription baskets and recurring grocery orders are distinct workflows.",
+    "rows": [
+      [
+        [
+          "web",
+          "Storefront + admin",
+          "Next.js"
+        ],
+        [
+          "agent",
+          "Catalog agent tools",
+          "Read-only MCP"
+        ]
+      ],
+      [
+        [
+          "domain",
+          "Commerce services",
+          "Orders, stock, schedules"
+        ]
+      ],
+      [
+        [
+          "db",
+          "Commerce data",
+          "Prisma / PostgreSQL"
+        ],
+        [
+          "media",
+          "Media storage",
+          "Configured storage adapter"
+        ],
+        [
+          "jobs",
+          "Delivery + email",
+          "Scheduled workflows"
+        ]
+      ]
+    ],
+    "edges": [
+      [
+        "web",
+        "domain"
+      ],
+      [
+        "agent",
+        "domain"
+      ],
+      [
+        "domain",
+        "db"
+      ],
+      [
+        "domain",
+        "media"
+      ],
+      [
+        "jobs",
+        "db"
+      ],
+      [
+        "domain",
+        "jobs"
+      ]
+    ],
+    "components": [
+      [
+        "Next.js",
+        "Storefront, producer and admin interfaces, API routes and public MCP catalog access."
+      ],
+      [
+        "Prisma + PostgreSQL",
+        "Catalog, order, subscription and delivery records."
+      ],
+      [
+        "Scheduled workflows",
+        "Recurring deliveries and transactional communications."
+      ],
+      [
+        "Storage adapter",
+        "Durable product and editorial images."
+      ]
+    ],
+    "reviewed": "2026-10-04",
+    "source": "https://github.com/FreshOnTime/newfreshontimewebsite/blob/main/README.md"
+  },
+  {
+    "id": "timelyhelp",
+    "name": "TimelyHelp.lk",
+    "category": "Mental-healthcare product",
+    "type": "Practitioner discovery + secure consultations",
+    "description": "A mental-healthcare platform for discovering licensed practitioners, booking secure consultations and managing digital care journeys. I worked on the product and frontend experience across practitioner discovery, account flows, checkout, dashboards and consultation surfaces.",
+    "architecture": "Next.js 15 → NextAuth → practitioner APIs → Zoom Video SDK",
+    "tags": [
+      "Next.js",
+      "TypeScript",
+      "NextAuth",
+      "Zoom Video SDK",
+      "Sentry",
+      "i18n"
+    ],
+    "footer": "The frontend brings practitioner data, protected user flows, responsive product UI, monitoring and live consultation capabilities into one patient-facing experience.",
+    "href": "https://timelyhelp.lk/",
+    "linkLabel": "Visit TimelyHelp.lk ↗",
+    "classes": "project-card project-card--product",
+    "users": "People seeking mental-health consultations, practitioners and administrators.",
+    "scope": "Product and frontend work for practitioner discovery and consultation journeys.",
+    "features": [
+      "Practitioner discovery, accounts and protected dashboard flows.",
+      "Booking and checkout interfaces around consultation services.",
+      "Video-consultation surfaces, internationalization and frontend monitoring."
+    ],
+    "workflow": [
+      "A visitor explores practitioner information.",
+      "NextAuth manages frontend authentication and protected account flows.",
+      "The frontend exchanges practitioner and consultation data with application APIs.",
+      "Video consultation uses Zoom Video SDK; Sentry supports frontend error visibility."
+    ],
+    "boundary": "Savi’s portfolio contribution is product and frontend work. This page summarizes that frontend boundary and does not claim ownership of the full clinical backend.",
+    "rows": [
+      [
+        [
+          "web",
+          "Patient-facing UI",
+          "Next.js / TypeScript"
+        ]
+      ],
+      [
+        [
+          "auth",
+          "Sessions",
+          "NextAuth"
+        ],
+        [
+          "api",
+          "Practitioner APIs",
+          "Product data boundary"
+        ],
+        [
+          "video",
+          "Consultations",
+          "Zoom Video SDK"
+        ]
+      ],
+      [
+        [
+          "monitor",
+          "Error monitoring",
+          "Sentry"
+        ]
+      ]
+    ],
+    "edges": [
+      [
+        "web",
+        "auth"
+      ],
+      [
+        "web",
+        "api"
+      ],
+      [
+        "web",
+        "video"
+      ],
+      [
+        "web",
+        "monitor"
+      ]
+    ],
+    "components": [
+      [
+        "Next.js frontend",
+        "Discovery, account, checkout, dashboard and consultation experiences."
+      ],
+      [
+        "NextAuth",
+        "Frontend session and protected-page integration."
+      ],
+      [
+        "Application APIs",
+        "Practitioner and consultation data supplied to the frontend."
+      ],
+      [
+        "Zoom + Sentry",
+        "Live video surfaces and error monitoring."
+      ]
+    ],
+    "reviewed": "2026-10-04",
+    "source": "https://timelyhelp.lk/"
+  },
+  {
+    "id": "devrelos",
+    "name": "DevRelOS",
+    "category": "Self-hosted beta",
+    "type": "Developer intelligence platform",
+    "description": "An operating system for discovering developer signals, managing community and content workflows, connecting developer feedback to product work, and measuring outcomes from one operational surface.",
+    "architecture": "Next.js → Go API → PostgreSQL → Workers → MCP",
+    "tags": [
+      "Go",
+      "Next.js",
+      "PostgreSQL",
+      "MCP",
+      "RBAC",
+      "Workers"
+    ],
+    "footer": "Built around provider interfaces, evidence provenance, approval-gated side effects, observable automation and PostgreSQL as the system of record.",
+    "href": "https://github.com/savisaluwadana/DevRelOS",
+    "linkLabel": "View repository ↗",
+    "classes": "project-card",
+    "users": "Developer-relations teams and developer-community operators.",
+    "scope": "A self-hosted beta for discovery, engagement and outcome measurement.",
+    "features": [
+      "Signal Radar, pain-point intelligence and developer feedback.",
+      "Events, CFPs, reusable talks, contacts and relationships.",
+      "Content, campaigns, media workflows and approval-gated outreach.",
+      "Authenticated MCP tools and workspace-scoped access."
+    ],
+    "workflow": [
+      "Connectors or an operator bring source-backed signals into a workspace.",
+      "The Go API validates membership and stores domain state in PostgreSQL.",
+      "Background workers run connector, media and approved outreach tasks.",
+      "The dashboard and MCP clients inspect work and track its outcomes through the domain API."
+    ],
+    "boundary": "This project is a self-hosted beta. External providers require credentials and policy configuration; consequential outreach follows approval workflows.",
+    "rows": [
+      [
+        [
+          "web",
+          "Operator dashboard",
+          "Next.js"
+        ],
+        [
+          "agent",
+          "Agent interface",
+          "Authenticated MCP"
+        ]
+      ],
+      [
+        [
+          "api",
+          "Domain API",
+          "Go / workspace RBAC"
+        ]
+      ],
+      [
+        [
+          "db",
+          "System of record",
+          "PostgreSQL"
+        ],
+        [
+          "worker",
+          "Background work",
+          "Go workers"
+        ],
+        [
+          "providers",
+          "External providers",
+          "Signals / delivery / media"
+        ]
+      ]
+    ],
+    "edges": [
+      [
+        "web",
+        "api"
+      ],
+      [
+        "agent",
+        "api"
+      ],
+      [
+        "api",
+        "db"
+      ],
+      [
+        "worker",
+        "db"
+      ],
+      [
+        "worker",
+        "providers"
+      ],
+      [
+        "api",
+        "worker"
+      ]
+    ],
+    "components": [
+      [
+        "Next.js dashboard",
+        "Operator workspaces and same-origin API proxy."
+      ],
+      [
+        "Go domain API",
+        "Authenticated workflows, membership checks and business rules."
+      ],
+      [
+        "PostgreSQL",
+        "Workspace data, evidence, workflow state and audit history."
+      ],
+      [
+        "Go workers",
+        "Connector ingestion, media rendering and approved delivery."
+      ],
+      [
+        "MCP",
+        "Authenticated domain tools; no parallel database access path."
+      ]
+    ],
+    "reviewed": "2026-10-04",
+    "source": "https://github.com/savisaluwadana/DevRelOS/blob/main/README.md"
+  },
+  {
+    "id": "property-os",
+    "name": "Property Management OS",
+    "category": "Multi-tenant platform",
+    "type": "Operational SaaS architecture",
+    "description": "A rental operations platform covering properties, units, tenants, leases, rent, maintenance, documents, notifications and controlled agent-assisted operations.",
+    "architecture": "Next.js → Go modular monolith → PostgreSQL → Outbox worker → MCP",
+    "tags": [
+      "Go",
+      "OIDC",
+      "PostgreSQL",
+      "S3",
+      "OpenAPI",
+      "MCP"
+    ],
+    "footer": "Domain rules live server-side: tenant isolation, RBAC, auditable rent ledgers, transactional notification delivery and authenticated agent tools.",
+    "href": "https://github.com/RealEstateSassApplication/property-management-OS",
+    "linkLabel": "View repository ↗",
+    "classes": "project-card",
+    "users": "Property managers, owners and authorized operational users.",
+    "scope": "Multi-tenant rental operations and controlled agent-assisted work.",
+    "features": [
+      "Properties, units, tenants, occupancies and leases.",
+      "Rent obligations, ledger views, maintenance and documents.",
+      "Organization membership, RBAC and audit-aware workflows.",
+      "Transactional notification outbox and authenticated MCP tools."
+    ],
+    "workflow": [
+      "A manager or agent requests an operation through the authenticated API.",
+      "The Go modular monolith applies organization scope and domain rules.",
+      "PostgreSQL stores records and notification intents; documents use S3-compatible storage.",
+      "A Go worker consumes the outbox and delivers notifications through configured providers."
+    ],
+    "boundary": "MCP calls the same authenticated HTTP API as other clients and has no direct database connection. Advanced financial writes and other domains remain subject to the project’s implemented tool scope.",
+    "rows": [
+      [
+        [
+          "web",
+          "Manager interface",
+          "Next.js"
+        ],
+        [
+          "agent",
+          "Agent interface",
+          "MCP / stdio"
+        ]
+      ],
+      [
+        [
+          "api",
+          "Domain API",
+          "Go / OIDC / RBAC"
+        ]
+      ],
+      [
+        [
+          "db",
+          "Domain + outbox",
+          "PostgreSQL"
+        ],
+        [
+          "docs",
+          "Documents",
+          "S3-compatible storage"
+        ],
+        [
+          "worker",
+          "Notification delivery",
+          "Go outbox worker"
+        ]
+      ]
+    ],
+    "edges": [
+      [
+        "web",
+        "api"
+      ],
+      [
+        "agent",
+        "api"
+      ],
+      [
+        "api",
+        "db"
+      ],
+      [
+        "api",
+        "docs"
+      ],
+      [
+        "worker",
+        "db"
+      ]
+    ],
+    "components": [
+      [
+        "Go API",
+        "Organization-scoped domain logic, OIDC identity and RBAC."
+      ],
+      [
+        "PostgreSQL",
+        "Portfolio, tenancy, rent, maintenance and outbox state."
+      ],
+      [
+        "Object storage",
+        "Document objects with database metadata."
+      ],
+      [
+        "Outbox worker",
+        "Durable notification processing through a delivery provider."
+      ],
+      [
+        "MCP",
+        "Agent access through authenticated domain APIs."
+      ]
+    ],
+    "reviewed": "2026-10-04",
+    "source": "https://github.com/RealEstateSassApplication/property-management-OS/blob/main/README.md"
+  },
+  {
+    "id": "rapidreach",
+    "name": "RapidReach",
+    "category": "Developer media product",
+    "type": "Publishing + discovery",
+    "description": "A developer publication and tool-discovery product with editorial workflows, comments, likes, search, tool profiles, media uploads and a deliberately small CMS.",
+    "architecture": "Next.js 16 → MongoDB → Vercel Blob",
+    "tags": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "MongoDB",
+      "SEO",
+      "JSON-LD"
+    ],
+    "footer": "The product keeps deployment simple while still exposing structured data, feeds, APIs, sitemap, robots and llms.txt for search engines, answer engines and agents.",
+    "href": "https://github.com/savisaluwadana/RapidReachBloWebsite",
+    "linkLabel": "View repository ↗",
+    "classes": "project-card project-card--wide",
+    "users": "Readers, developers exploring tools and editorial administrators.",
+    "scope": "Developer publishing and tool discovery with a small CMS.",
+    "features": [
+      "Articles, categories, search, comments, likes and sharing.",
+      "Tool profiles, category browsing and tool upvotes.",
+      "Editorial draft/publish workflows and media uploads.",
+      "Structured metadata, feeds and machine-readable discovery surfaces."
+    ],
+    "workflow": [
+      "An editor creates a draft and attaches uploaded media.",
+      "The CMS stores editorial and tool records in MongoDB.",
+      "Published pages and tool profiles render from the same Next.js application.",
+      "Readers discover content through the site, search and published feeds."
+    ],
+    "boundary": "RapidReach uses one Next.js application with MongoDB and Blob storage; there is no separate backend service. Publishing and media require a configured deployment.",
+    "rows": [
+      [
+        [
+          "readers",
+          "Public experience",
+          "Articles / tools"
+        ],
+        [
+          "cms",
+          "Editorial CMS",
+          "Drafts / publishing"
+        ]
+      ],
+      [
+        [
+          "app",
+          "Web + domain routes",
+          "Next.js / TypeScript"
+        ]
+      ],
+      [
+        [
+          "db",
+          "Editorial data",
+          "MongoDB"
+        ],
+        [
+          "media",
+          "Public media",
+          "Vercel Blob"
+        ]
+      ]
+    ],
+    "edges": [
+      [
+        "readers",
+        "app"
+      ],
+      [
+        "cms",
+        "app"
+      ],
+      [
+        "app",
+        "db"
+      ],
+      [
+        "cms",
+        "media"
+      ]
+    ],
+    "components": [
+      [
+        "Next.js",
+        "Public pages, tool directory, CMS and API routes in one application."
+      ],
+      [
+        "MongoDB",
+        "Editorial records, tool records, comments and categories."
+      ],
+      [
+        "Vercel Blob",
+        "Public media objects referenced by content records."
+      ]
+    ],
+    "reviewed": "2026-10-04",
+    "source": "https://github.com/savisaluwadana/RapidReachBloWebsite/blob/main/README.md"
+  },
+  {
+    "id": "advance-hris",
+    "category": "HR operations platform",
+    "type": "Local-first HRIS + desktop operations",
+    "name": "Advance HRIS",
+    "description": "A hybrid HR information system with an employee web portal, a native HR/admin desktop console, tenant-scoped access, policy-backed leave, schedule-aware attendance, audit history and durable offline synchronization.",
+    "architecture": "Next.js Web + Wails / React Desktop → Go API → PostgreSQL",
+    "tags": [
+      "Go",
+      "Next.js",
+      "Wails",
+      "PostgreSQL",
+      "Offline sync",
+      "RBAC"
+    ],
+    "footer": "The system combines cloud-authoritative HR data with a local-first desktop workflow, encrypted local payloads, conflict-aware sync and payroll-ready attendance boundaries.",
+    "href": "https://github.com/savisaluwadana/Advance-HIRS-System",
+    "linkLabel": "View repository ↗",
+    "classes": "project-card project-card--product",
+    "users": "Employees, managers, HR teams and administrators.",
+    "scope": "Hybrid web and local-first desktop HR operations.",
+    "features": [
+      "Employee records, tenant scope and role-aware self-service.",
+      "Policy-backed leave and schedule-aware attendance.",
+      "Audit history and durable offline desktop synchronization."
+    ],
+    "workflow": [
+      "Employees and managers use the Next.js portal for self-service.",
+      "HR/admin users can work through the Wails desktop console and local SQLite storage.",
+      "The durable sync queue sends authorized operations to the Go API.",
+      "PostgreSQL remains the authoritative system of record; synchronization handles conflicts explicitly."
+    ],
+    "boundary": "Local-first refers to the desktop console. The cloud database remains authoritative. Payroll-ready attendance boundaries do not mean a complete payroll-processing product is included.",
+    "rows": [
+      [
+        [
+          "web",
+          "Self-service portal",
+          "Next.js"
+        ],
+        [
+          "desktop",
+          "HR / admin console",
+          "Wails / React"
+        ]
+      ],
+      [
+        [
+          "api",
+          "Application API",
+          "Go / auth / RBAC"
+        ],
+        [
+          "local",
+          "Offline state + queue",
+          "Encrypted local SQLite"
+        ]
+      ],
+      [
+        [
+          "db",
+          "System of record",
+          "PostgreSQL"
+        ]
+      ]
+    ],
+    "edges": [
+      [
+        "web",
+        "api"
+      ],
+      [
+        "desktop",
+        "local"
+      ],
+      [
+        "local",
+        "api"
+      ],
+      [
+        "api",
+        "db"
+      ]
+    ],
+    "components": [
+      [
+        "Next.js portal",
+        "Employee and manager self-service through a web session/BFF boundary."
+      ],
+      [
+        "Wails desktop",
+        "Native HR/admin console with encrypted local payloads."
+      ],
+      [
+        "SQLite + sync queue",
+        "Local state and durable synchronization operations."
+      ],
+      [
+        "Go + PostgreSQL",
+        "Tenant-scoped business rules and authoritative HR records."
+      ]
+    ],
+    "reviewed": "2026-10-04",
+    "source": "https://github.com/savisaluwadana/Advance-HIRS-System/blob/main/README.md"
+  },
+  {
+    "id": "nexus-pos",
+    "category": "Retail operations system",
+    "type": "Point of sale + Electron desktop",
+    "name": "NexusPOS",
+    "description": "A retail POS and store-operations system covering touch checkout, barcode workflows, inventory, staff roles, cash shifts, refunds, reconciliation, audit history and native receipt printing.",
+    "architecture": "Next.js / React → Prisma → MongoDB + Electron",
+    "tags": [
+      "Electron",
+      "POS",
+      "Inventory",
+      "Prisma",
+      "MongoDB",
+      "RBAC"
+    ],
+    "footer": "Built as more than a checkout screen: the system handles stock-safe transactions, cash-drawer operations, refunds, reporting and multi-platform desktop packaging.",
+    "href": "",
+    "linkLabel": "Private product build",
+    "classes": "project-card project-card--product",
+    "users": "Cashiers, store managers and retail administrators.",
+    "scope": "Checkout and store operations with an optional Electron desktop shell.",
+    "features": [
+      "Touch checkout, barcode/SKU input, held orders and receipts.",
+      "Inventory, authenticated staff roles and store settings.",
+      "Cash shifts, refunds, reconciliation and audit history."
+    ],
+    "workflow": [
+      "A cashier builds a basket and applies eligible discounts or loyalty.",
+      "Authenticated server routes calculate checkout totals and validate stock.",
+      "Prisma persists retail records to MongoDB.",
+      "The optional Electron shell provides native receipt printing while the browser supports print fallback."
+    ],
+    "boundary": "Electron is an optional desktop shell. The portfolio does not claim a complete offline checkout engine or a tenant-isolated hosted retail service.",
+    "rows": [
+      [
+        [
+          "web",
+          "Retail interface",
+          "Next.js / React"
+        ],
+        [
+          "desktop",
+          "Desktop shell",
+          "Electron / receipt printing"
+        ]
+      ],
+      [
+        [
+          "api",
+          "Retail API",
+          "Auth, stock, checkout"
+        ]
+      ],
+      [
+        [
+          "data",
+          "Retail records",
+          "Prisma / MongoDB"
+        ]
+      ]
+    ],
+    "edges": [
+      [
+        "web",
+        "api"
+      ],
+      [
+        "desktop",
+        "web"
+      ],
+      [
+        "api",
+        "data"
+      ]
+    ],
+    "components": [
+      [
+        "Next.js + React",
+        "Cashier and store-administration interfaces."
+      ],
+      [
+        "Server routes",
+        "Authenticated staff actions and server-authoritative checkout."
+      ],
+      [
+        "Prisma + MongoDB",
+        "Products, orders and retail operational records."
+      ],
+      [
+        "Electron",
+        "Optional native desktop packaging and receipt printing."
+      ]
+    ],
+    "reviewed": "2026-10-04",
+    "source": null
+  },
+  {
+    "id": "academix",
+    "category": "Education operations SaaS",
+    "type": "Student, fees & academic operations",
+    "name": "Academix",
+    "description": "A SaaS workspace for tuition centres and private institutes combining student CRM, classes, attendance, assessments, fee collection, communications, reporting and multi-site institute operations.",
+    "architecture": "Next.js → MongoDB / Mongoose → notification integrations",
+    "tags": [
+      "Next.js",
+      "TypeScript",
+      "MongoDB",
+      "Attendance",
+      "Fees",
+      "Multi-site"
+    ],
+    "footer": "The product consolidates academic and operational workflows into a role-aware workspace with SaaS plan surfaces, reporting and extensible notification integrations.",
+    "href": "https://github.com/savisaluwadana/student-management-system-saas",
+    "linkLabel": "View repository ↗",
+    "classes": "project-card project-card--product",
+    "users": "Tuition centres, academies and private-institute staff.",
+    "scope": "Student, academic and fee operations in a role-aware workspace.",
+    "features": [
+      "Student CRM, enrollments, teacher and class records.",
+      "Manual, bulk and barcode attendance plus assessments.",
+      "Fees, LKR receipts, reporting and institute records.",
+      "Communication workflows with email/SMS integration points."
+    ],
+    "workflow": [
+      "Staff register students and enroll them into classes.",
+      "Authenticated application routes record attendance, grades and fee activity.",
+      "Mongoose models store operational records in MongoDB.",
+      "Dashboards and reports summarize the workspace; communication providers are configured separately."
+    ],
+    "boundary": "The account and plan surfaces support a SaaS direction. Automated billing and broader tenant-isolation work should be checked against the current project roadmap rather than assumed complete.",
+    "rows": [
+      [
+        [
+          "web",
+          "Institute workspace",
+          "Next.js / TypeScript"
+        ]
+      ],
+      [
+        [
+          "api",
+          "Education API",
+          "JWT / role-aware routes"
+        ]
+      ],
+      [
+        [
+          "db",
+          "Academic data",
+          "MongoDB / Mongoose"
+        ],
+        [
+          "messages",
+          "Communications",
+          "Resend / Twilio adapters"
+        ]
+      ]
+    ],
+    "edges": [
+      [
+        "web",
+        "api"
+      ],
+      [
+        "api",
+        "db"
+      ],
+      [
+        "api",
+        "messages"
+      ]
+    ],
+    "components": [
+      [
+        "Next.js",
+        "Student, academic, fee, communication and reporting workspaces."
+      ],
+      [
+        "Auth + API routes",
+        "Cookie-based JWT sessions and role-aware domain requests."
+      ],
+      [
+        "MongoDB + Mongoose",
+        "Student, class, attendance, assessment and fee records."
+      ],
+      [
+        "Messaging integrations",
+        "Configured email/SMS providers; integration availability varies by deployment."
+      ]
+    ],
+    "reviewed": "2026-10-04",
+    "source": "https://github.com/savisaluwadana/student-management-system-saas/blob/main/README.md"
+  },
+  {
+    "id": "acme-accounting",
+    "category": "Financial operations software",
+    "type": "Single-company double-entry accounting",
+    "name": "Acme Accounting",
+    "description": "A single-company accounting application with a double-entry general ledger, invoicing, A/R and A/P aging, vendor bills, credit notes, refunds, period locks, bank reconciliation, budgeting and financial reporting.",
+    "architecture": "Next.js → MongoDB / Mongoose → double-entry ledger",
+    "tags": [
+      "Accounting",
+      "General ledger",
+      "A/R + A/P",
+      "Reconciliation",
+      "Reporting",
+      "Controls"
+    ],
+    "footer": "Accounting integrity is enforced at the posting layer with balanced journals, reversible history, period controls and ledger-backed financial statements instead of dashboard-only bookkeeping.",
+    "href": "",
+    "linkLabel": "Private product build",
+    "classes": "project-card project-card--product",
+    "users": "A company’s accounting administrator and finance operator.",
+    "scope": "Single-company financial operations backed by a double-entry ledger.",
+    "features": [
+      "Chart of accounts, journals, invoicing and receivables.",
+      "Vendor bills, payables, expenses, credit notes and refunds.",
+      "Bank reconciliation, period locks, recurring transactions and budgets.",
+      "Ledger-backed statements and accounting integrity diagnostics."
+    ],
+    "workflow": [
+      "An operator creates a source document such as an invoice or vendor bill.",
+      "Authenticated domain services validate the accounting transition.",
+      "The posting layer records balanced journals in the general ledger.",
+      "Reports read the ledger while period controls and audit history preserve traceability."
+    ],
+    "boundary": "The current application is designed for one company and one administrator identity per database. It is not a tenant-isolated accounting SaaS backend.",
+    "rows": [
+      [
+        [
+          "web",
+          "Finance workspace",
+          "Next.js / NextAuth"
+        ]
+      ],
+      [
+        [
+          "domain",
+          "Accounting services",
+          "Documents / posting rules"
+        ]
+      ],
+      [
+        [
+          "ledger",
+          "Double-entry ledger",
+          "Balanced journal posting"
+        ],
+        [
+          "reports",
+          "Financial reports",
+          "Ledger-backed statements"
+        ]
+      ],
+      [
+        [
+          "db",
+          "Financial records",
+          "MongoDB / Mongoose"
+        ]
+      ]
+    ],
+    "edges": [
+      [
+        "web",
+        "domain"
+      ],
+      [
+        "domain",
+        "ledger"
+      ],
+      [
+        "ledger",
+        "db"
+      ],
+      [
+        "reports",
+        "db"
+      ],
+      [
+        "web",
+        "reports"
+      ]
+    ],
+    "components": [
+      [
+        "Next.js + NextAuth",
+        "Finance interfaces and authenticated route handlers."
+      ],
+      [
+        "Accounting services",
+        "Source-document workflows, validation and period controls."
+      ],
+      [
+        "General ledger",
+        "Balanced journal posting, reversal and source-level idempotency."
+      ],
+      [
+        "MongoDB",
+        "Financial records, journal history and reporting source data."
+      ]
+    ],
+    "reviewed": "2026-10-04",
+    "source": null
+  },
+  {
+    "id": "eventos",
+    "name": "EventOS",
+    "category": "Event services marketplace",
+    "type": "Service matching + event procurement",
+    "description": "An event-services marketplace and operations platform for finding suppliers, comparing quotes, managing bookings and contracts, tracking payments and coordinating event delivery.",
+    "architecture": "Next.js → PostgreSQL → transactional workflows + file storage",
+    "tags": [
+      "Next.js",
+      "PostgreSQL",
+      "RLS",
+      "Procurement",
+      "Bookings",
+      "Contracts"
+    ],
+    "footer": "Two connected journeys: quick service matching and full event procurement with buyer, supplier and admin workflows.",
+    "href": "",
+    "linkLabel": "Private product build",
+    "classes": "project-card",
+    "users": "Guests, event buyers, suppliers and administrators.",
+    "scope": "Quick provider matching and full event procurement.",
+    "features": [
+      "Service requests, supplier profiles and quote comparison.",
+      "Bookings, contracts and event execution workflows.",
+      "Manual payment submission and administrative reconciliation.",
+      "PostgreSQL sessions, row-level authorization and persistent uploads."
+    ],
+    "workflow": [
+      "A guest requests a provider or a buyer defines an event and service requirements.",
+      "Suppliers submit quotes; the buyer compares and accepts an offer.",
+      "Database transactions coordinate booking, contract and commercial state.",
+      "Authorized users share files and track execution; administrators reconcile submitted payment records."
+    ],
+    "boundary": "Payments are submitted and reconciled manually in the current MVP. This is a Next.js and PostgreSQL application; a Supabase service is not required for the documented runtime.",
+    "rows": [
+      [
+        [
+          "buyer",
+          "Buyer + guest UI",
+          "Matching / procurement"
+        ],
+        [
+          "supplier",
+          "Supplier + admin UI",
+          "Quotes / operations"
+        ]
+      ],
+      [
+        [
+          "app",
+          "Application boundary",
+          "Next.js / sessions / actions"
+        ]
+      ],
+      [
+        [
+          "db",
+          "Domain transactions",
+          "PostgreSQL / RLS"
+        ],
+        [
+          "files",
+          "Files",
+          "Persistent storage adapter"
+        ]
+      ]
+    ],
+    "edges": [
+      [
+        "buyer",
+        "app"
+      ],
+      [
+        "supplier",
+        "app"
+      ],
+      [
+        "app",
+        "db"
+      ],
+      [
+        "app",
+        "files"
+      ]
+    ],
+    "components": [
+      [
+        "Next.js",
+        "Public marketplace and buyer, supplier and admin workflows."
+      ],
+      [
+        "Database adapter",
+        "Authenticated requests and domain transactions."
+      ],
+      [
+        "PostgreSQL",
+        "Sessions, row-level authorization, functions and lifecycle state."
+      ],
+      [
+        "File adapter",
+        "Public supplier assets and access-controlled event documents."
+      ]
+    ],
+    "reviewed": "2026-10-04",
+    "source": null
+  },
+  {
+    "id": "restaurantos",
+    "name": "Plate Restaurant OS",
+    "category": "Restaurant operations",
+    "type": "POS + kitchen + direct ordering",
+    "description": "A restaurant-management product bringing point of sale, table service, direct online ordering, kitchen workflows, menus and inventory into one operational workspace.",
+    "architecture": "Next.js → authenticated API routes → MongoDB",
+    "tags": [
+      "Next.js",
+      "TypeScript",
+      "MongoDB",
+      "POS",
+      "Kitchen",
+      "Ordering"
+    ],
+    "footer": "The product coordinates orders between customer-facing ordering, restaurant staff and kitchen operations.",
+    "href": "",
+    "linkLabel": "Private product build",
+    "classes": "project-card",
+    "users": "Restaurant staff, kitchen teams, managers and direct-order customers.",
+    "scope": "Restaurant point of sale and coordinated order operations.",
+    "features": [
+      "POS, table management and menu administration.",
+      "Direct online ordering and kitchen display workflows.",
+      "Inventory and operational analytics."
+    ],
+    "workflow": [
+      "A customer or staff member creates an order.",
+      "Authenticated Next.js routes validate the request and persist the order.",
+      "Kitchen and staff interfaces coordinate preparation and service.",
+      "Managers maintain menus and inventory and inspect order reports."
+    ],
+    "boundary": "The product is under development. POS, kitchen and online ordering share a Next.js application and MongoDB data layer; external integrations require deployment-specific configuration.",
+    "rows": [
+      [
+        [
+          "customer",
+          "Direct ordering",
+          "Customer experience"
+        ],
+        [
+          "staff",
+          "Restaurant workspace",
+          "POS / kitchen / manager"
+        ]
+      ],
+      [
+        [
+          "app",
+          "Restaurant application",
+          "Next.js / JWT / API routes"
+        ]
+      ],
+      [
+        [
+          "db",
+          "Operational records",
+          "MongoDB / Mongoose"
+        ]
+      ]
+    ],
+    "edges": [
+      [
+        "customer",
+        "app"
+      ],
+      [
+        "staff",
+        "app"
+      ],
+      [
+        "app",
+        "db"
+      ]
+    ],
+    "components": [
+      [
+        "Next.js interfaces",
+        "Ordering, POS, kitchen, menu and manager surfaces."
+      ],
+      [
+        "Authenticated routes",
+        "Restaurant and order domain requests."
+      ],
+      [
+        "MongoDB + Mongoose",
+        "Restaurant, menu, order and inventory records."
+      ]
+    ],
+    "reviewed": "2026-10-04",
+    "source": null
+  },
+  {
+    "id": "pain-intelligence",
+    "name": "Pain Intelligence Lab",
+    "category": "Market research platform",
+    "type": "Evidence-backed research + MCP",
+    "description": "A cross-source research platform for discovering repeated customer pain, costly workarounds and product opportunities using saved evidence, quality checks and an MCP-connected research host.",
+    "architecture": "React / Vite + MCP host → Express API → MongoDB",
+    "tags": [
+      "React",
+      "Express",
+      "MongoDB",
+      "MCP",
+      "Research",
+      "Evidence"
+    ],
+    "footer": "Research conclusions remain connected to sources, independent stories, competing explanations and validation work.",
+    "href": "https://github.com/savisaluwadana/Reddit-post-Analyzer",
+    "linkLabel": "View repository ↗",
+    "classes": "project-card",
+    "users": "Builders, product teams and market researchers.",
+    "scope": "Cross-source pain research and evidence-backed opportunity validation.",
+    "features": [
+      "Manual evidence ingestion and native Reddit deep research.",
+      "Autonomous research jobs executed by a connected MCP host.",
+      "Semantic clustering, jobs-to-be-done and opportunity synthesis.",
+      "Source diversity, duplicate checks and competitor/pricing validation."
+    ],
+    "workflow": [
+      "A researcher creates a market question and research job.",
+      "The MCP host gathers evidence and sends it through the platform’s tool boundary.",
+      "Express stores evidence and workflow state in MongoDB and applies quality/scoring checks.",
+      "Host reasoning annotates and clusters evidence before opportunities are validated or rejected."
+    ],
+    "boundary": "The application does not call model-provider APIs directly; semantic reasoning runs in the connected MCP host. A research job may correctly produce no validated opportunity.",
+    "rows": [
+      [
+        [
+          "web",
+          "Research workspace",
+          "React / Vite"
+        ],
+        [
+          "host",
+          "Research host",
+          "Codex / Claude / MCP"
+        ]
+      ],
+      [
+        [
+          "api",
+          "Research platform",
+          "Express / scoring / tools"
+        ]
+      ],
+      [
+        [
+          "db",
+          "Evidence + job state",
+          "MongoDB"
+        ],
+        [
+          "sources",
+          "Source evidence",
+          "Authorized public sources"
+        ]
+      ]
+    ],
+    "edges": [
+      [
+        "web",
+        "api"
+      ],
+      [
+        "host",
+        "api"
+      ],
+      [
+        "host",
+        "sources"
+      ],
+      [
+        "api",
+        "db"
+      ]
+    ],
+    "components": [
+      [
+        "React workspace",
+        "Research questions, saved evidence and project inspection."
+      ],
+      [
+        "Express platform",
+        "Storage, evidence-quality scoring and workflow state."
+      ],
+      [
+        "MCP host",
+        "Browsing, annotation, semantic reasoning and synthesis."
+      ],
+      [
+        "MongoDB",
+        "Evidence, research projects, snapshots and job state."
+      ]
+    ],
+    "reviewed": "2026-10-04",
+    "source": "https://github.com/savisaluwadana/Reddit-post-Analyzer/blob/main/README.md"
+  },
+  {
+    "id": "ad-performance-agent",
+    "name": "Ad Performance Analysis Agent",
+    "category": "Marketing analytics prototype",
+    "type": "Campaign analysis + reporting",
+    "description": "A campaign-performance analysis prototype that parses ad-data CSVs, compares weekly metrics, highlights risks and wins, and uses Gemini to help produce actionable summaries.",
+    "architecture": "React / Vite → Express → CSV analysis + Gemini → email",
+    "tags": [
+      "React",
+      "TypeScript",
+      "Express",
+      "CSV",
+      "Gemini",
+      "Reporting"
+    ],
+    "footer": "CSV analysis is implemented. Google Ads and Supermetrics connections are mocked; the scheduled demo uses sample data.",
+    "href": "",
+    "linkLabel": "Private product build",
+    "classes": "project-card",
+    "users": "Marketing operators and teams reviewing campaign performance.",
+    "scope": "An advertising analytics and reporting prototype.",
+    "features": [
+      "CSV parsing of campaign dates, spend, clicks, impressions and conversions.",
+      "Week-over-week metrics and threshold-based risk/win flags.",
+      "Gemini-assisted summaries and email reporting paths."
+    ],
+    "workflow": [
+      "An operator supplies campaign data as CSV.",
+      "The analysis module normalizes rows and compares current and previous periods.",
+      "Threshold logic identifies risks and wins; Gemini helps summarize next steps.",
+      "The reporting interface displays results and the email path can send a summary when configured."
+    ],
+    "boundary": "Google Ads and Supermetrics connection endpoints are currently mocks. Scheduled demonstration runs use generated sample CSVs and in-memory configuration, rather than a durable live account-ingestion pipeline.",
+    "rows": [
+      [
+        [
+          "web",
+          "Analysis interface",
+          "React / Vite"
+        ]
+      ],
+      [
+        [
+          "api",
+          "Prototype API",
+          "Express / in-memory state"
+        ]
+      ],
+      [
+        [
+          "analysis",
+          "Campaign analysis",
+          "CSV / thresholds"
+        ],
+        [
+          "ai",
+          "Summary generation",
+          "Gemini"
+        ],
+        [
+          "email",
+          "Report delivery",
+          "Resend / scheduler"
+        ]
+      ]
+    ],
+    "edges": [
+      [
+        "web",
+        "api"
+      ],
+      [
+        "api",
+        "analysis"
+      ],
+      [
+        "analysis",
+        "ai"
+      ],
+      [
+        "api",
+        "email"
+      ]
+    ],
+    "components": [
+      [
+        "React interface",
+        "Campaign-data input and analysis views."
+      ],
+      [
+        "Express API",
+        "Prototype configuration, scheduling and reporting endpoints."
+      ],
+      [
+        "Analysis module",
+        "CSV normalization, weekly comparison and threshold flags."
+      ],
+      [
+        "Gemini + Resend",
+        "Configured AI summarization and email-report delivery."
+      ]
+    ],
+    "reviewed": "2026-10-04",
+    "source": null
+  },
+  {
+    "id": "medicare",
+    "name": "MediCare",
+    "category": "Clinic operations platform",
+    "type": "Patient records + scheduling + billing",
+    "description": "A patient and clinic-management system covering patient administration, appointments, clinical records, billing, staff permissions and an embeddable scheduling service.",
+    "architecture": "Next.js → Go API + scheduling service → PostgreSQL",
+    "tags": [
+      "Go",
+      "Next.js",
+      "PostgreSQL",
+      "Scheduling",
+      "RBAC",
+      "Docker"
+    ],
+    "footer": "Patient, clinical, billing and administrative workflows use separate server-enforced permissions.",
+    "href": "",
+    "linkLabel": "Private product build",
+    "classes": "project-card",
+    "users": "Clinic staff, doctors, billing operators, administrators and patients.",
+    "scope": "Patient administration, appointments, clinical records and billing.",
+    "features": [
+      "Patient profiles and conflict-aware appointment scheduling.",
+      "Clinical records with SOAP notes, vitals and prescriptions.",
+      "Billing records, payment tracking and operational dashboards.",
+      "Staff management and a separate embeddable scheduling API."
+    ],
+    "workflow": [
+      "Clinic staff register a patient or arrange an appointment.",
+      "The Go API validates identity, role permissions and domain requests.",
+      "PostgreSQL stores patient, appointment, clinical and billing state.",
+      "A separate scheduling service supports website embeds within its intended scheduling boundary."
+    ],
+    "boundary": "The main clinic API and embeddable scheduling API use separate service boundaries. Server-enforced roles separate clinical, billing and administrative access.",
+    "rows": [
+      [
+        [
+          "web",
+          "Clinic workspace",
+          "Next.js / TypeScript"
+        ],
+        [
+          "embed",
+          "Website scheduling",
+          "Embeddable experience"
+        ]
+      ],
+      [
+        [
+          "api",
+          "Clinic API",
+          "Go / Chi / GORM"
+        ],
+        [
+          "schedule",
+          "Scheduling service",
+          "Separate Go API"
+        ]
+      ],
+      [
+        [
+          "db",
+          "Clinic records",
+          "PostgreSQL"
+        ]
+      ]
+    ],
+    "edges": [
+      [
+        "web",
+        "api"
+      ],
+      [
+        "embed",
+        "schedule"
+      ],
+      [
+        "api",
+        "db"
+      ],
+      [
+        "schedule",
+        "db"
+      ]
+    ],
+    "components": [
+      [
+        "Next.js",
+        "Patient, appointment, clinical, billing and admin interfaces."
+      ],
+      [
+        "Go domain API",
+        "JWT sessions, role checks and clinic workflows."
+      ],
+      [
+        "Scheduling API",
+        "Separate service boundary for embeddable appointments."
+      ],
+      [
+        "PostgreSQL",
+        "Patient and operational records persisted by the backend."
+      ]
+    ],
+    "reviewed": "2026-10-04",
+    "source": null
+  }
+]
