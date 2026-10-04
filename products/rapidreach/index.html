@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="/base-styles.css"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/product-details.css">
   <link rel="describedby" type="text/plain" href="/llms.txt">
   <link rel="alternate" type="text/markdown" href="https://savisaluwadana.github.io/products/rapidreach/index.md" title="RapidReach in Markdown">
+  <link rel="alternate" type="application/atom+xml" href="/feed.xml" title="Savi Saluwadana — Engineering &amp; products">
   <meta property="og:type" content="website"><meta property="og:site_name" content="Savi Saluwadana">
   <meta property="og:title" content="RapidReach — Overview &amp; Architecture">
   <meta property="og:description" content="A developer publication and tool-discovery product with editorial workflows, comments, likes, search, tool profiles, media uploads and a deliberately small CMS."><meta property="og:url" content="https://savisaluwadana.github.io/products/rapidreach/">
@@ -30,13 +31,19 @@
       },
       "hasPart": [
         {
-          "@id": "https://savisaluwadana.github.io/about/#page"
-        },
-        {
           "@id": "https://savisaluwadana.github.io/products/#page"
         },
         {
+          "@id": "https://savisaluwadana.github.io/about/#page"
+        },
+        {
           "@id": "https://savisaluwadana.github.io/engineering/#page"
+        },
+        {
+          "@id": "https://savisaluwadana.github.io/engineering/agentic-systems/#page"
+        },
+        {
+          "@id": "https://savisaluwadana.github.io/open-source/#page"
         }
       ]
     },
@@ -164,7 +171,7 @@
       <section class="product-section" id="workflow" aria-labelledby="workflow-title"><h2 id="workflow-title">How it works</h2><ol><li>An editor creates a draft and attaches uploaded media.</li><li>The CMS stores editorial and tool records in MongoDB.</li><li>Published pages and tool profiles render from the same Next.js application.</li><li>Readers discover content through the site, search and published feeds.</li></ol></section>
       <section class="product-section" id="architecture" aria-labelledby="architecture-title"><h2 id="architecture-title">Architecture</h2><p>Next.js 16 → MongoDB → Vercel Blob</p><figure class="product-diagram"><div class="product-diagram-scroll" tabindex="0" role="region" aria-label="RapidReach architecture diagram; scroll horizontally on smaller screens"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 496" role="img" aria-labelledby="diagram-title diagram-description" font-family="Inter, ui-sans-serif, system-ui, sans-serif"><title id="diagram-title">RapidReach architecture</title><desc id="diagram-description">Public experience connects to Web + domain routes. Editorial CMS connects to Web + domain routes. Web + domain routes connects to Editorial data. Editorial CMS connects to Public media.</desc><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2457ff"/></marker></defs><g stroke="#2457ff" stroke-width="1.8" fill="none" marker-end="url(#arrow)"><path d="M 190 122 V 155 H 380 V 188"/><path d="M 570 122 V 155 H 380 V 188"/><path d="M 380 276 V 309 H 190 V 342"/><path d="M 675 78 H 748 V 386 H 675"/></g><g><rect x="85" y="34" width="210" height="88" rx="4" fill="#f4f1ea" stroke="#77746d"/><text x="190" y="68" text-anchor="middle" fill="#111111" font-size="17" font-weight="650">Public experience</text><text x="190" y="94" text-anchor="middle" fill="#5b5852" font-size="12.5">Articles / tools</text></g><g><rect x="465" y="34" width="210" height="88" rx="4" fill="#f4f1ea" stroke="#77746d"/><text x="570" y="68" text-anchor="middle" fill="#111111" font-size="17" font-weight="650">Editorial CMS</text><text x="570" y="94" text-anchor="middle" fill="#5b5852" font-size="12.5">Drafts / publishing</text></g><g><rect x="275" y="188" width="210" height="88" rx="4" fill="#f4f1ea" stroke="#77746d"/><text x="380" y="222" text-anchor="middle" fill="#111111" font-size="17" font-weight="650">Web + domain routes</text><text x="380" y="248" text-anchor="middle" fill="#5b5852" font-size="12.5">Next.js / TypeScript</text></g><g><rect x="85" y="342" width="210" height="88" rx="4" fill="#f4f1ea" stroke="#77746d"/><text x="190" y="376" text-anchor="middle" fill="#111111" font-size="17" font-weight="650">Editorial data</text><text x="190" y="402" text-anchor="middle" fill="#5b5852" font-size="12.5">MongoDB</text></g><g><rect x="465" y="342" width="210" height="88" rx="4" fill="#f4f1ea" stroke="#77746d"/><text x="570" y="376" text-anchor="middle" fill="#111111" font-size="17" font-weight="650">Public media</text><text x="570" y="402" text-anchor="middle" fill="#5b5852" font-size="12.5">Vercel Blob</text></g></svg></div><figcaption>Component overview. Arrows show requests and data flow between the main parts of the product.</figcaption></figure><div class="product-table-wrap"><table class="product-table"><caption class="visually-hidden">RapidReach components and responsibilities</caption><thead><tr><th scope="col">Component</th><th scope="col">Responsibility</th></tr></thead><tbody><tr><th scope="row">Next.js</th><td>Public pages, tool directory, CMS and API routes in one application.</td></tr><tr><th scope="row">MongoDB</th><td>Editorial records, tool records, comments and categories.</td></tr><tr><th scope="row">Vercel Blob</th><td>Public media objects referenced by content records.</td></tr></tbody></table></div></section>
       <section class="product-section" id="scope" aria-labelledby="scope-title"><h2 id="scope-title">Current scope</h2><p class="product-boundary">RapidReach uses one Next.js application with MongoDB and Blob storage; there is no separate backend service. Publishing and media require a configured deployment.</p><p class="product-source">Architecture summary reviewed <time datetime="2026-10-04">4 October 2026</time>. <a href="https://github.com/savisaluwadana/RapidReachBloWebsite/blob/main/README.md" target="_blank" rel="noreferrer">Repository documentation</a>.</p><div class="product-footer-links"><a href="index.md">Markdown overview</a><a href="/contact.html">Contact Savi</a></div></section>
-      <section class="product-section" aria-labelledby="related-title"><h2 id="related-title">Related product work</h2><div class="product-related"><a href="/products/avara/">Avara Real Estate</a><a href="/products/freshpick/">FreshPick / FreshOnTime</a><a href="/products/timelyhelp/">TimelyHelp.lk</a></div></section>
+      <section class="product-section" aria-labelledby="related-title"><h2 id="related-title">Related product work</h2><div class="product-related"><a href="/products/avara/">Avara Real Estate</a><a href="/products/freshpick/">FreshPick / FreshOnTime</a><a href="/products/timelyhelp/">TimelyHelp.lk</a><a href="/open-source/">Public source index</a></div></section>
     </div></div></main>
-  <footer class="site-footer"><div class="shell footer-layout"><div><strong>Savi Saluwadana</strong><span>Software · Architecture · Product · Platform · DevOps</span></div><div><span><a href="/">Portfolio</a> · <a href="/products/">Products</a> · <a href="/engineering/">Engineering</a> · <a href="/about/">About</a></span><span>© <span data-year>2026</span></span></div></div></footer><script src="/app.js" defer></script>
+  <footer class="site-footer"><div class="shell footer-layout"><div><strong>Savi Saluwadana</strong><span>Software · Architecture · Product · Platform · DevOps</span></div><div><span><a href="/">Portfolio</a> · <a href="/products/">Products</a> · <a href="/engineering/">Engineering</a> · <a href="/open-source/">Public source</a> · <a href="/about/">About</a> · <a href="/feed.xml">Feed</a></span><span>© <span data-year>2026</span></span></div></div></footer><script src="/app.js" defer></script>
 </body></html>

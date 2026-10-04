@@ -16,7 +16,7 @@ Model Context Protocol gives an agent a tool interface. The useful architectural
 | [DevRelOS](https://savisaluwadana.github.io/products/devrelos/) | A Next.js dashboard, Go API and workers share PostgreSQL as the system of record. Provider adapters and evidence provenance support the workflow; consequential outreach passes through approval gates. |
 | [Pain Intelligence Lab](https://savisaluwadana.github.io/products/pain-intelligence/) | A React interface and Express/MongoDB application expose research tools to an MCP host. Semantic reasoning runs in the connected host, rather than direct model-provider calls from the application. |
 
-These are different boundaries. An agent tool does not imply unrestricted writes or an autonomous production workflow. Product scope notes describe the implemented tools, provider configuration and evidence requirements.
+These are different boundaries. An agent tool does not imply unrestricted writes or an autonomous production workflow. Product scope notes describe the implemented tools, provider configuration and evidence requirements. The [agentic systems walkthroughs](https://savisaluwadana.github.io/engineering/agentic-systems/) follow each request through its tool, service and recorded state.
 
 ## Local-first data and desktop packaging
 

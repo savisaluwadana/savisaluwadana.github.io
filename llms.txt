@@ -19,6 +19,10 @@ This is a public portfolio with product-level architecture summaries. It does no
 - [About Savi Saluwadana in Markdown](https://savisaluwadana.github.io/about/index.md): Text equivalent of the same reference.
 - [Architecture reference](https://savisaluwadana.github.io/engineering/): Explore Savi Saluwadana’s product architecture: Go APIs, MCP access boundaries, local-first HR workflows, tenancy and transactional operations, with project references.
 - [Architecture reference in Markdown](https://savisaluwadana.github.io/engineering/index.md): Text equivalent of the same reference.
+- [Agentic systems architecture](https://savisaluwadana.github.io/engineering/agentic-systems/): Explore Savi Saluwadana’s agentic systems work through rental operations, evidence-led research and developer workflows: MCP, API permissions, state and human review.
+- [Agentic systems architecture in Markdown](https://savisaluwadana.github.io/engineering/agentic-systems/index.md): Text equivalent of the same reference.
+- [Public source and open-source interests](https://savisaluwadana.github.io/open-source/): Explore Savi Saluwadana’s public engineering repositories, architecture references and open-source development interests in Go, cloud-native software and agent tools.
+- [Public source and open-source interests in Markdown](https://savisaluwadana.github.io/open-source/index.md): Text equivalent of the same reference.
 
 ## Product overview and architecture
 
@@ -40,6 +44,9 @@ This is a public portfolio with product-level architecture summaries. It does no
 - [MediCare](https://savisaluwadana.github.io/products/medicare/): Patient administration, appointments, clinical records and billing.
 
 ## Optional
+
+- [Engineering and product feed](https://savisaluwadana.github.io/feed.xml): Atom feed of the current reference pages and product overviews.
+- [Public source data](https://savisaluwadana.github.io/public-work.json): Verified public repository references and available license metadata.
 
 - [Product data](https://savisaluwadana.github.io/products.json): Product descriptions, workflows, components and current scope.
 - [Full text reference](https://savisaluwadana.github.io/llms-full.txt): Profile and all product summaries as text.
