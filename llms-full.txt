@@ -1,6 +1,6 @@
 # Savi Saluwadana
 
-Savi Saluwadana is a software and product engineer based in Sri Lanka, focused on software architecture, systems design, Go, Kubernetes, platform engineering, DevOps and AI-enabled systems.
+Savi Saluwadana is a software and product engineer based in Sri Lanka, focused on software architecture, systems design, Go, Kubernetes and developer platforms, with interests in agentic systems and open-source development.
 
 Website: https://savisaluwadana.github.io/
 GitHub: https://github.com/savisaluwadana
@@ -27,7 +27,13 @@ Email: savisaluwadana@gmail.com
 - Site Reliability Engineering
 - Artificial Intelligence
 - AI Agents
+- Agentic Systems
+- Multi-Agent Systems
+- Workflow Orchestration
+- Retrieval-Augmented Generation
+- Agent Evaluation
 - Model Context Protocol
+- Open-Source Development
 - PostgreSQL
 - Next.js
 - Cloud Native Computing
@@ -54,7 +60,7 @@ Email: savisaluwadana@gmail.com
 ## Profile and architecture references
 
 - [Product directory](https://savisaluwadana.github.io/products/): Explore 16 products built or contributed to by Savi Saluwadana: marketplaces, business systems, healthcare, AI agents and developer tools, with architecture diagrams.
-- [About Savi Saluwadana](https://savisaluwadana.github.io/about/): Meet Savi Saluwadana, a software and product engineer based in Sri Lanka. Explore his engineering focus, product contributions, public repositories and contact details.
+- [About Savi Saluwadana](https://savisaluwadana.github.io/about/): Meet Savi Saluwadana, a software engineer in Sri Lanka interested in agentic systems and open-source development. Explore his focus and product architecture.
 - [Architecture reference](https://savisaluwadana.github.io/engineering/): Explore Savi Saluwadana’s product architecture: Go APIs, MCP access boundaries, local-first HR workflows, tenancy and transactional operations, with project references.
 
 
@@ -121,7 +127,7 @@ Read the [architecture reference](https://savisaluwadana.github.io/engineering/)
 
 # Savi Saluwadana
 
-I’m a software and product engineer based in Sri Lanka. My work connects product workflows, software architecture, backend systems and the platforms that operate them.
+I’m a software and product engineer based in Sri Lanka, interested in agentic systems and open-source development. My work connects product workflows, software architecture, backend systems and the platforms that operate them.
 
 By: Savi Saluwadana
 Canonical page: https://savisaluwadana.github.io/about/
@@ -135,9 +141,29 @@ I’m interested in clear domain boundaries, strong data models, reliable APIs a
 | --- | --- |
 | Go backend and API design | [Property Management OS](https://savisaluwadana.github.io/products/property-os/), [DevRelOS](https://savisaluwadana.github.io/products/devrelos/) and [Advance HRIS](https://savisaluwadana.github.io/products/advance-hris/). |
 | Product and full-stack engineering | [Avara Real Estate](https://savisaluwadana.github.io/products/avara/), [FreshPick](https://savisaluwadana.github.io/products/freshpick/) and [RapidReach](https://savisaluwadana.github.io/products/rapidreach/). |
-| AI agents and Model Context Protocol | [Pain Intelligence Lab](https://savisaluwadana.github.io/products/pain-intelligence/), [Property Management OS](https://savisaluwadana.github.io/products/property-os/) and [DevRelOS](https://savisaluwadana.github.io/products/devrelos/). |
+| Agentic systems and Model Context Protocol | [Pain Intelligence Lab](https://savisaluwadana.github.io/products/pain-intelligence/), [Property Management OS](https://savisaluwadana.github.io/products/property-os/) and [DevRelOS](https://savisaluwadana.github.io/products/devrelos/). |
+| Open-source development interests | Code contributions, bug fixes, documentation and developer tools. Explore my [public GitHub work](https://github.com/savisaluwadana). |
 | Operational data and workflows | [Acme Accounting](https://savisaluwadana.github.io/products/acme-accounting/), [Advance HRIS](https://savisaluwadana.github.io/products/advance-hris/) and [MediCare](https://savisaluwadana.github.io/products/medicare/). |
 | Platform engineering and DevOps | My [platform and DevOps focus](https://savisaluwadana.github.io/#platform-devops) covers Kubernetes, delivery pipelines, observability and developer platforms. |
+
+## Agentic systems I’m interested in
+
+I’m interested in agents that use tools, retrieval and workflow state to help people complete real business and developer tasks. I want to explore systems where the model’s reasoning connects to reliable APIs, explicit permissions, useful evaluation and observable execution.
+
+- Tool-using agents and MCP interfaces that respect domain rules and the permissions of the person using them.
+- Durable workflow orchestration, retries and recovery for tasks that span multiple services or take time to complete.
+- Multi-agent collaboration with clear responsibilities, shared evidence and human review for consequential actions.
+- Retrieval-augmented generation, evidence provenance and agent evaluation that make results inspectable and useful.
+
+My current product work includes [Pain Intelligence Lab](https://savisaluwadana.github.io/products/pain-intelligence/), [Property Management OS](https://savisaluwadana.github.io/products/property-os/) and [DevRelOS](https://savisaluwadana.github.io/products/devrelos/). Their implemented boundaries are documented in the [agent and MCP architecture comparison](https://savisaluwadana.github.io/engineering/#agent-access). The broader topics above describe my development interests.
+
+## Open-source development and collaboration
+
+I’m interested in contributing code, fixing bugs, reviewing design decisions and improving documentation in open-source projects. Cloud-native infrastructure, Go, Kubernetes, developer platforms and agent tooling are areas I want to contribute to.
+
+I value clear APIs, reproducible setup instructions, architecture documentation and examples that help other developers understand and improve a system. My [GitHub profile](https://github.com/savisaluwadana) and the public repository links on [product pages](https://savisaluwadana.github.io/products/) provide places to inspect my work.
+
+For code, documentation or engineering collaboration, [get in touch](https://savisaluwadana.github.io/contact.html).
 
 ## Products I’ve built and worked on
 
@@ -149,7 +175,7 @@ Contribution and maturity vary by project. For example, [TimelyHelp](https://sav
 
 ### Who is Savi Saluwadana?
 
-Savi Saluwadana is a software and product engineer based in Sri Lanka, focused on software architecture, systems design, Go, Kubernetes, platform engineering, DevOps and AI-enabled systems.
+Savi Saluwadana is a software and product engineer based in Sri Lanka, focused on software architecture, systems design, Go, Kubernetes and developer platforms, with interests in agentic systems and open-source development.
 
 ### Where can I see the engineering behind the products?
 
@@ -161,7 +187,7 @@ My public profiles are [GitHub](https://github.com/savisaluwadana) and [LinkedIn
 
 ### How can I contact Savi about engineering work?
 
-Use the [contact page](https://savisaluwadana.github.io/contact.html) or email savisaluwadana@gmail.com. I’m interested in product, software architecture, platform, DevOps, AI infrastructure and open-source collaboration.
+Use the [contact page](https://savisaluwadana.github.io/contact.html) or email savisaluwadana@gmail.com. I’m interested in product, software architecture, agentic systems, platform, DevOps, AI infrastructure and open-source development and collaboration.
 
 
 ---

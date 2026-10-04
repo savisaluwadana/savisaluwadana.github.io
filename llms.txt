@@ -1,6 +1,6 @@
 # Savi Saluwadana
 
-> Savi Saluwadana is a software and product engineer based in Sri Lanka, focused on software architecture, systems design, Go, Kubernetes, platform engineering, DevOps and AI-enabled systems.
+> Savi Saluwadana is a software and product engineer based in Sri Lanka, focused on software architecture, systems design, Go, Kubernetes and developer platforms, with interests in agentic systems and open-source development.
 
 This is a public portfolio with product-level architecture summaries. It does not claim that every project is commercially deployed or production-certified.
 
@@ -15,7 +15,7 @@ This is a public portfolio with product-level architecture summaries. It does no
 
 - [Product directory](https://savisaluwadana.github.io/products/): Explore 16 products built or contributed to by Savi Saluwadana: marketplaces, business systems, healthcare, AI agents and developer tools, with architecture diagrams.
 - [Product directory in Markdown](https://savisaluwadana.github.io/products/index.md): Text equivalent of the same reference.
-- [About Savi Saluwadana](https://savisaluwadana.github.io/about/): Meet Savi Saluwadana, a software and product engineer based in Sri Lanka. Explore his engineering focus, product contributions, public repositories and contact details.
+- [About Savi Saluwadana](https://savisaluwadana.github.io/about/): Meet Savi Saluwadana, a software engineer in Sri Lanka interested in agentic systems and open-source development. Explore his focus and product architecture.
 - [About Savi Saluwadana in Markdown](https://savisaluwadana.github.io/about/index.md): Text equivalent of the same reference.
 - [Architecture reference](https://savisaluwadana.github.io/engineering/): Explore Savi Saluwadana’s product architecture: Go APIs, MCP access boundaries, local-first HR workflows, tenancy and transactional operations, with project references.
 - [Architecture reference in Markdown](https://savisaluwadana.github.io/engineering/index.md): Text equivalent of the same reference.

@@ -13,7 +13,7 @@
     "image": "https://avatars.githubusercontent.com/u/82082138?v=4",
     "email": "mailto:savisaluwadana@gmail.com",
     "jobTitle": "Software and Product Engineer",
-    "description": "Savi Saluwadana is a software and product engineer based in Sri Lanka, focused on software architecture, systems design, Go, Kubernetes, platform engineering, DevOps and AI-enabled systems.",
+    "description": "Savi Saluwadana is a software and product engineer based in Sri Lanka, focused on software architecture, systems design, Go, Kubernetes and developer platforms, with interests in agentic systems and open-source development.",
     "homeLocation": {
       "@type": "Country",
       "name": "Sri Lanka"
@@ -40,7 +40,13 @@
       "Site Reliability Engineering",
       "Artificial Intelligence",
       "AI Agents",
+      "Agentic Systems",
+      "Multi-Agent Systems",
+      "Workflow Orchestration",
+      "Retrieval-Augmented Generation",
+      "Agent Evaluation",
       "Model Context Protocol",
+      "Open-Source Development",
       "PostgreSQL",
       "Next.js",
       "Cloud Native Computing"
