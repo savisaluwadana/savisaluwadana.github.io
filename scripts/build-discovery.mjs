@@ -49,6 +49,11 @@ function diagram(p) {
     if (!a || !b) throw new Error(`Unknown component in ${p.id}: ${from} -> ${to}`);
     const x1 = a.x + nodeWidth / 2, x2 = b.x + nodeWidth / 2;
     const down = b.y > a.y;
+    // Draw a callback on its own route instead of merging with a request bus.
+    if (!down && b.y < a.y && p.edges.some(([start, end]) => start === to && end === from)) {
+      const side = width - 12;
+      return `<path d="M ${a.x + nodeWidth} ${a.y + nodeHeight / 2} H ${side} V ${b.y + nodeHeight / 2} H ${b.x + nodeWidth}"/>`;
+    }
     if (a.y === b.y) {
       const below = a.y + nodeHeight + 24;
       return `<path d="M ${x1} ${a.y + nodeHeight} V ${below} H ${x2} V ${b.y + nodeHeight}"/>`;
