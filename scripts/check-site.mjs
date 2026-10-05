@@ -41,6 +41,10 @@ for (const [file, html] of cache) {
   for (const m of schemas) {
     const graph = JSON.parse(m[1])['@graph'];
     assert.ok(Array.isArray(graph), `${file}: invalid schema graph`);
+    for (const node of graph.filter(node => node.dateModified !== undefined)) {
+      assert.equal(typeof node.dateModified, 'string', `${file}: dateModified must be a string`);
+      assert.match(node.dateModified, /^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:Z|[+-]\\d{2}:\\d{2})$/, `${file}: dateModified must be an ISO-8601 DateTime with timezone`);
+    }
     const identity = graph.find(node => node['@type'] === 'Person');
     assert.deepEqual(identity, person, `${file}: inconsistent professional identity`);
   }
