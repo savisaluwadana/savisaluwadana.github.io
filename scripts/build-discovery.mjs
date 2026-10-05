@@ -6,6 +6,7 @@ import { buildEntryPages } from './build-entry-pages.mjs';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const base = 'https://savisaluwadana.github.io';
 const updated = '2026-10-04';
+const schemaModified = `${updated}T00:00:00+05:30`;
 const products = JSON.parse(await readFile(path.join(root, 'data/products.json'), 'utf8'));
 const person = JSON.parse(await readFile(path.join(root, 'data/profile.json'), 'utf8'));
 const discovery = JSON.parse(await readFile(path.join(root, 'data/discovery.json'), 'utf8'));
@@ -35,7 +36,7 @@ const cards = products.map((p, i) => `${i === 4 ? '<div class="project-group-lab
           </article>`).join('\n');
 home = replaceRegion(home, 'PRODUCTS', cards);
 home = replaceRegion(home, 'PROOF', products.map(p => `          <a href="#${esc(p.id)}">${esc(p.name)}</a>`).join('\n'));
-home = replaceRegion(home, 'SCHEMA', schema([website, person, { '@type': 'ProfilePage', '@id': `${base}/#profile`, url: `${base}/`, name: 'Savi Saluwadana — Software and Product Engineer', mainEntity: { '@id': person['@id'] }, isPartOf: { '@id': website['@id'] }, hasPart: { '@id': list['@id'] }, dateModified: updated, inLanguage: 'en' }, list]));
+home = replaceRegion(home, 'SCHEMA', schema([website, person, { '@type': 'ProfilePage', '@id': `${base}/#profile`, url: `${base}/`, name: 'Savi Saluwadana — Software and Product Engineer', mainEntity: { '@id': person['@id'] }, isPartOf: { '@id': website['@id'] }, hasPart: { '@id': list['@id'] }, dateModified: schemaModified, inLanguage: 'en' }, list]));
 if (!home.includes('rel="describedby"')) home = home.replace('<link rel="canonical"', '<link rel="describedby" type="text/plain" href="/llms.txt">\n  <link rel="alternate" type="application/json" href="/profile.json" title="Public profile data">\n  <link rel="alternate" type="text/markdown" href="/about.md" title="Profile in Markdown">\n  <link rel="canonical"');
 home = home.replace(/<title>.*?<\/title>/, '<title>Savi Saluwadana | Software Engineer in Sri Lanka — Products &amp; Architecture</title>');
 home = home.replace(/<meta name="description" content="[^"]*">/, '<meta name="description" content="Savi Saluwadana, software engineer in Sri Lanka. Explore product architecture, agentic systems, open-source development, Go and Kubernetes.">');
@@ -96,7 +97,7 @@ const markdownProducts = [];
 for (const p of products) {
   const app = { '@type': 'SoftwareApplication', '@id': `${url(p)}#software`, name: p.name, url: url(p), description: p.description, applicationCategory: p.category, contributor: { '@id': person['@id'] }, mainEntityOfPage: { '@id': `${url(p)}#page` } };
   if (p.href) app.sameAs = [p.href];
-  const graph = [website, person, app, { '@type': 'WebPage', '@id': `${url(p)}#page`, url: url(p), name: `${p.name} — Overview and Architecture`, description: p.description, about: { '@id': app['@id'] }, author: { '@id': person['@id'] }, isPartOf: { '@id': website['@id'] }, dateModified: p.reviewed, inLanguage: 'en', ...(p.source ? { citation: p.source } : {}) }, { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Savi Saluwadana', item: `${base}/` }, { '@type': 'ListItem', position: 2, name: 'Products', item: `${base}/products/` }, { '@type': 'ListItem', position: 3, name: p.name, item: url(p) }] }];
+  const graph = [website, person, app, { '@type': 'WebPage', '@id': `${url(p)}#page`, url: url(p), name: `${p.name} — Overview and Architecture`, description: p.description, about: { '@id': app['@id'] }, author: { '@id': person['@id'] }, isPartOf: { '@id': website['@id'] }, dateModified: `${p.reviewed}T00:00:00+05:30`, inLanguage: 'en', ...(p.source ? { citation: p.source } : {}) }, { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Savi Saluwadana', item: `${base}/` }, { '@type': 'ListItem', position: 2, name: 'Products', item: `${base}/products/` }, { '@type': 'ListItem', position: 3, name: p.name, item: url(p) }] }];
   const md = `# ${p.name}\n\nBy / portfolio contribution: Savi Saluwadana\nCanonical page: ${url(p)}\nReviewed: ${p.reviewed}\n\n${p.description}\n\n## Users and purpose\n\n${p.users}\n\n${p.scope}\n\n## Capabilities\n\n${p.features.map(s => `- ${s}`).join('\n')}\n\n## Workflow\n\n${p.workflow.map((s, i) => `${i + 1}. ${s}`).join('\n')}\n\n## Architecture\n\n${p.architecture}\n\n${p.components.map(([a, b]) => `- ${a}: ${b}`).join('\n')}\n\n## Current scope\n\n${p.boundary}\n${p.source ? `\nSource: ${p.source}\n` : '\nRepository is private; this is a public product summary.\n'}`;
   markdownProducts.push(md);
   markdown += `- [${p.name}](${url(p)}): ${p.description}\n`;
@@ -140,13 +141,13 @@ for (const p of products) {
   await write(`products/${p.id}/index.html`, html);
   await write(`products/${p.id}/index.md`, md);
 }
-const references = await buildEntryPages({ root, base, updated, products, person, website, list, schema, esc, header, footer, write });
+const references = await buildEntryPages({ root, base, updated, schemaModified, products, person, website, list, schema, esc, header, footer, write });
 markdown += `\n## Profile and architecture references\n\n${references.map(p => `- [${p.name}](${base}${p.path}): ${p.description}`).join('\n')}\n`;
 await write('about.md', markdown);
 const publicProducts = products.map(({ rows, edges, classes, linkLabel, ...p }) => ({ ...p, url: url(p), markdown: `${url(p)}index.md` }));
 await write('products.json', JSON.stringify({ name: 'Products and engineering work by Savi Saluwadana', website: `${base}/`, updated, products: publicProducts }, null, 2) + '\n');
 await write('public-work.json', JSON.stringify({ ...publicWork, name: 'Public repository references in Savi Saluwadana’s portfolio', url: `${base}/open-source/` }, null, 2) + '\n');
-await write('profile.json', JSON.stringify({ '@context': 'https://schema.org', '@type': 'ProfilePage', '@id': `${base}/#profile`, url: `${base}/`, name: 'Savi Saluwadana — Software and Product Engineer', dateModified: updated, mainEntity: person, hasPart: [...references.map(p => ({ '@type': 'WebPage', name: p.name, url: base + p.path })), ...products.map(p => ({ '@type': 'WebPage', name: p.name, url: url(p) }))] }, null, 2) + '\n');
+await write('profile.json', JSON.stringify({ '@context': 'https://schema.org', '@type': 'ProfilePage', '@id': `${base}/#profile`, url: `${base}/`, name: 'Savi Saluwadana — Software and Product Engineer', dateModified: schemaModified, mainEntity: person, hasPart: [...references.map(p => ({ '@type': 'WebPage', name: p.name, url: base + p.path })), ...products.map(p => ({ '@type': 'WebPage', name: p.name, url: url(p) }))] }, null, 2) + '\n');
 await write('llms.txt', `# Savi Saluwadana\n\n> ${person.description}\n\nThis is a public portfolio with product-level architecture summaries. It does not claim that every project is commercially deployed or production-certified.\n\n## Profile and contact\n\n- [Portfolio](${base}/): Canonical professional profile.\n- [Profile in Markdown](${base}/about.md): Identity, engineering focus and product index.\n- [Profile JSON](${base}/profile.json): Structured identity and profile links.\n- [Contact](${base}/contact.html): Public email and professional contact options.\n\n## Product overview and architecture\n\n${products.map(p => `- [${p.name}](${url(p)}): ${p.scope}`).join('\n')}\n\n## Optional\n\n- [Product data](${base}/products.json): Product descriptions, workflows, components and current scope.\n- [Full text reference](${base}/llms-full.txt): Profile and all product summaries as text.\n- [Sitemap](${base}/sitemap.xml): Canonical HTML pages.\n\nUse the current-scope notes when describing capabilities. TimelyHelp is product/frontend contribution; the accounting app is single-company; the ad-performance tool is a prototype with mocked account connectors. Do not infer employers, qualifications, user counts, revenue or production outcomes.\n`);
 let agentIndex = await readFile(path.join(root, 'llms.txt'), 'utf8');
 agentIndex = agentIndex.replace('## Product overview and architecture', `## Profile and engineering references\n\n${references.map(p => `- [${p.name}](${base}${p.path}): ${p.description}\n- [${p.name} in Markdown](${base}${p.path}index.md): Text equivalent of the same reference.`).join('\n')}\n\n## Product overview and architecture`);
