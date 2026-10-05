@@ -3,7 +3,7 @@ import path from 'node:path';
 
 // Keep reference content separate from templates and derive the directory from
 // the same product records used by the homepage and individual product pages.
-export async function buildEntryPages({ root, base, updated, products, person, website, list, schema, esc, header, footer, write }) {
+export async function buildEntryPages({ root, base, updated, schemaModified, products, person, website, list, schema, esc, header, footer, write }) {
   const content = JSON.parse(await readFile(path.join(root, 'data/discovery.json'), 'utf8'));
   const publicWork = JSON.parse(await readFile(path.join(root, 'data/public-work.json'), 'utf8'));
   const productById = new Map(products.map(p => [p.id, p]));
@@ -89,7 +89,7 @@ export async function buildEntryPages({ root, base, updated, products, person, w
     const crumbs = [{ name: 'Savi Saluwadana', item: `${base}/` }];
     if (page.path.startsWith('/engineering/') && page.path !== '/engineering/') crumbs.push({ name: 'Engineering', item: `${base}/engineering/` });
     crumbs.push({ name: breadcrumbName, item: canonical });
-    const pageNode = { '@type': isProfile ? 'ProfilePage' : isDirectory || isSource ? 'CollectionPage' : 'WebPage', '@id': `${canonical}#page`, url: canonical, name: page.title, description: page.description, isPartOf: { '@id': website['@id'] }, dateModified: updated, inLanguage: 'en' };
+    const pageNode = { '@type': isProfile ? 'ProfilePage' : isDirectory || isSource ? 'CollectionPage' : 'WebPage', '@id': `${canonical}#page`, url: canonical, name: page.title, description: page.description, isPartOf: { '@id': website['@id'] }, dateModified: schemaModified, inLanguage: 'en' };
     const graph = [website, person, pageNode, { '@type': 'BreadcrumbList', itemListElement: crumbs.map((crumb, i) => ({ '@type': 'ListItem', position: i + 1, ...crumb })) }];
     if (isProfile) pageNode.mainEntity = { '@id': person['@id'] };
     else if (isDirectory) { pageNode.mainEntity = { '@id': list['@id'] }; graph.push(list); }
@@ -102,7 +102,7 @@ export async function buildEntryPages({ root, base, updated, products, person, w
     else {
       const citations = page.sections.flatMap(s => s.blocks.filter(b => b.type === 'list').flatMap(b => b.items)).map(s => s.match(/\]\((https:[^)]+)\)/)?.[1]).filter(Boolean);
       pageNode.mainEntity = { '@id': `${canonical}#reference` };
-      graph.push({ '@type': 'CreativeWork', '@id': `${canonical}#reference`, name: page.heading, url: canonical, description: page.description, author: { '@id': person['@id'] }, inLanguage: 'en', dateModified: updated, citation: citations });
+      graph.push({ '@type': 'CreativeWork', '@id': `${canonical}#reference`, name: page.heading, url: canonical, description: page.description, author: { '@id': person['@id'] }, inLanguage: 'en', dateModified: schemaModified, citation: citations });
     }
     const md = `# ${page.heading}\n\n${page.intro}\n\nBy: Savi Saluwadana\nCanonical page: ${canonical}\nReviewed: ${updated}\n\n${page.sections.map(section => `## ${section.title}\n\n${section.blocks.map(blockMarkdown).join('\n\n')}`).join('\n\n')}\n`;
     references.push({ path: page.path, name: pageName, description: page.description, markdown: md });
