@@ -5,6 +5,7 @@ Savi Saluwadana is a software and product engineer based in Sri Lanka, focused o
 Website: https://savisaluwadana.github.io/
 GitHub: https://github.com/savisaluwadana
 LinkedIn: https://www.linkedin.com/in/savi-saluwadana-3911331b2/
+DEV Community: https://dev.to/savi_saluwadana
 Contact: https://savisaluwadana.github.io/contact.html
 Email: savisaluwadana@gmail.com
 
@@ -64,3 +65,12 @@ Email: savisaluwadana@gmail.com
 - [Architecture reference](https://savisaluwadana.github.io/engineering/): Explore Savi Saluwadana’s product architecture: Go APIs, MCP access boundaries, local-first HR workflows, tenancy and transactional operations, with project references.
 - [Agentic systems architecture](https://savisaluwadana.github.io/engineering/agentic-systems/): Explore Savi Saluwadana’s agentic systems work through rental operations, evidence-led research and developer workflows: MCP, API permissions, state and human review.
 - [Public source and open-source interests](https://savisaluwadana.github.io/open-source/): Explore Savi Saluwadana’s public engineering repositories, architecture references and open-source development interests in Go, cloud-native software and agent tools.
+
+## Engineering insights
+
+- [Engineering insights](https://savisaluwadana.github.io/insights/): Technical notes on software architecture, Go, PostgreSQL, platform engineering, MCP and durable agentic systems.
+- [MCP Permission Boundaries](https://savisaluwadana.github.io/insights/mcp-permission-boundaries/): Keep agent tools behind the authenticated application API and retain authorization in domain services.
+- [Durable Agentic Workflows](https://savisaluwadana.github.io/insights/durable-agentic-workflows/): Persist workflow state, design safe retries and model human approval explicitly.
+- [Go Modular Monolith for SaaS](https://savisaluwadana.github.io/insights/go-modular-monolith-saas/): Use explicit domain boundaries before introducing distributed-service complexity.
+- [Platform Engineering Paved Roads](https://savisaluwadana.github.io/insights/platform-engineering-paved-road/): Standardize delivery while keeping state, observability, ownership and escape hatches visible.
+- [PostgreSQL Multi-Tenancy Boundaries](https://savisaluwadana.github.io/insights/postgres-multitenancy-boundaries/): Resolve tenant context before data access and treat database isolation as defense in depth.
