@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light"><meta name="theme-color" content="#f4f1ea">
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+  <meta name="author" content="Savi Saluwadana">
+  <title>PostgreSQL Multi-Tenancy: Define Authorization Boundaries Before Schema Tricks | Savi Saluwadana</title>
+  <meta name="description" content="A practical approach to PostgreSQL multi-tenancy: resolve tenant context early, scope every domain operation, enforce ownership consistently, and use database isolation as defense in depth rather than the only authorization layer.">
+  <link rel="canonical" href="https://savisaluwadana.github.io/insights/postgres-multitenancy-boundaries/"><link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/base-styles.css"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/product-details.css">
+  <link rel="describedby" type="text/plain" href="/llms.txt">
+  <link rel="alternate" type="text/markdown" href="https://savisaluwadana.github.io/insights/postgres-multitenancy-boundaries/index.md" title="PostgreSQL multi-tenancy boundaries in Markdown">
+  <link rel="alternate" type="application/atom+xml" href="/feed.xml" title="Savi Saluwadana — Engineering & products">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="Savi Saluwadana">
+  <meta property="og:title" content="PostgreSQL Multi-Tenancy: Define Authorization Boundaries Before Schema Tricks"><meta property="og:description" content="A practical approach to PostgreSQL multi-tenancy: resolve tenant context early, scope every domain operation, enforce ownership consistently, and use database isolation as defense in depth rather than the only authorization layer."><meta property="og:url" content="https://savisaluwadana.github.io/insights/postgres-multitenancy-boundaries/">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/82082138?v=4"><meta property="og:image:alt" content="Savi Saluwadana">
+  <meta property="article:published_time" content="2026-10-07T00:00:00+05:30"><meta property="article:modified_time" content="2026-10-07T00:00:00+05:30">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="PostgreSQL Multi-Tenancy: Define Authorization Boundaries Before Schema Tricks"><meta name="twitter:description" content="A practical approach to PostgreSQL multi-tenancy: resolve tenant context early, scope every domain operation, enforce ownership consistently, and use database isolation as defense in depth rather than the only authorization layer."><meta name="twitter:image" content="https://avatars.githubusercontent.com/u/82082138?v=4">
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://savisaluwadana.github.io/#person",
+      "name": "Savi Saluwadana",
+      "url": "https://savisaluwadana.github.io/",
+      "image": "https://avatars.githubusercontent.com/u/82082138?v=4",
+      "jobTitle": "Software and Product Engineer",
+      "homeLocation": {
+        "@type": "Country",
+        "name": "Sri Lanka"
+      },
+      "sameAs": [
+        "https://github.com/savisaluwadana",
+        "https://www.linkedin.com/in/savi-saluwadana-3911331b2/",
+        "https://dev.to/savi_saluwadana"
+      ]
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://savisaluwadana.github.io/insights/postgres-multitenancy-boundaries/#article",
+      "url": "https://savisaluwadana.github.io/insights/postgres-multitenancy-boundaries/",
+      "headline": "PostgreSQL Multi-Tenancy: Define Authorization Boundaries Before Schema Tricks",
+      "description": "A practical approach to PostgreSQL multi-tenancy: resolve tenant context early, scope every domain operation, enforce ownership consistently, and use database isolation as defense in depth rather than the only authorization layer.",
+      "author": {
+        "@id": "https://savisaluwadana.github.io/#person"
+      },
+      "datePublished": "2026-10-07",
+      "dateModified": "2026-10-07",
+      "inLanguage": "en",
+      "mainEntityOfPage": "https://savisaluwadana.github.io/insights/postgres-multitenancy-boundaries/",
+      "image": "https://avatars.githubusercontent.com/u/82082138?v=4",
+      "keywords": "PostgreSQL, multi-tenancy, SaaS, authorization, tenant isolation, database architecture, row level security",
+      "citation": [
+        "https://savisaluwadana.github.io/products/property-os/",
+        "https://savisaluwadana.github.io/products/advance-hris/",
+        "https://github.com/RealEstateSassApplication/property-management-OS/blob/main/README.md",
+        "https://github.com/savisaluwadana/Advance-HIRS-System/blob/main/README.md"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Savi Saluwadana",
+          "item": "https://savisaluwadana.github.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Engineering insights",
+          "item": "https://savisaluwadana.github.io/insights/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "PostgreSQL multi-tenancy boundaries",
+          "item": "https://savisaluwadana.github.io/insights/postgres-multitenancy-boundaries/"
+        }
+      ]
+    }
+  ]
+}</script>
+</head><body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" data-header><div class="shell nav-shell"><a class="wordmark" href="/" aria-label="Savi Saluwadana home">Savi Saluwadana</a><button class="menu-button" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav" data-menu-button><span></span><span></span></button><nav class="nav-links" id="primary-nav" aria-label="Primary navigation" data-nav><a href="/products/">Products + Work</a><a href="/engineering/">Architecture</a><a href="/insights/">Insights</a><a href="/about/">About</a><a class="nav-contact" href="/contact.html">Contact</a></nav></div></header>
+<main class="product-page" id="main"><div class="shell">
+<nav class="product-breadcrumb" aria-label="Breadcrumb"><a href="/">Savi Saluwadana</a><span aria-hidden="true">/</span><a href="/insights/">Insights</a><span aria-hidden="true">/</span><span aria-current="page">PostgreSQL multi-tenancy boundaries</span></nav>
+<article>
+<div class="product-header"><p class="section-index">Engineering insight / PostgreSQL</p><h1>PostgreSQL Multi-Tenancy: Define Authorization Boundaries Before Schema Tricks</h1><p>Multi-tenancy is primarily an authorization and ownership problem. Database techniques matter, but the system first needs a reliable answer to a simpler question: which tenant is this operation acting for, and why is the caller allowed to act there?</p><p class="product-source">By Savi Saluwadana · Published <time datetime="2026-10-07">7 October 2026</time></p><div class="project-links"><a class="text-link" href="/insights/postgres-multitenancy-boundaries/index.md">Markdown version</a><a class="text-link" href="/engineering/">Architecture reference</a></div></div>
+<div class="product-content"><section class="product-section" id="section-1"><h2>What is the most important rule in multi-tenant SaaS?</h2><p><strong>Answer:</strong> Resolve tenant context before executing domain work and carry that context through every query and mutation. A request should never “discover” its tenant by reading whichever record happens to match an unscoped identifier.</p><p>Tenant identity should come from an authenticated membership, trusted routing context or another explicit application mechanism.</p></section>
+<section class="product-section" id="section-2"><h2>Make tenant scope part of repository contracts</h2><p>If repository methods accept only a record ID, it is easy for callers to forget tenant scope. Prefer contracts that require both tenant and record identity for tenant-owned data. This turns isolation from a convention into an interface requirement.</p><p>Queries should also be reviewed for indirect relationships. A child record may not contain a tenant ID itself, so the join path still needs to prove that the parent belongs to the active tenant.</p></section>
+<section class="product-section" id="section-3"><h2>Use PostgreSQL constraints and RLS as defense in depth</h2><p>Application authorization and database protection solve related but different problems. The application understands business roles and workflow rules. PostgreSQL constraints, schemas and Row Level Security can reduce the blast radius of mistakes.</p><p>RLS is strongest when the application establishes trusted tenant context consistently and tests the policies as part of the data-access layer. It should not become a substitute for understanding authorization in the application.</p></section>
+<section class="product-section" id="section-4"><h2>Separate global identities from tenant memberships</h2><p>A user account can be global while roles and permissions are tenant-specific. Modeling membership explicitly avoids confusing “who is this person?” with “what may this person do in this organization?”</p><p>This becomes especially important for operators who belong to multiple organizations or for service accounts and agents that need tightly scoped capabilities.</p></section>
+<section class="product-section" id="section-5"><h2>Audit cross-tenant and privileged operations</h2><p>Some administrative workflows legitimately cross tenant boundaries. Those operations should be rare, explicit and auditable. A support or migration capability should not reuse an ordinary tenant-scoped endpoint with a hidden bypass.</p><p>The more privileged the operation, the more useful it is to record the actor, target tenant, reason and resulting state change.</p></section>
+<section class="product-section" id="section-6"><h2>How this connects to my system design work</h2><p><a href="/products/property-os/">Property Management OS</a> documents organization-scoped operations in a Go/PostgreSQL application. <a href="/products/advance-hris/">Advance HRIS</a> also describes tenant-scoped access in a hybrid web and desktop system. Their workflows differ, but both reinforce the same principle: tenant ownership belongs in the application model, not only in URL structure or UI state.</p><p>For backend structure around these boundaries, see <a href="/insights/go-modular-monolith-saas/">Go modular monolith architecture for SaaS</a>.</p></section>
+<section class="product-section" id="sources"><h2>Sources and implementation references</h2><p>This article explains architectural principles and connects them to the documented scope of my public project work. It does not claim benchmark results or production outcomes that are not documented.</p><ul><li><a href="https://savisaluwadana.github.io/products/property-os/">Related architecture reference</a></li><li><a href="https://savisaluwadana.github.io/products/advance-hris/">Related architecture reference</a></li><li><a href="https://github.com/RealEstateSassApplication/property-management-OS/blob/main/README.md">Repository documentation</a></li><li><a href="https://github.com/savisaluwadana/Advance-HIRS-System/blob/main/README.md">Repository documentation</a></li></ul></section>
+<section class="product-section" id="related"><h2>Related engineering notes</h2><ul><li><a href="/insights/go-modular-monolith-saas/">Go Modular Monolith Architecture for SaaS: Boundaries Before Microservices</a></li><li><a href="/insights/mcp-permission-boundaries/">MCP Permission Boundaries: Keep Agent Tools Behind the Application API</a></li></ul><p>Browse all <a href="/insights/">engineering insights</a> or see the <a href="/products/">product directory</a> for implementation-oriented architecture summaries.</p></section>
+</div></article></div></main>
+<footer class="site-footer"><div class="shell footer-layout"><div><strong>Savi Saluwadana</strong><span>Software · Architecture · Product · Platform · DevOps</span></div><div><span><a href="/">Portfolio</a> · <a href="/products/">Products</a> · <a href="/engineering/">Engineering</a> · <a href="/insights/">Insights</a> · <a href="/open-source/">Public source</a> · <a href="/about/">About</a> · <a href="/feed.xml">Feed</a></span><span>© <span data-year>2026</span></span></div></div></footer><script src="/app.js" defer></script>
+</body></html>
