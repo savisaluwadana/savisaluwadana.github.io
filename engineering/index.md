@@ -55,3 +55,11 @@ This reference summarizes the documented project boundaries. It does not report 
 - [Avara repository documentation](https://github.com/RealEstateSassApplication/AvaraRealEstate/blob/main/README.md)
 - [FreshPick repository documentation](https://github.com/FreshOnTime/newfreshontimewebsite/blob/main/README.md)
 - [Academix repository documentation](https://github.com/savisaluwadana/student-management-system-saas/blob/main/README.md)
+
+## Engineering insights
+
+- [MCP permission boundaries](https://savisaluwadana.github.io/insights/mcp-permission-boundaries/)
+- [Durable agentic workflows](https://savisaluwadana.github.io/insights/durable-agentic-workflows/)
+- [Go modular monolith architecture for SaaS](https://savisaluwadana.github.io/insights/go-modular-monolith-saas/)
+- [Platform engineering paved roads](https://savisaluwadana.github.io/insights/platform-engineering-paved-road/)
+- [PostgreSQL multi-tenancy boundaries](https://savisaluwadana.github.io/insights/postgres-multitenancy-boundaries/)
