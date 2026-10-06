@@ -1,5 +1,8 @@
 # Agentic systems: tools, state and human review.
 
+
+Useful agentic systems keep model reasoning, tool interfaces and application authority separate. The model can propose an action; the application still authenticates, authorizes, validates and records the resulting state.
+
 An agent becomes useful when its tools connect to a real workflow. These project walkthroughs show where an agent enters the system, where state is recorded, and which service controls the resulting action.
 
 By: Savi Saluwadana
@@ -71,3 +74,8 @@ My broader interests include durable orchestration, multi-agent collaboration, r
 - [DevRelOS repository documentation](https://github.com/savisaluwadana/DevRelOS/blob/main/README.md)
 
 See the [broader architecture reference](https://savisaluwadana.github.io/engineering/) for local-first data, tenancy and transaction comparisons, or the [public source index](https://savisaluwadana.github.io/open-source/) to browse repository references. [About Savi](https://savisaluwadana.github.io/about/) describes my engineering and collaboration interests.
+
+## Related engineering insights
+
+- [MCP permission boundaries](https://savisaluwadana.github.io/insights/mcp-permission-boundaries/)
+- [Durable agentic workflows](https://savisaluwadana.github.io/insights/durable-agentic-workflows/)
