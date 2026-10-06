@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light"><meta name="theme-color" content="#f4f1ea">
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+  <meta name="author" content="Savi Saluwadana">
+  <title>Platform Engineering: Build a Paved Road Without Hiding the System | Savi Saluwadana</title>
+  <meta name="description" content="A platform engineering design principle: automate common delivery paths while keeping ownership, state, observability and escape hatches visible enough for engineers to debug and extend the platform.">
+  <link rel="canonical" href="https://savisaluwadana.github.io/insights/platform-engineering-paved-road/"><link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/base-styles.css"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/product-details.css">
+  <link rel="describedby" type="text/plain" href="/llms.txt">
+  <link rel="alternate" type="text/markdown" href="https://savisaluwadana.github.io/insights/platform-engineering-paved-road/index.md" title="Platform engineering paved roads in Markdown">
+  <link rel="alternate" type="application/atom+xml" href="/feed.xml" title="Savi Saluwadana — Engineering & products">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="Savi Saluwadana">
+  <meta property="og:title" content="Platform Engineering: Build a Paved Road Without Hiding the System"><meta property="og:description" content="A platform engineering design principle: automate common delivery paths while keeping ownership, state, observability and escape hatches visible enough for engineers to debug and extend the platform."><meta property="og:url" content="https://savisaluwadana.github.io/insights/platform-engineering-paved-road/">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/82082138?v=4"><meta property="og:image:alt" content="Savi Saluwadana">
+  <meta property="article:published_time" content="2026-10-07T00:00:00+05:30"><meta property="article:modified_time" content="2026-10-07T00:00:00+05:30">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="Platform Engineering: Build a Paved Road Without Hiding the System"><meta name="twitter:description" content="A platform engineering design principle: automate common delivery paths while keeping ownership, state, observability and escape hatches visible enough for engineers to debug and extend the platform."><meta name="twitter:image" content="https://avatars.githubusercontent.com/u/82082138?v=4">
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://savisaluwadana.github.io/#person",
+      "name": "Savi Saluwadana",
+      "url": "https://savisaluwadana.github.io/",
+      "image": "https://avatars.githubusercontent.com/u/82082138?v=4",
+      "jobTitle": "Software and Product Engineer",
+      "homeLocation": {
+        "@type": "Country",
+        "name": "Sri Lanka"
+      },
+      "sameAs": [
+        "https://github.com/savisaluwadana",
+        "https://www.linkedin.com/in/savi-saluwadana-3911331b2/",
+        "https://dev.to/savi_saluwadana"
+      ]
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://savisaluwadana.github.io/insights/platform-engineering-paved-road/#article",
+      "url": "https://savisaluwadana.github.io/insights/platform-engineering-paved-road/",
+      "headline": "Platform Engineering: Build a Paved Road Without Hiding the System",
+      "description": "A platform engineering design principle: automate common delivery paths while keeping ownership, state, observability and escape hatches visible enough for engineers to debug and extend the platform.",
+      "author": {
+        "@id": "https://savisaluwadana.github.io/#person"
+      },
+      "datePublished": "2026-10-07",
+      "dateModified": "2026-10-07",
+      "inLanguage": "en",
+      "mainEntityOfPage": "https://savisaluwadana.github.io/insights/platform-engineering-paved-road/",
+      "image": "https://avatars.githubusercontent.com/u/82082138?v=4",
+      "keywords": "platform engineering, internal developer platform, developer experience, Kubernetes, CI/CD, observability, DevOps",
+      "citation": [
+        "https://savisaluwadana.github.io/engineering/",
+        "https://savisaluwadana.github.io/engineering/agentic-systems/"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Savi Saluwadana",
+          "item": "https://savisaluwadana.github.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Engineering insights",
+          "item": "https://savisaluwadana.github.io/insights/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Platform engineering paved roads",
+          "item": "https://savisaluwadana.github.io/insights/platform-engineering-paved-road/"
+        }
+      ]
+    }
+  ]
+}</script>
+</head><body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" data-header><div class="shell nav-shell"><a class="wordmark" href="/" aria-label="Savi Saluwadana home">Savi Saluwadana</a><button class="menu-button" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav" data-menu-button><span></span><span></span></button><nav class="nav-links" id="primary-nav" aria-label="Primary navigation" data-nav><a href="/products/">Products + Work</a><a href="/engineering/">Architecture</a><a href="/insights/">Insights</a><a href="/about/">About</a><a class="nav-contact" href="/contact.html">Contact</a></nav></div></header>
+<main class="product-page" id="main"><div class="shell">
+<nav class="product-breadcrumb" aria-label="Breadcrumb"><a href="/">Savi Saluwadana</a><span aria-hidden="true">/</span><a href="/insights/">Insights</a><span aria-hidden="true">/</span><span aria-current="page">Platform engineering paved roads</span></nav>
+<article>
+<div class="product-header"><p class="section-index">Engineering insight / platform engineering</p><h1>Platform Engineering: Build a Paved Road Without Hiding the System</h1><p>A good internal platform reduces repetitive infrastructure work without turning infrastructure into a black box. The paved road should make the common path easier while preserving enough visibility that engineers can understand ownership, state and failure modes.</p><p class="product-source">By Savi Saluwadana · Published <time datetime="2026-10-07">7 October 2026</time></p><div class="project-links"><a class="text-link" href="/insights/platform-engineering-paved-road/index.md">Markdown version</a><a class="text-link" href="/engineering/">Architecture reference</a></div></div>
+<div class="product-content"><section class="product-section" id="section-1"><h2>What should a platform engineering paved road do?</h2><p><strong>Answer:</strong> A paved road should standardize the repetitive parts of software delivery while keeping application teams aware of the contracts they depend on. It should reduce cognitive load, not eliminate observability or make every exception require the platform team.</p><p>The best measure is not how many abstractions the platform has. It is how reliably a product team can move from source to a running, observable service with clear ownership.</p></section>
+<section class="product-section" id="section-2"><h2>Standardize contracts before interfaces</h2><p>Developer portals and CLIs are useful, but the underlying platform first needs stable contracts: how a component declares build inputs, runtime configuration, environments, deployment policy, observability and ownership. Once those contracts are clear, multiple interfaces can sit on top of them.</p><p>This prevents the portal from becoming the only place where the platform’s rules exist.</p></section>
+<section class="product-section" id="section-3"><h2>Expose state and failure modes</h2><p>Self-service is frustrating when a developer can click “deploy” but cannot tell which step failed. Build logs, deployment state, health, configuration sources, metrics and traces should remain inspectable. A platform abstraction is successful when it shortens the common path without hiding the evidence needed to debug it.</p></section>
+<section class="product-section" id="section-4"><h2>Design an escape hatch deliberately</h2><p>Not every workload fits the default. A platform should define which parts are opinionated and which extension points are supported. The escape hatch should be explicit enough that a team can depart from the default without silently bypassing security, policy or ownership requirements.</p><p>This is different from exposing every infrastructure primitive. The goal is controlled extensibility, not unrestricted complexity.</p></section>
+<section class="product-section" id="section-5"><h2>Treat the platform as a product with users</h2><p>Platform teams need feedback loops just like product teams. Repeated support requests, slow onboarding, brittle templates and unclear errors are product signals. A roadmap should respond to the workflows consuming the most engineering time rather than simply adding more infrastructure features.</p><p>My broader <a href="/engineering/">architecture reference</a> applies the same principle to application systems: clear boundaries, explicit state and observable workflows are more valuable than complexity for its own sake.</p></section>
+<section class="product-section" id="section-6"><h2>Agentic interfaces do not replace platform contracts</h2><p>AI assistants can become another interface to a platform, but they should operate through the same authoritative contracts as other clients. An agent can request a build, inspect logs or propose a deployment action; the platform still needs to enforce identity, policy and environment boundaries.</p><p>That is why agentic developer experience and platform engineering converge around the same architectural question: which operations are exposed, who is allowed to perform them, and where is the resulting state recorded?</p></section>
+<section class="product-section" id="sources"><h2>Sources and implementation references</h2><p>This article explains architectural principles and connects them to the documented scope of my public project work. It does not claim benchmark results or production outcomes that are not documented.</p><ul><li><a href="https://savisaluwadana.github.io/engineering/">Related architecture reference</a></li><li><a href="https://savisaluwadana.github.io/engineering/agentic-systems/">Related architecture reference</a></li></ul></section>
+<section class="product-section" id="related"><h2>Related engineering notes</h2><ul><li><a href="/insights/mcp-permission-boundaries/">MCP Permission Boundaries: Keep Agent Tools Behind the Application API</a></li><li><a href="/insights/go-modular-monolith-saas/">Go Modular Monolith Architecture for SaaS: Boundaries Before Microservices</a></li></ul><p>Browse all <a href="/insights/">engineering insights</a> or see the <a href="/products/">product directory</a> for implementation-oriented architecture summaries.</p></section>
+</div></article></div></main>
+<footer class="site-footer"><div class="shell footer-layout"><div><strong>Savi Saluwadana</strong><span>Software · Architecture · Product · Platform · DevOps</span></div><div><span><a href="/">Portfolio</a> · <a href="/products/">Products</a> · <a href="/engineering/">Engineering</a> · <a href="/insights/">Insights</a> · <a href="/open-source/">Public source</a> · <a href="/about/">About</a> · <a href="/feed.xml">Feed</a></span><span>© <span data-year>2026</span></span></div></div></footer><script src="/app.js" defer></script>
+</body></html>
