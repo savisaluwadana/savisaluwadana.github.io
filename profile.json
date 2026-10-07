@@ -4,7 +4,7 @@
   "@id": "https://savisaluwadana.github.io/#profile",
   "url": "https://savisaluwadana.github.io/",
   "name": "Savi Saluwadana — Software and Product Engineer",
-  "dateModified": "2026-10-04T00:00:00+05:30",
+  "dateModified": "2026-10-07T00:00:00+05:30",
   "mainEntity": {
     "@type": "Person",
     "@id": "https://savisaluwadana.github.io/#person",
@@ -20,7 +20,8 @@
     },
     "sameAs": [
       "https://github.com/savisaluwadana",
-      "https://www.linkedin.com/in/savi-saluwadana-3911331b2/"
+      "https://www.linkedin.com/in/savi-saluwadana-3911331b2/",
+      "https://dev.to/savi_saluwadana"
     ],
     "knowsAbout": [
       "Software Engineering",
@@ -80,6 +81,11 @@
       "@type": "WebPage",
       "name": "Public source and open-source interests",
       "url": "https://savisaluwadana.github.io/open-source/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Engineering insights",
+      "url": "https://savisaluwadana.github.io/insights/"
     },
     {
       "@type": "WebPage",

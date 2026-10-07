@@ -21,3 +21,9 @@ https://savisaluwadana.github.io/products/restaurantos/
 https://savisaluwadana.github.io/products/pain-intelligence/
 https://savisaluwadana.github.io/products/ad-performance-agent/
 https://savisaluwadana.github.io/products/medicare/
+https://savisaluwadana.github.io/insights/
+https://savisaluwadana.github.io/insights/mcp-permission-boundaries/
+https://savisaluwadana.github.io/insights/durable-agentic-workflows/
+https://savisaluwadana.github.io/insights/go-modular-monolith-saas/
+https://savisaluwadana.github.io/insights/platform-engineering-paved-road/
+https://savisaluwadana.github.io/insights/postgres-multitenancy-boundaries/

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light"><meta name="theme-color" content="#f4f1ea">
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+  <meta name="author" content="Savi Saluwadana">
+  <title>Go Modular Monolith Architecture for SaaS: Boundaries Before Microservices | Savi Saluwadana</title>
+  <meta name="description" content="A practical way to structure a Go SaaS backend as a modular monolith: organize by domain, keep transactions local, separate workers and integrations, and extract services only when operational boundaries justify it.">
+  <link rel="canonical" href="https://savisaluwadana.github.io/insights/go-modular-monolith-saas/"><link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/base-styles.css"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/product-details.css">
+  <link rel="describedby" type="text/plain" href="/llms.txt">
+  <link rel="alternate" type="text/markdown" href="https://savisaluwadana.github.io/insights/go-modular-monolith-saas/index.md" title="Go modular monolith for SaaS in Markdown">
+  <link rel="alternate" type="application/atom+xml" href="/feed.xml" title="Savi Saluwadana — Engineering & products">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="Savi Saluwadana">
+  <meta property="og:title" content="Go Modular Monolith Architecture for SaaS: Boundaries Before Microservices"><meta property="og:description" content="A practical way to structure a Go SaaS backend as a modular monolith: organize by domain, keep transactions local, separate workers and integrations, and extract services only when operational boundaries justify it."><meta property="og:url" content="https://savisaluwadana.github.io/insights/go-modular-monolith-saas/">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/82082138?v=4"><meta property="og:image:alt" content="Savi Saluwadana">
+  <meta property="article:published_time" content="2026-10-07T00:00:00+05:30"><meta property="article:modified_time" content="2026-10-07T00:00:00+05:30">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="Go Modular Monolith Architecture for SaaS: Boundaries Before Microservices"><meta name="twitter:description" content="A practical way to structure a Go SaaS backend as a modular monolith: organize by domain, keep transactions local, separate workers and integrations, and extract services only when operational boundaries justify it."><meta name="twitter:image" content="https://avatars.githubusercontent.com/u/82082138?v=4">
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://savisaluwadana.github.io/#person",
+      "name": "Savi Saluwadana",
+      "url": "https://savisaluwadana.github.io/",
+      "image": "https://avatars.githubusercontent.com/u/82082138?v=4",
+      "jobTitle": "Software and Product Engineer",
+      "homeLocation": {
+        "@type": "Country",
+        "name": "Sri Lanka"
+      },
+      "sameAs": [
+        "https://github.com/savisaluwadana",
+        "https://www.linkedin.com/in/savi-saluwadana-3911331b2/",
+        "https://dev.to/savi_saluwadana"
+      ]
+    },
+    {
+      "@type": "Article",
+      "additionalType": "https://schema.org/TechArticle",
+      "@id": "https://savisaluwadana.github.io/insights/go-modular-monolith-saas/#article",
+      "url": "https://savisaluwadana.github.io/insights/go-modular-monolith-saas/",
+      "headline": "Go Modular Monolith Architecture for SaaS: Boundaries Before Microservices",
+      "description": "A practical way to structure a Go SaaS backend as a modular monolith: organize by domain, keep transactions local, separate workers and integrations, and extract services only when operational boundaries justify it.",
+      "author": {
+        "@id": "https://savisaluwadana.github.io/#person"
+      },
+      "datePublished": "2026-10-07",
+      "dateModified": "2026-10-07",
+      "inLanguage": "en",
+      "mainEntityOfPage": "https://savisaluwadana.github.io/insights/go-modular-monolith-saas/",
+      "image": "https://avatars.githubusercontent.com/u/82082138?v=4",
+      "keywords": "Go, Golang, modular monolith, SaaS architecture, backend architecture, domain design, microservices",
+      "citation": [
+        "https://savisaluwadana.github.io/products/property-os/",
+        "https://github.com/RealEstateSassApplication/property-management-OS/blob/main/README.md"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Savi Saluwadana",
+          "item": "https://savisaluwadana.github.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Engineering insights",
+          "item": "https://savisaluwadana.github.io/insights/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Go modular monolith for SaaS",
+          "item": "https://savisaluwadana.github.io/insights/go-modular-monolith-saas/"
+        }
+      ]
+    }
+  ]
+}</script>
+</head><body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" data-header><div class="shell nav-shell"><a class="wordmark" href="/" aria-label="Savi Saluwadana home">Savi Saluwadana</a><button class="menu-button" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav" data-menu-button><span></span><span></span></button><nav class="nav-links" id="primary-nav" aria-label="Primary navigation" data-nav><a href="/products/">Products + Work</a><a href="/engineering/">Architecture</a><a href="/insights/">Insights</a><a href="/about/">About</a><a class="nav-contact" href="/contact.html">Contact</a></nav></div></header>
+<main class="product-page" id="main"><div class="shell">
+<nav class="product-breadcrumb" aria-label="Breadcrumb"><a href="/">Savi Saluwadana</a><span aria-hidden="true">/</span><a href="/insights/">Insights</a><span aria-hidden="true">/</span><span aria-current="page">Go modular monolith for SaaS</span></nav>
+<article>
+<div class="product-header"><p class="section-index">Engineering insight / Go</p><h1>Go Modular Monolith Architecture for SaaS: Boundaries Before Microservices</h1><p>A modular monolith is a useful default for many SaaS systems because it keeps deployment and transactions simple while still forcing clear domain boundaries. The important part is not having one binary; it is preventing one module from casually owning another module’s data and rules.</p><p class="product-source">By Savi Saluwadana · Published <time datetime="2026-10-07">7 October 2026</time></p><div class="project-links"><a class="text-link" href="/insights/go-modular-monolith-saas/index.md">Markdown version</a><a class="text-link" href="/engineering/">Architecture reference</a></div></div>
+<div class="product-content"><section class="product-section" id="section-1"><h2>What is a modular monolith in Go?</h2><p><strong>Answer:</strong> A modular monolith is one deployable application composed of explicit domain modules. Each module owns its business rules and persistence access, while shared infrastructure such as HTTP transport, authentication, logging and database connections stays outside the domain core.</p><p>It provides many of the organizational benefits people seek from microservices without immediately accepting distributed transactions, service discovery and cross-service failure modes.</p></section>
+<section class="product-section" id="section-2"><h2>Organize around domains, not technical folders</h2><p>A folder tree such as <code>handlers/</code>, <code>services/</code> and <code>repositories/</code> can make every feature span the entire codebase. A domain-oriented layout keeps lease logic near lease persistence, maintenance logic near maintenance persistence and billing logic near billing rules.</p><p>The transport layer should translate HTTP into application commands or queries. It should not become the place where domain rules are assembled ad hoc.</p></section>
+<section class="product-section" id="section-3"><h2>Keep module ownership explicit</h2><p>One module should not reach into another module’s tables simply because the same database connection makes it possible. Prefer module APIs or application services that make the dependency visible. This gives the codebase a path to future extraction if one boundary later needs independent scaling or ownership.</p><p>Database schemas alone do not create architecture. The important boundary is which code is allowed to interpret and mutate a domain’s state.</p></section>
+<section class="product-section" id="section-4"><h2>Use the monolith to keep transactions honest</h2><p>When a business operation needs to update several records atomically, a monolith with one relational database can often express the transaction directly. That is valuable. Splitting the same workflow across services too early converts a straightforward transaction into coordination, retries and compensation.</p><p>Extraction is justified when operational independence, scale, security isolation or organizational ownership becomes more valuable than local transactional simplicity.</p></section>
+<section class="product-section" id="section-5"><h2>Separate background workers without fragmenting the domain</h2><p>A modular monolith can still have separate worker processes. The application can record an outbox or job intent in the same transaction as the business change, while a worker performs notifications, provider calls or other asynchronous work later.</p><p>This pattern keeps business acceptance separate from external delivery. The domain can say “the request was recorded” even if an email provider is temporarily unavailable.</p></section>
+<section class="product-section" id="section-6"><h2>How I apply this pattern</h2><p><a href="/products/property-os/">Property Management OS</a> documents a Go modular monolith backed by PostgreSQL, with an outbox worker and an MCP layer that calls the authenticated API. The design keeps domain authority in the application instead of distributing it across clients.</p><p>The lesson is not that every system should remain a monolith forever. It is that service boundaries should be earned by real operational requirements rather than assumed at project start.</p></section>
+<section class="product-section" id="sources"><h2>Sources and implementation references</h2><p>This article explains architectural principles and connects them to the documented scope of my public project work. It does not claim benchmark results or production outcomes that are not documented.</p><ul><li><a href="https://savisaluwadana.github.io/products/property-os/">Related architecture reference</a></li><li><a href="https://github.com/RealEstateSassApplication/property-management-OS/blob/main/README.md">Repository documentation</a></li></ul></section>
+<section class="product-section" id="related"><h2>Related engineering notes</h2><ul><li><a href="/insights/postgres-multitenancy-boundaries/">PostgreSQL Multi-Tenancy: Define Authorization Boundaries Before Schema Tricks</a></li><li><a href="/insights/platform-engineering-paved-road/">Platform Engineering: Build a Paved Road Without Hiding the System</a></li></ul><p>Browse all <a href="/insights/">engineering insights</a> or see the <a href="/products/">product directory</a> for implementation-oriented architecture summaries.</p></section>
+</div></article></div></main>
+<footer class="site-footer"><div class="shell footer-layout"><div><strong>Savi Saluwadana</strong><span>Software · Architecture · Product · Platform · DevOps</span></div><div><span><a href="/">Portfolio</a> · <a href="/products/">Products</a> · <a href="/engineering/">Engineering</a> · <a href="/insights/">Insights</a> · <a href="/open-source/">Public source</a> · <a href="/about/">About</a> · <a href="/feed.xml">Feed</a></span><span>© <span data-year>2026</span></span></div></div></footer><script src="/app.js" defer></script>
+</body></html>

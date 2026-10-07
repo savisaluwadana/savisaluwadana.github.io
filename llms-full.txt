@@ -1100,3 +1100,308 @@ Next.js → Go API + scheduling service → PostgreSQL
 The main clinic API and embeddable scheduling API use separate service boundaries. Server-enforced roles separate clinical, billing and administrative access.
 
 Repository is private; this is a public product summary.
+
+
+# Engineering insights — full text
+
+# MCP Permission Boundaries: Keep Agent Tools Behind the Application API
+
+> A practical architecture for MCP tools: authenticate at the application boundary, keep authorization in domain services, record state in the system of record, and require approval for consequential actions.
+
+By Savi Saluwadana  
+Published: 2026-10-07  
+Canonical: https://savisaluwadana.github.io/insights/mcp-permission-boundaries/
+
+The safest default for an MCP-enabled application is simple: the model should not become a second authority path. Agent tools should call the same authenticated application boundary used by other clients, while authorization, tenant scope, validation and durable state remain inside the application.
+
+## What is the right permission boundary for MCP tools?
+
+**Answer:** Put MCP behind the application API, not beside it. The tool interface can translate an agent request into an application operation, but the application should still decide whether the caller is allowed to perform that operation, which tenant or workspace it belongs to, and which invariants must hold.
+
+This keeps the model from becoming a privileged shortcut around the system. It also makes agent activity easier to reason about because the same domain rules protect web, mobile, CLI and agent clients.
+
+## Why direct database access is usually the wrong default
+
+A database understands rows and transactions; it does not automatically understand business permission. If an agent can write directly to tables, authorization logic can fragment between prompts, tools and schema assumptions. That is difficult to audit and easy to get wrong.
+
+A stronger design keeps the database as the system of record while routing mutations through domain services. The API can validate identity, organization scope, allowed state transitions and required side effects before anything is committed.
+
+## Separate tool availability from business authorization
+
+An MCP server may expose a tool named `create_maintenance_request`, `publish_content` or `send_outreach`. The existence of that tool should not imply unconditional permission. The application still needs to evaluate the authenticated principal, workspace membership, object ownership and current state.
+
+This distinction matters because tool discovery is an interface concern while authorization is a domain concern. Keeping them separate makes permission changes possible without redesigning the agent layer.
+
+## Treat consequential actions differently from analysis
+
+Reading records, summarizing evidence and proposing an action are different from sending a message, changing money-related state or mutating production configuration. Consequential operations should have stronger controls: explicit scopes, approval states, idempotency keys where appropriate, audit records and clear failure reporting.
+
+Human approval is most useful when it is represented as application state rather than a vague instruction inside a prompt. A draft can be created by an agent, reviewed by a person and only then become eligible for delivery.
+
+## What this looks like in my project architecture
+
+In [Property Management OS](/products/property-os/), the documented MCP boundary calls the authenticated Go API rather than connecting directly to PostgreSQL. In [DevRelOS](/products/devrelos/), workspace membership and approval-gated outreach remain application concerns. Those projects differ in domain, but the same architectural principle applies: the agent proposes or requests work; the application remains authoritative.
+
+For a broader walkthrough, see [Agentic systems: tools, state and human review](/engineering/agentic-systems/).
+
+## A compact design checklist
+
+- Authenticate the caller before the tool reaches domain logic.
+- Resolve tenant or workspace scope inside the application.
+- Authorize the specific operation, not just access to the MCP server.
+- Validate domain invariants before persistence.
+- Record consequential actions and approvals as durable state.
+- Make retries safe for operations that may be repeated.
+- Return explicit failure reasons that can be inspected without exposing secrets.
+
+The goal is not to make agents powerless. It is to give them useful capabilities without creating a second, weaker security model.
+
+## Sources and implementation references
+
+- https://savisaluwadana.github.io/products/property-os/
+- https://savisaluwadana.github.io/products/devrelos/
+- https://github.com/RealEstateSassApplication/property-management-OS/blob/main/README.md
+- https://github.com/savisaluwadana/DevRelOS/blob/main/README.md
+
+## Related engineering notes
+
+- [Durable Agentic Workflows: State, Idempotency and Human Approval](https://savisaluwadana.github.io/insights/durable-agentic-workflows/)
+- [PostgreSQL Multi-Tenancy: Define Authorization Boundaries Before Schema Tricks](https://savisaluwadana.github.io/insights/postgres-multitenancy-boundaries/)
+
+---
+
+# Durable Agentic Workflows: State, Idempotency and Human Approval
+
+> How to design agentic workflows that survive retries and failures: persist state, separate proposals from side effects, make mutations idempotent, and model human approval explicitly.
+
+By Savi Saluwadana  
+Published: 2026-10-07  
+Canonical: https://savisaluwadana.github.io/insights/durable-agentic-workflows/
+
+An agent becomes operationally useful when its work can survive retries, partial failures and human review. That requires more than a model loop: it requires durable state, explicit transitions and clear ownership of side effects.
+
+## What makes an agentic workflow durable?
+
+**Answer:** A durable agentic workflow stores enough state to resume safely after interruption and separates reasoning from side effects. The system should know what was requested, what evidence was gathered, which step completed, which action is awaiting approval and whether an external side effect has already happened.
+
+If that state exists only in a model conversation, the workflow is difficult to resume and difficult to audit.
+
+## Persist business state, not just chat history
+
+Conversation history can explain how the agent reasoned, but the application still needs structured records for jobs, approvals, actions and outcomes. A research job might store its question, sources, evidence quality and validation result. An operations workflow might store the requested mutation, approval status, execution attempt and delivery status.
+
+Structured state creates a stable contract between the model, workers, APIs and humans.
+
+## Use idempotency where retries can create duplicate effects
+
+Retries are normal in distributed systems. They become dangerous when repeating the same call can create a second payment, send a duplicate notification or create multiple records. For consequential mutations, the caller should provide or derive a stable idempotency key and the application should record the accepted operation.
+
+Idempotency is not needed everywhere. It matters most at boundaries where a repeated request would create a second externally visible effect.
+
+## Model approval as a state transition
+
+A prompt that says “ask before sending” is weaker than an application state machine that says a draft must be `approved` before a delivery worker can process it. The second design can be tested, queried and audited.
+
+This also makes responsibilities clearer: the model can prepare a recommendation, a person can approve it, and a worker can execute it. Each step has a different failure mode and a different owner.
+
+## Keep asynchronous work observable
+
+Long-running work should expose status that can be inspected without reopening the original model session. Useful states include queued, running, waiting-for-approval, succeeded, failed and cancelled. The record should capture error context that helps an operator understand whether the failure came from policy, validation, a provider or infrastructure.
+
+In [DevRelOS](/products/devrelos/), workers and approval-gated delivery are separate concerns. In [Pain Intelligence Lab](/products/pain-intelligence/), research state and evidence remain in the application while reasoning is performed through a connected MCP host. These are different workflows, but both benefit from explicit state.
+
+## Design for recovery before adding more agents
+
+Multi-agent collaboration can add useful specialization, but it also multiplies coordination problems. Before introducing more agents, make one workflow resumable, inspectable and safe under retry. Once state transitions are explicit, specialized agents can operate on well-defined pieces of work instead of passing opaque conversational context between one another.
+
+Durability is therefore an application architecture problem first and an agent orchestration problem second.
+
+## Sources and implementation references
+
+- https://savisaluwadana.github.io/engineering/agentic-systems/
+- https://savisaluwadana.github.io/products/devrelos/
+- https://savisaluwadana.github.io/products/pain-intelligence/
+- https://github.com/savisaluwadana/DevRelOS/blob/main/README.md
+- https://github.com/savisaluwadana/Reddit-post-Analyzer/blob/main/README.md
+
+## Related engineering notes
+
+- [MCP Permission Boundaries: Keep Agent Tools Behind the Application API](https://savisaluwadana.github.io/insights/mcp-permission-boundaries/)
+- [Platform Engineering: Build a Paved Road Without Hiding the System](https://savisaluwadana.github.io/insights/platform-engineering-paved-road/)
+
+---
+
+# Go Modular Monolith Architecture for SaaS: Boundaries Before Microservices
+
+> A practical way to structure a Go SaaS backend as a modular monolith: organize by domain, keep transactions local, separate workers and integrations, and extract services only when operational boundaries justify it.
+
+By Savi Saluwadana  
+Published: 2026-10-07  
+Canonical: https://savisaluwadana.github.io/insights/go-modular-monolith-saas/
+
+A modular monolith is a useful default for many SaaS systems because it keeps deployment and transactions simple while still forcing clear domain boundaries. The important part is not having one binary; it is preventing one module from casually owning another module’s data and rules.
+
+## What is a modular monolith in Go?
+
+**Answer:** A modular monolith is one deployable application composed of explicit domain modules. Each module owns its business rules and persistence access, while shared infrastructure such as HTTP transport, authentication, logging and database connections stays outside the domain core.
+
+It provides many of the organizational benefits people seek from microservices without immediately accepting distributed transactions, service discovery and cross-service failure modes.
+
+## Organize around domains, not technical folders
+
+A folder tree such as `handlers/`, `services/` and `repositories/` can make every feature span the entire codebase. A domain-oriented layout keeps lease logic near lease persistence, maintenance logic near maintenance persistence and billing logic near billing rules.
+
+The transport layer should translate HTTP into application commands or queries. It should not become the place where domain rules are assembled ad hoc.
+
+## Keep module ownership explicit
+
+One module should not reach into another module’s tables simply because the same database connection makes it possible. Prefer module APIs or application services that make the dependency visible. This gives the codebase a path to future extraction if one boundary later needs independent scaling or ownership.
+
+Database schemas alone do not create architecture. The important boundary is which code is allowed to interpret and mutate a domain’s state.
+
+## Use the monolith to keep transactions honest
+
+When a business operation needs to update several records atomically, a monolith with one relational database can often express the transaction directly. That is valuable. Splitting the same workflow across services too early converts a straightforward transaction into coordination, retries and compensation.
+
+Extraction is justified when operational independence, scale, security isolation or organizational ownership becomes more valuable than local transactional simplicity.
+
+## Separate background workers without fragmenting the domain
+
+A modular monolith can still have separate worker processes. The application can record an outbox or job intent in the same transaction as the business change, while a worker performs notifications, provider calls or other asynchronous work later.
+
+This pattern keeps business acceptance separate from external delivery. The domain can say “the request was recorded” even if an email provider is temporarily unavailable.
+
+## How I apply this pattern
+
+[Property Management OS](/products/property-os/) documents a Go modular monolith backed by PostgreSQL, with an outbox worker and an MCP layer that calls the authenticated API. The design keeps domain authority in the application instead of distributing it across clients.
+
+The lesson is not that every system should remain a monolith forever. It is that service boundaries should be earned by real operational requirements rather than assumed at project start.
+
+## Sources and implementation references
+
+- https://savisaluwadana.github.io/products/property-os/
+- https://github.com/RealEstateSassApplication/property-management-OS/blob/main/README.md
+
+## Related engineering notes
+
+- [PostgreSQL Multi-Tenancy: Define Authorization Boundaries Before Schema Tricks](https://savisaluwadana.github.io/insights/postgres-multitenancy-boundaries/)
+- [Platform Engineering: Build a Paved Road Without Hiding the System](https://savisaluwadana.github.io/insights/platform-engineering-paved-road/)
+
+---
+
+# Platform Engineering: Build a Paved Road Without Hiding the System
+
+> A platform engineering design principle: automate common delivery paths while keeping ownership, state, observability and escape hatches visible enough for engineers to debug and extend the platform.
+
+By Savi Saluwadana  
+Published: 2026-10-07  
+Canonical: https://savisaluwadana.github.io/insights/platform-engineering-paved-road/
+
+A good internal platform reduces repetitive infrastructure work without turning infrastructure into a black box. The paved road should make the common path easier while preserving enough visibility that engineers can understand ownership, state and failure modes.
+
+## What should a platform engineering paved road do?
+
+**Answer:** A paved road should standardize the repetitive parts of software delivery while keeping application teams aware of the contracts they depend on. It should reduce cognitive load, not eliminate observability or make every exception require the platform team.
+
+The best measure is not how many abstractions the platform has. It is how reliably a product team can move from source to a running, observable service with clear ownership.
+
+## Standardize contracts before interfaces
+
+Developer portals and CLIs are useful, but the underlying platform first needs stable contracts: how a component declares build inputs, runtime configuration, environments, deployment policy, observability and ownership. Once those contracts are clear, multiple interfaces can sit on top of them.
+
+This prevents the portal from becoming the only place where the platform’s rules exist.
+
+## Expose state and failure modes
+
+Self-service is frustrating when a developer can click “deploy” but cannot tell which step failed. Build logs, deployment state, health, configuration sources, metrics and traces should remain inspectable. A platform abstraction is successful when it shortens the common path without hiding the evidence needed to debug it.
+
+## Design an escape hatch deliberately
+
+Not every workload fits the default. A platform should define which parts are opinionated and which extension points are supported. The escape hatch should be explicit enough that a team can depart from the default without silently bypassing security, policy or ownership requirements.
+
+This is different from exposing every infrastructure primitive. The goal is controlled extensibility, not unrestricted complexity.
+
+## Treat the platform as a product with users
+
+Platform teams need feedback loops just like product teams. Repeated support requests, slow onboarding, brittle templates and unclear errors are product signals. A roadmap should respond to the workflows consuming the most engineering time rather than simply adding more infrastructure features.
+
+My broader [architecture reference](/engineering/) applies the same principle to application systems: clear boundaries, explicit state and observable workflows are more valuable than complexity for its own sake.
+
+## Agentic interfaces do not replace platform contracts
+
+AI assistants can become another interface to a platform, but they should operate through the same authoritative contracts as other clients. An agent can request a build, inspect logs or propose a deployment action; the platform still needs to enforce identity, policy and environment boundaries.
+
+That is why agentic developer experience and platform engineering converge around the same architectural question: which operations are exposed, who is allowed to perform them, and where is the resulting state recorded?
+
+## Sources and implementation references
+
+- https://savisaluwadana.github.io/engineering/
+- https://savisaluwadana.github.io/engineering/agentic-systems/
+
+## Related engineering notes
+
+- [MCP Permission Boundaries: Keep Agent Tools Behind the Application API](https://savisaluwadana.github.io/insights/mcp-permission-boundaries/)
+- [Go Modular Monolith Architecture for SaaS: Boundaries Before Microservices](https://savisaluwadana.github.io/insights/go-modular-monolith-saas/)
+
+---
+
+# PostgreSQL Multi-Tenancy: Define Authorization Boundaries Before Schema Tricks
+
+> A practical approach to PostgreSQL multi-tenancy: resolve tenant context early, scope every domain operation, enforce ownership consistently, and use database isolation as defense in depth rather than the only authorization layer.
+
+By Savi Saluwadana  
+Published: 2026-10-07  
+Canonical: https://savisaluwadana.github.io/insights/postgres-multitenancy-boundaries/
+
+Multi-tenancy is primarily an authorization and ownership problem. Database techniques matter, but the system first needs a reliable answer to a simpler question: which tenant is this operation acting for, and why is the caller allowed to act there?
+
+## What is the most important rule in multi-tenant SaaS?
+
+**Answer:** Resolve tenant context before executing domain work and carry that context through every query and mutation. A request should never “discover” its tenant by reading whichever record happens to match an unscoped identifier.
+
+Tenant identity should come from an authenticated membership, trusted routing context or another explicit application mechanism.
+
+## Make tenant scope part of repository contracts
+
+If repository methods accept only a record ID, it is easy for callers to forget tenant scope. Prefer contracts that require both tenant and record identity for tenant-owned data. This turns isolation from a convention into an interface requirement.
+
+Queries should also be reviewed for indirect relationships. A child record may not contain a tenant ID itself, so the join path still needs to prove that the parent belongs to the active tenant.
+
+## Use PostgreSQL constraints and RLS as defense in depth
+
+Application authorization and database protection solve related but different problems. The application understands business roles and workflow rules. PostgreSQL constraints, schemas and Row Level Security can reduce the blast radius of mistakes.
+
+RLS is strongest when the application establishes trusted tenant context consistently and tests the policies as part of the data-access layer. It should not become a substitute for understanding authorization in the application.
+
+## Separate global identities from tenant memberships
+
+A user account can be global while roles and permissions are tenant-specific. Modeling membership explicitly avoids confusing “who is this person?” with “what may this person do in this organization?”
+
+This becomes especially important for operators who belong to multiple organizations or for service accounts and agents that need tightly scoped capabilities.
+
+## Audit cross-tenant and privileged operations
+
+Some administrative workflows legitimately cross tenant boundaries. Those operations should be rare, explicit and auditable. A support or migration capability should not reuse an ordinary tenant-scoped endpoint with a hidden bypass.
+
+The more privileged the operation, the more useful it is to record the actor, target tenant, reason and resulting state change.
+
+## How this connects to my system design work
+
+[Property Management OS](/products/property-os/) documents organization-scoped operations in a Go/PostgreSQL application. [Advance HRIS](/products/advance-hris/) also describes tenant-scoped access in a hybrid web and desktop system. Their workflows differ, but both reinforce the same principle: tenant ownership belongs in the application model, not only in URL structure or UI state.
+
+For backend structure around these boundaries, see [Go modular monolith architecture for SaaS](/insights/go-modular-monolith-saas/).
+
+## Sources and implementation references
+
+- https://savisaluwadana.github.io/products/property-os/
+- https://savisaluwadana.github.io/products/advance-hris/
+- https://github.com/RealEstateSassApplication/property-management-OS/blob/main/README.md
+- https://github.com/savisaluwadana/Advance-HIRS-System/blob/main/README.md
+
+## Related engineering notes
+
+- [Go Modular Monolith Architecture for SaaS: Boundaries Before Microservices](https://savisaluwadana.github.io/insights/go-modular-monolith-saas/)
+- [MCP Permission Boundaries: Keep Agent Tools Behind the Application API](https://savisaluwadana.github.io/insights/mcp-permission-boundaries/)
+
+---
+

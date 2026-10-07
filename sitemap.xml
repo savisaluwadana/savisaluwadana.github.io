@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://savisaluwadana.github.io/</loc><lastmod>2026-10-04</lastmod></url>
+  <url><loc>https://savisaluwadana.github.io/</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://savisaluwadana.github.io/contact.html</loc><lastmod>2026-10-04</lastmod></url>
   <url><loc>https://savisaluwadana.github.io/products/</loc><lastmod>2026-10-04</lastmod></url>
-  <url><loc>https://savisaluwadana.github.io/about/</loc><lastmod>2026-10-04</lastmod></url>
-  <url><loc>https://savisaluwadana.github.io/engineering/</loc><lastmod>2026-10-04</lastmod></url>
-  <url><loc>https://savisaluwadana.github.io/engineering/agentic-systems/</loc><lastmod>2026-10-04</lastmod></url>
+  <url><loc>https://savisaluwadana.github.io/about/</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://savisaluwadana.github.io/engineering/</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://savisaluwadana.github.io/engineering/agentic-systems/</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://savisaluwadana.github.io/open-source/</loc><lastmod>2026-10-04</lastmod></url>
   <url><loc>https://savisaluwadana.github.io/products/avara/</loc><lastmod>2026-10-04</lastmod></url>
   <url><loc>https://savisaluwadana.github.io/products/blu/</loc><lastmod>2026-10-04</lastmod></url>
@@ -23,4 +23,10 @@
   <url><loc>https://savisaluwadana.github.io/products/pain-intelligence/</loc><lastmod>2026-10-04</lastmod></url>
   <url><loc>https://savisaluwadana.github.io/products/ad-performance-agent/</loc><lastmod>2026-10-04</lastmod></url>
   <url><loc>https://savisaluwadana.github.io/products/medicare/</loc><lastmod>2026-10-04</lastmod></url>
+  <url><loc>https://savisaluwadana.github.io/insights/</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://savisaluwadana.github.io/insights/mcp-permission-boundaries/</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://savisaluwadana.github.io/insights/durable-agentic-workflows/</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://savisaluwadana.github.io/insights/go-modular-monolith-saas/</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://savisaluwadana.github.io/insights/platform-engineering-paved-road/</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://savisaluwadana.github.io/insights/postgres-multitenancy-boundaries/</loc><lastmod>2026-10-07</lastmod></url>
 </urlset>

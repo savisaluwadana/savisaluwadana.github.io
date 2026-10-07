@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light"><meta name="theme-color" content="#f4f1ea">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1"><meta name="author" content="Savi Saluwadana">
+<title>Engineering Insights: Go, Platform Engineering & Agentic Systems | Savi Saluwadana</title>
+<meta name="description" content="Technical notes by Savi Saluwadana on software architecture, Go, PostgreSQL, platform engineering, MCP and durable agentic systems.">
+<link rel="canonical" href="https://savisaluwadana.github.io/insights/"><link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/base-styles.css"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/product-details.css">
+<link rel="describedby" type="text/plain" href="/llms.txt"><link rel="alternate" type="text/markdown" href="https://savisaluwadana.github.io/insights/index.md" title="Engineering insights in Markdown"><link rel="alternate" type="application/atom+xml" href="/feed.xml" title="Savi Saluwadana — Engineering & products">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Savi Saluwadana"><meta property="og:title" content="Engineering Insights | Savi Saluwadana"><meta property="og:description" content="Software architecture, Go, PostgreSQL, platform engineering, MCP and durable agentic systems."><meta property="og:url" content="https://savisaluwadana.github.io/insights/"><meta property="og:image" content="https://avatars.githubusercontent.com/u/82082138?v=4">
+<meta name="twitter:card" content="summary"><meta name="twitter:title" content="Engineering Insights | Savi Saluwadana"><meta name="twitter:description" content="Software architecture, Go, PostgreSQL, platform engineering, MCP and durable agentic systems."><meta name="twitter:image" content="https://avatars.githubusercontent.com/u/82082138?v=4">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://savisaluwadana.github.io/#person",
+      "name": "Savi Saluwadana",
+      "url": "https://savisaluwadana.github.io/",
+      "jobTitle": "Software and Product Engineer",
+      "sameAs": [
+        "https://github.com/savisaluwadana",
+        "https://www.linkedin.com/in/savi-saluwadana-3911331b2/",
+        "https://dev.to/savi_saluwadana"
+      ]
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://savisaluwadana.github.io/insights/#page",
+      "url": "https://savisaluwadana.github.io/insights/",
+      "name": "Engineering Insights | Savi Saluwadana",
+      "description": "Technical notes by Savi Saluwadana on software architecture, Go, PostgreSQL, platform engineering, MCP and durable agentic systems.",
+      "dateModified": "2026-10-07",
+      "inLanguage": "en",
+      "author": {
+        "@id": "https://savisaluwadana.github.io/#person"
+      },
+      "mainEntity": {
+        "@id": "https://savisaluwadana.github.io/insights/#articles"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://savisaluwadana.github.io/insights/#articles",
+      "name": "Engineering insights by Savi Saluwadana",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "MCP Permission Boundaries: Keep Agent Tools Behind the Application API",
+          "url": "https://savisaluwadana.github.io/insights/mcp-permission-boundaries/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Durable Agentic Workflows: State, Idempotency and Human Approval",
+          "url": "https://savisaluwadana.github.io/insights/durable-agentic-workflows/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Go Modular Monolith Architecture for SaaS: Boundaries Before Microservices",
+          "url": "https://savisaluwadana.github.io/insights/go-modular-monolith-saas/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Platform Engineering: Build a Paved Road Without Hiding the System",
+          "url": "https://savisaluwadana.github.io/insights/platform-engineering-paved-road/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "PostgreSQL Multi-Tenancy: Define Authorization Boundaries Before Schema Tricks",
+          "url": "https://savisaluwadana.github.io/insights/postgres-multitenancy-boundaries/"
+        }
+      ]
+    }
+  ]
+}</script>
+</head><body>
+<a class="skip-link" href="#main">Skip to content</a><header class="site-header" data-header><div class="shell nav-shell"><a class="wordmark" href="/" aria-label="Savi Saluwadana home">Savi Saluwadana</a><button class="menu-button" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav" data-menu-button><span></span><span></span></button><nav class="nav-links" id="primary-nav" aria-label="Primary navigation" data-nav><a href="/products/">Products + Work</a><a href="/engineering/">Architecture</a><a href="/insights/">Insights</a><a href="/about/">About</a><a class="nav-contact" href="/contact.html">Contact</a></nav></div></header>
+<main class="product-page" id="main"><div class="shell">
+<nav class="product-breadcrumb" aria-label="Breadcrumb"><a href="/">Savi Saluwadana</a><span aria-hidden="true">/</span><span aria-current="page">Engineering insights</span></nav>
+<div class="product-header"><p class="section-index">Engineering / Knowledge hub</p><h1>Engineering insights.</h1><p>Original technical notes on architecture, backend design, platform engineering and agentic systems. Each article starts with a direct answer, then explains the trade-offs and links back to documented project architecture where relevant.</p><p class="product-source">By Savi Saluwadana · Updated <time datetime="2026-10-07">7 October 2026</time></p><div class="project-links"><a class="text-link" href="/engineering/">Architecture reference</a><a class="text-link" href="/insights/index.md">Markdown index</a></div></div>
+<div class="product-content"><section class="product-section"><h2>Architecture and agentic systems</h2><p>These notes focus on decisions that affect correctness and operability: authority boundaries, tenant isolation, durable workflow state, service structure and developer-platform contracts.</p><div class="notes-grid"><article class="note-card"><span>Model Context Protocol · MCP · AI agents</span><h2><a href="/insights/mcp-permission-boundaries/">MCP Permission Boundaries: Keep Agent Tools Behind the Application API</a></h2><p>A practical architecture for MCP tools: authenticate at the application boundary, keep authorization in domain services, record state in the system of record, and require approval for consequential actions.</p><p><a class="text-link" href="/insights/mcp-permission-boundaries/">Read the engineering note ↗</a></p></article>
+<article class="note-card"><span>agentic workflows · AI agents · idempotency</span><h2><a href="/insights/durable-agentic-workflows/">Durable Agentic Workflows: State, Idempotency and Human Approval</a></h2><p>How to design agentic workflows that survive retries and failures: persist state, separate proposals from side effects, make mutations idempotent, and model human approval explicitly.</p><p><a class="text-link" href="/insights/durable-agentic-workflows/">Read the engineering note ↗</a></p></article>
+<article class="note-card"><span>Go · Golang · modular monolith</span><h2><a href="/insights/go-modular-monolith-saas/">Go Modular Monolith Architecture for SaaS: Boundaries Before Microservices</a></h2><p>A practical way to structure a Go SaaS backend as a modular monolith: organize by domain, keep transactions local, separate workers and integrations, and extract services only when operational boundaries justify it.</p><p><a class="text-link" href="/insights/go-modular-monolith-saas/">Read the engineering note ↗</a></p></article>
+<article class="note-card"><span>platform engineering · internal developer platform · developer experience</span><h2><a href="/insights/platform-engineering-paved-road/">Platform Engineering: Build a Paved Road Without Hiding the System</a></h2><p>A platform engineering design principle: automate common delivery paths while keeping ownership, state, observability and escape hatches visible enough for engineers to debug and extend the platform.</p><p><a class="text-link" href="/insights/platform-engineering-paved-road/">Read the engineering note ↗</a></p></article>
+<article class="note-card"><span>PostgreSQL · multi-tenancy · SaaS</span><h2><a href="/insights/postgres-multitenancy-boundaries/">PostgreSQL Multi-Tenancy: Define Authorization Boundaries Before Schema Tricks</a></h2><p>A practical approach to PostgreSQL multi-tenancy: resolve tenant context early, scope every domain operation, enforce ownership consistently, and use database isolation as defense in depth rather than the only authorization layer.</p><p><a class="text-link" href="/insights/postgres-multitenancy-boundaries/">Read the engineering note ↗</a></p></article></div></section>
+<section class="product-section"><h2>How these notes are written</h2><p>The articles are based on engineering principles and the documented scope of my project work. They distinguish design guidance from measured production outcomes, link to source repositories when available, and avoid claims that are not supported by the implementation.</p><p>For implementation-level summaries, browse the <a href="/products/">product directory</a>. For cross-project comparisons, use the <a href="/engineering/">architecture reference</a>.</p></section></div>
+</div></main>
+<footer class="site-footer"><div class="shell footer-layout"><div><strong>Savi Saluwadana</strong><span>Software · Architecture · Product · Platform · DevOps</span></div><div><span><a href="/">Portfolio</a> · <a href="/products/">Products</a> · <a href="/engineering/">Engineering</a> · <a href="/insights/">Insights</a> · <a href="/open-source/">Public source</a> · <a href="/about/">About</a> · <a href="/feed.xml">Feed</a></span><span>© <span data-year>2026</span></span></div></div></footer><script src="/app.js" defer></script>
+</body></html>
