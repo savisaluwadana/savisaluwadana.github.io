@@ -1,6 +1,6 @@
 # Savi Saluwadana
 
-I’m a software and product engineer based in Sri Lanka, interested in agentic systems and open-source development. My work connects product workflows, software architecture, backend systems and the platforms that operate them.
+I build software in public from Sri Lanka. My repositories and project notes show the architecture, implementation choices and unfinished parts of that work. I'm also exploring platform engineering through delivery and developer experience.
 
 By: Savi Saluwadana
 Canonical page: https://savisaluwadana.github.io/about/
@@ -30,13 +30,11 @@ I’m interested in agents that use tools, retrieval and workflow state to help 
 
 My current product work includes [Pain Intelligence Lab](https://savisaluwadana.github.io/products/pain-intelligence/), [Property Management OS](https://savisaluwadana.github.io/products/property-os/) and [DevRelOS](https://savisaluwadana.github.io/products/devrelos/). Follow their requests and state changes in the [agentic systems architecture walkthroughs](https://savisaluwadana.github.io/engineering/agentic-systems/). The broader topics above describe my development interests.
 
-## Open-source development and collaboration
+## Code and design decisions in public
 
-I’m interested in contributing code, fixing bugs, reviewing design decisions and improving documentation in open-source projects. Cloud-native infrastructure, Go, Kubernetes, developer platforms and agent tooling are areas I want to contribute to.
+My [public repository index](https://savisaluwadana.github.io/open-source/) links to the code, local setup instructions, licence status and unfinished work behind seven projects.
 
-I value clear APIs, reproducible setup instructions, architecture documentation and examples that help other developers understand and improve a system. My [GitHub profile](https://github.com/savisaluwadana) and [public source index](https://savisaluwadana.github.io/open-source/) provide places to inspect my work.
-
-For code, documentation or engineering collaboration, [get in touch](https://savisaluwadana.github.io/contact.html).
+I keep other products in the [product directory](https://savisaluwadana.github.io/products/) with their documented scope.
 
 ## Products I’ve built and worked on
 

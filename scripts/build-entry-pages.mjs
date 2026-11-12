@@ -17,10 +17,10 @@ export async function buildEntryPages({ root, base, updated, schemaModified, pro
       throw new Error(`Unverified public source: ${repo.id}`);
     }
   }
-  const repositoryTable = { type: 'table', headers: ['Project and source', 'What to inspect', 'License metadata'], rows: publicWork.repositories.map(repo => {
+  const repositoryTable = { type: 'table', headers: ['Project and source', 'What to inspect', 'Licence', 'Run locally'], rows: publicWork.repositories.map(repo => {
     const product = productById.get(repo.id);
-    const license = repo.license && repo.license.spdxId !== 'NOASSERTION' ? `${repo.license.name} (${repo.license.spdxId})` : 'License not identified by GitHub metadata. Review repository terms before reuse.';
-    return [`[${product.name}](${repo.url}) · [Architecture overview](/products/${product.id}/)`, `${product.scope} ${product.architecture}`, license];
+    const license = repo.licenseLabel || (repo.license && repo.license.spdxId !== 'NOASSERTION' ? `${repo.license.name} (${repo.license.spdxId})` : 'Licence not identified');
+    return [`[${product.name}](${repo.url}) · [Architecture overview](/products/${product.id}/)`, `${product.scope} ${product.architecture}`, license, product.run || "See repository README"];
   }) };
   const inline = text => {
     const pattern = /\[([^\]]+)\]\(([^)]+)\)/g;
