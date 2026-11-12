@@ -40,4 +40,4 @@ Next.js → Go API → PostgreSQL → Workers → MCP
 
 This project is a self-hosted beta. External providers require credentials and policy configuration; consequential outreach follows approval workflows.
 
-Source: https://github.com/savisaluwadana/DevRelOS/blob/main/README.md
+No confirmed public repository is linked.

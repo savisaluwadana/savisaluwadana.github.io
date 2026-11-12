@@ -105,10 +105,13 @@
         "Payment initiation and server-side notification handling."
       ]
     ],
-    "reviewed": "2026-10-04",
+    "reviewed": "2026-11-12",
     "source": "https://github.com/RealEstateSassApplication/AvaraRealEstate/blob/main/README.md",
     "run": "Configure MongoDB and environment variables; npm install; npm run dev",
-    "licenseLabel": "Proprietary, all rights reserved"
+    "licenseLabel": "Proprietary, all rights reserved",
+    "designDecision": "A single Next.js app handles property workflows and MongoDB storage.",
+    "tradeoff": "A unified app is easier to run, but payment and media require configured external services.",
+    "unfinished": "Production checklist and external payment/storage configuration remain."
   },
   {
     "id": "blu",
@@ -318,10 +321,13 @@
         "Durable product and editorial images."
       ]
     ],
-    "reviewed": "2026-10-04",
+    "reviewed": "2026-11-12",
     "source": "https://github.com/FreshOnTime/newfreshontimewebsite/blob/main/README.md",
     "run": "Set development environment variables; npm ci; npm run db:migrate; npm run dev",
-    "licenseLabel": "No licence identified"
+    "licenseLabel": "No licence identified",
+    "designDecision": "Next.js route handlers enforce commerce rules using Prisma and PostgreSQL.",
+    "tradeoff": "One app keeps order transitions together; background jobs and integrations need separate scheduling.",
+    "unfinished": "Automatic recurring card charging is not implemented; agentic commerce is planned."
   },
   {
     "id": "timelyhelp",
@@ -667,10 +673,13 @@
         "Agent access through authenticated domain APIs."
       ]
     ],
-    "reviewed": "2026-10-04",
+    "reviewed": "2026-11-12",
     "source": "https://github.com/RealEstateSassApplication/property-management-OS/blob/main/README.md",
     "run": "Set values from .env.example; docker compose up --build",
-    "licenseLabel": "No licence identified"
+    "licenseLabel": "No licence identified",
+    "designDecision": "Go modular monolith keeps domain rules and authorisation behind authenticated APIs; notification writes use an outbox.",
+    "tradeoff": "Transactional domain authority stays in one backend, but asynchronous delivery needs worker and retry handling.",
+    "unfinished": "README lists remaining milestones; some agentic mutations are outside the current tool scope."
   },
   {
     "id": "rapidreach",
@@ -771,10 +780,13 @@
         "Public media objects referenced by content records."
       ]
     ],
-    "reviewed": "2026-10-04",
+    "reviewed": "2026-11-12",
     "source": "https://github.com/savisaluwadana/RapidReachBloWebsite/blob/main/README.md",
     "run": "Configure MongoDB in .env.local; npm install; npm run dev",
-    "licenseLabel": "No licence identified"
+    "licenseLabel": "No licence identified",
+    "designDecision": "Next.js handles the CMS, page delivery and APIs, backed by MongoDB and blob media.",
+    "tradeoff": "One deployable app reduces boundaries, but media and publishing rely on configured external services.",
+    "unfinished": "Production media storage and environment configuration remain deployment responsibilities."
   },
   {
     "id": "advance-hris",
@@ -878,10 +890,13 @@
         "Tenant-scoped business rules and authoritative HR records."
       ]
     ],
-    "reviewed": "2026-10-04",
+    "reviewed": "2026-11-12",
     "source": "https://github.com/SilverLine-Ravija/Advance-HIRS-System/blob/main/README.md",
     "run": "Configure .env from example; docker compose up --build (demo setup)",
-    "licenseLabel": "No licence identified"
+    "licenseLabel": "No licence identified",
+    "designDecision": "Cloud HR data is authoritative; the desktop uses a local store and sync queue.",
+    "tradeoff": "Offline operation adds synchronization, conflict resolution and local-data protection concerns.",
+    "unfinished": "Default Compose is demo-only; full payroll and production layers remain unfinished."
   },
   {
     "id": "nexus-pos",
@@ -1073,10 +1088,13 @@
         "Configured email/SMS providers; integration availability varies by deployment."
       ]
     ],
-    "reviewed": "2026-10-04",
+    "reviewed": "2026-11-12",
     "source": "https://github.com/savisaluwadana/student-management-system-saas/blob/main/README.md",
     "run": "Configure environment and database; npm install; npm run dev",
-    "licenseLabel": "No licence identified"
+    "licenseLabel": "No licence identified",
+    "designDecision": "Next.js and MongoDB implement student, class and fee workflows in one application.",
+    "tradeoff": "Combined modules ease local development but verified tenant isolation and billing need more work.",
+    "unfinished": "Shared tenancy verification, production permissions, billing and deployment acceptance remain."
   },
   {
     "id": "acme-accounting",
@@ -1392,7 +1410,7 @@
     "id": "pain-intelligence",
     "name": "Pain Intelligence Lab",
     "category": "Market research platform",
-    "type": "Evidence-backed research + MCP",
+    "type": "Local research web and desktop software",
     "description": "An early community research project for exploring recurring needs using source-linked evidence. The current repository provides a local Next.js and Rust web app and a separate desktop app.",
     "architecture": "Next.js dashboard → Rust API → PostgreSQL; separate desktop app",
     "tags": [
@@ -1403,55 +1421,50 @@
       "Desktop",
       "MIT"
     ],
-    "footer": "Research conclusions remain connected to sources, independent stories, competing explanations and validation work.",
+    "footer": "The source describes both editions and separates software licensing from third-party content rights.",
     "href": "https://github.com/savisaluwadana/Pain-Point-Analyzer",
     "linkLabel": "View repository ↗",
     "classes": "project-card",
     "users": "Builders, product teams and market researchers.",
     "scope": "Local research software for exploring repeated needs and evidence-backed project ideas.",
     "features": [
-      "Manual evidence ingestion and native Reddit deep research.",
-      "Autonomous research jobs executed by a connected MCP host.",
-      "Semantic clustering, jobs-to-be-done and opportunity synthesis.",
-      "Source diversity, duplicate checks and competitor/pricing validation."
+      "Source-linked research observations and evidence review.",
+      "Local Next.js web dashboard and Rust API using PostgreSQL.",
+      "Separate native desktop application with different capabilities.",
+      "Documented research quality and external data-use constraints."
     ],
     "workflow": [
-      "A researcher creates a market question and research job.",
-      "The MCP host gathers evidence and sends it through the platform’s tool boundary.",
-      "Express stores evidence and workflow state in MongoDB and applies quality/scoring checks.",
-      "Host reasoning annotates and clusters evidence before opportunities are validated or rejected."
+      "Choose and configure the self-hosted web or native desktop edition.",
+      "The web dashboard sends research requests to the Rust API.",
+      "The API manages research records and evidence in PostgreSQL.",
+      "Review linked evidence, limits and validation before drawing conclusions."
     ],
     "boundary": "The repository currently describes an early community alpha for local use. The web app and desktop app have different capabilities; source content retains third-party data-use restrictions.",
     "rows": [
       [
         [
           "web",
-          "Research workspace",
-          "React / Vite"
+          "Web research UI",
+          "Next.js"
         ],
         [
-          "host",
-          "Research host",
-          "Codex / Claude / MCP"
+          "desktop",
+          "Desktop edition",
+          "Native app"
         ]
       ],
       [
         [
           "api",
-          "Research platform",
-          "Express / scoring / tools"
+          "Local research API",
+          "Rust"
         ]
       ],
       [
         [
           "db",
-          "Evidence + job state",
-          "MongoDB"
-        ],
-        [
-          "sources",
-          "Source evidence",
-          "Authorized public sources"
+          "Research records",
+          "PostgreSQL"
         ]
       ]
     ],
@@ -1461,40 +1474,35 @@
         "api"
       ],
       [
-        "host",
-        "api"
-      ],
-      [
-        "host",
-        "sources"
-      ],
-      [
         "api",
         "db"
       ]
     ],
     "components": [
       [
-        "React workspace",
-        "Research questions, saved evidence and project inspection."
+        "Next.js dashboard",
+        "Local research workspace and evidence review."
       ],
       [
-        "Express platform",
-        "Storage, evidence-quality scoring and workflow state."
+        "Rust API",
+        "Research endpoints and evidence operations."
       ],
       [
-        "MCP host",
-        "Browsing, annotation, semantic reasoning and synthesis."
+        "PostgreSQL",
+        "Web edition research data and job state."
       ],
       [
-        "MongoDB",
-        "Evidence, research projects, snapshots and job state."
+        "Desktop edition",
+        "Separate native application; see its README for supported capabilities."
       ]
     ],
-    "reviewed": "2026-10-04",
+    "reviewed": "2026-11-12",
     "source": "https://github.com/savisaluwadana/Pain-Point-Analyzer/blob/main/README.md",
     "run": "Configure .env from example; docker compose up --build -d --wait",
-    "licenseLabel": "MIT"
+    "licenseLabel": "MIT",
+    "designDecision": "The repository offers a local Next.js/Rust/PostgreSQL web stack and a separate desktop edition.",
+    "tradeoff": "Local research keeps the data close to the user but two editions have distinct setup and capabilities.",
+    "unfinished": "Early community alpha: README lists connector, import and third-party data limitations."
   },
   {
     "id": "ad-performance-agent",

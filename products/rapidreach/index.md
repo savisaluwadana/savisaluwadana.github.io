@@ -2,7 +2,7 @@
 
 By / portfolio contribution: Savi Saluwadana
 Canonical page: https://savisaluwadana.github.io/products/rapidreach/
-Reviewed: 2026-10-04
+Reviewed: 2026-11-12
 
 A developer publication and tool-discovery product with editorial workflows, comments, likes, search, tool profiles, media uploads and a deliberately small CMS.
 
@@ -37,5 +37,21 @@ Next.js 16 → MongoDB → Vercel Blob
 ## Current scope
 
 RapidReach uses one Next.js application with MongoDB and Blob storage; there is no separate backend service. Publishing and media require a configured deployment.
+
+## Run locally
+
+Configure MongoDB in .env.local; npm install; npm run dev
+
+## Design decision and trade-off
+
+Next.js handles the CMS, page delivery and APIs, backed by MongoDB and blob media.
+
+Trade-off: One deployable app reduces boundaries, but media and publishing rely on configured external services.
+
+## Unfinished
+
+Production media storage and environment configuration remain deployment responsibilities.
+
+Licence: No licence identified
 
 Source: https://github.com/savisaluwadana/RapidReachBloWebsite/blob/main/README.md

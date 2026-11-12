@@ -2,7 +2,7 @@
 
 By / portfolio contribution: Savi Saluwadana
 Canonical page: https://savisaluwadana.github.io/products/avara/
-Reviewed: 2026-10-04
+Reviewed: 2026-11-12
 
 A Sri Lankan property platform spanning rentals, property sales and short-term bookings with role-based users, geospatial search, availability, booking workflows, payments and property operations.
 
@@ -37,5 +37,21 @@ Next.js → MongoDB → S3 → PayHere
 ## Current scope
 
 This diagram summarizes the repository’s property, booking and payment boundaries. PayHere and S3 require deployment-specific configuration.
+
+## Run locally
+
+Configure MongoDB and environment variables; npm install; npm run dev
+
+## Design decision and trade-off
+
+A single Next.js app handles property workflows and MongoDB storage.
+
+Trade-off: A unified app is easier to run, but payment and media require configured external services.
+
+## Unfinished
+
+Production checklist and external payment/storage configuration remain.
+
+Licence: Proprietary, all rights reserved
 
 Source: https://github.com/RealEstateSassApplication/AvaraRealEstate/blob/main/README.md

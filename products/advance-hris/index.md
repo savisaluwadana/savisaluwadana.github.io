@@ -2,7 +2,7 @@
 
 By / portfolio contribution: Savi Saluwadana
 Canonical page: https://savisaluwadana.github.io/products/advance-hris/
-Reviewed: 2026-10-04
+Reviewed: 2026-11-12
 
 A hybrid HR information system with an employee web portal, a native HR/admin desktop console, tenant-scoped access, policy-backed leave, schedule-aware attendance, audit history and durable offline synchronization.
 
@@ -38,4 +38,20 @@ Next.js Web + Wails / React Desktop → Go API → PostgreSQL
 
 Local-first refers to the desktop console. The cloud database remains authoritative. Payroll-ready attendance boundaries do not mean a complete payroll-processing product is included.
 
-Source: https://github.com/savisaluwadana/Advance-HIRS-System/blob/main/README.md
+## Run locally
+
+Configure .env from example; docker compose up --build (demo setup)
+
+## Design decision and trade-off
+
+Cloud HR data is authoritative; the desktop uses a local store and sync queue.
+
+Trade-off: Offline operation adds synchronization, conflict resolution and local-data protection concerns.
+
+## Unfinished
+
+Default Compose is demo-only; full payroll and production layers remain unfinished.
+
+Licence: No licence identified
+
+Source: https://github.com/SilverLine-Ravija/Advance-HIRS-System/blob/main/README.md
