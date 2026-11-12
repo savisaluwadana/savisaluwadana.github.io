@@ -20,22 +20,32 @@ const schema = graph => `<script type="application/ld+json">\n${JSON.stringify({
 const write = async (name, content) => { await mkdir(path.dirname(path.join(root, name)), { recursive: true }); await writeFile(path.join(root, name), content); };
 const replaceRegion = (html, name, content) => html.replace(new RegExp(`<!-- ${name}:START -->[\\s\\S]*?<!-- ${name}:END -->`), `<!-- ${name}:START -->\n${content}\n          <!-- ${name}:END -->`);
 const tags = p => p.tags.map(tag => `<span>${esc(tag)}</span>`).join('');
-const actions = p => `<a href="/products/${esc(p.id)}/">Overview &amp; architecture</a>${p.href ? `<a href="${esc(p.href)}" target="_blank" rel="noreferrer">${esc(p.linkLabel)}</a>` : ''}`;
-let home = await readFile(path.join(root, 'index.html'), 'utf8');
-const cards = products.map((p, i) => `${i === 4 ? '<div class="project-group-label reveal"><span>Engineering systems &amp; developer tooling</span><strong>Backend architecture, operational SaaS, automation and developer-facing products.</strong></div>' : ''}
-          <article class="${esc(p.classes)} reveal" id="${esc(p.id)}">
-            <div class="project-topline"><span>${String(i + 1).padStart(2, '0')}</span><span>${esc(p.category)}</span></div>
+const publicRepoById = new Map(publicWork.repositories.map(repo => [repo.id, repo]));
+const publicProjects = products.filter(p => publicRepoById.has(p.id));
+const otherProjects = products.filter(p => !publicRepoById.has(p.id));
+const orderedProjects = [...publicProjects, ...otherProjects];
+const cards = orderedProjects.map((p, i) => {
+  const repo = publicRepoById.get(p.id);
+  const groupHeading = i === 0
+    ? '<div class="project-group-label reveal"><span>Public repositories</span><strong>Read the code, setup instructions and licence terms before reusing it.</strong></div>'
+    : i === publicProjects.length
+      ? '<div class="project-group-label reveal"><span>Other products</span><strong>Projects without a confirmed public source repository.</strong></div>'
+      : '';
+  const links = `<a href="/products/${esc(p.id)}/">Overview &amp; architecture</a>${repo ? `<a href="${esc(repo.url)}" target="_blank" rel="noreferrer">View repository ↗</a>` : p.href ? `<a href="${esc(p.href)}" target="_blank" rel="noreferrer">${esc(p.linkLabel)}</a>` : ''}`;
+  return `${groupHeading}
+          <article class="${esc(p.classes)}${repo ? '' : ' project-card--other'} reveal" id="${esc(p.id)}">
+            <div class="project-topline"><span>${String(i + 1).padStart(2, '0')}</span><span>${esc(repo ? 'Public source' : 'Other product')}</span></div>
             <div class="project-body">
               <p class="project-type">${esc(p.type)}</p>
               <h3><a class="project-title-link" href="/products/${esc(p.id)}/">${esc(p.name)}</a></h3>
-              <p>${esc(p.description)}</p>
-              <div class="architecture-line" aria-label="${esc(p.name)} architecture">${esc(p.architecture)}</div>
-              <div class="project-tags">${tags(p)}</div>
+              <p>${esc(repo ? p.description : p.scope)}</p>
+              ${repo ? `<div class="architecture-line" aria-label="${esc(p.name)} architecture">${esc(p.architecture)}</div><div class="project-tags">${tags(p)}</div><p class="project-source-meta"><strong>Licence:</strong> ${esc(p.licenseLabel || 'Not identified')}</p><p class="project-source-meta"><strong>Run locally:</strong> ${esc(p.run || 'See repository README')}</p>` : ''}
             </div>
-            <div class="project-footer"><p>${esc(p.footer)}</p><div class="project-links">${actions(p)}</div></div>
-          </article>`).join('\n');
+            <div class="project-footer">${repo ? `<p>${esc(p.boundary)}</p>` : ''}<div class="project-links">${links}</div></div>
+          </article>`;
+}).join('\n');
 home = replaceRegion(home, 'PRODUCTS', cards);
-home = replaceRegion(home, 'PROOF', products.map(p => `          <a href="#${esc(p.id)}">${esc(p.name)}</a>`).join('\n'));
+home = replaceRegion(home, 'PROOF', orderedProjects.map(p => `          <a href="#${esc(p.id)}">${esc(p.name)}</a>`).join('\n'));
 home = replaceRegion(home, 'SCHEMA', schema([website, person, { '@type': 'ProfilePage', '@id': `${base}/#profile`, url: `${base}/`, name: 'Savi Saluwadana — Software and Product Engineer', mainEntity: { '@id': person['@id'] }, isPartOf: { '@id': website['@id'] }, hasPart: { '@id': list['@id'] }, dateModified: schemaModified, inLanguage: 'en' }, list]));
 if (!home.includes('rel="describedby"')) home = home.replace('<link rel="canonical"', '<link rel="describedby" type="text/plain" href="/llms.txt">\n  <link rel="alternate" type="application/json" href="/profile.json" title="Public profile data">\n  <link rel="alternate" type="text/markdown" href="/about.md" title="Profile in Markdown">\n  <link rel="canonical"');
 home = home.replace(/<title>.*?<\/title>/, '<title>Savi Saluwadana | Building Software in Public</title>');

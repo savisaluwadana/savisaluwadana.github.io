@@ -106,7 +106,9 @@
       ]
     ],
     "reviewed": "2026-10-04",
-    "source": "https://github.com/RealEstateSassApplication/AvaraRealEstate/blob/main/README.md"
+    "source": "https://github.com/RealEstateSassApplication/AvaraRealEstate/blob/main/README.md",
+    "run": "Configure MongoDB and environment variables; npm install; npm run dev",
+    "licenseLabel": "Proprietary, all rights reserved"
   },
   {
     "id": "blu",
@@ -216,8 +218,8 @@
       "MCP"
     ],
     "footer": "The direction goes beyond a grocery catalog: curation, repeat purchasing, convenience, recommendations and long-term customer relationships are part of the product system.",
-    "href": "https://freshpick.lk/",
-    "linkLabel": "Visit FreshPick ↗",
+    "href": "https://github.com/FreshOnTime/newfreshontimewebsite",
+    "linkLabel": "View repository ↗",
     "classes": "project-card project-card--product",
     "users": "Grocery shoppers, local producers, business buyers and administrators.",
     "scope": "Food commerce, producer onboarding and scheduled recurring deliveries in Colombo.",
@@ -317,7 +319,9 @@
       ]
     ],
     "reviewed": "2026-10-04",
-    "source": "https://github.com/FreshOnTime/newfreshontimewebsite/blob/main/README.md"
+    "source": "https://github.com/FreshOnTime/newfreshontimewebsite/blob/main/README.md",
+    "run": "Set development environment variables; npm ci; npm run db:migrate; npm run dev",
+    "licenseLabel": "No licence identified"
   },
   {
     "id": "timelyhelp",
@@ -440,8 +444,8 @@
       "Workers"
     ],
     "footer": "Built around provider interfaces, evidence provenance, approval-gated side effects, observable automation and PostgreSQL as the system of record.",
-    "href": "https://github.com/savisaluwadana/DevRelOS",
-    "linkLabel": "View repository ↗",
+    "href": "",
+    "linkLabel": "Source link unavailable",
     "classes": "project-card",
     "users": "Developer-relations teams and developer-community operators.",
     "scope": "A self-hosted beta for discovery, engagement and outcome measurement.",
@@ -545,7 +549,7 @@
       ]
     ],
     "reviewed": "2026-10-04",
-    "source": "https://github.com/savisaluwadana/DevRelOS/blob/main/README.md"
+    "source": null
   },
   {
     "id": "property-os",
@@ -664,7 +668,9 @@
       ]
     ],
     "reviewed": "2026-10-04",
-    "source": "https://github.com/RealEstateSassApplication/property-management-OS/blob/main/README.md"
+    "source": "https://github.com/RealEstateSassApplication/property-management-OS/blob/main/README.md",
+    "run": "Set values from .env.example; docker compose up --build",
+    "licenseLabel": "No licence identified"
   },
   {
     "id": "rapidreach",
@@ -766,7 +772,9 @@
       ]
     ],
     "reviewed": "2026-10-04",
-    "source": "https://github.com/savisaluwadana/RapidReachBloWebsite/blob/main/README.md"
+    "source": "https://github.com/savisaluwadana/RapidReachBloWebsite/blob/main/README.md",
+    "run": "Configure MongoDB in .env.local; npm install; npm run dev",
+    "licenseLabel": "No licence identified"
   },
   {
     "id": "advance-hris",
@@ -784,7 +792,7 @@
       "RBAC"
     ],
     "footer": "The system combines cloud-authoritative HR data with a local-first desktop workflow, encrypted local payloads, conflict-aware sync and payroll-ready attendance boundaries.",
-    "href": "https://github.com/savisaluwadana/Advance-HIRS-System",
+    "href": "https://github.com/SilverLine-Ravija/Advance-HIRS-System",
     "linkLabel": "View repository ↗",
     "classes": "project-card project-card--product",
     "users": "Employees, managers, HR teams and administrators.",
@@ -871,7 +879,9 @@
       ]
     ],
     "reviewed": "2026-10-04",
-    "source": "https://github.com/savisaluwadana/Advance-HIRS-System/blob/main/README.md"
+    "source": "https://github.com/SilverLine-Ravija/Advance-HIRS-System/blob/main/README.md",
+    "run": "Configure .env from example; docker compose up --build (demo setup)",
+    "licenseLabel": "No licence identified"
   },
   {
     "id": "nexus-pos",
@@ -1064,7 +1074,9 @@
       ]
     ],
     "reviewed": "2026-10-04",
-    "source": "https://github.com/savisaluwadana/student-management-system-saas/blob/main/README.md"
+    "source": "https://github.com/savisaluwadana/student-management-system-saas/blob/main/README.md",
+    "run": "Configure environment and database; npm install; npm run dev",
+    "licenseLabel": "No licence identified"
   },
   {
     "id": "acme-accounting",
@@ -1381,22 +1393,22 @@
     "name": "Pain Intelligence Lab",
     "category": "Market research platform",
     "type": "Evidence-backed research + MCP",
-    "description": "A cross-source research platform for discovering repeated customer pain, costly workarounds and product opportunities using saved evidence, quality checks and an MCP-connected research host.",
-    "architecture": "React / Vite + MCP host → Express API → MongoDB",
+    "description": "An early community research project for exploring recurring needs using source-linked evidence. The current repository provides a local Next.js and Rust web app and a separate desktop app.",
+    "architecture": "Next.js dashboard → Rust API → PostgreSQL; separate desktop app",
     "tags": [
-      "React",
-      "Express",
-      "MongoDB",
-      "MCP",
-      "Research",
-      "Evidence"
+      "Next.js",
+      "Rust",
+      "PostgreSQL",
+      "Docker",
+      "Desktop",
+      "MIT"
     ],
     "footer": "Research conclusions remain connected to sources, independent stories, competing explanations and validation work.",
-    "href": "https://github.com/savisaluwadana/Reddit-post-Analyzer",
+    "href": "https://github.com/savisaluwadana/Pain-Point-Analyzer",
     "linkLabel": "View repository ↗",
     "classes": "project-card",
     "users": "Builders, product teams and market researchers.",
-    "scope": "Cross-source pain research and evidence-backed opportunity validation.",
+    "scope": "Local research software for exploring repeated needs and evidence-backed project ideas.",
     "features": [
       "Manual evidence ingestion and native Reddit deep research.",
       "Autonomous research jobs executed by a connected MCP host.",
@@ -1409,7 +1421,7 @@
       "Express stores evidence and workflow state in MongoDB and applies quality/scoring checks.",
       "Host reasoning annotates and clusters evidence before opportunities are validated or rejected."
     ],
-    "boundary": "The application does not call model-provider APIs directly; semantic reasoning runs in the connected MCP host. A research job may correctly produce no validated opportunity.",
+    "boundary": "The repository currently describes an early community alpha for local use. The web app and desktop app have different capabilities; source content retains third-party data-use restrictions.",
     "rows": [
       [
         [
@@ -1480,7 +1492,9 @@
       ]
     ],
     "reviewed": "2026-10-04",
-    "source": "https://github.com/savisaluwadana/Reddit-post-Analyzer/blob/main/README.md"
+    "source": "https://github.com/savisaluwadana/Pain-Point-Analyzer/blob/main/README.md",
+    "run": "Configure .env from example; docker compose up --build -d --wait",
+    "licenseLabel": "MIT"
   },
   {
     "id": "ad-performance-agent",
