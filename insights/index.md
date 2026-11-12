@@ -16,3 +16,11 @@ Canonical: https://savisaluwadana.github.io/insights/
 - [Agentic systems architecture](https://savisaluwadana.github.io/engineering/agentic-systems/)
 - [Product directory](https://savisaluwadana.github.io/products/)
 - [Public source index](https://savisaluwadana.github.io/open-source/)
+
+## Proposed articles (not published)
+
+- **From Property Management OS: Why Agent Tools Should Use Application Permissions** — A project-backed note on routing tool actions through authenticated domain APIs rather than a second access path.
+- **From FreshPick: Recurring Orders Are Not Recurring Payments** — How I separated repeat delivery scheduling from payment capture and what that leaves unfinished.
+- **From Pain-Point-Analyzer: Building a Research Tool That Runs Locally** — A look at the Rust API, local data layer and the trade-offs between the web and desktop editions.
+- **What a Deployment Contract Should Tell Developers** — A tool-neutral exploration of build inputs, configuration, ownership, health and failure signals.
+- **CI/CD Is Not the Same as a Reliable Deployment** — A tool-neutral exploration of the gap between passing checks and operating a diagnosable deployment.

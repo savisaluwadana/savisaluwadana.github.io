@@ -2,41 +2,57 @@
 
 By / portfolio contribution: Savi Saluwadana
 Canonical page: https://savisaluwadana.github.io/products/pain-intelligence/
-Reviewed: 2026-10-04
+Reviewed: 2026-11-12
 
-A cross-source research platform for discovering repeated customer pain, costly workarounds and product opportunities using saved evidence, quality checks and an MCP-connected research host.
+An early community research project for exploring recurring needs using source-linked evidence. The current repository provides a local Next.js and Rust web app and a separate desktop app.
 
 ## Users and purpose
 
 Builders, product teams and market researchers.
 
-Cross-source pain research and evidence-backed opportunity validation.
+Local research software for exploring repeated needs and evidence-backed project ideas.
 
 ## Capabilities
 
-- Manual evidence ingestion and native Reddit deep research.
-- Autonomous research jobs executed by a connected MCP host.
-- Semantic clustering, jobs-to-be-done and opportunity synthesis.
-- Source diversity, duplicate checks and competitor/pricing validation.
+- Source-linked research observations and evidence review.
+- Local Next.js web dashboard and Rust API using PostgreSQL.
+- Separate native desktop application with different capabilities.
+- Documented research quality and external data-use constraints.
 
 ## Workflow
 
-1. A researcher creates a market question and research job.
-2. The MCP host gathers evidence and sends it through the platform’s tool boundary.
-3. Express stores evidence and workflow state in MongoDB and applies quality/scoring checks.
-4. Host reasoning annotates and clusters evidence before opportunities are validated or rejected.
+1. Choose and configure the self-hosted web or native desktop edition.
+2. The web dashboard sends research requests to the Rust API.
+3. The API manages research records and evidence in PostgreSQL.
+4. Review linked evidence, limits and validation before drawing conclusions.
 
 ## Architecture
 
-React / Vite + MCP host → Express API → MongoDB
+Next.js dashboard → Rust API → PostgreSQL; separate desktop app
 
-- React workspace: Research questions, saved evidence and project inspection.
-- Express platform: Storage, evidence-quality scoring and workflow state.
-- MCP host: Browsing, annotation, semantic reasoning and synthesis.
-- MongoDB: Evidence, research projects, snapshots and job state.
+- Next.js dashboard: Local research workspace and evidence review.
+- Rust API: Research endpoints and evidence operations.
+- PostgreSQL: Web edition research data and job state.
+- Desktop edition: Separate native application; see its README for supported capabilities.
 
 ## Current scope
 
-The application does not call model-provider APIs directly; semantic reasoning runs in the connected MCP host. A research job may correctly produce no validated opportunity.
+The repository describes an early community alpha for local use. Web and desktop have different capabilities; third-party content retains its own terms.
 
-Source: https://github.com/savisaluwadana/Reddit-post-Analyzer/blob/main/README.md
+## Run locally
+
+Configure .env from example; docker compose up --build -d --wait
+
+## Design decision and trade-off
+
+The repository offers a local Next.js/Rust/PostgreSQL web stack and a separate desktop edition.
+
+Trade-off: Local research keeps the data close to the user but two editions have distinct setup and capabilities.
+
+## Unfinished
+
+Early community alpha: README lists connector, import and third-party data limitations.
+
+Licence: MIT
+
+Source: https://github.com/savisaluwadana/Pain-Point-Analyzer/blob/main/README.md

@@ -1,41 +1,19 @@
 # Savi Saluwadana
 
-> Savi Saluwadana is a software and product engineer based in Sri Lanka, focused on software architecture, systems design, Go, Kubernetes and developer platforms, with interests in agentic systems and open-source development.
+> Savi Saluwadana is a software engineer based in Sri Lanka who builds software in public. His project repositories document architecture, design decisions and trade-offs; he is exploring platform engineering through containers, CI/CD and developer experience.
 
-This is a public portfolio with product-level architecture summaries. It does not claim that every project is commercially deployed or production-certified.
+This site contains 16 product overviews, including seven repositories that are publicly accessible. Some repository licences are unspecified; public source does not automatically mean open source.
 
-## Profile and contact
+## Site references
 
-- [Portfolio](https://savisaluwadana.github.io/): Canonical professional profile.
-- [Profile in Markdown](https://savisaluwadana.github.io/about.md): Identity, engineering focus and product index.
-- [Profile JSON](https://savisaluwadana.github.io/profile.json): Structured identity and profile links.
-- [Contact](https://savisaluwadana.github.io/contact.html): Public email and professional contact options.
-- [DEV Community](https://dev.to/savi_saluwadana): Public technical writing profile.
+- [Product directory](https://savisaluwadana.github.io/products/): Sixteen project overviews and architecture notes
+- [About](https://savisaluwadana.github.io/about/): Profile and public project evidence
+- [Engineering architecture](https://savisaluwadana.github.io/engineering/): Architecture and domain trade-offs
+- [Agent interfaces](https://savisaluwadana.github.io/engineering/agentic-systems/): Permissions and workflow boundaries
+- [Public repositories](https://savisaluwadana.github.io/open-source/): Seven public code repositories and licensing status
+- [Engineering insights](https://savisaluwadana.github.io/insights/): Published notes and separately identified article proposals
 
-## Profile and engineering references
-
-- [Product directory](https://savisaluwadana.github.io/products/): Explore 16 products built or contributed to by Savi Saluwadana: marketplaces, business systems, healthcare, AI agents and developer tools, with architecture diagrams.
-- [Product directory in Markdown](https://savisaluwadana.github.io/products/index.md): Text equivalent of the same reference.
-- [About Savi Saluwadana](https://savisaluwadana.github.io/about/): Meet Savi Saluwadana, a software engineer in Sri Lanka interested in agentic systems and open-source development. Explore his focus and product architecture.
-- [About Savi Saluwadana in Markdown](https://savisaluwadana.github.io/about/index.md): Text equivalent of the same reference.
-- [Architecture reference](https://savisaluwadana.github.io/engineering/): Explore Savi Saluwadana’s product architecture: Go APIs, MCP access boundaries, local-first HR workflows, tenancy and transactional operations, with project references.
-- [Architecture reference in Markdown](https://savisaluwadana.github.io/engineering/index.md): Text equivalent of the same reference.
-- [Agentic systems architecture](https://savisaluwadana.github.io/engineering/agentic-systems/): Explore Savi Saluwadana’s agentic systems work through rental operations, evidence-led research and developer workflows: MCP, API permissions, state and human review.
-- [Agentic systems architecture in Markdown](https://savisaluwadana.github.io/engineering/agentic-systems/index.md): Text equivalent of the same reference.
-- [Public source and open-source interests](https://savisaluwadana.github.io/open-source/): Explore Savi Saluwadana’s public engineering repositories, architecture references and open-source development interests in Go, cloud-native software and agent tools.
-- [Public source and open-source interests in Markdown](https://savisaluwadana.github.io/open-source/index.md): Text equivalent of the same reference.
-
-
-## Engineering insights
-
-- [Engineering insights](https://savisaluwadana.github.io/insights/): Technical notes on software architecture, Go, PostgreSQL, platform engineering, MCP and durable agentic systems.
-- [MCP Permission Boundaries](https://savisaluwadana.github.io/insights/mcp-permission-boundaries/): Keep agent tools behind the authenticated application API and retain authorization in domain services.
-- [Durable Agentic Workflows](https://savisaluwadana.github.io/insights/durable-agentic-workflows/): Persist workflow state, design safe retries and model human approval explicitly.
-- [Go Modular Monolith for SaaS](https://savisaluwadana.github.io/insights/go-modular-monolith-saas/): Use explicit domain boundaries before introducing distributed-service complexity.
-- [Platform Engineering Paved Roads](https://savisaluwadana.github.io/insights/platform-engineering-paved-road/): Standardize delivery while keeping state, observability, ownership and escape hatches visible.
-- [PostgreSQL Multi-Tenancy Boundaries](https://savisaluwadana.github.io/insights/postgres-multitenancy-boundaries/): Resolve tenant context before data access and treat database isolation as defense in depth.
-
-## Product overview and architecture
+## Product pages
 
 - [Avara Real Estate](https://savisaluwadana.github.io/products/avara/): Property discovery, transactions and host operations in Sri Lanka.
 - [Blu.lk](https://savisaluwadana.github.io/products/blu/): Home-service discovery, booking and fulfillment in Sri Lanka.
@@ -50,17 +28,22 @@ This is a public portfolio with product-level architecture summaries. It does no
 - [Acme Accounting](https://savisaluwadana.github.io/products/acme-accounting/): Single-company financial operations backed by a double-entry ledger.
 - [EventOS](https://savisaluwadana.github.io/products/eventos/): Quick provider matching and full event procurement.
 - [Plate Restaurant OS](https://savisaluwadana.github.io/products/restaurantos/): Restaurant point of sale and coordinated order operations.
-- [Pain Intelligence Lab](https://savisaluwadana.github.io/products/pain-intelligence/): Cross-source pain research and evidence-backed opportunity validation.
+- [Pain Intelligence Lab](https://savisaluwadana.github.io/products/pain-intelligence/): Local research software for exploring repeated needs and evidence-backed project ideas.
 - [Ad Performance Analysis Agent](https://savisaluwadana.github.io/products/ad-performance-agent/): An advertising analytics and reporting prototype.
 - [MediCare](https://savisaluwadana.github.io/products/medicare/): Patient administration, appointments, clinical records and billing.
 
-## Optional
+## Published insights
 
-- [Engineering and product feed](https://savisaluwadana.github.io/feed.xml): Atom feed of the current reference pages and product overviews.
-- [Public source data](https://savisaluwadana.github.io/public-work.json): Verified public repository references and available license metadata.
+- [Engineering insights](https://savisaluwadana.github.io/insights/): Published architecture notes and five proposed article topics.
+- [MCP Permission Boundaries: Keep Agent Tools Behind the Application API](https://savisaluwadana.github.io/insights/mcp-permission-boundaries/): How application services retain authorization when agents use tools.
+- [Durable Agentic Workflows: State, Idempotency and Human Approval](https://savisaluwadana.github.io/insights/durable-agentic-workflows/): State, retries, idempotency and approvals in long-running workflows.
+- [Go Modular Monolith Architecture for SaaS: Boundaries Before Microservices](https://savisaluwadana.github.io/insights/go-modular-monolith-saas/): Domain boundaries and transaction ownership in a Go application.
+- [Platform Engineering: Build a Paved Road Without Hiding the System](https://savisaluwadana.github.io/insights/platform-engineering-paved-road/): Tool-neutral platform delivery contracts, visibility and escape hatches.
+- [PostgreSQL Multi-Tenancy: Define Authorization Boundaries Before Schema Tricks](https://savisaluwadana.github.io/insights/postgres-multitenancy-boundaries/): Tenant context, repository contracts and database safeguards.
 
-- [Product data](https://savisaluwadana.github.io/products.json): Product descriptions, workflows, components and current scope.
-- [Full text reference](https://savisaluwadana.github.io/llms-full.txt): Profile and all product summaries as text.
-- [Sitemap](https://savisaluwadana.github.io/sitemap.xml): Canonical HTML pages.
+## Formats
 
-Use the current-scope notes when describing capabilities. TimelyHelp is product/frontend contribution; the accounting app is single-company; the ad-performance tool is a prototype with mocked account connectors. Do not infer employers, qualifications, user counts, revenue or production outcomes.
+- [JSON products](https://savisaluwadana.github.io/products.json)
+- [Public repository records](https://savisaluwadana.github.io/public-work.json)
+- [Atom feed](https://savisaluwadana.github.io/feed.xml)
+- [XML sitemap](https://savisaluwadana.github.io/sitemap.xml)

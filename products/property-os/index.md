@@ -2,7 +2,7 @@
 
 By / portfolio contribution: Savi Saluwadana
 Canonical page: https://savisaluwadana.github.io/products/property-os/
-Reviewed: 2026-10-04
+Reviewed: 2026-11-12
 
 A rental operations platform covering properties, units, tenants, leases, rent, maintenance, documents, notifications and controlled agent-assisted operations.
 
@@ -39,5 +39,21 @@ Next.js → Go modular monolith → PostgreSQL → Outbox worker → MCP
 ## Current scope
 
 MCP calls the same authenticated HTTP API as other clients and has no direct database connection. Advanced financial writes and other domains remain subject to the project’s implemented tool scope.
+
+## Run locally
+
+Set values from .env.example; docker compose up --build
+
+## Design decision and trade-off
+
+Go modular monolith keeps domain rules and authorisation behind authenticated APIs; notification writes use an outbox.
+
+Trade-off: Transactional domain authority stays in one backend, but asynchronous delivery needs worker and retry handling.
+
+## Unfinished
+
+README lists remaining milestones; some agentic mutations are outside the current tool scope.
+
+Licence: No licence identified
 
 Source: https://github.com/RealEstateSassApplication/property-management-OS/blob/main/README.md

@@ -2,7 +2,7 @@
 
 By / portfolio contribution: Savi Saluwadana
 Canonical page: https://savisaluwadana.github.io/products/academix/
-Reviewed: 2026-10-04
+Reviewed: 2026-11-12
 
 A SaaS workspace for tuition centres and private institutes combining student CRM, classes, attendance, assessments, fee collection, communications, reporting and multi-site institute operations.
 
@@ -38,5 +38,21 @@ Next.js → MongoDB / Mongoose → notification integrations
 ## Current scope
 
 The account and plan surfaces support a SaaS direction. Automated billing and broader tenant-isolation work should be checked against the current project roadmap rather than assumed complete.
+
+## Run locally
+
+Configure environment and database; npm install; npm run dev
+
+## Design decision and trade-off
+
+Next.js and MongoDB implement student, class and fee workflows in one application.
+
+Trade-off: Combined modules ease local development but verified tenant isolation and billing need more work.
+
+## Unfinished
+
+Shared tenancy verification, production permissions, billing and deployment acceptance remain.
+
+Licence: No licence identified
 
 Source: https://github.com/savisaluwadana/student-management-system-saas/blob/main/README.md

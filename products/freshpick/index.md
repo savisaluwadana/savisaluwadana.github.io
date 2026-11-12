@@ -2,7 +2,7 @@
 
 By / portfolio contribution: Savi Saluwadana
 Canonical page: https://savisaluwadana.github.io/products/freshpick/
-Reviewed: 2026-10-04
+Reviewed: 2026-11-12
 
 A premium food-commerce platform for Colombo bringing together fresh groceries, local products, prepared meals, recurring delivery and business ordering in one customer experience.
 
@@ -38,5 +38,21 @@ Next.js → Prisma / PostgreSQL → recurring delivery + media storage
 ## Current scope
 
 Customer checkout and subscription baskets currently use cash on delivery. Automatic recurring card charging is not implemented. Subscription baskets and recurring grocery orders are distinct workflows.
+
+## Run locally
+
+Set development environment variables; npm ci; npm run db:migrate; npm run dev
+
+## Design decision and trade-off
+
+Next.js route handlers enforce commerce rules using Prisma and PostgreSQL.
+
+Trade-off: One app keeps order transitions together; background jobs and integrations need separate scheduling.
+
+## Unfinished
+
+Automatic recurring card charging is not implemented; agentic commerce is planned.
+
+Licence: No licence identified
 
 Source: https://github.com/FreshOnTime/newfreshontimewebsite/blob/main/README.md

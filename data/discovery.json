@@ -4,151 +4,308 @@
       "id": "marketplaces",
       "title": "Marketplaces, commerce and service operations",
       "description": "Products that connect discovery and customer journeys with bookings, fulfillment or procurement.",
-      "products": ["avara", "blu", "freshpick", "eventos"]
+      "products": [
+        "avara",
+        "blu",
+        "freshpick",
+        "eventos"
+      ]
     },
     {
       "id": "business-systems",
       "title": "Business systems and operational software",
       "description": "Work around property, people, retail, education, finance and restaurant operations.",
-      "products": ["property-os", "advance-hris", "nexus-pos", "academix", "acme-accounting", "restaurantos"]
+      "products": [
+        "property-os",
+        "advance-hris",
+        "nexus-pos",
+        "academix",
+        "acme-accounting",
+        "restaurantos"
+      ]
     },
     {
       "id": "healthcare",
       "title": "Healthcare and patient-facing products",
       "description": "Practitioner discovery, consultation journeys and clinic administration, with contribution boundaries documented on each page.",
-      "products": ["timelyhelp", "medicare"]
+      "products": [
+        "timelyhelp",
+        "medicare"
+      ]
     },
     {
       "id": "agents-and-tools",
       "title": "AI agents, research and developer tools",
       "description": "Evidence-led research, controlled automation, developer publishing and analytics prototypes.",
-      "products": ["devrelos", "rapidreach", "pain-intelligence", "ad-performance-agent"]
+      "products": [
+        "devrelos",
+        "rapidreach",
+        "pain-intelligence",
+        "ad-performance-agent"
+      ]
     }
   ],
   "pages": [
     {
       "path": "/about/",
-      "title": "About Savi Saluwadana | Software & Product Engineer in Sri Lanka",
+      "title": "About Savi Saluwadana | Software Built in Public",
       "heading": "Savi Saluwadana",
       "label": "About / Software & product engineer",
-      "description": "Meet Savi Saluwadana, a software engineer in Sri Lanka interested in agentic systems and open-source development. Explore his focus and product architecture.",
-      "intro": "I’m a software and product engineer based in Sri Lanka, interested in agentic systems and open-source development. My work connects product workflows, software architecture, backend systems and the platforms that operate them.",
+      "description": "Savi Saluwadana builds software in public. Browse project repositories, architecture, implementation trade-offs and platform engineering interests.",
+      "intro": "I build software in public from Sri Lanka. My repositories and project notes show the architecture, implementation choices and unfinished parts of that work. I'm also exploring platform engineering through delivery and developer experience.",
       "sections": [
         {
           "id": "engineering-focus",
           "title": "Engineering focus, with examples",
           "blocks": [
-            {"type": "p", "text": "I’m interested in clear domain boundaries, strong data models, reliable APIs and systems that remain understandable as products grow. The [architecture reference](/engineering/) connects those concerns to specific projects."},
-            {"type": "table", "headers": ["Area", "Where to explore it"], "rows": [
-              ["Go backend and API design", "[Property Management OS](/products/property-os/), [DevRelOS](/products/devrelos/) and [Advance HRIS](/products/advance-hris/)."],
-              ["Product and full-stack engineering", "[Avara Real Estate](/products/avara/), [FreshPick](/products/freshpick/) and [RapidReach](/products/rapidreach/)."],
-              ["Agentic systems and Model Context Protocol", "[Pain Intelligence Lab](/products/pain-intelligence/), [Property Management OS](/products/property-os/) and [DevRelOS](/products/devrelos/)."],
-              ["Open-source development interests", "Code contributions, bug fixes, documentation and developer tools. Explore my [public GitHub work](https://github.com/savisaluwadana)."],
-              ["Operational data and workflows", "[Acme Accounting](/products/acme-accounting/), [Advance HRIS](/products/advance-hris/) and [MediCare](/products/medicare/)."],
-              ["Platform engineering and DevOps", "My [platform and DevOps focus](/#platform-devops) covers Kubernetes, delivery pipelines, observability and developer platforms."]
-            ]}
+            {
+              "type": "p",
+              "text": "I’m interested in clear domain boundaries, strong data models, reliable APIs and systems that remain understandable as products grow. The [architecture reference](/engineering/) connects those concerns to specific projects."
+            },
+            {
+              "type": "table",
+              "headers": [
+                "Area",
+                "Where to explore it"
+              ],
+              "rows": [
+                [
+                  "Go backend and API design",
+                  "[Property Management OS](/products/property-os/), [DevRelOS](/products/devrelos/) and [Advance HRIS](/products/advance-hris/)."
+                ],
+                [
+                  "Product and full-stack engineering",
+                  "[Avara Real Estate](/products/avara/), [FreshPick](/products/freshpick/) and [RapidReach](/products/rapidreach/)."
+                ],
+                [
+                  "Agentic systems and Model Context Protocol",
+                  "[Pain Intelligence Lab](/products/pain-intelligence/), [Property Management OS](/products/property-os/) and [DevRelOS](/products/devrelos/)."
+                ],
+                [
+                  "Public source and project decisions",
+                  "Browse the [public repository index](/open-source/) and each project's architecture and trade-offs."
+                ],
+                [
+                  "Operational data and workflows",
+                  "[Acme Accounting](/products/acme-accounting/), [Advance HRIS](/products/advance-hris/) and [MediCare](/products/medicare/)."
+                ],
+                [
+                  "Platform engineering interests",
+                  "I am exploring containers, delivery automation and developer experience through the [public repositories](/open-source/)."
+                ]
+              ]
+            }
           ]
         },
         {
           "id": "agentic-systems",
           "title": "Agentic systems I’m interested in",
           "blocks": [
-            {"type": "p", "text": "I’m interested in agents that use tools, retrieval and workflow state to help people complete real business and developer tasks. I want to explore systems where the model’s reasoning connects to reliable APIs, explicit permissions, useful evaluation and observable execution."},
-            {"type": "list", "items": [
-              "Tool-using agents and MCP interfaces that respect domain rules and the permissions of the person using them.",
-              "Durable workflow orchestration, retries and recovery for tasks that span multiple services or take time to complete.",
-              "Multi-agent collaboration with clear responsibilities, shared evidence and human review for consequential actions.",
-              "Retrieval-augmented generation, evidence provenance and agent evaluation that make results inspectable and useful."
-            ]},
-            {"type": "p", "text": "My current product work includes [Pain Intelligence Lab](/products/pain-intelligence/), [Property Management OS](/products/property-os/) and [DevRelOS](/products/devrelos/). Follow their requests and state changes in the [agentic systems architecture walkthroughs](/engineering/agentic-systems/). The broader topics above describe my development interests."}
+            {
+              "type": "p",
+              "text": "I’m interested in agents that use tools, retrieval and workflow state to help people complete real business and developer tasks. I want to explore systems where the model’s reasoning connects to reliable APIs, explicit permissions, useful evaluation and observable execution."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Tool-using agents and MCP interfaces that respect domain rules and the permissions of the person using them.",
+                "Durable workflow orchestration, retries and recovery for tasks that span multiple services or take time to complete.",
+                "Multi-agent collaboration with clear responsibilities, shared evidence and human review for consequential actions.",
+                "Retrieval-augmented generation, evidence provenance and agent evaluation that make results inspectable and useful."
+              ]
+            },
+            {
+              "type": "p",
+              "text": "My current product work includes [Pain Intelligence Lab](/products/pain-intelligence/), [Property Management OS](/products/property-os/) and [DevRelOS](/products/devrelos/). Follow their requests and state changes in the [agentic systems architecture walkthroughs](/engineering/agentic-systems/). The broader topics above describe my development interests."
+            }
           ]
         },
         {
           "id": "open-source",
-          "title": "Open-source development and collaboration",
+          "title": "Code and design decisions in public",
           "blocks": [
-            {"type": "p", "text": "I’m interested in contributing code, fixing bugs, reviewing design decisions and improving documentation in open-source projects. Cloud-native infrastructure, Go, Kubernetes, developer platforms and agent tooling are areas I want to contribute to."},
-            {"type": "p", "text": "I value clear APIs, reproducible setup instructions, architecture documentation and examples that help other developers understand and improve a system. My [GitHub profile](https://github.com/savisaluwadana) and [public source index](/open-source/) provide places to inspect my work."},
-            {"type": "p", "text": "For code, documentation or engineering collaboration, [get in touch](/contact.html)."}
+            {
+              "type": "p",
+              "text": "My [public repository index](/open-source/) links to the code, local setup instructions, licence status and open work behind seven of the projects listed here."
+            },
+            {
+              "type": "p",
+              "text": "I keep a separate summary for products without confirmed public source. [Browse all projects](/products/) for their scope and architecture."
+            }
           ]
         },
         {
           "id": "product-work",
           "title": "Products I’ve built and worked on",
           "blocks": [
-            {"type": "p", "text": "The [product directory](/products/) includes 16 projects across marketplaces, commerce, healthcare, business operations, developer tools and AI-assisted research. Each overview explains the users, workflow, architecture and current scope."},
-            {"type": "p", "text": "Contribution and maturity vary by project. For example, [TimelyHelp](/products/timelyhelp/) describes my product and frontend work; [DevRelOS](/products/devrelos/) is a self-hosted beta; and the [Ad Performance Analysis Agent](/products/ad-performance-agent/) is a prototype with mocked account connectors. The scope notes make those distinctions explicit."}
+            {
+              "type": "p",
+              "text": "The [product directory](/products/) includes 16 projects across marketplaces, commerce, healthcare, business operations, developer tools and AI-assisted research. Each overview explains the users, workflow, architecture and current scope."
+            },
+            {
+              "type": "p",
+              "text": "Contribution and maturity vary by project. For example, [TimelyHelp](/products/timelyhelp/) describes my product and frontend work; [DevRelOS](/products/devrelos/) is a self-hosted beta; and the [Ad Performance Analysis Agent](/products/ad-performance-agent/) is a prototype with mocked account connectors. The scope notes make those distinctions explicit."
+            }
           ]
         },
         {
           "id": "profile-questions",
           "title": "Profile questions",
           "blocks": [
-            {"type": "qa", "question": "Who is Savi Saluwadana?", "answer": "Savi Saluwadana is a software and product engineer based in Sri Lanka, focused on software architecture, systems design, Go, Kubernetes and developer platforms, with interests in agentic systems and open-source development."},
-            {"type": "qa", "question": "Where can I see the engineering behind the products?", "answer": "Start with the [product directory](/products/) for component diagrams and workflows, or the [architecture reference](/engineering/) for comparisons of agent access, local-first data, tenancy and transaction boundaries."},
-            {"type": "qa", "question": "Where are the public profiles and source repositories?", "answer": "My public profiles are [GitHub](https://github.com/savisaluwadana) and [LinkedIn](https://www.linkedin.com/in/savi-saluwadana-3911331b2/). Product pages link to public repository documentation when available; private projects have a public product summary."},
-            {"type": "qa", "question": "How can I contact Savi about engineering work?", "answer": "Use the [contact page](/contact.html) or email savisaluwadana@gmail.com. I’m interested in product, software architecture, agentic systems, platform, DevOps, AI infrastructure and open-source development and collaboration."}
+            {
+              "type": "qa",
+              "question": "Who is Savi Saluwadana?",
+              "answer": "Savi Saluwadana is a software engineer based in Sri Lanka who builds software in public. His project repositories document architecture, design decisions and trade-offs; he is exploring platform engineering through containers, CI/CD and developer experience."
+            },
+            {
+              "type": "qa",
+              "question": "Where can I see the engineering behind the products?",
+              "answer": "Start with the [product directory](/products/) for component diagrams and workflows, or the [architecture reference](/engineering/) for comparisons of agent access, local-first data, tenancy and transaction boundaries."
+            },
+            {
+              "type": "qa",
+              "question": "Where are the public profiles and source repositories?",
+              "answer": "My public profiles are [GitHub](https://github.com/savisaluwadana) and [LinkedIn](https://www.linkedin.com/in/savi-saluwadana-3911331b2/). Product pages link to public repository documentation when available; private projects have a public product summary."
+            },
+            {
+              "type": "qa",
+              "question": "How can I contact Savi about engineering work?",
+              "answer": "Use the [contact page](/contact.html) or email savisaluwadana@gmail.com. I’m interested in product, software architecture, agentic systems, platform, DevOps, AI infrastructure and open-source development and collaboration."
+            }
           ]
         }
       ]
     },
     {
       "path": "/engineering/",
-      "title": "Software Architecture, Go APIs & MCP Systems | Savi Saluwadana",
+      "title": "Project Architecture and Design Decisions | Savi Saluwadana",
       "heading": "Software architecture across product workflows.",
       "label": "Engineering / Architecture reference",
-      "description": "Explore Savi Saluwadana’s product architecture: Go APIs, MCP access boundaries, local-first HR workflows, tenancy and transactional operations, with project references.",
+      "description": "Inspect project architecture decisions on APIs, data authority, local-first workflows, tenancy and transactions in Savi Saluwadana's software.",
       "intro": "A reference to the boundaries behind my product work: where authority lives, how clients access it, and what a workflow actually guarantees. Each comparison links to the relevant product architecture and current scope.",
       "sections": [
         {
           "id": "agent-access",
           "title": "AI agents and MCP access boundaries",
           "blocks": [
-            {"type": "p", "text": "Model Context Protocol gives an agent a tool interface. The useful architectural question is what happens behind that interface: which service authorizes the request, where reasoning runs, and whether an action needs approval."},
-            {"type": "table", "headers": ["Project", "Access and reasoning boundary"], "rows": [
-              ["[Property Management OS](/products/property-os/)", "MCP calls the same authenticated Go HTTP API used by other clients. Domain rules and tenant permissions remain server-side; the MCP server has no direct database connection."],
-              ["[DevRelOS](/products/devrelos/)", "A Next.js dashboard, Go API and workers share PostgreSQL as the system of record. Provider adapters and evidence provenance support the workflow; consequential outreach passes through approval gates."],
-              ["[Pain Intelligence Lab](/products/pain-intelligence/)", "A React interface and Express/MongoDB application expose research tools to an MCP host. Semantic reasoning runs in the connected host, rather than direct model-provider calls from the application."]
-            ]},
-            {"type": "p", "text": "These are different boundaries. An agent tool does not imply unrestricted writes or an autonomous production workflow. Product scope notes describe the implemented tools, provider configuration and evidence requirements. The [agentic systems walkthroughs](/engineering/agentic-systems/) follow each request through its tool, service and recorded state."}
+            {
+              "type": "p",
+              "text": "Model Context Protocol gives an agent a tool interface. The useful architectural question is what happens behind that interface: which service authorizes the request, where reasoning runs, and whether an action needs approval."
+            },
+            {
+              "type": "table",
+              "headers": [
+                "Project",
+                "Access and reasoning boundary"
+              ],
+              "rows": [
+                [
+                  "[Property Management OS](/products/property-os/)",
+                  "MCP calls the same authenticated Go HTTP API used by other clients. Domain rules and tenant permissions remain server-side; the MCP server has no direct database connection."
+                ],
+                [
+                  "[DevRelOS](/products/devrelos/)",
+                  "A Next.js dashboard, Go API and workers share PostgreSQL as the system of record. Provider adapters and evidence provenance support the workflow; consequential outreach passes through approval gates."
+                ],
+                [
+                  "[Pain Intelligence Lab](/products/pain-intelligence/)",
+                  "The local Next.js dashboard calls a Rust API backed by PostgreSQL. The repository also has a separate desktop edition with its own capabilities."
+                ]
+              ]
+            },
+            {
+              "type": "p",
+              "text": "These are different boundaries. An agent tool does not imply unrestricted writes or an autonomous production workflow. Product scope notes describe the implemented tools, provider configuration and evidence requirements. The [agentic systems walkthroughs](/engineering/agentic-systems/) follow each request through its tool, service and recorded state."
+            }
           ]
         },
         {
           "id": "local-first",
           "title": "Local-first data and desktop packaging",
           "blocks": [
-            {"type": "p", "text": "[Advance HRIS](/products/advance-hris/) combines a Next.js web application with a Wails/React desktop console, encrypted SQLite payloads and a sync queue. The Go API and cloud PostgreSQL database remain authoritative. The local-first boundary belongs to the desktop workflow."},
-            {"type": "p", "text": "[NexusPOS](/products/nexus-pos/) has an optional Electron desktop shell around the retail application. Desktop packaging alone does not establish an offline checkout engine. That distinction matters when evaluating a product for disconnected operations."},
-            {"type": "p", "text": "To assess a local-first system, identify the authoritative record, the queued work, and the conflict-resolution boundary. A local database or desktop executable answers only part of that question."}
+            {
+              "type": "p",
+              "text": "[Advance HRIS](/products/advance-hris/) combines a Next.js web application with a Wails/React desktop console, encrypted SQLite payloads and a sync queue. The Go API and cloud PostgreSQL database remain authoritative. The local-first boundary belongs to the desktop workflow."
+            },
+            {
+              "type": "p",
+              "text": "[NexusPOS](/products/nexus-pos/) has an optional Electron desktop shell around the retail application. Desktop packaging alone does not establish an offline checkout engine. That distinction matters when evaluating a product for disconnected operations."
+            },
+            {
+              "type": "p",
+              "text": "To assess a local-first system, identify the authoritative record, the queued work, and the conflict-resolution boundary. A local database or desktop executable answers only part of that question."
+            }
           ]
         },
         {
           "id": "data-authority",
           "title": "Tenant isolation and domain authority",
           "blocks": [
-            {"type": "p", "text": "A SaaS interface and a tenant-isolated backend are separate architectural concerns. [Property Management OS](/products/property-os/) documents multi-tenant rental operations, role-based access and domain rules in its Go API. [Acme Accounting](/products/acme-accounting/) currently uses one company and one administrator identity per database."},
-            {"type": "p", "text": "[Academix](/products/academix/) has role-aware academic workflows and SaaS plan surfaces, while broader tenant-isolation and automated-billing work remain subject to its roadmap. The product labels should be read together with the current implementation boundaries."},
-            {"type": "p", "text": "The reference point is the server-side rule: who can read or change a record, which organization owns it, and which transaction maintains its integrity. A dashboard or plan selector does not establish those guarantees by itself."}
+            {
+              "type": "p",
+              "text": "A SaaS interface and a tenant-isolated backend are separate architectural concerns. [Property Management OS](/products/property-os/) documents multi-tenant rental operations, role-based access and domain rules in its Go API. [Acme Accounting](/products/acme-accounting/) currently uses one company and one administrator identity per database."
+            },
+            {
+              "type": "p",
+              "text": "[Academix](/products/academix/) has role-aware academic workflows and SaaS plan surfaces, while broader tenant-isolation and automated-billing work remain subject to its roadmap. The product labels should be read together with the current implementation boundaries."
+            },
+            {
+              "type": "p",
+              "text": "The reference point is the server-side rule: who can read or change a record, which organization owns it, and which transaction maintains its integrity. A dashboard or plan selector does not establish those guarantees by itself."
+            }
           ]
         },
         {
           "id": "transactions",
           "title": "Bookings, recurring orders and payment workflows",
           "blocks": [
-            {"type": "table", "headers": ["Project", "Documented transaction boundary"], "rows": [
-              ["[Avara Real Estate](/products/avara/)", "Property and booking workflows connect to PayHere payment callbacks and S3 media. Payment and storage integrations need deployment-specific configuration."],
-              ["[FreshPick](/products/freshpick/)", "Next.js and PostgreSQL support food commerce and scheduled recurring delivery. Checkout and subscription baskets currently use cash on delivery; automatic recurring card charging is not implemented."],
-              ["[EventOS](/products/eventos/)", "Matching and event procurement use a Next.js/PostgreSQL application. Payment evidence is submitted and reconciled manually in the current MVP."]
-            ]},
-            {"type": "p", "text": "A booking, a recurring order and a payment represent different state changes. Keeping those boundaries explicit makes the architecture easier to inspect and prevents a delivery schedule from being mistaken for automated billing."}
+            {
+              "type": "table",
+              "headers": [
+                "Project",
+                "Documented transaction boundary"
+              ],
+              "rows": [
+                [
+                  "[Avara Real Estate](/products/avara/)",
+                  "Property and booking workflows connect to PayHere payment callbacks and S3 media. Payment and storage integrations need deployment-specific configuration."
+                ],
+                [
+                  "[FreshPick](/products/freshpick/)",
+                  "Next.js and PostgreSQL support food commerce and scheduled recurring delivery. Checkout and subscription baskets currently use cash on delivery; automatic recurring card charging is not implemented."
+                ],
+                [
+                  "[EventOS](/products/eventos/)",
+                  "Matching and event procurement use a Next.js/PostgreSQL application. Payment evidence is submitted and reconciled manually in the current MVP."
+                ]
+              ]
+            },
+            {
+              "type": "p",
+              "text": "A booking, a recurring order and a payment represent different state changes. Keeping those boundaries explicit makes the architecture easier to inspect and prevents a delivery schedule from being mistaken for automated billing."
+            }
           ]
         },
         {
           "id": "references",
           "title": "Read the source and current scope",
           "blocks": [
-            {"type": "p", "text": "This reference summarizes the documented project boundaries. It does not report measured performance, deployment outcomes or customer results. Product pages carry the corresponding architecture diagrams, component responsibilities, review dates and source links."},
-            {"type": "list", "items": ["[Property Management OS repository documentation](https://github.com/RealEstateSassApplication/property-management-OS/blob/main/README.md)", "[DevRelOS repository documentation](https://github.com/savisaluwadana/DevRelOS/blob/main/README.md)", "[Pain Intelligence Lab repository documentation](https://github.com/savisaluwadana/Reddit-post-Analyzer/blob/main/README.md)", "[Advance HRIS repository documentation](https://github.com/savisaluwadana/Advance-HIRS-System/blob/main/README.md)", "[Avara repository documentation](https://github.com/RealEstateSassApplication/AvaraRealEstate/blob/main/README.md)", "[FreshPick repository documentation](https://github.com/FreshOnTime/newfreshontimewebsite/blob/main/README.md)", "[Academix repository documentation](https://github.com/savisaluwadana/student-management-system-saas/blob/main/README.md)"]}
+            {
+              "type": "p",
+              "text": "This reference summarizes the documented project boundaries. It does not report measured performance, deployment outcomes or customer results. Product pages carry the corresponding architecture diagrams, component responsibilities, review dates and source links."
+            },
+            {
+              "type": "list",
+              "items": [
+                "[Property Management OS repository documentation](https://github.com/RealEstateSassApplication/property-management-OS/blob/main/README.md)",
+                "[DevRelOS repository documentation](https://savisaluwadana.github.io/products/devrelos/)",
+                "[Pain Intelligence Lab repository documentation](https://github.com/savisaluwadana/Pain-Point-Analyzer/blob/main/README.md)",
+                "[Advance HRIS repository documentation](https://github.com/SilverLine-Ravija/Advance-HIRS-System/blob/main/README.md)",
+                "[Avara repository documentation](https://github.com/RealEstateSassApplication/AvaraRealEstate/blob/main/README.md)",
+                "[FreshPick repository documentation](https://github.com/FreshOnTime/newfreshontimewebsite/blob/main/README.md)",
+                "[Academix repository documentation](https://github.com/savisaluwadana/student-management-system-saas/blob/main/README.md)"
+              ]
+            }
           ]
         }
       ]
@@ -157,122 +314,213 @@
       "path": "/engineering/agentic-systems/",
       "name": "Agentic systems architecture",
       "breadcrumb": "Agentic systems",
-      "title": "Agentic Systems, MCP & Workflow Architecture | Savi Saluwadana",
+      "title": "Project Agent Interfaces and Workflow Boundaries | Savi Saluwadana",
       "heading": "Agentic systems: tools, state and human review.",
       "label": "Engineering / Agentic systems",
-      "description": "Explore Savi Saluwadana’s agentic systems work through rental operations, evidence-led research and developer workflows: MCP, API permissions, state and human review.",
+      "description": "Inspect agent tool boundaries, application permissions and local research workflows documented in Savi Saluwadana's projects.",
       "intro": "An agent becomes useful when its tools connect to a real workflow. These project walkthroughs show where an agent enters the system, where state is recorded, and which service controls the resulting action.",
       "sections": [
         {
           "id": "entry-points",
           "title": "Different agent entry points",
           "blocks": [
-            {"type": "p", "text": "The model, tool interface and domain service have different responsibilities. The model can propose an action, while the application still needs to determine whether that action is permitted and what record it changes. The examples below expose those boundaries rather than treating every AI feature as the same architecture."},
-            {"type": "table", "headers": ["Project", "Agent boundary", "What controls the result"], "rows": [
-              ["[Property Management OS](/products/property-os/)", "MCP tools call the authenticated Go API.", "Organization scope and domain rules remain in the API. PostgreSQL stores business records and notification intents."],
-              ["[Pain Intelligence Lab](/products/pain-intelligence/)", "A connected MCP host performs semantic research and synthesis.", "The Express application records evidence and research state, and applies quality and scoring checks. The application does not call model APIs directly."],
-              ["[DevRelOS](/products/devrelos/)", "Dashboard and authenticated MCP clients access workspace workflows.", "The Go API checks membership; workers handle configured providers and approved delivery. Consequential outreach requires approval."],
-              ["[Ad Performance Analysis Agent](/products/ad-performance-agent/)", "Gemini assists with summaries after CSV analysis.", "Threshold logic computes flags. Account connectors are mocks, so this prototype is not a durable live-account ingestion system."]
-            ]}
+            {
+              "type": "p",
+              "text": "The model, tool interface and domain service have different responsibilities. The model can propose an action, while the application still needs to determine whether that action is permitted and what record it changes. The examples below expose those boundaries rather than treating every AI feature as the same architecture."
+            },
+            {
+              "type": "table",
+              "headers": [
+                "Project",
+                "Agent boundary",
+                "What controls the result"
+              ],
+              "rows": [
+                [
+                  "[Property Management OS](/products/property-os/)",
+                  "MCP tools call the authenticated Go API.",
+                  "Organization scope and domain rules remain in the API. PostgreSQL stores business records and notification intents."
+                ],
+                [
+                  "[Pain Intelligence Lab](/products/pain-intelligence/)",
+                  "A connected MCP host performs semantic research and synthesis.",
+                  "The Rust API records evidence and research state in PostgreSQL; research findings still need validation. The application does not call model APIs directly."
+                ],
+                [
+                  "[DevRelOS](/products/devrelos/)",
+                  "Dashboard and authenticated MCP clients access workspace workflows.",
+                  "The Go API checks membership; workers handle configured providers and approved delivery. Consequential outreach requires approval."
+                ],
+                [
+                  "[Ad Performance Analysis Agent](/products/ad-performance-agent/)",
+                  "Gemini assists with summaries after CSV analysis.",
+                  "Threshold logic computes flags. Account connectors are mocks, so this prototype is not a durable live-account ingestion system."
+                ]
+              ]
+            }
           ]
         },
         {
           "id": "rental-request",
           "title": "Follow a rental-operations request",
           "blocks": [
-            {"type": "p", "text": "In [Property Management OS](/products/property-os/), an agent uses the same authenticated HTTP boundary as another client. Adding a tool interface does not create an alternative route around tenant permissions or domain rules."},
-            {"type": "product-workflow", "product": "property-os"},
-            {"type": "p", "text": "The recorded domain operation and notification delivery have separate responsibilities. The database holds the record and notification intent; an outbox worker performs delivery through a configured provider. That separation is useful when inspecting whether a business action was accepted versus whether its notification was delivered."},
-            {"type": "p", "text": "The documented MCP scope matters: advanced financial writes and other domains should be checked against the implemented tools. The existence of an API endpoint is not evidence that an agent has permission to perform every operation."}
+            {
+              "type": "p",
+              "text": "In [Property Management OS](/products/property-os/), an agent uses the same authenticated HTTP boundary as another client. Adding a tool interface does not create an alternative route around tenant permissions or domain rules."
+            },
+            {
+              "type": "product-workflow",
+              "product": "property-os"
+            },
+            {
+              "type": "p",
+              "text": "The recorded domain operation and notification delivery have separate responsibilities. The database holds the record and notification intent; an outbox worker performs delivery through a configured provider. That separation is useful when inspecting whether a business action was accepted versus whether its notification was delivered."
+            },
+            {
+              "type": "p",
+              "text": "The documented MCP scope matters: advanced financial writes and other domains should be checked against the implemented tools. The existence of an API endpoint is not evidence that an agent has permission to perform every operation."
+            }
           ]
         },
         {
           "id": "research-task",
           "title": "Follow an evidence-led research task",
           "blocks": [
-            {"type": "p", "text": "[Pain Intelligence Lab](/products/pain-intelligence/) separates host reasoning from the application that stores research evidence. A question becomes a research job; the host gathers and annotates evidence through tools while the application retains the project state."},
-            {"type": "product-workflow", "product": "pain-intelligence"},
-            {"type": "p", "text": "The output is evaluated as evidence, not just generated text. Source diversity, duplicate checks, independent stories and competitor or pricing validation affect whether an opportunity survives the research process. A job can correctly finish with no validated opportunity."},
-            {"type": "p", "text": "This boundary also changes how the system is configured: the connected host provides semantic reasoning, while the platform provides storage, inspection and quality checks. Model-provider behavior should not be inferred from the Express application alone."}
+            {
+              "type": "p",
+              "text": "[Pain Intelligence Lab](/products/pain-intelligence/) separates host reasoning from the application that stores research evidence. A question becomes a research job; the host gathers and annotates evidence through tools while the application retains the project state."
+            },
+            {
+              "type": "product-workflow",
+              "product": "pain-intelligence"
+            },
+            {
+              "type": "p",
+              "text": "The output is evaluated as evidence, not just generated text. Source diversity, duplicate checks, independent stories and competitor or pricing validation affect whether an opportunity survives the research process. A job can correctly finish with no validated opportunity."
+            },
+            {
+              "type": "p",
+              "text": "This boundary also changes how the system is configured: the connected host provides semantic reasoning, while the platform provides storage, inspection and quality checks. Model-provider behavior should not be inferred from the Rust API alone."
+            }
           ]
         },
         {
           "id": "developer-workflows",
           "title": "Approvals in developer operations",
           "blocks": [
-            {"type": "p", "text": "[DevRelOS](/products/devrelos/) connects source-backed signals, workspace membership, background work and approval-gated outreach. Its domain API and workers serve different parts of that process."},
-            {"type": "product-workflow", "product": "devrelos"},
-            {"type": "p", "text": "A research signal or draft is different from an external action. Evidence can inform a workflow while the delivery step still needs approval and provider configuration. The self-hosted beta’s scope notes describe those prerequisites; they should be retained when evaluating the system."}
+            {
+              "type": "p",
+              "text": "[DevRelOS](/products/devrelos/) connects source-backed signals, workspace membership, background work and approval-gated outreach. Its domain API and workers serve different parts of that process."
+            },
+            {
+              "type": "product-workflow",
+              "product": "devrelos"
+            },
+            {
+              "type": "p",
+              "text": "A research signal or draft is different from an external action. Evidence can inform a workflow while the delivery step still needs approval and provider configuration. The self-hosted beta’s scope notes describe those prerequisites; they should be retained when evaluating the system."
+            }
           ]
         },
         {
           "id": "development-interests",
           "title": "What I want to develop further",
           "blocks": [
-            {"type": "p", "text": "My broader interests include durable orchestration, multi-agent collaboration, retrieval and evaluation. The following are design questions I want to explore, rather than claims that every project already implements the same capabilities."},
-            {"type": "list", "items": [
-              "How should a tool make repeated requests safe when an agent or worker retries?",
-              "Which state should persist so a long-running task can resume after failure?",
-              "How can agents share evidence and responsibilities without losing provenance?",
-              "What evaluation catches unauthorized actions, weak evidence and incorrect outcomes before they reach a user?",
-              "Which actions need human review, and how should that decision be recorded?"
-            ]}
+            {
+              "type": "p",
+              "text": "My broader interests include durable orchestration, multi-agent collaboration, retrieval and evaluation. The following are design questions I want to explore, rather than claims that every project already implements the same capabilities."
+            },
+            {
+              "type": "list",
+              "items": [
+                "How should a tool make repeated requests safe when an agent or worker retries?",
+                "Which state should persist so a long-running task can resume after failure?",
+                "How can agents share evidence and responsibilities without losing provenance?",
+                "What evaluation catches unauthorized actions, weak evidence and incorrect outcomes before they reach a user?",
+                "Which actions need human review, and how should that decision be recorded?"
+              ]
+            }
           ]
         },
         {
           "id": "sources",
           "title": "Inspect the current implementation",
           "blocks": [
-            {"type": "list", "items": [
-              "[Property Management OS repository documentation](https://github.com/RealEstateSassApplication/property-management-OS/blob/main/README.md)",
-              "[Pain Intelligence Lab repository documentation](https://github.com/savisaluwadana/Reddit-post-Analyzer/blob/main/README.md)",
-              "[DevRelOS repository documentation](https://github.com/savisaluwadana/DevRelOS/blob/main/README.md)"
-            ]},
-            {"type": "p", "text": "See the [broader architecture reference](/engineering/) for local-first data, tenancy and transaction comparisons, or the [public source index](/open-source/) to browse repository references. [About Savi](/about/) describes my engineering and collaboration interests."}
+            {
+              "type": "list",
+              "items": [
+                "[Property Management OS repository documentation](https://github.com/RealEstateSassApplication/property-management-OS/blob/main/README.md)",
+                "[Pain Intelligence Lab repository documentation](https://github.com/savisaluwadana/Pain-Point-Analyzer/blob/main/README.md)",
+                "[DevRelOS repository documentation](https://savisaluwadana.github.io/products/devrelos/)"
+              ]
+            },
+            {
+              "type": "p",
+              "text": "See the [broader architecture reference](/engineering/) for local-first data, tenancy and transaction comparisons, or the [public source index](/open-source/) to browse repository references. [About Savi](/about/) describes my engineering and collaboration interests."
+            }
           ]
         }
       ]
     },
     {
       "path": "/open-source/",
-      "name": "Public source and open-source interests",
-      "breadcrumb": "Open source",
-      "title": "Open-Source Interests & Public Engineering Work | Savi Saluwadana",
-      "heading": "Public engineering work & open-source interests.",
-      "label": "Source / Repositories & collaboration",
-      "description": "Explore Savi Saluwadana’s public engineering repositories, architecture references and open-source development interests in Go, cloud-native software and agent tools.",
-      "intro": "A source index for the public projects in my portfolio, alongside the areas where I want to contribute through code, bug fixes, design reviews and documentation.",
+      "name": "Public repositories and design notes",
+      "breadcrumb": "Public source",
+      "title": "Public Repositories and Source Notes | Savi Saluwadana",
+      "heading": "Public repositories and design notes.",
+      "label": "Source / Public engineering work",
+      "description": "Inspect public software repositories, licensing status, local setup, architecture, design trade-offs and unfinished work.",
+      "intro": "I build software with source code and design decisions that others can inspect. Public repository access does not automatically grant an open-source licence.",
       "sections": [
         {
           "id": "repositories",
           "title": "Public repositories you can inspect",
           "blocks": [
-            {"type": "p", "text": "Each repository below was verified as public. The linked product overview explains the project’s purpose, architecture and current scope. Repository visibility and software licensing are separate: review the project’s own terms before reusing its code."},
-            {"type": "public-repositories"}
+            {
+              "type": "p",
+              "text": "These seven repositories are publicly accessible. The project pages link to setup steps, design decisions, trade-offs and unfinished work. Only the research project currently has a confirmed open-source licence."
+            },
+            {
+              "type": "public-repositories"
+            }
           ]
         },
         {
           "id": "collaboration",
-          "title": "Where I want to contribute",
+          "title": "How to inspect the work",
           "blocks": [
-            {"type": "p", "text": "I’m interested in open-source development around Go, Kubernetes, cloud-native infrastructure, developer platforms and agent tooling. I want to contribute through code, reproducible bug reports, fixes, design reviews and documentation that makes a system easier to understand and operate."},
-            {"type": "p", "text": "Useful collaboration connects a change to a clear problem and a way to verify the result. Architecture overviews, setup instructions, API examples and scope notes are part of that work because they help another developer decide where to begin."},
-            {"type": "p", "text": "My [GitHub profile](https://github.com/savisaluwadana) links to public activity. For a specific project, start with its repository README and contribution guidance, then check current issues and implemented behavior."}
+            {
+              "type": "p",
+              "text": "For a project, I start with the [source code index](/open-source/) and the linked README. Each [product detail page](/products/) points to its architecture, local setup, main design decision, trade-off and current limitations."
+            },
+            {
+              "type": "p",
+              "text": "A public repository is not necessarily open-source licensed. Check the licence before copying or redistributing code. The source index distinguishes MIT, proprietary and unspecified terms."
+            }
           ]
         },
         {
           "id": "architecture",
           "title": "Start with the engineering boundaries",
           "blocks": [
-            {"type": "p", "text": "The [agentic systems walkthroughs](/engineering/agentic-systems/) trace requests through tools, APIs, recorded state and human review. The [architecture reference](/engineering/) compares local-first workflows, tenant isolation and payment boundaries across products."},
-            {"type": "p", "text": "These references help identify the service and rule affected by a change. Product diagrams and source links provide the next level of detail; they do not replace checking the current repository."}
+            {
+              "type": "p",
+              "text": "The [agentic systems walkthroughs](/engineering/agentic-systems/) trace requests through tools, APIs, recorded state and human review. The [architecture reference](/engineering/) compares local-first workflows, tenant isolation and payment boundaries across products."
+            },
+            {
+              "type": "p",
+              "text": "These references help identify the service and rule affected by a change. Product diagrams and source links provide the next level of detail; they do not replace checking the current repository."
+            }
           ]
         },
         {
           "id": "contact",
           "title": "Discuss code or documentation work",
           "blocks": [
-            {"type": "p", "text": "For engineering or open-source collaboration, [contact me](/contact.html) with the repository, problem and proposed outcome. My [full profile](/about/) explains the areas I’m interested in working on."}
+            {
+              "type": "p",
+              "text": "For a specific change, start with the repository's README and issue tracker. You can also [contact me](/contact.html) with the relevant repository and a reproducible problem."
+            }
           ]
         }
       ]

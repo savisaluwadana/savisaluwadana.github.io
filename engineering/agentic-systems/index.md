@@ -16,7 +16,7 @@ The model, tool interface and domain service have different responsibilities. Th
 | Project | Agent boundary | What controls the result |
 | --- | --- | --- |
 | [Property Management OS](https://savisaluwadana.github.io/products/property-os/) | MCP tools call the authenticated Go API. | Organization scope and domain rules remain in the API. PostgreSQL stores business records and notification intents. |
-| [Pain Intelligence Lab](https://savisaluwadana.github.io/products/pain-intelligence/) | A connected MCP host performs semantic research and synthesis. | The Express application records evidence and research state, and applies quality and scoring checks. The application does not call model APIs directly. |
+| [Pain Intelligence Lab](https://savisaluwadana.github.io/products/pain-intelligence/) | A connected MCP host performs semantic research and synthesis. | The Rust API records evidence and research state in PostgreSQL; research findings still need validation. The application does not call model APIs directly. |
 | [DevRelOS](https://savisaluwadana.github.io/products/devrelos/) | Dashboard and authenticated MCP clients access workspace workflows. | The Go API checks membership; workers handle configured providers and approved delivery. Consequential outreach requires approval. |
 | [Ad Performance Analysis Agent](https://savisaluwadana.github.io/products/ad-performance-agent/) | Gemini assists with summaries after CSV analysis. | Threshold logic computes flags. Account connectors are mocks, so this prototype is not a durable live-account ingestion system. |
 
@@ -44,7 +44,7 @@ The documented MCP scope matters: advanced financial writes and other domains sh
 
 The output is evaluated as evidence, not just generated text. Source diversity, duplicate checks, independent stories and competitor or pricing validation affect whether an opportunity survives the research process. A job can correctly finish with no validated opportunity.
 
-This boundary also changes how the system is configured: the connected host provides semantic reasoning, while the platform provides storage, inspection and quality checks. Model-provider behavior should not be inferred from the Express application alone.
+This boundary also changes how the system is configured: the connected host provides semantic reasoning, while the platform provides storage, inspection and quality checks. Model-provider behavior should not be inferred from the Rust API alone.
 
 ## Approvals in developer operations
 
@@ -70,8 +70,8 @@ My broader interests include durable orchestration, multi-agent collaboration, r
 ## Inspect the current implementation
 
 - [Property Management OS repository documentation](https://github.com/RealEstateSassApplication/property-management-OS/blob/main/README.md)
-- [Pain Intelligence Lab repository documentation](https://github.com/savisaluwadana/Reddit-post-Analyzer/blob/main/README.md)
-- [DevRelOS repository documentation](https://github.com/savisaluwadana/DevRelOS/blob/main/README.md)
+- [Pain Intelligence Lab repository documentation](https://github.com/savisaluwadana/Pain-Point-Analyzer/blob/main/README.md)
+- [DevRelOS overview](https://savisaluwadana.github.io/products/devrelos/)
 
 See the [broader architecture reference](https://savisaluwadana.github.io/engineering/) for local-first data, tenancy and transaction comparisons, or the [public source index](https://savisaluwadana.github.io/open-source/) to browse repository references. [About Savi](https://savisaluwadana.github.io/about/) describes my engineering and collaboration interests.
 

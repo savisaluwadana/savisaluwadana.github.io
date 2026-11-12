@@ -1,5 +1,5 @@
 {
-  "reviewed": "2026-10-04",
+  "reviewed": "2026-11-12",
   "repositories": [
     {
       "id": "avara",
@@ -8,7 +8,8 @@
       "readme": "https://github.com/RealEstateSassApplication/AvaraRealEstate/blob/main/README.md",
       "visibility": "public",
       "license": null,
-      "reviewed": "2026-10-04"
+      "licenseLabel": "Proprietary, all rights reserved",
+      "reviewed": "2026-11-12"
     },
     {
       "id": "freshpick",
@@ -17,16 +18,8 @@
       "readme": "https://github.com/FreshOnTime/newfreshontimewebsite/blob/main/README.md",
       "visibility": "public",
       "license": null,
-      "reviewed": "2026-10-04"
-    },
-    {
-      "id": "devrelos",
-      "repository": "savisaluwadana/DevRelOS",
-      "url": "https://github.com/savisaluwadana/DevRelOS",
-      "readme": "https://github.com/savisaluwadana/DevRelOS/blob/main/README.md",
-      "visibility": "public",
-      "license": null,
-      "reviewed": "2026-10-04"
+      "licenseLabel": "No licence identified",
+      "reviewed": "2026-11-12"
     },
     {
       "id": "property-os",
@@ -35,7 +28,8 @@
       "readme": "https://github.com/RealEstateSassApplication/property-management-OS/blob/main/README.md",
       "visibility": "public",
       "license": null,
-      "reviewed": "2026-10-04"
+      "licenseLabel": "No licence identified",
+      "reviewed": "2026-11-12"
     },
     {
       "id": "rapidreach",
@@ -44,16 +38,18 @@
       "readme": "https://github.com/savisaluwadana/RapidReachBloWebsite/blob/main/README.md",
       "visibility": "public",
       "license": null,
-      "reviewed": "2026-10-04"
+      "licenseLabel": "No licence identified",
+      "reviewed": "2026-11-12"
     },
     {
       "id": "advance-hris",
-      "repository": "savisaluwadana/Advance-HIRS-System",
-      "url": "https://github.com/savisaluwadana/Advance-HIRS-System",
-      "readme": "https://github.com/savisaluwadana/Advance-HIRS-System/blob/main/README.md",
+      "repository": "SilverLine-Ravija/Advance-HIRS-System",
+      "url": "https://github.com/SilverLine-Ravija/Advance-HIRS-System",
+      "readme": "https://github.com/SilverLine-Ravija/Advance-HIRS-System/blob/main/README.md",
       "visibility": "public",
       "license": null,
-      "reviewed": "2026-10-04"
+      "licenseLabel": "No licence identified",
+      "reviewed": "2026-11-12"
     },
     {
       "id": "academix",
@@ -62,16 +58,21 @@
       "readme": "https://github.com/savisaluwadana/student-management-system-saas/blob/main/README.md",
       "visibility": "public",
       "license": null,
-      "reviewed": "2026-10-04"
+      "licenseLabel": "No licence identified",
+      "reviewed": "2026-11-12"
     },
     {
       "id": "pain-intelligence",
-      "repository": "savisaluwadana/Reddit-post-Analyzer",
-      "url": "https://github.com/savisaluwadana/Reddit-post-Analyzer",
-      "readme": "https://github.com/savisaluwadana/Reddit-post-Analyzer/blob/main/README.md",
+      "repository": "savisaluwadana/Pain-Point-Analyzer",
+      "url": "https://github.com/savisaluwadana/Pain-Point-Analyzer",
+      "readme": "https://github.com/savisaluwadana/Pain-Point-Analyzer/blob/main/README.md",
       "visibility": "public",
-      "license": null,
-      "reviewed": "2026-10-04"
+      "license": {
+        "name": "MIT License",
+        "spdxId": "MIT"
+      },
+      "licenseLabel": "MIT",
+      "reviewed": "2026-11-12"
     }
   ]
 }
