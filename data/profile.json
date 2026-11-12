@@ -5,8 +5,8 @@
   "url": "https://savisaluwadana.github.io/",
   "image": "https://avatars.githubusercontent.com/u/82082138?v=4",
   "email": "mailto:savisaluwadana@gmail.com",
-  "jobTitle": "Software and Product Engineer",
-  "description": "Savi Saluwadana is a software and product engineer based in Sri Lanka, focused on software architecture, systems design, Go, Kubernetes and developer platforms, with interests in agentic systems and open-source development.",
+  "jobTitle": "Software Engineer",
+  "description": "Savi Saluwadana is a software engineer based in Sri Lanka who builds software in public. His project repositories document architecture, design decisions and trade-offs; he is exploring platform engineering through containers, CI/CD and developer experience.",
   "homeLocation": {
     "@type": "Country",
     "name": "Sri Lanka"
