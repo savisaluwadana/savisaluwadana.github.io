@@ -48,10 +48,10 @@
   "pages": [
     {
       "path": "/about/",
-      "title": "About Savi Saluwadana | Software & Product Engineer in Sri Lanka",
+      "title": "About Savi Saluwadana | Software Built in Public",
       "heading": "Savi Saluwadana",
       "label": "About / Software & product engineer",
-      "description": "Meet Savi Saluwadana, a software engineer in Sri Lanka interested in agentic systems and open-source development. Explore his focus and product architecture.",
+      "description": "Savi Saluwadana builds software in public. Browse project repositories, architecture, implementation trade-offs and platform engineering interests.",
       "intro": "I build software in public from Sri Lanka. My repositories and project notes show the architecture, implementation choices and unfinished parts of that work. I'm also exploring platform engineering through delivery and developer experience.",
       "sections": [
         {
@@ -155,7 +155,7 @@
             {
               "type": "qa",
               "question": "Who is Savi Saluwadana?",
-              "answer": "Savi Saluwadana is a software and product engineer based in Sri Lanka, focused on software architecture, systems design, Go, Kubernetes and developer platforms, with interests in agentic systems and open-source development."
+              "answer": "Savi Saluwadana is a software engineer based in Sri Lanka who builds software in public. His project repositories document architecture, design decisions and trade-offs; he is exploring platform engineering through containers, CI/CD and developer experience."
             },
             {
               "type": "qa",
@@ -178,10 +178,10 @@
     },
     {
       "path": "/engineering/",
-      "title": "Software Architecture, Go APIs & MCP Systems | Savi Saluwadana",
+      "title": "Project Architecture and Design Decisions | Savi Saluwadana",
       "heading": "Software architecture across product workflows.",
       "label": "Engineering / Architecture reference",
-      "description": "Explore Savi Saluwadana’s product architecture: Go APIs, MCP access boundaries, local-first HR workflows, tenancy and transactional operations, with project references.",
+      "description": "Inspect project architecture decisions on APIs, data authority, local-first workflows, tenancy and transactions in Savi Saluwadana's software.",
       "intro": "A reference to the boundaries behind my product work: where authority lives, how clients access it, and what a workflow actually guarantees. Each comparison links to the relevant product architecture and current scope.",
       "sections": [
         {
@@ -209,7 +209,7 @@
                 ],
                 [
                   "[Pain Intelligence Lab](/products/pain-intelligence/)",
-                  "A React interface and Express/MongoDB application expose research tools to an MCP host. Semantic reasoning runs in the connected host, rather than direct model-provider calls from the application."
+                  "The local Next.js dashboard calls a Rust API backed by PostgreSQL. The repository also has a separate desktop edition with its own capabilities."
                 ]
               ]
             },
@@ -298,9 +298,9 @@
               "type": "list",
               "items": [
                 "[Property Management OS repository documentation](https://github.com/RealEstateSassApplication/property-management-OS/blob/main/README.md)",
-                "[DevRelOS repository documentation](https://github.com/savisaluwadana/DevRelOS/blob/main/README.md)",
-                "[Pain Intelligence Lab repository documentation](https://github.com/savisaluwadana/Reddit-post-Analyzer/blob/main/README.md)",
-                "[Advance HRIS repository documentation](https://github.com/savisaluwadana/Advance-HIRS-System/blob/main/README.md)",
+                "[DevRelOS repository documentation](https://savisaluwadana.github.io/products/devrelos/)",
+                "[Pain Intelligence Lab repository documentation](https://github.com/savisaluwadana/Pain-Point-Analyzer/blob/main/README.md)",
+                "[Advance HRIS repository documentation](https://github.com/SilverLine-Ravija/Advance-HIRS-System/blob/main/README.md)",
                 "[Avara repository documentation](https://github.com/RealEstateSassApplication/AvaraRealEstate/blob/main/README.md)",
                 "[FreshPick repository documentation](https://github.com/FreshOnTime/newfreshontimewebsite/blob/main/README.md)",
                 "[Academix repository documentation](https://github.com/savisaluwadana/student-management-system-saas/blob/main/README.md)"
@@ -314,10 +314,10 @@
       "path": "/engineering/agentic-systems/",
       "name": "Agentic systems architecture",
       "breadcrumb": "Agentic systems",
-      "title": "Agentic Systems, MCP & Workflow Architecture | Savi Saluwadana",
+      "title": "Project Agent Interfaces and Workflow Boundaries | Savi Saluwadana",
       "heading": "Agentic systems: tools, state and human review.",
       "label": "Engineering / Agentic systems",
-      "description": "Explore Savi Saluwadana’s agentic systems work through rental operations, evidence-led research and developer workflows: MCP, API permissions, state and human review.",
+      "description": "Inspect agent tool boundaries, application permissions and local research workflows documented in Savi Saluwadana's projects.",
       "intro": "An agent becomes useful when its tools connect to a real workflow. These project walkthroughs show where an agent enters the system, where state is recorded, and which service controls the resulting action.",
       "sections": [
         {
@@ -344,7 +344,7 @@
                 [
                   "[Pain Intelligence Lab](/products/pain-intelligence/)",
                   "A connected MCP host performs semantic research and synthesis.",
-                  "The Express application records evidence and research state, and applies quality and scoring checks. The application does not call model APIs directly."
+                  "The Rust API records evidence and research state in PostgreSQL; research findings still need validation. The application does not call model APIs directly."
                 ],
                 [
                   "[DevRelOS](/products/devrelos/)",
@@ -400,7 +400,7 @@
             },
             {
               "type": "p",
-              "text": "This boundary also changes how the system is configured: the connected host provides semantic reasoning, while the platform provides storage, inspection and quality checks. Model-provider behavior should not be inferred from the Express application alone."
+              "text": "This boundary also changes how the system is configured: the connected host provides semantic reasoning, while the platform provides storage, inspection and quality checks. Model-provider behavior should not be inferred from the Rust API alone."
             }
           ]
         },
@@ -450,8 +450,8 @@
               "type": "list",
               "items": [
                 "[Property Management OS repository documentation](https://github.com/RealEstateSassApplication/property-management-OS/blob/main/README.md)",
-                "[Pain Intelligence Lab repository documentation](https://github.com/savisaluwadana/Reddit-post-Analyzer/blob/main/README.md)",
-                "[DevRelOS repository documentation](https://github.com/savisaluwadana/DevRelOS/blob/main/README.md)"
+                "[Pain Intelligence Lab repository documentation](https://github.com/savisaluwadana/Pain-Point-Analyzer/blob/main/README.md)",
+                "[DevRelOS repository documentation](https://savisaluwadana.github.io/products/devrelos/)"
               ]
             },
             {
@@ -464,12 +464,12 @@
     },
     {
       "path": "/open-source/",
-      "name": "Public source and open-source interests",
-      "breadcrumb": "Open source",
+      "name": "Public repositories and design notes",
+      "breadcrumb": "Public source",
       "title": "Public Repositories and Source Notes | Savi Saluwadana",
       "heading": "Public repositories and design notes.",
       "label": "Source / Public engineering work",
-      "description": "Inspect Savi Saluwadana's public software repositories, local setup instructions, licensing status, architecture and open work.",
+      "description": "Inspect public software repositories, licensing status, local setup, architecture, design trade-offs and unfinished work.",
       "intro": "I build software with source code and design decisions that others can inspect. Public repository access does not automatically grant an open-source licence.",
       "sections": [
         {

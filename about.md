@@ -1,45 +1,35 @@
 # Savi Saluwadana
 
-Savi Saluwadana is a software and product engineer based in Sri Lanka, focused on software architecture, systems design, Go, Kubernetes and developer platforms, with interests in agentic systems and open-source development.
+Savi Saluwadana is a software engineer based in Sri Lanka who builds software in public. His project repositories document architecture, design decisions and trade-offs; he is exploring platform engineering through containers, CI/CD and developer experience.
 
 Website: https://savisaluwadana.github.io/
 GitHub: https://github.com/savisaluwadana
 LinkedIn: https://www.linkedin.com/in/savi-saluwadana-3911331b2/
-DEV Community: https://dev.to/savi_saluwadana
 Contact: https://savisaluwadana.github.io/contact.html
-Email: savisaluwadana@gmail.com
 
 ## Engineering focus
 
-- Software Engineering
+- Public Software Repositories
 - Software Architecture
-- Systems Design
-- Domain Modeling
-- API Design
-- Distributed Systems
-- Product Engineering
-- Go programming language
-- Kubernetes
-- Platform Engineering
-- DevOps
-- Developer Platforms
-- CI/CD
-- Observability
-- Site Reliability Engineering
-- Artificial Intelligence
-- AI Agents
-- Agentic Systems
-- Multi-Agent Systems
-- Workflow Orchestration
-- Retrieval-Augmented Generation
-- Agent Evaluation
-- Model Context Protocol
-- Open-Source Development
-- PostgreSQL
+- Design Decisions and Trade-offs
+- Go
+- Rust
+- TypeScript
+- JavaScript
+- React
 - Next.js
-- Cloud Native Computing
+- Laravel
+- Flutter
+- Docker
+- CI/CD
+- PostgreSQL
+- MongoDB
+- MySQL
+- SQLite
+- Prisma
+- Platform Engineering (Learning)
 
-## Products and engineering work
+## Projects and engineering work
 
 - [Avara Real Estate](https://savisaluwadana.github.io/products/avara/): A Sri Lankan property platform spanning rentals, property sales and short-term bookings with role-based users, geospatial search, availability, booking workflows, payments and property operations.
 - [Blu.lk](https://savisaluwadana.github.io/products/blu/): A Sri Lankan home-services platform connecting customers with skilled professionals across electrical, plumbing, cleaning, AC, carpentry and other services, with customer, provider and worker-facing workflows.
@@ -54,23 +44,17 @@ Email: savisaluwadana@gmail.com
 - [Acme Accounting](https://savisaluwadana.github.io/products/acme-accounting/): A single-company accounting application with a double-entry general ledger, invoicing, A/R and A/P aging, vendor bills, credit notes, refunds, period locks, bank reconciliation, budgeting and financial reporting.
 - [EventOS](https://savisaluwadana.github.io/products/eventos/): An event-services marketplace and operations platform for finding suppliers, comparing quotes, managing bookings and contracts, tracking payments and coordinating event delivery.
 - [Plate Restaurant OS](https://savisaluwadana.github.io/products/restaurantos/): A restaurant-management product bringing point of sale, table service, direct online ordering, kitchen workflows, menus and inventory into one operational workspace.
-- [Pain Intelligence Lab](https://savisaluwadana.github.io/products/pain-intelligence/): A cross-source research platform for discovering repeated customer pain, costly workarounds and product opportunities using saved evidence, quality checks and an MCP-connected research host.
+- [Pain Intelligence Lab](https://savisaluwadana.github.io/products/pain-intelligence/): An early community research project for exploring recurring needs using source-linked evidence. The current repository provides a local Next.js and Rust web app and a separate desktop app.
 - [Ad Performance Analysis Agent](https://savisaluwadana.github.io/products/ad-performance-agent/): A campaign-performance analysis prototype that parses ad-data CSVs, compares weekly metrics, highlights risks and wins, and uses Gemini to help produce actionable summaries.
 - [MediCare](https://savisaluwadana.github.io/products/medicare/): A patient and clinic-management system covering patient administration, appointments, clinical records, billing, staff permissions and an embeddable scheduling service.
 
-## Profile and architecture references
+## Public source and engineering references
 
-- [Product directory](https://savisaluwadana.github.io/products/): Explore 16 products built or contributed to by Savi Saluwadana: marketplaces, business systems, healthcare, AI agents and developer tools, with architecture diagrams.
-- [About Savi Saluwadana](https://savisaluwadana.github.io/about/): Meet Savi Saluwadana, a software engineer in Sri Lanka interested in agentic systems and open-source development. Explore his focus and product architecture.
-- [Architecture reference](https://savisaluwadana.github.io/engineering/): Explore Savi Saluwadana’s product architecture: Go APIs, MCP access boundaries, local-first HR workflows, tenancy and transactional operations, with project references.
-- [Agentic systems architecture](https://savisaluwadana.github.io/engineering/agentic-systems/): Explore Savi Saluwadana’s agentic systems work through rental operations, evidence-led research and developer workflows: MCP, API permissions, state and human review.
-- [Public source and open-source interests](https://savisaluwadana.github.io/open-source/): Explore Savi Saluwadana’s public engineering repositories, architecture references and open-source development interests in Go, cloud-native software and agent tools.
+- [Product directory](https://savisaluwadana.github.io/products/): Sixteen project overviews and architecture notes
+- [About](https://savisaluwadana.github.io/about/): Profile and public project evidence
+- [Engineering architecture](https://savisaluwadana.github.io/engineering/): Architecture and domain trade-offs
+- [Agent interfaces](https://savisaluwadana.github.io/engineering/agentic-systems/): Permissions and workflow boundaries
+- [Public repositories](https://savisaluwadana.github.io/open-source/): Seven public code repositories and licensing status
+- [Engineering insights](https://savisaluwadana.github.io/insights/): Published notes and separately identified article proposals
 
-## Engineering insights
-
-- [Engineering insights](https://savisaluwadana.github.io/insights/): Technical notes on software architecture, Go, PostgreSQL, platform engineering, MCP and durable agentic systems.
-- [MCP Permission Boundaries](https://savisaluwadana.github.io/insights/mcp-permission-boundaries/): Keep agent tools behind the authenticated application API and retain authorization in domain services.
-- [Durable Agentic Workflows](https://savisaluwadana.github.io/insights/durable-agentic-workflows/): Persist workflow state, design safe retries and model human approval explicitly.
-- [Go Modular Monolith for SaaS](https://savisaluwadana.github.io/insights/go-modular-monolith-saas/): Use explicit domain boundaries before introducing distributed-service complexity.
-- [Platform Engineering Paved Roads](https://savisaluwadana.github.io/insights/platform-engineering-paved-road/): Standardize delivery while keeping state, observability, ownership and escape hatches visible.
-- [PostgreSQL Multi-Tenancy Boundaries](https://savisaluwadana.github.io/insights/postgres-multitenancy-boundaries/): Resolve tenant context before data access and treat database isolation as defense in depth.
+Public repository visibility is not itself permission to reuse code. Project detail pages identify licensing, local setup, design decisions and unfinished work. I am exploring platform engineering through repository Docker, CI and deployment files.

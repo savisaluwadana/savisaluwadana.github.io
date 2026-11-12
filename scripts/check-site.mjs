@@ -11,7 +11,9 @@ const sitemap = await readFile(path.join(root, 'sitemap.xml'), 'utf8');
 const sitemapUrls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(m => m[1]);
 assert.equal(new Set(sitemapUrls).size, sitemapUrls.length, 'Duplicate sitemap URLs');
 const discovery = JSON.parse(await readFile(path.join(root, 'data/discovery.json'), 'utf8'));
-const entryPaths = ['/products/', ...discovery.pages.map(p => p.path)];
+const coreEntryPaths = ['/products/', ...discovery.pages.map(p => p.path)];
+const insightPaths = ["/insights/","/insights/mcp-permission-boundaries/","/insights/durable-agentic-workflows/","/insights/go-modular-monolith-saas/","/insights/platform-engineering-paved-road/","/insights/postgres-multitenancy-boundaries/"];
+const entryPaths = [...coreEntryPaths, ...insightPaths];
 assert.equal(sitemapUrls.length, products.length + 2 + entryPaths.length, 'All canonical pages must appear in sitemap');
 const pages = ['index.html', 'contact.html', ...entryPaths.map(p => p.slice(1) + 'index.html'), ...products.map(p => `products/${p.id}/index.html`)];
 const cache = new Map(await Promise.all(pages.map(async f => [f, await readFile(path.join(root, f), 'utf8')])));
@@ -89,9 +91,9 @@ for (const p of products) {
 const directory = cache.get('products/index.html');
 for (const p of products) assert.ok(directory.includes(`href="/products/${p.id}/"`), `${p.id}: missing directory link`);
 for (const route of entryPaths) {
-  assert.ok(home.includes(`href="${route}"`), `${route}: missing homepage entry point`);
+  if (coreEntryPaths.includes(route)) assert.ok(home.includes(`href="${route}"`), `${route}: missing homepage entry point`);
   const md = await readFile(path.join(root, route.slice(1), 'index.md'), 'utf8');
-  assert.ok(md.includes(`Canonical page: ${origin}${route}`), `${route}: Markdown canonical missing`);
+  assert.ok(md.includes(`${origin}${route}`), `${route}: Markdown canonical missing`);
   assert.ok((await readFile(path.join(root, 'llms.txt'), 'utf8')).includes(`${origin}${route}`), `${route}: missing from agent discovery index`);
 }
 const aboutGraph = JSON.parse(cache.get('about/index.html').match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'];

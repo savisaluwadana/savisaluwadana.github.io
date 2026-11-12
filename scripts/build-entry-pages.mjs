@@ -64,7 +64,7 @@ export async function buildEntryPages({ root, base, updated, schemaModified, pro
   const directory = {
     path: '/products/', title: 'Product Directory & Architecture | Savi Saluwadana',
     heading: 'Products & engineering work.', label: 'Directory / Products & architecture',
-    description: 'Explore 16 products built or contributed to by Savi Saluwadana: marketplaces, business systems, healthcare, AI agents and developer tools, with architecture diagrams.',
+    description: 'Explore 16 software project overviews by Savi Saluwadana, including source-linked code, architecture decisions, and contribution boundaries.',
     intro: 'Browse the product work by domain. Every product has a permanent overview with its users, workflow, component architecture, source references and current scope.',
     sections: content.groups.map(group => ({
       id: group.id, title: group.title,
@@ -128,7 +128,7 @@ ${isSource ? '  <link rel="alternate" type="application/json" href="/public-work
   <a class="skip-link" href="#main">Skip to content</a>${header}
   <main class="product-page" id="main"><div class="shell">
     <nav class="product-breadcrumb" aria-label="Breadcrumb">${crumbs.map((crumb, i) => `${i ? '<span aria-hidden="true">/</span>' : ''}${i === crumbs.length - 1 ? `<span aria-current="page">${esc(crumb.name)}</span>` : `<a href="${esc(new URL(crumb.item).pathname)}">${esc(crumb.name)}</a>`}`).join('')}</nav>
-    <div class="product-header"><p class="section-index">${esc(page.label)}</p><h1>${esc(page.heading)}</h1><p>${esc(page.intro)}</p><p class="product-source">${isProfile ? 'Software &amp; product engineer · Sri Lanka' : 'By Savi Saluwadana'} · Reviewed <time datetime="${updated}">4 October 2026</time></p><div class="project-links"><a class="text-link" href="/contact.html">Contact Savi</a><a class="text-link" href="${page.path}index.md">Markdown reference</a></div></div>
+    <div class="product-header"><p class="section-index">${esc(page.label)}</p><h1>${esc(page.heading)}</h1><p>${esc(page.intro)}</p><p class="product-source">${isProfile ? 'Software &amp; product engineer · Sri Lanka' : 'By Savi Saluwadana'} · Reviewed <time datetime="${updated}">12 November 2026</time></p><div class="project-links"><a class="text-link" href="/contact.html">Contact Savi</a><a class="text-link" href="${page.path}index.md">Markdown reference</a></div></div>
     <nav class="product-nav" aria-label="Page sections">${page.sections.map(section => `<a href="#${esc(section.id)}">${esc(section.title)}</a>`).join('')}</nav>
     <div class="product-content">${page.sections.map(section => `<section class="product-section" id="${esc(section.id)}" aria-labelledby="${esc(section.id)}-title"><h2 id="${esc(section.id)}-title">${esc(section.title)}</h2>${section.blocks.map(blockHtml).join('')}</section>`).join('\n')}</div>
   </div></main>${footer}<script src="/app.js" defer></script>

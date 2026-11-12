@@ -5,13 +5,51 @@ import { buildEntryPages } from './build-entry-pages.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const base = 'https://savisaluwadana.github.io';
-const updated = '2026-10-04';
+const updated = '2026-11-12';
 const schemaModified = `${updated}T00:00:00+05:30`;
 const products = JSON.parse(await readFile(path.join(root, 'data/products.json'), 'utf8'));
 const person = JSON.parse(await readFile(path.join(root, 'data/profile.json'), 'utf8'));
 const discovery = JSON.parse(await readFile(path.join(root, 'data/discovery.json'), 'utf8'));
 const publicWork = JSON.parse(await readFile(path.join(root, 'data/public-work.json'), 'utf8'));
-const entryPaths = ['/products/', ...discovery.pages.map(p => p.path)];
+const insightPages = [
+  {
+    "path": "/insights/",
+    "name": "Engineering insights",
+    "description": "Published architecture notes and five proposed article topics.",
+    "reviewed": "2026-11-12"
+  },
+  {
+    "path": "/insights/mcp-permission-boundaries/",
+    "name": "MCP Permission Boundaries: Keep Agent Tools Behind the Application API",
+    "description": "How application services retain authorization when agents use tools.",
+    "reviewed": "2026-10-07"
+  },
+  {
+    "path": "/insights/durable-agentic-workflows/",
+    "name": "Durable Agentic Workflows: State, Idempotency and Human Approval",
+    "description": "State, retries, idempotency and approvals in long-running workflows.",
+    "reviewed": "2026-10-07"
+  },
+  {
+    "path": "/insights/go-modular-monolith-saas/",
+    "name": "Go Modular Monolith Architecture for SaaS: Boundaries Before Microservices",
+    "description": "Domain boundaries and transaction ownership in a Go application.",
+    "reviewed": "2026-10-07"
+  },
+  {
+    "path": "/insights/platform-engineering-paved-road/",
+    "name": "Platform Engineering: Build a Paved Road Without Hiding the System",
+    "description": "Tool-neutral platform delivery contracts, visibility and escape hatches.",
+    "reviewed": "2026-10-07"
+  },
+  {
+    "path": "/insights/postgres-multitenancy-boundaries/",
+    "name": "PostgreSQL Multi-Tenancy: Define Authorization Boundaries Before Schema Tricks",
+    "description": "Tenant context, repository contracts and database safeguards.",
+    "reviewed": "2026-10-07"
+  }
+];
+const entryPaths = ['/products/', ...discovery.pages.map(p => p.path), ...insightPages.map(p => p.path)];
 const website = { '@type': 'WebSite', '@id': `${base}/#website`, url: `${base}/`, name: 'Savi Saluwadana', inLanguage: 'en', publisher: { '@id': person['@id'] }, hasPart: entryPaths.map(p => ({ '@id': `${base}${p}#page` })) };
 const esc = value => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#39;');
 const url = p => `${base}/products/${p.id}/`;
@@ -46,7 +84,7 @@ const cards = orderedProjects.map((p, i) => {
 }).join('\n');
 home = replaceRegion(home, 'PRODUCTS', cards);
 home = replaceRegion(home, 'PROOF', orderedProjects.map(p => `          <a href="#${esc(p.id)}">${esc(p.name)}</a>`).join('\n'));
-home = replaceRegion(home, 'SCHEMA', schema([website, person, { '@type': 'ProfilePage', '@id': `${base}/#profile`, url: `${base}/`, name: 'Savi Saluwadana — Software and Product Engineer', mainEntity: { '@id': person['@id'] }, isPartOf: { '@id': website['@id'] }, hasPart: { '@id': list['@id'] }, dateModified: schemaModified, inLanguage: 'en' }, list]));
+home = replaceRegion(home, 'SCHEMA', schema([website, person, { '@type': 'ProfilePage', '@id': `${base}/#profile`, url: `${base}/`, name: 'Savi Saluwadana — Building Software in Public', mainEntity: { '@id': person['@id'] }, isPartOf: { '@id': website['@id'] }, hasPart: { '@id': list['@id'] }, dateModified: schemaModified, inLanguage: 'en' }, list]));
 if (!home.includes('rel="describedby"')) home = home.replace('<link rel="canonical"', '<link rel="describedby" type="text/plain" href="/llms.txt">\n  <link rel="alternate" type="application/json" href="/profile.json" title="Public profile data">\n  <link rel="alternate" type="text/markdown" href="/about.md" title="Profile in Markdown">\n  <link rel="canonical"');
 home = home.replace(/<title>.*?<\/title>/, '<title>Savi Saluwadana | Building Software in Public</title>');
 home = home.replace(/<meta name="description" content="[^"]*">/, '<meta name="description" content="Savi Saluwadana builds software in public. Explore repositories, architecture, design decisions, project trade-offs and platform engineering interests.">');
@@ -101,7 +139,7 @@ function diagram(p) {
 }
 
 const header = `<header class="site-header" data-header><div class="shell nav-shell"><a class="wordmark" href="/" aria-label="Savi Saluwadana home">Savi Saluwadana</a><button class="menu-button" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav" data-menu-button><span></span><span></span></button><nav class="nav-links" id="primary-nav" aria-label="Primary navigation" data-nav><a href="/products/">Products + Work</a><a href="/engineering/">Architecture</a><a href="/about/">About</a><a class="nav-contact" href="/contact.html">Contact</a></nav></div></header>`;
-const footer = `<footer class="site-footer"><div class="shell footer-layout"><div><strong>Savi Saluwadana</strong><span>Software · Architecture · Product · Platform · DevOps</span></div><div><span><a href="/">Portfolio</a> · <a href="/products/">Products</a> · <a href="/engineering/">Engineering</a> · <a href="/open-source/">Public source</a> · <a href="/about/">About</a> · <a href="/feed.xml">Feed</a></span><span>© <span data-year>2026</span></span></div></div></footer>`;
+const footer = `<footer class="site-footer"><div class="shell footer-layout"><div><strong>Savi Saluwadana</strong><span>Software built in public · Architecture · Delivery interests</span></div><div><span><a href="/">Portfolio</a> · <a href="/products/">Products</a> · <a href="/engineering/">Engineering</a> · <a href="/open-source/">Public source</a> · <a href="/about/">About</a> · <a href="/feed.xml">Feed</a></span><span>© <span data-year>2026</span></span></div></div></footer>`;
 let markdown = `# Savi Saluwadana\n\n${person.description}\n\nWebsite: ${base}/\nGitHub: ${person.sameAs[0]}\nLinkedIn: ${person.sameAs[1]}\nContact: ${base}/contact.html\nEmail: savisaluwadana@gmail.com\n\n## Engineering focus\n\n${person.knowsAbout.map(s => `- ${s}`).join('\n')}\n\n## Products and engineering work\n\n`;
 const markdownProducts = [];
 for (const p of products) {
@@ -158,14 +196,15 @@ await write('about.md', markdown);
 const publicProducts = products.map(({ rows, edges, classes, linkLabel, ...p }) => ({ ...p, url: url(p), markdown: `${url(p)}index.md` }));
 await write('products.json', JSON.stringify({ name: 'Products and engineering work by Savi Saluwadana', website: `${base}/`, updated, products: publicProducts }, null, 2) + '\n');
 await write('public-work.json', JSON.stringify({ ...publicWork, name: 'Public repository references in Savi Saluwadana’s portfolio', url: `${base}/open-source/` }, null, 2) + '\n');
-await write('profile.json', JSON.stringify({ '@context': 'https://schema.org', '@type': 'ProfilePage', '@id': `${base}/#profile`, url: `${base}/`, name: 'Savi Saluwadana — Software and Product Engineer', dateModified: schemaModified, mainEntity: person, hasPart: [...references.map(p => ({ '@type': 'WebPage', name: p.name, url: base + p.path })), ...products.map(p => ({ '@type': 'WebPage', name: p.name, url: url(p) }))] }, null, 2) + '\n');
+await write('profile.json', JSON.stringify({ '@context': 'https://schema.org', '@type': 'ProfilePage', '@id': `${base}/#profile`, url: `${base}/`, name: 'Savi Saluwadana — Building Software in Public', dateModified: schemaModified, mainEntity: person, hasPart: [...references.map(p => ({ '@type': 'WebPage', name: p.name, url: base + p.path })), ...products.map(p => ({ '@type': 'WebPage', name: p.name, url: url(p) }))] }, null, 2) + '\n');
 await write('llms.txt', `# Savi Saluwadana\n\n> ${person.description}\n\nThis is a public portfolio with product-level architecture summaries. It does not claim that every project is commercially deployed or production-certified.\n\n## Profile and contact\n\n- [Portfolio](${base}/): Canonical professional profile.\n- [Profile in Markdown](${base}/about.md): Identity, engineering focus and product index.\n- [Profile JSON](${base}/profile.json): Structured identity and profile links.\n- [Contact](${base}/contact.html): Public email and professional contact options.\n\n## Product overview and architecture\n\n${products.map(p => `- [${p.name}](${url(p)}): ${p.scope}`).join('\n')}\n\n## Optional\n\n- [Product data](${base}/products.json): Product descriptions, workflows, components and current scope.\n- [Full text reference](${base}/llms-full.txt): Profile and all product summaries as text.\n- [Sitemap](${base}/sitemap.xml): Canonical HTML pages.\n\nUse the current-scope notes when describing capabilities. TimelyHelp is product/frontend contribution; the accounting app is single-company; the ad-performance tool is a prototype with mocked account connectors. Do not infer employers, qualifications, user counts, revenue or production outcomes.\n`);
 let agentIndex = await readFile(path.join(root, 'llms.txt'), 'utf8');
 agentIndex = agentIndex.replace('## Product overview and architecture', `## Profile and engineering references\n\n${references.map(p => `- [${p.name}](${base}${p.path}): ${p.description}\n- [${p.name} in Markdown](${base}${p.path}index.md): Text equivalent of the same reference.`).join('\n')}\n\n## Product overview and architecture`);
+agentIndex = agentIndex.replace('## Optional', `## Engineering insights\n\n${insightPages.map(p => `- [${p.name}](${base}${p.path}): ${p.description}`).join('\n')}\n\n## Optional`);
 agentIndex = agentIndex.replace('## Optional', `## Optional\n\n- [Engineering and product feed](${base}/feed.xml): Atom feed of the current reference pages and product overviews.\n- [Public source data](${base}/public-work.json): Verified public repository references and available license metadata.`);
 await write('llms.txt', agentIndex);
 await write('llms-full.txt', markdown + '\n\n' + [...references.map(p => p.markdown), ...markdownProducts].join('\n\n---\n\n'));
-const feedItems = [...references.map(p => ({ name: p.name, url: base + p.path, description: p.description, reviewed: updated })), ...products.map(p => ({ name: p.name, url: url(p), description: `${p.scope} ${p.boundary}`, reviewed: p.reviewed }))];
+const feedItems = [...references.map(p => ({ name: p.name, url: base + p.path, description: p.description, reviewed: updated })), ...insightPages.map(p => ({ name: p.name, url: base + p.path, description: p.description, reviewed: p.reviewed })), ...products.map(p => ({ name: p.name, url: url(p), description: `${p.scope} ${p.boundary}`, reviewed: p.reviewed }))];
 // Source review dates are date-granularity and normalized to UTC midnight.
 await write('feed.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">\n  <id>${base}/feed.xml</id><title>Savi Saluwadana — Engineering and products</title>\n  <subtitle>Product architecture, agentic systems and public engineering references.</subtitle>\n  <updated>${updated}T00:00:00Z</updated>\n  <author><name>Savi Saluwadana</name><uri>${base}/about/</uri></author>\n  <link rel="self" type="application/atom+xml" href="${base}/feed.xml"/>\n  <link rel="alternate" type="text/html" href="${base}/"/>\n${feedItems.map(item => `  <entry><id>${esc(item.url)}</id><title>${esc(item.name)}</title><link rel="alternate" type="text/html" href="${esc(item.url)}"/><updated>${item.reviewed}T00:00:00Z</updated><summary type="text">${esc(item.description)}</summary></entry>`).join('\n')}\n</feed>\n`);
 const paths = ['/', '/contact.html', ...entryPaths, ...products.map(p => `/products/${p.id}/`)];
