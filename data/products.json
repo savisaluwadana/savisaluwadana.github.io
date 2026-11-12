@@ -687,7 +687,7 @@
     "category": "Developer media product",
     "type": "Publishing + discovery",
     "description": "A developer publication and tool-discovery product with editorial workflows, comments, likes, search, tool profiles, media uploads and a deliberately small CMS.",
-    "architecture": "Next.js 16 → MongoDB → Vercel Blob",
+    "architecture": "Next.js → MongoDB → object storage",
     "tags": [
       "Next.js",
       "React",

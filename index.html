@@ -344,7 +344,7 @@
 
     <section class="signal-line" aria-label="Core engineering technologies and disciplines">
       <div class="shell signal-inner">
-        <span>Software Architecture</span><i></i><span>Systems Design</span><i></i><span>Go</span><i></i><span>Kubernetes</span><i></i><span>Platform Engineering</span><i></i><span>DevOps</span><i></i><span>AI Systems</span>
+        <span>Software Architecture</span><i></i><span>Systems Design</span><i></i><span>Go</span><i></i><span>Docker</span><i></i><span>Public source</span><i></i><span>CI workflows</span><i></i><span>AI Systems</span>
       </div>
     </section>
 
@@ -407,7 +407,7 @@
               <p class="project-type">Publishing + discovery</p>
               <h3><a class="project-title-link" href="/products/rapidreach/">RapidReach</a></h3>
               <p>A developer publication and tool-discovery product with editorial workflows, comments, likes, search, tool profiles, media uploads and a deliberately small CMS.</p>
-              <div class="architecture-line" aria-label="RapidReach architecture">Next.js 16 → MongoDB → Vercel Blob</div><div class="project-tags"><span>Next.js</span><span>React</span><span>TypeScript</span><span>MongoDB</span><span>SEO</span><span>JSON-LD</span></div><p class="project-source-meta"><strong>Licence:</strong> No licence identified</p><p class="project-source-meta"><strong>Run locally:</strong> Configure MongoDB in .env.local; npm install; npm run dev</p>
+              <div class="architecture-line" aria-label="RapidReach architecture">Next.js → MongoDB → object storage</div><div class="project-tags"><span>Next.js</span><span>React</span><span>TypeScript</span><span>MongoDB</span><span>SEO</span><span>JSON-LD</span></div><p class="project-source-meta"><strong>Licence:</strong> No licence identified</p><p class="project-source-meta"><strong>Run locally:</strong> Configure MongoDB in .env.local; npm install; npm run dev</p>
             </div>
             <div class="project-footer"><p>RapidReach uses one Next.js application with MongoDB and Blob storage; there is no separate backend service. Publishing and media require a configured deployment.</p><div class="project-links"><a href="/products/rapidreach/">Overview &amp; architecture</a><a href="https://github.com/savisaluwadana/RapidReachBloWebsite" target="_blank" rel="noreferrer">View repository ↗</a></div></div>
           </article>
@@ -590,7 +590,7 @@
             <p class="section-index">Stack / Technologies I build with</p>
             <h2 id="tech-stack-title">The tools behind the systems.</h2>
           </div>
-          <p>A practical stack across product engineering, backend systems, cloud infrastructure, automation and data — chosen around the problem rather than a single framework.</p>
+          <p>Technologies used in the projects linked above. These are implementation references, not a claim of expertise in every tool.</p>
         </div>
 
         <div class="tech-stack-grid reveal">
@@ -598,15 +598,15 @@
             <div class="tech-group-top"><span>01</span><span>Software engineering</span></div>
             <h3>Languages, frameworks & product development</h3>
             <div class="tech-pills" aria-label="Languages, frameworks and product technologies">
-              <span>Go</span><span>Java</span><span>Spring Boot</span><span>Laravel</span><span>TypeScript</span><span>JavaScript</span><span>Python</span><span>C# / .NET</span><span>C++</span><span>Kotlin</span><span>HTML</span><span>CSS</span><span>React</span><span>Next.js</span><span>Angular</span><span>Node.js</span><span>Flutter</span><span>Electron</span><span>Wails</span><span>Django</span><span>Flask</span>
+              <span>Go</span><span>Rust</span><span>Laravel</span><span>TypeScript</span><span>JavaScript</span><span>HTML</span><span>CSS</span><span>React</span><span>Next.js</span><span>Node.js</span><span>Flutter</span><span>Electron</span><span>Wails</span>
             </div>
           </article>
 
           <article class="tech-group">
             <div class="tech-group-top"><span>02</span><span>Platform & operations</span></div>
-            <h3>Cloud-native & automation</h3>
+            <h3>Local development &amp; delivery</h3>
             <div class="tech-pills" aria-label="Platform and DevOps technologies">
-              <span>Kubernetes</span><span>Docker</span><span>Terraform</span><span>Ansible</span><span>Jenkins</span><span>Linux</span><span>Bash / Shell</span><span>CI/CD</span><span>Virtualization</span>
+              <span>Docker</span><span>Docker Compose</span><span>CI workflows</span><span>Shell scripts</span>
             </div>
           </article>
 
@@ -614,20 +614,20 @@
             <div class="tech-group-top"><span>03</span><span>Data layer</span></div>
             <h3>Databases & application data</h3>
             <div class="tech-pills" aria-label="Database technologies">
-              <span>PostgreSQL</span><span>MongoDB</span><span>MySQL</span>
+              <span>PostgreSQL</span><span>MongoDB</span><span>MySQL</span><span>SQLite</span><span>Prisma</span>
             </div>
           </article>
 
           <article class="tech-group">
-            <div class="tech-group-top"><span>04</span><span>Cloud & workflow</span></div>
-            <h3>Cloud platforms & engineering tools</h3>
+            <div class="tech-group-top"><span>04</span><span>Source and configuration</span></div>
+            <h3>Source and deployment setup</h3>
             <div class="tech-pills" aria-label="Cloud platforms and engineering tools">
-              <span>AWS</span><span>Azure</span><span>Google Cloud</span><span>Git</span><span>Azure Repos</span><span>Postman</span><span>Jira</span>
+              <span>Git</span><span>Object storage</span><span>Environment configuration</span>
             </div>
           </article>
         </div>
 
-        <p class="tech-stack-note reveal">The emphasis is on end-to-end engineering: product code, APIs and data models through deployment, infrastructure automation and operating the software in production.</p>
+        <p class="tech-stack-note reveal">For implementation details, see each repository's code and setup instructions. I am still exploring platform engineering.</p>
       </div>
     </section>
 

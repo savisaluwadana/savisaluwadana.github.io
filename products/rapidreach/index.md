@@ -28,11 +28,11 @@ Developer publishing and tool discovery with a small CMS.
 
 ## Architecture
 
-Next.js 16 → MongoDB → Vercel Blob
+Next.js → MongoDB → object storage
 
 - Next.js: Public pages, tool directory, CMS and API routes in one application.
 - MongoDB: Editorial records, tool records, comments and categories.
-- Vercel Blob: Public media objects referenced by content records.
+- object storage: Public media objects referenced by content records.
 
 ## Current scope
 
