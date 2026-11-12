@@ -17,7 +17,7 @@ I’m interested in clear domain boundaries, strong data models, reliable APIs a
 | Agentic systems and Model Context Protocol | [Pain Intelligence Lab](https://savisaluwadana.github.io/products/pain-intelligence/), [Property Management OS](https://savisaluwadana.github.io/products/property-os/) and [DevRelOS](https://savisaluwadana.github.io/products/devrelos/). |
 | Open-source development interests | Code contributions, bug fixes, documentation and developer tools. Explore my [public GitHub work](https://github.com/savisaluwadana). |
 | Operational data and workflows | [Acme Accounting](https://savisaluwadana.github.io/products/acme-accounting/), [Advance HRIS](https://savisaluwadana.github.io/products/advance-hris/) and [MediCare](https://savisaluwadana.github.io/products/medicare/). |
-| Platform engineering and DevOps | My [platform and DevOps focus](https://savisaluwadana.github.io/#platform-devops) covers Kubernetes, delivery pipelines, observability and developer platforms. |
+| Platform engineering and DevOps | I am exploring containers, delivery automation and developer experience through the [public repositories](https://savisaluwadana.github.io/open-source/). |
 
 ## Agentic systems I’m interested in
 
