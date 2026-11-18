@@ -358,14 +358,14 @@
 
         <div class="project-grid">
           <!-- PRODUCTS:START -->
-<div class="project-group-label reveal"><span>Public repositories</span><strong>Read the code, setup instructions and licence terms before reusing it.</strong></div>
+<div class="project-group-label reveal"><span>Public repositories</span></div>
           <article class="project-card project-card--product project-card--lead reveal" id="avara">
             <div class="project-topline"><span>01</span><span>Public source</span></div>
             <div class="project-body">
               <p class="project-type">Property marketplace + transactions</p>
               <h3><a class="project-title-link" href="/products/avara/">Avara Real Estate</a></h3>
               <p>A Sri Lankan property platform spanning rentals, property sales and short-term bookings with role-based users, geospatial search, availability, booking workflows, payments and property operations.</p>
-              <div class="architecture-line" aria-label="Avara Real Estate architecture">Next.js → MongoDB → S3 → PayHere</div><div class="project-tags"><span>Next.js</span><span>TypeScript</span><span>MongoDB</span><span>Geospatial search</span><span>Payments</span><span>PWA</span></div><p class="project-source-meta"><strong>Licence:</strong> Proprietary, all rights reserved</p><p class="project-source-meta"><strong>Run locally:</strong> Configure MongoDB and environment variables; npm install; npm run dev</p>
+              <div class="architecture-line" aria-label="Avara Real Estate architecture">Next.js → MongoDB → S3 → PayHere</div><div class="project-tags"><span>Next.js</span><span>TypeScript</span><span>MongoDB</span><span>Geospatial search</span><span>Payments</span><span>PWA</span></div>
             </div>
             <div class="project-footer"><p>This diagram summarizes the repository’s property, booking and payment boundaries. PayHere and S3 require deployment-specific configuration.</p><div class="project-links"><a href="/products/avara/">Overview &amp; architecture</a><a href="https://github.com/RealEstateSassApplication/AvaraRealEstate" target="_blank" rel="noreferrer">View repository ↗</a></div></div>
           </article>
@@ -376,7 +376,7 @@
               <p class="project-type">Commerce + recurring delivery</p>
               <h3><a class="project-title-link" href="/products/freshpick/">FreshPick / FreshOnTime</a></h3>
               <p>A premium food-commerce platform for Colombo bringing together fresh groceries, local products, prepared meals, recurring delivery and business ordering in one customer experience.</p>
-              <div class="architecture-line" aria-label="FreshPick / FreshOnTime architecture">Next.js → Prisma / PostgreSQL → recurring delivery + media storage</div><div class="project-tags"><span>Next.js</span><span>PostgreSQL</span><span>Prisma</span><span>Recurring delivery</span><span>B2B</span><span>MCP</span></div><p class="project-source-meta"><strong>Licence:</strong> No licence identified</p><p class="project-source-meta"><strong>Run locally:</strong> Set development environment variables; npm ci; npm run db:migrate; npm run dev</p>
+              <div class="architecture-line" aria-label="FreshPick / FreshOnTime architecture">Next.js → Prisma / PostgreSQL → recurring delivery + media storage</div><div class="project-tags"><span>Next.js</span><span>PostgreSQL</span><span>Prisma</span><span>Recurring delivery</span><span>B2B</span><span>MCP</span></div>
             </div>
             <div class="project-footer"><p>Customer checkout and subscription baskets currently use cash on delivery. Automatic recurring card charging is not implemented. Subscription baskets and recurring grocery orders are distinct workflows.</p><div class="project-links"><a href="/products/freshpick/">Overview &amp; architecture</a><a href="https://github.com/FreshOnTime/newfreshontimewebsite" target="_blank" rel="noreferrer">View repository ↗</a></div></div>
           </article>
@@ -387,7 +387,7 @@
               <p class="project-type">Operational SaaS architecture</p>
               <h3><a class="project-title-link" href="/products/property-os/">Property Management OS</a></h3>
               <p>A rental operations platform covering properties, units, tenants, leases, rent, maintenance, documents, notifications and controlled agent-assisted operations.</p>
-              <div class="architecture-line" aria-label="Property Management OS architecture">Next.js → Go modular monolith → PostgreSQL → Outbox worker → MCP</div><div class="project-tags"><span>Go</span><span>OIDC</span><span>PostgreSQL</span><span>S3</span><span>OpenAPI</span><span>MCP</span></div><p class="project-source-meta"><strong>Licence:</strong> No licence identified</p><p class="project-source-meta"><strong>Run locally:</strong> Set values from .env.example; docker compose up --build</p>
+              <div class="architecture-line" aria-label="Property Management OS architecture">Next.js → Go modular monolith → PostgreSQL → Outbox worker → MCP</div><div class="project-tags"><span>Go</span><span>OIDC</span><span>PostgreSQL</span><span>S3</span><span>OpenAPI</span><span>MCP</span></div>
             </div>
             <div class="project-footer"><p>MCP calls the same authenticated HTTP API as other clients and has no direct database connection. Advanced financial writes and other domains remain subject to the project’s implemented tool scope.</p><div class="project-links"><a href="/products/property-os/">Overview &amp; architecture</a><a href="https://github.com/RealEstateSassApplication/property-management-OS" target="_blank" rel="noreferrer">View repository ↗</a></div></div>
           </article>
@@ -398,7 +398,7 @@
               <p class="project-type">Publishing + discovery</p>
               <h3><a class="project-title-link" href="/products/rapidreach/">RapidReach</a></h3>
               <p>A developer publication and tool-discovery product with editorial workflows, comments, likes, search, tool profiles, media uploads and a deliberately small CMS.</p>
-              <div class="architecture-line" aria-label="RapidReach architecture">Next.js → MongoDB → object storage</div><div class="project-tags"><span>Next.js</span><span>React</span><span>TypeScript</span><span>MongoDB</span><span>SEO</span><span>JSON-LD</span></div><p class="project-source-meta"><strong>Licence:</strong> No licence identified</p><p class="project-source-meta"><strong>Run locally:</strong> Configure MongoDB in .env.local; npm install; npm run dev</p>
+              <div class="architecture-line" aria-label="RapidReach architecture">Next.js → MongoDB → object storage</div><div class="project-tags"><span>Next.js</span><span>React</span><span>TypeScript</span><span>MongoDB</span><span>SEO</span><span>JSON-LD</span></div>
             </div>
             <div class="project-footer"><p>RapidReach uses one Next.js application with MongoDB and Blob storage; there is no separate backend service. Publishing and media require a configured deployment.</p><div class="project-links"><a href="/products/rapidreach/">Overview &amp; architecture</a><a href="https://github.com/savisaluwadana/RapidReachBloWebsite" target="_blank" rel="noreferrer">View repository ↗</a></div></div>
           </article>
@@ -409,7 +409,7 @@
               <p class="project-type">Local-first HRIS + desktop operations</p>
               <h3><a class="project-title-link" href="/products/advance-hris/">Advance HRIS</a></h3>
               <p>A hybrid HR information system with an employee web portal, a native HR/admin desktop console, tenant-scoped access, policy-backed leave, schedule-aware attendance, audit history and durable offline synchronization.</p>
-              <div class="architecture-line" aria-label="Advance HRIS architecture">Next.js Web + Wails / React Desktop → Go API → PostgreSQL</div><div class="project-tags"><span>Go</span><span>Next.js</span><span>Wails</span><span>PostgreSQL</span><span>Offline sync</span><span>RBAC</span></div><p class="project-source-meta"><strong>Licence:</strong> No licence identified</p><p class="project-source-meta"><strong>Run locally:</strong> Configure .env from example; docker compose up --build (demo setup)</p>
+              <div class="architecture-line" aria-label="Advance HRIS architecture">Next.js Web + Wails / React Desktop → Go API → PostgreSQL</div><div class="project-tags"><span>Go</span><span>Next.js</span><span>Wails</span><span>PostgreSQL</span><span>Offline sync</span><span>RBAC</span></div>
             </div>
             <div class="project-footer"><p>Local-first refers to the desktop console. The cloud database remains authoritative. Payroll-ready attendance boundaries do not mean a complete payroll-processing product is included.</p><div class="project-links"><a href="/products/advance-hris/">Overview &amp; architecture</a><a href="https://github.com/SilverLine-Ravija/Advance-HIRS-System" target="_blank" rel="noreferrer">View repository ↗</a></div></div>
           </article>
@@ -420,7 +420,7 @@
               <p class="project-type">Student, fees &amp; academic operations</p>
               <h3><a class="project-title-link" href="/products/academix/">Academix</a></h3>
               <p>A SaaS workspace for tuition centres and private institutes combining student CRM, classes, attendance, assessments, fee collection, communications, reporting and multi-site institute operations.</p>
-              <div class="architecture-line" aria-label="Academix architecture">Next.js → MongoDB / Mongoose → notification integrations</div><div class="project-tags"><span>Next.js</span><span>TypeScript</span><span>MongoDB</span><span>Attendance</span><span>Fees</span><span>Multi-site</span></div><p class="project-source-meta"><strong>Licence:</strong> No licence identified</p><p class="project-source-meta"><strong>Run locally:</strong> Configure environment and database; npm install; npm run dev</p>
+              <div class="architecture-line" aria-label="Academix architecture">Next.js → MongoDB / Mongoose → notification integrations</div><div class="project-tags"><span>Next.js</span><span>TypeScript</span><span>MongoDB</span><span>Attendance</span><span>Fees</span><span>Multi-site</span></div>
             </div>
             <div class="project-footer"><p>The account and plan surfaces support a SaaS direction. Automated billing and broader tenant-isolation work should be checked against the current project roadmap rather than assumed complete.</p><div class="project-links"><a href="/products/academix/">Overview &amp; architecture</a><a href="https://github.com/savisaluwadana/student-management-system-saas" target="_blank" rel="noreferrer">View repository ↗</a></div></div>
           </article>
@@ -431,11 +431,11 @@
               <p class="project-type">Evidence-backed research + MCP</p>
               <h3><a class="project-title-link" href="/products/pain-intelligence/">Pain Intelligence Lab</a></h3>
               <p>An early community research project for exploring recurring needs using source-linked evidence. The current repository provides a local Next.js and Rust web app and a separate desktop app.</p>
-              <div class="architecture-line" aria-label="Pain Intelligence Lab architecture">Next.js dashboard → Rust API → PostgreSQL; separate desktop app</div><div class="project-tags"><span>Next.js</span><span>Rust</span><span>PostgreSQL</span><span>Docker</span><span>Desktop</span><span>MIT</span></div><p class="project-source-meta"><strong>Licence:</strong> MIT</p><p class="project-source-meta"><strong>Run locally:</strong> Configure .env from example; docker compose up --build -d --wait</p>
+              <div class="architecture-line" aria-label="Pain Intelligence Lab architecture">Next.js dashboard → Rust API → PostgreSQL; separate desktop app</div><div class="project-tags"><span>Next.js</span><span>Rust</span><span>PostgreSQL</span><span>Docker</span><span>Desktop</span><span>MIT</span></div>
             </div>
             <div class="project-footer"><p>The repository currently describes an early community alpha for local use. The web app and desktop app have different capabilities; source content retains third-party data-use restrictions.</p><div class="project-links"><a href="/products/pain-intelligence/">Overview &amp; architecture</a><a href="https://github.com/savisaluwadana/Pain-Point-Analyzer" target="_blank" rel="noreferrer">View repository ↗</a></div></div>
           </article>
-<div class="project-group-label reveal"><span>Other products</span><strong>Projects without a confirmed public source repository.</strong></div>
+<div class="project-group-label reveal"><span>Other products</span></div>
           <article class="project-card project-card--product project-card--other reveal" id="blu">
             <div class="project-topline"><span>08</span><span>Other product</span></div>
             <div class="project-body">
