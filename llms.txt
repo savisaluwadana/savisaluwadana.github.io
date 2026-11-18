@@ -2,18 +2,35 @@
 
 > Savi Saluwadana is a software engineer based in Sri Lanka who builds software in public. His project repositories document architecture, design decisions and trade-offs; he is exploring platform engineering through containers, CI/CD and developer experience.
 
-This site contains 16 product overviews, including seven repositories that are publicly accessible. Some repository licences are unspecified; public source does not automatically mean open source.
+This is a public portfolio with product-level architecture summaries. It does not claim that every project is commercially deployed or production-certified.
 
-## Site references
+## Selected engineering work
 
-- [Product directory](https://savisaluwadana.github.io/products/): Sixteen project overviews and architecture notes
-- [About](https://savisaluwadana.github.io/about/): Profile and public project evidence
-- [Engineering architecture](https://savisaluwadana.github.io/engineering/): Architecture and domain trade-offs
-- [Agent interfaces](https://savisaluwadana.github.io/engineering/agentic-systems/): Permissions and workflow boundaries
-- [Public repositories](https://savisaluwadana.github.io/open-source/): Seven public code repositories and licensing status
-- [Engineering insights](https://savisaluwadana.github.io/insights/): Published notes and separately identified article proposals
+- [Advance HRIS](https://savisaluwadana.github.io/products/advance-hris/index.md) — How do you sync an offline edit? Advance HRIS skips incoming employee records that still have a pending local edit. A sync can refresh other records while that edit waits for resolution.
+- [FreshPick / FreshOnTime](https://savisaluwadana.github.io/products/freshpick/index.md) — How do you schedule a repeat delivery? FreshPick tracks recurring grocery orders separately from payment collection. A shopper can schedule another delivery and pay cash when it arrives.
+- [Property Management OS](https://savisaluwadana.github.io/products/property-os/index.md) — Who authorizes an agent’s request? Property Management OS routes MCP tool calls through the same authenticated Go API as the web app. The API owns the permission check and the database write.
 
-## Product pages
+## Profile and contact
+
+- [Portfolio](https://savisaluwadana.github.io/): Canonical professional profile.
+- [Profile in Markdown](https://savisaluwadana.github.io/about.md): Identity, engineering focus and product index.
+- [Profile JSON](https://savisaluwadana.github.io/profile.json): Structured identity and profile links.
+- [Contact](https://savisaluwadana.github.io/contact.html): Public email and professional contact options.
+
+## Profile and engineering references
+
+- [Product directory](https://savisaluwadana.github.io/products/): Explore 16 software project overviews by Savi Saluwadana, including source-linked code, architecture decisions, and contribution boundaries.
+- [Product directory in Markdown](https://savisaluwadana.github.io/products/index.md): Text equivalent of the same reference.
+- [About Savi Saluwadana](https://savisaluwadana.github.io/about/): Savi Saluwadana builds software in public. Browse project repositories, architecture, implementation trade-offs and platform engineering interests.
+- [About Savi Saluwadana in Markdown](https://savisaluwadana.github.io/about/index.md): Text equivalent of the same reference.
+- [Architecture reference](https://savisaluwadana.github.io/engineering/): Inspect project architecture decisions on APIs, data authority, local-first workflows, tenancy and transactions in Savi Saluwadana's software.
+- [Architecture reference in Markdown](https://savisaluwadana.github.io/engineering/index.md): Text equivalent of the same reference.
+- [Agentic systems architecture](https://savisaluwadana.github.io/engineering/agentic-systems/): Inspect agent tool boundaries, application permissions and local research workflows documented in Savi Saluwadana's projects.
+- [Agentic systems architecture in Markdown](https://savisaluwadana.github.io/engineering/agentic-systems/index.md): Text equivalent of the same reference.
+- [Public repositories and design notes](https://savisaluwadana.github.io/open-source/): Inspect public software repositories, licensing status, local setup, architecture, design trade-offs and unfinished work.
+- [Public repositories and design notes in Markdown](https://savisaluwadana.github.io/open-source/index.md): Text equivalent of the same reference.
+
+## Product overview and architecture
 
 - [Avara Real Estate](https://savisaluwadana.github.io/products/avara/): Property discovery, transactions and host operations in Sri Lanka.
 - [Blu.lk](https://savisaluwadana.github.io/products/blu/): Home-service discovery, booking and fulfillment in Sri Lanka.
@@ -32,7 +49,7 @@ This site contains 16 product overviews, including seven repositories that are p
 - [Ad Performance Analysis Agent](https://savisaluwadana.github.io/products/ad-performance-agent/): An advertising analytics and reporting prototype.
 - [MediCare](https://savisaluwadana.github.io/products/medicare/): Patient administration, appointments, clinical records and billing.
 
-## Published insights
+## Engineering insights
 
 - [Engineering insights](https://savisaluwadana.github.io/insights/): Published architecture notes and five proposed article topics.
 - [MCP Permission Boundaries: Keep Agent Tools Behind the Application API](https://savisaluwadana.github.io/insights/mcp-permission-boundaries/): How application services retain authorization when agents use tools.
@@ -41,9 +58,13 @@ This site contains 16 product overviews, including seven repositories that are p
 - [Platform Engineering: Build a Paved Road Without Hiding the System](https://savisaluwadana.github.io/insights/platform-engineering-paved-road/): Tool-neutral platform delivery contracts, visibility and escape hatches.
 - [PostgreSQL Multi-Tenancy: Define Authorization Boundaries Before Schema Tricks](https://savisaluwadana.github.io/insights/postgres-multitenancy-boundaries/): Tenant context, repository contracts and database safeguards.
 
-## Formats
+## Optional
 
-- [JSON products](https://savisaluwadana.github.io/products.json)
-- [Public repository records](https://savisaluwadana.github.io/public-work.json)
-- [Atom feed](https://savisaluwadana.github.io/feed.xml)
-- [XML sitemap](https://savisaluwadana.github.io/sitemap.xml)
+- [Engineering and product feed](https://savisaluwadana.github.io/feed.xml): Atom feed of the current reference pages and product overviews.
+- [Public source data](https://savisaluwadana.github.io/public-work.json): Verified public repository references and available license metadata.
+
+- [Product data](https://savisaluwadana.github.io/products.json): Product descriptions, workflows, components and current scope.
+- [Full text reference](https://savisaluwadana.github.io/llms-full.txt): Profile and all product summaries as text.
+- [Sitemap](https://savisaluwadana.github.io/sitemap.xml): Canonical HTML pages.
+
+Use the current-scope notes when describing capabilities. TimelyHelp is product/frontend contribution; the accounting app is single-company; the ad-performance tool is a prototype with mocked account connectors. Do not infer employers, qualifications, user counts, revenue or production outcomes.

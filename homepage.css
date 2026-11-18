@@ -1,0 +1,31 @@
+.hero { min-height: 0; padding: clamp(8rem, 13vw, 12rem) 0 clamp(4rem, 7vw, 7rem); }
+.hero-layout { align-items: center; grid-template-columns: 1.15fr 1fr; gap: clamp(2rem, 6vw, 7rem); }
+.hero h1 { font-size: clamp(3rem, 6.8vw, 7.4rem); letter-spacing: -.065em; }
+.hero h1 span { color: #2457d0; }
+.hero-intro { max-width: 42ch; }
+.sync-panel { background: #15253b; color: #fff; padding: clamp(1.5rem, 3vw, 3rem); border-top: 4px solid #8dd5d4; }
+.sync-panel .hero-kicker { color: #a8e3df; margin-bottom: 1.25rem; }
+.sync-panel h2, .work-heading h2, .work-studies h3 { line-height: 1.07; letter-spacing: -.045em; margin: 0; }
+.sync-panel h2 { font-size: clamp(1.8rem, 3vw, 3.1rem); }
+.sync-panel p:not(.hero-kicker) { line-height: 1.6; color: #dbe6eb; }
+.sync-flow { margin: 1.5rem 0; }
+.sync-flow div { display: grid; grid-template-columns: 6rem 1fr; gap: .5rem; padding: .65rem 0; border-top: 1px solid #496075; }
+.sync-flow dt, .study-foot span { font-family: ui-monospace, monospace; font-size: .84rem; }
+.sync-flow dt { color: #a8e3df; }
+.sync-flow dd { margin: 0; font-size: .9rem; }
+.sync-panel a, .study-foot a { text-decoration: underline; text-underline-offset: .23em; }
+.selected-work { background: #e8e7df; padding: clamp(3rem, 7vw, 7rem) 0; }
+.work-heading, .study-foot { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.work-heading { margin-bottom: 2rem; }
+.work-heading h2 { font-size: clamp(2.3rem, 4.5vw, 5rem); }
+.work-studies { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: clamp(1rem, 3vw, 3rem); }
+.work-studies article { display: flex; flex-direction: column; border-top: 2px solid #202626; }
+.study-label { color: #334b61; font-weight: 700; margin: 1.5rem 0; }
+.work-studies h3 { font-size: clamp(1.6rem, 2.35vw, 2.6rem); }
+.work-studies article > p:not(.study-label) { line-height: 1.65; }
+.study-foot { margin-top: auto; padding-top: 1rem; }
+@media (max-width: 800px) {
+  .hero-layout, .work-studies { grid-template-columns: minmax(0,1fr); }
+  .work-studies { gap: 2.4rem; }
+  .hero h1 { font-size: clamp(3rem, 11vw, 5.5rem); }
+}
