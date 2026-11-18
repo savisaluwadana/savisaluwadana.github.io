@@ -3,8 +3,9 @@
   "@type": "ProfilePage",
   "@id": "https://savisaluwadana.github.io/#profile",
   "url": "https://savisaluwadana.github.io/",
-  "name": "Savi Saluwadana — Building Software in Public",
-  "dateModified": "2026-11-12T00:00:00+05:30",
+  "name": "Savi Saluwadana | Software Engineer in Sri Lanka",
+  "description": "Explore Savi Saluwadana’s engineering work on offline sync in Go, recurring grocery deliveries, and permissions for AI agents, with architecture notes and public source code.",
+  "dateModified": "2026-11-18T00:00:00+05:30",
   "mainEntity": {
     "@type": "Person",
     "@id": "https://savisaluwadana.github.io/#person",
@@ -70,13 +71,8 @@
     },
     {
       "@type": "WebPage",
-      "name": "Public source and open-source interests",
+      "name": "Public repositories and design notes",
       "url": "https://savisaluwadana.github.io/open-source/"
-    },
-    {
-      "@type": "WebPage",
-      "name": "Engineering insights",
-      "url": "https://savisaluwadana.github.io/insights/"
     },
     {
       "@type": "WebPage",

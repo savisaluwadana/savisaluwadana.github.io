@@ -45,7 +45,7 @@ for (const [file, html] of cache) {
     assert.ok(Array.isArray(graph), `${file}: invalid schema graph`);
     for (const node of graph.filter(node => node.dateModified !== undefined)) {
       assert.equal(typeof node.dateModified, 'string', `${file}: dateModified must be a string`);
-      assert.match(node.dateModified, /^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:Z|[+-]\\d{2}:\\d{2})$/, `${file}: dateModified must be an ISO-8601 DateTime with timezone`);
+      assert.match(node.dateModified, /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})$/, `${file}: dateModified must be an ISO-8601 DateTime with timezone`);
     }
     const identity = graph.find(node => node['@type'] === 'Person');
     assert.deepEqual(identity, person, `${file}: inconsistent professional identity`);
@@ -80,8 +80,6 @@ for (const file of pages.filter(p => p !== 'index.html')) {
 }
 const home = cache.get('index.html');
 for (const p of products) {
-  assert.ok(home.includes(`id="${p.id}"`), `Product ${p.id} is not in static HTML`);
-  assert.ok(home.includes(`href="/products/${p.id}/"`), `Missing product detail link: ${p.id}`);
   const html = cache.get(`products/${p.id}/index.html`);
   assert.ok(html.includes('<svg ') && html.includes('<table '), `${p.id}: missing accessible architecture`);
   assert.ok(html.includes(p.boundary.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll("'", '&#39;')), `${p.id}: missing current-scope note`);
@@ -99,7 +97,7 @@ for (const route of entryPaths) {
 const aboutGraph = JSON.parse(cache.get('about/index.html').match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'];
 assert.equal(aboutGraph.find(n => n['@type'] === 'ProfilePage').mainEntity['@id'], person['@id'], 'About page must identify the canonical Person');
 const engineeringGraph = JSON.parse(cache.get('engineering/index.html').match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'];
-assert.equal(engineeringGraph.find(n => n['@type'] === 'CreativeWork').author['@id'], person['@id'], 'Architecture reference must identify its author');
+assert.equal(engineeringGraph.find(n => ['CreativeWork', 'Article'].includes(n['@type'])).author['@id'], person['@id'], 'Architecture reference must identify its author');
 const publicWork = JSON.parse(await readFile(path.join(root, 'data/public-work.json'), 'utf8'));
 const publicData = JSON.parse(await readFile(path.join(root, 'public-work.json'), 'utf8'));
 assert.deepEqual(publicData.repositories, publicWork.repositories, 'Public source data must match verified records');
@@ -123,7 +121,9 @@ for (const entry of entries) {
   assert.ok(/<updated>\d{4}-\d{2}-\d{2}T00:00:00Z<\/updated>/.test(entry), 'Feed entry requires a source review date');
   assert.ok(/<summary type="text">[\s\S]+?<\/summary>/.test(entry), 'Feed entry requires a summary');
 }
-assert.ok(home.includes('id="tech-stack"'), 'Technology stack must be crawlable without JavaScript');
+const selected = JSON.parse(home.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'].find(node => node['@type'] === 'ItemList');
+assert.deepEqual(selected.itemListElement.map(item => new URL(item.url).pathname), ['/products/advance-hris/', '/products/freshpick/', '/products/property-os/']);
+for (const item of selected.itemListElement) assert.ok(home.includes(`href="${new URL(item.url).pathname}"`) && home.includes(item.description), 'Featured work must match the static HTML');
 assert.ok(!(await readFile(path.join(root, 'app.js'), 'utf8')).includes('insertAdjacentHTML'), 'Product content should not be injected at runtime');
 assert.equal(await readFile(path.join(root, 'google062719a40465c49b.html'), 'utf8'), 'google-site-verification: google062719a40465c49b.html\n', 'Search Console verification changed');
 const robots = await readFile(path.join(root, 'robots.txt'), 'utf8');
@@ -135,4 +135,4 @@ assert.deepEqual(profile.mainEntity, person, 'Agent profile must match HTML iden
 const data = JSON.parse(await readFile(path.join(root, 'products.json'), 'utf8'));
 assert.equal(data.products.length, products.length, 'Agent product data must match homepage');
 assert.deepEqual((await readFile(path.join(root, 'sitemap.txt'), 'utf8')).trim().split('\n'), sitemapUrls, 'XML and text sitemap disagree');
-console.log(`Passed: ${pages.length} crawl-reachable pages, ${products.length} static product cards, ${links} internal references, ${publicWork.repositories.length} public sources, ${entries.length} feed entries, unique metadata, JSON-LD, accessible diagrams, agent data and sitemap consistency.`);
+console.log(`Passed: ${pages.length} crawl-reachable pages, ${products.length} product detail pages, ${links} internal references, ${publicWork.repositories.length} public sources, ${entries.length} feed entries, unique metadata, JSON-LD, accessible diagrams, agent data and sitemap consistency.`);

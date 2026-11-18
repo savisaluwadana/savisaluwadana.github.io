@@ -58,38 +58,38 @@ const schema = graph => `<script type="application/ld+json">\n${JSON.stringify({
 const write = async (name, content) => { await mkdir(path.dirname(path.join(root, name)), { recursive: true }); await writeFile(path.join(root, name), content); };
 const replaceRegion = (html, name, content) => html.replace(new RegExp(`<!-- ${name}:START -->[\\s\\S]*?<!-- ${name}:END -->`), `<!-- ${name}:START -->\n${content}\n          <!-- ${name}:END -->`);
 const tags = p => p.tags.map(tag => `<span>${esc(tag)}</span>`).join('');
-const publicRepoById = new Map(publicWork.repositories.map(repo => [repo.id, repo]));
-const publicProjects = products.filter(p => publicRepoById.has(p.id));
-const otherProjects = products.filter(p => !publicRepoById.has(p.id));
-const orderedProjects = [...publicProjects, ...otherProjects];
-const cards = orderedProjects.map((p, i) => {
-  const repo = publicRepoById.get(p.id);
-  const groupHeading = i === 0
-    ? '<div class="project-group-label reveal"><span>Public repositories</span></div>'
-    : i === publicProjects.length
-      ? '<div class="project-group-label reveal"><span>Other products</span></div>'
-      : '';
-  const links = `<a href="/products/${esc(p.id)}/">Overview &amp; architecture</a>${repo ? `<a href="${esc(repo.url)}" target="_blank" rel="noreferrer">View repository ↗</a>` : p.href ? `<a href="${esc(p.href)}" target="_blank" rel="noreferrer">${esc(p.linkLabel)}</a>` : ''}`;
-  return `${groupHeading}
-          <article class="${esc(p.classes)}${repo ? '' : ' project-card--other'} reveal" id="${esc(p.id)}">
-            <div class="project-topline"><span>${String(i + 1).padStart(2, '0')}</span><span>${esc(repo ? 'Public source' : 'Other product')}</span></div>
-            <div class="project-body">
-              <p class="project-type">${esc(p.type)}</p>
-              <h3><a class="project-title-link" href="/products/${esc(p.id)}/">${esc(p.name)}</a></h3>
-              <p>${esc(repo ? p.description : p.scope)}</p>
-              ${repo ? `<div class="architecture-line" aria-label="${esc(p.name)} architecture">${esc(p.architecture)}</div><div class="project-tags">${tags(p)}</div>` : ''}
-            </div>
-            <div class="project-footer">${repo ? `<p>${esc(p.boundary)}</p>` : ''}<div class="project-links">${links}</div></div>
-          </article>`;
-}).join('\n');
+const featured = [
+  { id: 'advance-hris', stack: 'Go / Wails', question: 'How do you sync an offline edit?', answer: 'Advance HRIS skips incoming employee records that still have a pending local edit. A sync can refresh other records while that edit waits for resolution.' },
+  { id: 'freshpick', stack: 'Next.js / PostgreSQL', question: 'How do you schedule a repeat delivery?', answer: 'FreshPick tracks recurring grocery orders separately from payment collection. A shopper can schedule another delivery and pay cash when it arrives.' },
+  { id: 'property-os', stack: 'Go / MCP', question: 'Who authorizes an agent’s request?', answer: 'Property Management OS routes MCP tool calls through the same authenticated Go API as the web app. The API owns the permission check and the database write.' }
+].map(study => ({ ...study, product: products.find(p => p.id === study.id) }));
+
+const pageTitle = 'Savi Saluwadana | Software Engineer in Sri Lanka';
+const pageDescription = 'Explore Savi Saluwadana’s engineering work on offline sync in Go, recurring grocery deliveries, and permissions for AI agents, with architecture notes and public source code.';
+const homeUpdated = '2026-11-18';
+const selectedList = {
+  '@type': 'ItemList', '@id': base + '/#work', name: 'Selected work',
+  itemListElement: featured.map(({ product, answer }, index) => ({
+    '@type': 'ListItem', position: index + 1, name: product.name, url: url(product), description: answer
+  }))
+};
+let home = await readFile(path.join(root, 'index.html'), 'utf8');
+const cards = featured.map(({ product, stack, question, answer }) => `
+          <article id="${esc(product.id)}">
+            <p class="study-label">${esc(product.name)}</p>
+            <h3><a href="/products/${esc(product.id)}/">${esc(question)}</a></h3>
+            <p>${esc(answer)}</p>
+            <div class="study-foot"><span>${esc(stack)}</span><a href="/products/${esc(product.id)}/" aria-label="Read the ${esc(product.name)} architecture">Architecture ↗</a></div>
+          </article>`).join('\n');
 home = replaceRegion(home, 'PRODUCTS', cards);
-home = replaceRegion(home, 'PROOF', orderedProjects.map(p => `          <a href="#${esc(p.id)}">${esc(p.name)}</a>`).join('\n'));
-home = replaceRegion(home, 'SCHEMA', schema([website, person, { '@type': 'ProfilePage', '@id': `${base}/#profile`, url: `${base}/`, name: 'Savi Saluwadana — Building Software in Public', mainEntity: { '@id': person['@id'] }, isPartOf: { '@id': website['@id'] }, hasPart: { '@id': list['@id'] }, dateModified: schemaModified, inLanguage: 'en' }, list]));
-if (!home.includes('rel="describedby"')) home = home.replace('<link rel="canonical"', '<link rel="describedby" type="text/plain" href="/llms.txt">\n  <link rel="alternate" type="application/json" href="/profile.json" title="Public profile data">\n  <link rel="alternate" type="text/markdown" href="/about.md" title="Profile in Markdown">\n  <link rel="canonical"');
-home = home.replace(/<title>.*?<\/title>/, '<title>Savi Saluwadana | Building Software in Public</title>');
-home = home.replace(/<meta name="description" content="[^"]*">/, '<meta name="description" content="Savi Saluwadana builds software in public. Explore repositories, architecture, design decisions, project trade-offs and platform engineering interests.">');
-home = home.replace('          <p>I’m based in Sri Lanka and work across', '          <p>I’m Savi Saluwadana, a software and product engineer based in Sri Lanka. I work across');
-if (!home.includes('type="application/atom+xml"')) home = home.replace('<link rel="canonical"', '<link rel="alternate" type="application/atom+xml" href="/feed.xml" title="Savi Saluwadana — Engineering &amp; products">\n  <link rel="canonical"');
+home = replaceRegion(home, 'SCHEMA', schema([website, person, {
+  '@type': 'ProfilePage', '@id': base + '/#profile', url: base + '/', name: pageTitle, description: pageDescription,
+  mainEntity: { '@id': person['@id'] }, isPartOf: { '@id': website['@id'] }, hasPart: { '@id': selectedList['@id'] },
+  dateModified: homeUpdated + 'T00:00:00+05:30', inLanguage: 'en'
+}, selectedList]));
+home = home.replace(/<title>.*?<\/title>/, `<title>${esc(pageTitle)}</title>`)
+  .replace(/(<meta (?:name|property)="(?:og:title|twitter:title)" content=")[^"]*/g, (_, prefix) => prefix + esc(pageTitle))
+  .replace(/(<meta (?:name|property)="(?:description|og:description|twitter:description)" content=")[^"]*/g, (_, prefix) => prefix + esc(pageDescription));
 await write('index.html', home);
 
 // Contact shares the same canonical identity as the generated portfolio pages.
@@ -196,9 +196,11 @@ await write('about.md', markdown);
 const publicProducts = products.map(({ rows, edges, classes, linkLabel, ...p }) => ({ ...p, url: url(p), markdown: `${url(p)}index.md` }));
 await write('products.json', JSON.stringify({ name: 'Products and engineering work by Savi Saluwadana', website: `${base}/`, updated, products: publicProducts }, null, 2) + '\n');
 await write('public-work.json', JSON.stringify({ ...publicWork, name: 'Public repository references in Savi Saluwadana’s portfolio', url: `${base}/open-source/` }, null, 2) + '\n');
-await write('profile.json', JSON.stringify({ '@context': 'https://schema.org', '@type': 'ProfilePage', '@id': `${base}/#profile`, url: `${base}/`, name: 'Savi Saluwadana — Building Software in Public', dateModified: schemaModified, mainEntity: person, hasPart: [...references.map(p => ({ '@type': 'WebPage', name: p.name, url: base + p.path })), ...products.map(p => ({ '@type': 'WebPage', name: p.name, url: url(p) }))] }, null, 2) + '\n');
+await write('profile.json', JSON.stringify({ '@context': 'https://schema.org', '@type': 'ProfilePage', '@id': `${base}/#profile`, url: `${base}/`, name: pageTitle, description: pageDescription, dateModified: homeUpdated + 'T00:00:00+05:30', mainEntity: person, hasPart: [...references.map(p => ({ '@type': 'WebPage', name: p.name, url: base + p.path })), ...products.map(p => ({ '@type': 'WebPage', name: p.name, url: url(p) }))] }, null, 2) + '\n');
 await write('llms.txt', `# Savi Saluwadana\n\n> ${person.description}\n\nThis is a public portfolio with product-level architecture summaries. It does not claim that every project is commercially deployed or production-certified.\n\n## Profile and contact\n\n- [Portfolio](${base}/): Canonical professional profile.\n- [Profile in Markdown](${base}/about.md): Identity, engineering focus and product index.\n- [Profile JSON](${base}/profile.json): Structured identity and profile links.\n- [Contact](${base}/contact.html): Public email and professional contact options.\n\n## Product overview and architecture\n\n${products.map(p => `- [${p.name}](${url(p)}): ${p.scope}`).join('\n')}\n\n## Optional\n\n- [Product data](${base}/products.json): Product descriptions, workflows, components and current scope.\n- [Full text reference](${base}/llms-full.txt): Profile and all product summaries as text.\n- [Sitemap](${base}/sitemap.xml): Canonical HTML pages.\n\nUse the current-scope notes when describing capabilities. TimelyHelp is product/frontend contribution; the accounting app is single-company; the ad-performance tool is a prototype with mocked account connectors. Do not infer employers, qualifications, user counts, revenue or production outcomes.\n`);
+const featuredMarkdown = featured.map(({ product, question, answer }) => `- [${product.name}](${url(product)}index.md) — ${question} ${answer}`).join('\n');
 let agentIndex = await readFile(path.join(root, 'llms.txt'), 'utf8');
+agentIndex = agentIndex.replace('## Profile and contact', `## Selected engineering work\n\n${featuredMarkdown}\n\n## Profile and contact`);
 agentIndex = agentIndex.replace('## Product overview and architecture', `## Profile and engineering references\n\n${references.map(p => `- [${p.name}](${base}${p.path}): ${p.description}\n- [${p.name} in Markdown](${base}${p.path}index.md): Text equivalent of the same reference.`).join('\n')}\n\n## Product overview and architecture`);
 agentIndex = agentIndex.replace('## Optional', `## Engineering insights\n\n${insightPages.map(p => `- [${p.name}](${base}${p.path}): ${p.description}`).join('\n')}\n\n## Optional`);
 agentIndex = agentIndex.replace('## Optional', `## Optional\n\n- [Engineering and product feed](${base}/feed.xml): Atom feed of the current reference pages and product overviews.\n- [Public source data](${base}/public-work.json): Verified public repository references and available license metadata.`);
@@ -208,6 +210,6 @@ const feedItems = [...references.map(p => ({ name: p.name, url: base + p.path, d
 // Source review dates are date-granularity and normalized to UTC midnight.
 await write('feed.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">\n  <id>${base}/feed.xml</id><title>Savi Saluwadana — Engineering and products</title>\n  <subtitle>Product architecture, agentic systems and public engineering references.</subtitle>\n  <updated>${updated}T00:00:00Z</updated>\n  <author><name>Savi Saluwadana</name><uri>${base}/about/</uri></author>\n  <link rel="self" type="application/atom+xml" href="${base}/feed.xml"/>\n  <link rel="alternate" type="text/html" href="${base}/"/>\n${feedItems.map(item => `  <entry><id>${esc(item.url)}</id><title>${esc(item.name)}</title><link rel="alternate" type="text/html" href="${esc(item.url)}"/><updated>${item.reviewed}T00:00:00Z</updated><summary type="text">${esc(item.description)}</summary></entry>`).join('\n')}\n</feed>\n`);
 const paths = ['/', '/contact.html', ...entryPaths, ...products.map(p => `/products/${p.id}/`)];
-await write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${paths.map(p => `  <url><loc>${base}${p}</loc><lastmod>${updated}</lastmod></url>`).join('\n')}\n</urlset>\n`);
+await write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${paths.map(p => `  <url><loc>${base}${p}</loc><lastmod>${p === '/' ? homeUpdated : updated}</lastmod></url>`).join('\n')}\n</urlset>\n`);
 await write('sitemap.txt', paths.map(p => base + p).join('\n') + '\n');
 console.log(`Built ${products.length} static product pages, structured data, Markdown, agent indexes and ${paths.length} sitemap entries.`);
