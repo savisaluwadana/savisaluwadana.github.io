@@ -65,9 +65,9 @@ const orderedProjects = [...publicProjects, ...otherProjects];
 const cards = orderedProjects.map((p, i) => {
   const repo = publicRepoById.get(p.id);
   const groupHeading = i === 0
-    ? '<div class="project-group-label reveal"><span>Public repositories</span><strong>Read the code, setup instructions and licence terms before reusing it.</strong></div>'
+    ? '<div class="project-group-label reveal"><span>Public repositories</span></div>'
     : i === publicProjects.length
-      ? '<div class="project-group-label reveal"><span>Other products</span><strong>Projects without a confirmed public source repository.</strong></div>'
+      ? '<div class="project-group-label reveal"><span>Other products</span></div>'
       : '';
   const links = `<a href="/products/${esc(p.id)}/">Overview &amp; architecture</a>${repo ? `<a href="${esc(repo.url)}" target="_blank" rel="noreferrer">View repository ↗</a>` : p.href ? `<a href="${esc(p.href)}" target="_blank" rel="noreferrer">${esc(p.linkLabel)}</a>` : ''}`;
   return `${groupHeading}
@@ -77,7 +77,7 @@ const cards = orderedProjects.map((p, i) => {
               <p class="project-type">${esc(p.type)}</p>
               <h3><a class="project-title-link" href="/products/${esc(p.id)}/">${esc(p.name)}</a></h3>
               <p>${esc(repo ? p.description : p.scope)}</p>
-              ${repo ? `<div class="architecture-line" aria-label="${esc(p.name)} architecture">${esc(p.architecture)}</div><div class="project-tags">${tags(p)}</div><p class="project-source-meta"><strong>Licence:</strong> ${esc(p.licenseLabel || 'Not identified')}</p><p class="project-source-meta"><strong>Run locally:</strong> ${esc(p.run || 'See repository README')}</p>` : ''}
+              ${repo ? `<div class="architecture-line" aria-label="${esc(p.name)} architecture">${esc(p.architecture)}</div><div class="project-tags">${tags(p)}</div>` : ''}
             </div>
             <div class="project-footer">${repo ? `<p>${esc(p.boundary)}</p>` : ''}<div class="project-links">${links}</div></div>
           </article>`;
