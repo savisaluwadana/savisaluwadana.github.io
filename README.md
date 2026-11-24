@@ -4,7 +4,7 @@ Static GitHub Pages portfolio: public source, project architecture, design decis
 
 Visit [Savi Saluwadana’s portfolio](https://savisaluwadana.github.io/), [engineering profile](https://savisaluwadana.github.io/about/), [agentic systems architecture](https://savisaluwadana.github.io/engineering/agentic-systems/) and [public source index](https://savisaluwadana.github.io/open-source/).
 
-The homepage uses a neutral editorial design, independent project highlights, and a clearly labelled research lab. Existing source-backed case studies and permanent product pages are preserved. Product cards link to permanent overview pages with workflows, source-grounded SVG diagrams, component responsibilities and current-scope notes. The site currently contains 15 product pages across ten industry categories.
+The homepage uses a neutral editorial design, real project highlights, and a separate, clearly labelled research lab. Proposed projects are not featured in the selected work grid. Existing source-backed case studies and permanent product pages are preserved. Product cards link to permanent overview pages with workflows, source-grounded SVG diagrams, component responsibilities and current-scope notes. The site currently contains 15 product pages across ten industry categories.
 
 ## Develop and verify
 

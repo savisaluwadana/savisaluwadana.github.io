@@ -83,6 +83,10 @@ for (const file of pages.filter(p => p !== 'index.html')) {
   assert.ok(reachable.has(file), `${file}: not reachable from homepage links`);
 }
 const home = cache.get('index.html');
+const featuredGrid = home.match(/<section class="section editorial-selected"[\s\S]*?<\/section>/)?.[0];
+assert.ok(featuredGrid, 'Missing selected project grid');
+assert.ok(!/Design concept|Research direction|<h3>Relay<\/h3>|<h3>Systems Lab<\/h3>/.test(featuredGrid), 'Unbuilt concepts must not be presented as selected projects');
+for (const id of ['avara', 'pain-intelligence']) assert.ok(featuredGrid.includes(`href="/products/${id}/"`), `Missing selected project: ${id}`);
 for (const p of products) {
   const html = cache.get(`products/${p.id}/index.html`);
   assert.ok(html.includes('<svg ') && html.includes('<table '), `${p.id}: missing accessible architecture`);

@@ -54,3 +54,7 @@
 @media(max-width:850px){.writing-channels{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:390px){.writing-channels{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.writing-channel{transition:none}}
+
+.editorial-project-body .editorial-project-industry{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin:0 0 .55rem}
+.editorial-project-stack{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 1.15rem}
+.editorial-project-stack span{border:1px solid var(--border);color:var(--muted);border-radius:5px;padding:3px 8px;font-size:.72rem}
