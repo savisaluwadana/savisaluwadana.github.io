@@ -1,6 +1,6 @@
 # Savi Saluwadana
 
-Savi Saluwadana is a software engineer based in Sri Lanka who builds software in public. His project repositories document architecture, design decisions and trade-offs; he is exploring platform engineering through containers, CI/CD and developer experience.
+Savi Saluwadana is a software engineer based in Sri Lanka who builds software products and documents system architecture, backend engineering, distributed systems and applied AI. His portfolio covers cross-industry projects, technical writing and cloud-native platform engineering interests.
 
 Website: https://savisaluwadana.github.io/
 GitHub: https://github.com/savisaluwadana
@@ -51,7 +51,7 @@ Email: savisaluwadana@gmail.com
 ## Profile and architecture references
 
 - [Product directory](https://savisaluwadana.github.io/products/): Explore 15 software project overviews across 10 industry categories, including architecture decisions, source references and contribution boundaries.
-- [About Savi Saluwadana](https://savisaluwadana.github.io/about/): Savi Saluwadana builds software in public. Browse project repositories, architecture, implementation trade-offs and platform engineering interests.
+- [About Savi Saluwadana](https://savisaluwadana.github.io/about/): Professional biography of Savi Saluwadana, a Sri Lankan software engineer. Explore his experience, education, projects, research and technical writing.
 - [Architecture reference](https://savisaluwadana.github.io/engineering/): Inspect project architecture decisions on APIs, data authority, local-first workflows, tenancy and transactions in Savi Saluwadana's software.
 - [Agentic systems architecture](https://savisaluwadana.github.io/engineering/agentic-systems/): Inspect agent tool boundaries, application permissions and local research workflows documented in Savi Saluwadana's projects.
 - [Public repositories and design notes](https://savisaluwadana.github.io/open-source/): Inspect public software repositories, licensing status, local setup, architecture, design trade-offs and unfinished work.

@@ -89,12 +89,69 @@
   "pages": [
     {
       "path": "/about/",
-      "title": "About Savi Saluwadana | Software Built in Public",
+      "title": "About Savi Saluwadana | Professional Biography",
       "heading": "Savi Saluwadana",
-      "label": "About / Software & product engineer",
-      "description": "Savi Saluwadana builds software in public. Browse project repositories, architecture, implementation trade-offs and platform engineering interests.",
-      "intro": "I build software in public from Sri Lanka. My repositories and project notes show the architecture, implementation choices and unfinished parts of that work. I'm also exploring platform engineering through delivery and developer experience.",
+      "label": "About / Professional biography",
+      "description": "Professional biography of Savi Saluwadana, a Sri Lankan software engineer. Explore his experience, education, projects, research and technical writing.",
+      "intro": "Savi Saluwadana is a software engineer based in Sri Lanka who builds software products and documents system architecture, backend engineering, distributed systems and applied AI. His portfolio covers cross-industry projects, technical writing and cloud-native platform engineering interests.",
       "sections": [
+        {
+          "id": "experience",
+          "title": "Professional experience and current focus",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "My professional focus is software engineering and product development: designing application boundaries, building reliable APIs, modelling data and connecting software to real business workflows. Platform engineering and developer experience are part of that broader focus, not my sole professional identity."
+            },
+            {
+              "type": "p",
+              "text": "My previous internship at WSO2 concluded in November 2026. It is past experience, not my current employment. This website is my independent professional portfolio and does not list a current employer."
+            },
+            {
+              "type": "p",
+              "text": "My portfolio work includes independent software projects, technical writing and engineering experiments. See the [project directory](/products/) and [architecture reference](/engineering/) for concrete examples and the scope of each contribution."
+            }
+          ]
+        },
+        {
+          "id": "education",
+          "title": "Education and professional qualifications",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "My background combines software engineering studies with business and management accounting studies. This is my own professional summary, reviewed on 24 November 2026; qualification completion and current credential status should be verified with issuing institutions."
+            },
+            {
+              "type": "table",
+              "headers": [
+                "Programme or qualification",
+                "Status"
+              ],
+              "rows": [
+                [
+                  "BEng (Hons) Software Engineering",
+                  "Undergraduate studies through Informatics Institute of Technology (IIT Sri Lanka) and the University of Westminster; degree award is not claimed here."
+                ],
+                [
+                  "CIMA / CGMA professional qualification",
+                  "Passed the Strategic Case Study examination in August 2026. Practical experience requirements remain pending; no chartered membership or designation is claimed."
+                ],
+                [
+                  "AWS Certified Cloud Practitioner",
+                  "Previously earned; current validity and credential link are not asserted here."
+                ],
+                [
+                  "Microsoft Certified: Azure Administrator Associate",
+                  "Previously earned; current validity and credential link are not asserted here."
+                ]
+              ]
+            },
+            {
+              "type": "p",
+              "text": "I am interested in applying engineering to business processes, financial workflows and operational software. [Acme Accounting](/products/acme-accounting/) is an example of a project in that domain."
+            }
+          ]
+        },
         {
           "id": "engineering-focus",
           "title": "Engineering focus, with examples",
@@ -184,8 +241,126 @@
               "text": "The [product directory](/products/) includes 15 projects across ten industries, from real estate and healthcare to finance, education and technology. Each overview explains the users, workflow, architecture and current scope."
             },
             {
+              "type": "table",
+              "headers": [
+                "Selected project",
+                "Engineering focus and scope"
+              ],
+              "rows": [
+                [
+                  "[Saelior](https://saelior.com/)",
+                  "Agentic business platform exploring team coordination, workflows and human review; active product project."
+                ],
+                [
+                  "EventMesh",
+                  "Event discovery and matching system exploring relevant connections, event data and real-time delivery; in development, described on the [homepage](/#selected)."
+                ],
+                [
+                  "[Property Management OS](/products/property-os/)",
+                  "Go backend, PostgreSQL, authenticated MCP interfaces and outbox processing."
+                ],
+                [
+                  "[FreshPick](/products/freshpick/)",
+                  "Grocery commerce, recurring orders and business ordering."
+                ],
+                [
+                  "[Blu](/products/blu/)",
+                  "Home-services marketplace and customer, provider and worker workflows."
+                ],
+                [
+                  "[Advance HRIS](/products/advance-hris/)",
+                  "HR workflows, tenant-scoped access and offline synchronization."
+                ],
+                [
+                  "[Pain Intelligence Lab](/products/pain-intelligence/)",
+                  "Local research application with evidence-linked analysis; community alpha."
+                ]
+              ]
+            },
+            {
               "type": "p",
               "text": "Contribution and maturity vary by project. For example, [TimelyHelp](/products/timelyhelp/) describes my product and frontend work; and the [Ad Performance Analysis Agent](/products/ad-performance-agent/) is a prototype with mocked account connectors. The scope notes make those distinctions explicit."
+            }
+          ]
+        },
+        {
+          "id": "research",
+          "title": "Research, technical writing and experiments",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "My interests include distributed-system reliability, explicit authorization boundaries, durable agentic workflows and practical software architecture. I publish engineering notes rather than presenting untested ideas as measured research results."
+            },
+            {
+              "type": "table",
+              "headers": [
+                "Topic",
+                "Existing material or research direction"
+              ],
+              "rows": [
+                [
+                  "Agent tool authorization",
+                  "[MCP permission boundaries](/insights/mcp-permission-boundaries/) and the [agentic systems walkthrough](/engineering/agentic-systems/)."
+                ],
+                [
+                  "Workflow reliability",
+                  "[Durable agentic workflows](/insights/durable-agentic-workflows/) covers state, retries, idempotency and human approval."
+                ],
+                [
+                  "Backend architecture",
+                  "[Go modular monolith for SaaS](/insights/go-modular-monolith-saas/) and [PostgreSQL multi-tenancy](/insights/postgres-multitenancy-boundaries/)."
+                ],
+                [
+                  "Platform engineering",
+                  "[Platform engineering paved roads](/insights/platform-engineering-paved-road/) covers delivery contracts and developer visibility."
+                ],
+                [
+                  "Academic research in progress",
+                  "Undergraduate project exploring comprehension-aware 3D sign-language communication using an animated avatar. This is ongoing research, not a completed publication or validated outcome."
+                ]
+              ]
+            },
+            {
+              "type": "p",
+              "text": "Browse the [writing hub](/insights/) for published notes and clearly labelled proposed topics. No peer-reviewed papers or benchmark results are claimed without supporting references."
+            }
+          ]
+        },
+        {
+          "id": "official-profiles",
+          "title": "Official profiles and writing",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "This website is my own professional biography and portfolio. Other public profiles connect the same professional identity across platforms."
+            },
+            {
+              "type": "list",
+              "items": [
+                "[GitHub](https://github.com/savisaluwadana) — repositories and engineering work.",
+                "[LinkedIn](https://www.linkedin.com/in/savi-saluwadana-3911331b2/) — professional profile.",
+                "[Medium](https://medium.com/@savisaluwadana) — technical writing.",
+                "[DEV Community](https://dev.to/savi_saluwadana) — developer articles and discussion.",
+                "[daily.dev](https://daily.dev/savisaluwadana) — developer community and activity."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "media-kit",
+          "title": "Short professional biography and media references",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Savi Saluwadana is a software engineer based in Sri Lanka who builds software products and documents system architecture, backend engineering, distributed systems and applied AI. His portfolio covers cross-industry projects, technical writing and cloud-native platform engineering interests."
+            },
+            {
+              "type": "p",
+              "text": "For a longer profile use [this biography](/about/); for engineering examples use the [architecture reference](/engineering/), [project directory](/products/) and [writing hub](/insights/). A [public profile portrait](https://avatars.githubusercontent.com/u/82082138?v=4) and [machine-readable profile](/profile.json) are available for reference."
+            },
+            {
+              "type": "p",
+              "text": "For interviews, technical collaboration or questions about attribution, use the [contact page](/contact.html). Confirm time-sensitive credentials and employment details directly before republishing."
             }
           ]
         },
@@ -196,7 +371,17 @@
             {
               "type": "qa",
               "question": "Who is Savi Saluwadana?",
-              "answer": "Savi Saluwadana is a software engineer based in Sri Lanka who builds software in public. His project repositories document architecture, design decisions and trade-offs; he is exploring platform engineering through containers, CI/CD and developer experience."
+              "answer": "Savi Saluwadana is a software engineer based in Sri Lanka who builds software products and documents system architecture, backend engineering, distributed systems and applied AI. His portfolio covers cross-industry projects, technical writing and cloud-native platform engineering interests."
+            },
+            {
+              "type": "qa",
+              "question": "What is Savi Saluwadana's current professional focus?",
+              "answer": "Software engineering, product development, backend and distributed systems, system architecture and applied AI. Platform engineering is one area of interest. His WSO2 internship ended in November 2026; this portfolio does not identify a current employer."
+            },
+            {
+              "type": "qa",
+              "question": "What is his educational background?",
+              "answer": "He is pursuing undergraduate software engineering studies through IIT Sri Lanka and the University of Westminster, and has passed the CIMA Strategic Case Study examination. Practical experience requirements remain pending. See [education and qualifications](/about/#education) for precise status."
             },
             {
               "type": "qa",
@@ -206,7 +391,7 @@
             {
               "type": "qa",
               "question": "Where are the public profiles and source repositories?",
-              "answer": "My public profiles are [GitHub](https://github.com/savisaluwadana) and [LinkedIn](https://www.linkedin.com/in/savi-saluwadana-3911331b2/). Product pages link to public repository documentation when available; private projects have a public product summary."
+              "answer": "My official profiles are [GitHub](https://github.com/savisaluwadana), [LinkedIn](https://www.linkedin.com/in/savi-saluwadana-3911331b2/), [Medium](https://medium.com/@savisaluwadana), [DEV Community](https://dev.to/savi_saluwadana) and [daily.dev](https://daily.dev/savisaluwadana). Product pages link to public repository documentation when available."
             },
             {
               "type": "qa",
@@ -215,7 +400,8 @@
             }
           ]
         }
-      ]
+      ],
+      "reviewed": "2026-11-24"
     },
     {
       "path": "/engineering/",

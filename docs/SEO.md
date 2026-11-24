@@ -68,3 +68,6 @@ Export Links from Search Console and backlink data from Bing's free UI when avai
 
 ### Private offline dashboard
 Run `node scripts/render-private-dashboard.mjs` and then `open ~/.portfolio-seo/dashboard.html` on macOS. The dashboard displays actual local Google snapshots, keyword opportunities, top pages and completed AI visibility tests. It works offline, uses no external JS libraries, and never uploads reports. Blank or untested results are not counted as zero. Bing raw rows remain in local JSON because its reporting period differs. Run the script again after collecting new snapshots. The self-test can run with `node scripts/render-private-dashboard.mjs --self-test` without credentials.
+
+### Personal entity accuracy
+The About page is the canonical owner-authored professional biography. Keep employment dates, degree completion and credential status accurate; distinguish projects, contributions and research interests from verified outcomes. Update `data/discovery.json` and `data/profile.json`, regenerate the site, and check branded AI answers for stale employer claims or invented details. Avoid duplicate biography pages, keyword stuffing and unsupported credential schema.

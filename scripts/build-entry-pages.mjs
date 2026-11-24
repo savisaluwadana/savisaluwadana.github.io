@@ -81,6 +81,8 @@ export async function buildEntryPages({ root, base, updated, schemaModified, pro
   const references = [];
   for (const page of pages) {
     const canonical = base + page.path;
+    const reviewed = page.reviewed || updated;
+    const reviewedSchema = page.reviewed ? reviewed + 'T00:00:00+05:30' : schemaModified;
     const isProfile = page.path === '/about/';
     const isDirectory = page.path === '/products/';
     const isSource = page.path === '/open-source/';
@@ -89,7 +91,7 @@ export async function buildEntryPages({ root, base, updated, schemaModified, pro
     const crumbs = [{ name: 'Savi Saluwadana', item: `${base}/` }];
     if (page.path.startsWith('/engineering/') && page.path !== '/engineering/') crumbs.push({ name: 'Engineering', item: `${base}/engineering/` });
     crumbs.push({ name: breadcrumbName, item: canonical });
-    const pageNode = { '@type': isProfile ? 'ProfilePage' : isDirectory || isSource ? 'CollectionPage' : 'WebPage', '@id': `${canonical}#page`, url: canonical, name: page.title, description: page.description, isPartOf: { '@id': website['@id'] }, dateModified: schemaModified, inLanguage: 'en' };
+    const pageNode = { '@type': isProfile ? 'ProfilePage' : isDirectory || isSource ? 'CollectionPage' : 'WebPage', '@id': `${canonical}#page`, url: canonical, name: page.title, description: page.description, isPartOf: { '@id': website['@id'] }, dateModified: reviewedSchema, inLanguage: 'en' };
     const graph = [website, person, pageNode, { '@type': 'BreadcrumbList', itemListElement: crumbs.map((crumb, i) => ({ '@type': 'ListItem', position: i + 1, ...crumb })) }];
     if (isProfile) pageNode.mainEntity = { '@id': person['@id'] };
     else if (isDirectory) { pageNode.mainEntity = { '@id': list['@id'] }; graph.push(list); }
@@ -102,10 +104,10 @@ export async function buildEntryPages({ root, base, updated, schemaModified, pro
     else {
       const citations = page.sections.flatMap(s => s.blocks.filter(b => b.type === 'list').flatMap(b => b.items)).map(s => s.match(/\]\((https:[^)]+)\)/)?.[1]).filter(Boolean);
       pageNode.mainEntity = { '@id': `${canonical}#reference` };
-      graph.push({ '@type': 'CreativeWork', '@id': `${canonical}#reference`, name: page.heading, url: canonical, description: page.description, author: { '@id': person['@id'] }, inLanguage: 'en', dateModified: schemaModified, citation: citations });
+      graph.push({ '@type': 'CreativeWork', '@id': `${canonical}#reference`, name: page.heading, url: canonical, description: page.description, author: { '@id': person['@id'] }, inLanguage: 'en', dateModified: reviewedSchema, citation: citations });
     }
-    const md = `# ${page.heading}\n\n${page.intro}\n\nBy: Savi Saluwadana\nCanonical page: ${canonical}\nReviewed: ${updated}\n\n${page.sections.map(section => `## ${section.title}\n\n${section.blocks.map(blockMarkdown).join('\n\n')}`).join('\n\n')}\n`;
-    references.push({ path: page.path, name: pageName, description: page.description, markdown: md });
+    const md = `# ${page.heading}\n\n${page.intro}\n\nBy: Savi Saluwadana\nCanonical page: ${canonical}\nReviewed: ${reviewed}\n\n${page.sections.map(section => `## ${section.title}\n\n${section.blocks.map(blockMarkdown).join('\n\n')}`).join('\n\n')}\n`;
+    references.push({ path: page.path, name: pageName, description: page.description, reviewed, markdown: md });
     await write(page.path.slice(1) + 'index.md', md);
     await write(page.path.slice(1) + 'index.html', `<!doctype html>
 <html lang="en"><head>
@@ -129,7 +131,7 @@ ${isSource ? '  <link rel="alternate" type="application/json" href="/public-work
   <a class="skip-link" href="#main">Skip to content</a>${header}
   <main class="product-page" id="main"><div class="shell">
     <nav class="product-breadcrumb" aria-label="Breadcrumb">${crumbs.map((crumb, i) => `${i ? '<span aria-hidden="true">/</span>' : ''}${i === crumbs.length - 1 ? `<span aria-current="page">${esc(crumb.name)}</span>` : `<a href="${esc(new URL(crumb.item).pathname)}">${esc(crumb.name)}</a>`}`).join('')}</nav>
-    <div class="product-header"><p class="section-index">${esc(page.label)}</p><h1>${esc(page.heading)}</h1><p>${esc(page.intro)}</p><p class="product-source">${isProfile ? 'Software &amp; product engineer · Sri Lanka' : 'By Savi Saluwadana'} · Reviewed <time datetime="${updated}">12 November 2026</time></p><div class="project-links"><a class="text-link" href="/contact.html">Contact Savi</a><a class="text-link" href="${page.path}index.md">Markdown reference</a></div></div>
+    <div class="product-header"><p class="section-index">${esc(page.label)}</p><h1>${esc(page.heading)}</h1><p>${esc(page.intro)}</p><p class="product-source">${isProfile ? 'Software &amp; product engineer · Sri Lanka' : 'By Savi Saluwadana'} · Reviewed <time datetime="${reviewed}">${new Date(reviewed + 'T00:00:00Z').toLocaleDateString('en-GB', {day:'numeric',month:'long',year:'numeric',timeZone:'UTC'})}</time></p><div class="project-links"><a class="text-link" href="/contact.html">Contact Savi</a><a class="text-link" href="${page.path}index.md">Markdown reference</a></div></div>
     <nav class="product-nav" aria-label="Page sections">${page.sections.map(section => `<a href="#${esc(section.id)}">${esc(section.title)}</a>`).join('')}</nav>
     <div class="product-content">${page.sections.map(section => `<section class="product-section" id="${esc(section.id)}" aria-labelledby="${esc(section.id)}-title"><h2 id="${esc(section.id)}-title">${esc(section.title)}</h2>${section.blocks.map(blockHtml).join('')}</section>`).join('\n')}</div>
   </div></main>${footer}<script src="/app.js" defer></script>

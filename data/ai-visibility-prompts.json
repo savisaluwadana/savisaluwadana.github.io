@@ -48,5 +48,20 @@
     "category": "project",
     "prompt": "What is Advance HRIS and how does its offline synchronization work?",
     "target": "/products/advance-hris/"
+  },
+  {
+    "category": "identity",
+    "prompt": "What is Savi Saluwadana's current professional focus and employment history?",
+    "target": "/about/#experience"
+  },
+  {
+    "category": "identity",
+    "prompt": "What are Savi Saluwadana's software engineering projects and educational qualifications?",
+    "target": "/about/"
+  },
+  {
+    "category": "identity",
+    "prompt": "Where does Savi Saluwadana publish technical writing and research?",
+    "target": "/about/#research"
   }
 ]
