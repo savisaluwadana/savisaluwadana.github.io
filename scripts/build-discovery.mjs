@@ -74,6 +74,8 @@ const selectedList = {
   }))
 };
 let home = await readFile(path.join(root, 'index.html'), 'utf8');
+const industryGroups = JSON.parse(await readFile(path.join(root, 'data/discovery.json'), 'utf8')).groups;
+home = home.replace(/<div class="directory-strip"[\s\S]*?<div class="directory-links">[\s\S]*?<\/div>\s*<\/div>/, `<div class="directory-strip" aria-label="Browse projects by industry">\n          <span class="directory-strip-label">Browse projects by industry:</span>\n          <div class="directory-links">\n            ${industryGroups.map(g => `<a href="/products/#${esc(g.id)}">${esc(g.title)} (${g.products.length})</a>`).join('\n            ')}\n          </div>\n        </div>`).replace(/All \d+ documented systems/g, `All ${products.length} documented systems`);
 const cards = featured.map(({ product, stack, question, answer }, index) => `
           <article class="study-card" id="${esc(product.id)}">
             <div class="study-top">
@@ -163,7 +165,7 @@ for (const p of products) {
   markdownProducts.push(md);
   markdown += `- [${p.name}](${url(p)}): ${p.description}\n`;
   const related = products.filter(x => x.id !== p.id && x.tags.some(tag => p.tags.includes(tag))).slice(0, 3);
-  const topicLinks = `${['property-os', 'devrelos', 'pain-intelligence', 'ad-performance-agent'].includes(p.id) ? '<a href="/engineering/agentic-systems/">Agentic systems architecture</a>' : ''}${publicWork.repositories.some(repo => repo.id === p.id) ? '<a href="/open-source/">Public source index</a>' : ''}`;
+  const topicLinks = `${['property-os', 'pain-intelligence', 'ad-performance-agent'].includes(p.id) ? '<a href="/engineering/agentic-systems/">Agentic systems architecture</a>' : ''}${publicWork.repositories.some(repo => repo.id === p.id) ? '<a href="/open-source/">Public source index</a>' : ''}`;
   const html = `<!doctype html>
 <html lang="en"><head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">

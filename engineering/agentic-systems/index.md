@@ -14,7 +14,6 @@ The model, tool interface and domain service have different responsibilities. Th
 | --- | --- | --- |
 | [Property Management OS](https://savisaluwadana.github.io/products/property-os/) | MCP tools call the authenticated Go API. | Organization scope and domain rules remain in the API. PostgreSQL stores business records and notification intents. |
 | [Pain Intelligence Lab](https://savisaluwadana.github.io/products/pain-intelligence/) | A connected MCP host performs semantic research and synthesis. | The Rust API records evidence and research state in PostgreSQL; research findings still need validation. The application does not call model APIs directly. |
-| [DevRelOS](https://savisaluwadana.github.io/products/devrelos/) | Dashboard and authenticated MCP clients access workspace workflows. | The Go API checks membership; workers handle configured providers and approved delivery. Consequential outreach requires approval. |
 | [Ad Performance Analysis Agent](https://savisaluwadana.github.io/products/ad-performance-agent/) | Gemini assists with summaries after CSV analysis. | Threshold logic computes flags. Account connectors are mocks, so this prototype is not a durable live-account ingestion system. |
 
 ## Follow a rental-operations request
@@ -43,16 +42,11 @@ The output is evaluated as evidence, not just generated text. Source diversity, 
 
 This boundary also changes how the system is configured: the connected host provides semantic reasoning, while the platform provides storage, inspection and quality checks. Model-provider behavior should not be inferred from the Rust API alone.
 
-## Approvals in developer operations
+## Human approval and external actions
 
-[DevRelOS](https://savisaluwadana.github.io/products/devrelos/) connects source-backed signals, workspace membership, background work and approval-gated outreach. Its domain API and workers serve different parts of that process.
+An agent can propose a change without being authorized to execute it. Keep consequential actions behind application permissions and explicit human review.
 
-1. Connectors or an operator bring source-backed signals into a workspace.
-2. The Go API validates membership and stores domain state in PostgreSQL.
-3. Background workers run connector, media and approved outreach tasks.
-4. The dashboard and MCP clients inspect work and track its outcomes through the domain API.
-
-A research signal or draft is different from an external action. Evidence can inform a workflow while the delivery step still needs approval and provider configuration. The self-hosted beta’s scope notes describe those prerequisites; they should be retained when evaluating the system.
+For the design rationale, read [Durable Agentic Workflows](https://savisaluwadana.github.io/insights/durable-agentic-workflows/) and [MCP Permission Boundaries](https://savisaluwadana.github.io/insights/mcp-permission-boundaries/). These are design notes, not claims of measured production outcomes.
 
 ## What I want to develop further
 
@@ -68,6 +62,5 @@ My broader interests include durable orchestration, multi-agent collaboration, r
 
 - [Property Management OS repository documentation](https://github.com/RealEstateSassApplication/property-management-OS/blob/main/README.md)
 - [Pain Intelligence Lab repository documentation](https://github.com/savisaluwadana/Pain-Point-Analyzer/blob/main/README.md)
-- [DevRelOS repository documentation](https://savisaluwadana.github.io/products/devrelos/)
 
 See the [broader architecture reference](https://savisaluwadana.github.io/engineering/) for local-first data, tenancy and transaction comparisons, or the [public source index](https://savisaluwadana.github.io/open-source/) to browse repository references. [About Savi](https://savisaluwadana.github.io/about/) describes my engineering and collaboration interests.

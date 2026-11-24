@@ -12,9 +12,9 @@ I’m interested in clear domain boundaries, strong data models, reliable APIs a
 
 | Area | Where to explore it |
 | --- | --- |
-| Go backend and API design | [Property Management OS](https://savisaluwadana.github.io/products/property-os/), [DevRelOS](https://savisaluwadana.github.io/products/devrelos/) and [Advance HRIS](https://savisaluwadana.github.io/products/advance-hris/). |
+| Go backend and API design | [Property Management OS](https://savisaluwadana.github.io/products/property-os/) and [Advance HRIS](https://savisaluwadana.github.io/products/advance-hris/). |
 | Product and full-stack engineering | [Avara Real Estate](https://savisaluwadana.github.io/products/avara/), [FreshPick](https://savisaluwadana.github.io/products/freshpick/) and [RapidReach](https://savisaluwadana.github.io/products/rapidreach/). |
-| Agentic systems and Model Context Protocol | [Pain Intelligence Lab](https://savisaluwadana.github.io/products/pain-intelligence/), [Property Management OS](https://savisaluwadana.github.io/products/property-os/) and [DevRelOS](https://savisaluwadana.github.io/products/devrelos/). |
+| Agentic systems and Model Context Protocol | [Pain Intelligence Lab](https://savisaluwadana.github.io/products/pain-intelligence/) and [Property Management OS](https://savisaluwadana.github.io/products/property-os/). |
 | Public source and project decisions | Browse the [public repository index](https://savisaluwadana.github.io/open-source/) and each project's architecture and trade-offs. |
 | Operational data and workflows | [Acme Accounting](https://savisaluwadana.github.io/products/acme-accounting/), [Advance HRIS](https://savisaluwadana.github.io/products/advance-hris/) and [MediCare](https://savisaluwadana.github.io/products/medicare/). |
 | Platform engineering interests | I am exploring containers, delivery automation and developer experience through the [public repositories](https://savisaluwadana.github.io/open-source/). |
@@ -28,7 +28,7 @@ I’m interested in agents that use tools, retrieval and workflow state to help 
 - Multi-agent collaboration with clear responsibilities, shared evidence and human review for consequential actions.
 - Retrieval-augmented generation, evidence provenance and agent evaluation that make results inspectable and useful.
 
-My current product work includes [Pain Intelligence Lab](https://savisaluwadana.github.io/products/pain-intelligence/), [Property Management OS](https://savisaluwadana.github.io/products/property-os/) and [DevRelOS](https://savisaluwadana.github.io/products/devrelos/). Follow their requests and state changes in the [agentic systems architecture walkthroughs](https://savisaluwadana.github.io/engineering/agentic-systems/). The broader topics above describe my development interests.
+My current product work includes [Pain Intelligence Lab](https://savisaluwadana.github.io/products/pain-intelligence/) and [Property Management OS](https://savisaluwadana.github.io/products/property-os/). Follow their requests and state changes in the [agentic systems architecture walkthroughs](https://savisaluwadana.github.io/engineering/agentic-systems/). The broader topics above describe my development interests.
 
 ## Code and design decisions in public
 
@@ -38,9 +38,9 @@ I keep a separate summary for products without confirmed public source. [Browse 
 
 ## Products I’ve built and worked on
 
-The [product directory](https://savisaluwadana.github.io/products/) includes 16 projects across marketplaces, commerce, healthcare, business operations, developer tools and AI-assisted research. Each overview explains the users, workflow, architecture and current scope.
+The [product directory](https://savisaluwadana.github.io/products/) includes 15 projects across ten industries, from real estate and healthcare to finance, education and technology. Each overview explains the users, workflow, architecture and current scope.
 
-Contribution and maturity vary by project. For example, [TimelyHelp](https://savisaluwadana.github.io/products/timelyhelp/) describes my product and frontend work; [DevRelOS](https://savisaluwadana.github.io/products/devrelos/) is a self-hosted beta; and the [Ad Performance Analysis Agent](https://savisaluwadana.github.io/products/ad-performance-agent/) is a prototype with mocked account connectors. The scope notes make those distinctions explicit.
+Contribution and maturity vary by project. For example, [TimelyHelp](https://savisaluwadana.github.io/products/timelyhelp/) describes my product and frontend work; and the [Ad Performance Analysis Agent](https://savisaluwadana.github.io/products/ad-performance-agent/) is a prototype with mocked account connectors. The scope notes make those distinctions explicit.
 
 ## Profile questions
 
