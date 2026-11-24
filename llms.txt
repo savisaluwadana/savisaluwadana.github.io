@@ -1,6 +1,6 @@
 # Savi Saluwadana
 
-> Savi Saluwadana is a software engineer based in Sri Lanka who builds software products and documents system architecture, backend engineering, distributed systems and applied AI. His portfolio covers cross-industry projects, technical writing and cloud-native platform engineering interests.
+> Savi Saluwadana is a software engineer based in Sri Lanka interested in system architecture, backend and mobile development, distributed systems, cloud-native platforms and agentic AI. His portfolio explores software products across industries, technical writing and engineering experiments.
 
 This is a public portfolio with product-level architecture summaries. It does not claim that every project is commercially deployed or production-certified.
 
@@ -21,7 +21,7 @@ This is a public portfolio with product-level architecture summaries. It does no
 
 - [Product directory](https://savisaluwadana.github.io/products/): Explore 15 software project overviews across 10 industry categories, including architecture decisions, source references and contribution boundaries.
 - [Product directory in Markdown](https://savisaluwadana.github.io/products/index.md): Text equivalent of the same reference.
-- [About Savi Saluwadana](https://savisaluwadana.github.io/about/): Professional biography of Savi Saluwadana, a Sri Lankan software engineer. Explore his experience, education, projects, research and technical writing.
+- [About Savi Saluwadana](https://savisaluwadana.github.io/about/): Explore Savi Saluwadana's interests in system architecture, mobile and backend engineering, agentic AI, industry software, research and projects.
 - [About Savi Saluwadana in Markdown](https://savisaluwadana.github.io/about/index.md): Text equivalent of the same reference.
 - [Architecture reference](https://savisaluwadana.github.io/engineering/): Inspect project architecture decisions on APIs, data authority, local-first workflows, tenancy and transactions in Savi Saluwadana's software.
 - [Architecture reference in Markdown](https://savisaluwadana.github.io/engineering/index.md): Text equivalent of the same reference.

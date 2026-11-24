@@ -1,6 +1,6 @@
 # Savi Saluwadana
 
-Savi Saluwadana is a software engineer based in Sri Lanka who builds software products and documents system architecture, backend engineering, distributed systems and applied AI. His portfolio covers cross-industry projects, technical writing and cloud-native platform engineering interests.
+Savi Saluwadana is a software engineer based in Sri Lanka interested in system architecture, backend and mobile development, distributed systems, cloud-native platforms and agentic AI. His portfolio explores software products across industries, technical writing and engineering experiments.
 
 Website: https://savisaluwadana.github.io/
 GitHub: https://github.com/savisaluwadana
@@ -10,8 +10,20 @@ Email: savisaluwadana@gmail.com
 
 ## Engineering focus
 
-- Public Software Repositories
 - Software Architecture
+- System Design
+- Backend Engineering
+- Mobile Application Development
+- Full-Stack Development
+- Distributed Systems
+- Agentic AI
+- Model Context Protocol
+- Workflow Orchestration
+- AI Evaluation
+- Cloud-Native Engineering
+- Software Product Engineering
+- Reliability Engineering
+- Public Software Repositories
 - Design Decisions and Trade-offs
 - Go
 - Rust
@@ -51,7 +63,7 @@ Email: savisaluwadana@gmail.com
 ## Profile and architecture references
 
 - [Product directory](https://savisaluwadana.github.io/products/): Explore 15 software project overviews across 10 industry categories, including architecture decisions, source references and contribution boundaries.
-- [About Savi Saluwadana](https://savisaluwadana.github.io/about/): Professional biography of Savi Saluwadana, a Sri Lankan software engineer. Explore his experience, education, projects, research and technical writing.
+- [About Savi Saluwadana](https://savisaluwadana.github.io/about/): Explore Savi Saluwadana's interests in system architecture, mobile and backend engineering, agentic AI, industry software, research and projects.
 - [Architecture reference](https://savisaluwadana.github.io/engineering/): Inspect project architecture decisions on APIs, data authority, local-first workflows, tenancy and transactions in Savi Saluwadana's software.
 - [Agentic systems architecture](https://savisaluwadana.github.io/engineering/agentic-systems/): Inspect agent tool boundaries, application permissions and local research workflows documented in Savi Saluwadana's projects.
 - [Public repositories and design notes](https://savisaluwadana.github.io/open-source/): Inspect public software repositories, licensing status, local setup, architecture, design trade-offs and unfinished work.

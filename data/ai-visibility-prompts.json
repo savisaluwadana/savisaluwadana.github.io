@@ -63,5 +63,15 @@
     "category": "identity",
     "prompt": "Where does Savi Saluwadana publish technical writing and research?",
     "target": "/about/#research"
+  },
+  {
+    "category": "identity",
+    "prompt": "What engineering fields and industries is Savi Saluwadana interested in?",
+    "target": "/about/#industries"
+  },
+  {
+    "category": "identity",
+    "prompt": "What are Savi Saluwadana's interests in mobile development, backend engineering and agentic AI?",
+    "target": "/about/#engineering-focus"
   }
 ]

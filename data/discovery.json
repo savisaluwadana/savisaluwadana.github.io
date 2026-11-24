@@ -92,8 +92,8 @@
       "title": "About Savi Saluwadana | Professional Biography",
       "heading": "Savi Saluwadana",
       "label": "About / Professional biography",
-      "description": "Professional biography of Savi Saluwadana, a Sri Lankan software engineer. Explore his experience, education, projects, research and technical writing.",
-      "intro": "Savi Saluwadana is a software engineer based in Sri Lanka who builds software products and documents system architecture, backend engineering, distributed systems and applied AI. His portfolio covers cross-industry projects, technical writing and cloud-native platform engineering interests.",
+      "description": "Explore Savi Saluwadana's interests in system architecture, mobile and backend engineering, agentic AI, industry software, research and projects.",
+      "intro": "Savi Saluwadana is a software engineer based in Sri Lanka interested in system architecture, backend and mobile development, distributed systems, cloud-native platforms and agentic AI. His portfolio explores software products across industries, technical writing and engineering experiments.",
       "sections": [
         {
           "id": "experience",
@@ -119,7 +119,7 @@
           "blocks": [
             {
               "type": "p",
-              "text": "My background combines software engineering studies with business and management accounting studies. This is my own professional summary, reviewed on 24 November 2026; qualification completion and current credential status should be verified with issuing institutions."
+              "text": "My academic background is in software engineering. The following educational and technical qualifications are self-reported; current credential validity and degree completion should be verified with the issuing institutions."
             },
             {
               "type": "table",
@@ -133,10 +133,6 @@
                   "Undergraduate studies through Informatics Institute of Technology (IIT Sri Lanka) and the University of Westminster; degree award is not claimed here."
                 ],
                 [
-                  "CIMA / CGMA professional qualification",
-                  "Passed the Strategic Case Study examination in August 2026. Practical experience requirements remain pending; no chartered membership or designation is claimed."
-                ],
-                [
                   "AWS Certified Cloud Practitioner",
                   "Previously earned; current validity and credential link are not asserted here."
                 ],
@@ -145,59 +141,130 @@
                   "Previously earned; current validity and credential link are not asserted here."
                 ]
               ]
-            },
-            {
-              "type": "p",
-              "text": "I am interested in applying engineering to business processes, financial workflows and operational software. [Acme Accounting](/products/acme-accounting/) is an example of a project in that domain."
             }
           ]
         },
         {
           "id": "engineering-focus",
-          "title": "Engineering focus, with examples",
+          "title": "Engineering interests and technical focus",
           "blocks": [
             {
               "type": "p",
-              "text": "I’m interested in clear domain boundaries, strong data models, reliable APIs and systems that remain understandable as products grow. The [architecture reference](/engineering/) connects those concerns to specific projects."
+              "text": "I am interested in the complete lifecycle of software systems: understanding a problem, designing an architecture, building backend services and client applications, and operating reliable systems. My interests span the following areas; they are not claims of expertise in every technology or of production-scale outcomes."
             },
             {
               "type": "table",
               "headers": [
                 "Area",
-                "Where to explore it"
+                "What I am interested in"
               ],
               "rows": [
                 [
-                  "Go backend and API design",
-                  "[Property Management OS](/products/property-os/) and [Advance HRIS](/products/advance-hris/)."
+                  "System architecture and design",
+                  "Domain-driven design, modular monoliths, microservices, event-driven systems, architecture trade-offs, integration boundaries and designing systems for maintainability. Explore the [architecture reference](/engineering/)."
                 ],
                 [
-                  "Product and full-stack engineering",
-                  "[Avara Real Estate](/products/avara/), [FreshPick](/products/freshpick/) and [RapidReach](/products/rapidreach/)."
+                  "Backend engineering",
+                  "Go, Rust and TypeScript services; API design, authentication, authorization, concurrency, background workers, transactions, data consistency and caching. Examples: [Property Management OS](/products/property-os/) and [Advance HRIS](/products/advance-hris/)."
                 ],
                 [
-                  "Agentic systems and Model Context Protocol",
-                  "[Pain Intelligence Lab](/products/pain-intelligence/) and [Property Management OS](/products/property-os/)."
+                  "Mobile application development",
+                  "Cross-platform applications with Flutter and React Native, mobile-first product design, offline-first data, notifications, synchronization and secure integration with backend services. These are development interests, not a claim that every technology is used in a shipped app."
                 ],
                 [
-                  "Public source and project decisions",
-                  "Browse the [public repository index](/open-source/) and each project's architecture and trade-offs."
+                  "Distributed systems and reliability",
+                  "Fault tolerance, distributed coordination, messaging, idempotency, observability, performance testing and recovery from partial failures. See [durable agentic workflows](/insights/durable-agentic-workflows/)."
                 ],
                 [
-                  "Operational data and workflows",
-                  "[Acme Accounting](/products/acme-accounting/), [Advance HRIS](/products/advance-hris/) and [MediCare](/products/medicare/)."
+                  "Full-stack and product engineering",
+                  "Building web and mobile experiences around real user workflows, from prototypes to maintainable products. Explore [Avara](/products/avara/) and [FreshPick](/products/freshpick/)."
                 ],
                 [
-                  "Platform engineering interests",
-                  "I am exploring containers, delivery automation and developer experience through the [public repositories](/open-source/)."
+                  "Cloud-native and platform engineering",
+                  "Containers, Kubernetes, infrastructure automation, CI/CD, developer platforms, deployment reliability and developer experience. See [platform engineering paved roads](/insights/platform-engineering-paved-road/)."
+                ],
+                [
+                  "Data engineering and persistence",
+                  "Relational modelling, PostgreSQL, data pipelines, event processing, search and retrieval, storage and multi-tenant data isolation. See [PostgreSQL multi-tenancy](/insights/postgres-multitenancy-boundaries/)."
+                ],
+                [
+                  "Agentic AI and applied intelligence",
+                  "Tool-using agents, MCP, orchestration, retrieval, agent evaluation, permissions and human-in-the-loop systems. Explore [agentic systems architecture](/engineering/agentic-systems/)."
+                ],
+                [
+                  "Open-source engineering",
+                  "Understanding real implementations, contributing to public projects, improving documentation and sharing reproducible engineering experiments. Browse the [public repository index](/open-source/)."
                 ]
               ]
             }
           ]
         },
         {
+          "id": "industries",
+          "title": "Industries and software problems of interest",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "I am interested in how software engineering can solve operational problems across industries, rather than focusing on one product category. The areas below include both existing portfolio projects and problems I would like to explore."
+            },
+            {
+              "type": "table",
+              "headers": [
+                "Industry",
+                "Software opportunities and examples"
+              ],
+              "rows": [
+                [
+                  "Enterprise software and automation",
+                  "Business operating systems, workflow automation, integrations and agent-assisted operations. Example: [Saelior](https://saelior.com/)."
+                ],
+                [
+                  "Real estate and property technology",
+                  "Property discovery, tenant management, maintenance, payments and operational workflows. Examples: [Avara](/products/avara/) and [Property Management OS](/products/property-os/)."
+                ],
+                [
+                  "Retail, commerce and food technology",
+                  "Inventory, ordering, supplier coordination, recurring deliveries, POS and commerce agents. Examples: [FreshPick](/products/freshpick/) and [NexusPOS](/products/nexus-pos/)."
+                ],
+                [
+                  "Healthcare and accessibility",
+                  "Scheduling, secure patient-facing experiences, care coordination and accessible communication. Examples: [TimelyHelp](/products/timelyhelp/) and [MediCare](/products/medicare/)."
+                ],
+                [
+                  "Home services and marketplaces",
+                  "Service discovery, booking, worker coordination, trust and marketplace operations. Example: [Blu](/products/blu/)."
+                ],
+                [
+                  "Financial technology",
+                  "Transaction integrity, invoicing, reconciliation, financial workflows and dependable systems of record. Example: [Acme Accounting](/products/acme-accounting/)."
+                ],
+                [
+                  "Human resources and education",
+                  "Employee operations, attendance, institutional workflows and learning tools. Examples: [Advance HRIS](/products/advance-hris/) and [Academix](/products/academix/)."
+                ],
+                [
+                  "Events and intelligent matching",
+                  "Event discovery, supplier coordination, recommendations and real-time matching. Examples: [EventOS](/products/eventos/) and EventMesh, described on the [homepage](/#selected)."
+                ],
+                [
+                  "Developer tools and AI infrastructure",
+                  "Developer productivity, platform tooling, agent runtimes, evidence-backed research and software delivery. Example: [Pain Intelligence Lab](/products/pain-intelligence/)."
+                ],
+                [
+                  "Logistics and supply chains",
+                  "Shipment visibility, supplier coordination, inventory planning and operational optimization; an area of future exploration."
+                ]
+              ]
+            },
+            {
+              "type": "p",
+              "text": "Browse the [project directory by industry](/products/) for implemented features, architectural decisions and current scope."
+            }
+          ]
+        },
+        {
           "id": "agentic-systems",
-          "title": "Agentic systems I’m interested in",
+          "title": "Agentic AI and intelligent systems",
           "blocks": [
             {
               "type": "p",
@@ -209,7 +276,10 @@
                 "Tool-using agents and MCP interfaces that respect domain rules and the permissions of the person using them.",
                 "Durable workflow orchestration, retries and recovery for tasks that span multiple services or take time to complete.",
                 "Multi-agent collaboration with clear responsibilities, shared evidence and human review for consequential actions.",
-                "Retrieval-augmented generation, evidence provenance and agent evaluation that make results inspectable and useful."
+                "Retrieval-augmented generation, evidence provenance and agent evaluation that make results inspectable and useful.",
+                "Agent infrastructure and gateways: tool discovery, identity, policy enforcement, auditability and safe execution.",
+                "Agent evaluation: task success, tool selection, groundedness, reliability, cost and latency, with reproducible tests.",
+                "Business automation: agents that coordinate workflows across departments while applications remain the authority for business rules and transactions."
               ]
             },
             {
@@ -352,7 +422,7 @@
           "blocks": [
             {
               "type": "p",
-              "text": "Savi Saluwadana is a software engineer based in Sri Lanka who builds software products and documents system architecture, backend engineering, distributed systems and applied AI. His portfolio covers cross-industry projects, technical writing and cloud-native platform engineering interests."
+              "text": "Savi Saluwadana is a software engineer based in Sri Lanka interested in system architecture, backend and mobile development, distributed systems, cloud-native platforms and agentic AI. His portfolio explores software products across industries, technical writing and engineering experiments."
             },
             {
               "type": "p",
@@ -371,17 +441,22 @@
             {
               "type": "qa",
               "question": "Who is Savi Saluwadana?",
-              "answer": "Savi Saluwadana is a software engineer based in Sri Lanka who builds software products and documents system architecture, backend engineering, distributed systems and applied AI. His portfolio covers cross-industry projects, technical writing and cloud-native platform engineering interests."
+              "answer": "Savi Saluwadana is a software engineer based in Sri Lanka interested in system architecture, backend and mobile development, distributed systems, cloud-native platforms and agentic AI. His portfolio explores software products across industries, technical writing and engineering experiments."
             },
             {
               "type": "qa",
               "question": "What is Savi Saluwadana's current professional focus?",
-              "answer": "Software engineering, product development, backend and distributed systems, system architecture and applied AI. Platform engineering is one area of interest. His WSO2 internship ended in November 2026; this portfolio does not identify a current employer."
+              "answer": "System architecture, backend engineering, mobile and full-stack development, distributed systems, cloud-native platforms and agentic AI. His WSO2 internship ended in November 2026; this portfolio does not identify a current employer."
             },
             {
               "type": "qa",
               "question": "What is his educational background?",
-              "answer": "He is pursuing undergraduate software engineering studies through IIT Sri Lanka and the University of Westminster, and has passed the CIMA Strategic Case Study examination. Practical experience requirements remain pending. See [education and qualifications](/about/#education) for precise status."
+              "answer": "He is pursuing undergraduate software engineering studies through IIT Sri Lanka and the University of Westminster. See [education and technical qualifications](/about/#education) for precise status."
+            },
+            {
+              "type": "qa",
+              "question": "What industries is Savi Saluwadana interested in?",
+              "answer": "Enterprise software, real estate, retail and commerce, healthcare, service marketplaces, financial technology, HR, education, events, developer tools, AI infrastructure and logistics. See [industries of interest](/about/#industries) for examples and research directions."
             },
             {
               "type": "qa",
