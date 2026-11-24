@@ -113,5 +113,15 @@
     "category": "architecture",
     "prompt": "How do I test tenant isolation and human approval for AI agent tools?",
     "target": "/lab/#permissions"
+  },
+  {
+    "category": "architecture",
+    "prompt": "How do offline-first mobile and desktop apps synchronize safely after reconnection?",
+    "target": "/insights/offline-first-sync/"
+  },
+  {
+    "category": "architecture",
+    "prompt": "How can a PostgreSQL booking application prevent overselling under concurrent requests?",
+    "target": "/insights/concurrent-booking/"
   }
 ]

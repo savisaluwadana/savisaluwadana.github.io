@@ -29,6 +29,10 @@
     [
       "/lab/#retries",
       "Interactive idempotency model"
+    ],
+    [
+      "/insights/offline-first-sync/",
+      "Offline-first sync and conflict resolution"
     ]
   ],
   "freshpick": [
@@ -73,6 +77,10 @@
     [
       "/insights/postgres-multitenancy-boundaries/",
       "Application ownership and tenant boundaries"
+    ],
+    [
+      "/insights/concurrent-booking/",
+      "Concurrent booking and overselling prevention"
     ]
   ],
   "eventos": [
@@ -83,6 +91,10 @@
     [
       "/projects/eventmesh/",
       "Event discovery and matching architecture"
+    ],
+    [
+      "/insights/concurrent-booking/",
+      "Atomic booking capacity checks"
     ]
   ],
   "nexus-pos": [

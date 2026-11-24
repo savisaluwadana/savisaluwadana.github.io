@@ -10,6 +10,9 @@ Canonical: https://savisaluwadana.github.io/insights/
 - [Platform Engineering: Build a Paved Road Without Hiding the System](https://savisaluwadana.github.io/insights/platform-engineering-paved-road/): A platform engineering design principle: automate common delivery paths while keeping ownership, state, observability and escape hatches visible enough for engineers to debug and extend the platform.
 - [PostgreSQL Multi-Tenancy: Define Authorization Boundaries Before Schema Tricks](https://savisaluwadana.github.io/insights/postgres-multitenancy-boundaries/): A practical approach to PostgreSQL multi-tenancy: resolve tenant context early, scope every domain operation, enforce ownership consistently, and use database isolation as defense in depth rather than the only authorization layer.
 
+- [Offline-First Sync: Queues, Conflicts and Recovery](https://savisaluwadana.github.io/insights/offline-first-sync/): Design offline-first mobile and desktop sync using durable queues, version checks, conflict handling and an authoritative backend.
+- [Concurrent Booking: Prevent Overselling with Transactions](https://savisaluwadana.github.io/insights/concurrent-booking/): Prevent overselling in booking systems using atomic capacity checks, database transactions, uniqueness constraints and safe retries.
+
 ## Writing and community profiles
 
 - [Medium](https://medium.com/@savisaluwadana): Long-form technical articles.

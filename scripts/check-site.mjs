@@ -13,7 +13,7 @@ const sitemapUrls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(m => m[1]);
 assert.equal(new Set(sitemapUrls).size, sitemapUrls.length, 'Duplicate sitemap URLs');
 const discovery = JSON.parse(await readFile(path.join(root, 'data/discovery.json'), 'utf8'));
 const coreEntryPaths = ['/products/', ...discovery.pages.map(p => p.path)];
-const insightPaths = ["/insights/","/insights/mcp-permission-boundaries/","/insights/durable-agentic-workflows/","/insights/go-modular-monolith-saas/","/insights/platform-engineering-paved-road/","/insights/postgres-multitenancy-boundaries/"];
+const insightPaths = ["/insights/","/insights/mcp-permission-boundaries/","/insights/durable-agentic-workflows/","/insights/go-modular-monolith-saas/","/insights/platform-engineering-paved-road/","/insights/postgres-multitenancy-boundaries/","/insights/offline-first-sync/","/insights/concurrent-booking/"];
 const entryPaths = [...coreEntryPaths, ...insightPaths];
 const industryIds = discovery.groups.flatMap(group => group.products);
 assert.equal(industryIds.length, products.length, 'Every product must be classified by industry');

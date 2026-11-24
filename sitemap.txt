@@ -14,6 +14,8 @@ https://savisaluwadana.github.io/insights/durable-agentic-workflows/
 https://savisaluwadana.github.io/insights/go-modular-monolith-saas/
 https://savisaluwadana.github.io/insights/platform-engineering-paved-road/
 https://savisaluwadana.github.io/insights/postgres-multitenancy-boundaries/
+https://savisaluwadana.github.io/insights/offline-first-sync/
+https://savisaluwadana.github.io/insights/concurrent-booking/
 https://savisaluwadana.github.io/products/avara/
 https://savisaluwadana.github.io/products/blu/
 https://savisaluwadana.github.io/products/freshpick/

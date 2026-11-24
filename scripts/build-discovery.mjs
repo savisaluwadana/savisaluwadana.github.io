@@ -50,6 +50,9 @@ const insightPages = [
     "description": "Tenant context, repository contracts and database safeguards.",
     "reviewed": "2026-11-24"
   }
+,
+  {"path":"/insights/offline-first-sync/","name":"Offline-First Sync: Queues, Conflicts and Recovery","description":"Design offline-first mobile and desktop sync using durable queues, version checks, conflict handling and an authoritative backend.","reviewed":"2026-11-24"},
+  {"path":"/insights/concurrent-booking/","name":"Concurrent Booking: Prevent Overselling with Transactions","description":"Prevent overselling in booking systems using atomic capacity checks, database transactions, uniqueness constraints and safe retries.","reviewed":"2026-11-24"}
 ];
 const entryPaths = ['/products/', ...discovery.pages.map(p => p.path), ...insightPages.map(p => p.path)];
 const website = { '@type': 'WebSite', '@id': `${base}/#website`, url: `${base}/`, name: 'Savi Saluwadana', inLanguage: 'en', publisher: { '@id': person['@id'] }, hasPart: entryPaths.map(p => ({ '@id': `${base}${p}#page` })) };

@@ -71,6 +71,9 @@ This is a public portfolio with product-level architecture summaries. It does no
 - [Platform Engineering: Build a Paved Road Without Hiding the System](https://savisaluwadana.github.io/insights/platform-engineering-paved-road/): Tool-neutral platform delivery contracts, visibility and escape hatches.
 - [PostgreSQL Multi-Tenancy: Define Authorization Boundaries Before Schema Tricks](https://savisaluwadana.github.io/insights/postgres-multitenancy-boundaries/): Tenant context, repository contracts and database safeguards.
 
+- [Offline-First Sync: Queues, Conflicts and Recovery](https://savisaluwadana.github.io/insights/offline-first-sync/): Design offline-first mobile and desktop sync using durable queues, version checks, conflict handling and an authoritative backend.
+- [Concurrent Booking: Prevent Overselling with Transactions](https://savisaluwadana.github.io/insights/concurrent-booking/): Prevent overselling in booking systems using atomic capacity checks, database transactions, uniqueness constraints and safe retries.
+
 ## Optional
 
 - [Engineering and product feed](https://savisaluwadana.github.io/feed.xml): Atom feed of the current reference pages and product overviews.

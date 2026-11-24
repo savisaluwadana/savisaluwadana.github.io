@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light"><meta name="theme-color" content="#0a0e14">
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+  <meta name="author" content="Savi Saluwadana">
+  <title>Concurrent Booking Architecture | Savi Saluwadana</title>
+  <meta name="description" content="Prevent overselling in booking systems using atomic capacity checks, database transactions, uniqueness constraints and safe retries.">
+  <link rel="canonical" href="https://savisaluwadana.github.io/insights/concurrent-booking/"><link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"><script>try{if(localStorage.getItem('theme')==='light')document.documentElement.dataset.theme='light';}catch{}</script>
+  <link rel="stylesheet" href="/base-styles.css"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/product-details.css">
+  <link rel="describedby" type="text/plain" href="/llms.txt">
+  <link rel="alternate" type="text/markdown" href="https://savisaluwadana.github.io/insights/concurrent-booking/index.md" title="Concurrent Booking: Prevent Overselling with Transactions in Markdown">
+  <link rel="alternate" type="application/atom+xml" href="/feed.xml" title="Savi Saluwadana — Engineering & products">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="Savi Saluwadana">
+  <meta property="og:title" content="Concurrent Booking Architecture | Savi Saluwadana"><meta property="og:description" content="Prevent overselling in booking systems using atomic capacity checks, database transactions, uniqueness constraints and safe retries."><meta property="og:url" content="https://savisaluwadana.github.io/insights/concurrent-booking/">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/82082138?v=4"><meta property="og:image:alt" content="Savi Saluwadana">
+  <meta property="article:published_time" content="2026-11-24T00:00:00+05:30"><meta property="article:modified_time" content="2026-11-24T00:00:00+05:30">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="Concurrent Booking Architecture | Savi Saluwadana"><meta name="twitter:description" content="Prevent overselling in booking systems using atomic capacity checks, database transactions, uniqueness constraints and safe retries."><meta name="twitter:image" content="https://avatars.githubusercontent.com/u/82082138?v=4">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://savisaluwadana.github.io/#person",
+      "name": "Savi Saluwadana",
+      "url": "https://savisaluwadana.github.io/",
+      "image": "https://avatars.githubusercontent.com/u/82082138?v=4",
+      "email": "mailto:savisaluwadana@gmail.com",
+      "jobTitle": "Software Engineer",
+      "description": "Savi Saluwadana is a software engineer based in Sri Lanka interested in system architecture, backend and mobile development, distributed systems, cloud-native platforms and agentic AI. His portfolio explores software products across industries, technical writing and engineering experiments.",
+      "homeLocation": {
+        "@type": "Country",
+        "name": "Sri Lanka"
+      },
+      "sameAs": [
+        "https://github.com/savisaluwadana",
+        "https://www.linkedin.com/in/savi-saluwadana-3911331b2/",
+        "https://dev.to/savi_saluwadana",
+        "https://medium.com/@savisaluwadana",
+        "https://daily.dev/savisaluwadana"
+      ],
+      "knowsAbout": [
+        "Software Architecture",
+        "System Design",
+        "Backend Engineering",
+        "Mobile Application Development",
+        "Full-Stack Development",
+        "Distributed Systems",
+        "Agentic AI",
+        "Model Context Protocol",
+        "Workflow Orchestration",
+        "AI Evaluation",
+        "Cloud-Native Engineering",
+        "Software Product Engineering",
+        "Reliability Engineering",
+        "Public Software Repositories",
+        "Design Decisions and Trade-offs",
+        "Go",
+        "Rust",
+        "TypeScript",
+        "JavaScript",
+        "React",
+        "Next.js",
+        "Laravel",
+        "Flutter",
+        "Docker",
+        "CI/CD",
+        "PostgreSQL",
+        "MongoDB",
+        "MySQL",
+        "SQLite",
+        "Prisma",
+        "Platform Engineering (Learning)"
+      ],
+      "mainEntityOfPage": {
+        "@id": "https://savisaluwadana.github.io/#profile"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://savisaluwadana.github.io/insights/concurrent-booking/#article",
+      "url": "https://savisaluwadana.github.io/insights/concurrent-booking/",
+      "headline": "Concurrent Booking: Prevent Overselling with Transactions",
+      "description": "Prevent overselling in booking systems using atomic capacity checks, database transactions, uniqueness constraints and safe retries.",
+      "datePublished": "2026-11-24",
+      "dateModified": "2026-11-24T00:00:00+05:30",
+      "author": {
+        "@type": "Person",
+        "@id": "https://savisaluwadana.github.io/#person",
+        "name": "Savi Saluwadana",
+        "url": "https://savisaluwadana.github.io/about/"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://savisaluwadana.github.io/insights/concurrent-booking/"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Savi Saluwadana",
+          "item": "https://savisaluwadana.github.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Insights",
+          "item": "https://savisaluwadana.github.io/insights/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Concurrent Booking: Prevent Overselling with Transactions",
+          "item": "https://savisaluwadana.github.io/insights/concurrent-booking/"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head><body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" data-header><div class="shell nav-shell"><a class="wordmark" href="/" aria-label="Savi Saluwadana home">Savi Saluwadana <span class="wordmark-tag">// arch</span></a><button class="menu-button" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav" data-menu-button><span></span><span></span></button><nav class="nav-links" id="primary-nav" aria-label="Primary navigation" data-nav><a href="/products/">Systems</a><a href="/engineering/">Architecture</a><a class="is-active" href="/insights/">Writing</a><a href="/open-source/">Public source</a><a href="/about/">About</a><a class="nav-contact" href="/contact.html">Contact</a><button type="button" class="theme-toggle" data-theme-toggle aria-label="Toggle color theme" aria-pressed="false">Light</button></nav></div></header>
+<main class="product-page" id="main"><div class="shell"><nav class="product-breadcrumb" aria-label="Breadcrumb"><a href="/">Savi Saluwadana</a><span aria-hidden="true">/</span><a href="/insights/">Insights</a><span aria-hidden="true">/</span><span aria-current="page">Concurrent Booking: Prevent Overselling with Transactions</span></nav><article><div class="product-header"><p class="section-index">Backend · PostgreSQL · Concurrency</p><h1>Concurrent Booking: Prevent Overselling with Transactions</h1><p>Booking correctness depends on protecting the capacity invariant under concurrent writes. Reading availability and inserting a reservation as separate unprotected operations can oversell even when each individual request appears valid.</p><p class="product-source">By <a href="/about/">Savi Saluwadana</a> · Published <time datetime="2026-11-24">24 November 2026</time> · Updated <time datetime="2026-11-24">24 November 2026</time></p><div class="project-links"><a class="text-link" href="/insights/concurrent-booking/index.md">Markdown version</a><a class="text-link" href="/engineering/">Architecture reference</a></div></div><nav class="product-nav" aria-label="Article contents"><a href="#answer">How can a booking system prevent overselling?</a><a href="#race">Why checking availability first is unsafe</a><a href="#transaction">An atomic capacity update in PostgreSQL</a><a href="#scope">Apply the invariant to a real project boundary</a><a href="#practical-verification">How can I test concurrent reservations?</a><a href="#sources">Related technical references</a></nav><div class="product-content"><section class="product-section" id="answer"><h2>How can a booking system prevent overselling?</h2><p><strong>Answer:</strong> Treat capacity checking and reservation creation as one atomic database operation. Use a conditional update or row lock within a transaction, enforce uniqueness for logical reservations and roll back if any required write fails. A successful request should consume capacity exactly once, including after a timeout and retry.</p></section>
+<section class="product-section" id="race"><h2>Why checking availability first is unsafe</h2><p>Suppose three seats remain and eight concurrent requests read the same count before any transaction writes. Every request may decide there is space. Without an atomic check-and-write boundary, all eight could be accepted and exceed capacity by five.</p><p>A web client&#39;s displayed availability is advisory. The application must resolve the authoritative result when it commits a reservation. Rejecting a request because the last seat was taken is a valid business outcome, not necessarily an infrastructure error.</p></section>
+<section class="product-section" id="transaction"><h2>An atomic capacity update in PostgreSQL</h2><p>One implementation pattern is to update the capacity row with a predicate such as remaining &gt; 0 and inspect the number of rows returned. If one row is updated, create the reservation within the same database transaction. If none is updated, return a full-or-unavailable outcome.</p><p>If reservation insertion or another invariant fails, roll the transaction back, including the capacity decrement. A unique constraint on the operation identity or appropriate reservation business key helps prevent duplicate requests. Return an existing outcome for a valid retry rather than decrementing capacity again.</p><p>This is an illustrative pattern for a single capacity row. Multiple resources, cancellation, holds, expiry and deadlocks require additional domain rules and transaction design.</p></section>
+<section class="product-section" id="scope"><h2>Apply the invariant to a real project boundary</h2><p><a href="/projects/eventmesh/">EventMesh</a> is event discovery and matching software in development with a Go-backed API and PostgreSQL. Booking capacity and duplicate reservation prevention are documented engineering concerns. This guide describes a proposed verification approach, not a production load-test result or claim that every technique has been implemented.</p></section>
+<section class="product-section" id="practical-verification"><h2>How can I test concurrent reservations?</h2><p><strong>Answer:</strong> Start with a known capacity and issue more simultaneous requests than available seats. Count committed reservations, rejected requests and remaining capacity. Assert that committed reservations never exceed capacity, remaining capacity is nonnegative, and retries of successful requests do not consume additional seats.</p><p>Try the <a href="/lab/#reservations">interactive reservation model</a> with three seats and eight contenders. The unsafe interleaving oversells by five; the serialized teaching model accepts three. Then use real PostgreSQL integration tests with concurrent transactions to verify an actual implementation.</p></section>
+<section class="product-section" id="sources"><h2>Related technical references</h2><p><a href="/projects/eventmesh/">EventMesh architecture</a> · <a href="/insights/go-modular-monolith-saas/">Go modular monolith for SaaS</a> · <a href="/lab/#retries">Idempotent retry model</a></p></section></div></article></div></main>
+<footer class="site-footer"><div class="shell footer-layout"><div><strong>Savi Saluwadana</strong><span>Systems architecture · Go APIs · Software built in public</span></div><div><span><a href="/">Portfolio</a> · <a href="/products/">Systems</a> · <a href="/engineering/">Architecture</a> · <a href="/engineering/agentic-systems/">Agentic systems</a> · <a href="/insights/">Writing</a> · <a href="/open-source/">Public source</a> · <a href="/about/">About</a> · <a href="/feed.xml">Feed</a> · <a href="/llms.txt">llms.txt</a></span><span>© <span data-year>2026</span> · Static HTML &amp; build-time SVG</span></div></div></footer><script src="/app.js" defer></script>
+</body></html>
