@@ -4,7 +4,7 @@ Static GitHub Pages portfolio: public source, project architecture, design decis
 
 Visit [Savi Saluwadana’s portfolio](https://savisaluwadana.github.io/), [engineering profile](https://savisaluwadana.github.io/about/), [agentic systems architecture](https://savisaluwadana.github.io/engineering/agentic-systems/) and [public source index](https://savisaluwadana.github.io/open-source/).
 
-The homepage uses a neutral editorial design, independent project highlights, and a clearly labelled research lab. Existing source-backed case studies and permanent product pages are preserved. Product cards link to permanent overview pages with workflows, source-grounded SVG diagrams, component responsibilities and current-scope notes. The site currently contains 16 product pages.
+The homepage uses a neutral editorial design, real project highlights, and a separate, clearly labelled research lab. Proposed projects are not featured in the selected work grid. Existing source-backed case studies and permanent product pages are preserved. Product cards link to permanent overview pages with workflows, source-grounded SVG diagrams, component responsibilities and current-scope notes. The site currently contains 15 product pages across ten industry categories.
 
 ## Develop and verify
 
@@ -22,10 +22,18 @@ Shared neutral theme tokens are in `base-styles.css`; the editorial homepage add
 
 ## Discovery
 
-Each HTML page includes its own canonical URL and metadata, structured identity, and product/breadcrumb data where appropriate. The sitemap covers 29 canonical pages: the homepage, contact, five directory/profile/reference pages and 16 products. The checker verifies that HTML links connect every page to the homepage. The [Atom feed](https://savisaluwadana.github.io/feed.xml) publishes 27 reference, article and project summaries. Markdown, JSON, `llms.txt` and `llms-full.txt` offer additional retrieval formats.
+Each HTML page includes its own canonical URL and metadata, structured identity, and product/breadcrumb data where appropriate. The sitemap covers 28 canonical pages: the homepage, contact, five directory/profile/reference pages and 15 products. The checker verifies that HTML links connect every page to the homepage. The [Atom feed](https://savisaluwadana.github.io/feed.xml) publishes 26 reference, article and project summaries. Markdown, JSON, `llms.txt` and `llms-full.txt` offer additional retrieval formats.
 
 Read [the discovery and maintenance guide](docs/DISCOVERY.md) for Search Console submission, verified scope notes and how to keep generated content consistent. Rankings, indexing speed and AI citations are controlled by the search/retrieval providers and cannot be guaranteed by site changes.
 
 ## Source-first positioning (November 2026)
 
-The homepage lists seven accessible repositories first, then nine other products. Public visibility is not an open-source licence: Avara's README says proprietary, Pain-Point-Analyzer is MIT, and other linked repositories have no identified licence. DevRelOS has no confirmed public source link. The platform section describes Docker, CI and deployment evidence only; it does not claim production platform experience. The insights page separates five proposed article topics from existing published notes.
+The directory groups 15 projects by industry. Seven have verified accessible repository references. Public visibility is not an open-source licence: Avara's README says proprietary, Pain-Point-Analyzer is MIT, and other linked repositories have no identified licence. The platform section describes Docker, CI and deployment evidence only; it does not claim production platform experience. The insights page separates five proposed article topics from existing published notes.
+
+## Writing workflow
+
+Keep writing public and authentication-free. GitHub repository permissions protect publishing: use a branch and pull request, or GitHub's web editor. The writing hub is `insights/index.html` with a matching Markdown index at `insights/index.md`. Existing articles are paired static HTML and Markdown files under `insights/<slug>/`.
+
+For a new article: create the HTML/Markdown pair using an existing note as a template; register its metadata in `insightPages` in `scripts/build-discovery.mjs`, add the path to `insightPaths` in `scripts/check-site.mjs`, update the hub's links, then run the build and site checker before publishing. Drafts can stay in a local checkout or private repository; public branches are not private. Link to externally published articles rather than copying them automatically. Use canonical attribution when syndicating an original article to Medium or DEV; daily.dev is a community/activity profile.
+
+External writing links are in the homepage writing section, the insights HTML/Markdown index and the discovery generator. Update those together if profile URLs change.

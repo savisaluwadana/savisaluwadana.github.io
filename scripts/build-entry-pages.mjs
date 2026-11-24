@@ -62,10 +62,10 @@ export async function buildEntryPages({ root, base, updated, schemaModified, pro
     throw new Error(`Unknown reference block: ${block.type}`);
   };
   const directory = {
-    path: '/products/', title: 'Product Directory & Architecture | Savi Saluwadana',
-    heading: 'Products & engineering work.', label: 'Directory / Products & architecture',
-    description: 'Explore 16 software project overviews by Savi Saluwadana, including source-linked code, architecture decisions, and contribution boundaries.',
-    intro: 'Browse the product work by domain. Every product has a permanent overview with its users, workflow, component architecture, source references and current scope.',
+    path: '/products/', title: 'Projects by Industry & Architecture | Savi Saluwadana',
+    heading: 'Projects by industry.', label: 'Directory / Products & architecture',
+    description: `Explore ${products.length} software project overviews across ${content.groups.length} industry categories, including architecture decisions, source references and contribution boundaries.`,
+    intro: 'Explore projects by the industry and business problem they serve. Each overview documents its users, workflow, architecture, source references and current scope.',
     sections: content.groups.map(group => ({
       id: group.id, title: group.title,
       blocks: [{ type: 'p', text: group.description }, { type: 'table', headers: ['Product', 'Purpose and architecture'], rows: group.products.map(id => {
@@ -73,7 +73,7 @@ export async function buildEntryPages({ root, base, updated, schemaModified, pro
         return [`[${p.name}](/products/${p.id}/)`, `${p.scope} ${p.architecture}`];
       }) }]
     })).concat({ id: 'scope', title: 'Read each product in context', blocks: [
-      { type: 'p', text: 'This directory covers products I’ve built and worked on, including development projects, a self-hosted beta, prototypes and frontend contributions. A listed product is not a claim that every capability is commercially deployed. Each product page states the documented boundary.' },
+      { type: 'p', text: 'This directory covers products I’ve built and worked on, including development projects, prototypes and frontend contributions. A listed product is not a claim that every capability is commercially deployed. Each product page states the documented boundary.' },
       { type: 'p', text: 'Read the [architecture reference](/engineering/) to compare agent permissions, desktop data, tenant isolation and transaction workflows. Visit [About Savi](/about/) for engineering focus and public profile links.' }
     ] })
   };

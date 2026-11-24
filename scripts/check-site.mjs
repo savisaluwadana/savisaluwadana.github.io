@@ -14,6 +14,10 @@ const discovery = JSON.parse(await readFile(path.join(root, 'data/discovery.json
 const coreEntryPaths = ['/products/', ...discovery.pages.map(p => p.path)];
 const insightPaths = ["/insights/","/insights/mcp-permission-boundaries/","/insights/durable-agentic-workflows/","/insights/go-modular-monolith-saas/","/insights/platform-engineering-paved-road/","/insights/postgres-multitenancy-boundaries/"];
 const entryPaths = [...coreEntryPaths, ...insightPaths];
+const industryIds = discovery.groups.flatMap(group => group.products);
+assert.equal(industryIds.length, products.length, 'Every product must be classified by industry');
+assert.equal(new Set(industryIds).size, products.length, 'Industry categories must not duplicate projects');
+assert.ok(industryIds.every(id => products.some(p => p.id === id)), 'Industry categories contain an unknown product');
 assert.equal(sitemapUrls.length, products.length + 2 + entryPaths.length, 'All canonical pages must appear in sitemap');
 const pages = ['index.html', 'contact.html', ...entryPaths.map(p => p.slice(1) + 'index.html'), ...products.map(p => `products/${p.id}/index.html`)];
 const cache = new Map(await Promise.all(pages.map(async f => [f, await readFile(path.join(root, f), 'utf8')])));
@@ -79,6 +83,10 @@ for (const file of pages.filter(p => p !== 'index.html')) {
   assert.ok(reachable.has(file), `${file}: not reachable from homepage links`);
 }
 const home = cache.get('index.html');
+const featuredGrid = home.match(/<section class="section editorial-selected"[\s\S]*?<\/section>/)?.[0];
+assert.ok(featuredGrid, 'Missing selected project grid');
+assert.ok(!/Design concept|Research direction|<h3>Relay<\/h3>|<h3>Systems Lab<\/h3>/.test(featuredGrid), 'Unbuilt concepts must not be presented as selected projects');
+for (const id of ['avara', 'pain-intelligence']) assert.ok(featuredGrid.includes(`href="/products/${id}/"`), `Missing selected project: ${id}`);
 for (const p of products) {
   const html = cache.get(`products/${p.id}/index.html`);
   assert.ok(html.includes('<svg ') && html.includes('<table '), `${p.id}: missing accessible architecture`);

@@ -42,3 +42,19 @@
 @media(max-width:850px){.editorial-hero-grid,.editorial-lab-grid{grid-template-columns:1fr}.editorial-identity{display:none}.editorial-hero{padding-top:8rem}}
 @media(max-width:600px){.engineering-portfolio .shell{width:calc(100% - 32px)}.editorial-project-grid{grid-template-columns:1fr}.editorial-hero h1{font-size:clamp(2.5rem,10vw,4rem)}.editorial-diagram svg{height:125px}.editorial-hero .hero-actions{gap:8px}.editorial-foot{font-size:.64rem}}
 @media(prefers-reduced-motion:reduce){.editorial-project{transition:none}}
+
+/* Writing hub: compact publication links and external article cards. */
+.writing-channels{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:1.5rem 0 2rem}
+.writing-channel{display:flex;flex-direction:column;gap:6px;border:1px solid var(--border);border-radius:8px;padding:16px;background:var(--surface);min-width:0;transition:border-color .16s ease}
+.writing-channel:hover{border-color:var(--border-strong)}
+.writing-channel strong{display:flex;justify-content:space-between;gap:6px;font-size:.92rem;line-height:1.4;color:var(--ink)}
+.writing-channel>span{font-size:.76rem;line-height:1.5;color:var(--ink-soft)}
+.writing-page .product-header h1{font-size:clamp(2.6rem,6vw,4.8rem);letter-spacing:-.065em;line-height:1.05}
+.writing-page .writing-channels{margin-bottom:0}
+@media(max-width:850px){.writing-channels{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:390px){.writing-channels{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.writing-channel{transition:none}}
+
+.editorial-project-body .editorial-project-industry{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin:0 0 .55rem}
+.editorial-project-stack{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 1.15rem}
+.editorial-project-stack span{border:1px solid var(--border);color:var(--muted);border-radius:5px;padding:3px 8px;font-size:.72rem}

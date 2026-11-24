@@ -16,7 +16,7 @@ const insightPages = [
     "path": "/insights/",
     "name": "Engineering insights",
     "description": "Published architecture notes and five proposed article topics.",
-    "reviewed": "2026-11-12"
+    "reviewed": "2026-11-24"
   },
   {
     "path": "/insights/mcp-permission-boundaries/",
@@ -74,6 +74,8 @@ const selectedList = {
   }))
 };
 let home = await readFile(path.join(root, 'index.html'), 'utf8');
+const industryGroups = JSON.parse(await readFile(path.join(root, 'data/discovery.json'), 'utf8')).groups;
+home = home.replace(/<div class="directory-strip"[\s\S]*?<div class="directory-links">[\s\S]*?<\/div>\s*<\/div>/, `<div class="directory-strip" aria-label="Browse projects by industry">\n          <span class="directory-strip-label">Browse projects by industry:</span>\n          <div class="directory-links">\n            ${industryGroups.map(g => `<a href="/products/#${esc(g.id)}">${esc(g.title)} (${g.products.length})</a>`).join('\n            ')}\n          </div>\n        </div>`).replace(/All \d+ documented systems/g, `All ${products.length} documented systems`);
 const cards = featured.map(({ product, stack, question, answer }, index) => `
           <article class="study-card" id="${esc(product.id)}">
             <div class="study-top">
@@ -163,7 +165,7 @@ for (const p of products) {
   markdownProducts.push(md);
   markdown += `- [${p.name}](${url(p)}): ${p.description}\n`;
   const related = products.filter(x => x.id !== p.id && x.tags.some(tag => p.tags.includes(tag))).slice(0, 3);
-  const topicLinks = `${['property-os', 'devrelos', 'pain-intelligence', 'ad-performance-agent'].includes(p.id) ? '<a href="/engineering/agentic-systems/">Agentic systems architecture</a>' : ''}${publicWork.repositories.some(repo => repo.id === p.id) ? '<a href="/open-source/">Public source index</a>' : ''}`;
+  const topicLinks = `${['property-os', 'pain-intelligence', 'ad-performance-agent'].includes(p.id) ? '<a href="/engineering/agentic-systems/">Agentic systems architecture</a>' : ''}${publicWork.repositories.some(repo => repo.id === p.id) ? '<a href="/open-source/">Public source index</a>' : ''}`;
   const html = `<!doctype html>
 <html lang="en"><head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
@@ -216,14 +218,15 @@ const featuredMarkdown = featured.map(({ product, question, answer }) => `- [${p
 let agentIndex = await readFile(path.join(root, 'llms.txt'), 'utf8');
 agentIndex = agentIndex.replace('## Profile and contact', `## Selected engineering work\n\n${featuredMarkdown}\n\n## Profile and contact`);
 agentIndex = agentIndex.replace('## Product overview and architecture', `## Profile and engineering references\n\n${references.map(p => `- [${p.name}](${base}${p.path}): ${p.description}\n- [${p.name} in Markdown](${base}${p.path}index.md): Text equivalent of the same reference.`).join('\n')}\n\n## Product overview and architecture`);
+agentIndex = agentIndex.replace('## Optional', "## Writing and community profiles\n\n- [Medium](https://medium.com/@savisaluwadana): Long-form technical articles.\n- [daily.dev](https://daily.dev/savisaluwadana): Developer community and activity.\n- [DEV Community](https://dev.to/savi_saluwadana): Developer articles and discussions.\n\n## Optional");
 agentIndex = agentIndex.replace('## Optional', `## Engineering insights\n\n${insightPages.map(p => `- [${p.name}](${base}${p.path}): ${p.description}`).join('\n')}\n\n## Optional`);
 agentIndex = agentIndex.replace('## Optional', `## Optional\n\n- [Engineering and product feed](${base}/feed.xml): Atom feed of the current reference pages and product overviews.\n- [Public source data](${base}/public-work.json): Verified public repository references and available license metadata.`);
 await write('llms.txt', agentIndex);
 await write('llms-full.txt', markdown + '\n\n' + [...references.map(p => p.markdown), ...markdownProducts].join('\n\n---\n\n'));
 const feedItems = [...references.map(p => ({ name: p.name, url: base + p.path, description: p.description, reviewed: updated })), ...insightPages.map(p => ({ name: p.name, url: base + p.path, description: p.description, reviewed: p.reviewed })), ...products.map(p => ({ name: p.name, url: url(p), description: `${p.scope} ${p.boundary}`, reviewed: p.reviewed }))];
 // Source review dates are date-granularity and normalized to UTC midnight.
-await write('feed.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">\n  <id>${base}/feed.xml</id><title>Savi Saluwadana — Engineering and products</title>\n  <subtitle>Product architecture, agentic systems and public engineering references.</subtitle>\n  <updated>${updated}T00:00:00Z</updated>\n  <author><name>Savi Saluwadana</name><uri>${base}/about/</uri></author>\n  <link rel="self" type="application/atom+xml" href="${base}/feed.xml"/>\n  <link rel="alternate" type="text/html" href="${base}/"/>\n${feedItems.map(item => `  <entry><id>${esc(item.url)}</id><title>${esc(item.name)}</title><link rel="alternate" type="text/html" href="${esc(item.url)}"/><updated>${item.reviewed}T00:00:00Z</updated><summary type="text">${esc(item.description)}</summary></entry>`).join('\n')}\n</feed>\n`);
+await write('feed.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">\n  <id>${base}/feed.xml</id><title>Savi Saluwadana — Engineering and products</title>\n  <subtitle>Product architecture, agentic systems and public engineering references.</subtitle>\n  <updated>${[updated, ...feedItems.map(item => item.reviewed)].sort().at(-1)}T00:00:00Z</updated>\n  <author><name>Savi Saluwadana</name><uri>${base}/about/</uri></author>\n  <link rel="self" type="application/atom+xml" href="${base}/feed.xml"/>\n  <link rel="alternate" type="text/html" href="${base}/"/>\n${feedItems.map(item => `  <entry><id>${esc(item.url)}</id><title>${esc(item.name)}</title><link rel="alternate" type="text/html" href="${esc(item.url)}"/><updated>${item.reviewed}T00:00:00Z</updated><summary type="text">${esc(item.description)}</summary></entry>`).join('\n')}\n</feed>\n`);
 const paths = ['/', '/contact.html', ...entryPaths, ...products.map(p => `/products/${p.id}/`)];
-await write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${paths.map(p => `  <url><loc>${base}${p}</loc><lastmod>${p === '/' ? homeUpdated : updated}</lastmod></url>`).join('\n')}\n</urlset>\n`);
+await write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${paths.map(p => `  <url><loc>${base}${p}</loc><lastmod>${p === '/' ? homeUpdated : (insightPages.find(i => i.path === p)?.reviewed || updated)}</lastmod></url>`).join('\n')}\n</urlset>\n`);
 await write('sitemap.txt', paths.map(p => base + p).join('\n') + '\n');
 console.log(`Built ${products.length} static product pages, structured data, Markdown, agent indexes and ${paths.length} sitemap entries.`);

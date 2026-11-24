@@ -19,7 +19,7 @@ This is a public portfolio with product-level architecture summaries. It does no
 
 ## Profile and engineering references
 
-- [Product directory](https://savisaluwadana.github.io/products/): Explore 16 software project overviews by Savi Saluwadana, including source-linked code, architecture decisions, and contribution boundaries.
+- [Product directory](https://savisaluwadana.github.io/products/): Explore 15 software project overviews across 10 industry categories, including architecture decisions, source references and contribution boundaries.
 - [Product directory in Markdown](https://savisaluwadana.github.io/products/index.md): Text equivalent of the same reference.
 - [About Savi Saluwadana](https://savisaluwadana.github.io/about/): Savi Saluwadana builds software in public. Browse project repositories, architecture, implementation trade-offs and platform engineering interests.
 - [About Savi Saluwadana in Markdown](https://savisaluwadana.github.io/about/index.md): Text equivalent of the same reference.
@@ -36,7 +36,6 @@ This is a public portfolio with product-level architecture summaries. It does no
 - [Blu.lk](https://savisaluwadana.github.io/products/blu/): Home-service discovery, booking and fulfillment in Sri Lanka.
 - [FreshPick / FreshOnTime](https://savisaluwadana.github.io/products/freshpick/): Food commerce, producer onboarding and scheduled recurring deliveries in Colombo.
 - [TimelyHelp.lk](https://savisaluwadana.github.io/products/timelyhelp/): Product and frontend work for practitioner discovery and consultation journeys.
-- [DevRelOS](https://savisaluwadana.github.io/products/devrelos/): A self-hosted beta for discovery, engagement and outcome measurement.
 - [Property Management OS](https://savisaluwadana.github.io/products/property-os/): Multi-tenant rental operations and controlled agent-assisted work.
 - [RapidReach](https://savisaluwadana.github.io/products/rapidreach/): Developer publishing and tool discovery with a small CMS.
 - [Advance HRIS](https://savisaluwadana.github.io/products/advance-hris/): Hybrid web and local-first desktop HR operations.
@@ -48,6 +47,12 @@ This is a public portfolio with product-level architecture summaries. It does no
 - [Pain Intelligence Lab](https://savisaluwadana.github.io/products/pain-intelligence/): Local research software for exploring repeated needs and evidence-backed project ideas.
 - [Ad Performance Analysis Agent](https://savisaluwadana.github.io/products/ad-performance-agent/): An advertising analytics and reporting prototype.
 - [MediCare](https://savisaluwadana.github.io/products/medicare/): Patient administration, appointments, clinical records and billing.
+
+## Writing and community profiles
+
+- [Medium](https://medium.com/@savisaluwadana): Long-form technical articles.
+- [daily.dev](https://daily.dev/savisaluwadana): Developer community and activity.
+- [DEV Community](https://dev.to/savi_saluwadana): Developer articles and discussions.
 
 ## Engineering insights
 

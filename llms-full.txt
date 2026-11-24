@@ -36,7 +36,6 @@ Email: savisaluwadana@gmail.com
 - [Blu.lk](https://savisaluwadana.github.io/products/blu/): A Sri Lankan home-services platform connecting customers with skilled professionals across electrical, plumbing, cleaning, AC, carpentry and other services, with customer, provider and worker-facing workflows.
 - [FreshPick / FreshOnTime](https://savisaluwadana.github.io/products/freshpick/): A premium food-commerce platform for Colombo bringing together fresh groceries, local products, prepared meals, recurring delivery and business ordering in one customer experience.
 - [TimelyHelp.lk](https://savisaluwadana.github.io/products/timelyhelp/): A mental-healthcare platform for discovering licensed practitioners, booking secure consultations and managing digital care journeys. I worked on the product and frontend experience across practitioner discovery, account flows, checkout, dashboards and consultation surfaces.
-- [DevRelOS](https://savisaluwadana.github.io/products/devrelos/): An operating system for discovering developer signals, managing community and content workflows, connecting developer feedback to product work, and measuring outcomes from one operational surface.
 - [Property Management OS](https://savisaluwadana.github.io/products/property-os/): A rental operations platform covering properties, units, tenants, leases, rent, maintenance, documents, notifications and controlled agent-assisted operations.
 - [RapidReach](https://savisaluwadana.github.io/products/rapidreach/): A developer publication and tool-discovery product with editorial workflows, comments, likes, search, tool profiles, media uploads and a deliberately small CMS.
 - [Advance HRIS](https://savisaluwadana.github.io/products/advance-hris/): A hybrid HR information system with an employee web portal, a native HR/admin desktop console, tenant-scoped access, policy-backed leave, schedule-aware attendance, audit history and durable offline synchronization.
@@ -51,71 +50,111 @@ Email: savisaluwadana@gmail.com
 
 ## Profile and architecture references
 
-- [Product directory](https://savisaluwadana.github.io/products/): Explore 16 software project overviews by Savi Saluwadana, including source-linked code, architecture decisions, and contribution boundaries.
+- [Product directory](https://savisaluwadana.github.io/products/): Explore 15 software project overviews across 10 industry categories, including architecture decisions, source references and contribution boundaries.
 - [About Savi Saluwadana](https://savisaluwadana.github.io/about/): Savi Saluwadana builds software in public. Browse project repositories, architecture, implementation trade-offs and platform engineering interests.
 - [Architecture reference](https://savisaluwadana.github.io/engineering/): Inspect project architecture decisions on APIs, data authority, local-first workflows, tenancy and transactions in Savi Saluwadana's software.
 - [Agentic systems architecture](https://savisaluwadana.github.io/engineering/agentic-systems/): Inspect agent tool boundaries, application permissions and local research workflows documented in Savi Saluwadana's projects.
 - [Public repositories and design notes](https://savisaluwadana.github.io/open-source/): Inspect public software repositories, licensing status, local setup, architecture, design trade-offs and unfinished work.
 
 
-# Products & engineering work.
+# Projects by industry.
 
-Browse the product work by domain. Every product has a permanent overview with its users, workflow, component architecture, source references and current scope.
+Explore projects by the industry and business problem they serve. Each overview documents its users, workflow, architecture, source references and current scope.
 
 By: Savi Saluwadana
 Canonical page: https://savisaluwadana.github.io/products/
 Reviewed: 2026-11-12
 
-## Marketplaces, commerce and service operations
+## Real estate & property
 
-Products that connect discovery and customer journeys with bookings, fulfillment or procurement.
+Property discovery, rentals and property operations.
 
 | Product | Purpose and architecture |
 | --- | --- |
 | [Avara Real Estate](https://savisaluwadana.github.io/products/avara/) | Property discovery, transactions and host operations in Sri Lanka. Next.js → MongoDB → S3 → PayHere |
-| [Blu.lk](https://savisaluwadana.github.io/products/blu/) | Home-service discovery, booking and fulfillment in Sri Lanka. Customer + provider experiences → Laravel API → MySQL |
-| [FreshPick / FreshOnTime](https://savisaluwadana.github.io/products/freshpick/) | Food commerce, producer onboarding and scheduled recurring deliveries in Colombo. Next.js → Prisma / PostgreSQL → recurring delivery + media storage |
-| [EventOS](https://savisaluwadana.github.io/products/eventos/) | Quick provider matching and full event procurement. Next.js → PostgreSQL → transactional workflows + file storage |
-
-## Business systems and operational software
-
-Work around property, people, retail, education, finance and restaurant operations.
-
-| Product | Purpose and architecture |
-| --- | --- |
 | [Property Management OS](https://savisaluwadana.github.io/products/property-os/) | Multi-tenant rental operations and controlled agent-assisted work. Next.js → Go modular monolith → PostgreSQL → Outbox worker → MCP |
-| [Advance HRIS](https://savisaluwadana.github.io/products/advance-hris/) | Hybrid web and local-first desktop HR operations. Next.js Web + Wails / React Desktop → Go API → PostgreSQL |
-| [NexusPOS](https://savisaluwadana.github.io/products/nexus-pos/) | Checkout and store operations with an optional Electron desktop shell. Next.js / React → Prisma → MongoDB + Electron |
-| [Academix](https://savisaluwadana.github.io/products/academix/) | Student, academic and fee operations in a role-aware workspace. Next.js → MongoDB / Mongoose → notification integrations |
-| [Acme Accounting](https://savisaluwadana.github.io/products/acme-accounting/) | Single-company financial operations backed by a double-entry ledger. Next.js → MongoDB / Mongoose → double-entry ledger |
-| [Plate Restaurant OS](https://savisaluwadana.github.io/products/restaurantos/) | Restaurant point of sale and coordinated order operations. Next.js → authenticated API routes → MongoDB |
 
-## Healthcare and patient-facing products
+## Healthcare & mental health
 
-Practitioner discovery, consultation journeys and clinic administration, with contribution boundaries documented on each page.
+Practitioner discovery, consultations and clinic operations.
 
 | Product | Purpose and architecture |
 | --- | --- |
 | [TimelyHelp.lk](https://savisaluwadana.github.io/products/timelyhelp/) | Product and frontend work for practitioner discovery and consultation journeys. Next.js 15 → NextAuth → practitioner APIs → Zoom Video SDK |
 | [MediCare](https://savisaluwadana.github.io/products/medicare/) | Patient administration, appointments, clinical records and billing. Next.js → Go API + scheduling service → PostgreSQL |
 
-## AI agents, research and developer tools
+## Food, retail & hospitality
 
-Evidence-led research, controlled automation, developer publishing and analytics prototypes.
+Food commerce, checkout, inventory and restaurant operations.
 
 | Product | Purpose and architecture |
 | --- | --- |
-| [DevRelOS](https://savisaluwadana.github.io/products/devrelos/) | A self-hosted beta for discovery, engagement and outcome measurement. Next.js → Go API → PostgreSQL → Workers → MCP |
+| [FreshPick / FreshOnTime](https://savisaluwadana.github.io/products/freshpick/) | Food commerce, producer onboarding and scheduled recurring deliveries in Colombo. Next.js → Prisma / PostgreSQL → recurring delivery + media storage |
+| [NexusPOS](https://savisaluwadana.github.io/products/nexus-pos/) | Checkout and store operations with an optional Electron desktop shell. Next.js / React → Prisma → MongoDB + Electron |
+| [Plate Restaurant OS](https://savisaluwadana.github.io/products/restaurantos/) | Restaurant point of sale and coordinated order operations. Next.js → authenticated API routes → MongoDB |
+
+## Home & professional services
+
+Service discovery, bookings and fulfillment.
+
+| Product | Purpose and architecture |
+| --- | --- |
+| [Blu.lk](https://savisaluwadana.github.io/products/blu/) | Home-service discovery, booking and fulfillment in Sri Lanka. Customer + provider experiences → Laravel API → MySQL |
+
+## Finance & accounting
+
+Financial operations, ledger integrity and reporting.
+
+| Product | Purpose and architecture |
+| --- | --- |
+| [Acme Accounting](https://savisaluwadana.github.io/products/acme-accounting/) | Single-company financial operations backed by a double-entry ledger. Next.js → MongoDB / Mongoose → double-entry ledger |
+
+## Human resources
+
+Employee records and workforce operations.
+
+| Product | Purpose and architecture |
+| --- | --- |
+| [Advance HRIS](https://savisaluwadana.github.io/products/advance-hris/) | Hybrid web and local-first desktop HR operations. Next.js Web + Wails / React Desktop → Go API → PostgreSQL |
+
+## Education
+
+Student, academic and fee operations.
+
+| Product | Purpose and architecture |
+| --- | --- |
+| [Academix](https://savisaluwadana.github.io/products/academix/) | Student, academic and fee operations in a role-aware workspace. Next.js → MongoDB / Mongoose → notification integrations |
+
+## Events & procurement
+
+Event service discovery and procurement workflows.
+
+| Product | Purpose and architecture |
+| --- | --- |
+| [EventOS](https://savisaluwadana.github.io/products/eventos/) | Quick provider matching and full event procurement. Next.js → PostgreSQL → transactional workflows + file storage |
+
+## Marketing & advertising
+
+Campaign analysis and reporting.
+
+| Product | Purpose and architecture |
+| --- | --- |
+| [Ad Performance Analysis Agent](https://savisaluwadana.github.io/products/ad-performance-agent/) | An advertising analytics and reporting prototype. React / Vite → Express → CSV analysis + Gemini → email |
+
+## Technology, media & research
+
+Developer publishing and evidence-led research software.
+
+| Product | Purpose and architecture |
+| --- | --- |
 | [RapidReach](https://savisaluwadana.github.io/products/rapidreach/) | Developer publishing and tool discovery with a small CMS. Next.js → MongoDB → object storage |
 | [Pain Intelligence Lab](https://savisaluwadana.github.io/products/pain-intelligence/) | Local research software for exploring repeated needs and evidence-backed project ideas. Next.js dashboard → Rust API → PostgreSQL; separate desktop app |
-| [Ad Performance Analysis Agent](https://savisaluwadana.github.io/products/ad-performance-agent/) | An advertising analytics and reporting prototype. React / Vite → Express → CSV analysis + Gemini → email |
 
 ## Read each product in context
 
-This directory covers products I’ve built and worked on, including development projects, a self-hosted beta, prototypes and frontend contributions. A listed product is not a claim that every capability is commercially deployed. Each product page states the documented boundary.
+This directory covers products I’ve built and worked on, including development projects, prototypes and frontend contributions. A listed product is not a claim that every capability is commercially deployed. Each product page states the documented boundary.
 
 Read the [architecture reference](https://savisaluwadana.github.io/engineering/) to compare agent permissions, desktop data, tenant isolation and transaction workflows. Visit [About Savi](https://savisaluwadana.github.io/about/) for engineering focus and public profile links.
-
 
 ---
 
@@ -133,9 +172,9 @@ I’m interested in clear domain boundaries, strong data models, reliable APIs a
 
 | Area | Where to explore it |
 | --- | --- |
-| Go backend and API design | [Property Management OS](https://savisaluwadana.github.io/products/property-os/), [DevRelOS](https://savisaluwadana.github.io/products/devrelos/) and [Advance HRIS](https://savisaluwadana.github.io/products/advance-hris/). |
+| Go backend and API design | [Property Management OS](https://savisaluwadana.github.io/products/property-os/) and [Advance HRIS](https://savisaluwadana.github.io/products/advance-hris/). |
 | Product and full-stack engineering | [Avara Real Estate](https://savisaluwadana.github.io/products/avara/), [FreshPick](https://savisaluwadana.github.io/products/freshpick/) and [RapidReach](https://savisaluwadana.github.io/products/rapidreach/). |
-| Agentic systems and Model Context Protocol | [Pain Intelligence Lab](https://savisaluwadana.github.io/products/pain-intelligence/), [Property Management OS](https://savisaluwadana.github.io/products/property-os/) and [DevRelOS](https://savisaluwadana.github.io/products/devrelos/). |
+| Agentic systems and Model Context Protocol | [Pain Intelligence Lab](https://savisaluwadana.github.io/products/pain-intelligence/) and [Property Management OS](https://savisaluwadana.github.io/products/property-os/). |
 | Public source and project decisions | Browse the [public repository index](https://savisaluwadana.github.io/open-source/) and each project's architecture and trade-offs. |
 | Operational data and workflows | [Acme Accounting](https://savisaluwadana.github.io/products/acme-accounting/), [Advance HRIS](https://savisaluwadana.github.io/products/advance-hris/) and [MediCare](https://savisaluwadana.github.io/products/medicare/). |
 | Platform engineering interests | I am exploring containers, delivery automation and developer experience through the [public repositories](https://savisaluwadana.github.io/open-source/). |
@@ -149,7 +188,7 @@ I’m interested in agents that use tools, retrieval and workflow state to help 
 - Multi-agent collaboration with clear responsibilities, shared evidence and human review for consequential actions.
 - Retrieval-augmented generation, evidence provenance and agent evaluation that make results inspectable and useful.
 
-My current product work includes [Pain Intelligence Lab](https://savisaluwadana.github.io/products/pain-intelligence/), [Property Management OS](https://savisaluwadana.github.io/products/property-os/) and [DevRelOS](https://savisaluwadana.github.io/products/devrelos/). Follow their requests and state changes in the [agentic systems architecture walkthroughs](https://savisaluwadana.github.io/engineering/agentic-systems/). The broader topics above describe my development interests.
+My current product work includes [Pain Intelligence Lab](https://savisaluwadana.github.io/products/pain-intelligence/) and [Property Management OS](https://savisaluwadana.github.io/products/property-os/). Follow their requests and state changes in the [agentic systems architecture walkthroughs](https://savisaluwadana.github.io/engineering/agentic-systems/). The broader topics above describe my development interests.
 
 ## Code and design decisions in public
 
@@ -159,9 +198,9 @@ I keep a separate summary for products without confirmed public source. [Browse 
 
 ## Products I’ve built and worked on
 
-The [product directory](https://savisaluwadana.github.io/products/) includes 16 projects across marketplaces, commerce, healthcare, business operations, developer tools and AI-assisted research. Each overview explains the users, workflow, architecture and current scope.
+The [product directory](https://savisaluwadana.github.io/products/) includes 15 projects across ten industries, from real estate and healthcare to finance, education and technology. Each overview explains the users, workflow, architecture and current scope.
 
-Contribution and maturity vary by project. For example, [TimelyHelp](https://savisaluwadana.github.io/products/timelyhelp/) describes my product and frontend work; [DevRelOS](https://savisaluwadana.github.io/products/devrelos/) is a self-hosted beta; and the [Ad Performance Analysis Agent](https://savisaluwadana.github.io/products/ad-performance-agent/) is a prototype with mocked account connectors. The scope notes make those distinctions explicit.
+Contribution and maturity vary by project. For example, [TimelyHelp](https://savisaluwadana.github.io/products/timelyhelp/) describes my product and frontend work; and the [Ad Performance Analysis Agent](https://savisaluwadana.github.io/products/ad-performance-agent/) is a prototype with mocked account connectors. The scope notes make those distinctions explicit.
 
 ## Profile questions
 
@@ -181,7 +220,6 @@ My public profiles are [GitHub](https://github.com/savisaluwadana) and [LinkedIn
 
 Use the [contact page](https://savisaluwadana.github.io/contact.html) or email savisaluwadana@gmail.com. I’m interested in product, software architecture, agentic systems, platform, DevOps, AI infrastructure and open-source development and collaboration.
 
-
 ---
 
 # Software architecture across product workflows.
@@ -199,7 +237,6 @@ Model Context Protocol gives an agent a tool interface. The useful architectural
 | Project | Access and reasoning boundary |
 | --- | --- |
 | [Property Management OS](https://savisaluwadana.github.io/products/property-os/) | MCP calls the same authenticated Go HTTP API used by other clients. Domain rules and tenant permissions remain server-side; the MCP server has no direct database connection. |
-| [DevRelOS](https://savisaluwadana.github.io/products/devrelos/) | A Next.js dashboard, Go API and workers share PostgreSQL as the system of record. Provider adapters and evidence provenance support the workflow; consequential outreach passes through approval gates. |
 | [Pain Intelligence Lab](https://savisaluwadana.github.io/products/pain-intelligence/) | The local Next.js dashboard calls a Rust API backed by PostgreSQL. The repository also has a separate desktop edition with its own capabilities. |
 
 These are different boundaries. An agent tool does not imply unrestricted writes or an autonomous production workflow. Product scope notes describe the implemented tools, provider configuration and evidence requirements. The [agentic systems walkthroughs](https://savisaluwadana.github.io/engineering/agentic-systems/) follow each request through its tool, service and recorded state.
@@ -235,13 +272,11 @@ A booking, a recurring order and a payment represent different state changes. Ke
 This reference summarizes the documented project boundaries. It does not report measured performance, deployment outcomes or customer results. Product pages carry the corresponding architecture diagrams, component responsibilities, review dates and source links.
 
 - [Property Management OS repository documentation](https://github.com/RealEstateSassApplication/property-management-OS/blob/main/README.md)
-- [DevRelOS repository documentation](https://savisaluwadana.github.io/products/devrelos/)
 - [Pain Intelligence Lab repository documentation](https://github.com/savisaluwadana/Pain-Point-Analyzer/blob/main/README.md)
 - [Advance HRIS repository documentation](https://github.com/SilverLine-Ravija/Advance-HIRS-System/blob/main/README.md)
 - [Avara repository documentation](https://github.com/RealEstateSassApplication/AvaraRealEstate/blob/main/README.md)
 - [FreshPick repository documentation](https://github.com/FreshOnTime/newfreshontimewebsite/blob/main/README.md)
 - [Academix repository documentation](https://github.com/savisaluwadana/student-management-system-saas/blob/main/README.md)
-
 
 ---
 
@@ -261,7 +296,6 @@ The model, tool interface and domain service have different responsibilities. Th
 | --- | --- | --- |
 | [Property Management OS](https://savisaluwadana.github.io/products/property-os/) | MCP tools call the authenticated Go API. | Organization scope and domain rules remain in the API. PostgreSQL stores business records and notification intents. |
 | [Pain Intelligence Lab](https://savisaluwadana.github.io/products/pain-intelligence/) | A connected MCP host performs semantic research and synthesis. | The Rust API records evidence and research state in PostgreSQL; research findings still need validation. The application does not call model APIs directly. |
-| [DevRelOS](https://savisaluwadana.github.io/products/devrelos/) | Dashboard and authenticated MCP clients access workspace workflows. | The Go API checks membership; workers handle configured providers and approved delivery. Consequential outreach requires approval. |
 | [Ad Performance Analysis Agent](https://savisaluwadana.github.io/products/ad-performance-agent/) | Gemini assists with summaries after CSV analysis. | Threshold logic computes flags. Account connectors are mocks, so this prototype is not a durable live-account ingestion system. |
 
 ## Follow a rental-operations request
@@ -290,16 +324,11 @@ The output is evaluated as evidence, not just generated text. Source diversity, 
 
 This boundary also changes how the system is configured: the connected host provides semantic reasoning, while the platform provides storage, inspection and quality checks. Model-provider behavior should not be inferred from the Rust API alone.
 
-## Approvals in developer operations
+## Human approval and external actions
 
-[DevRelOS](https://savisaluwadana.github.io/products/devrelos/) connects source-backed signals, workspace membership, background work and approval-gated outreach. Its domain API and workers serve different parts of that process.
+An agent can propose a change without being authorized to execute it. Keep consequential actions behind application permissions and explicit human review.
 
-1. Connectors or an operator bring source-backed signals into a workspace.
-2. The Go API validates membership and stores domain state in PostgreSQL.
-3. Background workers run connector, media and approved outreach tasks.
-4. The dashboard and MCP clients inspect work and track its outcomes through the domain API.
-
-A research signal or draft is different from an external action. Evidence can inform a workflow while the delivery step still needs approval and provider configuration. The self-hosted beta’s scope notes describe those prerequisites; they should be retained when evaluating the system.
+For the design rationale, read [Durable Agentic Workflows](https://savisaluwadana.github.io/insights/durable-agentic-workflows/) and [MCP Permission Boundaries](https://savisaluwadana.github.io/insights/mcp-permission-boundaries/). These are design notes, not claims of measured production outcomes.
 
 ## What I want to develop further
 
@@ -315,10 +344,8 @@ My broader interests include durable orchestration, multi-agent collaboration, r
 
 - [Property Management OS repository documentation](https://github.com/RealEstateSassApplication/property-management-OS/blob/main/README.md)
 - [Pain Intelligence Lab repository documentation](https://github.com/savisaluwadana/Pain-Point-Analyzer/blob/main/README.md)
-- [DevRelOS repository documentation](https://savisaluwadana.github.io/products/devrelos/)
 
 See the [broader architecture reference](https://savisaluwadana.github.io/engineering/) for local-first data, tenancy and transaction comparisons, or the [public source index](https://savisaluwadana.github.io/open-source/) to browse repository references. [About Savi](https://savisaluwadana.github.io/about/) describes my engineering and collaboration interests.
-
 
 ---
 
@@ -571,53 +598,6 @@ Next.js 15 → NextAuth → practitioner APIs → Zoom Video SDK
 Savi’s portfolio contribution is product and frontend work. This page summarizes that frontend boundary and does not claim ownership of the full clinical backend.
 
 Source: https://timelyhelp.lk/
-
-
----
-
-# DevRelOS
-
-By / portfolio contribution: Savi Saluwadana
-Canonical page: https://savisaluwadana.github.io/products/devrelos/
-Reviewed: 2026-10-04
-
-An operating system for discovering developer signals, managing community and content workflows, connecting developer feedback to product work, and measuring outcomes from one operational surface.
-
-## Users and purpose
-
-Developer-relations teams and developer-community operators.
-
-A self-hosted beta for discovery, engagement and outcome measurement.
-
-## Capabilities
-
-- Signal Radar, pain-point intelligence and developer feedback.
-- Events, CFPs, reusable talks, contacts and relationships.
-- Content, campaigns, media workflows and approval-gated outreach.
-- Authenticated MCP tools and workspace-scoped access.
-
-## Workflow
-
-1. Connectors or an operator bring source-backed signals into a workspace.
-2. The Go API validates membership and stores domain state in PostgreSQL.
-3. Background workers run connector, media and approved outreach tasks.
-4. The dashboard and MCP clients inspect work and track its outcomes through the domain API.
-
-## Architecture
-
-Next.js → Go API → PostgreSQL → Workers → MCP
-
-- Next.js dashboard: Operator workspaces and same-origin API proxy.
-- Go domain API: Authenticated workflows, membership checks and business rules.
-- PostgreSQL: Workspace data, evidence, workflow state and audit history.
-- Go workers: Connector ingestion, media rendering and approved delivery.
-- MCP: Authenticated domain tools; no parallel database access path.
-
-## Current scope
-
-This project is a self-hosted beta. External providers require credentials and policy configuration; consequential outreach follows approval workflows.
-
-No confirmed public repository is linked.
 
 
 ---
