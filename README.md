@@ -13,6 +13,7 @@ No package installation or frontend framework is required.
 ```bash
 node scripts/build-discovery.mjs
 node scripts/check-site.mjs
+node scripts/check-seo.mjs
 python -m http.server 8000
 ```
 
@@ -22,7 +23,7 @@ Shared neutral theme tokens are in `base-styles.css`; the editorial homepage add
 
 ## Discovery
 
-Each HTML page includes its own canonical URL and metadata, structured identity, and product/breadcrumb data where appropriate. The sitemap covers 28 canonical pages: the homepage, contact, five directory/profile/reference pages and 15 products. The checker verifies that HTML links connect every page to the homepage. The [Atom feed](https://savisaluwadana.github.io/feed.xml) publishes 26 reference, article and project summaries. Markdown, JSON, `llms.txt` and `llms-full.txt` offer additional retrieval formats.
+Each HTML page includes its own canonical URL and metadata, structured identity, and product/breadcrumb data where appropriate. The sitemap covers 27 canonical pages: the homepage, contact, five directory/profile/reference pages and 15 products. The checker verifies that HTML links connect every page to the homepage. The [Atom feed](https://savisaluwadana.github.io/feed.xml) publishes 25 reference, article and project summaries. Markdown, JSON, `llms.txt` and `llms-full.txt` offer additional retrieval formats.
 
 Read [the discovery and maintenance guide](docs/DISCOVERY.md) for Search Console submission, verified scope notes and how to keep generated content consistent. Rankings, indexing speed and AI citations are controlled by the search/retrieval providers and cannot be guaranteed by site changes.
 
@@ -37,3 +38,7 @@ Keep writing public and authentication-free. GitHub repository permissions prote
 For a new article: create the HTML/Markdown pair using an existing note as a template; register its metadata in `insightPages` in `scripts/build-discovery.mjs`, add the path to `insightPaths` in `scripts/check-site.mjs`, update the hub's links, then run the build and site checker before publishing. Drafts can stay in a local checkout or private repository; public branches are not private. Link to externally published articles rather than copying them automatically. Use canonical attribution when syndicating an original article to Medium or DEV; daily.dev is a community/activity profile.
 
 External writing links are in the homepage writing section, the insights HTML/Markdown index and the discovery generator. Update those together if profile URLs change.
+
+## Free SEO operations
+
+See [the SEO operating guide](docs/SEO.md). The SEO GitHub Actions workflow checks committed and regenerated discovery files and creates a metadata audit report. Search Console, Bing and optional analytics require separate account setup.

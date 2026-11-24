@@ -3,8 +3,8 @@
   "@type": "ProfilePage",
   "@id": "https://savisaluwadana.github.io/#profile",
   "url": "https://savisaluwadana.github.io/",
-  "name": "Savi Saluwadana | Software Engineering, Systems & Applied AI",
-  "description": "Independent software engineering portfolio exploring distributed systems, software architecture, platform engineering and applied AI through projects, technical notes and experiments.",
+  "name": "Savi Saluwadana | Software Engineer in Sri Lanka",
+  "description": "Software engineer in Sri Lanka exploring distributed systems, software architecture, cloud-native platforms and applied AI. Explore projects and notes.",
   "dateModified": "2026-11-24T00:00:00+05:30",
   "mainEntity": {
     "@type": "Person",

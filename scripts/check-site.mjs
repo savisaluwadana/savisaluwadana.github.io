@@ -34,6 +34,8 @@ for (const [file, html] of cache) {
   assert.ok(title && !titles.has(title), `${file}: missing/duplicate title`);
   titles.add(title);
   const canonical = html.match(/rel="canonical" href="([^"]+)"/)?.[1];
+  const expectedCanonical = `${origin}/${file.replace(/index\.html$/, '')}`;
+  assert.equal(canonical, expectedCanonical, `${file}: canonical does not match page URL`);
   assert.ok(sitemapUrls.includes(canonical), `${file}: canonical missing from sitemap`);
   assert.ok(!/<meta[^>]+content="[^"]*noindex/.test(html), `${file}: page blocks indexing`);
   const description = html.match(/<meta name="description" content="([^"]+)"/)?.[1];
@@ -86,7 +88,7 @@ const home = cache.get('index.html');
 const featuredGrid = home.match(/<section class="section editorial-selected"[\s\S]*?<\/section>/)?.[0];
 assert.ok(featuredGrid, 'Missing selected project grid');
 assert.ok(!/Design concept|Research direction|<h3>Relay<\/h3>|<h3>Systems Lab<\/h3>/.test(featuredGrid), 'Unbuilt concepts must not be presented as selected projects');
-for (const id of ['avara', 'pain-intelligence']) assert.ok(featuredGrid.includes(`href="/products/${id}/"`), `Missing selected project: ${id}`);
+for (const id of ['advance-hris', 'freshpick', 'property-os']) assert.ok(featuredGrid.includes(`href="/products/${id}/"`), `Missing selected project: ${id}`);
 for (const p of products) {
   const html = cache.get(`products/${p.id}/index.html`);
   assert.ok(html.includes('<svg ') && html.includes('<table '), `${p.id}: missing accessible architecture`);
@@ -137,6 +139,7 @@ assert.equal(await readFile(path.join(root, 'google062719a40465c49b.html'), 'utf
 const robots = await readFile(path.join(root, 'robots.txt'), 'utf8');
 assert.ok(/User-agent: \*\s+Allow: \//.test(robots), 'Crawlers should have access to public content');
 assert.ok(robots.includes(`${origin}/sitemap.xml`), 'robots.txt must advertise XML sitemap');
+assert.match(robots, /User-agent: OAI-SearchBot\s+Allow: \//i, 'Search crawler access must remain available');
 for (const filename of ['profile.json', 'products.json', 'site.webmanifest']) JSON.parse(await readFile(path.join(root, filename), 'utf8'));
 const profile = JSON.parse(await readFile(path.join(root, 'profile.json'), 'utf8'));
 assert.deepEqual(profile.mainEntity, person, 'Agent profile must match HTML identity');

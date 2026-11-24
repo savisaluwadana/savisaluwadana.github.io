@@ -64,8 +64,8 @@ const featured = [
   { id: 'property-os', stack: 'Go / PostgreSQL / MCP', question: 'Who authorizes an agent’s request?', answer: 'Property Management OS routes MCP tool calls through the same authenticated Go API as the web app. The API owns the permission check and the database write.' }
 ].map(study => ({ ...study, product: products.find(p => p.id === study.id) }));
 
-const pageTitle = 'Savi Saluwadana | Software Engineering, Systems & Applied AI';
-const pageDescription = 'Independent software engineering portfolio exploring distributed systems, software architecture, platform engineering and applied AI through projects, technical notes and experiments.';
+const pageTitle = 'Savi Saluwadana | Software Engineer in Sri Lanka';
+const pageDescription = 'Software engineer in Sri Lanka exploring distributed systems, software architecture, cloud-native platforms and applied AI. Explore projects and notes.';
 const homeUpdated = '2026-11-24';
 const selectedList = {
   '@type': 'ItemList', '@id': base + '/#work', name: 'Selected work',
