@@ -60,3 +60,11 @@ Google/Bing account verification, analytics activation, actual indexing, Core We
 
 ### Backlinks and competitors
 Export Links from Search Console and backlink data from Bing's free UI when available. Keep exports in the private reporting directory. Check the top results for the keyword map manually once a month, record URLs and content gaps, and prioritize original projects and reproducible benchmarks over keyword stuffing. Automated competitor ranking and backlink crawling are not included.
+
+### Reporting and identity consistency
+- Technical audit results appear in GitHub Actions job summaries as well as JSON artifacts. Scheduled/manual browser audits check every sitemap URL at two viewports; normal pushes/PRs check eight representative routes. Performance tests use a pinned Ubuntu 24.04 runner for browser compatibility.
+- The canonical Person record includes the existing GitHub, LinkedIn, DEV, Medium and daily.dev profiles. The build synchronizes that identity across all HTML routes, including independently maintained articles.
+- A successful technical test is not a search ranking, live indexing or accessibility certification. Review actual metrics and individual violation targets before changing thresholds.
+
+### Private offline dashboard
+Run `node scripts/render-private-dashboard.mjs` and then `open ~/.portfolio-seo/dashboard.html` on macOS. The dashboard displays actual local Google snapshots, keyword opportunities, top pages and completed AI visibility tests. It works offline, uses no external JS libraries, and never uploads reports. Blank or untested results are not counted as zero. Bing raw rows remain in local JSON because its reporting period differs. Run the script again after collecting new snapshots. The self-test can run with `node scripts/render-private-dashboard.mjs --self-test` without credentials.

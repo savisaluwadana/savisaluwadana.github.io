@@ -1,9 +1,9 @@
 module.exports = {
   ci: {
     collect: {
-      startServerCommand: 'python3 -m http.server 8765 --bind 127.0.0.1',
+      startServerCommand: 'python3 -u -m http.server 8765 --bind 127.0.0.1',
       startServerReadyPattern: 'Serving HTTP',
-      startServerReadyTimeout: 10000,
+      startServerReadyTimeout: 20000,
       url: ['/', '/engineering/', '/products/property-os/', '/insights/mcp-permission-boundaries/'].map(p => 'http://127.0.0.1:8765' + p),
       numberOfRuns: 2,
       settings: {chromeFlags: '--no-sandbox --disable-dev-shm-usage'}

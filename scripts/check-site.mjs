@@ -7,6 +7,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const origin = 'https://savisaluwadana.github.io';
 const products = JSON.parse(await readFile(path.join(root, 'data/products.json'), 'utf8'));
 const person = JSON.parse(await readFile(path.join(root, 'data/profile.json'), 'utf8'));
+for (const url of ['https://dev.to/savi_saluwadana','https://medium.com/@savisaluwadana','https://daily.dev/savisaluwadana']) assert.ok(person.sameAs.includes(url), 'Missing canonical writing profile: '+url);
 const sitemap = await readFile(path.join(root, 'sitemap.xml'), 'utf8');
 const sitemapUrls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(m => m[1]);
 assert.equal(new Set(sitemapUrls).size, sitemapUrls.length, 'Duplicate sitemap URLs');

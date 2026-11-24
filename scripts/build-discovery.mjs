@@ -230,5 +230,23 @@ await write('feed.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<feed xmlns="ht
 const paths = ['/', '/contact.html', ...entryPaths, ...products.map(p => `/products/${p.id}/`)];
 await write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${paths.map(p => `  <url><loc>${base}${p}</loc><lastmod>${p === '/' ? homeUpdated : (insightPages.find(i => i.path === p)?.reviewed || updated)}</lastmod></url>`).join('\n')}\n</urlset>\n`);
 await write('sitemap.txt', paths.map(p => base + p).join('\n') + '\n');
+// Static article pages also inherit the canonical identity when the profile changes.
+for (const route of paths) {
+  const filename = route.slice(1) + (route.endsWith('/') ? 'index.html' : '');
+  const html = await readFile(path.join(root, filename), 'utf8');
+  const updatedHtml = html.replace(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g, (tag, json) => {
+    const doc = JSON.parse(json);
+    if (!Array.isArray(doc['@graph'])) return tag;
+    let changed = false;
+    doc['@graph'] = doc['@graph'].map(node => {
+      if (node['@id'] !== person['@id'] || node['@type'] !== 'Person') return node;
+      if (JSON.stringify(node) === JSON.stringify(person)) return node;
+      changed = true;
+      return person;
+    });
+    return changed ? '<script type="application/ld+json">\n' + JSON.stringify(doc, null, 2).replaceAll('<', '\\u003c') + '\n  </script>' : tag;
+  });
+  if (updatedHtml !== html) await write(filename, updatedHtml);
+}
 await applySeoMetadata(root, paths);
 console.log(`Built ${products.length} static product pages, structured data, Markdown, agent indexes and ${paths.length} sitemap entries.`);

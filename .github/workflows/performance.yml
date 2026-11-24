@@ -11,7 +11,7 @@ permissions:
   contents: read
 jobs:
   lighthouse:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
@@ -24,6 +24,9 @@ jobs:
         env:
           PYTHONUNBUFFERED: '1'
         run: lhci autorun --config=./lighthouserc.cjs
+      - name: Summarize Lighthouse results
+        if: always()
+        run: node scripts/summarize-audits.mjs lighthouse
       - name: Upload public technical reports
         if: always()
         uses: actions/upload-artifact@v4
@@ -33,7 +36,7 @@ jobs:
           if-no-files-found: warn
           retention-days: 30
   browser:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
@@ -51,6 +54,9 @@ jobs:
           trap 'kill "$server" || true' EXIT
           for i in {1..30}; do curl -fsS http://127.0.0.1:8765/ > /dev/null && break; sleep 1; done
           node tooling/browser/audit.mjs
+      - name: Summarize browser results
+        if: always()
+        run: node scripts/summarize-audits.mjs browser
       - name: Upload public browser audit
         if: always()
         uses: actions/upload-artifact@v4

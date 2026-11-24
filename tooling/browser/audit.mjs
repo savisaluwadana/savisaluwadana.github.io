@@ -1,8 +1,11 @@
 import { chromium } from 'playwright';
 import AxeBuilder from '@axe-core/playwright';
-import { writeFile } from 'node:fs/promises';
+import { readFile, writeFile } from 'node:fs/promises';
 const base = 'http://127.0.0.1:8765';
-const routes = ['/', '/about/', '/products/', '/engineering/', '/insights/', '/products/property-os/', '/insights/mcp-permission-boundaries/', '/contact.html'];
+const sample = ['/', '/about/', '/products/', '/engineering/', '/insights/', '/products/property-os/', '/insights/mcp-permission-boundaries/', '/contact.html'];
+const sitemap = await readFile(new URL('../../sitemap.xml',import.meta.url),'utf8');
+const all = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(m=>new URL(m[1]).pathname);
+const routes = process.env.GITHUB_EVENT_NAME==='schedule' || process.env.GITHUB_EVENT_NAME==='workflow_dispatch' || process.argv.includes('--all') ? all : sample;
 const browser = await chromium.launch({headless: true});
 const results = [];
 try {
@@ -16,7 +19,7 @@ try {
       await page.locator('h1').first().waitFor();
       const overflow = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 2);
       const scan = await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa']).analyze();
-      results.push({route, viewport, status:response?.status(), overflow, errors, violations:scan.violations.map(v=>({id:v.id,impact:v.impact,description:v.description,nodes:v.nodes.length}))});
+      results.push({route, viewport, status:response?.status(), overflow, errors, violations:scan.violations.map(v=>({id:v.id,impact:v.impact,description:v.description,nodes:v.nodes.length,targets:v.nodes.slice(0,5).map(n=>n.target)}))});
       await page.close();
     }
     await context.close();
