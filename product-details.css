@@ -303,3 +303,14 @@
 .profile-interest-card { padding: 18px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); min-width: 0; }
 .profile-interest-card h3 { margin: 0 0 9px; line-height: 1.4; }
 .profile-interest-card p { margin: 0; font-size: .92rem; overflow-wrap: anywhere; }
+
+/* Interactive teaching models */
+.lab-control { border:1px solid var(--border); border-radius:var(--radius); background:var(--surface); padding:20px; margin:20px 0; }
+.lab-fields { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr)); gap:14px; align-items:end; margin-bottom:16px; }
+.lab-fields label { display:grid; gap:7px; font-size:.9rem; color:var(--ink); }
+.lab-fields input[type=number], .lab-fields select { min-width:0; width:100%; padding:9px; font:inherit; background:var(--surface); color:var(--ink); border:1px solid var(--border); border-radius:6px; }
+.lab-fields .lab-check { display:flex; align-items:center; gap:8px; padding:8px 0; }
+.lab-run { padding:10px 16px; border:1px solid var(--border); border-radius:6px; color:var(--ink); background:var(--surface); font:inherit; cursor:pointer; }
+.lab-run:hover,.lab-run:focus-visible { border-color:var(--accent); }
+.lab-output { padding:12px; border-left:3px solid var(--accent); font-family:var(--font-mono); overflow-wrap:anywhere; }
+.lab-control pre { max-height:260px; overflow:auto; white-space:pre-wrap; font-size:.8rem; }

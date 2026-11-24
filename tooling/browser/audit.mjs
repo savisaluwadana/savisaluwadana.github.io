@@ -2,7 +2,7 @@ import { chromium } from 'playwright';
 import AxeBuilder from '@axe-core/playwright';
 import { readFile, writeFile } from 'node:fs/promises';
 const base = 'http://127.0.0.1:8765';
-const sample = ['/', '/about/', '/products/', '/engineering/', '/insights/', '/products/property-os/', '/insights/mcp-permission-boundaries/', '/contact.html'];
+const sample = ['/', '/about/', '/products/', '/engineering/', '/insights/', '/products/property-os/', '/insights/mcp-permission-boundaries/', '/contact.html', '/lab/'];
 const sitemap = await readFile(new URL('../../sitemap.xml',import.meta.url),'utf8');
 const all = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(m=>new URL(m[1]).pathname);
 const routes = process.env.GITHUB_EVENT_NAME==='schedule' || process.env.GITHUB_EVENT_NAME==='workflow_dispatch' || process.argv.includes('--all') ? all : sample;

@@ -17,6 +17,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Test deterministic engineering models
+        run: node --test lab/models.test.mjs
       - name: Validate committed website
         run: node scripts/check-site.mjs
       - name: Audit SEO metadata and image accessibility

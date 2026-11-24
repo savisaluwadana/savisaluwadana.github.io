@@ -392,7 +392,7 @@
 
     <section class="section editorial-lab" id="lab" aria-labelledby="lab-title">
       <div class="shell">
-        <div class="section-head"><div><p class="eyebrow">04 / Engineering laboratory</p><h2 id="lab-title">Understand the system.</h2><p>Explore existing architecture diagrams and proposed experiments. Results will be published only when measured.</p></div><a class="text-link" href="/engineering/">Architecture reference →</a></div>
+        <div class="section-head"><div><p class="eyebrow">04 / Engineering laboratory</p><h2 id="lab-title">Understand the system.</h2><p>Explore existing architecture diagrams and interactive models of retries, concurrent bookings and agent permissions. Real-service benchmarks will be published only when measured.</p></div><a class="text-link" href="/lab/">Open interactive engineering lab →</a></div>
         <div class="editorial-lab-grid">
           <aside class="blueprint-panel" aria-label="Interactive system architecture blueprints" data-blueprint-tabs>
           <div class="blueprint-header">
@@ -553,9 +553,9 @@
           </div>
         </aside>
           <div class="editorial-experiments">
-            <article><span>EXPERIMENT 01 / PLANNED</span><h3>Durable execution under failure</h3><p>Test duplicate delivery, retries and worker interruption. Record recovery time and repeated side effects.</p></article>
-            <article><span>EXPERIMENT 02 / PLANNED</span><h3>Service performance and reliability</h3><p>Establish a baseline, increase load and report latency percentiles, throughput and errors.</p></article>
-            <article><span>EXPERIMENT 03 / PLANNED</span><h3>Agent permission boundaries</h3><p>Evaluate whether unauthorized tools are rejected and human approval is preserved across workflow steps.</p></article>
+            <article><span>MODEL 01 / INTERACTIVE</span><h3><a href="/lab/#retries">Idempotent retries</a></h3><p>Compare duplicate side effects with protected request replay.</p></article>
+            <article><span>MODEL 02 / INTERACTIVE</span><h3><a href="/lab/#reservations">Concurrent reservations</a></h3><p>Inspect an overselling race and a serialized capacity check.</p></article>
+            <article><span>MODEL 03 / INTERACTIVE</span><h3><a href="/lab/#permissions">Agent authorization</a></h3><p>Evaluate tenant boundaries, role permissions and human approval.</p></article>
           </div>
         </div>
       </div>

@@ -74,3 +74,6 @@ The About page is the canonical owner-authored professional biography. Keep empl
 
 ### Featured project discovery
 Saelior and EventMesh have distinct canonical portfolio URLs with owner-authored scope and architecture summaries. Both are in development; keep the public description accurate and do not publish private source references, deployment claims or unsupported traction. Links from the homepage, biography and directory, plus sitemap, feed and AI-readable copies, are regenerated and tested together.
+
+### Engineering laboratory
+The `/lab/` page contains interactive teaching models, linked source and automated tests. Static explanations are crawlable without JavaScript. The same pure functions power browser controls and Node tests. Do not present model outputs as production measurements or real service benchmarks.

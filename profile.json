@@ -101,6 +101,11 @@
     },
     {
       "@type": "WebPage",
+      "name": "Engineering Lab",
+      "url": "https://savisaluwadana.github.io/lab/"
+    },
+    {
+      "@type": "WebPage",
       "name": "Avara Real Estate",
       "url": "https://savisaluwadana.github.io/products/avara/"
     },

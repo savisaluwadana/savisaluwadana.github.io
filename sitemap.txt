@@ -7,6 +7,7 @@ https://savisaluwadana.github.io/engineering/agentic-systems/
 https://savisaluwadana.github.io/open-source/
 https://savisaluwadana.github.io/projects/saelior/
 https://savisaluwadana.github.io/projects/eventmesh/
+https://savisaluwadana.github.io/lab/
 https://savisaluwadana.github.io/insights/
 https://savisaluwadana.github.io/insights/mcp-permission-boundaries/
 https://savisaluwadana.github.io/insights/durable-agentic-workflows/

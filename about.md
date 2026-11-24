@@ -69,3 +69,4 @@ Email: savisaluwadana@gmail.com
 - [Public repositories and design notes](https://savisaluwadana.github.io/open-source/): Inspect public software repositories, licensing status, local setup, architecture, design trade-offs and unfinished work.
 - [Saelior](https://savisaluwadana.github.io/projects/saelior/): Explore Saelior, an agentic business platform in development, with department workflows, tool access and human oversight.
 - [EventMesh](https://savisaluwadana.github.io/projects/eventmesh/): Explore EventMesh, an event discovery and matching project with a Go backend, web interface and transaction-aware booking architecture.
+- [Engineering Lab](https://savisaluwadana.github.io/lab/): Run interactive models of idempotent retries, concurrent reservations and agent authorization. Inspect invariants, traces and limitations.

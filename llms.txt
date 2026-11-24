@@ -35,6 +35,9 @@ This is a public portfolio with product-level architecture summaries. It does no
 - [EventMesh](https://savisaluwadana.github.io/projects/eventmesh/): Explore EventMesh, an event discovery and matching project with a Go backend, web interface and transaction-aware booking architecture.
 - [EventMesh in Markdown](https://savisaluwadana.github.io/projects/eventmesh/index.md): Text equivalent of the same reference.
 
+- [Engineering Lab](https://savisaluwadana.github.io/lab/): Run interactive models of idempotent retries, concurrent reservations and agent authorization. Inspect invariants, traces and limitations.
+- [Engineering Lab in Markdown](https://savisaluwadana.github.io/lab/index.md): Text equivalent of the same reference.
+
 ## Product overview and architecture
 
 - [Avara Real Estate](https://savisaluwadana.github.io/products/avara/): Property discovery, transactions and host operations in Sri Lanka.

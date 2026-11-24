@@ -113,6 +113,9 @@ for (const route of ['/projects/saelior/', '/projects/eventmesh/']) {
   assert.ok(project.includes('id="status"') && project.includes('id="architecture"'), 'Project profile requires scope and architecture: ' + route);
 }
 assert.ok(cache.get('about/index.html').includes('profile-card-grid'), 'Biography requires responsive interest cards');
+const lab = cache.get('lab/index.html');
+assert.ok(lab.includes('data-lab-model="retry"') && lab.includes('data-lab-model="booking"') && lab.includes('data-lab-model="agent"'), 'Missing interactive engineering models');
+assert.ok(lab.includes('not production benchmarks'), 'Teaching model scope must remain explicit');
 const aboutGraph = JSON.parse(cache.get('about/index.html').match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'];
 assert.equal(aboutGraph.find(n => n['@type'] === 'ProfilePage').mainEntity['@id'], person['@id'], 'About page must identify the canonical Person');
 const engineeringGraph = JSON.parse(cache.get('engineering/index.html').match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'];

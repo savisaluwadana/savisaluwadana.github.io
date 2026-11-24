@@ -83,5 +83,10 @@
     "category": "project",
     "prompt": "What is EventMesh and what is its architecture?",
     "target": "/projects/eventmesh/"
+  },
+  {
+    "category": "architecture",
+    "prompt": "What interactive software engineering demonstrations are available on Savi Saluwadana's portfolio?",
+    "target": "/lab/"
   }
 ]

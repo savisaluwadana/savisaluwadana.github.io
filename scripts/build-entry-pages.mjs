@@ -1,5 +1,6 @@
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
+import { labMarkup } from './lab-markup.mjs';
 
 // Keep reference content separate from templates and derive the directory from
 // the same product records used by the homepage and individual product pages.
@@ -36,6 +37,7 @@ export async function buildEntryPages({ root, base, updated, schemaModified, pro
   };
   const markdown = text => text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, label, href) => `[${label}](${new URL(href, base).href})`);
   const blockHtml = block => {
+    if (block.type === 'lab-model') { if (!labMarkup[block.model]) throw new Error('Unknown lab model'); return '<p>' + inline(block.text) + '</p>' + labMarkup[block.model]; }
     if (block.type === 'public-repositories') return blockHtml(repositoryTable);
     if (block.type === 'product-workflow') {
       const product = productById.get(block.product);
@@ -49,6 +51,7 @@ export async function buildEntryPages({ root, base, updated, schemaModified, pro
     throw new Error(`Unknown reference block: ${block.type}`);
   };
   const blockMarkdown = block => {
+    if (block.type === 'lab-model') return markdown(block.text);
     if (block.type === 'public-repositories') return blockMarkdown(repositoryTable);
     if (block.type === 'product-workflow') {
       const product = productById.get(block.product);
@@ -135,7 +138,7 @@ ${isSource ? '  <link rel="alternate" type="application/json" href="/public-work
     ${isProfile ? "<div class=\"profile-quicklinks\" aria-label=\"Explore professional interests\"><a href=\"#engineering-focus\">Engineering interests</a><a href=\"#industries\">Industries</a><a href=\"#agentic-systems\">Agentic AI</a><a href=\"#product-work\">Selected work</a></div>" : ''}
     <nav class="product-nav" aria-label="Page sections">${page.sections.map(section => `<a href="#${esc(section.id)}">${esc(section.title)}</a>`).join('')}</nav>
     <div class="product-content${isProfile ? ' profile-content' : ''}">${page.sections.map(section => `<section class="product-section" id="${esc(section.id)}" aria-labelledby="${esc(section.id)}-title"><h2 id="${esc(section.id)}-title">${esc(section.title)}</h2>${section.blocks.map(block => isProfile && ['engineering-focus', 'industries'].includes(section.id) && block.type === 'table' ? `<div class="profile-card-grid">${block.rows.map(([title, body]) => `<article class="profile-interest-card"><h3>${inline(title)}</h3><p>${inline(body)}</p></article>`).join('')}</div>` : blockHtml(block)).join('')}</section>`).join('\n')}</div>
-  </div></main>${footer}<script src="/app.js" defer></script>
+  </div></main>${footer}<script src="/app.js" defer></script>${page.lab ? '<script type="module" src="/lab/ui.mjs"></script>' : ''}
 </body></html>\n`);
   }
   return references;
