@@ -66,3 +66,9 @@ Related portfolio evidence: [Agent authorization model](https://savisaluwadana.g
 
 - [Durable Agentic Workflows: State, Idempotency and Human Approval](https://savisaluwadana.github.io/insights/durable-agentic-workflows/)
 - [PostgreSQL Multi-Tenancy: Define Authorization Boundaries Before Schema Tricks](https://savisaluwadana.github.io/insights/postgres-multitenancy-boundaries/)
+
+## Primary technical references
+
+These references support the engineering concepts discussed here; they are not endorsements of this portfolio or evidence of production results.
+
+- [MCP Go SDK — protocol lifecycle and security](https://go.sdk.modelcontextprotocol.io/protocol/) — Protocol-level security considerations, including token passthrough. Application authorization must still enforce business rules.

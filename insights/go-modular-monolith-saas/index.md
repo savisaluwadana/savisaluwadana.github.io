@@ -60,3 +60,10 @@ Related portfolio evidence: [Property Management OS architecture](https://savisa
 
 - [PostgreSQL Multi-Tenancy: Define Authorization Boundaries Before Schema Tricks](https://savisaluwadana.github.io/insights/postgres-multitenancy-boundaries/)
 - [Platform Engineering: Build a Paved Road Without Hiding the System](https://savisaluwadana.github.io/insights/platform-engineering-paved-road/)
+
+## Primary technical references
+
+These references support the engineering concepts discussed here; they are not endorsements of this portfolio or evidence of production results.
+
+- [Go documentation — Organizing a Go module](https://go.dev/doc/modules/layout) — Language-specific package and module layout; domain ownership remains an application design decision.
+- [PostgreSQL — transaction isolation](https://www.postgresql.org/docs/18/transaction-iso.html) — Transaction behavior and concurrency guarantees to consider before moving boundaries across services.

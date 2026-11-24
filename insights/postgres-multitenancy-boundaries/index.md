@@ -62,3 +62,9 @@ Related portfolio evidence: [Tenant and role policy model](https://savisaluwadan
 
 - [Go Modular Monolith Architecture for SaaS: Boundaries Before Microservices](https://savisaluwadana.github.io/insights/go-modular-monolith-saas/)
 - [MCP Permission Boundaries: Keep Agent Tools Behind the Application API](https://savisaluwadana.github.io/insights/mcp-permission-boundaries/)
+
+## Primary technical references
+
+These references support the engineering concepts discussed here; they are not endorsements of this portfolio or evidence of production results.
+
+- [PostgreSQL — Row Security Policies](https://www.postgresql.org/docs/17/ddl-rowsecurity.html) — Database row-policy behavior; application ownership and role configuration must still be tested.

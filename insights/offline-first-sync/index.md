@@ -40,3 +40,9 @@ The [interactive retry model](https://savisaluwadana.github.io/lab/#retries) dem
 ## Implementation and related reading
 
 [Advance HRIS project overview](https://savisaluwadana.github.io/products/advance-hris/) · [Durable agentic workflows](https://savisaluwadana.github.io/insights/durable-agentic-workflows/) · [Architecture reference](https://savisaluwadana.github.io/engineering/)
+
+## Primary technical references
+
+These references support the engineering concepts discussed here; they are not endorsements of this portfolio or evidence of production results.
+
+- [Android Developers — Build an offline-first app](https://developer.android.com/topic/architecture/data-layer/offline-first) — Local and network data sources, queued writes and reconciliation when connectivity returns.

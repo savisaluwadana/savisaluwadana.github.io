@@ -21,6 +21,10 @@ jobs:
         run: node --test lab/models.test.mjs
       - name: Validate committed website
         run: node scripts/check-site.mjs
+      - name: Audit internal discovery graph
+        run: |
+          node scripts/audit-discovery.mjs --self-test
+          node scripts/audit-discovery.mjs
       - name: Audit SEO metadata and image accessibility
         if: always()
         run: node scripts/check-seo.mjs --json
@@ -45,7 +49,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: seo-audit
-          path: seo-audit.json
+          path: |
+            seo-audit.json
+            discovery-audit.json
       - name: Verify discovery generator
         if: always()
         run: |

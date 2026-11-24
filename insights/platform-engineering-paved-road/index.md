@@ -58,3 +58,9 @@ Related portfolio evidence: [Architecture reference](https://savisaluwadana.gith
 
 - [MCP Permission Boundaries: Keep Agent Tools Behind the Application API](https://savisaluwadana.github.io/insights/mcp-permission-boundaries/)
 - [Go Modular Monolith Architecture for SaaS: Boundaries Before Microservices](https://savisaluwadana.github.io/insights/go-modular-monolith-saas/)
+
+## Primary technical references
+
+These references support the engineering concepts discussed here; they are not endorsements of this portfolio or evidence of production results.
+
+- [CNCF — Platform Engineering Maturity Model](https://tag-app-delivery.cncf.io/wgs/platforms/maturity-model/readme/) — Platform capabilities, organizational maturity and treating internal platforms as products.

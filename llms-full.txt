@@ -702,6 +702,12 @@ Related portfolio evidence: [Agent authorization model](https://savisaluwadana.g
 - [Durable Agentic Workflows: State, Idempotency and Human Approval](https://savisaluwadana.github.io/insights/durable-agentic-workflows/)
 - [PostgreSQL Multi-Tenancy: Define Authorization Boundaries Before Schema Tricks](https://savisaluwadana.github.io/insights/postgres-multitenancy-boundaries/)
 
+## Primary technical references
+
+These references support the engineering concepts discussed here; they are not endorsements of this portfolio or evidence of production results.
+
+- [MCP Go SDK — protocol lifecycle and security](https://go.sdk.modelcontextprotocol.io/protocol/) — Protocol-level security considerations, including token passthrough. Application authorization must still enforce business rules.
+
 
 ---
 
@@ -769,6 +775,12 @@ Related portfolio evidence: [Interactive retry model](https://savisaluwadana.git
 - [MCP Permission Boundaries: Keep Agent Tools Behind the Application API](https://savisaluwadana.github.io/insights/mcp-permission-boundaries/)
 - [Platform Engineering: Build a Paved Road Without Hiding the System](https://savisaluwadana.github.io/insights/platform-engineering-paved-road/)
 
+## Primary technical references
+
+These references support the engineering concepts discussed here; they are not endorsements of this portfolio or evidence of production results.
+
+- [Amazon Builders’ Library — Making retries safe with idempotent APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/) — Stable caller-provided request identities and the implications of delayed retries.
+
 
 ---
 
@@ -835,6 +847,13 @@ Related portfolio evidence: [Property Management OS architecture](https://savisa
 - [PostgreSQL Multi-Tenancy: Define Authorization Boundaries Before Schema Tricks](https://savisaluwadana.github.io/insights/postgres-multitenancy-boundaries/)
 - [Platform Engineering: Build a Paved Road Without Hiding the System](https://savisaluwadana.github.io/insights/platform-engineering-paved-road/)
 
+## Primary technical references
+
+These references support the engineering concepts discussed here; they are not endorsements of this portfolio or evidence of production results.
+
+- [Go documentation — Organizing a Go module](https://go.dev/doc/modules/layout) — Language-specific package and module layout; domain ownership remains an application design decision.
+- [PostgreSQL — transaction isolation](https://www.postgresql.org/docs/18/transaction-iso.html) — Transaction behavior and concurrency guarantees to consider before moving boundaries across services.
+
 
 ---
 
@@ -898,6 +917,12 @@ Related portfolio evidence: [Architecture reference](https://savisaluwadana.gith
 
 - [MCP Permission Boundaries: Keep Agent Tools Behind the Application API](https://savisaluwadana.github.io/insights/mcp-permission-boundaries/)
 - [Go Modular Monolith Architecture for SaaS: Boundaries Before Microservices](https://savisaluwadana.github.io/insights/go-modular-monolith-saas/)
+
+## Primary technical references
+
+These references support the engineering concepts discussed here; they are not endorsements of this portfolio or evidence of production results.
+
+- [CNCF — Platform Engineering Maturity Model](https://tag-app-delivery.cncf.io/wgs/platforms/maturity-model/readme/) — Platform capabilities, organizational maturity and treating internal platforms as products.
 
 
 ---
@@ -967,6 +992,12 @@ Related portfolio evidence: [Tenant and role policy model](https://savisaluwadan
 - [Go Modular Monolith Architecture for SaaS: Boundaries Before Microservices](https://savisaluwadana.github.io/insights/go-modular-monolith-saas/)
 - [MCP Permission Boundaries: Keep Agent Tools Behind the Application API](https://savisaluwadana.github.io/insights/mcp-permission-boundaries/)
 
+## Primary technical references
+
+These references support the engineering concepts discussed here; they are not endorsements of this portfolio or evidence of production results.
+
+- [PostgreSQL — Row Security Policies](https://www.postgresql.org/docs/17/ddl-rowsecurity.html) — Database row-policy behavior; application ownership and role configuration must still be tested.
+
 
 ---
 
@@ -1013,6 +1044,12 @@ The [interactive retry model](https://savisaluwadana.github.io/lab/#retries) dem
 
 [Advance HRIS project overview](https://savisaluwadana.github.io/products/advance-hris/) · [Durable agentic workflows](https://savisaluwadana.github.io/insights/durable-agentic-workflows/) · [Architecture reference](https://savisaluwadana.github.io/engineering/)
 
+## Primary technical references
+
+These references support the engineering concepts discussed here; they are not endorsements of this portfolio or evidence of production results.
+
+- [Android Developers — Build an offline-first app](https://developer.android.com/topic/architecture/data-layer/offline-first) — Local and network data sources, queued writes and reconciliation when connectivity returns.
+
 
 ---
 
@@ -1058,6 +1095,12 @@ Try the [interactive reservation model](https://savisaluwadana.github.io/lab/#re
 ## Related technical references
 
 [EventMesh architecture](https://savisaluwadana.github.io/projects/eventmesh/) · [Go modular monolith for SaaS](https://savisaluwadana.github.io/insights/go-modular-monolith-saas/) · [Idempotent retry model](https://savisaluwadana.github.io/lab/#retries)
+
+## Primary technical references
+
+These references support the engineering concepts discussed here; they are not endorsements of this portfolio or evidence of production results.
+
+- [PostgreSQL — Transaction Isolation](https://www.postgresql.org/docs/18/transaction-iso.html) — Concurrent updates, transaction isolation and retry requirements.
 
 
 ---

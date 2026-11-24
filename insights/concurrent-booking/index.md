@@ -40,3 +40,9 @@ Try the [interactive reservation model](https://savisaluwadana.github.io/lab/#re
 ## Related technical references
 
 [EventMesh architecture](https://savisaluwadana.github.io/projects/eventmesh/) · [Go modular monolith for SaaS](https://savisaluwadana.github.io/insights/go-modular-monolith-saas/) · [Idempotent retry model](https://savisaluwadana.github.io/lab/#retries)
+
+## Primary technical references
+
+These references support the engineering concepts discussed here; they are not endorsements of this portfolio or evidence of production results.
+
+- [PostgreSQL — Transaction Isolation](https://www.postgresql.org/docs/18/transaction-iso.html) — Concurrent updates, transaction isolation and retry requirements.

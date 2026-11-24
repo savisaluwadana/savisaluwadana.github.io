@@ -116,6 +116,7 @@ assert.ok(cache.get('about/index.html').includes('profile-card-grid'), 'Biograph
 const lab = cache.get('lab/index.html');
 assert.ok(lab.includes('data-lab-model="retry"') && lab.includes('data-lab-model="booking"') && lab.includes('data-lab-model="agent"'), 'Missing interactive engineering models');
 assert.ok(lab.includes('not production benchmarks'), 'Teaching model scope must remain explicit');
+const articleReferences = JSON.parse(await readFile(path.join(root,'data/article-references.json'),'utf8'));
 const fullReference = await readFile(path.join(root, 'llms-full.txt'), 'utf8');
 for (const route of insightPaths.filter(p => p !== '/insights/')) {
   const articleHtml = cache.get(route.slice(1) + 'index.html');
@@ -124,6 +125,12 @@ for (const route of insightPaths.filter(p => p !== '/insights/')) {
   assert.ok(articleHtml.includes('id="practical-verification"') && articleHtml.includes('aria-label="Article contents"'), route + ': practical answer and article contents required');
   assert.ok(articleHtml.includes('By <a href="/about/">Savi Saluwadana</a>'), route + ': author profile link missing');
   const article = JSON.parse(articleHtml.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'].find(n=>n['@type']==='Article');
+  const refs = articleReferences[route.split('/').filter(Boolean).at(-1)];
+  assert.ok(refs?.length, route + ': primary technical references required');
+  for (const [, url] of refs) {
+    assert.ok(articleHtml.includes('href="'+url+'"') && articleMd.includes(url), route + ': missing visible technical reference');
+    assert.ok(article.citation.includes(url), route + ': technical citation missing from article schema');
+  }
   assert.equal(article.author['@id'],person['@id'],route + ': article author identity mismatch');
   assert.equal(article.author.url,origin+'/about/',route + ': article author URL missing');
   assert.ok(articleHtml.includes('property="article:modified_time" content="'+article.dateModified+'"'),route + ': social and structured modification dates differ');
