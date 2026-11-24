@@ -1,0 +1,29 @@
+name: Notify search engines after changed pages deploy
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**/*.html'
+      - 'index.html'
+permissions:
+  contents: read
+concurrency:
+  group: indexnow-automatic
+  cancel-in-progress: true
+jobs:
+  notify:
+    if: github.event.before != '0000000000000000000000000000000000000000'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Wait for changed live HTML and notify IndexNow
+        env:
+          PUSH_BEFORE: ${{ github.event.before }}
+          PUSH_AFTER: ${{ github.sha }}
+        run: node scripts/indexnow-changed.mjs

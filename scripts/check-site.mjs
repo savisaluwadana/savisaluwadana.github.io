@@ -128,6 +128,12 @@ for (const route of insightPaths.filter(p => p !== '/insights/')) {
   assert.equal(article.author.url,origin+'/about/',route + ': article author URL missing');
   assert.ok(articleHtml.includes('datetime="'+article.dateModified.slice(0,10)+'"'),route + ': visible update date missing');
 }
+const topicClusters = JSON.parse(await readFile(path.join(root,'data/topic-links.json'),'utf8'));
+for (const [id, links] of Object.entries(topicClusters)) {
+  const page = cache.get('products/' + id + '/index.html');
+  assert.ok(page?.includes('id="technical-reading"'), id + ': contextual engineering links missing');
+  for (const [target] of links) assert.ok(page.includes('href="' + target + '"'), id + ': missing topic link ' + target);
+}
 const aboutGraph = JSON.parse(cache.get('about/index.html').match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'];
 assert.equal(aboutGraph.find(n => n['@type'] === 'ProfilePage').mainEntity['@id'], person['@id'], 'About page must identify the canonical Person');
 const engineeringGraph = JSON.parse(cache.get('engineering/index.html').match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'];

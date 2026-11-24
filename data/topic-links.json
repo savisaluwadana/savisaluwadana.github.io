@@ -1,0 +1,118 @@
+{
+  "property-os": [
+    [
+      "/insights/mcp-permission-boundaries/",
+      "MCP authorization boundaries"
+    ],
+    [
+      "/insights/go-modular-monolith-saas/",
+      "Go modular monolith architecture"
+    ],
+    [
+      "/insights/postgres-multitenancy-boundaries/",
+      "PostgreSQL tenant isolation"
+    ],
+    [
+      "/lab/#permissions",
+      "Interactive authorization model"
+    ]
+  ],
+  "advance-hris": [
+    [
+      "/insights/postgres-multitenancy-boundaries/",
+      "Tenant isolation in SaaS"
+    ],
+    [
+      "/insights/durable-agentic-workflows/",
+      "Durable state and retry safety"
+    ],
+    [
+      "/lab/#retries",
+      "Interactive idempotency model"
+    ]
+  ],
+  "freshpick": [
+    [
+      "/insights/durable-agentic-workflows/",
+      "Durable workflows and side effects"
+    ],
+    [
+      "/lab/#retries",
+      "Idempotent delivery simulation"
+    ]
+  ],
+  "pain-intelligence": [
+    [
+      "/insights/durable-agentic-workflows/",
+      "Durable agentic workflow design"
+    ],
+    [
+      "/insights/mcp-permission-boundaries/",
+      "MCP permission boundaries"
+    ],
+    [
+      "/lab/#permissions",
+      "Agent authorization simulation"
+    ]
+  ],
+  "ad-performance-agent": [
+    [
+      "/engineering/agentic-systems/",
+      "Agent tool and workflow boundaries"
+    ],
+    [
+      "/insights/mcp-permission-boundaries/",
+      "Agent authorization principles"
+    ]
+  ],
+  "avara": [
+    [
+      "/lab/#reservations",
+      "Concurrent reservation capacity simulation"
+    ],
+    [
+      "/insights/postgres-multitenancy-boundaries/",
+      "Application ownership and tenant boundaries"
+    ]
+  ],
+  "eventos": [
+    [
+      "/lab/#reservations",
+      "Booking capacity and race conditions"
+    ],
+    [
+      "/projects/eventmesh/",
+      "Event discovery and matching architecture"
+    ]
+  ],
+  "nexus-pos": [
+    [
+      "/lab/#retries",
+      "Idempotency and duplicate side effects"
+    ],
+    [
+      "/engineering/#transactions",
+      "Transaction and data authority"
+    ]
+  ],
+  "acme-accounting": [
+    [
+      "/engineering/#transactions",
+      "Transaction boundaries"
+    ],
+    [
+      "/lab/#retries",
+      "Safe retry simulation"
+    ]
+  ],
+  "blu": [
+    [
+      "/lab/#reservations",
+      "Concurrent booking model"
+    ],
+    [
+      "/engineering/#data-authority",
+      "Application data authority"
+    ]
+  ]
+}

@@ -52,3 +52,8 @@ Check identity answers against the public biography: former employment is not cu
 - https://www.indexnow.org/documentation
 
 Google's AI features use normal search eligibility and useful content; no special GEO schema is required. Search systems decide what to index, rank or cite.
+
+## Automatic discovery after deployment
+A push that changes canonical HTML on main now triggers an automatic IndexNow notification. It selects only added or modified sitemap HTML files by Git diff, waits until the deployed responses match the committed HTML, then calls the existing verified submission script. Non-HTML edits alone do not submit URLs. Deleted URLs are outside this automatic path; use the manual process for supported changed URLs. If deployment cannot be verified within the bounded wait, the job fails without submitting stale content. Use manual notification after a successful deployment if needed. Cancellation of superseded pushes prevents redundant work; manually submit any important changed URLs skipped by cancelled runs. No Google indexing request is sent by IndexNow.
+
+Ten product profiles now include contextual links to relevant articles and teaching models. The build reproduces these links from data/topic-links.json. They are educational references, not proof that every referenced design is deployed in the product.
