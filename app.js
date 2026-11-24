@@ -168,3 +168,20 @@
     });
   });
 })();
+
+// Accessible native quick-navigation dialog; ordinary links work without it.
+(() => {
+  const dialog = document.querySelector('[data-command-dialog]');
+  if (!dialog || typeof dialog.showModal !== 'function') return;
+  const search = dialog.querySelector('[data-command-search]');
+  const links = [...dialog.querySelectorAll('[data-command-links] a')];
+  const empty = dialog.querySelector('[data-command-empty]');
+  const filter = () => { const q = search.value.trim().toLowerCase(); links.forEach(a => { a.hidden = !a.textContent.toLowerCase().includes(q); }); empty.hidden = links.some(a => !a.hidden); };
+  const open = () => { if (dialog.open) return; search.value = ''; filter(); dialog.showModal(); search.focus(); };
+  document.querySelectorAll('[data-command-open]').forEach(button => button.addEventListener('click', open));
+  dialog.querySelector('[data-command-close]').addEventListener('click', () => dialog.close());
+  search.addEventListener('input', filter);
+  search.addEventListener('keydown', event => { if (event.key === 'Enter') { const match = links.find(a => !a.hidden); if (match) { event.preventDefault(); match.click(); } } });
+  links.forEach(a => a.addEventListener('click', () => dialog.close()));
+  document.addEventListener('keydown', event => { if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k' && !event.altKey && !event.shiftKey) { event.preventDefault(); if (dialog.open) dialog.close(); else open(); } });
+})();

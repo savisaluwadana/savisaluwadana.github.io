@@ -3,9 +3,9 @@
   "@type": "ProfilePage",
   "@id": "https://savisaluwadana.github.io/#profile",
   "url": "https://savisaluwadana.github.io/",
-  "name": "Savi Saluwadana | Software Architect & Platform Engineering",
-  "description": "Explore Savi Saluwadana’s software architecture and engineering work on offline sync in Go, recurring grocery deliveries, and MCP permission boundaries, with diagrams and public source code.",
-  "dateModified": "2026-11-18T00:00:00+05:30",
+  "name": "Savi Saluwadana | Software Engineering, Systems & Applied AI",
+  "description": "Independent software engineering portfolio exploring distributed systems, software architecture, platform engineering and applied AI through projects, technical notes and experiments.",
+  "dateModified": "2026-11-24T00:00:00+05:30",
   "mainEntity": {
     "@type": "Person",
     "@id": "https://savisaluwadana.github.io/#person",
