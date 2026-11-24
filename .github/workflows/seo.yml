@@ -35,6 +35,8 @@ jobs:
         run: |
           node scripts/inspect-google-index.mjs --self-test
           node scripts/inspect-google-index.mjs --dry-run
+      - name: Test visibility opportunity analysis
+        run: node scripts/visibility-opportunities.mjs --self-test
       - name: Test private dashboard without credentials
         if: always()
         run: node scripts/render-private-dashboard.mjs --self-test

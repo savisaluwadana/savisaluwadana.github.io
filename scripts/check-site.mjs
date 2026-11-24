@@ -126,6 +126,7 @@ for (const route of insightPaths.filter(p => p !== '/insights/')) {
   const article = JSON.parse(articleHtml.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'].find(n=>n['@type']==='Article');
   assert.equal(article.author['@id'],person['@id'],route + ': article author identity mismatch');
   assert.equal(article.author.url,origin+'/about/',route + ': article author URL missing');
+  assert.ok(articleHtml.includes('property="article:modified_time" content="'+article.dateModified+'"'),route + ': social and structured modification dates differ');
   assert.ok(articleHtml.includes('datetime="'+article.dateModified.slice(0,10)+'"'),route + ': visible update date missing');
 }
 const topicClusters = JSON.parse(await readFile(path.join(root,'data/topic-links.json'),'utf8'));
@@ -173,6 +174,7 @@ assert.match(robots, /User-agent: OAI-SearchBot\s+Allow: \//i, 'Search crawler a
 for (const filename of ['profile.json', 'products.json', 'site.webmanifest']) JSON.parse(await readFile(path.join(root, filename), 'utf8'));
 const profile = JSON.parse(await readFile(path.join(root, 'profile.json'), 'utf8'));
 assert.deepEqual(profile.mainEntity, person, 'Agent profile must match HTML identity');
+assert.deepEqual(profile.hasPart.map(p=>p.url).sort(), sitemapUrls.filter(u=>u!==origin+'/'&&u!==origin+'/contact.html').sort(), 'Machine-readable profile must enumerate every public content page');
 const data = JSON.parse(await readFile(path.join(root, 'products.json'), 'utf8'));
 assert.equal(data.products.length, products.length, 'Agent product data must match homepage');
 assert.deepEqual((await readFile(path.join(root, 'sitemap.txt'), 'utf8')).trim().split('\n'), sitemapUrls, 'XML and text sitemap disagree');

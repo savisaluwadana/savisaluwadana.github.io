@@ -19,7 +19,7 @@ const request = async (url,options={},label='API') => {
 };
 const gsc = async (range,dimensions) => {
   const url = 'https://www.googleapis.com/webmasters/v3/sites/'+encodeURIComponent(site)+'/searchAnalytics/query';
-  const body = { ...range,dimensions,type:'web',dataState:'final',rowLimit:dimensions.length?250:1 };
+  const body = { ...range,dimensions,type:'web',dataState:'final',rowLimit:dimensions.length===2?1000:dimensions.length?250:1 };
   const response = await request(url,{method:'POST',headers:{Authorization:'Bearer '+googleToken,'Content-Type':'application/json'},body:JSON.stringify(body)},'Google');
   return response.rows||[];
 };
@@ -34,9 +34,9 @@ if(googleToken){
   try{
     const results={};
     for(const [name,range] of Object.entries(windows)){
-      results[name]={range,total:(await gsc(range,[]))[0]??null,queries:await gsc(range,['query']),pages:await gsc(range,['page'])};
+      results[name]={range,total:(await gsc(range,[]))[0]??null,queries:await gsc(range,['query']),pages:await gsc(range,['page']),queryPages:await gsc(range,['query','page'])};
     }
-    report.google={status:'ok',...results,limitation:'Top 250 rows per dimension; totals queried independently. Finalized web search data only.'};
+    report.google={status:'ok',...results,limitation:'Top 250 rows for single dimensions and up to 1000 query-page pairs; totals queried independently. Privacy filtering and row limits can omit data. Finalized web search data only.'};
   } catch(e){report.google={status:'error',error:e.message};failed=true;}
 }
 if(bingKey){

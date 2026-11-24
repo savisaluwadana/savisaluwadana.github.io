@@ -178,6 +178,46 @@
       "@type": "WebPage",
       "name": "MediCare",
       "url": "https://savisaluwadana.github.io/products/medicare/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Engineering insights",
+      "url": "https://savisaluwadana.github.io/insights/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "MCP Permission Boundaries: Keep Agent Tools Behind the Application API",
+      "url": "https://savisaluwadana.github.io/insights/mcp-permission-boundaries/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Durable Agentic Workflows: State, Idempotency and Human Approval",
+      "url": "https://savisaluwadana.github.io/insights/durable-agentic-workflows/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Go Modular Monolith Architecture for SaaS: Boundaries Before Microservices",
+      "url": "https://savisaluwadana.github.io/insights/go-modular-monolith-saas/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Platform Engineering: Build a Paved Road Without Hiding the System",
+      "url": "https://savisaluwadana.github.io/insights/platform-engineering-paved-road/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "PostgreSQL Multi-Tenancy: Define Authorization Boundaries Before Schema Tricks",
+      "url": "https://savisaluwadana.github.io/insights/postgres-multitenancy-boundaries/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Offline-First Sync: Queues, Conflicts and Recovery",
+      "url": "https://savisaluwadana.github.io/insights/offline-first-sync/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Concurrent Booking: Prevent Overselling with Transactions",
+      "url": "https://savisaluwadana.github.io/insights/concurrent-booking/"
     }
   ]
 }
