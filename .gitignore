@@ -1,0 +1,8 @@
+node_modules/
+.lighthouseci/
+lighthouse-report/
+seo-audit.json
+browser-audit.json
+live-seo-audit.json
+.env
+.env.*

@@ -33,3 +33,23 @@ jobs:
         run: |
           node scripts/build-discovery.mjs
           node scripts/check-site.mjs
+          node scripts/check-seo.mjs
+  live-check:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify deployed canonical URLs and crawler access
+        run: node scripts/check-live-seo.mjs
+      - name: Upload public live-site report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: live-seo-audit
+          path: live-seo-audit.json
+          if-no-files-found: warn
+          retention-days: 30

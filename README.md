@@ -42,3 +42,5 @@ External writing links are in the homepage writing section, the insights HTML/Ma
 ## Free SEO operations
 
 See [the SEO operating guide](docs/SEO.md). The SEO GitHub Actions workflow checks committed and regenerated discovery files and creates a metadata audit report. Search Console, Bing and optional analytics require separate account setup.
+
+The [SEO Intelligence Engine guide](docs/SEO.md#seo-intelligence-engine) describes Lighthouse, browser accessibility, live URL validation, local private Search Console/Bing reports, and manual AI visibility benchmarking. No private search data is uploaded to GitHub.

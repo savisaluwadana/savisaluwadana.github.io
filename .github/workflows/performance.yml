@@ -1,0 +1,61 @@
+name: Performance and browser audits
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: '45 3 * * 1'
+permissions:
+  contents: read
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Lighthouse CI
+        run: npm install -g @lhci/cli@0.15.1
+      - name: Run Lighthouse CI
+        env:
+          PYTHONUNBUFFERED: '1'
+        run: lhci autorun --config=./lighthouserc.cjs
+      - name: Upload public technical reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-report
+          path: lighthouse-report/
+          if-no-files-found: warn
+          retention-days: 30
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser audit dependencies
+        run: |
+          npm install --prefix tooling/browser --no-package-lock --no-save playwright@1.51.1 @axe-core/playwright@4.10.2
+          tooling/browser/node_modules/.bin/playwright install --with-deps chromium
+      - name: Audit mobile and desktop
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/portfolio-server.log 2>&1 &
+          server=$!
+          trap 'kill "$server" || true' EXIT
+          for i in {1..30}; do curl -fsS http://127.0.0.1:8765/ > /dev/null && break; sleep 1; done
+          node tooling/browser/audit.mjs
+      - name: Upload public browser audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-audit
+          path: browser-audit.json
+          if-no-files-found: warn
+          retention-days: 30

@@ -1,0 +1,94 @@
+{
+  "/contact.html": [
+    "Contact Savi Saluwadana | Software Engineering",
+    "Contact Savi Saluwadana about software architecture, agentic systems, platform engineering, Go, Kubernetes and technical collaboration."
+  ],
+  "/engineering/agentic-systems/": [
+    "Agentic Systems Architecture | Savi Saluwadana",
+    "Inspect agent tool boundaries, application permissions and local research workflows documented in Savi Saluwadana's projects."
+  ],
+  "/insights/": [
+    "Engineering Articles | Savi Saluwadana",
+    "Read engineering notes on Go, system architecture, platform engineering, databases and agentic systems, plus proposed research topics."
+  ],
+  "/insights/mcp-permission-boundaries/": [
+    "MCP Permission Boundaries | Savi Saluwadana",
+    "Keep MCP tools behind authenticated application APIs. Explore authorization, tool permissions and human approval in agent-assisted systems."
+  ],
+  "/insights/durable-agentic-workflows/": [
+    "Durable Agentic Workflows | Savi Saluwadana",
+    "Design long-running AI workflows with explicit state, retries, idempotency and human approval. Explore recovery and application-owned state."
+  ],
+  "/insights/go-modular-monolith-saas/": [
+    "Go Modular Monolith for SaaS | Savi Saluwadana",
+    "Explore domain boundaries, transaction ownership and when to split a Go modular monolith into services."
+  ],
+  "/insights/platform-engineering-paved-road/": [
+    "Platform Engineering Paved Roads | Savi Saluwadana",
+    "Design a platform engineering paved road with clear delivery contracts, observability and escape hatches without hiding system behaviour."
+  ],
+  "/insights/postgres-multitenancy-boundaries/": [
+    "PostgreSQL Multi-Tenancy | Savi Saluwadana",
+    "Explore tenant context, repository contracts, authorization boundaries and database safeguards for PostgreSQL SaaS applications."
+  ],
+  "/products/avara/": [
+    "Avara Real Estate Architecture | Savi Saluwadana",
+    "Explore a Sri Lankan property platform with geospatial search, rentals, bookings, payments and property operations."
+  ],
+  "/products/blu/": [
+    "Blu.lk Home Services Architecture | Savi Saluwadana",
+    "Explore a Sri Lankan home-services platform with customer, provider and worker workflows across cleaning, plumbing and other services."
+  ],
+  "/products/freshpick/": [
+    "FreshPick Commerce Architecture | Savi Saluwadana",
+    "Explore FreshPick's grocery commerce architecture, recurring deliveries, business ordering and PostgreSQL-backed workflows."
+  ],
+  "/products/timelyhelp/": [
+    "TimelyHelp Frontend Architecture | Savi Saluwadana",
+    "Explore my product and frontend contribution to TimelyHelp, including practitioner discovery, booking, dashboards and consultations."
+  ],
+  "/products/property-os/": [
+    "Property Management OS Architecture | Savi Saluwadana",
+    "Explore rental operations, tenant workflows, Go APIs, PostgreSQL, outbox processing and controlled MCP agent access."
+  ],
+  "/products/rapidreach/": [
+    "RapidReach Architecture | Savi Saluwadana",
+    "Explore a developer publication and tool-discovery product with editorial workflows, search, media uploads and a small CMS."
+  ],
+  "/products/advance-hris/": [
+    "Advance HRIS Architecture | Savi Saluwadana",
+    "Explore a hybrid HR information system with tenant-scoped access, leave, attendance, audit history and durable offline synchronization."
+  ],
+  "/products/nexus-pos/": [
+    "NexusPOS Architecture | Savi Saluwadana",
+    "Explore retail checkout, barcode workflows, inventory, staff roles, cash shifts, refunds and native receipt printing."
+  ],
+  "/products/academix/": [
+    "Academix Education SaaS | Savi Saluwadana",
+    "Explore a tuition and education SaaS workspace with student CRM, attendance, assessments, fee collection and multi-site operations."
+  ],
+  "/products/acme-accounting/": [
+    "Acme Accounting Architecture | Savi Saluwadana",
+    "Explore single-company double-entry accounting, invoicing, reconciliation, period locks, budgeting and financial reports."
+  ],
+  "/products/eventos/": [
+    "EventOS Marketplace Architecture | Savi Saluwadana",
+    "Explore an event-services marketplace with supplier discovery, quotes, bookings, contracts, payments and delivery coordination."
+  ],
+  "/products/restaurantos/": [
+    "Plate Restaurant OS Architecture | Savi Saluwadana",
+    "Explore restaurant point of sale, table service, online ordering, kitchen workflows, menus and inventory."
+  ],
+  "/products/pain-intelligence/": [
+    "Pain Intelligence Lab Architecture | Savi Saluwadana",
+    "Explore a local research application for source-linked evidence, with a Next.js and Rust web app and a separate desktop edition."
+  ],
+  "/products/ad-performance-agent/": [
+    "Ad Performance Analysis Agent | Savi Saluwadana",
+    "Explore a campaign analysis prototype that parses CSVs, compares weekly metrics and uses Gemini to assist with summaries."
+  ],
+  "/products/medicare/": [
+    "MediCare Clinic Architecture | Savi Saluwadana",
+    "Explore patient administration, appointments, clinical records, billing, staff permissions and embeddable scheduling."
+  ]
+}

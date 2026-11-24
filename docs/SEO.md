@@ -42,3 +42,21 @@ The JSON audit contains page metadata, lengths, warnings and errors. It is a loc
 - PostgreSQL tenancy: demonstrate a tenant isolation test and document its limitations.
 
 Google/Bing account verification, analytics activation, actual indexing, Core Web Vitals and rankings require separate checks; repository changes do not establish them.
+
+## SEO Intelligence Engine
+- Metadata overrides are maintained in `data/seo-metadata.json` and reapplied during the discovery build. Full descriptions and architecture evidence remain in visible content and JSON-LD.
+- The performance workflow collects Lighthouse CI lab results across four representative routes (two runs each), plus Playwright/axe checks at mobile and desktop sizes. Initial thresholds are advisory; runtime/navigation failures are blocking. Public technical reports are retained for 30 days. Review baselines before making performance budgets blocking.
+- The scheduled live check requests the deployed sitemap, robots.txt and canonical pages. It verifies status, final URL, canonical and noindex; it does not measure whether Google has indexed pages.
+- Technical CI artifacts are public. **Never attach Google/Bing search analytics, credentials or private reports to this public repository.** GitHub users with read access may download workflow artifacts.
+- No paid services or API subscriptions are required. Search API quota and standard free public-repository runner limits apply.
+
+### Private search analytics on your Mac
+1. Verify Google Search Console and Bing properties for the URL-prefix site.
+2. Enable the [Search Console API](https://developers.google.com/webmaster-tools/v1/how-tos/authorizing) in a Google Cloud project; obtain an OAuth access token with the `https://www.googleapis.com/auth/webmasters.readonly` scope from an authorized account (for example via Google's OAuth 2.0 Playground with your own OAuth client). A plain API key is not sufficient. Tokens expire.
+3. Generate a Bing API key in Webmaster Tools Settings > API access. This key can cover all verified sites; keep it confidential.
+4. From your local clone, set `GSC_ACCESS_TOKEN` and/or `BING_WEBMASTER_API_KEY` in your shell via a secure password-manager or interactive secret input. Do not put secrets in shell history, the repo or ChatGPT.
+5. Run `node scripts/search-intelligence.mjs`. It writes dated JSON and Markdown reports to `~/.portfolio-seo/` outside the repository. Google reports compare two finalized 28-day periods and list top queries and pages; Bing uses its own provider reporting range. Re-run weekly with a valid token. Keep the directory private; never sync it to the public site.
+6. Run `node scripts/init-visibility-log.mjs` for a local dated CSV with ten fixed prompts across four AI search services. Run prompts manually in fresh search-enabled sessions, fill the fields honestly, and compare snapshots. No automated scraping or paid model APIs are used.
+
+### Backlinks and competitors
+Export Links from Search Console and backlink data from Bing's free UI when available. Keep exports in the private reporting directory. Check the top results for the keyword map manually once a month, record URLs and content gaps, and prioritize original projects and reproducible benchmarks over keyword stuffing. Automated competitor ranking and backlink crawling are not included.

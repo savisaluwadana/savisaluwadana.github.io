@@ -1,0 +1,52 @@
+[
+  {
+    "category": "identity",
+    "prompt": "Who is Savi Saluwadana, the software engineer in Sri Lanka?",
+    "target": "/"
+  },
+  {
+    "category": "identity",
+    "prompt": "Where can I find Savi Saluwadana's engineering portfolio?",
+    "target": "/"
+  },
+  {
+    "category": "architecture",
+    "prompt": "What public software architecture projects has Savi Saluwadana documented?",
+    "target": "/engineering/"
+  },
+  {
+    "category": "architecture",
+    "prompt": "What are examples of MCP authorization boundaries in a Go application?",
+    "target": "/insights/mcp-permission-boundaries/"
+  },
+  {
+    "category": "architecture",
+    "prompt": "How should an agentic workflow handle retries, idempotency and human approvals?",
+    "target": "/insights/durable-agentic-workflows/"
+  },
+  {
+    "category": "architecture",
+    "prompt": "How do Go modular monoliths define transaction boundaries for SaaS?",
+    "target": "/insights/go-modular-monolith-saas/"
+  },
+  {
+    "category": "architecture",
+    "prompt": "What are practical PostgreSQL tenant authorization design considerations?",
+    "target": "/insights/postgres-multitenancy-boundaries/"
+  },
+  {
+    "category": "architecture",
+    "prompt": "How can platform engineering paved roads preserve developer visibility?",
+    "target": "/insights/platform-engineering-paved-road/"
+  },
+  {
+    "category": "project",
+    "prompt": "What is Property Management OS by Savi Saluwadana and how does its MCP boundary work?",
+    "target": "/products/property-os/"
+  },
+  {
+    "category": "project",
+    "prompt": "What is Advance HRIS and how does its offline synchronization work?",
+    "target": "/products/advance-hris/"
+  }
+]

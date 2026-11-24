@@ -1,6 +1,7 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { applySeoMetadata } from './apply-seo-metadata.mjs';
 import { buildEntryPages } from './build-entry-pages.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -229,4 +230,5 @@ await write('feed.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<feed xmlns="ht
 const paths = ['/', '/contact.html', ...entryPaths, ...products.map(p => `/products/${p.id}/`)];
 await write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${paths.map(p => `  <url><loc>${base}${p}</loc><lastmod>${p === '/' ? homeUpdated : (insightPages.find(i => i.path === p)?.reviewed || updated)}</lastmod></url>`).join('\n')}\n</urlset>\n`);
 await write('sitemap.txt', paths.map(p => base + p).join('\n') + '\n');
+await applySeoMetadata(root, paths);
 console.log(`Built ${products.length} static product pages, structured data, Markdown, agent indexes and ${paths.length} sitemap entries.`);
