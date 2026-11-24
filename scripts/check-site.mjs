@@ -116,6 +116,18 @@ assert.ok(cache.get('about/index.html').includes('profile-card-grid'), 'Biograph
 const lab = cache.get('lab/index.html');
 assert.ok(lab.includes('data-lab-model="retry"') && lab.includes('data-lab-model="booking"') && lab.includes('data-lab-model="agent"'), 'Missing interactive engineering models');
 assert.ok(lab.includes('not production benchmarks'), 'Teaching model scope must remain explicit');
+const fullReference = await readFile(path.join(root, 'llms-full.txt'), 'utf8');
+for (const route of insightPaths.filter(p => p !== '/insights/')) {
+  const articleHtml = cache.get(route.slice(1) + 'index.html');
+  const articleMd = await readFile(path.join(root, route.slice(1), 'index.md'), 'utf8');
+  assert.ok(fullReference.includes(articleMd), route + ': full reference must contain the complete article');
+  assert.ok(articleHtml.includes('id="practical-verification"') && articleHtml.includes('aria-label="Article contents"'), route + ': practical answer and article contents required');
+  assert.ok(articleHtml.includes('By <a href="/about/">Savi Saluwadana</a>'), route + ': author profile link missing');
+  const article = JSON.parse(articleHtml.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'].find(n=>n['@type']==='Article');
+  assert.equal(article.author['@id'],person['@id'],route + ': article author identity mismatch');
+  assert.equal(article.author.url,origin+'/about/',route + ': article author URL missing');
+  assert.ok(articleHtml.includes('datetime="'+article.dateModified.slice(0,10)+'"'),route + ': visible update date missing');
+}
 const aboutGraph = JSON.parse(cache.get('about/index.html').match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'];
 assert.equal(aboutGraph.find(n => n['@type'] === 'ProfilePage').mainEntity['@id'], person['@id'], 'About page must identify the canonical Person');
 const engineeringGraph = JSON.parse(cache.get('engineering/index.html').match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'];

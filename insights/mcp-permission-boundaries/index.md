@@ -2,8 +2,9 @@
 
 > A practical architecture for MCP tools: authenticate at the application boundary, keep authorization in domain services, record state in the system of record, and require approval for consequential actions.
 
-By Savi Saluwadana  
+By [Savi Saluwadana](https://savisaluwadana.github.io/about/)  
 Published: 2026-10-07  
+Updated: 2026-11-24  
 Canonical: https://savisaluwadana.github.io/insights/mcp-permission-boundaries/
 
 The safest default for an MCP-enabled application is simple: the model should not become a second authority path. Agent tools should call the same authenticated application boundary used by other clients, while authorization, tenant scope, validation and durable state remain inside the application.
@@ -49,6 +50,12 @@ For a broader walkthrough, see [Agentic systems: tools, state and human review](
 - Return explicit failure reasons that can be inspected without exposing secrets.
 
 The goal is not to make agents powerless. It is to give them useful capabilities without creating a second, weaker security model.
+
+## How can I test an agent permission boundary?
+
+**Answer:** Start with a policy matrix: vary the actor's role, requested operation, tenant membership and approval state. A cross-tenant request must be denied even if the actor has an administrator role; an approved transfer must still satisfy role and tenant checks. The portfolio's simplified model demonstrates these decisions, not a production security audit.
+
+Related portfolio evidence: [Agent authorization model](https://savisaluwadana.github.io/lab/#permissions).
 
 ## Sources and implementation references
 

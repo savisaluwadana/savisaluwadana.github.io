@@ -1,0 +1,27 @@
+name: Notify IndexNow of changed pages
+on:
+  workflow_dispatch:
+    inputs:
+      paths:
+        description: 'Changed canonical paths, separated by commas or spaces (e.g. /about/, /insights/)'
+        required: true
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: indexnow-submit
+  cancel-in-progress: false
+jobs:
+  notify:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate live pages and notify IndexNow
+        env:
+          INDEXNOW_PATHS: ${{ inputs.paths }}
+        run: node scripts/indexnow.mjs

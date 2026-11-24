@@ -23,31 +23,31 @@ const insightPages = [
     "path": "/insights/mcp-permission-boundaries/",
     "name": "MCP Permission Boundaries: Keep Agent Tools Behind the Application API",
     "description": "How application services retain authorization when agents use tools.",
-    "reviewed": "2026-10-07"
+    "reviewed": "2026-11-24"
   },
   {
     "path": "/insights/durable-agentic-workflows/",
     "name": "Durable Agentic Workflows: State, Idempotency and Human Approval",
     "description": "State, retries, idempotency and approvals in long-running workflows.",
-    "reviewed": "2026-10-07"
+    "reviewed": "2026-11-24"
   },
   {
     "path": "/insights/go-modular-monolith-saas/",
     "name": "Go Modular Monolith Architecture for SaaS: Boundaries Before Microservices",
     "description": "Domain boundaries and transaction ownership in a Go application.",
-    "reviewed": "2026-10-07"
+    "reviewed": "2026-11-24"
   },
   {
     "path": "/insights/platform-engineering-paved-road/",
     "name": "Platform Engineering: Build a Paved Road Without Hiding the System",
     "description": "Tool-neutral platform delivery contracts, visibility and escape hatches.",
-    "reviewed": "2026-10-07"
+    "reviewed": "2026-11-24"
   },
   {
     "path": "/insights/postgres-multitenancy-boundaries/",
     "name": "PostgreSQL Multi-Tenancy: Define Authorization Boundaries Before Schema Tricks",
     "description": "Tenant context, repository contracts and database safeguards.",
-    "reviewed": "2026-10-07"
+    "reviewed": "2026-11-24"
   }
 ];
 const entryPaths = ['/products/', ...discovery.pages.map(p => p.path), ...insightPages.map(p => p.path)];
@@ -223,7 +223,8 @@ agentIndex = agentIndex.replace('## Optional', "## Writing and community profile
 agentIndex = agentIndex.replace('## Optional', `## Engineering insights\n\n${insightPages.map(p => `- [${p.name}](${base}${p.path}): ${p.description}`).join('\n')}\n\n## Optional`);
 agentIndex = agentIndex.replace('## Optional', `## Optional\n\n- [Engineering and product feed](${base}/feed.xml): Atom feed of the current reference pages and product overviews.\n- [Public source data](${base}/public-work.json): Verified public repository references and available license metadata.`);
 await write('llms.txt', agentIndex);
-await write('llms-full.txt', markdown + '\n\n' + [...references.map(p => p.markdown), ...markdownProducts].join('\n\n---\n\n'));
+const articleMarkdown = await Promise.all(insightPages.filter(p => p.path !== '/insights/').map(p => readFile(path.join(root, p.path.slice(1), 'index.md'), 'utf8')));
+await write('llms-full.txt', markdown + '\n\n' + [...references.map(p => p.markdown), ...articleMarkdown, ...markdownProducts].join('\n\n---\n\n'));
 const feedItems = [...references.map(p => ({ name: p.name, url: base + p.path, description: p.description, reviewed: p.reviewed || updated })), ...insightPages.map(p => ({ name: p.name, url: base + p.path, description: p.description, reviewed: p.reviewed })), ...products.map(p => ({ name: p.name, url: url(p), description: `${p.scope} ${p.boundary}`, reviewed: p.reviewed }))];
 // Source review dates are date-granularity and normalized to UTC midnight.
 await write('feed.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">\n  <id>${base}/feed.xml</id><title>Savi Saluwadana — Engineering and products</title>\n  <subtitle>Product architecture, agentic systems and public engineering references.</subtitle>\n  <updated>${[updated, ...feedItems.map(item => item.reviewed)].sort().at(-1)}T00:00:00Z</updated>\n  <author><name>Savi Saluwadana</name><uri>${base}/about/</uri></author>\n  <link rel="self" type="application/atom+xml" href="${base}/feed.xml"/>\n  <link rel="alternate" type="text/html" href="${base}/"/>\n${feedItems.map(item => `  <entry><id>${esc(item.url)}</id><title>${esc(item.name)}</title><link rel="alternate" type="text/html" href="${esc(item.url)}"/><updated>${item.reviewed}T00:00:00Z</updated><summary type="text">${esc(item.description)}</summary></entry>`).join('\n')}\n</feed>\n`);

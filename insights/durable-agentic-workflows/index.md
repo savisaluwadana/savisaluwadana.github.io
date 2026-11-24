@@ -2,8 +2,9 @@
 
 > How to design agentic workflows that survive retries and failures: persist state, separate proposals from side effects, make mutations idempotent, and model human approval explicitly.
 
-By Savi Saluwadana  
+By [Savi Saluwadana](https://savisaluwadana.github.io/about/)  
 Published: 2026-10-07  
+Updated: 2026-11-24  
 Canonical: https://savisaluwadana.github.io/insights/durable-agentic-workflows/
 
 An agent becomes operationally useful when its work can survive retries, partial failures and human review. That requires more than a model loop: it requires durable state, explicit transitions and clear ownership of side effects.
@@ -43,6 +44,12 @@ In [Pain Intelligence Lab](/products/pain-intelligence/), research state and evi
 Multi-agent collaboration can add useful specialization, but it also multiplies coordination problems. Before introducing more agents, make one workflow resumable, inspectable and safe under retry. Once state transitions are explicit, specialized agents can operate on well-defined pieces of work instead of passing opaque conversational context between one another.
 
 Durability is therefore an application architecture problem first and an agent orchestration problem second.
+
+## How can I verify that a retry is idempotent?
+
+**Answer:** Send the same logical request repeatedly with the same operation identity and compare durable effects against unique requests. In the teaching model, five unique requests with two extra delivery attempts produce fifteen deliveries but only five effects when deduplication is enabled. Real systems must also test concurrent attempts and crash recovery.
+
+Related portfolio evidence: [Interactive retry model](https://savisaluwadana.github.io/lab/#retries).
 
 ## Sources and implementation references
 

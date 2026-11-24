@@ -2,8 +2,9 @@
 
 > A practical way to structure a Go SaaS backend as a modular monolith: organize by domain, keep transactions local, separate workers and integrations, and extract services only when operational boundaries justify it.
 
-By Savi Saluwadana  
+By [Savi Saluwadana](https://savisaluwadana.github.io/about/)  
 Published: 2026-10-07  
+Updated: 2026-11-24  
 Canonical: https://savisaluwadana.github.io/insights/go-modular-monolith-saas/
 
 A modular monolith is a useful default for many SaaS systems because it keeps deployment and transactions simple while still forcing clear domain boundaries. The important part is not having one binary; it is preventing one module from casually owning another module’s data and rules.
@@ -43,6 +44,12 @@ This pattern keeps business acceptance separate from external delivery. The doma
 [Property Management OS](/products/property-os/) documents a Go modular monolith backed by PostgreSQL, with an outbox worker and an MCP layer that calls the authenticated API. The design keeps domain authority in the application instead of distributing it across clients.
 
 The lesson is not that every system should remain a monolith forever. It is that service boundaries should be earned by real operational requirements rather than assumed at project start.
+
+## When should I extract a service from a modular monolith?
+
+**Answer:** Extract a module when independently measurable requirements such as operational isolation, deployment cadence, security boundaries or scaling justify the added coordination cost. Before extraction, make ownership and interfaces explicit, establish a performance baseline, and test failures at the proposed boundary. Avoid splitting a business transaction solely to follow a microservices pattern.
+
+Related portfolio evidence: [Property Management OS architecture](https://savisaluwadana.github.io/products/property-os/).
 
 ## Sources and implementation references
 

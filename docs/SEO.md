@@ -77,3 +77,6 @@ Saelior and EventMesh have distinct canonical portfolio URLs with owner-authored
 
 ### Engineering laboratory
 The `/lab/` page contains interactive teaching models, linked source and automated tests. Static explanations are crawlable without JavaScript. The same pure functions power browser controls and Node tests. Do not present model outputs as production measurements or real service benchmarks.
+
+### Search visibility and IndexNow
+See [search strategy](SEARCH-STRATEGY.md) for the canonical query map, free search submission workflow and AI answer accuracy checks. The full text reference includes all five complete published articles. Article updates include linked author profiles, table of contents, verification examples and actual modification dates.

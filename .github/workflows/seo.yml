@@ -27,6 +27,10 @@ jobs:
       - name: Summarize static SEO audit
         if: always()
         run: node scripts/summarize-audits.mjs seo
+      - name: Validate IndexNow canonical selection without network
+        env:
+          INDEXNOW_PATHS: /about/, /insights/
+        run: node scripts/indexnow.mjs --dry-run
       - name: Test private dashboard without credentials
         if: always()
         run: node scripts/render-private-dashboard.mjs --self-test

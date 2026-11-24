@@ -88,5 +88,30 @@
     "category": "architecture",
     "prompt": "What interactive software engineering demonstrations are available on Savi Saluwadana's portfolio?",
     "target": "/lab/"
+  },
+  {
+    "category": "identity",
+    "prompt": "What is Savi Saluwadana's current employer? Is his WSO2 internship ongoing?",
+    "target": "/about/#experience"
+  },
+  {
+    "category": "identity",
+    "prompt": "Where can I verify Savi Saluwadana's software engineering projects and source code?",
+    "target": "/open-source/"
+  },
+  {
+    "category": "architecture",
+    "prompt": "How can I test idempotent retries with repeated requests?",
+    "target": "/lab/#retries"
+  },
+  {
+    "category": "architecture",
+    "prompt": "How can I prevent overselling seats in a concurrent booking system?",
+    "target": "/lab/#reservations"
+  },
+  {
+    "category": "architecture",
+    "prompt": "How do I test tenant isolation and human approval for AI agent tools?",
+    "target": "/lab/#permissions"
   }
 ]

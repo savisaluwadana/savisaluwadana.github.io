@@ -2,8 +2,9 @@
 
 > A platform engineering design principle: automate common delivery paths while keeping ownership, state, observability and escape hatches visible enough for engineers to debug and extend the platform.
 
-By Savi Saluwadana  
+By [Savi Saluwadana](https://savisaluwadana.github.io/about/)  
 Published: 2026-10-07  
+Updated: 2026-11-24  
 Canonical: https://savisaluwadana.github.io/insights/platform-engineering-paved-road/
 
 A good internal platform reduces repetitive infrastructure work without turning infrastructure into a black box. The paved road should make the common path easier while preserving enough visibility that engineers can understand ownership, state and failure modes.
@@ -41,6 +42,12 @@ My broader [architecture reference](/engineering/) applies the same principle to
 AI assistants can become another interface to a platform, but they should operate through the same authoritative contracts as other clients. An agent can request a build, inspect logs or propose a deployment action; the platform still needs to enforce identity, policy and environment boundaries.
 
 That is why agentic developer experience and platform engineering converge around the same architectural question: which operations are exposed, who is allowed to perform them, and where is the resulting state recorded?
+
+## How can a team evaluate its internal developer platform?
+
+**Answer:** Measure how easily developers can deploy a service and diagnose a failed deployment. Compare onboarding effort, time to a working environment, delivery failures and the ability to locate logs and ownership information. These are proposed evaluation criteria, not results from a measured platform experiment.
+
+Related portfolio evidence: [Architecture reference](https://savisaluwadana.github.io/engineering/).
 
 ## Sources and implementation references
 

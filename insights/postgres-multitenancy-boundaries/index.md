@@ -2,8 +2,9 @@
 
 > A practical approach to PostgreSQL multi-tenancy: resolve tenant context early, scope every domain operation, enforce ownership consistently, and use database isolation as defense in depth rather than the only authorization layer.
 
-By Savi Saluwadana  
+By [Savi Saluwadana](https://savisaluwadana.github.io/about/)  
 Published: 2026-10-07  
+Updated: 2026-11-24  
 Canonical: https://savisaluwadana.github.io/insights/postgres-multitenancy-boundaries/
 
 Multi-tenancy is primarily an authorization and ownership problem. Database techniques matter, but the system first needs a reliable answer to a simpler question: which tenant is this operation acting for, and why is the caller allowed to act there?
@@ -43,6 +44,12 @@ The more privileged the operation, the more useful it is to record the actor, ta
 [Property Management OS](/products/property-os/) documents organization-scoped operations in a Go/PostgreSQL application. [Advance HRIS](/products/advance-hris/) also describes tenant-scoped access in a hybrid web and desktop system. Their workflows differ, but both reinforce the same principle: tenant ownership belongs in the application model, not only in URL structure or UI state.
 
 For backend structure around these boundaries, see [Go modular monolith architecture for SaaS](/insights/go-modular-monolith-saas/).
+
+## How can I test tenant isolation in a SaaS application?
+
+**Answer:** Create test identities and records in two tenants. Attempt reads and mutations with valid and mismatched tenant context, including privileged operations and indirect object references. Verify that unauthorized requests reveal no tenant-owned data and cause no state changes. The agent authorization model demonstrates one simplified policy matrix; database-level tests remain necessary.
+
+Related portfolio evidence: [Tenant and role policy model](https://savisaluwadana.github.io/lab/#permissions).
 
 ## Sources and implementation references
 
