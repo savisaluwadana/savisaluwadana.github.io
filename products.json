@@ -227,65 +227,6 @@
       "markdown": "https://savisaluwadana.github.io/products/timelyhelp/index.md"
     },
     {
-      "id": "devrelos",
-      "name": "DevRelOS",
-      "category": "Self-hosted beta",
-      "type": "Developer intelligence platform",
-      "description": "An operating system for discovering developer signals, managing community and content workflows, connecting developer feedback to product work, and measuring outcomes from one operational surface.",
-      "architecture": "Next.js → Go API → PostgreSQL → Workers → MCP",
-      "tags": [
-        "Go",
-        "Next.js",
-        "PostgreSQL",
-        "MCP",
-        "RBAC",
-        "Workers"
-      ],
-      "footer": "Built around provider interfaces, evidence provenance, approval-gated side effects, observable automation and PostgreSQL as the system of record.",
-      "href": "",
-      "users": "Developer-relations teams and developer-community operators.",
-      "scope": "A self-hosted beta for discovery, engagement and outcome measurement.",
-      "features": [
-        "Signal Radar, pain-point intelligence and developer feedback.",
-        "Events, CFPs, reusable talks, contacts and relationships.",
-        "Content, campaigns, media workflows and approval-gated outreach.",
-        "Authenticated MCP tools and workspace-scoped access."
-      ],
-      "workflow": [
-        "Connectors or an operator bring source-backed signals into a workspace.",
-        "The Go API validates membership and stores domain state in PostgreSQL.",
-        "Background workers run connector, media and approved outreach tasks.",
-        "The dashboard and MCP clients inspect work and track its outcomes through the domain API."
-      ],
-      "boundary": "This project is a self-hosted beta. External providers require credentials and policy configuration; consequential outreach follows approval workflows.",
-      "components": [
-        [
-          "Next.js dashboard",
-          "Operator workspaces and same-origin API proxy."
-        ],
-        [
-          "Go domain API",
-          "Authenticated workflows, membership checks and business rules."
-        ],
-        [
-          "PostgreSQL",
-          "Workspace data, evidence, workflow state and audit history."
-        ],
-        [
-          "Go workers",
-          "Connector ingestion, media rendering and approved delivery."
-        ],
-        [
-          "MCP",
-          "Authenticated domain tools; no parallel database access path."
-        ]
-      ],
-      "reviewed": "2026-10-04",
-      "source": null,
-      "url": "https://savisaluwadana.github.io/products/devrelos/",
-      "markdown": "https://savisaluwadana.github.io/products/devrelos/index.md"
-    },
-    {
       "id": "property-os",
       "name": "Property Management OS",
       "category": "Multi-tenant platform",

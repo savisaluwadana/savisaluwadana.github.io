@@ -96,11 +96,6 @@
     },
     {
       "@type": "WebPage",
-      "name": "DevRelOS",
-      "url": "https://savisaluwadana.github.io/products/devrelos/"
-    },
-    {
-      "@type": "WebPage",
       "name": "Property Management OS",
       "url": "https://savisaluwadana.github.io/products/property-os/"
     },

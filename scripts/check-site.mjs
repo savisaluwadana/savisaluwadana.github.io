@@ -14,6 +14,10 @@ const discovery = JSON.parse(await readFile(path.join(root, 'data/discovery.json
 const coreEntryPaths = ['/products/', ...discovery.pages.map(p => p.path)];
 const insightPaths = ["/insights/","/insights/mcp-permission-boundaries/","/insights/durable-agentic-workflows/","/insights/go-modular-monolith-saas/","/insights/platform-engineering-paved-road/","/insights/postgres-multitenancy-boundaries/"];
 const entryPaths = [...coreEntryPaths, ...insightPaths];
+const industryIds = discovery.groups.flatMap(group => group.products);
+assert.equal(industryIds.length, products.length, 'Every product must be classified by industry');
+assert.equal(new Set(industryIds).size, products.length, 'Industry categories must not duplicate projects');
+assert.ok(industryIds.every(id => products.some(p => p.id === id)), 'Industry categories contain an unknown product');
 assert.equal(sitemapUrls.length, products.length + 2 + entryPaths.length, 'All canonical pages must appear in sitemap');
 const pages = ['index.html', 'contact.html', ...entryPaths.map(p => p.slice(1) + 'index.html'), ...products.map(p => `products/${p.id}/index.html`)];
 const cache = new Map(await Promise.all(pages.map(async f => [f, await readFile(path.join(root, f), 'utf8')])));
