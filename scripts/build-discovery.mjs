@@ -64,9 +64,9 @@ const featured = [
   { id: 'property-os', stack: 'Go / PostgreSQL / MCP', question: 'Who authorizes an agent’s request?', answer: 'Property Management OS routes MCP tool calls through the same authenticated Go API as the web app. The API owns the permission check and the database write.' }
 ].map(study => ({ ...study, product: products.find(p => p.id === study.id) }));
 
-const pageTitle = 'Savi Saluwadana | Software Architect & Platform Engineering';
-const pageDescription = 'Explore Savi Saluwadana’s software architecture and engineering work on offline sync in Go, recurring grocery deliveries, and MCP permission boundaries, with diagrams and public source code.';
-const homeUpdated = '2026-11-18';
+const pageTitle = 'Savi Saluwadana | Software Engineering, Systems & Applied AI';
+const pageDescription = 'Independent software engineering portfolio exploring distributed systems, software architecture, platform engineering and applied AI through projects, technical notes and experiments.';
+const homeUpdated = '2026-11-24';
 const selectedList = {
   '@type': 'ItemList', '@id': base + '/#work', name: 'Selected work',
   itemListElement: featured.map(({ product, answer }, index) => ({

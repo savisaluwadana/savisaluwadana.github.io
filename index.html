@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark light">
-  <meta name="theme-color" content="#0a0e14">
+  <meta name="theme-color" content="#101010">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <meta name="author" content="Savi Saluwadana">
 
-  <title>Savi Saluwadana | Software Architect &amp; Platform Engineering</title>
-  <meta name="description" content="Explore Savi Saluwadana’s software architecture and engineering work on offline sync in Go, recurring grocery deliveries, and MCP permission boundaries, with diagrams and public source code.">
+  <title>Savi Saluwadana | Software Engineering, Systems &amp; Applied AI</title>
+  <meta name="description" content="Independent software engineering portfolio exploring distributed systems, software architecture, platform engineering and applied AI through projects, technical notes and experiments.">
   <link rel="describedby" type="text/plain" href="/llms.txt">
   <link rel="alternate" type="application/json" href="/profile.json" title="Public profile data">
   <link rel="alternate" type="text/markdown" href="/about.md" title="Profile in Markdown">
@@ -24,8 +24,8 @@
 
   <meta property="og:type" content="profile">
   <meta property="og:site_name" content="Savi Saluwadana">
-  <meta property="og:title" content="Savi Saluwadana | Software Architect &amp; Platform Engineering">
-  <meta property="og:description" content="Explore Savi Saluwadana’s software architecture and engineering work on offline sync in Go, recurring grocery deliveries, and MCP permission boundaries, with diagrams and public source code.">
+  <meta property="og:title" content="Savi Saluwadana | Software Engineering, Systems &amp; Applied AI">
+  <meta property="og:description" content="Independent software engineering portfolio exploring distributed systems, software architecture, platform engineering and applied AI through projects, technical notes and experiments.">
   <meta property="og:url" content="https://savisaluwadana.github.io/">
   <meta property="og:image" content="https://avatars.githubusercontent.com/u/82082138?v=4">
   <meta property="og:locale" content="en_LK">
@@ -33,8 +33,8 @@
   <meta property="profile:last_name" content="Saluwadana">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Savi Saluwadana | Software Architect &amp; Platform Engineering">
-  <meta name="twitter:description" content="Explore Savi Saluwadana’s software architecture and engineering work on offline sync in Go, recurring grocery deliveries, and MCP permission boundaries, with diagrams and public source code.">
+  <meta name="twitter:title" content="Savi Saluwadana | Software Engineering, Systems &amp; Applied AI">
+  <meta name="twitter:description" content="Independent software engineering portfolio exploring distributed systems, software architecture, platform engineering and applied AI through projects, technical notes and experiments.">
   <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/82082138?v=4">
 
   <link rel="preconnect" href="https://avatars.githubusercontent.com">
@@ -47,6 +47,7 @@
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/product-details.css">
   <link rel="stylesheet" href="/homepage.css">
+  <link rel="stylesheet" href="/engineering-portfolio.css">
   <!-- SCHEMA:START -->
 <script type="application/ld+json">
 {
@@ -143,8 +144,8 @@
       "@type": "ProfilePage",
       "@id": "https://savisaluwadana.github.io/#profile",
       "url": "https://savisaluwadana.github.io/",
-      "name": "Savi Saluwadana | Software Architect & Platform Engineering",
-      "description": "Explore Savi Saluwadana’s software architecture and engineering work on offline sync in Go, recurring grocery deliveries, and MCP permission boundaries, with diagrams and public source code.",
+      "name": "Savi Saluwadana | Software Engineering, Systems & Applied AI",
+      "description": "Independent software engineering portfolio exploring distributed systems, software architecture, platform engineering and applied AI through projects, technical notes and experiments.",
       "mainEntity": {
         "@id": "https://savisaluwadana.github.io/#person"
       },
@@ -154,7 +155,7 @@
       "hasPart": {
         "@id": "https://savisaluwadana.github.io/#work"
       },
-      "dateModified": "2026-11-18T00:00:00+05:30",
+      "dateModified": "2026-11-24T00:00:00+05:30",
       "inLanguage": "en"
     },
     {
@@ -190,20 +191,21 @@
   </script>
           <!-- SCHEMA:END -->
 </head>
-<body>
+<body class="engineering-portfolio">
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header" data-header>
     <div class="shell nav-shell">
-      <a class="wordmark" href="#top" aria-label="Savi Saluwadana home">Savi Saluwadana <span class="wordmark-tag">// arch</span></a>
+      <a class="wordmark" href="#top" aria-label="Savi Saluwadana home">SAVI<span class="wordmark-tag">.</span></a>
       <button class="menu-button" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav" data-menu-button>
         <span></span><span></span>
       </button>
       <nav class="nav-links" aria-label="Primary navigation" id="primary-nav" data-nav>
-        <a href="#work">Systems</a>
+        <a href="#selected">Work</a>
         <a href="/engineering/">Architecture</a>
         <a href="/insights/">Writing</a>
-        <a href="/open-source/">Public source</a>
+        <a href="#lab">Lab</a>
+        <a href="/open-source/">Source</a>
         <a href="/about/">About</a>
         <a class="nav-contact" href="#contact">Contact</a>
         <button type="button" class="theme-toggle" data-theme-toggle aria-label="Toggle color theme" aria-pressed="false">Light</button>
@@ -212,38 +214,162 @@
   </header>
 
   <main id="main">
-    <section class="hero" id="top" aria-labelledby="hero-title">
-      <div class="shell hero-layout">
+    <section class="editorial-hero" id="top" aria-labelledby="hero-title">
+      <div class="shell editorial-hero-grid">
         <div>
-          <p class="hero-status"><span class="status-dot" aria-hidden="true"></span>Sri Lanka · Software &amp; systems built in public</p>
-          <h1 id="hero-title">Savi Saluwadana<span>.</span></h1>
-          <p class="hero-lead">I design Go APIs, multi-tenant data boundaries, and agent-ready workflows with explicit permissions — documenting architecture diagrams, trade-offs, and containers in public.</p>
-          <div class="hero-actions">
-            <a class="btn btn--primary" href="#work">Explore case studies ↓</a>
-            <a class="btn btn--ghost" href="/engineering/">Architecture reference</a>
-            <a class="text-link" href="/open-source/">7 public repos ↗</a>
-          </div>
-          <dl class="hero-telemetry" aria-label="Portfolio overview">
-            <div class="telemetry-item">
-              <dt class="visually-hidden">Documented systems</dt>
-              <dd><strong>16</strong><span>Documented systems</span></dd>
-            </div>
-            <div class="telemetry-item">
-              <dt class="visually-hidden">Public repositories</dt>
-              <dd><strong>7</strong><span>Public GitHub repos</span></dd>
-            </div>
-            <div class="telemetry-item">
-              <dt class="visually-hidden">Engineering notes</dt>
-              <dd><strong>5</strong><span>Architecture notes</span></dd>
-            </div>
-            <div class="telemetry-item">
-              <dt class="visually-hidden">Core languages and database</dt>
-              <dd><strong>Go · Rust · TS</strong><span>PostgreSQL &amp; Docker</span></dd>
-            </div>
-          </dl>
+          <p class="editorial-kicker">SAVI SALUWADANA / SOFTWARE ENGINEER</p>
+          <h1 id="hero-title">Building intelligent systems.<br><span>Engineering for scale.</span></h1>
+          <p class="editorial-lead">I build software and explore the intersection of distributed systems, software architecture, cloud infrastructure and applied AI. This is my workspace for projects, design decisions and experiments.</p>
+          <div class="hero-actions"><a class="btn btn--primary" href="#selected">Explore my work <span aria-hidden="true">↘</span></a><a class="btn btn--ghost" href="https://github.com/savisaluwadana">GitHub ↗</a><button type="button" class="editorial-command" data-command-open>Navigate <kbd>⌘/Ctrl K</kbd></button></div>
         </div>
+        <div class="editorial-identity">
+          <img src="https://avatars.githubusercontent.com/u/82082138?v=4" width="88" height="88" alt="Portrait of Savi Saluwadana">
+          <p class="editorial-kicker">BASED IN SRI LANKA</p>
+          <p>Software engineering<br>Systems thinking<br>Building in public</p>
+          <a href="/about/">More about me ↗</a>
+        </div>
+      </div>
+      <div class="shell editorial-foot"><span>01 / INDEPENDENT ENGINEERING PORTFOLIO</span><span>Architecture · Infrastructure · Intelligence</span></div>
+    </section>
+    <section class="section editorial-selected" id="selected" aria-labelledby="selected-title">
+      <div class="shell">
+        <div class="section-head"><div><p class="eyebrow">01 / Selected work</p><h2 id="selected-title">Systems, not just interfaces.</h2><p>Independent projects and clearly labelled engineering research directions. Diagrams are conceptual, not claims of deployment or performance.</p></div><a class="text-link" href="/products/">All documented systems →</a></div>
+        <div class="editorial-project-grid">
+          <article class="editorial-project"><div class="editorial-diagram"><span>01 / Active project</span><svg viewBox="0 0 320 140" aria-hidden="true" focusable="false"><g class="diagram-lines"><path d="M92 28 H118 M202 28 H228 M160 46 V78 M50 46 V96 H118 M270 46 V96 H202"/></g><g><rect x="8" y="8" width="84" height="36" rx="5"/><text x="50" y="30" text-anchor="middle">Teams</text></g><g><rect x="118" y="8" width="84" height="36" rx="5"/><text x="160" y="30" text-anchor="middle">Agents</text></g><g><rect x="228" y="8" width="84" height="36" rx="5"/><text x="270" y="30" text-anchor="middle">Tools</text></g><g><rect x="118" y="79" width="84" height="36" rx="5"/><text x="160" y="101" text-anchor="middle">Workflow</text></g></svg></div><div class="editorial-project-body"><h3>Saelior</h3><p>An agentic business platform exploring how teams coordinate AI-assisted work, workflows and human review.</p><a href="https://saelior.com/">Explore the product <span aria-hidden="true">↗</span></a></div></article>
+          <article class="editorial-project"><div class="editorial-diagram"><span>02 / In development</span><svg viewBox="0 0 320 140" aria-hidden="true" focusable="false"><g class="diagram-lines"><path d="M92 28 H118 M202 28 H228 M160 46 V78 M50 46 V96 H118 M270 46 V96 H202"/></g><g><rect x="8" y="12" width="84" height="36" rx="5"/><text x="50" y="34" text-anchor="middle">Events</text></g><g><rect x="118" y="12" width="84" height="36" rx="5"/><text x="160" y="34" text-anchor="middle">Rank</text></g><g><rect x="228" y="12" width="84" height="36" rx="5"/><text x="270" y="34" text-anchor="middle">Match</text></g><g><rect x="118" y="80" width="84" height="36" rx="5"/><text x="160" y="102" text-anchor="middle">Delivery</text></g></svg></div><div class="editorial-project-body"><h3>EventMesh</h3><p>An event discovery and matching system exploring relevant connections, event data and real-time delivery.</p><a href="#work">Explore related case studies <span aria-hidden="true">↗</span></a></div></article>
+          <article class="editorial-project"><div class="editorial-diagram"><span>03 / Design concept</span><svg viewBox="0 0 320 140" aria-hidden="true" focusable="false"><g class="diagram-lines"><path d="M92 28 H118 M202 28 H228 M160 46 V78 M50 46 V96 H118 M270 46 V96 H202"/></g><g><rect x="8" y="12" width="84" height="36" rx="5"/><text x="50" y="34" text-anchor="middle">Input</text></g><g><rect x="118" y="12" width="84" height="36" rx="5"/><text x="160" y="34" text-anchor="middle">Queue</text></g><g><rect x="228" y="12" width="84" height="36" rx="5"/><text x="270" y="34" text-anchor="middle">Worker</text></g><g><rect x="118" y="80" width="84" height="36" rx="5"/><text x="160" y="102" text-anchor="middle">State</text></g></svg></div><div class="editorial-project-body"><h3>Relay</h3><p>A proposed durable workflow engine for exploring retries, idempotency, execution state and recovery.</p><a href="/insights/durable-agentic-workflows/">Read the workflow design note <span aria-hidden="true">↗</span></a></div></article>
+          <article class="editorial-project"><div class="editorial-diagram"><span>04 / Research direction</span><svg viewBox="0 0 320 140" aria-hidden="true" focusable="false"><g class="diagram-lines"><path d="M92 28 H118 M202 28 H228 M160 46 V78 M50 46 V96 H118 M270 46 V96 H202"/></g><g><rect x="8" y="12" width="84" height="36" rx="5"/><text x="50" y="34" text-anchor="middle">Load</text></g><g><rect x="118" y="12" width="84" height="36" rx="5"/><text x="160" y="34" text-anchor="middle">Service</text></g><g><rect x="228" y="12" width="84" height="36" rx="5"/><text x="270" y="34" text-anchor="middle">Trace</text></g><g><rect x="118" y="80" width="84" height="36" rx="5"/><text x="160" y="102" text-anchor="middle">Measure</text></g></svg></div><div class="editorial-project-body"><h3>Systems Lab</h3><p>A space for studying reliability, failure modes, observability and reproducible performance experiments.</p><a href="#lab">Explore the lab <span aria-hidden="true">↗</span></a></div></article>
+        </div>
+      </div>
+    </section>
 
-        <aside class="blueprint-panel" aria-label="Interactive system architecture blueprints" data-blueprint-tabs>
+    <section class="section domains-section" id="domains" aria-labelledby="domains-title">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">02 / Engineering disciplines</p>
+            <h2 id="domains-title">What I design &amp; build</h2>
+            <p>Each system focuses on where authority lives, how clients access it, and what state transitions hold up under real constraints.</p>
+          </div>
+          <a class="text-link" href="/engineering/">Compare boundaries across projects →</a>
+        </div>
+        <div class="domains-grid">
+          <article class="domain-card reveal">
+            <span class="domain-num">01 // API &amp; DOMAIN AUTHORITY</span>
+            <h3>Go modular monoliths &amp; multi-tenant boundaries</h3>
+            <p>Organization-scoped Go APIs backed by PostgreSQL, keeping business invariants, RBAC, and transactions inside one authoritative backend before splitting services.</p>
+            <a class="text-link" href="/engineering/#data-authority">Inspect tenancy &amp; authority →</a>
+          </article>
+          <article class="domain-card reveal">
+            <span class="domain-num">02 // AGENTIC &amp; MCP BOUNDARIES</span>
+            <h3>Authenticated agent tools &amp; approval gates</h3>
+            <p>Model Context Protocol tools routed behind authenticated domain APIs instead of direct database paths, pairing evidence provenance with explicit human review.</p>
+            <a class="text-link" href="/engineering/agentic-systems/">Explore agentic walkthroughs →</a>
+          </article>
+          <article class="domain-card reveal">
+            <span class="domain-num">03 // LOCAL-FIRST &amp; DURABLE STATE</span>
+            <h3>Offline sync queues &amp; transactional outboxes</h3>
+            <p>Encrypted SQLite queues with explicit conflict resolution on desktop clients, and durable outbox workers separating domain acceptance from external delivery.</p>
+            <a class="text-link" href="/engineering/#local-first">See local-first boundaries →</a>
+          </article>
+          <article class="domain-card reveal">
+            <span class="domain-num">04 // PLATFORM DELIVERY &amp; DX</span>
+            <h3>Containers, CI/CD &amp; paved-road contracts</h3>
+            <p>Exploring platform engineering through Docker Compose setups, CI checks, reproducible local environments, and observable delivery without hiding the underlying system.</p>
+            <a class="text-link" href="/insights/platform-engineering-paved-road/">Read paved-road principle →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section selected-work" id="work" aria-labelledby="work-title">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">03 / Case studies</p>
+            <h2 id="work-title">Architecture in practice</h2>
+            <p>Three source-backed engineering problems showing the system boundary, pipeline, and documented trade-off.</p>
+          </div>
+          <a class="text-link text-link--primary" href="/products/">All 16 documented systems →</a>
+        </div>
+        <div class="work-studies">
+          <!-- PRODUCTS:START -->
+
+          <article class="study-card" id="advance-hris">
+            <div class="study-top">
+              <span class="study-case-id">CASE 01</span>
+              <div class="study-badges">
+                <span class="badge">Go / Wails / SQLite</span>
+                <span class="badge badge--signal">Public repo</span>
+              </div>
+            </div>
+            <p class="study-label">Advance HRIS</p>
+            <h3><a href="/products/advance-hris/">How do you sync an offline edit?</a></h3>
+            <p class="study-answer">Advance HRIS skips incoming employee records that still have a pending local edit. A sync can refresh other records while that edit waits for resolution.</p>
+            <p class="study-arch mono">Next.js Web + Wails / React Desktop → Go API → PostgreSQL</p>
+            <p class="study-tradeoff"><strong>Trade-off:</strong> Offline operation adds synchronization, conflict resolution and local-data protection concerns.</p>
+            <div class="study-foot">
+              <a href="/products/advance-hris/" aria-label="Read the Advance HRIS architecture">Architecture &amp; diagram →</a>
+              <a href="https://github.com/SilverLine-Ravija/Advance-HIRS-System" target="_blank" rel="noreferrer">Source ↗</a>
+            </div>
+          </article>
+
+          <article class="study-card" id="freshpick">
+            <div class="study-top">
+              <span class="study-case-id">CASE 02</span>
+              <div class="study-badges">
+                <span class="badge">Next.js / PostgreSQL</span>
+                <span class="badge badge--signal">Public repo</span>
+              </div>
+            </div>
+            <p class="study-label">FreshPick / FreshOnTime</p>
+            <h3><a href="/products/freshpick/">How do you schedule a repeat delivery?</a></h3>
+            <p class="study-answer">FreshPick tracks recurring grocery orders separately from payment collection. A shopper can schedule another delivery and pay cash when it arrives.</p>
+            <p class="study-arch mono">Next.js → Prisma / PostgreSQL → recurring delivery + media storage</p>
+            <p class="study-tradeoff"><strong>Trade-off:</strong> One app keeps order transitions together; background jobs and integrations need separate scheduling.</p>
+            <div class="study-foot">
+              <a href="/products/freshpick/" aria-label="Read the FreshPick / FreshOnTime architecture">Architecture &amp; diagram →</a>
+              <a href="https://github.com/FreshOnTime/newfreshontimewebsite" target="_blank" rel="noreferrer">Source ↗</a>
+            </div>
+          </article>
+
+          <article class="study-card" id="property-os">
+            <div class="study-top">
+              <span class="study-case-id">CASE 03</span>
+              <div class="study-badges">
+                <span class="badge">Go / PostgreSQL / MCP</span>
+                <span class="badge badge--signal">Public repo</span>
+              </div>
+            </div>
+            <p class="study-label">Property Management OS</p>
+            <h3><a href="/products/property-os/">Who authorizes an agent’s request?</a></h3>
+            <p class="study-answer">Property Management OS routes MCP tool calls through the same authenticated Go API as the web app. The API owns the permission check and the database write.</p>
+            <p class="study-arch mono">Next.js → Go modular monolith → PostgreSQL → Outbox worker → MCP</p>
+            <p class="study-tradeoff"><strong>Trade-off:</strong> Transactional domain authority stays in one backend, but asynchronous delivery needs worker and retry handling.</p>
+            <div class="study-foot">
+              <a href="/products/property-os/" aria-label="Read the Property Management OS architecture">Architecture &amp; diagram →</a>
+              <a href="https://github.com/RealEstateSassApplication/property-management-OS" target="_blank" rel="noreferrer">Source ↗</a>
+            </div>
+          </article>
+          <!-- PRODUCTS:END -->
+        </div>
+        <div class="directory-strip" aria-label="Browse systems by domain">
+          <span class="directory-strip-label">Browse directory by domain:</span>
+          <div class="directory-links">
+            <a href="/products/#marketplaces">Marketplaces &amp; commerce (4)</a>
+            <a href="/products/#business-systems">Business &amp; ops systems (6)</a>
+            <a href="/products/#healthcare">Healthcare products (2)</a>
+            <a href="/products/#agents-and-tools">AI agents &amp; dev tools (4)</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section editorial-lab" id="lab" aria-labelledby="lab-title">
+      <div class="shell">
+        <div class="section-head"><div><p class="eyebrow">04 / Engineering laboratory</p><h2 id="lab-title">Understand the system.</h2><p>Explore existing architecture diagrams and proposed experiments. Results will be published only when measured.</p></div><a class="text-link" href="/engineering/">Architecture reference →</a></div>
+        <div class="editorial-lab-grid">
+          <aside class="blueprint-panel" aria-label="Interactive system architecture blueprints" data-blueprint-tabs>
           <div class="blueprint-header">
             <div class="blueprint-dots" aria-hidden="true"><span></span><span></span><span></span></div>
             <span class="blueprint-file">system-blueprints.svg</span>
@@ -401,126 +527,10 @@
             </div>
           </div>
         </aside>
-      </div>
-    </section>
-
-    <section class="section domains-section" id="domains" aria-labelledby="domains-title">
-      <div class="shell">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">01 / Architectural domains</p>
-            <h2 id="domains-title">What I design &amp; build</h2>
-            <p>Each system focuses on where authority lives, how clients access it, and what state transitions hold up under real constraints.</p>
-          </div>
-          <a class="text-link" href="/engineering/">Compare boundaries across projects →</a>
-        </div>
-        <div class="domains-grid">
-          <article class="domain-card reveal">
-            <span class="domain-num">01 // API &amp; DOMAIN AUTHORITY</span>
-            <h3>Go modular monoliths &amp; multi-tenant boundaries</h3>
-            <p>Organization-scoped Go APIs backed by PostgreSQL, keeping business invariants, RBAC, and transactions inside one authoritative backend before splitting services.</p>
-            <a class="text-link" href="/engineering/#data-authority">Inspect tenancy &amp; authority →</a>
-          </article>
-          <article class="domain-card reveal">
-            <span class="domain-num">02 // AGENTIC &amp; MCP BOUNDARIES</span>
-            <h3>Authenticated agent tools &amp; approval gates</h3>
-            <p>Model Context Protocol tools routed behind authenticated domain APIs instead of direct database paths, pairing evidence provenance with explicit human review.</p>
-            <a class="text-link" href="/engineering/agentic-systems/">Explore agentic walkthroughs →</a>
-          </article>
-          <article class="domain-card reveal">
-            <span class="domain-num">03 // LOCAL-FIRST &amp; DURABLE STATE</span>
-            <h3>Offline sync queues &amp; transactional outboxes</h3>
-            <p>Encrypted SQLite queues with explicit conflict resolution on desktop clients, and durable outbox workers separating domain acceptance from external delivery.</p>
-            <a class="text-link" href="/engineering/#local-first">See local-first boundaries →</a>
-          </article>
-          <article class="domain-card reveal">
-            <span class="domain-num">04 // PLATFORM DELIVERY &amp; DX</span>
-            <h3>Containers, CI/CD &amp; paved-road contracts</h3>
-            <p>Exploring platform engineering through Docker Compose setups, CI checks, reproducible local environments, and observable delivery without hiding the underlying system.</p>
-            <a class="text-link" href="/insights/platform-engineering-paved-road/">Read paved-road principle →</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section selected-work" id="work" aria-labelledby="work-title">
-      <div class="shell">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">02 / Case studies</p>
-            <h2 id="work-title">Selected architecture case studies</h2>
-            <p>Three source-backed engineering problems showing the system boundary, pipeline, and documented trade-off.</p>
-          </div>
-          <a class="text-link text-link--primary" href="/products/">All 16 documented systems →</a>
-        </div>
-        <div class="work-studies">
-          <!-- PRODUCTS:START -->
-
-          <article class="study-card" id="advance-hris">
-            <div class="study-top">
-              <span class="study-case-id">CASE 01</span>
-              <div class="study-badges">
-                <span class="badge">Go / Wails / SQLite</span>
-                <span class="badge badge--signal">Public repo</span>
-              </div>
-            </div>
-            <p class="study-label">Advance HRIS</p>
-            <h3><a href="/products/advance-hris/">How do you sync an offline edit?</a></h3>
-            <p class="study-answer">Advance HRIS skips incoming employee records that still have a pending local edit. A sync can refresh other records while that edit waits for resolution.</p>
-            <p class="study-arch mono">Next.js Web + Wails / React Desktop → Go API → PostgreSQL</p>
-            <p class="study-tradeoff"><strong>Trade-off:</strong> Offline operation adds synchronization, conflict resolution and local-data protection concerns.</p>
-            <div class="study-foot">
-              <a href="/products/advance-hris/" aria-label="Read the Advance HRIS architecture">Architecture &amp; diagram →</a>
-              <a href="https://github.com/SilverLine-Ravija/Advance-HIRS-System" target="_blank" rel="noreferrer">Source ↗</a>
-            </div>
-          </article>
-
-          <article class="study-card" id="freshpick">
-            <div class="study-top">
-              <span class="study-case-id">CASE 02</span>
-              <div class="study-badges">
-                <span class="badge">Next.js / PostgreSQL</span>
-                <span class="badge badge--signal">Public repo</span>
-              </div>
-            </div>
-            <p class="study-label">FreshPick / FreshOnTime</p>
-            <h3><a href="/products/freshpick/">How do you schedule a repeat delivery?</a></h3>
-            <p class="study-answer">FreshPick tracks recurring grocery orders separately from payment collection. A shopper can schedule another delivery and pay cash when it arrives.</p>
-            <p class="study-arch mono">Next.js → Prisma / PostgreSQL → recurring delivery + media storage</p>
-            <p class="study-tradeoff"><strong>Trade-off:</strong> One app keeps order transitions together; background jobs and integrations need separate scheduling.</p>
-            <div class="study-foot">
-              <a href="/products/freshpick/" aria-label="Read the FreshPick / FreshOnTime architecture">Architecture &amp; diagram →</a>
-              <a href="https://github.com/FreshOnTime/newfreshontimewebsite" target="_blank" rel="noreferrer">Source ↗</a>
-            </div>
-          </article>
-
-          <article class="study-card" id="property-os">
-            <div class="study-top">
-              <span class="study-case-id">CASE 03</span>
-              <div class="study-badges">
-                <span class="badge">Go / PostgreSQL / MCP</span>
-                <span class="badge badge--signal">Public repo</span>
-              </div>
-            </div>
-            <p class="study-label">Property Management OS</p>
-            <h3><a href="/products/property-os/">Who authorizes an agent’s request?</a></h3>
-            <p class="study-answer">Property Management OS routes MCP tool calls through the same authenticated Go API as the web app. The API owns the permission check and the database write.</p>
-            <p class="study-arch mono">Next.js → Go modular monolith → PostgreSQL → Outbox worker → MCP</p>
-            <p class="study-tradeoff"><strong>Trade-off:</strong> Transactional domain authority stays in one backend, but asynchronous delivery needs worker and retry handling.</p>
-            <div class="study-foot">
-              <a href="/products/property-os/" aria-label="Read the Property Management OS architecture">Architecture &amp; diagram →</a>
-              <a href="https://github.com/RealEstateSassApplication/property-management-OS" target="_blank" rel="noreferrer">Source ↗</a>
-            </div>
-          </article>
-          <!-- PRODUCTS:END -->
-        </div>
-        <div class="directory-strip" aria-label="Browse systems by domain">
-          <span class="directory-strip-label">Browse directory by domain:</span>
-          <div class="directory-links">
-            <a href="/products/#marketplaces">Marketplaces &amp; commerce (4)</a>
-            <a href="/products/#business-systems">Business &amp; ops systems (6)</a>
-            <a href="/products/#healthcare">Healthcare products (2)</a>
-            <a href="/products/#agents-and-tools">AI agents &amp; dev tools (4)</a>
+          <div class="editorial-experiments">
+            <article><span>EXPERIMENT 01 / PLANNED</span><h3>Durable execution under failure</h3><p>Test duplicate delivery, retries and worker interruption. Record recovery time and repeated side effects.</p></article>
+            <article><span>EXPERIMENT 02 / PLANNED</span><h3>Service performance and reliability</h3><p>Establish a baseline, increase load and report latency percentiles, throughput and errors.</p></article>
+            <article><span>EXPERIMENT 03 / PLANNED</span><h3>Agent permission boundaries</h3><p>Evaluate whether unauthorized tools are rejected and human approval is preserved across workflow steps.</p></article>
           </div>
         </div>
       </div>
@@ -634,7 +644,7 @@
               <span>Software Engineer · Sri Lanka</span>
             </div>
           </div>
-          <p class="about-bio">I build software in public and document the architecture, design decisions, and unfinished edges honestly. Right now I’m focused on Go backend architecture, agentic permission boundaries, and learning platform engineering through containers, CI/CD, and developer experience.</p>
+          <p class="about-bio">I build software and document the architecture, design decisions and unfinished edges. My interests span backend and distributed systems, agentic permission boundaries, and platform engineering through containers, CI/CD and developer experience.</p>
           <div class="project-links">
             <a href="/about/">Full profile →</a>
             <a href="/engineering/">Architecture reference</a>
@@ -722,11 +732,16 @@
 
   <footer class="site-footer">
     <div class="shell footer-layout">
-      <div><strong>Savi Saluwadana</strong><span>Systems architecture · Go APIs · Software built in public</span></div>
+      <div><strong>Savi Saluwadana</strong><span>Software engineering · Architecture · Applied AI</span></div>
       <div><span><a href="/">Portfolio</a> · <a href="/products/">Systems</a> · <a href="/engineering/">Architecture</a> · <a href="/engineering/agentic-systems/">Agentic systems</a> · <a href="/insights/">Writing</a> · <a href="/open-source/">Public source</a> · <a href="/about/">About</a> · <a href="/feed.xml">Feed</a> · <a href="/llms.txt">llms.txt</a></span><span>© <span data-year>2026</span> · Static HTML &amp; build-time SVG</span></div>
     </div>
   </footer>
 
+  <dialog class="editorial-dialog" aria-labelledby="command-title" data-command-dialog>
+    <div class="editorial-dialog-head"><h2 id="command-title">Go to…</h2><button type="button" data-command-close aria-label="Close navigation">Esc</button></div>
+    <label class="visually-hidden" for="command-search">Filter destinations</label><input id="command-search" type="search" placeholder="Search sections and pages" autocomplete="off" data-command-search>
+    <nav aria-label="Quick navigation" data-command-links><a href="#selected">Selected work</a><a href="#work">Architecture case studies</a><a href="/products/">All projects</a><a href="/engineering/">Architecture reference</a><a href="/engineering/agentic-systems/">Applied AI and agentic systems</a><a href="#lab">Systems Lab</a><a href="/insights/">Writing</a><a href="/open-source/">Public source</a><a href="/about/">About</a><a href="#contact">Contact</a></nav><p data-command-empty hidden>No matching destinations.</p>
+  </dialog>
   <script src="/app.js" defer></script>
 </body>
 </html>

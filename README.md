@@ -4,7 +4,7 @@ Static GitHub Pages portfolio: public source, project architecture, design decis
 
 Visit [Savi Saluwadana’s portfolio](https://savisaluwadana.github.io/), [engineering profile](https://savisaluwadana.github.io/about/), [agentic systems architecture](https://savisaluwadana.github.io/engineering/agentic-systems/) and [public source index](https://savisaluwadana.github.io/open-source/).
 
-The existing homepage visual design is preserved. Product cards link to permanent overview pages with workflows, source-grounded SVG diagrams, component responsibilities and current-scope notes. The site currently contains 16 product pages.
+The homepage uses a neutral editorial design, independent project highlights, and a clearly labelled research lab. Existing source-backed case studies and permanent product pages are preserved. Product cards link to permanent overview pages with workflows, source-grounded SVG diagrams, component responsibilities and current-scope notes. The site currently contains 16 product pages.
 
 ## Develop and verify
 
@@ -18,7 +18,7 @@ python -m http.server 8000
 
 Open `http://localhost:8000/`. Edit product source data in `data/products.json`, canonical profile data in `data/profile.json`, directory/reference content in `data/discovery.json` and verified repository records in `data/public-work.json`, then regenerate and check the static output before committing. GitHub Pages serves the committed files directly.
 
-Existing colors, typography, hero layout, card treatment, contact forms, navigation and motion remain in the original CSS and JavaScript. `product-details.css` adds the requested larger wordmark, product links and matching detail-page styles. Product content and the technology stack are present in the initial HTML.
+Shared neutral theme tokens are in `base-styles.css`; the editorial homepage additions are in `engineering-portfolio.css`. Existing contact forms, architecture tabs and responsive navigation remain, with a native quick-navigation dialog added. `product-details.css` adds the requested larger wordmark, product links and matching detail-page styles. Product content and the technology stack are present in the initial HTML.
 
 ## Discovery
 
