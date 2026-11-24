@@ -36,7 +36,7 @@ This also makes responsibilities clearer: the model can prepare a recommendation
 
 Long-running work should expose status that can be inspected without reopening the original model session. Useful states include queued, running, waiting-for-approval, succeeded, failed and cancelled. The record should capture error context that helps an operator understand whether the failure came from policy, validation, a provider or infrastructure.
 
-In [DevRelOS](/products/devrelos/), workers and approval-gated delivery are separate concerns. In [Pain Intelligence Lab](/products/pain-intelligence/), research state and evidence remain in the application while reasoning is performed through a connected MCP host. These are different workflows, but both benefit from explicit state.
+In [Pain Intelligence Lab](/products/pain-intelligence/), research state and evidence remain in the application while reasoning is performed through a connected MCP host. This workflow benefits from explicit state.
 
 ## Design for recovery before adding more agents
 
@@ -47,9 +47,7 @@ Durability is therefore an application architecture problem first and an agent o
 ## Sources and implementation references
 
 - https://savisaluwadana.github.io/engineering/agentic-systems/
-- https://savisaluwadana.github.io/products/devrelos/
 - https://savisaluwadana.github.io/products/pain-intelligence/
-- https://github.com/savisaluwadana/DevRelOS/blob/main/README.md
 - https://github.com/savisaluwadana/Reddit-post-Analyzer/blob/main/README.md
 
 ## Related engineering notes

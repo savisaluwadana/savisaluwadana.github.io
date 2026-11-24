@@ -23,7 +23,7 @@ Shared neutral theme tokens are in `base-styles.css`; the editorial homepage add
 
 ## Discovery
 
-Each HTML page includes its own canonical URL and metadata, structured identity, and product/breadcrumb data where appropriate. The sitemap covers 27 canonical pages: the homepage, contact, five directory/profile/reference pages and 15 products. The checker verifies that HTML links connect every page to the homepage. The [Atom feed](https://savisaluwadana.github.io/feed.xml) publishes 25 reference, article and project summaries. Markdown, JSON, `llms.txt` and `llms-full.txt` offer additional retrieval formats.
+Each HTML page includes its own canonical URL and metadata, structured identity, and product/breadcrumb data where appropriate. The sitemap covers 28 canonical pages: the homepage, contact, five directory/profile/reference pages and 15 products. The checker verifies that HTML links connect every page to the homepage. The [Atom feed](https://savisaluwadana.github.io/feed.xml) publishes 26 reference, article and project summaries. Markdown, JSON, `llms.txt` and `llms-full.txt` offer additional retrieval formats.
 
 Read [the discovery and maintenance guide](docs/DISCOVERY.md) for Search Console submission, verified scope notes and how to keep generated content consistent. Rankings, indexing speed and AI citations are controlled by the search/retrieval providers and cannot be guaranteed by site changes.
 

@@ -13,7 +13,7 @@ This portfolio publishes the professional identity and product architecture as o
 | `/engineering/agentic-systems/` | Detailed tool, API, state and review walkthroughs for three projects |
 | `/open-source/` | Verified public repositories, license metadata and open-source collaboration interests |
 | `/public-work.json` | Public repository references from the same verified source records |
-| `/feed.xml` | Atom feed for 25 references, published articles and product pages; advertised in every page’s HTML head |
+| `/feed.xml` | Atom feed for 26 references, published articles and product pages; advertised in every page’s HTML head |
 | `/about/index.md`, `/products/index.md`, `/engineering/index.md` | Markdown equivalents of the three entry pages |
 | `/insights/` and `/insights/<slug>/` | Existing engineering insights, retained as six canonical HTML pages |
 | `/products/<id>/` | Unique product overview, workflow, SVG architecture, component table and current scope |

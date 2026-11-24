@@ -34,7 +34,7 @@ Human approval is most useful when it is represented as application state rather
 
 ## What this looks like in my project architecture
 
-In [Property Management OS](/products/property-os/), the documented MCP boundary calls the authenticated Go API rather than connecting directly to PostgreSQL. In [DevRelOS](/products/devrelos/), workspace membership and approval-gated outreach remain application concerns. Those projects differ in domain, but the same architectural principle applies: the agent proposes or requests work; the application remains authoritative.
+In [Property Management OS](/products/property-os/), the documented MCP boundary calls the authenticated Go API rather than connecting directly to PostgreSQL. The architectural principle is simple: the agent proposes or requests work; the application remains authoritative.
 
 For a broader walkthrough, see [Agentic systems: tools, state and human review](/engineering/agentic-systems/).
 
@@ -53,9 +53,7 @@ The goal is not to make agents powerless. It is to give them useful capabilities
 ## Sources and implementation references
 
 - https://savisaluwadana.github.io/products/property-os/
-- https://savisaluwadana.github.io/products/devrelos/
 - https://github.com/RealEstateSassApplication/property-management-OS/blob/main/README.md
-- https://github.com/savisaluwadana/DevRelOS/blob/main/README.md
 
 ## Related engineering notes
 
