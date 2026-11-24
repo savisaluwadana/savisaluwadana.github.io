@@ -4,7 +4,7 @@ A reference to the boundaries behind my product work: where authority lives, how
 
 By: Savi Saluwadana
 Canonical page: https://savisaluwadana.github.io/engineering/
-Reviewed: 2026-10-04
+Reviewed: 2026-11-12
 
 ## AI agents and MCP access boundaries
 
@@ -49,17 +49,9 @@ A booking, a recurring order and a payment represent different state changes. Ke
 This reference summarizes the documented project boundaries. It does not report measured performance, deployment outcomes or customer results. Product pages carry the corresponding architecture diagrams, component responsibilities, review dates and source links.
 
 - [Property Management OS repository documentation](https://github.com/RealEstateSassApplication/property-management-OS/blob/main/README.md)
-- [DevRelOS overview](https://savisaluwadana.github.io/products/devrelos/)
+- [DevRelOS repository documentation](https://savisaluwadana.github.io/products/devrelos/)
 - [Pain Intelligence Lab repository documentation](https://github.com/savisaluwadana/Pain-Point-Analyzer/blob/main/README.md)
 - [Advance HRIS repository documentation](https://github.com/SilverLine-Ravija/Advance-HIRS-System/blob/main/README.md)
 - [Avara repository documentation](https://github.com/RealEstateSassApplication/AvaraRealEstate/blob/main/README.md)
 - [FreshPick repository documentation](https://github.com/FreshOnTime/newfreshontimewebsite/blob/main/README.md)
 - [Academix repository documentation](https://github.com/savisaluwadana/student-management-system-saas/blob/main/README.md)
-
-## Engineering insights
-
-- [MCP permission boundaries](https://savisaluwadana.github.io/insights/mcp-permission-boundaries/)
-- [Durable agentic workflows](https://savisaluwadana.github.io/insights/durable-agentic-workflows/)
-- [Go modular monolith architecture for SaaS](https://savisaluwadana.github.io/insights/go-modular-monolith-saas/)
-- [Platform engineering paved roads](https://savisaluwadana.github.io/insights/platform-engineering-paved-road/)
-- [PostgreSQL multi-tenancy boundaries](https://savisaluwadana.github.io/insights/postgres-multitenancy-boundaries/)

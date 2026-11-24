@@ -37,4 +37,4 @@ Next.js → authenticated API routes → MongoDB
 
 The product is under development. POS, kitchen and online ordering share a Next.js application and MongoDB data layer; external integrations require deployment-specific configuration.
 
-Repository is private; this is a public product summary.
+No confirmed public repository is linked.

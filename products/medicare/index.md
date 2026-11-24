@@ -39,4 +39,4 @@ Next.js → Go API + scheduling service → PostgreSQL
 
 The main clinic API and embeddable scheduling API use separate service boundaries. Server-enforced roles separate clinical, billing and administrative access.
 
-Repository is private; this is a public product summary.
+No confirmed public repository is linked.

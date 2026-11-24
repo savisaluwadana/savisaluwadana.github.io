@@ -4,7 +4,7 @@ I build software in public from Sri Lanka. My repositories and project notes sho
 
 By: Savi Saluwadana
 Canonical page: https://savisaluwadana.github.io/about/
-Reviewed: 2026-10-04
+Reviewed: 2026-11-12
 
 ## Engineering focus, with examples
 
@@ -15,9 +15,9 @@ I’m interested in clear domain boundaries, strong data models, reliable APIs a
 | Go backend and API design | [Property Management OS](https://savisaluwadana.github.io/products/property-os/), [DevRelOS](https://savisaluwadana.github.io/products/devrelos/) and [Advance HRIS](https://savisaluwadana.github.io/products/advance-hris/). |
 | Product and full-stack engineering | [Avara Real Estate](https://savisaluwadana.github.io/products/avara/), [FreshPick](https://savisaluwadana.github.io/products/freshpick/) and [RapidReach](https://savisaluwadana.github.io/products/rapidreach/). |
 | Agentic systems and Model Context Protocol | [Pain Intelligence Lab](https://savisaluwadana.github.io/products/pain-intelligence/), [Property Management OS](https://savisaluwadana.github.io/products/property-os/) and [DevRelOS](https://savisaluwadana.github.io/products/devrelos/). |
-| Open-source development interests | Code contributions, bug fixes, documentation and developer tools. Explore my [public GitHub work](https://github.com/savisaluwadana). |
+| Public source and project decisions | Browse the [public repository index](https://savisaluwadana.github.io/open-source/) and each project's architecture and trade-offs. |
 | Operational data and workflows | [Acme Accounting](https://savisaluwadana.github.io/products/acme-accounting/), [Advance HRIS](https://savisaluwadana.github.io/products/advance-hris/) and [MediCare](https://savisaluwadana.github.io/products/medicare/). |
-| Platform engineering and DevOps | I am exploring containers, delivery automation and developer experience through the [public repositories](https://savisaluwadana.github.io/open-source/). |
+| Platform engineering interests | I am exploring containers, delivery automation and developer experience through the [public repositories](https://savisaluwadana.github.io/open-source/). |
 
 ## Agentic systems I’m interested in
 
@@ -32,9 +32,9 @@ My current product work includes [Pain Intelligence Lab](https://savisaluwadana.
 
 ## Code and design decisions in public
 
-My [public repository index](https://savisaluwadana.github.io/open-source/) links to the code, local setup instructions, licence status and unfinished work behind seven projects.
+My [public repository index](https://savisaluwadana.github.io/open-source/) links to the code, local setup instructions, licence status and open work behind seven of the projects listed here.
 
-I keep other products in the [product directory](https://savisaluwadana.github.io/products/) with their documented scope.
+I keep a separate summary for products without confirmed public source. [Browse all projects](https://savisaluwadana.github.io/products/) for their scope and architecture.
 
 ## Products I’ve built and worked on
 
@@ -46,7 +46,7 @@ Contribution and maturity vary by project. For example, [TimelyHelp](https://sav
 
 ### Who is Savi Saluwadana?
 
-Savi Saluwadana is a software and product engineer based in Sri Lanka, focused on software architecture, systems design, Go, Kubernetes and developer platforms, with interests in agentic systems and open-source development.
+Savi Saluwadana is a software engineer based in Sri Lanka who builds software in public. His project repositories document architecture, design decisions and trade-offs; he is exploring platform engineering through containers, CI/CD and developer experience.
 
 ### Where can I see the engineering behind the products?
 

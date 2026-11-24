@@ -15,6 +15,59 @@
   syncHeader();
   window.addEventListener('scroll', syncHeader, { passive: true });
 
+  const syncThemeButtons = () => {
+    const isLight = root.dataset.theme === 'light';
+    document.querySelectorAll('[data-theme-toggle]').forEach((button) => {
+      button.setAttribute('aria-pressed', String(isLight));
+      button.textContent = isLight ? 'Dark' : 'Light';
+    });
+  };
+
+  syncThemeButtons();
+  document.querySelectorAll('[data-theme-toggle]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const nextLight = root.dataset.theme !== 'light';
+      if (nextLight) {
+        root.dataset.theme = 'light';
+      } else {
+        delete root.dataset.theme;
+      }
+      try {
+        localStorage.setItem('theme', nextLight ? 'light' : 'dark');
+      } catch {}
+      syncThemeButtons();
+    });
+  });
+
+  document.querySelectorAll('[data-blueprint-tabs]').forEach((container) => {
+    const tabs = [...container.querySelectorAll('[role="tab"]')];
+    const panels = [...container.querySelectorAll('[role="tabpanel"]')];
+
+    const activate = (nextTab) => {
+      const targetId = nextTab.getAttribute('aria-controls');
+      tabs.forEach((tab) => {
+        const selected = tab === nextTab;
+        tab.setAttribute('aria-selected', String(selected));
+        tab.tabIndex = selected ? 0 : -1;
+      });
+      panels.forEach((panel) => {
+        panel.hidden = panel.id !== targetId;
+      });
+    };
+
+    tabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => activate(tab));
+      tab.addEventListener('keydown', (event) => {
+        if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') return;
+        event.preventDefault();
+        const delta = event.key === 'ArrowRight' ? 1 : -1;
+        const target = tabs[(index + delta + tabs.length) % tabs.length];
+        activate(target);
+        target.focus();
+      });
+    });
+  });
+
   if (menuButton && header && nav) {
     menuButton.addEventListener('click', () => {
       const open = header.classList.toggle('is-open');

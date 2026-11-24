@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light">
-  <meta name="theme-color" content="#f4f1ea">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#0a0e14">
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
   <meta name="googlebot" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
   <meta name="author" content="Savi Saluwadana">
@@ -12,6 +12,10 @@
   <meta name="description" content="Contact Savi Saluwadana about software architecture, agentic systems, open-source development, platform engineering, Go, Kubernetes and technical collaboration.">
   <link rel="alternate" type="application/atom+xml" href="/feed.xml" title="Savi Saluwadana — Engineering &amp; products">
   <link rel="canonical" href="https://savisaluwadana.github.io/contact.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>try{if(localStorage.getItem('theme')==='light')document.documentElement.dataset.theme='light';}catch{}</script>
   <link rel="stylesheet" href="/base-styles.css">
   <link rel="stylesheet" href="/styles.css">
   <link rel="describedby" type="text/plain" href="/llms.txt">
@@ -98,7 +102,9 @@
   <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/82082138?v=4">
 </head>
 <body>
-  <main class="contact-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" data-header><div class="shell nav-shell"><a class="wordmark" href="/" aria-label="Savi Saluwadana home">Savi Saluwadana <span class="wordmark-tag">// arch</span></a><button class="menu-button" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav" data-menu-button><span></span><span></span></button><nav class="nav-links" id="primary-nav" aria-label="Primary navigation" data-nav><a href="/products/">Systems</a><a href="/engineering/">Architecture</a><a href="/insights/">Writing</a><a href="/open-source/">Public source</a><a href="/about/">About</a><a class="nav-contact is-active" href="/contact.html">Contact</a><button type="button" class="theme-toggle" data-theme-toggle aria-label="Toggle color theme" aria-pressed="false">Light</button></nav></div></header>
+  <main class="contact-page" id="main">
     <div class="shell">
       <a class="contact-page-back" href="/">← Back to portfolio</a>
 
@@ -147,6 +153,8 @@
       </div>
     </div>
   </main>
+
+  <footer class="site-footer"><div class="shell footer-layout"><div><strong>Savi Saluwadana</strong><span>Systems architecture · Go APIs · Software built in public</span></div><div><span><a href="/">Portfolio</a> · <a href="/products/">Systems</a> · <a href="/engineering/">Architecture</a> · <a href="/engineering/agentic-systems/">Agentic systems</a> · <a href="/insights/">Writing</a> · <a href="/open-source/">Public source</a> · <a href="/about/">About</a> · <a href="/feed.xml">Feed</a> · <a href="/llms.txt">llms.txt</a></span><span>© <span data-year>2026</span> · Static HTML &amp; build-time SVG</span></div></div></footer>
 
   <script src="/app.js" defer></script>
 </body>

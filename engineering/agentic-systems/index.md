@@ -1,13 +1,10 @@
 # Agentic systems: tools, state and human review.
 
-
-Useful agentic systems keep model reasoning, tool interfaces and application authority separate. The model can propose an action; the application still authenticates, authorizes, validates and records the resulting state.
-
 An agent becomes useful when its tools connect to a real workflow. These project walkthroughs show where an agent enters the system, where state is recorded, and which service controls the resulting action.
 
 By: Savi Saluwadana
 Canonical page: https://savisaluwadana.github.io/engineering/agentic-systems/
-Reviewed: 2026-10-04
+Reviewed: 2026-11-12
 
 ## Different agent entry points
 
@@ -37,10 +34,10 @@ The documented MCP scope matters: advanced financial writes and other domains sh
 
 [Pain Intelligence Lab](https://savisaluwadana.github.io/products/pain-intelligence/) separates host reasoning from the application that stores research evidence. A question becomes a research job; the host gathers and annotates evidence through tools while the application retains the project state.
 
-1. A researcher creates a market question and research job.
-2. The MCP host gathers evidence and sends it through the platform’s tool boundary.
-3. Express stores evidence and workflow state in MongoDB and applies quality/scoring checks.
-4. Host reasoning annotates and clusters evidence before opportunities are validated or rejected.
+1. Choose and configure the self-hosted web or native desktop edition.
+2. The web dashboard sends research requests to the Rust API.
+3. The API manages research records and evidence in PostgreSQL.
+4. Review linked evidence, limits and validation before drawing conclusions.
 
 The output is evaluated as evidence, not just generated text. Source diversity, duplicate checks, independent stories and competitor or pricing validation affect whether an opportunity survives the research process. A job can correctly finish with no validated opportunity.
 
@@ -71,11 +68,6 @@ My broader interests include durable orchestration, multi-agent collaboration, r
 
 - [Property Management OS repository documentation](https://github.com/RealEstateSassApplication/property-management-OS/blob/main/README.md)
 - [Pain Intelligence Lab repository documentation](https://github.com/savisaluwadana/Pain-Point-Analyzer/blob/main/README.md)
-- [DevRelOS overview](https://savisaluwadana.github.io/products/devrelos/)
+- [DevRelOS repository documentation](https://savisaluwadana.github.io/products/devrelos/)
 
 See the [broader architecture reference](https://savisaluwadana.github.io/engineering/) for local-first data, tenancy and transaction comparisons, or the [public source index](https://savisaluwadana.github.io/open-source/) to browse repository references. [About Savi](https://savisaluwadana.github.io/about/) describes my engineering and collaboration interests.
-
-## Related engineering insights
-
-- [MCP permission boundaries](https://savisaluwadana.github.io/insights/mcp-permission-boundaries/)
-- [Durable agentic workflows](https://savisaluwadana.github.io/insights/durable-agentic-workflows/)

@@ -38,4 +38,4 @@ Next.js / React → Prisma → MongoDB + Electron
 
 Electron is an optional desktop shell. The portfolio does not claim a complete offline checkout engine or a tenant-isolated hosted retail service.
 
-Repository is private; this is a public product summary.
+No confirmed public repository is linked.

@@ -37,7 +37,7 @@ Next.js dashboard → Rust API → PostgreSQL; separate desktop app
 
 ## Current scope
 
-The repository describes an early community alpha for local use. Web and desktop have different capabilities; third-party content retains its own terms.
+The repository currently describes an early community alpha for local use. The web app and desktop app have different capabilities; source content retains third-party data-use restrictions.
 
 ## Run locally
 

@@ -3,8 +3,8 @@
   "@type": "ProfilePage",
   "@id": "https://savisaluwadana.github.io/#profile",
   "url": "https://savisaluwadana.github.io/",
-  "name": "Savi Saluwadana | Software Engineer in Sri Lanka",
-  "description": "Explore Savi Saluwadana’s engineering work on offline sync in Go, recurring grocery deliveries, and permissions for AI agents, with architecture notes and public source code.",
+  "name": "Savi Saluwadana | Software Architect & Platform Engineering",
+  "description": "Explore Savi Saluwadana’s software architecture and engineering work on offline sync in Go, recurring grocery deliveries, and MCP permission boundaries, with diagrams and public source code.",
   "dateModified": "2026-11-18T00:00:00+05:30",
   "mainEntity": {
     "@type": "Person",

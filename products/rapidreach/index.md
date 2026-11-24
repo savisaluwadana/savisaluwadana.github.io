@@ -32,7 +32,7 @@ Next.js → MongoDB → object storage
 
 - Next.js: Public pages, tool directory, CMS and API routes in one application.
 - MongoDB: Editorial records, tool records, comments and categories.
-- object storage: Public media objects referenced by content records.
+- Vercel Blob: Public media objects referenced by content records.
 
 ## Current scope
 

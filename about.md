@@ -6,6 +6,7 @@ Website: https://savisaluwadana.github.io/
 GitHub: https://github.com/savisaluwadana
 LinkedIn: https://www.linkedin.com/in/savi-saluwadana-3911331b2/
 Contact: https://savisaluwadana.github.io/contact.html
+Email: savisaluwadana@gmail.com
 
 ## Engineering focus
 
@@ -29,7 +30,7 @@ Contact: https://savisaluwadana.github.io/contact.html
 - Prisma
 - Platform Engineering (Learning)
 
-## Projects and engineering work
+## Products and engineering work
 
 - [Avara Real Estate](https://savisaluwadana.github.io/products/avara/): A Sri Lankan property platform spanning rentals, property sales and short-term bookings with role-based users, geospatial search, availability, booking workflows, payments and property operations.
 - [Blu.lk](https://savisaluwadana.github.io/products/blu/): A Sri Lankan home-services platform connecting customers with skilled professionals across electrical, plumbing, cleaning, AC, carpentry and other services, with customer, provider and worker-facing workflows.
@@ -48,13 +49,10 @@ Contact: https://savisaluwadana.github.io/contact.html
 - [Ad Performance Analysis Agent](https://savisaluwadana.github.io/products/ad-performance-agent/): A campaign-performance analysis prototype that parses ad-data CSVs, compares weekly metrics, highlights risks and wins, and uses Gemini to help produce actionable summaries.
 - [MediCare](https://savisaluwadana.github.io/products/medicare/): A patient and clinic-management system covering patient administration, appointments, clinical records, billing, staff permissions and an embeddable scheduling service.
 
-## Public source and engineering references
+## Profile and architecture references
 
-- [Product directory](https://savisaluwadana.github.io/products/): Sixteen project overviews and architecture notes
-- [About](https://savisaluwadana.github.io/about/): Profile and public project evidence
-- [Engineering architecture](https://savisaluwadana.github.io/engineering/): Architecture and domain trade-offs
-- [Agent interfaces](https://savisaluwadana.github.io/engineering/agentic-systems/): Permissions and workflow boundaries
-- [Public repositories](https://savisaluwadana.github.io/open-source/): Seven public code repositories and licensing status
-- [Engineering insights](https://savisaluwadana.github.io/insights/): Published notes and separately identified article proposals
-
-Public repository visibility is not itself permission to reuse code. Project detail pages identify licensing, local setup, design decisions and unfinished work. I am exploring platform engineering through repository Docker, CI and deployment files.
+- [Product directory](https://savisaluwadana.github.io/products/): Explore 16 software project overviews by Savi Saluwadana, including source-linked code, architecture decisions, and contribution boundaries.
+- [About Savi Saluwadana](https://savisaluwadana.github.io/about/): Savi Saluwadana builds software in public. Browse project repositories, architecture, implementation trade-offs and platform engineering interests.
+- [Architecture reference](https://savisaluwadana.github.io/engineering/): Inspect project architecture decisions on APIs, data authority, local-first workflows, tenancy and transactions in Savi Saluwadana's software.
+- [Agentic systems architecture](https://savisaluwadana.github.io/engineering/agentic-systems/): Inspect agent tool boundaries, application permissions and local research workflows documented in Savi Saluwadana's projects.
+- [Public repositories and design notes](https://savisaluwadana.github.io/open-source/): Inspect public software repositories, licensing status, local setup, architecture, design trade-offs and unfinished work.

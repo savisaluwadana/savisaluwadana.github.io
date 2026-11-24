@@ -3,7 +3,7 @@ import path from 'node:path';
 
 // Keep reference content separate from templates and derive the directory from
 // the same product records used by the homepage and individual product pages.
-export async function buildEntryPages({ root, base, updated, schemaModified, products, person, website, list, schema, esc, header, footer, write }) {
+export async function buildEntryPages({ root, base, updated, schemaModified, products, person, website, list, schema, esc, headAssets, header, footer, write }) {
   const content = JSON.parse(await readFile(path.join(root, 'data/discovery.json'), 'utf8'));
   const publicWork = JSON.parse(await readFile(path.join(root, 'data/public-work.json'), 'utf8'));
   const productById = new Map(products.map(p => [p.id, p]));
@@ -110,11 +110,12 @@ export async function buildEntryPages({ root, base, updated, schemaModified, pro
     await write(page.path.slice(1) + 'index.html', `<!doctype html>
 <html lang="en"><head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light"><meta name="theme-color" content="#f4f1ea">
+  <meta name="color-scheme" content="dark light"><meta name="theme-color" content="#0a0e14">
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
   <meta name="author" content="Savi Saluwadana">
   <title>${esc(page.title)}</title><meta name="description" content="${esc(page.description)}">
   <link rel="canonical" href="${canonical}"><link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  ${headAssets}
   <link rel="stylesheet" href="/base-styles.css"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/product-details.css">
   <link rel="describedby" type="text/plain" href="/llms.txt"><link rel="alternate" type="text/markdown" href="${canonical}index.md" title="${esc(page.heading)} in Markdown">
   <link rel="alternate" type="application/atom+xml" href="/feed.xml" title="Savi Saluwadana — Engineering &amp; products">

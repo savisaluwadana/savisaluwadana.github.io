@@ -59,13 +59,13 @@ const write = async (name, content) => { await mkdir(path.dirname(path.join(root
 const replaceRegion = (html, name, content) => html.replace(new RegExp(`<!-- ${name}:START -->[\\s\\S]*?<!-- ${name}:END -->`), `<!-- ${name}:START -->\n${content}\n          <!-- ${name}:END -->`);
 const tags = p => p.tags.map(tag => `<span>${esc(tag)}</span>`).join('');
 const featured = [
-  { id: 'advance-hris', stack: 'Go / Wails', question: 'How do you sync an offline edit?', answer: 'Advance HRIS skips incoming employee records that still have a pending local edit. A sync can refresh other records while that edit waits for resolution.' },
+  { id: 'advance-hris', stack: 'Go / Wails / SQLite', question: 'How do you sync an offline edit?', answer: 'Advance HRIS skips incoming employee records that still have a pending local edit. A sync can refresh other records while that edit waits for resolution.' },
   { id: 'freshpick', stack: 'Next.js / PostgreSQL', question: 'How do you schedule a repeat delivery?', answer: 'FreshPick tracks recurring grocery orders separately from payment collection. A shopper can schedule another delivery and pay cash when it arrives.' },
-  { id: 'property-os', stack: 'Go / MCP', question: 'Who authorizes an agent’s request?', answer: 'Property Management OS routes MCP tool calls through the same authenticated Go API as the web app. The API owns the permission check and the database write.' }
+  { id: 'property-os', stack: 'Go / PostgreSQL / MCP', question: 'Who authorizes an agent’s request?', answer: 'Property Management OS routes MCP tool calls through the same authenticated Go API as the web app. The API owns the permission check and the database write.' }
 ].map(study => ({ ...study, product: products.find(p => p.id === study.id) }));
 
-const pageTitle = 'Savi Saluwadana | Software Engineer in Sri Lanka';
-const pageDescription = 'Explore Savi Saluwadana’s engineering work on offline sync in Go, recurring grocery deliveries, and permissions for AI agents, with architecture notes and public source code.';
+const pageTitle = 'Savi Saluwadana | Software Architect & Platform Engineering';
+const pageDescription = 'Explore Savi Saluwadana’s software architecture and engineering work on offline sync in Go, recurring grocery deliveries, and MCP permission boundaries, with diagrams and public source code.';
 const homeUpdated = '2026-11-18';
 const selectedList = {
   '@type': 'ItemList', '@id': base + '/#work', name: 'Selected work',
@@ -74,12 +74,24 @@ const selectedList = {
   }))
 };
 let home = await readFile(path.join(root, 'index.html'), 'utf8');
-const cards = featured.map(({ product, stack, question, answer }) => `
-          <article id="${esc(product.id)}">
+const cards = featured.map(({ product, stack, question, answer }, index) => `
+          <article class="study-card" id="${esc(product.id)}">
+            <div class="study-top">
+              <span class="study-case-id">CASE 0${index + 1}</span>
+              <div class="study-badges">
+                <span class="badge">${esc(stack)}</span>
+                ${product.source ? '<span class="badge badge--signal">Public repo</span>' : ''}
+              </div>
+            </div>
             <p class="study-label">${esc(product.name)}</p>
             <h3><a href="/products/${esc(product.id)}/">${esc(question)}</a></h3>
-            <p>${esc(answer)}</p>
-            <div class="study-foot"><span>${esc(stack)}</span><a href="/products/${esc(product.id)}/" aria-label="Read the ${esc(product.name)} architecture">Architecture ↗</a></div>
+            <p class="study-answer">${esc(answer)}</p>
+            <p class="study-arch mono">${esc(product.architecture)}</p>
+            ${product.tradeoff ? `<p class="study-tradeoff"><strong>Trade-off:</strong> ${esc(product.tradeoff)}</p>` : ''}
+            <div class="study-foot">
+              <a href="/products/${esc(product.id)}/" aria-label="Read the ${esc(product.name)} architecture">Architecture &amp; diagram →</a>
+              ${product.href ? `<a href="${esc(product.href)}" target="_blank" rel="noreferrer">Source ↗</a>` : ''}
+            </div>
           </article>`).join('\n');
 home = replaceRegion(home, 'PRODUCTS', cards);
 home = replaceRegion(home, 'SCHEMA', schema([website, person, {
@@ -134,12 +146,13 @@ function diagram(p) {
     const y1 = a.y + (down ? nodeHeight : 0), y2 = b.y + (down ? 0 : nodeHeight), middle = (y1 + y2) / 2;
     return `<path d="M ${x1} ${y1} V ${middle} H ${x2} V ${y2}"/>`;
   }).join('');
-  const nodes = [...positions.values()].map(({ x, y, node }) => `<g><rect x="${x}" y="${y}" width="${nodeWidth}" height="${nodeHeight}" rx="4" fill="#f4f1ea" stroke="#77746d"/><text x="${x + nodeWidth / 2}" y="${y + 34}" text-anchor="middle" fill="#111111" font-size="17" font-weight="650">${esc(node[1])}</text><text x="${x + nodeWidth / 2}" y="${y + 60}" text-anchor="middle" fill="#5b5852" font-size="12.5">${esc(node[2])}</text></g>`).join('');
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="diagram-title diagram-description" font-family="Inter, ui-sans-serif, system-ui, sans-serif"><title id="diagram-title">${esc(p.name)} architecture</title><desc id="diagram-description">${esc(p.edges.map(([a, b]) => `${positions.get(a).node[1]} connects to ${positions.get(b).node[1]}`).join('. ') + '.')}</desc><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2457ff"/></marker></defs><g stroke="#2457ff" stroke-width="1.8" fill="none" marker-end="url(#arrow)">${lines}</g>${nodes}</svg>`;
+  const nodes = [...positions.values()].map(({ x, y, node }) => `<g><rect x="${x}" y="${y}" width="${nodeWidth}" height="${nodeHeight}" rx="8" fill="var(--diagram-node-bg, #151d2a)" stroke="var(--diagram-border, #334155)" stroke-width="1.4"/><rect x="${x}" y="${y}" width="${nodeWidth}" height="3" rx="1.5" fill="var(--diagram-accent, #38bdf8)"/><text x="${x + nodeWidth / 2}" y="${y + 38}" text-anchor="middle" fill="var(--diagram-ink, #edf2f7)" font-size="16" font-weight="650">${esc(node[1])}</text><text x="${x + nodeWidth / 2}" y="${y + 62}" text-anchor="middle" fill="var(--diagram-muted, #94a3b8)" font-family="JetBrains Mono, ui-monospace, monospace" font-size="11.5">${esc(node[2])}</text></g>`).join('');
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="diagram-title diagram-description" font-family="Inter, ui-sans-serif, system-ui, sans-serif"><title id="diagram-title">${esc(p.name)} architecture</title><desc id="diagram-description">${esc(p.edges.map(([a, b]) => `${positions.get(a).node[1]} connects to ${positions.get(b).node[1]}`).join('. ') + '.')}</desc><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="var(--diagram-accent, #38bdf8)"/></marker></defs><g stroke="var(--diagram-accent, #38bdf8)" stroke-width="1.8" fill="none" marker-end="url(#arrow)">${lines}</g>${nodes}</svg>`;
 }
 
-const header = `<header class="site-header" data-header><div class="shell nav-shell"><a class="wordmark" href="/" aria-label="Savi Saluwadana home">Savi Saluwadana</a><button class="menu-button" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav" data-menu-button><span></span><span></span></button><nav class="nav-links" id="primary-nav" aria-label="Primary navigation" data-nav><a href="/products/">Products + Work</a><a href="/engineering/">Architecture</a><a href="/about/">About</a><a class="nav-contact" href="/contact.html">Contact</a></nav></div></header>`;
-const footer = `<footer class="site-footer"><div class="shell footer-layout"><div><strong>Savi Saluwadana</strong><span>Software built in public · Architecture · Delivery interests</span></div><div><span><a href="/">Portfolio</a> · <a href="/products/">Products</a> · <a href="/engineering/">Engineering</a> · <a href="/open-source/">Public source</a> · <a href="/about/">About</a> · <a href="/feed.xml">Feed</a></span><span>© <span data-year>2026</span></span></div></div></footer>`;
+const headAssets = `<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"><script>try{if(localStorage.getItem('theme')==='light')document.documentElement.dataset.theme='light';}catch{}</script>`;
+const header = `<header class="site-header" data-header><div class="shell nav-shell"><a class="wordmark" href="/" aria-label="Savi Saluwadana home">Savi Saluwadana <span class="wordmark-tag">// arch</span></a><button class="menu-button" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav" data-menu-button><span></span><span></span></button><nav class="nav-links" id="primary-nav" aria-label="Primary navigation" data-nav><a href="/products/">Systems</a><a href="/engineering/">Architecture</a><a href="/insights/">Writing</a><a href="/open-source/">Public source</a><a href="/about/">About</a><a class="nav-contact" href="/contact.html">Contact</a><button type="button" class="theme-toggle" data-theme-toggle aria-label="Toggle color theme" aria-pressed="false">Light</button></nav></div></header>`;
+const footer = `<footer class="site-footer"><div class="shell footer-layout"><div><strong>Savi Saluwadana</strong><span>Systems architecture · Go APIs · Software built in public</span></div><div><span><a href="/">Portfolio</a> · <a href="/products/">Systems</a> · <a href="/engineering/">Architecture</a> · <a href="/engineering/agentic-systems/">Agentic systems</a> · <a href="/insights/">Writing</a> · <a href="/open-source/">Public source</a> · <a href="/about/">About</a> · <a href="/feed.xml">Feed</a> · <a href="/llms.txt">llms.txt</a></span><span>© <span data-year>2026</span> · Static HTML &amp; build-time SVG</span></div></div></footer>`;
 let markdown = `# Savi Saluwadana\n\n${person.description}\n\nWebsite: ${base}/\nGitHub: ${person.sameAs[0]}\nLinkedIn: ${person.sameAs[1]}\nContact: ${base}/contact.html\nEmail: savisaluwadana@gmail.com\n\n## Engineering focus\n\n${person.knowsAbout.map(s => `- ${s}`).join('\n')}\n\n## Products and engineering work\n\n`;
 const markdownProducts = [];
 for (const p of products) {
@@ -154,12 +167,13 @@ for (const p of products) {
   const html = `<!doctype html>
 <html lang="en"><head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light"><meta name="theme-color" content="#f4f1ea">
+  <meta name="color-scheme" content="dark light"><meta name="theme-color" content="#0a0e14">
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
   <meta name="author" content="Savi Saluwadana">
   <title>${esc(p.name)} — Overview &amp; Architecture | Savi Saluwadana</title>
   <meta name="description" content="${esc(p.description)}">
   <link rel="canonical" href="${url(p)}"><link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  ${headAssets}
   <link rel="stylesheet" href="/base-styles.css"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/product-details.css">
   <link rel="describedby" type="text/plain" href="/llms.txt">
   <link rel="alternate" type="text/markdown" href="${url(p)}index.md" title="${esc(p.name)} in Markdown">
@@ -174,15 +188,15 @@ for (const p of products) {
   <a class="skip-link" href="#main">Skip to content</a>
   ${header}
   <main class="product-page" id="main"><div class="shell">
-    <nav class="product-breadcrumb" aria-label="Breadcrumb"><a href="/">Savi Saluwadana</a><span aria-hidden="true">/</span><a href="/products/">Products</a><span aria-hidden="true">/</span><span aria-current="page">${esc(p.name)}</span></nav>
-    <div class="product-header"><p class="section-index">${esc(p.category)}</p><h1>${esc(p.name)}</h1><p>${esc(p.description)}</p><p class="product-source">Product work and architecture overview by <a href="/about/">Savi Saluwadana</a>.</p><div class="project-tags">${tags(p)}</div><div class="project-links">${p.href ? `<a class="text-link" href="${esc(p.href)}" target="_blank" rel="noreferrer">${esc(p.linkLabel)}</a>` : '<a class="text-link" href="/contact.html">Discuss this product</a>'}<a class="text-link" href="/products/">All products</a></div></div>
+    <nav class="product-breadcrumb" aria-label="Breadcrumb"><a href="/">Savi Saluwadana</a><span aria-hidden="true">/</span><a href="/products/">Systems</a><span aria-hidden="true">/</span><span aria-current="page">${esc(p.name)}</span></nav>
+    <div class="product-header"><p class="section-index">${esc(p.category)}</p><h1>${esc(p.name)}</h1><p>${esc(p.description)}</p><div class="product-spec-bar"><div class="product-spec-item"><span>Type</span><strong>${esc(p.type)}</strong></div><div class="product-spec-item"><span>Pipeline</span><strong class="mono">${esc(p.architecture)}</strong></div><div class="product-spec-item"><span>Reviewed</span><strong><time datetime="${p.reviewed}">${new Date(p.reviewed + 'T00:00:00Z').toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'})}</time></strong></div>${p.licenseLabel ? `<div class="product-spec-item"><span>Licence</span><strong>${esc(p.licenseLabel)}</strong></div>` : ''}</div><p class="product-source">Product work and architecture overview by <a href="/about/">Savi Saluwadana</a>.</p><div class="project-tags">${tags(p)}</div><div class="project-links">${p.href ? `<a class="text-link" href="${esc(p.href)}" target="_blank" rel="noreferrer">${esc(p.linkLabel)}</a>` : '<a class="text-link" href="/contact.html">Discuss this product</a>'}<a class="text-link" href="/products/">All systems</a></div></div>
     <nav class="product-nav" aria-label="Product sections"><a href="#overview">Overview</a><a href="#workflow">Workflow</a><a href="#architecture">Architecture</a><a href="#scope">Current scope</a>${p.run ? '<a href="#contributing">Contributor notes</a>' : ''}</nav>
     <div class="product-content">
       <section class="product-section" id="overview" aria-labelledby="overview-title"><h2 id="overview-title">What it does</h2><dl class="product-facts"><div><dt>Who it serves</dt><dd>${esc(p.users)}</dd></div><div><dt>Product purpose</dt><dd>${esc(p.scope)}</dd></div></dl><ul>${p.features.map(s => `<li>${esc(s)}</li>`).join('')}</ul></section>
       <section class="product-section" id="workflow" aria-labelledby="workflow-title"><h2 id="workflow-title">How it works</h2><ol>${p.workflow.map(s => `<li>${esc(s)}</li>`).join('')}</ol></section>
-      <section class="product-section" id="architecture" aria-labelledby="architecture-title"><h2 id="architecture-title">Architecture</h2><p>${esc(p.architecture)}</p><figure class="product-diagram"><div class="product-diagram-scroll" tabindex="0" role="region" aria-label="${esc(p.name)} architecture diagram; scroll horizontally on smaller screens">${diagram(p)}</div><figcaption>Component overview. Arrows show requests and data flow between the main parts of the product.</figcaption></figure><div class="product-table-wrap"><table class="product-table"><caption class="visually-hidden">${esc(p.name)} components and responsibilities</caption><thead><tr><th scope="col">Component</th><th scope="col">Responsibility</th></tr></thead><tbody>${p.components.map(([a, b]) => `<tr><th scope="row">${esc(a)}</th><td>${esc(b)}</td></tr>`).join('')}</tbody></table></div></section>
+      <section class="product-section" id="architecture" aria-labelledby="architecture-title"><h2 id="architecture-title">Architecture</h2><p class="mono">${esc(p.architecture)}</p><figure class="product-diagram"><div class="product-diagram-scroll" tabindex="0" role="region" aria-label="${esc(p.name)} architecture diagram; scroll horizontally on smaller screens">${diagram(p)}</div><figcaption>Component overview. Arrows show requests and data flow between the main parts of the product.</figcaption></figure><div class="product-table-wrap"><table class="product-table"><caption class="visually-hidden">${esc(p.name)} components and responsibilities</caption><thead><tr><th scope="col">Component</th><th scope="col">Responsibility</th></tr></thead><tbody>${p.components.map(([a, b]) => `<tr><th scope="row">${esc(a)}</th><td>${esc(b)}</td></tr>`).join('')}</tbody></table></div></section>
       <section class="product-section" id="scope" aria-labelledby="scope-title"><h2 id="scope-title">Current scope</h2><p class="product-boundary">${esc(p.boundary)}</p><p class="product-source">Architecture summary reviewed <time datetime="${p.reviewed}">${new Date(p.reviewed + 'T00:00:00Z').toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'})}</time>. ${p.source ? `<a href="${esc(p.source)}" target="_blank" rel="noreferrer">${p.source.includes('github.com') ? 'Repository documentation' : 'Product website'}</a>.` : 'No confirmed public repository is linked.'}</p><div class="product-footer-links"><a href="index.md">Markdown overview</a><a href="/contact.html">Contact Savi</a></div></section>
-      ${p.run ? `<section class="product-section" id="contributing" aria-labelledby="contributing-title"><h2 id="contributing-title">Contributor notes</h2><h3>Run locally</h3><p>${esc(p.run)}</p><h3>Design decision</h3><p>${esc(p.designDecision)}</p><h3>Trade-off</h3><p>${esc(p.tradeoff)}</p><h3>Unfinished</h3><p>${esc(p.unfinished)}</p><p><strong>Licence:</strong> ${esc(p.licenseLabel)}</p></section>` : ''}
+      ${p.run ? `<section class="product-section" id="contributing" aria-labelledby="contributing-title"><h2 id="contributing-title">Contributor notes</h2><div class="contributor-grid"><div class="contributor-card"><h3>Run locally</h3><code>${esc(p.run)}</code></div><div class="contributor-card"><h3>Design decision</h3><p>${esc(p.designDecision)}</p></div><div class="contributor-card"><h3>Trade-off</h3><p>${esc(p.tradeoff)}</p></div><div class="contributor-card"><h3>Unfinished</h3><p>${esc(p.unfinished)}</p></div></div><p class="product-source"><strong>Licence:</strong> ${esc(p.licenseLabel)}</p></section>` : ''}
       <section class="product-section" aria-labelledby="related-title"><h2 id="related-title">Related product work</h2><div class="product-related">${related.map(x => `<a href="/products/${esc(x.id)}/">${esc(x.name)}</a>`).join('')}${topicLinks}</div></section>
     </div></div></main>
   ${footer}<script src="/app.js" defer></script>
@@ -190,7 +204,7 @@ for (const p of products) {
   await write(`products/${p.id}/index.html`, html);
   await write(`products/${p.id}/index.md`, md);
 }
-const references = await buildEntryPages({ root, base, updated, schemaModified, products, person, website, list, schema, esc, header, footer, write });
+const references = await buildEntryPages({ root, base, updated, schemaModified, products, person, website, list, schema, esc, headAssets, header, footer, write });
 markdown += `\n## Profile and architecture references\n\n${references.map(p => `- [${p.name}](${base}${p.path}): ${p.description}`).join('\n')}\n`;
 await write('about.md', markdown);
 const publicProducts = products.map(({ rows, edges, classes, linkLabel, ...p }) => ({ ...p, url: url(p), markdown: `${url(p)}index.md` }));

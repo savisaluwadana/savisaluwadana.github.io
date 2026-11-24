@@ -6,6 +6,7 @@ Website: https://savisaluwadana.github.io/
 GitHub: https://github.com/savisaluwadana
 LinkedIn: https://www.linkedin.com/in/savi-saluwadana-3911331b2/
 Contact: https://savisaluwadana.github.io/contact.html
+Email: savisaluwadana@gmail.com
 
 ## Engineering focus
 
@@ -29,7 +30,7 @@ Contact: https://savisaluwadana.github.io/contact.html
 - Prisma
 - Platform Engineering (Learning)
 
-## Projects and engineering work
+## Products and engineering work
 
 - [Avara Real Estate](https://savisaluwadana.github.io/products/avara/): A Sri Lankan property platform spanning rentals, property sales and short-term bookings with role-based users, geospatial search, availability, booking workflows, payments and property operations.
 - [Blu.lk](https://savisaluwadana.github.io/products/blu/): A Sri Lankan home-services platform connecting customers with skilled professionals across electrical, plumbing, cleaning, AC, carpentry and other services, with customer, provider and worker-facing workflows.
@@ -48,309 +49,1153 @@ Contact: https://savisaluwadana.github.io/contact.html
 - [Ad Performance Analysis Agent](https://savisaluwadana.github.io/products/ad-performance-agent/): A campaign-performance analysis prototype that parses ad-data CSVs, compares weekly metrics, highlights risks and wins, and uses Gemini to help produce actionable summaries.
 - [MediCare](https://savisaluwadana.github.io/products/medicare/): A patient and clinic-management system covering patient administration, appointments, clinical records, billing, staff permissions and an embeddable scheduling service.
 
-## Public source and engineering references
+## Profile and architecture references
 
-- [Product directory](https://savisaluwadana.github.io/products/): Sixteen project overviews and architecture notes
-- [About](https://savisaluwadana.github.io/about/): Profile and public project evidence
-- [Engineering architecture](https://savisaluwadana.github.io/engineering/): Architecture and domain trade-offs
-- [Agent interfaces](https://savisaluwadana.github.io/engineering/agentic-systems/): Permissions and workflow boundaries
-- [Public repositories](https://savisaluwadana.github.io/open-source/): Seven public code repositories and licensing status
-- [Engineering insights](https://savisaluwadana.github.io/insights/): Published notes and separately identified article proposals
-
-Public repository visibility is not itself permission to reuse code. Project detail pages identify licensing, local setup, design decisions and unfinished work. I am exploring platform engineering through repository Docker, CI and deployment files.
+- [Product directory](https://savisaluwadana.github.io/products/): Explore 16 software project overviews by Savi Saluwadana, including source-linked code, architecture decisions, and contribution boundaries.
+- [About Savi Saluwadana](https://savisaluwadana.github.io/about/): Savi Saluwadana builds software in public. Browse project repositories, architecture, implementation trade-offs and platform engineering interests.
+- [Architecture reference](https://savisaluwadana.github.io/engineering/): Inspect project architecture decisions on APIs, data authority, local-first workflows, tenancy and transactions in Savi Saluwadana's software.
+- [Agentic systems architecture](https://savisaluwadana.github.io/engineering/agentic-systems/): Inspect agent tool boundaries, application permissions and local research workflows documented in Savi Saluwadana's projects.
+- [Public repositories and design notes](https://savisaluwadana.github.io/open-source/): Inspect public software repositories, licensing status, local setup, architecture, design trade-offs and unfinished work.
 
 
-# Product implementation references
+# Products & engineering work.
 
-## Avara Real Estate
+Browse the product work by domain. Every product has a permanent overview with its users, workflow, component architecture, source references and current scope.
+
+By: Savi Saluwadana
+Canonical page: https://savisaluwadana.github.io/products/
+Reviewed: 2026-11-12
+
+## Marketplaces, commerce and service operations
+
+Products that connect discovery and customer journeys with bookings, fulfillment or procurement.
+
+| Product | Purpose and architecture |
+| --- | --- |
+| [Avara Real Estate](https://savisaluwadana.github.io/products/avara/) | Property discovery, transactions and host operations in Sri Lanka. Next.js → MongoDB → S3 → PayHere |
+| [Blu.lk](https://savisaluwadana.github.io/products/blu/) | Home-service discovery, booking and fulfillment in Sri Lanka. Customer + provider experiences → Laravel API → MySQL |
+| [FreshPick / FreshOnTime](https://savisaluwadana.github.io/products/freshpick/) | Food commerce, producer onboarding and scheduled recurring deliveries in Colombo. Next.js → Prisma / PostgreSQL → recurring delivery + media storage |
+| [EventOS](https://savisaluwadana.github.io/products/eventos/) | Quick provider matching and full event procurement. Next.js → PostgreSQL → transactional workflows + file storage |
+
+## Business systems and operational software
+
+Work around property, people, retail, education, finance and restaurant operations.
+
+| Product | Purpose and architecture |
+| --- | --- |
+| [Property Management OS](https://savisaluwadana.github.io/products/property-os/) | Multi-tenant rental operations and controlled agent-assisted work. Next.js → Go modular monolith → PostgreSQL → Outbox worker → MCP |
+| [Advance HRIS](https://savisaluwadana.github.io/products/advance-hris/) | Hybrid web and local-first desktop HR operations. Next.js Web + Wails / React Desktop → Go API → PostgreSQL |
+| [NexusPOS](https://savisaluwadana.github.io/products/nexus-pos/) | Checkout and store operations with an optional Electron desktop shell. Next.js / React → Prisma → MongoDB + Electron |
+| [Academix](https://savisaluwadana.github.io/products/academix/) | Student, academic and fee operations in a role-aware workspace. Next.js → MongoDB / Mongoose → notification integrations |
+| [Acme Accounting](https://savisaluwadana.github.io/products/acme-accounting/) | Single-company financial operations backed by a double-entry ledger. Next.js → MongoDB / Mongoose → double-entry ledger |
+| [Plate Restaurant OS](https://savisaluwadana.github.io/products/restaurantos/) | Restaurant point of sale and coordinated order operations. Next.js → authenticated API routes → MongoDB |
+
+## Healthcare and patient-facing products
+
+Practitioner discovery, consultation journeys and clinic administration, with contribution boundaries documented on each page.
+
+| Product | Purpose and architecture |
+| --- | --- |
+| [TimelyHelp.lk](https://savisaluwadana.github.io/products/timelyhelp/) | Product and frontend work for practitioner discovery and consultation journeys. Next.js 15 → NextAuth → practitioner APIs → Zoom Video SDK |
+| [MediCare](https://savisaluwadana.github.io/products/medicare/) | Patient administration, appointments, clinical records and billing. Next.js → Go API + scheduling service → PostgreSQL |
+
+## AI agents, research and developer tools
+
+Evidence-led research, controlled automation, developer publishing and analytics prototypes.
+
+| Product | Purpose and architecture |
+| --- | --- |
+| [DevRelOS](https://savisaluwadana.github.io/products/devrelos/) | A self-hosted beta for discovery, engagement and outcome measurement. Next.js → Go API → PostgreSQL → Workers → MCP |
+| [RapidReach](https://savisaluwadana.github.io/products/rapidreach/) | Developer publishing and tool discovery with a small CMS. Next.js → MongoDB → object storage |
+| [Pain Intelligence Lab](https://savisaluwadana.github.io/products/pain-intelligence/) | Local research software for exploring repeated needs and evidence-backed project ideas. Next.js dashboard → Rust API → PostgreSQL; separate desktop app |
+| [Ad Performance Analysis Agent](https://savisaluwadana.github.io/products/ad-performance-agent/) | An advertising analytics and reporting prototype. React / Vite → Express → CSV analysis + Gemini → email |
+
+## Read each product in context
+
+This directory covers products I’ve built and worked on, including development projects, a self-hosted beta, prototypes and frontend contributions. A listed product is not a claim that every capability is commercially deployed. Each product page states the documented boundary.
+
+Read the [architecture reference](https://savisaluwadana.github.io/engineering/) to compare agent permissions, desktop data, tenant isolation and transaction workflows. Visit [About Savi](https://savisaluwadana.github.io/about/) for engineering focus and public profile links.
+
+
+---
+
+# Savi Saluwadana
+
+I build software in public from Sri Lanka. My repositories and project notes show the architecture, implementation choices and unfinished parts of that work. I'm also exploring platform engineering through delivery and developer experience.
+
+By: Savi Saluwadana
+Canonical page: https://savisaluwadana.github.io/about/
+Reviewed: 2026-11-12
+
+## Engineering focus, with examples
+
+I’m interested in clear domain boundaries, strong data models, reliable APIs and systems that remain understandable as products grow. The [architecture reference](https://savisaluwadana.github.io/engineering/) connects those concerns to specific projects.
+
+| Area | Where to explore it |
+| --- | --- |
+| Go backend and API design | [Property Management OS](https://savisaluwadana.github.io/products/property-os/), [DevRelOS](https://savisaluwadana.github.io/products/devrelos/) and [Advance HRIS](https://savisaluwadana.github.io/products/advance-hris/). |
+| Product and full-stack engineering | [Avara Real Estate](https://savisaluwadana.github.io/products/avara/), [FreshPick](https://savisaluwadana.github.io/products/freshpick/) and [RapidReach](https://savisaluwadana.github.io/products/rapidreach/). |
+| Agentic systems and Model Context Protocol | [Pain Intelligence Lab](https://savisaluwadana.github.io/products/pain-intelligence/), [Property Management OS](https://savisaluwadana.github.io/products/property-os/) and [DevRelOS](https://savisaluwadana.github.io/products/devrelos/). |
+| Public source and project decisions | Browse the [public repository index](https://savisaluwadana.github.io/open-source/) and each project's architecture and trade-offs. |
+| Operational data and workflows | [Acme Accounting](https://savisaluwadana.github.io/products/acme-accounting/), [Advance HRIS](https://savisaluwadana.github.io/products/advance-hris/) and [MediCare](https://savisaluwadana.github.io/products/medicare/). |
+| Platform engineering interests | I am exploring containers, delivery automation and developer experience through the [public repositories](https://savisaluwadana.github.io/open-source/). |
+
+## Agentic systems I’m interested in
+
+I’m interested in agents that use tools, retrieval and workflow state to help people complete real business and developer tasks. I want to explore systems where the model’s reasoning connects to reliable APIs, explicit permissions, useful evaluation and observable execution.
+
+- Tool-using agents and MCP interfaces that respect domain rules and the permissions of the person using them.
+- Durable workflow orchestration, retries and recovery for tasks that span multiple services or take time to complete.
+- Multi-agent collaboration with clear responsibilities, shared evidence and human review for consequential actions.
+- Retrieval-augmented generation, evidence provenance and agent evaluation that make results inspectable and useful.
+
+My current product work includes [Pain Intelligence Lab](https://savisaluwadana.github.io/products/pain-intelligence/), [Property Management OS](https://savisaluwadana.github.io/products/property-os/) and [DevRelOS](https://savisaluwadana.github.io/products/devrelos/). Follow their requests and state changes in the [agentic systems architecture walkthroughs](https://savisaluwadana.github.io/engineering/agentic-systems/). The broader topics above describe my development interests.
+
+## Code and design decisions in public
+
+My [public repository index](https://savisaluwadana.github.io/open-source/) links to the code, local setup instructions, licence status and open work behind seven of the projects listed here.
+
+I keep a separate summary for products without confirmed public source. [Browse all projects](https://savisaluwadana.github.io/products/) for their scope and architecture.
+
+## Products I’ve built and worked on
+
+The [product directory](https://savisaluwadana.github.io/products/) includes 16 projects across marketplaces, commerce, healthcare, business operations, developer tools and AI-assisted research. Each overview explains the users, workflow, architecture and current scope.
+
+Contribution and maturity vary by project. For example, [TimelyHelp](https://savisaluwadana.github.io/products/timelyhelp/) describes my product and frontend work; [DevRelOS](https://savisaluwadana.github.io/products/devrelos/) is a self-hosted beta; and the [Ad Performance Analysis Agent](https://savisaluwadana.github.io/products/ad-performance-agent/) is a prototype with mocked account connectors. The scope notes make those distinctions explicit.
+
+## Profile questions
+
+### Who is Savi Saluwadana?
+
+Savi Saluwadana is a software engineer based in Sri Lanka who builds software in public. His project repositories document architecture, design decisions and trade-offs; he is exploring platform engineering through containers, CI/CD and developer experience.
+
+### Where can I see the engineering behind the products?
+
+Start with the [product directory](https://savisaluwadana.github.io/products/) for component diagrams and workflows, or the [architecture reference](https://savisaluwadana.github.io/engineering/) for comparisons of agent access, local-first data, tenancy and transaction boundaries.
+
+### Where are the public profiles and source repositories?
+
+My public profiles are [GitHub](https://github.com/savisaluwadana) and [LinkedIn](https://www.linkedin.com/in/savi-saluwadana-3911331b2/). Product pages link to public repository documentation when available; private projects have a public product summary.
+
+### How can I contact Savi about engineering work?
+
+Use the [contact page](https://savisaluwadana.github.io/contact.html) or email savisaluwadana@gmail.com. I’m interested in product, software architecture, agentic systems, platform, DevOps, AI infrastructure and open-source development and collaboration.
+
+
+---
+
+# Software architecture across product workflows.
+
+A reference to the boundaries behind my product work: where authority lives, how clients access it, and what a workflow actually guarantees. Each comparison links to the relevant product architecture and current scope.
+
+By: Savi Saluwadana
+Canonical page: https://savisaluwadana.github.io/engineering/
+Reviewed: 2026-11-12
+
+## AI agents and MCP access boundaries
+
+Model Context Protocol gives an agent a tool interface. The useful architectural question is what happens behind that interface: which service authorizes the request, where reasoning runs, and whether an action needs approval.
+
+| Project | Access and reasoning boundary |
+| --- | --- |
+| [Property Management OS](https://savisaluwadana.github.io/products/property-os/) | MCP calls the same authenticated Go HTTP API used by other clients. Domain rules and tenant permissions remain server-side; the MCP server has no direct database connection. |
+| [DevRelOS](https://savisaluwadana.github.io/products/devrelos/) | A Next.js dashboard, Go API and workers share PostgreSQL as the system of record. Provider adapters and evidence provenance support the workflow; consequential outreach passes through approval gates. |
+| [Pain Intelligence Lab](https://savisaluwadana.github.io/products/pain-intelligence/) | The local Next.js dashboard calls a Rust API backed by PostgreSQL. The repository also has a separate desktop edition with its own capabilities. |
+
+These are different boundaries. An agent tool does not imply unrestricted writes or an autonomous production workflow. Product scope notes describe the implemented tools, provider configuration and evidence requirements. The [agentic systems walkthroughs](https://savisaluwadana.github.io/engineering/agentic-systems/) follow each request through its tool, service and recorded state.
+
+## Local-first data and desktop packaging
+
+[Advance HRIS](https://savisaluwadana.github.io/products/advance-hris/) combines a Next.js web application with a Wails/React desktop console, encrypted SQLite payloads and a sync queue. The Go API and cloud PostgreSQL database remain authoritative. The local-first boundary belongs to the desktop workflow.
+
+[NexusPOS](https://savisaluwadana.github.io/products/nexus-pos/) has an optional Electron desktop shell around the retail application. Desktop packaging alone does not establish an offline checkout engine. That distinction matters when evaluating a product for disconnected operations.
+
+To assess a local-first system, identify the authoritative record, the queued work, and the conflict-resolution boundary. A local database or desktop executable answers only part of that question.
+
+## Tenant isolation and domain authority
+
+A SaaS interface and a tenant-isolated backend are separate architectural concerns. [Property Management OS](https://savisaluwadana.github.io/products/property-os/) documents multi-tenant rental operations, role-based access and domain rules in its Go API. [Acme Accounting](https://savisaluwadana.github.io/products/acme-accounting/) currently uses one company and one administrator identity per database.
+
+[Academix](https://savisaluwadana.github.io/products/academix/) has role-aware academic workflows and SaaS plan surfaces, while broader tenant-isolation and automated-billing work remain subject to its roadmap. The product labels should be read together with the current implementation boundaries.
+
+The reference point is the server-side rule: who can read or change a record, which organization owns it, and which transaction maintains its integrity. A dashboard or plan selector does not establish those guarantees by itself.
+
+## Bookings, recurring orders and payment workflows
+
+| Project | Documented transaction boundary |
+| --- | --- |
+| [Avara Real Estate](https://savisaluwadana.github.io/products/avara/) | Property and booking workflows connect to PayHere payment callbacks and S3 media. Payment and storage integrations need deployment-specific configuration. |
+| [FreshPick](https://savisaluwadana.github.io/products/freshpick/) | Next.js and PostgreSQL support food commerce and scheduled recurring delivery. Checkout and subscription baskets currently use cash on delivery; automatic recurring card charging is not implemented. |
+| [EventOS](https://savisaluwadana.github.io/products/eventos/) | Matching and event procurement use a Next.js/PostgreSQL application. Payment evidence is submitted and reconciled manually in the current MVP. |
+
+A booking, a recurring order and a payment represent different state changes. Keeping those boundaries explicit makes the architecture easier to inspect and prevents a delivery schedule from being mistaken for automated billing.
+
+## Read the source and current scope
+
+This reference summarizes the documented project boundaries. It does not report measured performance, deployment outcomes or customer results. Product pages carry the corresponding architecture diagrams, component responsibilities, review dates and source links.
+
+- [Property Management OS repository documentation](https://github.com/RealEstateSassApplication/property-management-OS/blob/main/README.md)
+- [DevRelOS repository documentation](https://savisaluwadana.github.io/products/devrelos/)
+- [Pain Intelligence Lab repository documentation](https://github.com/savisaluwadana/Pain-Point-Analyzer/blob/main/README.md)
+- [Advance HRIS repository documentation](https://github.com/SilverLine-Ravija/Advance-HIRS-System/blob/main/README.md)
+- [Avara repository documentation](https://github.com/RealEstateSassApplication/AvaraRealEstate/blob/main/README.md)
+- [FreshPick repository documentation](https://github.com/FreshOnTime/newfreshontimewebsite/blob/main/README.md)
+- [Academix repository documentation](https://github.com/savisaluwadana/student-management-system-saas/blob/main/README.md)
+
+
+---
+
+# Agentic systems: tools, state and human review.
+
+An agent becomes useful when its tools connect to a real workflow. These project walkthroughs show where an agent enters the system, where state is recorded, and which service controls the resulting action.
+
+By: Savi Saluwadana
+Canonical page: https://savisaluwadana.github.io/engineering/agentic-systems/
+Reviewed: 2026-11-12
+
+## Different agent entry points
+
+The model, tool interface and domain service have different responsibilities. The model can propose an action, while the application still needs to determine whether that action is permitted and what record it changes. The examples below expose those boundaries rather than treating every AI feature as the same architecture.
+
+| Project | Agent boundary | What controls the result |
+| --- | --- | --- |
+| [Property Management OS](https://savisaluwadana.github.io/products/property-os/) | MCP tools call the authenticated Go API. | Organization scope and domain rules remain in the API. PostgreSQL stores business records and notification intents. |
+| [Pain Intelligence Lab](https://savisaluwadana.github.io/products/pain-intelligence/) | A connected MCP host performs semantic research and synthesis. | The Rust API records evidence and research state in PostgreSQL; research findings still need validation. The application does not call model APIs directly. |
+| [DevRelOS](https://savisaluwadana.github.io/products/devrelos/) | Dashboard and authenticated MCP clients access workspace workflows. | The Go API checks membership; workers handle configured providers and approved delivery. Consequential outreach requires approval. |
+| [Ad Performance Analysis Agent](https://savisaluwadana.github.io/products/ad-performance-agent/) | Gemini assists with summaries after CSV analysis. | Threshold logic computes flags. Account connectors are mocks, so this prototype is not a durable live-account ingestion system. |
+
+## Follow a rental-operations request
+
+In [Property Management OS](https://savisaluwadana.github.io/products/property-os/), an agent uses the same authenticated HTTP boundary as another client. Adding a tool interface does not create an alternative route around tenant permissions or domain rules.
+
+1. A manager or agent requests an operation through the authenticated API.
+2. The Go modular monolith applies organization scope and domain rules.
+3. PostgreSQL stores records and notification intents; documents use S3-compatible storage.
+4. A Go worker consumes the outbox and delivers notifications through configured providers.
+
+The recorded domain operation and notification delivery have separate responsibilities. The database holds the record and notification intent; an outbox worker performs delivery through a configured provider. That separation is useful when inspecting whether a business action was accepted versus whether its notification was delivered.
+
+The documented MCP scope matters: advanced financial writes and other domains should be checked against the implemented tools. The existence of an API endpoint is not evidence that an agent has permission to perform every operation.
+
+## Follow an evidence-led research task
+
+[Pain Intelligence Lab](https://savisaluwadana.github.io/products/pain-intelligence/) separates host reasoning from the application that stores research evidence. A question becomes a research job; the host gathers and annotates evidence through tools while the application retains the project state.
+
+1. Choose and configure the self-hosted web or native desktop edition.
+2. The web dashboard sends research requests to the Rust API.
+3. The API manages research records and evidence in PostgreSQL.
+4. Review linked evidence, limits and validation before drawing conclusions.
+
+The output is evaluated as evidence, not just generated text. Source diversity, duplicate checks, independent stories and competitor or pricing validation affect whether an opportunity survives the research process. A job can correctly finish with no validated opportunity.
+
+This boundary also changes how the system is configured: the connected host provides semantic reasoning, while the platform provides storage, inspection and quality checks. Model-provider behavior should not be inferred from the Rust API alone.
+
+## Approvals in developer operations
+
+[DevRelOS](https://savisaluwadana.github.io/products/devrelos/) connects source-backed signals, workspace membership, background work and approval-gated outreach. Its domain API and workers serve different parts of that process.
+
+1. Connectors or an operator bring source-backed signals into a workspace.
+2. The Go API validates membership and stores domain state in PostgreSQL.
+3. Background workers run connector, media and approved outreach tasks.
+4. The dashboard and MCP clients inspect work and track its outcomes through the domain API.
+
+A research signal or draft is different from an external action. Evidence can inform a workflow while the delivery step still needs approval and provider configuration. The self-hosted beta’s scope notes describe those prerequisites; they should be retained when evaluating the system.
+
+## What I want to develop further
+
+My broader interests include durable orchestration, multi-agent collaboration, retrieval and evaluation. The following are design questions I want to explore, rather than claims that every project already implements the same capabilities.
+
+- How should a tool make repeated requests safe when an agent or worker retries?
+- Which state should persist so a long-running task can resume after failure?
+- How can agents share evidence and responsibilities without losing provenance?
+- What evaluation catches unauthorized actions, weak evidence and incorrect outcomes before they reach a user?
+- Which actions need human review, and how should that decision be recorded?
+
+## Inspect the current implementation
+
+- [Property Management OS repository documentation](https://github.com/RealEstateSassApplication/property-management-OS/blob/main/README.md)
+- [Pain Intelligence Lab repository documentation](https://github.com/savisaluwadana/Pain-Point-Analyzer/blob/main/README.md)
+- [DevRelOS repository documentation](https://savisaluwadana.github.io/products/devrelos/)
+
+See the [broader architecture reference](https://savisaluwadana.github.io/engineering/) for local-first data, tenancy and transaction comparisons, or the [public source index](https://savisaluwadana.github.io/open-source/) to browse repository references. [About Savi](https://savisaluwadana.github.io/about/) describes my engineering and collaboration interests.
+
+
+---
+
+# Public repositories and design notes.
+
+I build software with source code and design decisions that others can inspect. Public repository access does not automatically grant an open-source licence.
+
+By: Savi Saluwadana
+Canonical page: https://savisaluwadana.github.io/open-source/
+Reviewed: 2026-11-12
+
+## Public repositories you can inspect
+
+These seven repositories are publicly accessible. The project pages link to setup steps, design decisions, trade-offs and unfinished work. Only the research project currently has a confirmed open-source licence.
+
+| Project and source | What to inspect | Licence | Run locally |
+| --- | --- | --- | --- |
+| [Avara Real Estate](https://github.com/RealEstateSassApplication/AvaraRealEstate) · [Architecture overview](https://savisaluwadana.github.io/products/avara/) | Property discovery, transactions and host operations in Sri Lanka. Next.js → MongoDB → S3 → PayHere | Proprietary, all rights reserved | Configure MongoDB and environment variables; npm install; npm run dev |
+| [FreshPick / FreshOnTime](https://github.com/FreshOnTime/newfreshontimewebsite) · [Architecture overview](https://savisaluwadana.github.io/products/freshpick/) | Food commerce, producer onboarding and scheduled recurring deliveries in Colombo. Next.js → Prisma / PostgreSQL → recurring delivery + media storage | No licence identified | Set development environment variables; npm ci; npm run db:migrate; npm run dev |
+| [Property Management OS](https://github.com/RealEstateSassApplication/property-management-OS) · [Architecture overview](https://savisaluwadana.github.io/products/property-os/) | Multi-tenant rental operations and controlled agent-assisted work. Next.js → Go modular monolith → PostgreSQL → Outbox worker → MCP | No licence identified | Set values from .env.example; docker compose up --build |
+| [RapidReach](https://github.com/savisaluwadana/RapidReachBloWebsite) · [Architecture overview](https://savisaluwadana.github.io/products/rapidreach/) | Developer publishing and tool discovery with a small CMS. Next.js → MongoDB → object storage | No licence identified | Configure MongoDB in .env.local; npm install; npm run dev |
+| [Advance HRIS](https://github.com/SilverLine-Ravija/Advance-HIRS-System) · [Architecture overview](https://savisaluwadana.github.io/products/advance-hris/) | Hybrid web and local-first desktop HR operations. Next.js Web + Wails / React Desktop → Go API → PostgreSQL | No licence identified | Configure .env from example; docker compose up --build (demo setup) |
+| [Academix](https://github.com/savisaluwadana/student-management-system-saas) · [Architecture overview](https://savisaluwadana.github.io/products/academix/) | Student, academic and fee operations in a role-aware workspace. Next.js → MongoDB / Mongoose → notification integrations | No licence identified | Configure environment and database; npm install; npm run dev |
+| [Pain Intelligence Lab](https://github.com/savisaluwadana/Pain-Point-Analyzer) · [Architecture overview](https://savisaluwadana.github.io/products/pain-intelligence/) | Local research software for exploring repeated needs and evidence-backed project ideas. Next.js dashboard → Rust API → PostgreSQL; separate desktop app | MIT | Configure .env from example; docker compose up --build -d --wait |
+
+## How to inspect the work
+
+For a project, I start with the [source code index](https://savisaluwadana.github.io/open-source/) and the linked README. Each [product detail page](https://savisaluwadana.github.io/products/) points to its architecture, local setup, main design decision, trade-off and current limitations.
+
+A public repository is not necessarily open-source licensed. Check the licence before copying or redistributing code. The source index distinguishes MIT, proprietary and unspecified terms.
+
+## Start with the engineering boundaries
+
+The [agentic systems walkthroughs](https://savisaluwadana.github.io/engineering/agentic-systems/) trace requests through tools, APIs, recorded state and human review. The [architecture reference](https://savisaluwadana.github.io/engineering/) compares local-first workflows, tenant isolation and payment boundaries across products.
+
+These references help identify the service and rule affected by a change. Product diagrams and source links provide the next level of detail; they do not replace checking the current repository.
+
+## Discuss code or documentation work
+
+For a specific change, start with the repository's README and issue tracker. You can also [contact me](https://savisaluwadana.github.io/contact.html) with the relevant repository and a reproducible problem.
+
+
+---
+
+# Avara Real Estate
+
+By / portfolio contribution: Savi Saluwadana
+Canonical page: https://savisaluwadana.github.io/products/avara/
+Reviewed: 2026-11-12
 
 A Sri Lankan property platform spanning rentals, property sales and short-term bookings with role-based users, geospatial search, availability, booking workflows, payments and property operations.
 
-Repository: https://github.com/RealEstateSassApplication/AvaraRealEstate/blob/main/README.md
+## Users and purpose
 
-Architecture: Next.js → MongoDB → S3 → PayHere
+Property seekers, tenants, hosts and administrators.
 
-Current boundary: This diagram summarizes the repository’s property, booking and payment boundaries. PayHere and S3 require deployment-specific configuration.
+Property discovery, transactions and host operations in Sri Lanka.
 
-Local setup: Configure MongoDB and environment variables; npm install; npm run dev
+## Capabilities
 
-Licence: Proprietary, all rights reserved
+- Rental, sale and short-stay listings with location and geospatial search.
+- Role-aware property administration and media uploads.
+- Availability calendars, booking workflows and local payment integration.
 
-Decision: A single Next.js app handles property workflows and MongoDB storage.
+## Workflow
+
+1. A visitor searches listings and opens a property.
+2. An authenticated user submits a booking request; server-side rules evaluate availability.
+3. Booking and payment state are stored in MongoDB; media is stored separately.
+4. Hosts and administrators manage listings, calendars and transaction status.
+
+## Architecture
+
+Next.js → MongoDB → S3 → PayHere
+
+- Next.js web + API: Customer, host and admin interfaces plus authenticated domain routes.
+- MongoDB: Users, properties, bookings and availability data.
+- S3: Property images and uploaded media.
+- PayHere: Payment initiation and server-side notification handling.
+
+## Current scope
+
+This diagram summarizes the repository’s property, booking and payment boundaries. PayHere and S3 require deployment-specific configuration.
+
+## Run locally
+
+Configure MongoDB and environment variables; npm install; npm run dev
+
+## Design decision and trade-off
+
+A single Next.js app handles property workflows and MongoDB storage.
 
 Trade-off: A unified app is easier to run, but payment and media require configured external services.
 
-Unfinished: Production checklist and external payment/storage configuration remain.
+## Unfinished
+
+Production checklist and external payment/storage configuration remain.
+
+Licence: Proprietary, all rights reserved
+
+Source: https://github.com/RealEstateSassApplication/AvaraRealEstate/blob/main/README.md
 
 
 ---
 
-## Blu.lk
+# Blu.lk
+
+By / portfolio contribution: Savi Saluwadana
+Canonical page: https://savisaluwadana.github.io/products/blu/
+Reviewed: 2026-10-04
 
 A Sri Lankan home-services platform connecting customers with skilled professionals across electrical, plumbing, cleaning, AC, carpentry and other services, with customer, provider and worker-facing workflows.
 
-Repository: https://blu.lk/
+## Users and purpose
 
-Architecture: Customer + provider experiences → Laravel API → MySQL
+Customers, service providers, workers and operations teams.
 
-Current boundary: This diagram covers the core service platform. Payment-provider availability depends on integration configuration; no specific online payment launch is claimed here.
+Home-service discovery, booking and fulfillment in Sri Lanka.
 
-Other product, source not publicly linked
+## Capabilities
+
+- Service categories and customer booking journeys.
+- Provider and worker coordination around scheduled jobs.
+- Administrative management of services, users and operational status.
+
+## Workflow
+
+1. A customer discovers a service and supplies booking details.
+2. The Laravel platform records the request and its status in MySQL.
+3. Providers and workers coordinate assignment and fulfillment through their product experiences.
+4. Operations teams manage service records and follow the booking lifecycle.
+
+## Architecture
+
+Customer + provider experiences → Laravel API → MySQL
+
+- Customer interfaces: Service discovery and booking requests.
+- Laravel platform: Booking, provider, worker and administrative workflows.
+- MySQL: Persistent service and operational records.
+
+## Current scope
+
+This diagram covers the core service platform. Payment-provider availability depends on integration configuration; no specific online payment launch is claimed here.
+
+Source: https://blu.lk/
 
 
 ---
 
-## FreshPick / FreshOnTime
+# FreshPick / FreshOnTime
+
+By / portfolio contribution: Savi Saluwadana
+Canonical page: https://savisaluwadana.github.io/products/freshpick/
+Reviewed: 2026-11-12
 
 A premium food-commerce platform for Colombo bringing together fresh groceries, local products, prepared meals, recurring delivery and business ordering in one customer experience.
 
-Repository: https://github.com/FreshOnTime/newfreshontimewebsite/blob/main/README.md
+## Users and purpose
 
-Architecture: Next.js → Prisma / PostgreSQL → recurring delivery + media storage
+Grocery shoppers, local producers, business buyers and administrators.
 
-Current boundary: Customer checkout and subscription baskets currently use cash on delivery. Automatic recurring card charging is not implemented. Subscription baskets and recurring grocery orders are distinct workflows.
+Food commerce, producer onboarding and scheduled recurring deliveries in Colombo.
 
-Local setup: Set development environment variables; npm ci; npm run db:migrate; npm run dev
+## Capabilities
 
-Licence: No licence identified
+- Catalog browsing, product discovery and customer shopping.
+- Producer onboarding, admin operations and business enquiries.
+- Subscription baskets and recurring-order delivery scheduling.
+- Public read-only catalog tools through MCP.
 
-Decision: Next.js route handlers enforce commerce rules using Prisma and PostgreSQL.
+## Workflow
+
+1. A shopper chooses catalog items or a recurring basket.
+2. Next.js validates the request and domain services persist orders through Prisma.
+3. PostgreSQL holds catalog, order and delivery state; scheduling advances due deliveries.
+4. Media and transactional messages use their configured storage and email integrations.
+
+## Architecture
+
+Next.js → Prisma / PostgreSQL → recurring delivery + media storage
+
+- Next.js: Storefront, producer and admin interfaces, API routes and public MCP catalog access.
+- Prisma + PostgreSQL: Catalog, order, subscription and delivery records.
+- Scheduled workflows: Recurring deliveries and transactional communications.
+- Storage adapter: Durable product and editorial images.
+
+## Current scope
+
+Customer checkout and subscription baskets currently use cash on delivery. Automatic recurring card charging is not implemented. Subscription baskets and recurring grocery orders are distinct workflows.
+
+## Run locally
+
+Set development environment variables; npm ci; npm run db:migrate; npm run dev
+
+## Design decision and trade-off
+
+Next.js route handlers enforce commerce rules using Prisma and PostgreSQL.
 
 Trade-off: One app keeps order transitions together; background jobs and integrations need separate scheduling.
 
-Unfinished: Automatic recurring card charging is not implemented; agentic commerce is planned.
+## Unfinished
+
+Automatic recurring card charging is not implemented; agentic commerce is planned.
+
+Licence: No licence identified
+
+Source: https://github.com/FreshOnTime/newfreshontimewebsite/blob/main/README.md
 
 
 ---
 
-## TimelyHelp.lk
+# TimelyHelp.lk
+
+By / portfolio contribution: Savi Saluwadana
+Canonical page: https://savisaluwadana.github.io/products/timelyhelp/
+Reviewed: 2026-10-04
 
 A mental-healthcare platform for discovering licensed practitioners, booking secure consultations and managing digital care journeys. I worked on the product and frontend experience across practitioner discovery, account flows, checkout, dashboards and consultation surfaces.
 
-Repository: https://timelyhelp.lk/
+## Users and purpose
 
-Architecture: Next.js 15 → NextAuth → practitioner APIs → Zoom Video SDK
+People seeking mental-health consultations, practitioners and administrators.
 
-Current boundary: Savi’s portfolio contribution is product and frontend work. This page summarizes that frontend boundary and does not claim ownership of the full clinical backend.
+Product and frontend work for practitioner discovery and consultation journeys.
 
-Other product, source not publicly linked
+## Capabilities
+
+- Practitioner discovery, accounts and protected dashboard flows.
+- Booking and checkout interfaces around consultation services.
+- Video-consultation surfaces, internationalization and frontend monitoring.
+
+## Workflow
+
+1. A visitor explores practitioner information.
+2. NextAuth manages frontend authentication and protected account flows.
+3. The frontend exchanges practitioner and consultation data with application APIs.
+4. Video consultation uses Zoom Video SDK; Sentry supports frontend error visibility.
+
+## Architecture
+
+Next.js 15 → NextAuth → practitioner APIs → Zoom Video SDK
+
+- Next.js frontend: Discovery, account, checkout, dashboard and consultation experiences.
+- NextAuth: Frontend session and protected-page integration.
+- Application APIs: Practitioner and consultation data supplied to the frontend.
+- Zoom + Sentry: Live video surfaces and error monitoring.
+
+## Current scope
+
+Savi’s portfolio contribution is product and frontend work. This page summarizes that frontend boundary and does not claim ownership of the full clinical backend.
+
+Source: https://timelyhelp.lk/
 
 
 ---
 
-## DevRelOS
+# DevRelOS
+
+By / portfolio contribution: Savi Saluwadana
+Canonical page: https://savisaluwadana.github.io/products/devrelos/
+Reviewed: 2026-10-04
 
 An operating system for discovering developer signals, managing community and content workflows, connecting developer feedback to product work, and measuring outcomes from one operational surface.
 
-Repository: No confirmed public source link
+## Users and purpose
 
-Architecture: Next.js → Go API → PostgreSQL → Workers → MCP
+Developer-relations teams and developer-community operators.
 
-Current boundary: This project is a self-hosted beta. External providers require credentials and policy configuration; consequential outreach follows approval workflows.
+A self-hosted beta for discovery, engagement and outcome measurement.
 
-Other product, source not publicly linked
+## Capabilities
+
+- Signal Radar, pain-point intelligence and developer feedback.
+- Events, CFPs, reusable talks, contacts and relationships.
+- Content, campaigns, media workflows and approval-gated outreach.
+- Authenticated MCP tools and workspace-scoped access.
+
+## Workflow
+
+1. Connectors or an operator bring source-backed signals into a workspace.
+2. The Go API validates membership and stores domain state in PostgreSQL.
+3. Background workers run connector, media and approved outreach tasks.
+4. The dashboard and MCP clients inspect work and track its outcomes through the domain API.
+
+## Architecture
+
+Next.js → Go API → PostgreSQL → Workers → MCP
+
+- Next.js dashboard: Operator workspaces and same-origin API proxy.
+- Go domain API: Authenticated workflows, membership checks and business rules.
+- PostgreSQL: Workspace data, evidence, workflow state and audit history.
+- Go workers: Connector ingestion, media rendering and approved delivery.
+- MCP: Authenticated domain tools; no parallel database access path.
+
+## Current scope
+
+This project is a self-hosted beta. External providers require credentials and policy configuration; consequential outreach follows approval workflows.
+
+No confirmed public repository is linked.
 
 
 ---
 
-## Property Management OS
+# Property Management OS
+
+By / portfolio contribution: Savi Saluwadana
+Canonical page: https://savisaluwadana.github.io/products/property-os/
+Reviewed: 2026-11-12
 
 A rental operations platform covering properties, units, tenants, leases, rent, maintenance, documents, notifications and controlled agent-assisted operations.
 
-Repository: https://github.com/RealEstateSassApplication/property-management-OS/blob/main/README.md
+## Users and purpose
 
-Architecture: Next.js → Go modular monolith → PostgreSQL → Outbox worker → MCP
+Property managers, owners and authorized operational users.
 
-Current boundary: MCP calls the same authenticated HTTP API as other clients and has no direct database connection. Advanced financial writes and other domains remain subject to the project’s implemented tool scope.
+Multi-tenant rental operations and controlled agent-assisted work.
 
-Local setup: Set values from .env.example; docker compose up --build
+## Capabilities
 
-Licence: No licence identified
+- Properties, units, tenants, occupancies and leases.
+- Rent obligations, ledger views, maintenance and documents.
+- Organization membership, RBAC and audit-aware workflows.
+- Transactional notification outbox and authenticated MCP tools.
 
-Decision: Go modular monolith keeps domain rules and authorisation behind authenticated APIs; notification writes use an outbox.
+## Workflow
+
+1. A manager or agent requests an operation through the authenticated API.
+2. The Go modular monolith applies organization scope and domain rules.
+3. PostgreSQL stores records and notification intents; documents use S3-compatible storage.
+4. A Go worker consumes the outbox and delivers notifications through configured providers.
+
+## Architecture
+
+Next.js → Go modular monolith → PostgreSQL → Outbox worker → MCP
+
+- Go API: Organization-scoped domain logic, OIDC identity and RBAC.
+- PostgreSQL: Portfolio, tenancy, rent, maintenance and outbox state.
+- Object storage: Document objects with database metadata.
+- Outbox worker: Durable notification processing through a delivery provider.
+- MCP: Agent access through authenticated domain APIs.
+
+## Current scope
+
+MCP calls the same authenticated HTTP API as other clients and has no direct database connection. Advanced financial writes and other domains remain subject to the project’s implemented tool scope.
+
+## Run locally
+
+Set values from .env.example; docker compose up --build
+
+## Design decision and trade-off
+
+Go modular monolith keeps domain rules and authorisation behind authenticated APIs; notification writes use an outbox.
 
 Trade-off: Transactional domain authority stays in one backend, but asynchronous delivery needs worker and retry handling.
 
-Unfinished: README lists remaining milestones; some agentic mutations are outside the current tool scope.
+## Unfinished
+
+README lists remaining milestones; some agentic mutations are outside the current tool scope.
+
+Licence: No licence identified
+
+Source: https://github.com/RealEstateSassApplication/property-management-OS/blob/main/README.md
 
 
 ---
 
-## RapidReach
+# RapidReach
+
+By / portfolio contribution: Savi Saluwadana
+Canonical page: https://savisaluwadana.github.io/products/rapidreach/
+Reviewed: 2026-11-12
 
 A developer publication and tool-discovery product with editorial workflows, comments, likes, search, tool profiles, media uploads and a deliberately small CMS.
 
-Repository: https://github.com/savisaluwadana/RapidReachBloWebsite/blob/main/README.md
+## Users and purpose
 
-Architecture: Next.js → MongoDB → object storage
+Readers, developers exploring tools and editorial administrators.
 
-Current boundary: RapidReach uses one Next.js application with MongoDB and Blob storage; there is no separate backend service. Publishing and media require a configured deployment.
+Developer publishing and tool discovery with a small CMS.
 
-Local setup: Configure MongoDB in .env.local; npm install; npm run dev
+## Capabilities
 
-Licence: No licence identified
+- Articles, categories, search, comments, likes and sharing.
+- Tool profiles, category browsing and tool upvotes.
+- Editorial draft/publish workflows and media uploads.
+- Structured metadata, feeds and machine-readable discovery surfaces.
 
-Decision: Next.js handles the CMS, page delivery and APIs, backed by MongoDB and blob media.
+## Workflow
+
+1. An editor creates a draft and attaches uploaded media.
+2. The CMS stores editorial and tool records in MongoDB.
+3. Published pages and tool profiles render from the same Next.js application.
+4. Readers discover content through the site, search and published feeds.
+
+## Architecture
+
+Next.js → MongoDB → object storage
+
+- Next.js: Public pages, tool directory, CMS and API routes in one application.
+- MongoDB: Editorial records, tool records, comments and categories.
+- Vercel Blob: Public media objects referenced by content records.
+
+## Current scope
+
+RapidReach uses one Next.js application with MongoDB and Blob storage; there is no separate backend service. Publishing and media require a configured deployment.
+
+## Run locally
+
+Configure MongoDB in .env.local; npm install; npm run dev
+
+## Design decision and trade-off
+
+Next.js handles the CMS, page delivery and APIs, backed by MongoDB and blob media.
 
 Trade-off: One deployable app reduces boundaries, but media and publishing rely on configured external services.
 
-Unfinished: Production media storage and environment configuration remain deployment responsibilities.
+## Unfinished
+
+Production media storage and environment configuration remain deployment responsibilities.
+
+Licence: No licence identified
+
+Source: https://github.com/savisaluwadana/RapidReachBloWebsite/blob/main/README.md
 
 
 ---
 
-## Advance HRIS
+# Advance HRIS
+
+By / portfolio contribution: Savi Saluwadana
+Canonical page: https://savisaluwadana.github.io/products/advance-hris/
+Reviewed: 2026-11-12
 
 A hybrid HR information system with an employee web portal, a native HR/admin desktop console, tenant-scoped access, policy-backed leave, schedule-aware attendance, audit history and durable offline synchronization.
 
-Repository: https://github.com/SilverLine-Ravija/Advance-HIRS-System/blob/main/README.md
+## Users and purpose
 
-Architecture: Next.js Web + Wails / React Desktop → Go API → PostgreSQL
+Employees, managers, HR teams and administrators.
 
-Current boundary: Local-first refers to the desktop console. The cloud database remains authoritative. Payroll-ready attendance boundaries do not mean a complete payroll-processing product is included.
+Hybrid web and local-first desktop HR operations.
 
-Local setup: Configure .env from example; docker compose up --build (demo setup)
+## Capabilities
 
-Licence: No licence identified
+- Employee records, tenant scope and role-aware self-service.
+- Policy-backed leave and schedule-aware attendance.
+- Audit history and durable offline desktop synchronization.
 
-Decision: Cloud HR data is authoritative; the desktop uses a local store and sync queue.
+## Workflow
+
+1. Employees and managers use the Next.js portal for self-service.
+2. HR/admin users can work through the Wails desktop console and local SQLite storage.
+3. The durable sync queue sends authorized operations to the Go API.
+4. PostgreSQL remains the authoritative system of record; synchronization handles conflicts explicitly.
+
+## Architecture
+
+Next.js Web + Wails / React Desktop → Go API → PostgreSQL
+
+- Next.js portal: Employee and manager self-service through a web session/BFF boundary.
+- Wails desktop: Native HR/admin console with encrypted local payloads.
+- SQLite + sync queue: Local state and durable synchronization operations.
+- Go + PostgreSQL: Tenant-scoped business rules and authoritative HR records.
+
+## Current scope
+
+Local-first refers to the desktop console. The cloud database remains authoritative. Payroll-ready attendance boundaries do not mean a complete payroll-processing product is included.
+
+## Run locally
+
+Configure .env from example; docker compose up --build (demo setup)
+
+## Design decision and trade-off
+
+Cloud HR data is authoritative; the desktop uses a local store and sync queue.
 
 Trade-off: Offline operation adds synchronization, conflict resolution and local-data protection concerns.
 
-Unfinished: Default Compose is demo-only; full payroll and production layers remain unfinished.
+## Unfinished
 
-
----
-
-## NexusPOS
-
-A retail POS and store-operations system covering touch checkout, barcode workflows, inventory, staff roles, cash shifts, refunds, reconciliation, audit history and native receipt printing.
-
-Repository: No confirmed public source link
-
-Architecture: Next.js / React → Prisma → MongoDB + Electron
-
-Current boundary: Electron is an optional desktop shell. The portfolio does not claim a complete offline checkout engine or a tenant-isolated hosted retail service.
-
-Other product, source not publicly linked
-
-
----
-
-## Academix
-
-A SaaS workspace for tuition centres and private institutes combining student CRM, classes, attendance, assessments, fee collection, communications, reporting and multi-site institute operations.
-
-Repository: https://github.com/savisaluwadana/student-management-system-saas/blob/main/README.md
-
-Architecture: Next.js → MongoDB / Mongoose → notification integrations
-
-Current boundary: The account and plan surfaces support a SaaS direction. Automated billing and broader tenant-isolation work should be checked against the current project roadmap rather than assumed complete.
-
-Local setup: Configure environment and database; npm install; npm run dev
+Default Compose is demo-only; full payroll and production layers remain unfinished.
 
 Licence: No licence identified
 
-Decision: Next.js and MongoDB implement student, class and fee workflows in one application.
+Source: https://github.com/SilverLine-Ravija/Advance-HIRS-System/blob/main/README.md
+
+
+---
+
+# NexusPOS
+
+By / portfolio contribution: Savi Saluwadana
+Canonical page: https://savisaluwadana.github.io/products/nexus-pos/
+Reviewed: 2026-10-04
+
+A retail POS and store-operations system covering touch checkout, barcode workflows, inventory, staff roles, cash shifts, refunds, reconciliation, audit history and native receipt printing.
+
+## Users and purpose
+
+Cashiers, store managers and retail administrators.
+
+Checkout and store operations with an optional Electron desktop shell.
+
+## Capabilities
+
+- Touch checkout, barcode/SKU input, held orders and receipts.
+- Inventory, authenticated staff roles and store settings.
+- Cash shifts, refunds, reconciliation and audit history.
+
+## Workflow
+
+1. A cashier builds a basket and applies eligible discounts or loyalty.
+2. Authenticated server routes calculate checkout totals and validate stock.
+3. Prisma persists retail records to MongoDB.
+4. The optional Electron shell provides native receipt printing while the browser supports print fallback.
+
+## Architecture
+
+Next.js / React → Prisma → MongoDB + Electron
+
+- Next.js + React: Cashier and store-administration interfaces.
+- Server routes: Authenticated staff actions and server-authoritative checkout.
+- Prisma + MongoDB: Products, orders and retail operational records.
+- Electron: Optional native desktop packaging and receipt printing.
+
+## Current scope
+
+Electron is an optional desktop shell. The portfolio does not claim a complete offline checkout engine or a tenant-isolated hosted retail service.
+
+No confirmed public repository is linked.
+
+
+---
+
+# Academix
+
+By / portfolio contribution: Savi Saluwadana
+Canonical page: https://savisaluwadana.github.io/products/academix/
+Reviewed: 2026-11-12
+
+A SaaS workspace for tuition centres and private institutes combining student CRM, classes, attendance, assessments, fee collection, communications, reporting and multi-site institute operations.
+
+## Users and purpose
+
+Tuition centres, academies and private-institute staff.
+
+Student, academic and fee operations in a role-aware workspace.
+
+## Capabilities
+
+- Student CRM, enrollments, teacher and class records.
+- Manual, bulk and barcode attendance plus assessments.
+- Fees, LKR receipts, reporting and institute records.
+- Communication workflows with email/SMS integration points.
+
+## Workflow
+
+1. Staff register students and enroll them into classes.
+2. Authenticated application routes record attendance, grades and fee activity.
+3. Mongoose models store operational records in MongoDB.
+4. Dashboards and reports summarize the workspace; communication providers are configured separately.
+
+## Architecture
+
+Next.js → MongoDB / Mongoose → notification integrations
+
+- Next.js: Student, academic, fee, communication and reporting workspaces.
+- Auth + API routes: Cookie-based JWT sessions and role-aware domain requests.
+- MongoDB + Mongoose: Student, class, attendance, assessment and fee records.
+- Messaging integrations: Configured email/SMS providers; integration availability varies by deployment.
+
+## Current scope
+
+The account and plan surfaces support a SaaS direction. Automated billing and broader tenant-isolation work should be checked against the current project roadmap rather than assumed complete.
+
+## Run locally
+
+Configure environment and database; npm install; npm run dev
+
+## Design decision and trade-off
+
+Next.js and MongoDB implement student, class and fee workflows in one application.
 
 Trade-off: Combined modules ease local development but verified tenant isolation and billing need more work.
 
-Unfinished: Shared tenancy verification, production permissions, billing and deployment acceptance remain.
+## Unfinished
+
+Shared tenancy verification, production permissions, billing and deployment acceptance remain.
+
+Licence: No licence identified
+
+Source: https://github.com/savisaluwadana/student-management-system-saas/blob/main/README.md
 
 
 ---
 
-## Acme Accounting
+# Acme Accounting
+
+By / portfolio contribution: Savi Saluwadana
+Canonical page: https://savisaluwadana.github.io/products/acme-accounting/
+Reviewed: 2026-10-04
 
 A single-company accounting application with a double-entry general ledger, invoicing, A/R and A/P aging, vendor bills, credit notes, refunds, period locks, bank reconciliation, budgeting and financial reporting.
 
-Repository: No confirmed public source link
+## Users and purpose
 
-Architecture: Next.js → MongoDB / Mongoose → double-entry ledger
+A company’s accounting administrator and finance operator.
 
-Current boundary: The current application is designed for one company and one administrator identity per database. It is not a tenant-isolated accounting SaaS backend.
+Single-company financial operations backed by a double-entry ledger.
 
-Other product, source not publicly linked
+## Capabilities
+
+- Chart of accounts, journals, invoicing and receivables.
+- Vendor bills, payables, expenses, credit notes and refunds.
+- Bank reconciliation, period locks, recurring transactions and budgets.
+- Ledger-backed statements and accounting integrity diagnostics.
+
+## Workflow
+
+1. An operator creates a source document such as an invoice or vendor bill.
+2. Authenticated domain services validate the accounting transition.
+3. The posting layer records balanced journals in the general ledger.
+4. Reports read the ledger while period controls and audit history preserve traceability.
+
+## Architecture
+
+Next.js → MongoDB / Mongoose → double-entry ledger
+
+- Next.js + NextAuth: Finance interfaces and authenticated route handlers.
+- Accounting services: Source-document workflows, validation and period controls.
+- General ledger: Balanced journal posting, reversal and source-level idempotency.
+- MongoDB: Financial records, journal history and reporting source data.
+
+## Current scope
+
+The current application is designed for one company and one administrator identity per database. It is not a tenant-isolated accounting SaaS backend.
+
+No confirmed public repository is linked.
 
 
 ---
 
-## EventOS
+# EventOS
+
+By / portfolio contribution: Savi Saluwadana
+Canonical page: https://savisaluwadana.github.io/products/eventos/
+Reviewed: 2026-10-04
 
 An event-services marketplace and operations platform for finding suppliers, comparing quotes, managing bookings and contracts, tracking payments and coordinating event delivery.
 
-Repository: No confirmed public source link
+## Users and purpose
 
-Architecture: Next.js → PostgreSQL → transactional workflows + file storage
+Guests, event buyers, suppliers and administrators.
 
-Current boundary: Payments are submitted and reconciled manually in the current MVP. This is a Next.js and PostgreSQL application; a Supabase service is not required for the documented runtime.
+Quick provider matching and full event procurement.
 
-Other product, source not publicly linked
+## Capabilities
+
+- Service requests, supplier profiles and quote comparison.
+- Bookings, contracts and event execution workflows.
+- Manual payment submission and administrative reconciliation.
+- PostgreSQL sessions, row-level authorization and persistent uploads.
+
+## Workflow
+
+1. A guest requests a provider or a buyer defines an event and service requirements.
+2. Suppliers submit quotes; the buyer compares and accepts an offer.
+3. Database transactions coordinate booking, contract and commercial state.
+4. Authorized users share files and track execution; administrators reconcile submitted payment records.
+
+## Architecture
+
+Next.js → PostgreSQL → transactional workflows + file storage
+
+- Next.js: Public marketplace and buyer, supplier and admin workflows.
+- Database adapter: Authenticated requests and domain transactions.
+- PostgreSQL: Sessions, row-level authorization, functions and lifecycle state.
+- File adapter: Public supplier assets and access-controlled event documents.
+
+## Current scope
+
+Payments are submitted and reconciled manually in the current MVP. This is a Next.js and PostgreSQL application; a Supabase service is not required for the documented runtime.
+
+No confirmed public repository is linked.
 
 
 ---
 
-## Plate Restaurant OS
+# Plate Restaurant OS
+
+By / portfolio contribution: Savi Saluwadana
+Canonical page: https://savisaluwadana.github.io/products/restaurantos/
+Reviewed: 2026-10-04
 
 A restaurant-management product bringing point of sale, table service, direct online ordering, kitchen workflows, menus and inventory into one operational workspace.
 
-Repository: No confirmed public source link
+## Users and purpose
 
-Architecture: Next.js → authenticated API routes → MongoDB
+Restaurant staff, kitchen teams, managers and direct-order customers.
 
-Current boundary: The product is under development. POS, kitchen and online ordering share a Next.js application and MongoDB data layer; external integrations require deployment-specific configuration.
+Restaurant point of sale and coordinated order operations.
 
-Other product, source not publicly linked
+## Capabilities
+
+- POS, table management and menu administration.
+- Direct online ordering and kitchen display workflows.
+- Inventory and operational analytics.
+
+## Workflow
+
+1. A customer or staff member creates an order.
+2. Authenticated Next.js routes validate the request and persist the order.
+3. Kitchen and staff interfaces coordinate preparation and service.
+4. Managers maintain menus and inventory and inspect order reports.
+
+## Architecture
+
+Next.js → authenticated API routes → MongoDB
+
+- Next.js interfaces: Ordering, POS, kitchen, menu and manager surfaces.
+- Authenticated routes: Restaurant and order domain requests.
+- MongoDB + Mongoose: Restaurant, menu, order and inventory records.
+
+## Current scope
+
+The product is under development. POS, kitchen and online ordering share a Next.js application and MongoDB data layer; external integrations require deployment-specific configuration.
+
+No confirmed public repository is linked.
 
 
 ---
 
-## Pain Intelligence Lab
+# Pain Intelligence Lab
+
+By / portfolio contribution: Savi Saluwadana
+Canonical page: https://savisaluwadana.github.io/products/pain-intelligence/
+Reviewed: 2026-11-12
 
 An early community research project for exploring recurring needs using source-linked evidence. The current repository provides a local Next.js and Rust web app and a separate desktop app.
 
-Repository: https://github.com/savisaluwadana/Pain-Point-Analyzer/blob/main/README.md
+## Users and purpose
 
-Architecture: Next.js dashboard → Rust API → PostgreSQL; separate desktop app
+Builders, product teams and market researchers.
 
-Current boundary: The repository currently describes an early community alpha for local use. The web app and desktop app have different capabilities; source content retains third-party data-use restrictions.
+Local research software for exploring repeated needs and evidence-backed project ideas.
 
-Local setup: Configure .env from example; docker compose up --build -d --wait
+## Capabilities
 
-Licence: MIT
+- Source-linked research observations and evidence review.
+- Local Next.js web dashboard and Rust API using PostgreSQL.
+- Separate native desktop application with different capabilities.
+- Documented research quality and external data-use constraints.
 
-Decision: The repository offers a local Next.js/Rust/PostgreSQL web stack and a separate desktop edition.
+## Workflow
+
+1. Choose and configure the self-hosted web or native desktop edition.
+2. The web dashboard sends research requests to the Rust API.
+3. The API manages research records and evidence in PostgreSQL.
+4. Review linked evidence, limits and validation before drawing conclusions.
+
+## Architecture
+
+Next.js dashboard → Rust API → PostgreSQL; separate desktop app
+
+- Next.js dashboard: Local research workspace and evidence review.
+- Rust API: Research endpoints and evidence operations.
+- PostgreSQL: Web edition research data and job state.
+- Desktop edition: Separate native application; see its README for supported capabilities.
+
+## Current scope
+
+The repository currently describes an early community alpha for local use. The web app and desktop app have different capabilities; source content retains third-party data-use restrictions.
+
+## Run locally
+
+Configure .env from example; docker compose up --build -d --wait
+
+## Design decision and trade-off
+
+The repository offers a local Next.js/Rust/PostgreSQL web stack and a separate desktop edition.
 
 Trade-off: Local research keeps the data close to the user but two editions have distinct setup and capabilities.
 
-Unfinished: Early community alpha: README lists connector, import and third-party data limitations.
+## Unfinished
+
+Early community alpha: README lists connector, import and third-party data limitations.
+
+Licence: MIT
+
+Source: https://github.com/savisaluwadana/Pain-Point-Analyzer/blob/main/README.md
 
 
 ---
 
-## Ad Performance Analysis Agent
+# Ad Performance Analysis Agent
+
+By / portfolio contribution: Savi Saluwadana
+Canonical page: https://savisaluwadana.github.io/products/ad-performance-agent/
+Reviewed: 2026-10-04
 
 A campaign-performance analysis prototype that parses ad-data CSVs, compares weekly metrics, highlights risks and wins, and uses Gemini to help produce actionable summaries.
 
-Repository: No confirmed public source link
+## Users and purpose
 
-Architecture: React / Vite → Express → CSV analysis + Gemini → email
+Marketing operators and teams reviewing campaign performance.
 
-Current boundary: Google Ads and Supermetrics connection endpoints are currently mocks. Scheduled demonstration runs use generated sample CSVs and in-memory configuration, rather than a durable live account-ingestion pipeline.
+An advertising analytics and reporting prototype.
 
-Other product, source not publicly linked
+## Capabilities
+
+- CSV parsing of campaign dates, spend, clicks, impressions and conversions.
+- Week-over-week metrics and threshold-based risk/win flags.
+- Gemini-assisted summaries and email reporting paths.
+
+## Workflow
+
+1. An operator supplies campaign data as CSV.
+2. The analysis module normalizes rows and compares current and previous periods.
+3. Threshold logic identifies risks and wins; Gemini helps summarize next steps.
+4. The reporting interface displays results and the email path can send a summary when configured.
+
+## Architecture
+
+React / Vite → Express → CSV analysis + Gemini → email
+
+- React interface: Campaign-data input and analysis views.
+- Express API: Prototype configuration, scheduling and reporting endpoints.
+- Analysis module: CSV normalization, weekly comparison and threshold flags.
+- Gemini + Resend: Configured AI summarization and email-report delivery.
+
+## Current scope
+
+Google Ads and Supermetrics connection endpoints are currently mocks. Scheduled demonstration runs use generated sample CSVs and in-memory configuration, rather than a durable live account-ingestion pipeline.
+
+No confirmed public repository is linked.
 
 
 ---
 
-## MediCare
+# MediCare
+
+By / portfolio contribution: Savi Saluwadana
+Canonical page: https://savisaluwadana.github.io/products/medicare/
+Reviewed: 2026-10-04
 
 A patient and clinic-management system covering patient administration, appointments, clinical records, billing, staff permissions and an embeddable scheduling service.
 
-Repository: No confirmed public source link
+## Users and purpose
 
-Architecture: Next.js → Go API + scheduling service → PostgreSQL
+Clinic staff, doctors, billing operators, administrators and patients.
 
-Current boundary: The main clinic API and embeddable scheduling API use separate service boundaries. Server-enforced roles separate clinical, billing and administrative access.
+Patient administration, appointments, clinical records and billing.
 
-Other product, source not publicly linked
+## Capabilities
+
+- Patient profiles and conflict-aware appointment scheduling.
+- Clinical records with SOAP notes, vitals and prescriptions.
+- Billing records, payment tracking and operational dashboards.
+- Staff management and a separate embeddable scheduling API.
+
+## Workflow
+
+1. Clinic staff register a patient or arrange an appointment.
+2. The Go API validates identity, role permissions and domain requests.
+3. PostgreSQL stores patient, appointment, clinical and billing state.
+4. A separate scheduling service supports website embeds within its intended scheduling boundary.
+
+## Architecture
+
+Next.js → Go API + scheduling service → PostgreSQL
+
+- Next.js: Patient, appointment, clinical, billing and admin interfaces.
+- Go domain API: JWT sessions, role checks and clinic workflows.
+- Scheduling API: Separate service boundary for embeddable appointments.
+- PostgreSQL: Patient and operational records persisted by the backend.
+
+## Current scope
+
+The main clinic API and embeddable scheduling API use separate service boundaries. Server-enforced roles separate clinical, billing and administrative access.
+
+No confirmed public repository is linked.

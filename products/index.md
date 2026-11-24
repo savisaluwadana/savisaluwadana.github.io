@@ -4,7 +4,7 @@ Browse the product work by domain. Every product has a permanent overview with i
 
 By: Savi Saluwadana
 Canonical page: https://savisaluwadana.github.io/products/
-Reviewed: 2026-10-04
+Reviewed: 2026-11-12
 
 ## Marketplaces, commerce and service operations
 
@@ -46,8 +46,8 @@ Evidence-led research, controlled automation, developer publishing and analytics
 | Product | Purpose and architecture |
 | --- | --- |
 | [DevRelOS](https://savisaluwadana.github.io/products/devrelos/) | A self-hosted beta for discovery, engagement and outcome measurement. Next.js → Go API → PostgreSQL → Workers → MCP |
-| [RapidReach](https://savisaluwadana.github.io/products/rapidreach/) | Developer publishing and tool discovery with a small CMS. Next.js 16 → MongoDB → Vercel Blob |
-| [Pain Intelligence Lab](https://savisaluwadana.github.io/products/pain-intelligence/) | Cross-source pain research and evidence-backed opportunity validation. React / Vite + MCP host → Express API → MongoDB |
+| [RapidReach](https://savisaluwadana.github.io/products/rapidreach/) | Developer publishing and tool discovery with a small CMS. Next.js → MongoDB → object storage |
+| [Pain Intelligence Lab](https://savisaluwadana.github.io/products/pain-intelligence/) | Local research software for exploring repeated needs and evidence-backed project ideas. Next.js dashboard → Rust API → PostgreSQL; separate desktop app |
 | [Ad Performance Analysis Agent](https://savisaluwadana.github.io/products/ad-performance-agent/) | An advertising analytics and reporting prototype. React / Vite → Express → CSV analysis + Gemini → email |
 
 ## Read each product in context

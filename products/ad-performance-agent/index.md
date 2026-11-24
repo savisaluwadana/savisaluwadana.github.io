@@ -38,4 +38,4 @@ React / Vite → Express → CSV analysis + Gemini → email
 
 Google Ads and Supermetrics connection endpoints are currently mocks. Scheduled demonstration runs use generated sample CSVs and in-memory configuration, rather than a durable live account-ingestion pipeline.
 
-Repository is private; this is a public product summary.
+No confirmed public repository is linked.

@@ -39,4 +39,4 @@ Next.js → PostgreSQL → transactional workflows + file storage
 
 Payments are submitted and reconciled manually in the current MVP. This is a Next.js and PostgreSQL application; a Supabase service is not required for the documented runtime.
 
-Repository is private; this is a public product summary.
+No confirmed public repository is linked.

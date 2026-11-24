@@ -39,4 +39,4 @@ Next.js → MongoDB / Mongoose → double-entry ledger
 
 The current application is designed for one company and one administrator identity per database. It is not a tenant-isolated accounting SaaS backend.
 
-Repository is private; this is a public product summary.
+No confirmed public repository is linked.
