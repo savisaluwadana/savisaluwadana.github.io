@@ -6,6 +6,13 @@ By: Savi Saluwadana
 Canonical page: https://savisaluwadana.github.io/products/
 Reviewed: 2026-11-12
 
+## Featured development projects
+
+Two active development projects have dedicated architecture and scope summaries. They are separate from the documented product directory below.
+
+- [Saelior](https://savisaluwadana.github.io/projects/saelior/) — agentic business operating platform in development.
+- [EventMesh](https://savisaluwadana.github.io/projects/eventmesh/) — event discovery and matching software in development.
+
 ## Real estate & property
 
 Property discovery, rentals and property operations.

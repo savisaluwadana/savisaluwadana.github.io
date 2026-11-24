@@ -23,7 +23,7 @@ Shared neutral theme tokens are in `base-styles.css`; the editorial homepage add
 
 ## Discovery
 
-Each HTML page includes its own canonical URL and metadata, structured identity, and product/breadcrumb data where appropriate. The sitemap covers 28 canonical pages: the homepage, contact, five directory/profile/reference pages and 15 products. The checker verifies that HTML links connect every page to the homepage. The [Atom feed](https://savisaluwadana.github.io/feed.xml) publishes 26 reference, article and project summaries. Markdown, JSON, `llms.txt` and `llms-full.txt` offer additional retrieval formats.
+Each HTML page includes its own canonical URL and metadata, structured identity, and product/breadcrumb data where appropriate. The sitemap covers 30 canonical pages: the homepage, contact, seven directory/profile/reference pages and 15 products. The checker verifies that HTML links connect every page to the homepage. The [Atom feed](https://savisaluwadana.github.io/feed.xml) publishes 28 reference, article and project summaries. Markdown, JSON, `llms.txt` and `llms-full.txt` offer additional retrieval formats.
 
 Read [the discovery and maintenance guide](docs/DISCOVERY.md) for Search Console submission, verified scope notes and how to keep generated content consistent. Rankings, indexing speed and AI citations are controlled by the search/retrieval providers and cannot be guaranteed by site changes.
 
@@ -44,3 +44,5 @@ External writing links are in the homepage writing section, the insights HTML/Ma
 See [the SEO operating guide](docs/SEO.md). The SEO GitHub Actions workflow checks committed and regenerated discovery files and creates a metadata audit report. Search Console, Bing and optional analytics require separate account setup.
 
 The [SEO Intelligence Engine guide](docs/SEO.md#seo-intelligence-engine) describes Lighthouse, browser accessibility, live URL validation, local private Search Console/Bing reports, and manual AI visibility benchmarking. No private search data is uploaded to GitHub.
+
+Featured development projects [Saelior](https://savisaluwadana.github.io/projects/saelior/) and [EventMesh](https://savisaluwadana.github.io/projects/eventmesh/) have separate public architecture and scope summaries. Their private source repositories are not listed as public.

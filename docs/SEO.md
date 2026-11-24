@@ -71,3 +71,6 @@ Run `node scripts/render-private-dashboard.mjs` and then `open ~/.portfolio-seo/
 
 ### Personal entity accuracy
 The About page is the canonical owner-authored professional biography. Keep employment dates, degree completion and credential status accurate; distinguish projects, contributions and research interests from verified outcomes. Update `data/discovery.json` and `data/profile.json`, regenerate the site, and check branded AI answers for stale employer claims or invented details. Avoid duplicate biography pages, keyword stuffing and unsupported credential schema.
+
+### Featured project discovery
+Saelior and EventMesh have distinct canonical portfolio URLs with owner-authored scope and architecture summaries. Both are in development; keep the public description accurate and do not publish private source references, deployment claims or unsupported traction. Links from the homepage, biography and directory, plus sitemap, feed and AI-readable copies, are regenerated and tested together.

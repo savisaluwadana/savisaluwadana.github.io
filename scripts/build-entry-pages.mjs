@@ -66,13 +66,13 @@ export async function buildEntryPages({ root, base, updated, schemaModified, pro
     heading: 'Projects by industry.', label: 'Directory / Products & architecture',
     description: `Explore ${products.length} software project overviews across ${content.groups.length} industry categories, including architecture decisions, source references and contribution boundaries.`,
     intro: 'Explore projects by the industry and business problem they serve. Each overview documents its users, workflow, architecture, source references and current scope.',
-    sections: content.groups.map(group => ({
+    sections: [{"id":"featured-development","title":"Featured development projects","blocks":[{"type":"p","text":"Two active development projects have dedicated architecture and scope summaries. They are separate from the documented product directory below."},{"type":"list","items":["[Saelior](/projects/saelior/) — agentic business operating platform in development.","[EventMesh](/projects/eventmesh/) — event discovery and matching software in development."]}]}, ...content.groups.map(group => ({
       id: group.id, title: group.title,
       blocks: [{ type: 'p', text: group.description }, { type: 'table', headers: ['Product', 'Purpose and architecture'], rows: group.products.map(id => {
         const p = productById.get(id);
         return [`[${p.name}](/products/${p.id}/)`, `${p.scope} ${p.architecture}`];
       }) }]
-    })).concat({ id: 'scope', title: 'Read each product in context', blocks: [
+    }))].concat({ id: 'scope', title: 'Read each product in context', blocks: [
       { type: 'p', text: 'This directory covers products I’ve built and worked on, including development projects, prototypes and frontend contributions. A listed product is not a claim that every capability is commercially deployed. Each product page states the documented boundary.' },
       { type: 'p', text: 'Read the [architecture reference](/engineering/) to compare agent permissions, desktop data, tenant isolation and transaction workflows. Visit [About Savi](/about/) for engineering focus and public profile links.' }
     ] })
@@ -132,8 +132,9 @@ ${isSource ? '  <link rel="alternate" type="application/json" href="/public-work
   <main class="product-page" id="main"><div class="shell">
     <nav class="product-breadcrumb" aria-label="Breadcrumb">${crumbs.map((crumb, i) => `${i ? '<span aria-hidden="true">/</span>' : ''}${i === crumbs.length - 1 ? `<span aria-current="page">${esc(crumb.name)}</span>` : `<a href="${esc(new URL(crumb.item).pathname)}">${esc(crumb.name)}</a>`}`).join('')}</nav>
     <div class="product-header"><p class="section-index">${esc(page.label)}</p><h1>${esc(page.heading)}</h1><p>${esc(page.intro)}</p><p class="product-source">${isProfile ? 'Software &amp; product engineer · Sri Lanka' : 'By Savi Saluwadana'} · Reviewed <time datetime="${reviewed}">${new Date(reviewed + 'T00:00:00Z').toLocaleDateString('en-GB', {day:'numeric',month:'long',year:'numeric',timeZone:'UTC'})}</time></p><div class="project-links"><a class="text-link" href="/contact.html">Contact Savi</a><a class="text-link" href="${page.path}index.md">Markdown reference</a></div></div>
+    ${isProfile ? "<div class=\"profile-quicklinks\" aria-label=\"Explore professional interests\"><a href=\"#engineering-focus\">Engineering interests</a><a href=\"#industries\">Industries</a><a href=\"#agentic-systems\">Agentic AI</a><a href=\"#product-work\">Selected work</a></div>" : ''}
     <nav class="product-nav" aria-label="Page sections">${page.sections.map(section => `<a href="#${esc(section.id)}">${esc(section.title)}</a>`).join('')}</nav>
-    <div class="product-content">${page.sections.map(section => `<section class="product-section" id="${esc(section.id)}" aria-labelledby="${esc(section.id)}-title"><h2 id="${esc(section.id)}-title">${esc(section.title)}</h2>${section.blocks.map(blockHtml).join('')}</section>`).join('\n')}</div>
+    <div class="product-content${isProfile ? ' profile-content' : ''}">${page.sections.map(section => `<section class="product-section" id="${esc(section.id)}" aria-labelledby="${esc(section.id)}-title"><h2 id="${esc(section.id)}-title">${esc(section.title)}</h2>${section.blocks.map(block => isProfile && ['engineering-focus', 'industries'].includes(section.id) && block.type === 'table' ? `<div class="profile-card-grid">${block.rows.map(([title, body]) => `<article class="profile-interest-card"><h3>${inline(title)}</h3><p>${inline(body)}</p></article>`).join('')}</div>` : blockHtml(block)).join('')}</section>`).join('\n')}</div>
   </div></main>${footer}<script src="/app.js" defer></script>
 </body></html>\n`);
   }

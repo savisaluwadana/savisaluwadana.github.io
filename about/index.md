@@ -46,14 +46,14 @@ I am interested in how software engineering can solve operational problems acros
 
 | Industry | Software opportunities and examples |
 | --- | --- |
-| Enterprise software and automation | Business operating systems, workflow automation, integrations and agent-assisted operations. Example: [Saelior](https://saelior.com/). |
+| Enterprise software and automation | Business operating systems, workflow automation, integrations and agent-assisted operations. Example: [Saelior](https://savisaluwadana.github.io/projects/saelior/). |
 | Real estate and property technology | Property discovery, tenant management, maintenance, payments and operational workflows. Examples: [Avara](https://savisaluwadana.github.io/products/avara/) and [Property Management OS](https://savisaluwadana.github.io/products/property-os/). |
 | Retail, commerce and food technology | Inventory, ordering, supplier coordination, recurring deliveries, POS and commerce agents. Examples: [FreshPick](https://savisaluwadana.github.io/products/freshpick/) and [NexusPOS](https://savisaluwadana.github.io/products/nexus-pos/). |
 | Healthcare and accessibility | Scheduling, secure patient-facing experiences, care coordination and accessible communication. Examples: [TimelyHelp](https://savisaluwadana.github.io/products/timelyhelp/) and [MediCare](https://savisaluwadana.github.io/products/medicare/). |
 | Home services and marketplaces | Service discovery, booking, worker coordination, trust and marketplace operations. Example: [Blu](https://savisaluwadana.github.io/products/blu/). |
 | Financial technology | Transaction integrity, invoicing, reconciliation, financial workflows and dependable systems of record. Example: [Acme Accounting](https://savisaluwadana.github.io/products/acme-accounting/). |
 | Human resources and education | Employee operations, attendance, institutional workflows and learning tools. Examples: [Advance HRIS](https://savisaluwadana.github.io/products/advance-hris/) and [Academix](https://savisaluwadana.github.io/products/academix/). |
-| Events and intelligent matching | Event discovery, supplier coordination, recommendations and real-time matching. Examples: [EventOS](https://savisaluwadana.github.io/products/eventos/) and EventMesh, described on the [homepage](https://savisaluwadana.github.io/#selected). |
+| Events and intelligent matching | Event discovery, supplier coordination, recommendations and real-time matching. Examples: [EventOS](https://savisaluwadana.github.io/products/eventos/) and [EventMesh](https://savisaluwadana.github.io/projects/eventmesh/). |
 | Developer tools and AI infrastructure | Developer productivity, platform tooling, agent runtimes, evidence-backed research and software delivery. Example: [Pain Intelligence Lab](https://savisaluwadana.github.io/products/pain-intelligence/). |
 | Logistics and supply chains | Shipment visibility, supplier coordination, inventory planning and operational optimization; an area of future exploration. |
 
@@ -85,8 +85,8 @@ The [product directory](https://savisaluwadana.github.io/products/) includes 15 
 
 | Selected project | Engineering focus and scope |
 | --- | --- |
-| [Saelior](https://saelior.com/) | Agentic business platform exploring team coordination, workflows and human review; active product project. |
-| EventMesh | Event discovery and matching system exploring relevant connections, event data and real-time delivery; in development, described on the [homepage](https://savisaluwadana.github.io/#selected). |
+| [Saelior](https://savisaluwadana.github.io/projects/saelior/) | Agentic business platform exploring team coordination, workflows and human review; in development. |
+| [EventMesh](https://savisaluwadana.github.io/projects/eventmesh/) | Event discovery and matching, with a Go-backed architecture and reliable booking workflows; in development. |
 | [Property Management OS](https://savisaluwadana.github.io/products/property-os/) | Go backend, PostgreSQL, authenticated MCP interfaces and outbox processing. |
 | [FreshPick](https://savisaluwadana.github.io/products/freshpick/) | Grocery commerce, recurring orders and business ordering. |
 | [Blu](https://savisaluwadana.github.io/products/blu/) | Home-services marketplace and customer, provider and worker workflows. |

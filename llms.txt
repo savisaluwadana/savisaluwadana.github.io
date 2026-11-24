@@ -30,6 +30,11 @@ This is a public portfolio with product-level architecture summaries. It does no
 - [Public repositories and design notes](https://savisaluwadana.github.io/open-source/): Inspect public software repositories, licensing status, local setup, architecture, design trade-offs and unfinished work.
 - [Public repositories and design notes in Markdown](https://savisaluwadana.github.io/open-source/index.md): Text equivalent of the same reference.
 
+- [Saelior](https://savisaluwadana.github.io/projects/saelior/): Explore Saelior, an agentic business platform in development, with department workflows, tool access and human oversight.
+- [Saelior in Markdown](https://savisaluwadana.github.io/projects/saelior/index.md): Text equivalent of the same reference.
+- [EventMesh](https://savisaluwadana.github.io/projects/eventmesh/): Explore EventMesh, an event discovery and matching project with a Go backend, web interface and transaction-aware booking architecture.
+- [EventMesh in Markdown](https://savisaluwadana.github.io/projects/eventmesh/index.md): Text equivalent of the same reference.
+
 ## Product overview and architecture
 
 - [Avara Real Estate](https://savisaluwadana.github.io/products/avara/): Property discovery, transactions and host operations in Sri Lanka.

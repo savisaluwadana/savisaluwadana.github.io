@@ -105,6 +105,14 @@ for (const route of entryPaths) {
   assert.ok(md.includes(`${origin}${route}`), `${route}: Markdown canonical missing`);
   assert.ok((await readFile(path.join(root, 'llms.txt'), 'utf8')).includes(`${origin}${route}`), `${route}: missing from agent discovery index`);
 }
+for (const route of ['/projects/saelior/', '/projects/eventmesh/']) {
+  assert.ok(featuredGrid.includes('href="' + route + '"'), 'Missing featured project profile: ' + route);
+  assert.ok(directory.includes('href="' + route + '"'), 'Missing project directory link: ' + route);
+  assert.ok(cache.get('about/index.html').includes('href="' + route + '"'), 'Missing biography project link: ' + route);
+  const project = cache.get(route.slice(1) + 'index.html');
+  assert.ok(project.includes('id="status"') && project.includes('id="architecture"'), 'Project profile requires scope and architecture: ' + route);
+}
+assert.ok(cache.get('about/index.html').includes('profile-card-grid'), 'Biography requires responsive interest cards');
 const aboutGraph = JSON.parse(cache.get('about/index.html').match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'];
 assert.equal(aboutGraph.find(n => n['@type'] === 'ProfilePage').mainEntity['@id'], person['@id'], 'About page must identify the canonical Person');
 const engineeringGraph = JSON.parse(cache.get('engineering/index.html').match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'];

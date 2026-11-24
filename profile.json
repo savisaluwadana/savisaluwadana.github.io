@@ -4,7 +4,7 @@
   "@id": "https://savisaluwadana.github.io/#profile",
   "url": "https://savisaluwadana.github.io/",
   "name": "Savi Saluwadana | Software Engineer in Sri Lanka",
-  "description": "Software engineer in Sri Lanka exploring distributed systems, software architecture, cloud-native platforms and applied AI. Explore projects and notes.",
+  "description": "Software engineer in Sri Lanka exploring system architecture, backend and mobile development, distributed systems and agentic AI through software projects.",
   "dateModified": "2026-11-24T00:00:00+05:30",
   "mainEntity": {
     "@type": "Person",
@@ -88,6 +88,16 @@
       "@type": "WebPage",
       "name": "Public repositories and design notes",
       "url": "https://savisaluwadana.github.io/open-source/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Saelior",
+      "url": "https://savisaluwadana.github.io/projects/saelior/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "EventMesh",
+      "url": "https://savisaluwadana.github.io/projects/eventmesh/"
     },
     {
       "@type": "WebPage",

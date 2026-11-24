@@ -66,7 +66,7 @@ const featured = [
 ].map(study => ({ ...study, product: products.find(p => p.id === study.id) }));
 
 const pageTitle = 'Savi Saluwadana | Software Engineer in Sri Lanka';
-const pageDescription = 'Software engineer in Sri Lanka exploring distributed systems, software architecture, cloud-native platforms and applied AI. Explore projects and notes.';
+const pageDescription = 'Software engineer in Sri Lanka exploring system architecture, backend and mobile development, distributed systems and agentic AI through software projects.';
 const homeUpdated = '2026-11-24';
 const selectedList = {
   '@type': 'ItemList', '@id': base + '/#work', name: 'Selected work',

@@ -67,6 +67,8 @@ Email: savisaluwadana@gmail.com
 - [Architecture reference](https://savisaluwadana.github.io/engineering/): Inspect project architecture decisions on APIs, data authority, local-first workflows, tenancy and transactions in Savi Saluwadana's software.
 - [Agentic systems architecture](https://savisaluwadana.github.io/engineering/agentic-systems/): Inspect agent tool boundaries, application permissions and local research workflows documented in Savi Saluwadana's projects.
 - [Public repositories and design notes](https://savisaluwadana.github.io/open-source/): Inspect public software repositories, licensing status, local setup, architecture, design trade-offs and unfinished work.
+- [Saelior](https://savisaluwadana.github.io/projects/saelior/): Explore Saelior, an agentic business platform in development, with department workflows, tool access and human oversight.
+- [EventMesh](https://savisaluwadana.github.io/projects/eventmesh/): Explore EventMesh, an event discovery and matching project with a Go backend, web interface and transaction-aware booking architecture.
 
 
 # Projects by industry.
@@ -76,6 +78,13 @@ Explore projects by the industry and business problem they serve. Each overview 
 By: Savi Saluwadana
 Canonical page: https://savisaluwadana.github.io/products/
 Reviewed: 2026-11-12
+
+## Featured development projects
+
+Two active development projects have dedicated architecture and scope summaries. They are separate from the documented product directory below.
+
+- [Saelior](https://savisaluwadana.github.io/projects/saelior/) — agentic business operating platform in development.
+- [EventMesh](https://savisaluwadana.github.io/projects/eventmesh/) — event discovery and matching software in development.
 
 ## Real estate & property
 
@@ -218,14 +227,14 @@ I am interested in how software engineering can solve operational problems acros
 
 | Industry | Software opportunities and examples |
 | --- | --- |
-| Enterprise software and automation | Business operating systems, workflow automation, integrations and agent-assisted operations. Example: [Saelior](https://saelior.com/). |
+| Enterprise software and automation | Business operating systems, workflow automation, integrations and agent-assisted operations. Example: [Saelior](https://savisaluwadana.github.io/projects/saelior/). |
 | Real estate and property technology | Property discovery, tenant management, maintenance, payments and operational workflows. Examples: [Avara](https://savisaluwadana.github.io/products/avara/) and [Property Management OS](https://savisaluwadana.github.io/products/property-os/). |
 | Retail, commerce and food technology | Inventory, ordering, supplier coordination, recurring deliveries, POS and commerce agents. Examples: [FreshPick](https://savisaluwadana.github.io/products/freshpick/) and [NexusPOS](https://savisaluwadana.github.io/products/nexus-pos/). |
 | Healthcare and accessibility | Scheduling, secure patient-facing experiences, care coordination and accessible communication. Examples: [TimelyHelp](https://savisaluwadana.github.io/products/timelyhelp/) and [MediCare](https://savisaluwadana.github.io/products/medicare/). |
 | Home services and marketplaces | Service discovery, booking, worker coordination, trust and marketplace operations. Example: [Blu](https://savisaluwadana.github.io/products/blu/). |
 | Financial technology | Transaction integrity, invoicing, reconciliation, financial workflows and dependable systems of record. Example: [Acme Accounting](https://savisaluwadana.github.io/products/acme-accounting/). |
 | Human resources and education | Employee operations, attendance, institutional workflows and learning tools. Examples: [Advance HRIS](https://savisaluwadana.github.io/products/advance-hris/) and [Academix](https://savisaluwadana.github.io/products/academix/). |
-| Events and intelligent matching | Event discovery, supplier coordination, recommendations and real-time matching. Examples: [EventOS](https://savisaluwadana.github.io/products/eventos/) and EventMesh, described on the [homepage](https://savisaluwadana.github.io/#selected). |
+| Events and intelligent matching | Event discovery, supplier coordination, recommendations and real-time matching. Examples: [EventOS](https://savisaluwadana.github.io/products/eventos/) and [EventMesh](https://savisaluwadana.github.io/projects/eventmesh/). |
 | Developer tools and AI infrastructure | Developer productivity, platform tooling, agent runtimes, evidence-backed research and software delivery. Example: [Pain Intelligence Lab](https://savisaluwadana.github.io/products/pain-intelligence/). |
 | Logistics and supply chains | Shipment visibility, supplier coordination, inventory planning and operational optimization; an area of future exploration. |
 
@@ -257,8 +266,8 @@ The [product directory](https://savisaluwadana.github.io/products/) includes 15 
 
 | Selected project | Engineering focus and scope |
 | --- | --- |
-| [Saelior](https://saelior.com/) | Agentic business platform exploring team coordination, workflows and human review; active product project. |
-| EventMesh | Event discovery and matching system exploring relevant connections, event data and real-time delivery; in development, described on the [homepage](https://savisaluwadana.github.io/#selected). |
+| [Saelior](https://savisaluwadana.github.io/projects/saelior/) | Agentic business platform exploring team coordination, workflows and human review; in development. |
+| [EventMesh](https://savisaluwadana.github.io/projects/eventmesh/) | Event discovery and matching, with a Go-backed architecture and reliable booking workflows; in development. |
 | [Property Management OS](https://savisaluwadana.github.io/products/property-os/) | Go backend, PostgreSQL, authenticated MCP interfaces and outbox processing. |
 | [FreshPick](https://savisaluwadana.github.io/products/freshpick/) | Grocery commerce, recurring orders and business ordering. |
 | [Blu](https://savisaluwadana.github.io/products/blu/) | Home-services marketplace and customer, provider and worker workflows. |
@@ -495,6 +504,89 @@ These references help identify the service and rule affected by a change. Produc
 ## Discuss code or documentation work
 
 For a specific change, start with the repository's README and issue tracker. You can also [contact me](https://savisaluwadana.github.io/contact.html) with the relevant repository and a reproducible problem.
+
+
+---
+
+# Saelior
+
+Saelior is an agentic business operating platform in development. It explores how departments can coordinate AI-assisted tasks, workflows and human decisions within a shared business context.
+
+By: Savi Saluwadana
+Canonical page: https://savisaluwadana.github.io/projects/saelior/
+Reviewed: 2026-11-24
+
+## The problem
+
+Business work often crosses departmental boundaries. Information, approvals and operational tools are fragmented across systems. Saelior explores how agents and structured workflows can coordinate work without removing human accountability.
+
+## Architecture direction
+
+| Layer | Responsibility |
+| --- | --- |
+| Department context | Organize work around business functions and their responsibilities. |
+| Agents and tools | Connect task-oriented agents to permitted capabilities and relevant business context. |
+| Workflow coordination | Represent work, dependencies and handoffs between departments. |
+| Human review | Keep consequential decisions subject to explicit human oversight. |
+
+The intended architecture separates orchestration and business authority. This is a product direction, not a claim that every runtime component is implemented or deployed.
+
+## Engineering questions
+
+- How should workflows preserve state, support retries and avoid duplicate side effects?
+- How should tool permissions be enforced independently of model-generated requests?
+- How can teams inspect execution, human decisions and outcomes?
+- How can the same platform support different departmental workflows without hard-coding business rules?
+
+Read [agentic systems architecture](https://savisaluwadana.github.io/engineering/agentic-systems/) and [durable agentic workflows](https://savisaluwadana.github.io/insights/durable-agentic-workflows/) for related engineering principles.
+
+## Current status and evidence
+
+The platform is in development. The public website presents the product vision and illustrative workflows; these do not establish production availability, customer adoption or commercial outcomes.
+
+Visit the [official Saelior website](https://saelior.com/) for the public product overview. Source code is not listed as public in this portfolio.
+
+
+---
+
+# EventMesh
+
+EventMesh is event experience software in development for conferences, meetups and exhibitions. It explores how attendees can find relevant people, topics and sessions, arrange conversations and record useful outcomes.
+
+By: Savi Saluwadana
+Canonical page: https://savisaluwadana.github.io/projects/eventmesh/
+Reviewed: 2026-11-24
+
+## The problem
+
+Large events create a discovery problem: attendees have limited time and incomplete information about sessions, projects and people. EventMesh explores a structured way to connect attendee intent to relevant event opportunities.
+
+## System architecture
+
+| Component | Role |
+| --- | --- |
+| Web experience | A Next.js interface for attendee and event workflows. |
+| Go backend | Application APIs, business rules, event-scoped access and booking operations. |
+| PostgreSQL | Authoritative event, membership and reservation data. |
+| Gateway | A shared origin for frontend and backend traffic. |
+
+The project uses a Go-backed architecture with a separate web client and a relational system of record. The architecture is designed around reliable application rules rather than requiring a language model for every match.
+
+## Engineering questions
+
+- Match attendees to relevant event opportunities using explicit criteria and deterministic ranking.
+- Protect booking capacity and prevent duplicate reservations under concurrent requests.
+- Keep private attendee data and event-scoped permissions separate.
+- Explore real-time state delivery and recoverable event updates.
+- Design mobile-friendly event interactions for short, time-constrained journeys.
+
+See [Go modular monolith architecture](https://savisaluwadana.github.io/insights/go-modular-monolith-saas/) and [PostgreSQL multi-tenancy](https://savisaluwadana.github.io/insights/postgres-multitenancy-boundaries/) for related engineering approaches.
+
+## Current status and evidence
+
+EventMesh is in development. The current project explores event questions, matching, bookings and outcome recaps. The full adaptive event journey is a future direction, not a completed release. No public production deployment, commercial adoption or benchmark is asserted here.
+
+Source code is not listed as public. Contact me through the [portfolio contact page](https://savisaluwadana.github.io/contact.html) to discuss the project or its engineering approach.
 
 
 ---

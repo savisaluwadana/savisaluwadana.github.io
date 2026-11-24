@@ -73,5 +73,15 @@
     "category": "identity",
     "prompt": "What are Savi Saluwadana's interests in mobile development, backend engineering and agentic AI?",
     "target": "/about/#engineering-focus"
+  },
+  {
+    "category": "project",
+    "prompt": "What is Saelior, and what is its current development status?",
+    "target": "/projects/saelior/"
+  },
+  {
+    "category": "project",
+    "prompt": "What is EventMesh and what is its architecture?",
+    "target": "/projects/eventmesh/"
   }
 ]

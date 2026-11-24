@@ -67,3 +67,5 @@ Email: savisaluwadana@gmail.com
 - [Architecture reference](https://savisaluwadana.github.io/engineering/): Inspect project architecture decisions on APIs, data authority, local-first workflows, tenancy and transactions in Savi Saluwadana's software.
 - [Agentic systems architecture](https://savisaluwadana.github.io/engineering/agentic-systems/): Inspect agent tool boundaries, application permissions and local research workflows documented in Savi Saluwadana's projects.
 - [Public repositories and design notes](https://savisaluwadana.github.io/open-source/): Inspect public software repositories, licensing status, local setup, architecture, design trade-offs and unfinished work.
+- [Saelior](https://savisaluwadana.github.io/projects/saelior/): Explore Saelior, an agentic business platform in development, with department workflows, tool access and human oversight.
+- [EventMesh](https://savisaluwadana.github.io/projects/eventmesh/): Explore EventMesh, an event discovery and matching project with a Go backend, web interface and transaction-aware booking architecture.
