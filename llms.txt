@@ -49,6 +49,12 @@ This is a public portfolio with product-level architecture summaries. It does no
 - [Ad Performance Analysis Agent](https://savisaluwadana.github.io/products/ad-performance-agent/): An advertising analytics and reporting prototype.
 - [MediCare](https://savisaluwadana.github.io/products/medicare/): Patient administration, appointments, clinical records and billing.
 
+## Writing and community profiles
+
+- [Medium](https://medium.com/@savisaluwadana): Long-form technical articles.
+- [daily.dev](https://daily.dev/savisaluwadana): Developer community and activity.
+- [DEV Community](https://dev.to/savi_saluwadana): Developer articles and discussions.
+
 ## Engineering insights
 
 - [Engineering insights](https://savisaluwadana.github.io/insights/): Published architecture notes and five proposed article topics.

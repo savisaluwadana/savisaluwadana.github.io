@@ -29,3 +29,11 @@ Read [the discovery and maintenance guide](docs/DISCOVERY.md) for Search Console
 ## Source-first positioning (November 2026)
 
 The homepage lists seven accessible repositories first, then nine other products. Public visibility is not an open-source licence: Avara's README says proprietary, Pain-Point-Analyzer is MIT, and other linked repositories have no identified licence. DevRelOS has no confirmed public source link. The platform section describes Docker, CI and deployment evidence only; it does not claim production platform experience. The insights page separates five proposed article topics from existing published notes.
+
+## Writing workflow
+
+Keep writing public and authentication-free. GitHub repository permissions protect publishing: use a branch and pull request, or GitHub's web editor. The writing hub is `insights/index.html` with a matching Markdown index at `insights/index.md`. Existing articles are paired static HTML and Markdown files under `insights/<slug>/`.
+
+For a new article: create the HTML/Markdown pair using an existing note as a template; register its metadata in `insightPages` in `scripts/build-discovery.mjs`, add the path to `insightPaths` in `scripts/check-site.mjs`, update the hub's links, then run the build and site checker before publishing. Drafts can stay in a local checkout or private repository; public branches are not private. Link to externally published articles rather than copying them automatically. Use canonical attribution when syndicating an original article to Medium or DEV; daily.dev is a community/activity profile.
+
+External writing links are in the homepage writing section, the insights HTML/Markdown index and the discovery generator. Update those together if profile URLs change.

@@ -10,6 +10,18 @@ Canonical: https://savisaluwadana.github.io/insights/
 - [Platform Engineering: Build a Paved Road Without Hiding the System](https://savisaluwadana.github.io/insights/platform-engineering-paved-road/): A platform engineering design principle: automate common delivery paths while keeping ownership, state, observability and escape hatches visible enough for engineers to debug and extend the platform.
 - [PostgreSQL Multi-Tenancy: Define Authorization Boundaries Before Schema Tricks](https://savisaluwadana.github.io/insights/postgres-multitenancy-boundaries/): A practical approach to PostgreSQL multi-tenancy: resolve tenant context early, scope every domain operation, enforce ownership consistently, and use database isolation as defense in depth rather than the only authorization layer.
 
+## Writing and community profiles
+
+- [Medium](https://medium.com/@savisaluwadana): Long-form technical articles.
+- [daily.dev](https://daily.dev/savisaluwadana): Developer community and activity.
+- [DEV Community](https://dev.to/savi_saluwadana): Developer articles and discussions.
+- [Site feed](https://savisaluwadana.github.io/feed.xml)
+
+## Selected articles on Medium
+
+- [Demystifying Spring Boot: A Practical Guide to Layered Architecture](https://medium.com/@savisaluwadana/demystifying-spring-boot-a-practical-guide-to-layered-architecture-15affdf915d6) (2026-02-01)
+- [A Bit of Cloud Native Development](https://medium.com/@savisaluwadana/a-bit-of-cloud-native-development-2150a606114c) (2025-10-21)
+
 ## Related references
 
 - [Software architecture reference](https://savisaluwadana.github.io/engineering/)

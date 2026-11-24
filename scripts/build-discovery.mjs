@@ -16,7 +16,7 @@ const insightPages = [
     "path": "/insights/",
     "name": "Engineering insights",
     "description": "Published architecture notes and five proposed article topics.",
-    "reviewed": "2026-11-12"
+    "reviewed": "2026-11-24"
   },
   {
     "path": "/insights/mcp-permission-boundaries/",
@@ -216,6 +216,7 @@ const featuredMarkdown = featured.map(({ product, question, answer }) => `- [${p
 let agentIndex = await readFile(path.join(root, 'llms.txt'), 'utf8');
 agentIndex = agentIndex.replace('## Profile and contact', `## Selected engineering work\n\n${featuredMarkdown}\n\n## Profile and contact`);
 agentIndex = agentIndex.replace('## Product overview and architecture', `## Profile and engineering references\n\n${references.map(p => `- [${p.name}](${base}${p.path}): ${p.description}\n- [${p.name} in Markdown](${base}${p.path}index.md): Text equivalent of the same reference.`).join('\n')}\n\n## Product overview and architecture`);
+agentIndex = agentIndex.replace('## Optional', "## Writing and community profiles\n\n- [Medium](https://medium.com/@savisaluwadana): Long-form technical articles.\n- [daily.dev](https://daily.dev/savisaluwadana): Developer community and activity.\n- [DEV Community](https://dev.to/savi_saluwadana): Developer articles and discussions.\n\n## Optional");
 agentIndex = agentIndex.replace('## Optional', `## Engineering insights\n\n${insightPages.map(p => `- [${p.name}](${base}${p.path}): ${p.description}`).join('\n')}\n\n## Optional`);
 agentIndex = agentIndex.replace('## Optional', `## Optional\n\n- [Engineering and product feed](${base}/feed.xml): Atom feed of the current reference pages and product overviews.\n- [Public source data](${base}/public-work.json): Verified public repository references and available license metadata.`);
 await write('llms.txt', agentIndex);
