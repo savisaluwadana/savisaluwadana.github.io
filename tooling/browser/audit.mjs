@@ -18,20 +18,14 @@ try {
       const response = await page.goto(base + route, {waitUntil:'domcontentloaded'});
       await page.locator('h1').first().waitFor();
       if(route==='/'){
-        const stack=page.locator('[data-stack-explorer]');
-        const layers=stack.locator('details');
-        if(await layers.count()!==3)throw new Error('Expected three architecture layers');
-        // Every summary must be reachable without overlapping another summary.
-        const summaries=await stack.locator('summary').evaluateAll(nodes=>nodes.map(n=>{const r=n.getBoundingClientRect();return {top:r.top,bottom:r.bottom,left:r.left,right:r.right,width:r.width,height:r.height}}));
-        if(summaries.some((r,i)=>r.width<44||r.height<44||(i>0&&r.top<summaries[i-1].bottom)||r.left<0||r.right>viewport.width+1))throw new Error('Stack layers overlap or extend beyond viewport');
-        for(let i=0;i<3;i++){
-          const layer=layers.nth(i),summary=layer.locator('summary');
-          await summary.click();
-          if(!await layer.evaluate(n=>n.open)||!await layer.locator('.stack-layer-detail').isVisible())throw new Error('Stack layer did not open');
-          await summary.focus();
-          await page.keyboard.press('Enter');
-          if(await layer.evaluate(n=>n.open))throw new Error('Keyboard did not close stack layer');
-        }
+        const stack=page.locator('svg.hero-topology');
+        if(await stack.count()!==1||!await stack.isVisible())throw new Error('Expected a single visible SVG architecture');
+        const geometry=await stack.evaluate(svg=>{
+          const bounds=svg.getBoundingClientRect(), layers=[...svg.querySelectorAll('[data-stack-layer]')];
+          return {bounds:{left:bounds.left,right:bounds.right}, rows:layers.map(g=>{const r=g.getBoundingClientRect();return {top:r.top,bottom:r.bottom,left:r.left,right:r.right}}), labels:[...svg.querySelectorAll('.hero-layer-title,.hero-layer-sub')].map(n=>{const r=n.getBoundingClientRect();return {left:r.left,right:r.right,top:r.top,bottom:r.bottom}})};
+        });
+        const {bounds,rows,labels}=geometry;
+        if(rows.length!==3||labels.length!==6||rows.some((r,i)=>i>0&&r.top<rows[i-1].bottom-1)||labels.some(r=>r.left<bounds.left||r.right>bounds.right)||bounds.left<0||bounds.right>viewport.width+1)throw new Error('SVG architecture layers overlap or labels are clipped');
       }
       const overflow = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 2);
       const scan = await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa']).analyze();

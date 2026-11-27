@@ -86,10 +86,12 @@ for (const file of pages.filter(p => p !== 'index.html')) {
   assert.ok(reachable.has(file), `${file}: not reachable from homepage links`);
 }
 const home = cache.get('index.html');
-const stack = home.match(/<div class="stack-explorer"[\s\S]*?<p class="stack-scope">[^<]*<\/p><\/div>/)?.[0];
-assert.ok(stack, 'Homepage requires a static interactive stack');
-assert.deepEqual([...stack.matchAll(/data-stack-layer="([^"]+)"/g)].map(m=>m[1]), ['experience','application','infrastructure'], 'All three layers must remain in the initial HTML');
-assert.equal([...stack.matchAll(/<summary>/g)].length,3,'Each layer needs a native disclosure');
+const stack = home.match(/<svg class="hero-topology"[\s\S]*?<\/svg>/)?.[0];
+assert.ok(stack, 'Homepage requires a single static SVG stack');
+assert.deepEqual([...stack.matchAll(/data-stack-layer="([^"]+)"/g)].map(m=>m[1]), ['experience','application','infrastructure'], 'All three layers must remain in the initial SVG');
+assert.equal([...stack.matchAll(/class="hero-layer-title"/g)].length,3,'Each layer requires a visible label');
+assert.ok(stack.includes('aria-labelledby="hero-diagram-title hero-diagram-desc"') && stack.includes('<desc id="hero-diagram-desc">'), 'SVG must have an accessible text equivalent');
+assert.ok(!home.includes('data-stack-explorer'), 'Obsolete disclosure stack must not return');
 assert.ok(home.includes('id="portfolio-overview"'), 'Missing answer-oriented portfolio summary');
 const featuredGrid = home.match(/<section class="section editorial-selected"[\s\S]*?<\/section>/)?.[0];
 assert.ok(featuredGrid, 'Missing selected project grid');
