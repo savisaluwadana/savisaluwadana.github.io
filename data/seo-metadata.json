@@ -94,5 +94,17 @@
   "/": [
     "Savi Saluwadana | Software Engineer & Agentic AI",
     "Software engineer in Sri Lanka exploring platform engineering, DevOps, distributed systems and agentic AI. Explore projects and technical articles."
+  ],
+  "/insights/ai-agent-harness-architecture/": [
+    "AI Agent Harness Architecture | Savi Saluwadana",
+    "Design an AI agent harness with bounded execution, tool policy, durable state, sandboxing and explicit evaluation."
+  ],
+  "/insights/bounded-agent-loop/": [
+    "Bounded AI Agent Loop Design | Savi Saluwadana",
+    "Understand how to implement a bounded AI agent loop with tool validation, progress checks, retries, approvals and explicit termination."
+  ],
+  "/insights/agent-evaluation-observability/": [
+    "AI Agent Evaluation and Tracing | Savi Saluwadana",
+    "Build repeatable AI agent evaluations using outcome assertions, tool traces, failure fixtures, cost budgets and safety checks."
   ]
 }

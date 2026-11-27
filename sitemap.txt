@@ -31,3 +31,6 @@ https://savisaluwadana.github.io/products/restaurantos/
 https://savisaluwadana.github.io/products/pain-intelligence/
 https://savisaluwadana.github.io/products/ad-performance-agent/
 https://savisaluwadana.github.io/products/medicare/
+https://savisaluwadana.github.io/insights/ai-agent-harness-architecture/
+https://savisaluwadana.github.io/insights/bounded-agent-loop/
+https://savisaluwadana.github.io/insights/agent-evaluation-observability/

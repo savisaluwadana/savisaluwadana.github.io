@@ -218,6 +218,21 @@
       "@type": "WebPage",
       "name": "Concurrent Booking: Prevent Overselling with Transactions",
       "url": "https://savisaluwadana.github.io/insights/concurrent-booking/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "AI Agent Harness Architecture: Beyond the Model",
+      "url": "https://savisaluwadana.github.io/insights/ai-agent-harness-architecture/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "The Bounded Agent Loop: Plan, Act, Observe, Stop",
+      "url": "https://savisaluwadana.github.io/insights/bounded-agent-loop/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Evaluating AI Agents: Outcomes, Traces and Safety",
+      "url": "https://savisaluwadana.github.io/insights/agent-evaluation-observability/"
     }
   ]
 }

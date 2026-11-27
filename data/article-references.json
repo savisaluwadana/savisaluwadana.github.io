@@ -52,5 +52,41 @@
       "https://www.postgresql.org/docs/18/transaction-iso.html",
       "Concurrent updates, transaction isolation and retry requirements."
     ]
+  ],
+  "ai-agent-harness-architecture": [
+    [
+      "Anthropic — Effective harnesses for long-running agents",
+      "https://www.anthropic.com/research/effective-harnesses-for-long-running-agents",
+      "Incremental progress and durable context across sessions."
+    ],
+    [
+      "OpenAI — Running agents",
+      "https://developers.openai.com/api/docs/guides/agents/running-agents",
+      "Agent runtime, turn limits and continuation."
+    ]
+  ],
+  "bounded-agent-loop": [
+    [
+      "Anthropic — Building effective agents",
+      "https://www.anthropic.com/research/building-effective-agents",
+      "Workflow and autonomous agent patterns."
+    ],
+    [
+      "OpenAI — Running agents",
+      "https://developers.openai.com/api/docs/guides/agents/running-agents",
+      "Runtime limits, approval and resumable runs."
+    ]
+  ],
+  "agent-evaluation-observability": [
+    [
+      "Anthropic — Demystifying evals for AI agents",
+      "https://www.anthropic.com/research/demystifying-evals-for-ai-agents",
+      "Evaluation of agent outcomes and trajectories."
+    ],
+    [
+      "OpenAI — Integrations and observability",
+      "https://developers.openai.com/api/docs/guides/agents/integrations-observability",
+      "Tracing and runtime observability controls."
+    ]
   ]
 }

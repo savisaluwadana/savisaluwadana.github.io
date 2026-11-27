@@ -74,6 +74,10 @@ This is a public portfolio with product-level architecture summaries. It does no
 - [Offline-First Sync: Queues, Conflicts and Recovery](https://savisaluwadana.github.io/insights/offline-first-sync/): Design offline-first mobile and desktop sync using durable queues, version checks, conflict handling and an authoritative backend.
 - [Concurrent Booking: Prevent Overselling with Transactions](https://savisaluwadana.github.io/insights/concurrent-booking/): Prevent overselling in booking systems using atomic capacity checks, database transactions, uniqueness constraints and safe retries.
 
+- [AI Agent Harness Architecture: Beyond the Model](https://savisaluwadana.github.io/insights/ai-agent-harness-architecture/): Design an AI agent harness with bounded execution, tool policy, durable state, sandboxing and explicit evaluation.
+- [The Bounded Agent Loop: Plan, Act, Observe, Stop](https://savisaluwadana.github.io/insights/bounded-agent-loop/): Understand how to implement a bounded AI agent loop with tool validation, progress checks, retries, approvals and explicit termination.
+- [Evaluating AI Agents: Outcomes, Traces and Safety](https://savisaluwadana.github.io/insights/agent-evaluation-observability/): Build repeatable AI agent evaluations using outcome assertions, tool traces, failure fixtures, cost budgets and safety checks.
+
 ## Optional
 
 - [Engineering and product feed](https://savisaluwadana.github.io/feed.xml): Atom feed of the current reference pages and product overviews.

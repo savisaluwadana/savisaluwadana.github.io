@@ -17,8 +17,8 @@ const insightPages = [
   {
     "path": "/insights/",
     "name": "Engineering insights",
-    "description": "Published architecture notes and five proposed article topics.",
-    "reviewed": "2026-11-24"
+    "description": "Engineering notes on platform design, agent infrastructure and software architecture.",
+    "reviewed": "2026-11-28"
   },
   {
     "path": "/insights/mcp-permission-boundaries/",
@@ -52,7 +52,10 @@ const insightPages = [
   }
 ,
   {"path":"/insights/offline-first-sync/","name":"Offline-First Sync: Queues, Conflicts and Recovery","description":"Design offline-first mobile and desktop sync using durable queues, version checks, conflict handling and an authoritative backend.","reviewed":"2026-11-24"},
-  {"path":"/insights/concurrent-booking/","name":"Concurrent Booking: Prevent Overselling with Transactions","description":"Prevent overselling in booking systems using atomic capacity checks, database transactions, uniqueness constraints and safe retries.","reviewed":"2026-11-24"}
+  {"path":"/insights/concurrent-booking/","name":"Concurrent Booking: Prevent Overselling with Transactions","description":"Prevent overselling in booking systems using atomic capacity checks, database transactions, uniqueness constraints and safe retries.","reviewed":"2026-11-24"},
+  {"path":"/insights/ai-agent-harness-architecture/","name":"AI Agent Harness Architecture: Beyond the Model","description":"Design an AI agent harness with bounded execution, tool policy, durable state, sandboxing and explicit evaluation.","reviewed":"2026-11-28"},
+  {"path":"/insights/bounded-agent-loop/","name":"The Bounded Agent Loop: Plan, Act, Observe, Stop","description":"Understand how to implement a bounded AI agent loop with tool validation, progress checks, retries, approvals and explicit termination.","reviewed":"2026-11-28"},
+  {"path":"/insights/agent-evaluation-observability/","name":"Evaluating AI Agents: Outcomes, Traces and Safety","description":"Build repeatable AI agent evaluations using outcome assertions, tool traces, failure fixtures, cost budgets and safety checks.","reviewed":"2026-11-28"}
 ];
 const entryPaths = ['/products/', ...discovery.pages.map(p => p.path), ...insightPages.map(p => p.path)];
 const website = { '@type': 'WebSite', '@id': `${base}/#website`, url: `${base}/`, name: 'Savi Saluwadana', inLanguage: 'en', publisher: { '@id': person['@id'] }, hasPart: entryPaths.map(p => ({ '@id': `${base}${p}#page` })) };

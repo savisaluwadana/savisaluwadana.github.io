@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://savisaluwadana.github.io/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://savisaluwadana.github.io/</loc><lastmod>2026-11-28</lastmod></url>
   <url><loc>https://savisaluwadana.github.io/contact.html</loc><lastmod>2026-11-12</lastmod></url>
   <url><loc>https://savisaluwadana.github.io/products/</loc><lastmod>2026-11-12</lastmod></url>
   <url><loc>https://savisaluwadana.github.io/about/</loc><lastmod>2026-11-24</lastmod></url>
@@ -10,7 +10,7 @@
   <url><loc>https://savisaluwadana.github.io/projects/saelior/</loc><lastmod>2026-11-24</lastmod></url>
   <url><loc>https://savisaluwadana.github.io/projects/eventmesh/</loc><lastmod>2026-11-24</lastmod></url>
   <url><loc>https://savisaluwadana.github.io/lab/</loc><lastmod>2026-11-24</lastmod></url>
-  <url><loc>https://savisaluwadana.github.io/insights/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://savisaluwadana.github.io/insights/</loc><lastmod>2026-11-28</lastmod></url>
   <url><loc>https://savisaluwadana.github.io/insights/mcp-permission-boundaries/</loc><lastmod>2026-11-24</lastmod></url>
   <url><loc>https://savisaluwadana.github.io/insights/durable-agentic-workflows/</loc><lastmod>2026-11-24</lastmod></url>
   <url><loc>https://savisaluwadana.github.io/insights/go-modular-monolith-saas/</loc><lastmod>2026-11-24</lastmod></url>
@@ -33,4 +33,7 @@
   <url><loc>https://savisaluwadana.github.io/products/pain-intelligence/</loc><lastmod>2026-11-12</lastmod></url>
   <url><loc>https://savisaluwadana.github.io/products/ad-performance-agent/</loc><lastmod>2026-10-04</lastmod></url>
   <url><loc>https://savisaluwadana.github.io/products/medicare/</loc><lastmod>2026-10-04</lastmod></url>
+  <url><loc>https://savisaluwadana.github.io/insights/ai-agent-harness-architecture/</loc><lastmod>2026-11-28</lastmod></url>
+  <url><loc>https://savisaluwadana.github.io/insights/bounded-agent-loop/</loc><lastmod>2026-11-28</lastmod></url>
+  <url><loc>https://savisaluwadana.github.io/insights/agent-evaluation-observability/</loc><lastmod>2026-11-28</lastmod></url>
 </urlset>
