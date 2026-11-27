@@ -44,7 +44,7 @@ Email: savisaluwadana@gmail.com
 
 ## Products and engineering work
 
-- [Avara Real Estate](https://savisaluwadana.github.io/products/avara/): A Sri Lankan property platform spanning rentals, property sales and short-term bookings with role-based users, geospatial search, availability, booking workflows, payments and property operations.
+- [Avara Real Estate](https://savisaluwadana.github.io/products/avara/): A Sri Lankan property platform evolving toward account-optional discovery, neighbourhood information and living-cost estimates, alongside existing listings, bookings and host workflows.
 - [Blu.lk](https://savisaluwadana.github.io/products/blu/): A Sri Lankan home-services platform connecting customers with skilled professionals across electrical, plumbing, cleaning, AC, carpentry and other services, with customer, provider and worker-facing workflows.
 - [FreshPick / FreshOnTime](https://savisaluwadana.github.io/products/freshpick/): A premium food-commerce platform for Colombo bringing together fresh groceries, local products, prepared meals, recurring delivery and business ordering in one customer experience.
 - [TimelyHelp.lk](https://savisaluwadana.github.io/products/timelyhelp/): A mental-healthcare platform for discovering licensed practitioners, booking secure consultations and managing digital care journeys. I worked on the product and frontend experience across practitioner discovery, account flows, checkout, dashboards and consultation surfaces.
@@ -93,7 +93,7 @@ Property discovery, rentals and property operations.
 
 | Product | Purpose and architecture |
 | --- | --- |
-| [Avara Real Estate](https://savisaluwadana.github.io/products/avara/) | Property discovery, transactions and host operations in Sri Lanka. Next.js → MongoDB → S3 → PayHere |
+| [Avara Real Estate](https://savisaluwadana.github.io/products/avara/) | Sri Lankan property discovery and intelligence, with existing transaction and host workflows. Next.js API → MongoDB; separate S3 and PayHere integrations |
 | [Property Management OS](https://savisaluwadana.github.io/products/property-os/) | Multi-tenant rental operations and controlled agent-assisted work. Next.js → Go modular monolith → PostgreSQL → Outbox worker → MCP |
 
 ## Healthcare & mental health
@@ -482,7 +482,7 @@ These seven repositories are publicly accessible. The project pages link to setu
 
 | Project and source | What to inspect | Licence | Run locally |
 | --- | --- | --- | --- |
-| [Avara Real Estate](https://github.com/RealEstateSassApplication/AvaraRealEstate) · [Architecture overview](https://savisaluwadana.github.io/products/avara/) | Property discovery, transactions and host operations in Sri Lanka. Next.js → MongoDB → S3 → PayHere | Proprietary, all rights reserved | Configure MongoDB and environment variables; npm install; npm run dev |
+| [Avara Real Estate](https://github.com/RealEstateSassApplication/AvaraRealEstate) · [Architecture overview](https://savisaluwadana.github.io/products/avara/) | Sri Lankan property discovery and intelligence, with existing transaction and host workflows. Next.js API → MongoDB; separate S3 and PayHere integrations | Proprietary, all rights reserved | Configure MongoDB and environment variables; npm install; npm run dev |
 | [FreshPick / FreshOnTime](https://github.com/FreshOnTime/newfreshontimewebsite) · [Architecture overview](https://savisaluwadana.github.io/products/freshpick/) | Food commerce, producer onboarding and scheduled recurring deliveries in Colombo. Next.js → Prisma / PostgreSQL → recurring delivery + media storage | No licence identified | Set development environment variables; npm ci; npm run db:migrate; npm run dev |
 | [Property Management OS](https://github.com/RealEstateSassApplication/property-management-OS) · [Architecture overview](https://savisaluwadana.github.io/products/property-os/) | Multi-tenant rental operations and controlled agent-assisted work. Next.js → Go modular monolith → PostgreSQL → Outbox worker → MCP | No licence identified | Set values from .env.example; docker compose up --build |
 | [RapidReach](https://github.com/savisaluwadana/RapidReachBloWebsite) · [Architecture overview](https://savisaluwadana.github.io/products/rapidreach/) | Developer publishing and tool discovery with a small CMS. Next.js → MongoDB → object storage | No licence identified | Configure MongoDB in .env.local; npm install; npm run dev |
@@ -569,9 +569,9 @@ Large events create a discovery problem: attendees have limited time and incompl
 | Web experience | A Next.js interface for attendee and event workflows. |
 | Go backend | Application APIs, business rules, event-scoped access and booking operations. |
 | PostgreSQL | Authoritative event, membership and reservation data. |
-| Gateway | A shared origin for frontend and backend traffic. |
+| Gateway | Caddy provides one origin, routing API traffic to Go and other traffic to the Next.js interface. |
 
-The project uses a Go-backed architecture with a separate web client and a relational system of record. The architecture is designed around reliable application rules rather than requiring a language model for every match.
+The documented default Compose stack uses Caddy, a Go API, Next.js for UI only, and PostgreSQL 17 as the system of record. Redis and model API keys are not required to boot the local demo. The pilot uses application rules rather than requiring a language model for every match.
 
 ## Engineering questions
 
@@ -1109,15 +1109,15 @@ These references support the engineering concepts discussed here; they are not e
 
 By / portfolio contribution: Savi Saluwadana
 Canonical page: https://savisaluwadana.github.io/products/avara/
-Reviewed: 2026-11-12
+Reviewed: 2026-11-28
 
-A Sri Lankan property platform spanning rentals, property sales and short-term bookings with role-based users, geospatial search, availability, booking workflows, payments and property operations.
+A Sri Lankan property platform evolving toward account-optional discovery, neighbourhood information and living-cost estimates, alongside existing listings, bookings and host workflows.
 
 ## Users and purpose
 
 Property seekers, tenants, hosts and administrators.
 
-Property discovery, transactions and host operations in Sri Lanka.
+Sri Lankan property discovery and intelligence, with existing transaction and host workflows.
 
 ## Capabilities
 
@@ -1134,7 +1134,7 @@ Property discovery, transactions and host operations in Sri Lanka.
 
 ## Architecture
 
-Next.js → MongoDB → S3 → PayHere
+Next.js API → MongoDB; separate S3 and PayHere integrations
 
 - Next.js web + API: Customer, host and admin interfaces plus authenticated domain routes.
 - MongoDB: Users, properties, bookings and availability data.
@@ -1143,7 +1143,7 @@ Next.js → MongoDB → S3 → PayHere
 
 ## Current scope
 
-This diagram summarizes the repository’s property, booking and payment boundaries. PayHere and S3 require deployment-specific configuration.
+The documented current runtime is Next.js with MongoDB, with S3 and PayHere integrations requiring configuration. Next.js with Supabase is a proposed discovery target, not a completed migration. The standalone Property Management OS remains separate.
 
 ## Run locally
 

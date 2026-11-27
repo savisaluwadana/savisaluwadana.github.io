@@ -40,7 +40,7 @@ This is a public portfolio with product-level architecture summaries. It does no
 
 ## Product overview and architecture
 
-- [Avara Real Estate](https://savisaluwadana.github.io/products/avara/): Property discovery, transactions and host operations in Sri Lanka.
+- [Avara Real Estate](https://savisaluwadana.github.io/products/avara/): Sri Lankan property discovery and intelligence, with existing transaction and host workflows.
 - [Blu.lk](https://savisaluwadana.github.io/products/blu/): Home-service discovery, booking and fulfillment in Sri Lanka.
 - [FreshPick / FreshOnTime](https://savisaluwadana.github.io/products/freshpick/): Food commerce, producer onboarding and scheduled recurring deliveries in Colombo.
 - [TimelyHelp.lk](https://savisaluwadana.github.io/products/timelyhelp/): Product and frontend work for practitioner discovery and consultation journeys.

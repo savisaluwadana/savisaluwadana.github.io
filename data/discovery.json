@@ -949,13 +949,13 @@
                 ],
                 [
                   "Gateway",
-                  "A shared origin for frontend and backend traffic."
+                  "Caddy provides one origin, routing API traffic to Go and other traffic to the Next.js interface."
                 ]
               ]
             },
             {
               "type": "p",
-              "text": "The project uses a Go-backed architecture with a separate web client and a relational system of record. The architecture is designed around reliable application rules rather than requiring a language model for every match."
+              "text": "The documented default Compose stack uses Caddy, a Go API, Next.js for UI only, and PostgreSQL 17 as the system of record. Redis and model API keys are not required to boot the local demo. The pilot uses application rules rather than requiring a language model for every match."
             }
           ]
         },
