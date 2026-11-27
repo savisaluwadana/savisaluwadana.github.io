@@ -17,9 +17,9 @@ Large events create a discovery problem: attendees have limited time and incompl
 | Web experience | A Next.js interface for attendee and event workflows. |
 | Go backend | Application APIs, business rules, event-scoped access and booking operations. |
 | PostgreSQL | Authoritative event, membership and reservation data. |
-| Gateway | A shared origin for frontend and backend traffic. |
+| Gateway | Caddy provides one origin, routing API traffic to Go and other traffic to the Next.js interface. |
 
-The project uses a Go-backed architecture with a separate web client and a relational system of record. The architecture is designed around reliable application rules rather than requiring a language model for every match.
+The documented default Compose stack uses Caddy, a Go API, Next.js for UI only, and PostgreSQL 17 as the system of record. Redis and model API keys are not required to boot the local demo. The pilot uses application rules rather than requiring a language model for every match.
 
 ## Engineering questions
 

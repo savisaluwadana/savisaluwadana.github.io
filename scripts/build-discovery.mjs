@@ -17,8 +17,8 @@ const insightPages = [
   {
     "path": "/insights/",
     "name": "Engineering insights",
-    "description": "Published architecture notes and five proposed article topics.",
-    "reviewed": "2026-11-24"
+    "description": "Engineering notes on platform design, agent infrastructure and software architecture.",
+    "reviewed": "2026-11-28"
   },
   {
     "path": "/insights/mcp-permission-boundaries/",
@@ -52,7 +52,10 @@ const insightPages = [
   }
 ,
   {"path":"/insights/offline-first-sync/","name":"Offline-First Sync: Queues, Conflicts and Recovery","description":"Design offline-first mobile and desktop sync using durable queues, version checks, conflict handling and an authoritative backend.","reviewed":"2026-11-24"},
-  {"path":"/insights/concurrent-booking/","name":"Concurrent Booking: Prevent Overselling with Transactions","description":"Prevent overselling in booking systems using atomic capacity checks, database transactions, uniqueness constraints and safe retries.","reviewed":"2026-11-24"}
+  {"path":"/insights/concurrent-booking/","name":"Concurrent Booking: Prevent Overselling with Transactions","description":"Prevent overselling in booking systems using atomic capacity checks, database transactions, uniqueness constraints and safe retries.","reviewed":"2026-11-24"},
+  {"path":"/insights/ai-agent-harness-architecture/","name":"AI Agent Harness Architecture: Beyond the Model","description":"Design an AI agent harness with bounded execution, tool policy, durable state, sandboxing and explicit evaluation.","reviewed":"2026-11-28"},
+  {"path":"/insights/bounded-agent-loop/","name":"The Bounded Agent Loop: Plan, Act, Observe, Stop","description":"Understand how to implement a bounded AI agent loop with tool validation, progress checks, retries, approvals and explicit termination.","reviewed":"2026-11-28"},
+  {"path":"/insights/agent-evaluation-observability/","name":"Evaluating AI Agents: Outcomes, Traces and Safety","description":"Build repeatable AI agent evaluations using outcome assertions, tool traces, failure fixtures, cost budgets and safety checks.","reviewed":"2026-11-28"}
 ];
 const entryPaths = ['/products/', ...discovery.pages.map(p => p.path), ...insightPages.map(p => p.path)];
 const website = { '@type': 'WebSite', '@id': `${base}/#website`, url: `${base}/`, name: 'Savi Saluwadana', inLanguage: 'en', publisher: { '@id': person['@id'] }, hasPart: entryPaths.map(p => ({ '@id': `${base}${p}#page` })) };
@@ -69,9 +72,9 @@ const featured = [
   { id: 'property-os', stack: 'Go / PostgreSQL / MCP', question: 'Who authorizes an agent’s request?', answer: 'Property Management OS routes MCP tool calls through the same authenticated Go API as the web app. The API owns the permission check and the database write.' }
 ].map(study => ({ ...study, product: products.find(p => p.id === study.id) }));
 
-const pageTitle = 'Savi Saluwadana | Software Engineer in Sri Lanka';
-const pageDescription = 'Software engineer in Sri Lanka exploring system architecture, backend and mobile development, distributed systems and agentic AI through software projects.';
-const homeUpdated = '2026-11-24';
+const pageTitle = 'Savi Saluwadana | Software Engineer & Agentic AI';
+const pageDescription = 'Software engineer in Sri Lanka exploring platform engineering, DevOps, distributed systems and agentic AI. Explore projects and technical articles.';
+const homeUpdated = '2026-11-28';
 const selectedList = {
   '@type': 'ItemList', '@id': base + '/#work', name: 'Selected work',
   itemListElement: featured.map(({ product, answer }, index) => ({

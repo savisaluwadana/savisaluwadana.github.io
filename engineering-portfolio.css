@@ -58,3 +58,29 @@
 .editorial-project-body .editorial-project-industry{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin:0 0 .55rem}
 .editorial-project-stack{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 1.15rem}
 .editorial-project-stack span{border:1px solid var(--border);color:var(--muted);border-radius:5px;padding:3px 8px;font-size:.72rem}
+
+/* Editorial infrastructure console, self-contained SVG instead of heavy WebGL. */
+.engineering-portfolio .shell{--shell:1200px}
+.engineering-portfolio .editorial-hero{padding:clamp(7rem,11vw,10rem) 0 2rem;background:radial-gradient(ellipse at 82% 35%,var(--signal-soft),transparent 46%)}
+.engineering-portfolio .editorial-hero-grid{grid-template-columns:minmax(0,1.2fr) minmax(0,.85fr);align-items:center;gap:clamp(24px,5vw,72px)}
+.engineering-portfolio .editorial-hero h1{font-size:clamp(2.65rem,5.35vw,5.25rem);letter-spacing:-.065em;line-height:1.03}
+.hero-console{min-width:0;border:1px solid #39443d;border-radius:16px;overflow:hidden;background:#0c100e;color:#e5eee8;box-shadow:0 24px 70px #0004}
+.console-bar{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 16px;border-bottom:1px solid #29352e;color:#a5b5ab;font:11px var(--font-mono)}
+.hero-topology{display:block;width:100%;height:auto;max-height:285px;padding:10px 16px 0}
+.hero-topology text{font:11px var(--font-mono);letter-spacing:1px}
+.hero-signal{animation:hero-flow 2s linear 3}
+@keyframes hero-flow{to{stroke-dashoffset:-16}}
+.console-output{display:grid;gap:8px;border-top:1px solid #29352e;padding:14px 16px;font:clamp(10px,1.1vw,12px)/1.6 var(--font-mono);color:#b6c8bc}
+.console-output b{color:#8ce6b2}
+.console-link{display:flex;justify-content:space-between;padding:12px 16px;background:#151e19;color:#d8f7e4;font-size:12px;border-top:1px solid #29352e}
+.console-link:hover{background:#20372a}
+.hero-source-link{font-size:.85rem;font-weight:600;color:var(--ink-soft)}
+.engineering-portfolio .editorial-project{border-radius:16px;box-shadow:0 1px 0 #ffffff09 inset}
+.engineering-portfolio .editorial-project:hover{border-color:var(--signal)}
+.engineering-portfolio .editorial-diagram{min-height:192px;background:radial-gradient(ellipse at 50% 30%,var(--signal-soft),transparent 70%),radial-gradient(var(--border) .8px,transparent .8px),var(--surface-code);background-size:auto,18px 18px,auto}
+.editorial-diagram svg path{stroke:var(--diagram-border);stroke-dasharray:none;stroke-linejoin:round;stroke-linecap:round}
+.editorial-diagram svg g:nth-child(3) rect{stroke:var(--diagram-accent)}
+.editorial-diagram svg text{font-size:10px;fill:var(--diagram-ink)}
+.engineering-portfolio .editorial-project-body{padding:26px}
+@media(max-width:850px){.engineering-portfolio .editorial-hero-grid{grid-template-columns:1fr}.hero-console{max-width:560px;width:100%}.engineering-portfolio .editorial-hero{padding-top:7rem}}
+@media(prefers-reduced-motion:reduce){.hero-signal{animation:none}}

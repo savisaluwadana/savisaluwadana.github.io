@@ -314,3 +314,5 @@
 .lab-run:hover,.lab-run:focus-visible { border-color:var(--accent); }
 .lab-output { padding:12px; border-left:3px solid var(--accent); font-family:var(--font-mono); overflow-wrap:anywhere; }
 .lab-control pre { max-height:260px; overflow:auto; white-space:pre-wrap; font-size:.8rem; }
+
+@media(max-width:700px){body .product-diagram-scroll svg{min-width:620px;max-width:none}body .product-diagram-scroll{overflow-x:auto}}

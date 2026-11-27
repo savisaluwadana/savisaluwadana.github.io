@@ -66,3 +66,11 @@ Collect Search Console performance with `node scripts/search-intelligence.mjs` (
 
 ## Primary technical sources and internal discovery
 Every published engineering article has a visible primary technical reference section and corresponding Article citation data. These are sources for concepts, not endorsements or external backlinks. `data/article-references.json` records the source list, and CI checks the HTML, Markdown and citation fields. Run `node scripts/audit-discovery.mjs` to measure click depth from the homepage and distinct inbound pages; contextual inbound counts exclude navigation and footer links. CI includes this report in the public technical audit artifacts. Prioritize contextual links for pages with none, and avoid forcing unrelated links. These measurements do not indicate index coverage or rankings.
+
+## Agent infrastructure cluster (November 2026)
+
+- /insights/ai-agent-harness-architecture/ — What is an AI agent harness?
+- /insights/bounded-agent-loop/ — How does a safe agent loop work?
+- /insights/agent-evaluation-observability/ — How should AI agents be evaluated?
+
+Use Google’s current guidance at https://developers.google.com/search/docs/fundamentals/ai-optimization-guide. Static HTML, accurate unique content, crawlable links and evidence are priorities; llms.txt is supplemental, not an indexing or ranking guarantee. Check the Search Console generative AI performance report where available. No impression or citation targets are guaranteed.

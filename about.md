@@ -44,7 +44,7 @@ Email: savisaluwadana@gmail.com
 
 ## Products and engineering work
 
-- [Avara Real Estate](https://savisaluwadana.github.io/products/avara/): A Sri Lankan property platform spanning rentals, property sales and short-term bookings with role-based users, geospatial search, availability, booking workflows, payments and property operations.
+- [Avara Real Estate](https://savisaluwadana.github.io/products/avara/): A Sri Lankan property platform evolving toward account-optional discovery, neighbourhood information and living-cost estimates, alongside existing listings, bookings and host workflows.
 - [Blu.lk](https://savisaluwadana.github.io/products/blu/): A Sri Lankan home-services platform connecting customers with skilled professionals across electrical, plumbing, cleaning, AC, carpentry and other services, with customer, provider and worker-facing workflows.
 - [FreshPick / FreshOnTime](https://savisaluwadana.github.io/products/freshpick/): A premium food-commerce platform for Colombo bringing together fresh groceries, local products, prepared meals, recurring delivery and business ordering in one customer experience.
 - [TimelyHelp.lk](https://savisaluwadana.github.io/products/timelyhelp/): A mental-healthcare platform for discovering licensed practitioners, booking secure consultations and managing digital care journeys. I worked on the product and frontend experience across practitioner discovery, account flows, checkout, dashboards and consultation surfaces.

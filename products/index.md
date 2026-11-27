@@ -19,7 +19,7 @@ Property discovery, rentals and property operations.
 
 | Product | Purpose and architecture |
 | --- | --- |
-| [Avara Real Estate](https://savisaluwadana.github.io/products/avara/) | Property discovery, transactions and host operations in Sri Lanka. Next.js → MongoDB → S3 → PayHere |
+| [Avara Real Estate](https://savisaluwadana.github.io/products/avara/) | Sri Lankan property discovery and intelligence, with existing transaction and host workflows. Next.js API → MongoDB; separate S3 and PayHere integrations |
 | [Property Management OS](https://savisaluwadana.github.io/products/property-os/) | Multi-tenant rental operations and controlled agent-assisted work. Next.js → Go modular monolith → PostgreSQL → Outbox worker → MCP |
 
 ## Healthcare & mental health

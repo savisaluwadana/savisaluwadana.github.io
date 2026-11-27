@@ -123,5 +123,20 @@
     "category": "architecture",
     "prompt": "How can a PostgreSQL booking application prevent overselling under concurrent requests?",
     "target": "/insights/concurrent-booking/"
+  },
+  {
+    "category": "architecture",
+    "prompt": "What is an AI agent harness?",
+    "target": "/insights/ai-agent-harness-architecture/"
+  },
+  {
+    "category": "architecture",
+    "prompt": "How does a safe agent loop work?",
+    "target": "/insights/bounded-agent-loop/"
+  },
+  {
+    "category": "architecture",
+    "prompt": "How should AI agents be evaluated?",
+    "target": "/insights/agent-evaluation-observability/"
   }
 ]

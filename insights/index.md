@@ -39,3 +39,9 @@ Canonical: https://savisaluwadana.github.io/insights/
 - **From Pain-Point-Analyzer: Building a Research Tool That Runs Locally** — A look at the Rust API, local data layer and the trade-offs between the web and desktop editions.
 - **What a Deployment Contract Should Tell Developers** — A tool-neutral exploration of build inputs, configuration, ownership, health and failure signals.
 - **CI/CD Is Not the Same as a Reliable Deployment** — A tool-neutral exploration of the gap between passing checks and operating a diagnosable deployment.
+
+## Agent infrastructure and reliability
+
+- [AI Agent Harness Architecture: Beyond the Model](https://savisaluwadana.github.io/insights/ai-agent-harness-architecture/) — Design an AI agent harness with bounded execution, tool policy, durable state, sandboxing and explicit evaluation.
+- [The Bounded Agent Loop: Plan, Act, Observe, Stop](https://savisaluwadana.github.io/insights/bounded-agent-loop/) — Understand how to implement a bounded AI agent loop with tool validation, progress checks, retries, approvals and explicit termination.
+- [Evaluating AI Agents: Outcomes, Traces and Safety](https://savisaluwadana.github.io/insights/agent-evaluation-observability/) — Build repeatable AI agent evaluations using outcome assertions, tool traces, failure fixtures, cost budgets and safety checks.

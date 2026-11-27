@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light"><meta name="theme-color" content="#0a0e14">
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+  <meta name="author" content="Savi Saluwadana">
+  <title>AI Agent Harness Architecture | Savi Saluwadana</title>
+  <meta name="description" content="Design an AI agent harness with bounded execution, tool policy, durable state, sandboxing and explicit evaluation.">
+  <link rel="canonical" href="https://savisaluwadana.github.io/insights/ai-agent-harness-architecture/"><link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"><script>try{if(localStorage.getItem('theme')==='light')document.documentElement.dataset.theme='light';}catch{}</script>
+  <link rel="stylesheet" href="/base-styles.css"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/product-details.css">
+  <link rel="describedby" type="text/plain" href="/llms.txt">
+  <link rel="alternate" type="text/markdown" href="https://savisaluwadana.github.io/insights/ai-agent-harness-architecture/index.md" title="AI Agent Harness Architecture: Beyond the Model in Markdown">
+  <link rel="alternate" type="application/atom+xml" href="/feed.xml" title="Savi Saluwadana — Engineering & products">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="Savi Saluwadana">
+  <meta property="og:title" content="AI Agent Harness Architecture | Savi Saluwadana"><meta property="og:description" content="Design an AI agent harness with bounded execution, tool policy, durable state, sandboxing and explicit evaluation."><meta property="og:url" content="https://savisaluwadana.github.io/insights/ai-agent-harness-architecture/">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/82082138?v=4"><meta property="og:image:alt" content="Savi Saluwadana">
+  <meta property="article:published_time" content="2026-11-28T00:00:00+05:30"><meta property="article:modified_time" content="2026-11-28T00:00:00+05:30">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="AI Agent Harness Architecture | Savi Saluwadana"><meta name="twitter:description" content="Design an AI agent harness with bounded execution, tool policy, durable state, sandboxing and explicit evaluation."><meta name="twitter:image" content="https://avatars.githubusercontent.com/u/82082138?v=4">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://savisaluwadana.github.io/#person",
+      "name": "Savi Saluwadana",
+      "url": "https://savisaluwadana.github.io/",
+      "image": "https://avatars.githubusercontent.com/u/82082138?v=4",
+      "email": "mailto:savisaluwadana@gmail.com",
+      "jobTitle": "Software Engineer",
+      "description": "Savi Saluwadana is a software engineer based in Sri Lanka interested in system architecture, backend and mobile development, distributed systems, cloud-native platforms and agentic AI. His portfolio explores software products across industries, technical writing and engineering experiments.",
+      "homeLocation": {
+        "@type": "Country",
+        "name": "Sri Lanka"
+      },
+      "sameAs": [
+        "https://github.com/savisaluwadana",
+        "https://www.linkedin.com/in/savi-saluwadana-3911331b2/",
+        "https://dev.to/savi_saluwadana",
+        "https://medium.com/@savisaluwadana",
+        "https://daily.dev/savisaluwadana"
+      ],
+      "knowsAbout": [
+        "Software Architecture",
+        "System Design",
+        "Backend Engineering",
+        "Mobile Application Development",
+        "Full-Stack Development",
+        "Distributed Systems",
+        "Agentic AI",
+        "Model Context Protocol",
+        "Workflow Orchestration",
+        "AI Evaluation",
+        "Cloud-Native Engineering",
+        "Software Product Engineering",
+        "Reliability Engineering",
+        "Public Software Repositories",
+        "Design Decisions and Trade-offs",
+        "Go",
+        "Rust",
+        "TypeScript",
+        "JavaScript",
+        "React",
+        "Next.js",
+        "Laravel",
+        "Flutter",
+        "Docker",
+        "CI/CD",
+        "PostgreSQL",
+        "MongoDB",
+        "MySQL",
+        "SQLite",
+        "Prisma",
+        "Platform Engineering (Learning)"
+      ],
+      "mainEntityOfPage": {
+        "@id": "https://savisaluwadana.github.io/#profile"
+      }
+    },
+    {
+      "@type": "Article",
+      "additionalType": "https://schema.org/TechArticle",
+      "@id": "https://savisaluwadana.github.io/insights/ai-agent-harness-architecture/#article",
+      "url": "https://savisaluwadana.github.io/insights/ai-agent-harness-architecture/",
+      "headline": "AI Agent Harness Architecture: Beyond the Model",
+      "description": "Design an AI agent harness with bounded execution, tool policy, durable state, sandboxing and explicit evaluation.",
+      "author": {
+        "@id": "https://savisaluwadana.github.io/#person",
+        "@type": "Person",
+        "name": "Savi Saluwadana",
+        "url": "https://savisaluwadana.github.io/about/"
+      },
+      "datePublished": "2026-11-28",
+      "dateModified": "2026-11-28T00:00:00+05:30",
+      "inLanguage": "en",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://savisaluwadana.github.io/insights/ai-agent-harness-architecture/"
+      },
+      "image": "https://avatars.githubusercontent.com/u/82082138?v=4",
+      "citation": [
+        "https://www.anthropic.com/research/effective-harnesses-for-long-running-agents",
+        "https://developers.openai.com/api/docs/guides/agents/running-agents"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Savi Saluwadana",
+          "item": "https://savisaluwadana.github.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Engineering insights",
+          "item": "https://savisaluwadana.github.io/insights/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "AI Agent Harness Architecture: Beyond the Model",
+          "item": "https://savisaluwadana.github.io/insights/ai-agent-harness-architecture/"
+        }
+      ]
+    }
+  ]
+}
+</script></head><body><a class="skip-link" href="#main">Skip to content</a><header class="site-header" data-header><div class="shell nav-shell"><a class="wordmark" href="/" aria-label="Savi Saluwadana home">Savi Saluwadana <span class="wordmark-tag">// arch</span></a><button class="menu-button" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav" data-menu-button><span></span><span></span></button><nav class="nav-links" id="primary-nav" aria-label="Primary navigation" data-nav><a href="/products/">Systems</a><a href="/engineering/">Architecture</a><a class="is-active" href="/insights/">Writing</a><a href="/open-source/">Public source</a><a href="/about/">About</a><a class="nav-contact" href="/contact.html">Contact</a><button type="button" class="theme-toggle" data-theme-toggle aria-label="Toggle color theme" aria-pressed="false">Light</button></nav></div></header><main class="product-page" id="main"><div class="shell"><nav class="product-breadcrumb" aria-label="Breadcrumb"><a href="/">Savi Saluwadana</a><span aria-hidden="true">/</span><a href="/insights/">Insights</a><span aria-hidden="true">/</span><span aria-current="page">AI Agent Harness Architecture: Beyond the Model</span></nav><article><div class="product-header"><p class="section-index">Agent infrastructure · Harness engineering</p><h1>AI Agent Harness Architecture: Beyond the Model</h1><p>Design an AI agent harness with bounded execution, tool policy, durable state, sandboxing and explicit evaluation.</p><p class="product-source">By <a href="/about/">Savi Saluwadana</a> · Published <time datetime="2026-11-28">28 November 2026</time> · Updated <time datetime="2026-11-28">28 November 2026</time></p><div class="project-links"><a class="text-link" href="/insights/ai-agent-harness-architecture/index.md">Markdown version</a><a class="text-link" href="/engineering/agentic-systems/">Architecture reference</a></div></div><nav class="product-nav" aria-label="Article contents"><a href="#section-1">What is an AI agent harness?</a><a href="#section-2">Separate the model from the execution boundary</a><a href="#section-3">Persist a session ledger</a><a href="#section-4">Choose the smallest useful harness</a><a href="#section-5">Observe and protect each run</a><a href="#practical-verification">How can I verify this design?</a><a href="#related">Related engineering notes</a><a href="#technical-sources">Primary technical references</a></nav><div class="product-content"><section class="product-section" id="section-1"><h2>What is an AI agent harness?</h2><p><strong>Answer:</strong> An agent harness is the software surrounding a model that manages context, tool execution, policy, run state and termination. It turns model-generated proposals into controlled application actions. The harness, not the model alone, determines what the agent can access, how long it may run and how failures are handled.</p></section>
+<section class="product-section" id="section-2"><h2>Separate the model from the execution boundary</h2><p>A model proposes a tool call; it does not directly own the filesystem, database or production credentials. A dispatcher validates arguments against a schema and rechecks the caller’s identity and permissions before it invokes a tool. Run untrusted commands in a restricted environment with explicit network and resource limits. Treat tool output as untrusted data rather than instructions.</p></section>
+<section class="product-section" id="section-3"><h2>Persist a session ledger</h2><p>Store a run ID, tool-call IDs, accepted actions, checkpoints and terminal status. A new model invocation can reload a compact summary plus selected evidence, but a summary is not a substitute for authoritative state. Use stable operation IDs for mutations and reconcile unknown outcomes before retrying.</p></section>
+<section class="product-section" id="section-4"><h2>Choose the smallest useful harness</h2><p>Start with a single bounded loop and a few typed tools. Add specialist agents only if a controlled comparison improves the task outcome enough to justify additional coordination, latency and cost. For a code-review agent, read-only repository inspection and a structured findings schema may suffice; do not grant write permissions just because a tool exists.</p></section>
+<section class="product-section" id="section-5"><h2>Observe and protect each run</h2><p>Record model and tool spans, duration, token usage, policy decisions, and termination reason with correlation IDs. Redact secrets before persisting traces. Enforce time, turn and spend budgets at the application boundary, not as prompt instructions. Pause before consequential actions and allow cancellation.</p></section>
+<section class="product-section" id="practical-verification"><h2>How can I verify this design?</h2><p>Create a fake model that returns a valid read request, an unauthorized write, and a repeated mutation. Assert that the read is allowed, the write is denied without side effects, and the repeat does not create another committed effect. Restart the worker after a checkpoint and verify that the ledger resumes consistently. This is a proposed test, not a measured production result.</p></section><section class="product-section" id="related"><h2>Related engineering notes</h2><ul><li><a href="/insights/bounded-agent-loop/">The Bounded Agent Loop: Plan, Act, Observe, Stop</a></li><li><a href="/insights/agent-evaluation-observability/">Evaluating AI Agents: Outcomes, Traces and Safety</a></li><li><a href="/insights/durable-agentic-workflows/">Durable agentic workflows</a></li><li><a href="/engineering/agentic-systems/">Agentic systems architecture</a></li><li><a href="/lab/#permissions">Interactive authorization model</a></li></ul></section><section class="product-section" id="technical-sources"><h2>Primary technical references</h2><p>These support the engineering concepts; they are not endorsements or evidence of production results.</p><ul><li><a href="https://www.anthropic.com/research/effective-harnesses-for-long-running-agents">Anthropic — Effective harnesses for long-running agents</a> — Incremental progress and durable context across sessions.</li><li><a href="https://developers.openai.com/api/docs/guides/agents/running-agents">OpenAI — Running agents</a> — Agent runtime, turn limits and continuation.</li></ul></section></div></article></div></main><footer class="site-footer"><div class="shell footer-layout"><div><strong>Savi Saluwadana</strong><span>Systems architecture · Go APIs · Software built in public</span></div><div><span><a href="/">Portfolio</a> · <a href="/products/">Systems</a> · <a href="/engineering/">Architecture</a> · <a href="/engineering/agentic-systems/">Agentic systems</a> · <a href="/insights/">Writing</a> · <a href="/open-source/">Public source</a> · <a href="/about/">About</a> · <a href="/feed.xml">Feed</a> · <a href="/llms.txt">llms.txt</a></span><span>© <span data-year>2026</span> · Static HTML &amp; build-time SVG</span></div></div></footer><script src="/app.js" defer></script></body></html>

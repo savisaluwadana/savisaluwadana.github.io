@@ -2,15 +2,15 @@
 
 By / portfolio contribution: Savi Saluwadana
 Canonical page: https://savisaluwadana.github.io/products/avara/
-Reviewed: 2026-11-12
+Reviewed: 2026-11-28
 
-A Sri Lankan property platform spanning rentals, property sales and short-term bookings with role-based users, geospatial search, availability, booking workflows, payments and property operations.
+A Sri Lankan property platform evolving toward account-optional discovery, neighbourhood information and living-cost estimates, alongside existing listings, bookings and host workflows.
 
 ## Users and purpose
 
 Property seekers, tenants, hosts and administrators.
 
-Property discovery, transactions and host operations in Sri Lanka.
+Sri Lankan property discovery and intelligence, with existing transaction and host workflows.
 
 ## Capabilities
 
@@ -27,7 +27,7 @@ Property discovery, transactions and host operations in Sri Lanka.
 
 ## Architecture
 
-Next.js → MongoDB → S3 → PayHere
+Next.js API → MongoDB; separate S3 and PayHere integrations
 
 - Next.js web + API: Customer, host and admin interfaces plus authenticated domain routes.
 - MongoDB: Users, properties, bookings and availability data.
@@ -36,7 +36,7 @@ Next.js → MongoDB → S3 → PayHere
 
 ## Current scope
 
-This diagram summarizes the repository’s property, booking and payment boundaries. PayHere and S3 require deployment-specific configuration.
+The documented current runtime is Next.js with MongoDB, with S3 and PayHere integrations requiring configuration. Next.js with Supabase is a proposed discovery target, not a completed migration. The standalone Property Management OS remains separate.
 
 ## Run locally
 

@@ -8,8 +8,8 @@
       "name": "Avara Real Estate",
       "category": "Real-estate product",
       "type": "Property marketplace + transactions",
-      "description": "A Sri Lankan property platform spanning rentals, property sales and short-term bookings with role-based users, geospatial search, availability, booking workflows, payments and property operations.",
-      "architecture": "Next.js → MongoDB → S3 → PayHere",
+      "description": "A Sri Lankan property platform evolving toward account-optional discovery, neighbourhood information and living-cost estimates, alongside existing listings, bookings and host workflows.",
+      "architecture": "Next.js API → MongoDB; separate S3 and PayHere integrations",
       "tags": [
         "Next.js",
         "TypeScript",
@@ -21,7 +21,7 @@
       "footer": "The product combines discovery, transactions and operations: hosts, tenants, property calendars, bookings, media, local payments and administrative control.",
       "href": "https://github.com/RealEstateSassApplication/AvaraRealEstate",
       "users": "Property seekers, tenants, hosts and administrators.",
-      "scope": "Property discovery, transactions and host operations in Sri Lanka.",
+      "scope": "Sri Lankan property discovery and intelligence, with existing transaction and host workflows.",
       "features": [
         "Rental, sale and short-stay listings with location and geospatial search.",
         "Role-aware property administration and media uploads.",
@@ -33,7 +33,7 @@
         "Booking and payment state are stored in MongoDB; media is stored separately.",
         "Hosts and administrators manage listings, calendars and transaction status."
       ],
-      "boundary": "This diagram summarizes the repository’s property, booking and payment boundaries. PayHere and S3 require deployment-specific configuration.",
+      "boundary": "The documented current runtime is Next.js with MongoDB, with S3 and PayHere integrations requiring configuration. Next.js with Supabase is a proposed discovery target, not a completed migration. The standalone Property Management OS remains separate.",
       "components": [
         [
           "Next.js web + API",
@@ -52,7 +52,7 @@
           "Payment initiation and server-side notification handling."
         ]
       ],
-      "reviewed": "2026-11-12",
+      "reviewed": "2026-11-28",
       "source": "https://github.com/RealEstateSassApplication/AvaraRealEstate/blob/main/README.md",
       "run": "Configure MongoDB and environment variables; npm install; npm run dev",
       "licenseLabel": "Proprietary, all rights reserved",

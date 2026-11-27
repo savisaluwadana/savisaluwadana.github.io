@@ -3,9 +3,9 @@
   "@type": "ProfilePage",
   "@id": "https://savisaluwadana.github.io/#profile",
   "url": "https://savisaluwadana.github.io/",
-  "name": "Savi Saluwadana | Software Engineer in Sri Lanka",
-  "description": "Software engineer in Sri Lanka exploring system architecture, backend and mobile development, distributed systems and agentic AI through software projects.",
-  "dateModified": "2026-11-24T00:00:00+05:30",
+  "name": "Savi Saluwadana | Software Engineer & Agentic AI",
+  "description": "Software engineer in Sri Lanka exploring platform engineering, DevOps, distributed systems and agentic AI. Explore projects and technical articles.",
+  "dateModified": "2026-11-28T00:00:00+05:30",
   "mainEntity": {
     "@type": "Person",
     "@id": "https://savisaluwadana.github.io/#person",
@@ -218,6 +218,21 @@
       "@type": "WebPage",
       "name": "Concurrent Booking: Prevent Overselling with Transactions",
       "url": "https://savisaluwadana.github.io/insights/concurrent-booking/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "AI Agent Harness Architecture: Beyond the Model",
+      "url": "https://savisaluwadana.github.io/insights/ai-agent-harness-architecture/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "The Bounded Agent Loop: Plan, Act, Observe, Stop",
+      "url": "https://savisaluwadana.github.io/insights/bounded-agent-loop/"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Evaluating AI Agents: Outcomes, Traces and Safety",
+      "url": "https://savisaluwadana.github.io/insights/agent-evaluation-observability/"
     }
   ]
 }

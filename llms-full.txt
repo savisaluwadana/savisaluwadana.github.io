@@ -44,7 +44,7 @@ Email: savisaluwadana@gmail.com
 
 ## Products and engineering work
 
-- [Avara Real Estate](https://savisaluwadana.github.io/products/avara/): A Sri Lankan property platform spanning rentals, property sales and short-term bookings with role-based users, geospatial search, availability, booking workflows, payments and property operations.
+- [Avara Real Estate](https://savisaluwadana.github.io/products/avara/): A Sri Lankan property platform evolving toward account-optional discovery, neighbourhood information and living-cost estimates, alongside existing listings, bookings and host workflows.
 - [Blu.lk](https://savisaluwadana.github.io/products/blu/): A Sri Lankan home-services platform connecting customers with skilled professionals across electrical, plumbing, cleaning, AC, carpentry and other services, with customer, provider and worker-facing workflows.
 - [FreshPick / FreshOnTime](https://savisaluwadana.github.io/products/freshpick/): A premium food-commerce platform for Colombo bringing together fresh groceries, local products, prepared meals, recurring delivery and business ordering in one customer experience.
 - [TimelyHelp.lk](https://savisaluwadana.github.io/products/timelyhelp/): A mental-healthcare platform for discovering licensed practitioners, booking secure consultations and managing digital care journeys. I worked on the product and frontend experience across practitioner discovery, account flows, checkout, dashboards and consultation surfaces.
@@ -93,7 +93,7 @@ Property discovery, rentals and property operations.
 
 | Product | Purpose and architecture |
 | --- | --- |
-| [Avara Real Estate](https://savisaluwadana.github.io/products/avara/) | Property discovery, transactions and host operations in Sri Lanka. Next.js → MongoDB → S3 → PayHere |
+| [Avara Real Estate](https://savisaluwadana.github.io/products/avara/) | Sri Lankan property discovery and intelligence, with existing transaction and host workflows. Next.js API → MongoDB; separate S3 and PayHere integrations |
 | [Property Management OS](https://savisaluwadana.github.io/products/property-os/) | Multi-tenant rental operations and controlled agent-assisted work. Next.js → Go modular monolith → PostgreSQL → Outbox worker → MCP |
 
 ## Healthcare & mental health
@@ -482,7 +482,7 @@ These seven repositories are publicly accessible. The project pages link to setu
 
 | Project and source | What to inspect | Licence | Run locally |
 | --- | --- | --- | --- |
-| [Avara Real Estate](https://github.com/RealEstateSassApplication/AvaraRealEstate) · [Architecture overview](https://savisaluwadana.github.io/products/avara/) | Property discovery, transactions and host operations in Sri Lanka. Next.js → MongoDB → S3 → PayHere | Proprietary, all rights reserved | Configure MongoDB and environment variables; npm install; npm run dev |
+| [Avara Real Estate](https://github.com/RealEstateSassApplication/AvaraRealEstate) · [Architecture overview](https://savisaluwadana.github.io/products/avara/) | Sri Lankan property discovery and intelligence, with existing transaction and host workflows. Next.js API → MongoDB; separate S3 and PayHere integrations | Proprietary, all rights reserved | Configure MongoDB and environment variables; npm install; npm run dev |
 | [FreshPick / FreshOnTime](https://github.com/FreshOnTime/newfreshontimewebsite) · [Architecture overview](https://savisaluwadana.github.io/products/freshpick/) | Food commerce, producer onboarding and scheduled recurring deliveries in Colombo. Next.js → Prisma / PostgreSQL → recurring delivery + media storage | No licence identified | Set development environment variables; npm ci; npm run db:migrate; npm run dev |
 | [Property Management OS](https://github.com/RealEstateSassApplication/property-management-OS) · [Architecture overview](https://savisaluwadana.github.io/products/property-os/) | Multi-tenant rental operations and controlled agent-assisted work. Next.js → Go modular monolith → PostgreSQL → Outbox worker → MCP | No licence identified | Set values from .env.example; docker compose up --build |
 | [RapidReach](https://github.com/savisaluwadana/RapidReachBloWebsite) · [Architecture overview](https://savisaluwadana.github.io/products/rapidreach/) | Developer publishing and tool discovery with a small CMS. Next.js → MongoDB → object storage | No licence identified | Configure MongoDB in .env.local; npm install; npm run dev |
@@ -569,9 +569,9 @@ Large events create a discovery problem: attendees have limited time and incompl
 | Web experience | A Next.js interface for attendee and event workflows. |
 | Go backend | Application APIs, business rules, event-scoped access and booking operations. |
 | PostgreSQL | Authoritative event, membership and reservation data. |
-| Gateway | A shared origin for frontend and backend traffic. |
+| Gateway | Caddy provides one origin, routing API traffic to Go and other traffic to the Next.js interface. |
 
-The project uses a Go-backed architecture with a separate web client and a relational system of record. The architecture is designed around reliable application rules rather than requiring a language model for every match.
+The documented default Compose stack uses Caddy, a Go API, Next.js for UI only, and PostgreSQL 17 as the system of record. Redis and model API keys are not required to boot the local demo. The pilot uses application rules rather than requiring a language model for every match.
 
 ## Engineering questions
 
@@ -1109,15 +1109,15 @@ These references support the engineering concepts discussed here; they are not e
 
 By / portfolio contribution: Savi Saluwadana
 Canonical page: https://savisaluwadana.github.io/products/avara/
-Reviewed: 2026-11-12
+Reviewed: 2026-11-28
 
-A Sri Lankan property platform spanning rentals, property sales and short-term bookings with role-based users, geospatial search, availability, booking workflows, payments and property operations.
+A Sri Lankan property platform evolving toward account-optional discovery, neighbourhood information and living-cost estimates, alongside existing listings, bookings and host workflows.
 
 ## Users and purpose
 
 Property seekers, tenants, hosts and administrators.
 
-Property discovery, transactions and host operations in Sri Lanka.
+Sri Lankan property discovery and intelligence, with existing transaction and host workflows.
 
 ## Capabilities
 
@@ -1134,7 +1134,7 @@ Property discovery, transactions and host operations in Sri Lanka.
 
 ## Architecture
 
-Next.js → MongoDB → S3 → PayHere
+Next.js API → MongoDB; separate S3 and PayHere integrations
 
 - Next.js web + API: Customer, host and admin interfaces plus authenticated domain routes.
 - MongoDB: Users, properties, bookings and availability data.
@@ -1143,7 +1143,7 @@ Next.js → MongoDB → S3 → PayHere
 
 ## Current scope
 
-This diagram summarizes the repository’s property, booking and payment boundaries. PayHere and S3 require deployment-specific configuration.
+The documented current runtime is Next.js with MongoDB, with S3 and PayHere integrations requiring configuration. Next.js with Supabase is a proposed discovery target, not a completed migration. The standalone Property Management OS remains separate.
 
 ## Run locally
 
@@ -1894,3 +1894,150 @@ Next.js → Go API + scheduling service → PostgreSQL
 The main clinic API and embeddable scheduling API use separate service boundaries. Server-enforced roles separate clinical, billing and administrative access.
 
 No confirmed public repository is linked.
+
+
+---
+
+# AI Agent Harness Architecture: Beyond the Model
+
+> Design an AI agent harness with bounded execution, tool policy, durable state, sandboxing and explicit evaluation.
+
+By [Savi Saluwadana](https://savisaluwadana.github.io/about/)  
+Published: 2026-11-28  
+Updated: 2026-11-28  
+Canonical: https://savisaluwadana.github.io/insights/ai-agent-harness-architecture/
+
+## What is an AI agent harness?
+
+**Answer:** An agent harness is the software surrounding a model that manages context, tool execution, policy, run state and termination. It turns model-generated proposals into controlled application actions. The harness, not the model alone, determines what the agent can access, how long it may run and how failures are handled.
+
+## Separate the model from the execution boundary
+
+A model proposes a tool call; it does not directly own the filesystem, database or production credentials. A dispatcher validates arguments against a schema and rechecks the caller’s identity and permissions before it invokes a tool. Run untrusted commands in a restricted environment with explicit network and resource limits. Treat tool output as untrusted data rather than instructions.
+
+## Persist a session ledger
+
+Store a run ID, tool-call IDs, accepted actions, checkpoints and terminal status. A new model invocation can reload a compact summary plus selected evidence, but a summary is not a substitute for authoritative state. Use stable operation IDs for mutations and reconcile unknown outcomes before retrying.
+
+## Choose the smallest useful harness
+
+Start with a single bounded loop and a few typed tools. Add specialist agents only if a controlled comparison improves the task outcome enough to justify additional coordination, latency and cost. For a code-review agent, read-only repository inspection and a structured findings schema may suffice; do not grant write permissions just because a tool exists.
+
+## Observe and protect each run
+
+Record model and tool spans, duration, token usage, policy decisions, and termination reason with correlation IDs. Redact secrets before persisting traces. Enforce time, turn and spend budgets at the application boundary, not as prompt instructions. Pause before consequential actions and allow cancellation.
+
+## How can I verify this design?
+
+Create a fake model that returns a valid read request, an unauthorized write, and a repeated mutation. Assert that the read is allowed, the write is denied without side effects, and the repeat does not create another committed effect. Restart the worker after a checkpoint and verify that the ledger resumes consistently. This is a proposed test, not a measured production result.
+
+## Related engineering notes
+
+- [The Bounded Agent Loop: Plan, Act, Observe, Stop](https://savisaluwadana.github.io/insights/bounded-agent-loop/)
+- [Evaluating AI Agents: Outcomes, Traces and Safety](https://savisaluwadana.github.io/insights/agent-evaluation-observability/)
+- [Durable agentic workflows](https://savisaluwadana.github.io/insights/durable-agentic-workflows/)
+- [Agentic systems architecture](https://savisaluwadana.github.io/engineering/agentic-systems/)
+- [Interactive authorization model](https://savisaluwadana.github.io/lab/#permissions)
+
+## Primary technical references
+
+- [Anthropic — Effective harnesses for long-running agents](https://www.anthropic.com/research/effective-harnesses-for-long-running-agents) — Incremental progress and durable context across sessions.
+- [OpenAI — Running agents](https://developers.openai.com/api/docs/guides/agents/running-agents) — Agent runtime, turn limits and continuation.
+
+
+---
+
+# The Bounded Agent Loop: Plan, Act, Observe, Stop
+
+> Understand how to implement a bounded AI agent loop with tool validation, progress checks, retries, approvals and explicit termination.
+
+By [Savi Saluwadana](https://savisaluwadana.github.io/about/)  
+Published: 2026-11-28  
+Updated: 2026-11-28  
+Canonical: https://savisaluwadana.github.io/insights/bounded-agent-loop/
+
+## How does a safe agent loop work?
+
+**Answer:** A bounded agent loop repeatedly obtains a model decision, validates any proposed tool action, executes permitted work, observes the result and checks whether to continue. A runtime enforces termination conditions independently of the model, including successful validation, budget exhaustion, cancellation, policy denial or a need for human approval.
+
+## Define the run contract before the loop
+
+Specify an objective, allowed tools, success predicate, deadline and resource budgets. A task such as collecting public product data should finish when required fields are validated, not merely when the model declares success. Record a final outcome such as succeeded, failed, cancelled, exhausted or awaiting approval.
+
+## Differentiate iteration from retry
+
+A new iteration uses updated observations to choose a next action. A retry reattempts the same logical operation after a transient failure. Apply bounded backoff with jitter only when retrying is safe. A timeout after an external mutation leaves the outcome unknown; query the authoritative service or use its idempotency contract before reissuing the mutation.
+
+## Detect stalled runs
+
+Maintain a fingerprint of proposed tool names, normalized arguments and relevant observed state. Repeating the same call is not always wrong, but repeated calls without new evidence should trigger escalation or a bounded stop. A tool failure should be represented as structured data so the next decision can distinguish bad arguments from temporary unavailability.
+
+## Make approval an explicit pause
+
+Persist the proposed action and the exact parameters a human is authorizing. Resume from that checkpoint after approval, rechecking expiry and authorization before execution. Do not let a new model proposal silently substitute different parameters. Separate read-only tasks from write operations and validate the output before returning it.
+
+## How can I verify this design?
+
+Use a deterministic mock tool and model script to exercise successful completion, a denied action, an endless repeat, cancellation and a timed-out mutation. Assert finite termination, explicit reason codes and no duplicate external effects. Compare tool calls and wall time, not just the final text.
+
+## Related engineering notes
+
+- [AI Agent Harness Architecture: Beyond the Model](https://savisaluwadana.github.io/insights/ai-agent-harness-architecture/)
+- [Evaluating AI Agents: Outcomes, Traces and Safety](https://savisaluwadana.github.io/insights/agent-evaluation-observability/)
+- [Durable agentic workflows](https://savisaluwadana.github.io/insights/durable-agentic-workflows/)
+- [Agentic systems architecture](https://savisaluwadana.github.io/engineering/agentic-systems/)
+- [Interactive authorization model](https://savisaluwadana.github.io/lab/#permissions)
+
+## Primary technical references
+
+- [Anthropic — Building effective agents](https://www.anthropic.com/research/building-effective-agents) — Workflow and autonomous agent patterns.
+- [OpenAI — Running agents](https://developers.openai.com/api/docs/guides/agents/running-agents) — Runtime limits, approval and resumable runs.
+
+
+---
+
+# Evaluating AI Agents: Outcomes, Traces and Safety
+
+> Build repeatable AI agent evaluations using outcome assertions, tool traces, failure fixtures, cost budgets and safety checks.
+
+By [Savi Saluwadana](https://savisaluwadana.github.io/about/)  
+Published: 2026-11-28  
+Updated: 2026-11-28  
+Canonical: https://savisaluwadana.github.io/insights/agent-evaluation-observability/
+
+## How should AI agents be evaluated?
+
+**Answer:** Evaluate an agent on whether it completes the requested task in a controlled environment while respecting safety and resource constraints. Check the resulting application state rather than relying only on the final response. Record tool calls, latency, cost and policy events to distinguish successful outcomes from lucky or unsafe trajectories.
+
+## Test outcomes in a resettable environment
+
+Build task fixtures with seeded state and explicit expectations. In a booking example, evaluate the reservation record, tenant ownership and remaining capacity rather than whether the agent says the booking succeeded. Reset fixtures between trials so prior runs cannot affect the next result.
+
+## Separate correctness from efficiency
+
+Report task success, denied operations, unintended side effects, elapsed time, model usage and tool calls separately. A cheap run that violates tenant isolation is not successful; an expensive but correct run is a candidate for optimization. Compare distributions over repeated trials and retain the model and harness versions.
+
+## Use adversarial and operational cases
+
+Include missing permissions, malicious instructions embedded in tool output, stale information, provider timeouts and approval rejection. Instrument the policy layer and verify that rejected operations never reach mutation endpoints. Test cancellation and recovery as first-class scenarios, not just happy paths.
+
+## Make traces useful without leaking data
+
+Propagate a run ID across model calls, application services and workers. Collect redacted input/output summaries and explicit error categories; avoid storing access tokens or sensitive payloads. Use traces to diagnose regressions, then turn the failure into a reproducible fixture. Trace collection is not itself proof that the agent is safe.
+
+## How can I verify this design?
+
+Design ten seeded tasks with a deterministic pass condition and run each several times against two harness versions using the same fixture and comparable model configuration. Report task success, policy violations, p95 latency and median tool calls, plus the sample size and limitations. This is an experiment proposal; no performance claim is made.
+
+## Related engineering notes
+
+- [AI Agent Harness Architecture: Beyond the Model](https://savisaluwadana.github.io/insights/ai-agent-harness-architecture/)
+- [The Bounded Agent Loop: Plan, Act, Observe, Stop](https://savisaluwadana.github.io/insights/bounded-agent-loop/)
+- [Durable agentic workflows](https://savisaluwadana.github.io/insights/durable-agentic-workflows/)
+- [Agentic systems architecture](https://savisaluwadana.github.io/engineering/agentic-systems/)
+- [Interactive authorization model](https://savisaluwadana.github.io/lab/#permissions)
+
+## Primary technical references
+
+- [Anthropic — Demystifying evals for AI agents](https://www.anthropic.com/research/demystifying-evals-for-ai-agents) — Evaluation of agent outcomes and trajectories.
+- [OpenAI — Integrations and observability](https://developers.openai.com/api/docs/guides/agents/integrations-observability) — Tracing and runtime observability controls.

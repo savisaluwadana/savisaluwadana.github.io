@@ -40,7 +40,7 @@ This is a public portfolio with product-level architecture summaries. It does no
 
 ## Product overview and architecture
 
-- [Avara Real Estate](https://savisaluwadana.github.io/products/avara/): Property discovery, transactions and host operations in Sri Lanka.
+- [Avara Real Estate](https://savisaluwadana.github.io/products/avara/): Sri Lankan property discovery and intelligence, with existing transaction and host workflows.
 - [Blu.lk](https://savisaluwadana.github.io/products/blu/): Home-service discovery, booking and fulfillment in Sri Lanka.
 - [FreshPick / FreshOnTime](https://savisaluwadana.github.io/products/freshpick/): Food commerce, producer onboarding and scheduled recurring deliveries in Colombo.
 - [TimelyHelp.lk](https://savisaluwadana.github.io/products/timelyhelp/): Product and frontend work for practitioner discovery and consultation journeys.
@@ -73,6 +73,10 @@ This is a public portfolio with product-level architecture summaries. It does no
 
 - [Offline-First Sync: Queues, Conflicts and Recovery](https://savisaluwadana.github.io/insights/offline-first-sync/): Design offline-first mobile and desktop sync using durable queues, version checks, conflict handling and an authoritative backend.
 - [Concurrent Booking: Prevent Overselling with Transactions](https://savisaluwadana.github.io/insights/concurrent-booking/): Prevent overselling in booking systems using atomic capacity checks, database transactions, uniqueness constraints and safe retries.
+
+- [AI Agent Harness Architecture: Beyond the Model](https://savisaluwadana.github.io/insights/ai-agent-harness-architecture/): Design an AI agent harness with bounded execution, tool policy, durable state, sandboxing and explicit evaluation.
+- [The Bounded Agent Loop: Plan, Act, Observe, Stop](https://savisaluwadana.github.io/insights/bounded-agent-loop/): Understand how to implement a bounded AI agent loop with tool validation, progress checks, retries, approvals and explicit termination.
+- [Evaluating AI Agents: Outcomes, Traces and Safety](https://savisaluwadana.github.io/insights/agent-evaluation-observability/): Build repeatable AI agent evaluations using outcome assertions, tool traces, failure fixtures, cost budgets and safety checks.
 
 ## Optional
 

@@ -541,3 +541,19 @@ code, pre, .mono { font-family: var(--font-mono); }
 .btn--primary:hover{color:var(--bg);background:var(--accent)}
 :root[data-theme="light"] .btn--primary,:root[data-theme="light"] .btn--primary:hover{color:#fff}
 :focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+
+/* Premium visual tokens, shared across the static site. */
+:root{--bg:#080909;--surface:#101212;--surface-2:#191c1b;--surface-code:#0c0e0e;--ink:#f4f5f3;--ink-soft:#c4cbc7;--muted:#a0aaa5;--border:#292e2c;--border-strong:#4a5550;--accent:#eaf4ee;--accent-strong:#fff;--signal:#8ce6b2;--signal-soft:#152820;--diagram-node-bg:#131817;--diagram-border:#63736b;--diagram-ink:#f4f5f3;--diagram-muted:#b2c2b9;--diagram-accent:#8ce6b2;--header-bg:rgba(8,9,9,.92);--grid-line:#181d1a;--radius:16px;--radius-sm:8px}
+:root[data-theme="light"]{--bg:#f7f8f6;--surface:#fff;--surface-2:#edf0ed;--surface-code:#eef1ee;--ink:#111815;--ink-soft:#38443d;--muted:#53635a;--border:#dce2dd;--border-strong:#a0b0a6;--signal:#17633c;--signal-soft:#e1f1e7;--diagram-node-bg:#fff;--diagram-border:#64766b;--diagram-ink:#17231c;--diagram-muted:#455b4e;--diagram-accent:#17633c;--header-bg:rgba(247,248,246,.95)}
+.site-header .nav-links a{letter-spacing:-.01em}.site-header .nav-contact{border-radius:8px}
+.note-card,.contact-form{box-shadow:0 1px 0 rgba(255,255,255,.035) inset}
+.note-card:hover{border-color:var(--signal)}
+body .product-section h2{letter-spacing:-.035em}
+body .product-diagram{border:1px solid var(--border-strong);border-radius:16px;background:var(--surface-code)}
+body .product-diagram-scroll{background-image:radial-gradient(var(--border) .7px,transparent .7px);background-size:18px 18px;padding:clamp(8px,2vw,22px)}
+body .product-diagram svg{height:auto}
+body .product-diagram svg g[marker-end]{stroke:var(--diagram-border);stroke-linecap:round;stroke-linejoin:round}
+body .product-diagram svg marker path{fill:var(--diagram-border)}
+body .product-diagram svg g>rect:nth-child(2){fill:var(--diagram-border)}
+body .product-diagram svg g:nth-of-type(2)>rect:nth-child(2){fill:var(--diagram-accent)}
+body .product-diagram figcaption{border-top:1px solid var(--border);padding:12px 16px}
