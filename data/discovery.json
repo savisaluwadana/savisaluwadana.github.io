@@ -707,6 +707,10 @@
             {
               "type": "p",
               "text": "For the design rationale, read [Durable Agentic Workflows](/insights/durable-agentic-workflows/) and [MCP Permission Boundaries](/insights/mcp-permission-boundaries/). These are design notes, not claims of measured production outcomes."
+            },
+            {
+              "type": "p",
+              "text": "For practical runtime design, read [AI Agent Harness Architecture](/insights/ai-agent-harness-architecture/), [The Bounded Agent Loop](/insights/bounded-agent-loop/) and [Evaluating AI Agents](/insights/agent-evaluation-observability/). These notes cover control boundaries, termination and repeatable outcome checks."
             }
           ]
         },

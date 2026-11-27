@@ -74,3 +74,7 @@ Every published engineering article has a visible primary technical reference se
 - /insights/agent-evaluation-observability/ — How should AI agents be evaluated?
 
 Use Google’s current guidance at https://developers.google.com/search/docs/fundamentals/ai-optimization-guide. Static HTML, accurate unique content, crawlable links and evidence are priorities; llms.txt is supplemental, not an indexing or ranking guarantee. Check the Search Console generative AI performance report where available. No impression or citation targets are guaranteed.
+
+## Interactive homepage and answer-oriented discovery
+
+The homepage exposes developer experience, application/agent APIs and infrastructure as native HTML disclosures. Every layer label, explanation and related canonical link is present in the initial HTML, with no canvas or JavaScript prerequisite. The visible portfolio questions summarize identity, project scope and engineering material with direct links, rather than adding unsupported FAQ rich-result claims. The agentic architecture reference links to the three new agent infrastructure articles; the prompt suite tests both personal identity and unbranded technical questions. Review actual Search Console query-page impressions, clicks and CTR, and AI citation accuracy; do not treat successful static audits as rankings. See https://developers.google.com/search/docs/appearance/ai-features.

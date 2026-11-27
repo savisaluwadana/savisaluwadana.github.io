@@ -17,6 +17,22 @@ try {
       page.on('pageerror', e => errors.push(e.message));
       const response = await page.goto(base + route, {waitUntil:'domcontentloaded'});
       await page.locator('h1').first().waitFor();
+      if(route==='/'){
+        const stack=page.locator('[data-stack-explorer]');
+        const layers=stack.locator('details');
+        if(await layers.count()!==3)throw new Error('Expected three architecture layers');
+        // Every summary must be reachable without overlapping another summary.
+        const summaries=await stack.locator('summary').evaluateAll(nodes=>nodes.map(n=>{const r=n.getBoundingClientRect();return {top:r.top,bottom:r.bottom,left:r.left,right:r.right,width:r.width,height:r.height}}));
+        if(summaries.some((r,i)=>r.width<44||r.height<44||(i>0&&r.top<summaries[i-1].bottom)||r.left<0||r.right>viewport.width+1))throw new Error('Stack layers overlap or extend beyond viewport');
+        for(let i=0;i<3;i++){
+          const layer=layers.nth(i),summary=layer.locator('summary');
+          await summary.click();
+          if(!await layer.evaluate(n=>n.open)||!await layer.locator('.stack-layer-detail').isVisible())throw new Error('Stack layer did not open');
+          await summary.focus();
+          await page.keyboard.press('Enter');
+          if(await layer.evaluate(n=>n.open))throw new Error('Keyboard did not close stack layer');
+        }
+      }
       const overflow = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 2);
       const scan = await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa']).analyze();
       results.push({route, viewport, status:response?.status(), overflow, errors, violations:scan.violations.map(v=>({id:v.id,impact:v.impact,description:v.description,nodes:v.nodes.length,targets:v.nodes.slice(0,5).map(n=>n.target)}))});

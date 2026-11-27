@@ -86,6 +86,11 @@ for (const file of pages.filter(p => p !== 'index.html')) {
   assert.ok(reachable.has(file), `${file}: not reachable from homepage links`);
 }
 const home = cache.get('index.html');
+const stack = home.match(/<div class="stack-explorer"[\s\S]*?<p class="stack-scope">[^<]*<\/p><\/div>/)?.[0];
+assert.ok(stack, 'Homepage requires a static interactive stack');
+assert.deepEqual([...stack.matchAll(/data-stack-layer="([^"]+)"/g)].map(m=>m[1]), ['experience','application','infrastructure'], 'All three layers must remain in the initial HTML');
+assert.equal([...stack.matchAll(/<summary>/g)].length,3,'Each layer needs a native disclosure');
+assert.ok(home.includes('id="portfolio-overview"'), 'Missing answer-oriented portfolio summary');
 const featuredGrid = home.match(/<section class="section editorial-selected"[\s\S]*?<\/section>/)?.[0];
 assert.ok(featuredGrid, 'Missing selected project grid');
 assert.ok(!/Design concept|Research direction|<h3>Relay<\/h3>|<h3>Systems Lab<\/h3>/.test(featuredGrid), 'Unbuilt concepts must not be presented as selected projects');
