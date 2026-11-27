@@ -449,6 +449,8 @@ An agent can propose a change without being authorized to execute it. Keep conse
 
 For the design rationale, read [Durable Agentic Workflows](https://savisaluwadana.github.io/insights/durable-agentic-workflows/) and [MCP Permission Boundaries](https://savisaluwadana.github.io/insights/mcp-permission-boundaries/). These are design notes, not claims of measured production outcomes.
 
+For practical runtime design, read [AI Agent Harness Architecture](https://savisaluwadana.github.io/insights/ai-agent-harness-architecture/), [The Bounded Agent Loop](https://savisaluwadana.github.io/insights/bounded-agent-loop/) and [Evaluating AI Agents](https://savisaluwadana.github.io/insights/agent-evaluation-observability/). These notes cover control boundaries, termination and repeatable outcome checks.
+
 ## What I want to develop further
 
 My broader interests include durable orchestration, multi-agent collaboration, retrieval and evaluation. The following are design questions I want to explore, rather than claims that every project already implements the same capabilities.
