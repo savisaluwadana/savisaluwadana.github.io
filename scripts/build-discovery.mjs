@@ -69,9 +69,9 @@ const featured = [
   { id: 'property-os', stack: 'Go / PostgreSQL / MCP', question: 'Who authorizes an agent’s request?', answer: 'Property Management OS routes MCP tool calls through the same authenticated Go API as the web app. The API owns the permission check and the database write.' }
 ].map(study => ({ ...study, product: products.find(p => p.id === study.id) }));
 
-const pageTitle = 'Savi Saluwadana | Software Engineer in Sri Lanka';
-const pageDescription = 'Software engineer in Sri Lanka exploring system architecture, backend and mobile development, distributed systems and agentic AI through software projects.';
-const homeUpdated = '2026-11-24';
+const pageTitle = 'Savi Saluwadana | Software Engineer & Agentic AI';
+const pageDescription = 'Software engineer in Sri Lanka exploring platform engineering, DevOps, distributed systems and agentic AI. Explore projects and technical articles.';
+const homeUpdated = '2026-11-28';
 const selectedList = {
   '@type': 'ItemList', '@id': base + '/#work', name: 'Selected work',
   itemListElement: featured.map(({ product, answer }, index) => ({

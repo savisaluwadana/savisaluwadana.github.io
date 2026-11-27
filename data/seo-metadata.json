@@ -90,5 +90,9 @@
   "/products/medicare/": [
     "MediCare Clinic Architecture | Savi Saluwadana",
     "Explore patient administration, appointments, clinical records, billing, staff permissions and embeddable scheduling."
+  ],
+  "/": [
+    "Savi Saluwadana | Software Engineer & Agentic AI",
+    "Software engineer in Sri Lanka exploring platform engineering, DevOps, distributed systems and agentic AI. Explore projects and technical articles."
   ]
 }
